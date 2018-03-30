@@ -3,7 +3,7 @@
 
         <!-- Area das redes sociais -->
         <div class="rede_social_f float_left">
-          <div class="segura_rede centro_lr">
+          <div class="segura_rede preenche_t_20 centro_lr">
             <div class="tamanho_rede">
               <a target="_blank" href="https://www.facebook.com">
                 <img src="pictures/rede_social/facebook.svg" alt="link para rede social">
