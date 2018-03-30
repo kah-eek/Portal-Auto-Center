@@ -23,48 +23,53 @@
           </form>
         </div>
       </div>
-      <div class="container_menu_pesquisa">
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/lavagem.svg" class="centralizado txt_branco " title="Lavagem de Carro"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/troca_oleo.svg" class="  centralizado txt_branco " title="Troca de óleo"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/pintura_funilaria.svg" class="  centralizado txt_branco " title="Pintura e Funilaria"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/troca_pneu.svg" class="  centralizado txt_branco " title="Troca de Pneu"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/balancing.svg" class="  centralizado txt_branco " title="Balanceamento"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/alarme.svg" class=" centralizado txt_branco " title="Alarmes"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/auto_eletrica.svg" class="  centralizado txt_branco " title="Auto Elétrica"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/ferramentas_eletrica.svg" class="  centralizado txt_branco " title="Ferramentas Elétricas"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/ferramentas_manuais.svg" class="  centralizado txt_branco " title="Ferramentas Manuais"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/revisao.svg" class="  centralizado txt_branco " title="Revisão do Carro"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/socorro_ja.svg" class="  centralizado txt_branco " title="Socorro Já"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/troca_reparo.svg" class="  centralizado txt_branco " title="Troca e Reparo de Vidros"  alt="Pintura de Carros">
-        </div>
-        <div class="item_menu_pesquisa float_left">
-          <img src="pictures/loja/chaveiro.svg" class="  centralizado txt_branco " title="Chaveiro"  alt="Pintura de Carros">
+
+      <!-- Itens do menu -->
+      <div class="container_menu_pesquisa_largura_tela sombra_preta_b_15 margem_b_50 bg_verde_natural">
+        <div class="container_menu_pesquisa centro_lr">
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/lavagem.svg" class="centralizado txt_branco " title="Lavagem de Carro"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/troca_oleo.svg" class="  centralizado txt_branco " title="Troca de óleo"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/pintura_funilaria.svg" class="  centralizado txt_branco " title="Pintura e Funilaria"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/troca_pneu.svg" class="  centralizado txt_branco " title="Troca de Pneu"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/balancing.svg" class="  centralizado txt_branco " title="Balanceamento"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/alarme.svg" class=" centralizado txt_branco " title="Alarmes"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/auto_eletrica.svg" class="  centralizado txt_branco " title="Auto Elétrica"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/ferramentas_eletrica.svg" class="  centralizado txt_branco " title="Ferramentas Elétricas"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/ferramentas_manuais.svg" class="  centralizado txt_branco " title="Ferramentas Manuais"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/revisao.svg" class="  centralizado txt_branco " title="Revisão do Carro"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/socorro_ja.svg" class="  centralizado txt_branco " title="Socorro Já"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/troca_reparo.svg" class="  centralizado txt_branco " title="Troca e Reparo de Vidros"  alt="Pintura de Carros">
+          </div>
+          <div class="item_menu_pesquisa preenche_20 float_left">
+            <img src="pictures/loja/chaveiro.svg" class="  centralizado txt_branco " title="Chaveiro"  alt="Pintura de Carros">
+          </div>
         </div>
       </div>
-      <div class="container_parceiro_premium">
+
+      <div class="container_parceiro_premium centro_lr">
         <div class="anuncio_parceiro_premium float_left ">
           <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
         </div>
@@ -251,6 +256,10 @@
       </div>
       <!-- ################################################################ -->
 
+      <div class="divisor">
+
+      </div>
+
       <div class="container_slider_produtos bg_azulado_escuro">
 
         <div id="content1">
@@ -427,12 +436,15 @@
             </nav>
         </div>
 
+        <!-- scripts do carrosel -->
         <script type="text/javascript" src="js/carrosel/carrosel.js"></script>
         <script type="text/javascript" src="js/carrosel/jcarousellite.js"></script>
         <script type="text/javascript" src="js/carrosel/carrossel.js"></script>
+        <!-- ################################################################ -->
 
       </div>
-      <div class="container_parceiro_premium">
+
+      <div class="container_parceiro_premium centro_lr">
         <div class="anuncio_parceiro_premium float_left ">
           <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
         </div>
@@ -440,6 +452,10 @@
           <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
         </div>
       </div>
+
+      <!-- Divisor de conteúdo -->
+      <div class="divisor"></div>
+
       <div class="container_produto_fixo">
         <div class="produto_fixo">
 
