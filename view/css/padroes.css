@@ -81,6 +81,8 @@ a{
 .txt_sombra_1x1x10_branco{text-shadow: 1px 1px 10px #fff;}
 .txt_sombra_1x1x25_branco{text-shadow: 1px 1px 25px #fff;}
 
+.txt_sombra_1x1x1_verde_vivo{text-shadow: 1px 1px 1px #00C853;}
+
 .txt_sombra_1x1x1_preto{text-shadow: 1px 1px 1px #000;}
 .txt_sombra_1x1x10_preto{text-shadow: 1px 1px 10px #000;}
 .txt_sombra_1x1x25_preto{text-shadow: 1px 1px 25px #000;}
@@ -157,7 +159,8 @@ a{
 
 /* ***************** Efeitos no texto ******************* */
 .negrito{font-weight: bold;} /* Negrito */
-.ellipsis{text-overflow: ellipsis;} /* Aplica reticências caso o texto ultrapasse o tamnho desejado */
+.word_break{word-break: break-all;}/* 'quebra' a palavra */
+.ellipsis{text-overflow: ellipsis; overflow: hidden;} /* Aplica reticências caso o texto ultrapasse o tamnho desejado */
 .espacamento_linha_25{line-height: 25px;} /* Espaçamento entre as linhas */
 /* ********************************************************* */
 
@@ -183,7 +186,7 @@ a{
 
   /* Texto */
   color: #fff;
-  /* font-family: 'titulo'; */
+  font-family: 'titulo';
   text-align: center;
 }
 .input::placeholder{
@@ -196,9 +199,14 @@ a{
 .margem_10{margin: 10px 0px;}
 
 .margem_t_10{margin-top: 10px;}
+.margem_t_20{margin-top: 20px;}
+.margem_t_50{margin-top: 50px;}
+.margem_t_80{margin-top: 80px;}
 
 .margem_b_10{margin-bottom: 10px;}
+.margem_b_20{margin-bottom: 20px;}
 .margem_b_50{margin-bottom: 50px;}
+.margem_b_80{margin-bottom: 80px;}
 /* ****************************************************** */
 
 /* ***************** Float ******************* */
@@ -223,6 +231,7 @@ a{
 /* ***************** Cores das fontes ******************* */
 .txt_branco{color:#fff;}
 .txt_preto{color:#000;}
+.txt_verde_vivo{color:#00C853;}
 /* ****************************************************** */
 
 /* ***************** Links ******************* */
