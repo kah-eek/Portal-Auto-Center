@@ -1,6 +1,7 @@
 footer{
   width: 100%;
-  height: 230px;
+  height: 190px;
+  margin-top: 10px;
   background-color: #000;
 }
 
@@ -18,55 +19,56 @@ footer{
 
 .segura_rede{
   width: 50px;
-  height: 220px;
-  margin-top: 10px;
+  height: 160px;
 }
 
 .tamanho_rede{
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   margin-bottom: 5px;
 }
 
 .tamanho_rede img{
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
 }
 
 
 
 .mapa_site{
   width: 1000px;
-  height: 200px;
-  background-color: yellow;
-}
-
-.segura_mapa{
-  width: 900px;
-  height: 180px;
-  background-color: red;
+  height: 130px;
+  margin-top: 20px;
 }
 
 .m_site{
   width: 1000px;
-  height: 20px;
-  background-color: pink;
+  height: 30px;
+}
+
+.segura_mapa{
+  width: 980px;
+  height: 80px;
 }
 
 .link_pags{
   width: 130px;
   height: 40px;
+  margin-top: 10px;
   margin-right: 10px;
-  background-color: blue;
+  text-align: center;
+  float: left;
+  padding-top: 20px;
+  color: #00C853;
 }
 
 
 
-.terceira_f{
+/*.terceira_f{
   width: 200px;
   height: 30px;
   background-color: #184445;
-}
+}*/
 
 
 

@@ -25,43 +25,43 @@
       </div>
       <div class="container_menu_pesquisa">
         <div class="item_menu_pesquisa float_left">
-          <i title="Lavagem de Carros" class="material-icons fs_50 centralizado txt_branco preenche_t_20">local_car_wash</i>
+          <img src="pictures/loja/lavagem.svg" class="centralizado txt_branco " title="Lavagem de Carro"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/troca_oleo.svg" class="  centralizado txt_branco " title="Troca de óleo"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/pintura_funilaria.svg" class="  centralizado txt_branco " title="Pintura e Funilaria"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/troca_pneu.svg" class="  centralizado txt_branco " title="Troca de Pneu"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/balancing.svg" class="  centralizado txt_branco " title="Balanceamento"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/alarme.svg" class=" centralizado txt_branco " title="Alarmes"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/auto_eletrica.svg" class="  centralizado txt_branco " title="Auto Elétrica"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/ferramentas_eletrica.svg" class="  centralizado txt_branco " title="Ferramentas Elétricas"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          2
+          <img src="pictures/loja/ferramentas_manuais.svg" class="  centralizado txt_branco " title="Ferramentas Manuais"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/revisao.svg" class="  centralizado txt_branco " title="Revisão do Carro"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/socorro_ja.svg" class="  centralizado txt_branco " title="Socorro Já"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/troca_reparo.svg" class="  centralizado txt_branco " title="Troca e Reparo de Vidros"  alt="Pintura de Carros">
         </div>
         <div class="item_menu_pesquisa float_left">
-          1
+          <img src="pictures/loja/chaveiro.svg" class="  centralizado txt_branco " title="Chaveiro"  alt="Pintura de Carros">
         </div>
       </div>
       <div class="container_parceiro_premium">

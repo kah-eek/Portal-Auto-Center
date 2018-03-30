@@ -22,6 +22,11 @@
   /*box-shadow: 0 5px 5px rgba(21, 21, 21, 0.5);*/
 }
 
+.item_menu_pesquisa img{
+  width: 100%;
+  height: 100%;
+}
+
 .container_parceiro_premium{
   width: 1420px;
   height: 300px;
