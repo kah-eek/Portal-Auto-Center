@@ -1,0 +1,88 @@
+footer{
+  width: 100%;
+  height: 230px;
+  background-color: #000;
+}
+
+.segura_conteudo_f{
+  width: 1100px;
+  height: 100%;
+}
+
+
+/*Area das redes sociais*/
+.rede_social_f{
+  width: 100px;
+  height: 100%;
+}
+
+.segura_rede{
+  width: 50px;
+  height: 220px;
+  margin-top: 10px;
+}
+
+.tamanho_rede{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.tamanho_rede img{
+  width: 50px;
+  height: 50px;
+}
+
+
+
+.mapa_site{
+  width: 1000px;
+  height: 200px;
+  background-color: yellow;
+}
+
+.segura_mapa{
+  width: 900px;
+  height: 180px;
+  background-color: red;
+}
+
+.m_site{
+  width: 1000px;
+  height: 20px;
+  background-color: pink;
+}
+
+.link_pags{
+  width: 130px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: blue;
+}
+
+
+
+.terceira_f{
+  width: 200px;
+  height: 30px;
+  background-color: #184445;
+}
+
+
+
+.baixa_app{
+  width: 170px;
+  height: 30px;
+}
+
+.icone_app{
+  width: 30px;
+  height: 30px;
+  color: #00C853;
+}
+
+.texto_app{
+  width: 140px;
+  height: 30px;
+  color: #00C853;
+}

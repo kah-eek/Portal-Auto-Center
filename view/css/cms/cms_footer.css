@@ -1,0 +1,20 @@
+/*
+@autor Caique M. Oliveira
+@data 26/03/2018
+*/
+
+footer{
+  width: 100%;
+  height: 120px;
+  bottom: 0px; 
+}
+
+.conatainer_conteudo_central_cmsf{
+  width: 1280px;
+  height: 95px;
+}
+
+.desenvolvedor_cmsf{
+  width: inherit;
+  height: 69px;
+}
