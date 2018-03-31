@@ -28,53 +28,53 @@
       <div class="container_menu_pesquisa_largura_tela sombra_preta_b_15 margem_b_50 bg_verde_natural">
         <div class="container_menu_pesquisa centro_lr">
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/lavagem.svg" class="centralizado txt_branco " title="Lavagem de Carro"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/lavagem.svg" class="centralizado txt_branco " title="Lavagem de Carro"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/troca_oleo.svg" class="  centralizado txt_branco " title="Troca de óleo"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/troca_oleo.svg" class="  centralizado txt_branco " title="Troca de óleo"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/pintura_funilaria.svg" class="  centralizado txt_branco " title="Pintura e Funilaria"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/pintura_funilaria.svg" class="  centralizado txt_branco " title="Pintura e Funilaria"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/troca_pneu.svg" class="  centralizado txt_branco " title="Troca de Pneu"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/troca_pneu.svg" class="  centralizado txt_branco " title="Troca de Pneu"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/balancing.svg" class="  centralizado txt_branco " title="Balanceamento"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/balancing.svg" class="  centralizado txt_branco " title="Balanceamento"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/alarme.svg" class=" centralizado txt_branco " title="Alarmes"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/alarme.svg" class=" centralizado txt_branco " title="Alarmes"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/auto_eletrica.svg" class="  centralizado txt_branco " title="Auto Elétrica"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/auto_eletrica.svg" class="  centralizado txt_branco " title="Auto Elétrica"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/ferramentas_eletrica.svg" class="  centralizado txt_branco " title="Ferramentas Elétricas"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/ferramentas_eletrica.svg" class="  centralizado txt_branco " title="Ferramentas Elétricas"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/ferramentas_manuais.svg" class="  centralizado txt_branco " title="Ferramentas Manuais"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/ferramentas_manuais.svg" class="  centralizado txt_branco " title="Ferramentas Manuais"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/revisao.svg" class="  centralizado txt_branco " title="Revisão do Carro"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/revisao.svg" class="  centralizado txt_branco " title="Revisão do Carro"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/socorro_ja.svg" class="  centralizado txt_branco " title="Socorro Já"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/socorro_ja.svg" class="  centralizado txt_branco " title="Socorro Já"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/troca_reparo.svg" class="  centralizado txt_branco " title="Troca e Reparo de Vidros"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/troca_reparo.svg" class="  centralizado txt_branco " title="Troca e Reparo de Vidros"  alt="Pintura de Carros">
           </div>
           <div class="item_menu_pesquisa preenche_20 float_left">
-            <img src="pictures/loja/chaveiro.svg" class="  centralizado txt_branco " title="Chaveiro"  alt="Pintura de Carros">
+            <img src="view/pictures/loja/chaveiro.svg" class="  centralizado txt_branco " title="Chaveiro"  alt="Pintura de Carros">
           </div>
         </div>
       </div>
 
       <div class="container_parceiro_premium centro_lr margem_b_80">
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
-          <img src="pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
+          <img src="view/pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
         </div>
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
-          <img src="pictures/loja/camaro.jpg" alt="">
+          <img src="view/pictures/loja/camaro.jpg" alt="">
         </div>
       </div>
 
@@ -437,19 +437,19 @@
         </div>
 
         <!-- scripts do carrosel -->
-        <script type="text/javascript" src="js/carrosel/carrosel.js"></script>
-        <script type="text/javascript" src="js/carrosel/jcarousellite.js"></script>
-        <script type="text/javascript" src="js/carrosel/carrossel.js"></script>
+        <script type="text/javascript" src="view/js/carrosel/carrosel.js"></script>
+        <script type="text/javascript" src="view/js/carrosel/jcarousellite.js"></script>
+        <script type="text/javascript" src="view/js/carrosel/carrossel.js"></script>
         <!-- ################################################################ -->
 
       </div>
 
       <div class="container_parceiro_premium centro_lr margem_t_80">
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
-          <img src="pictures/loja/audi.jpg" alt="">
+          <img src="view/pictures/loja/audi.jpg" alt="">
         </div>
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
-          <img src="pictures/loja/caoa.jpg" alt="">
+          <img src="view/pictures/loja/caoa.jpg" alt="">
         </div>
       </div>
 
@@ -461,7 +461,7 @@
         <div class="produto_fixo bg_cinza">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
-            <img src="pictures/loja/wheel.jpeg" alt="">
+            <img src="view/pictures/loja/wheel.jpeg" alt="">
           </div>
 
           <!-- Preço do produto fixo -->
@@ -479,7 +479,7 @@
         <div class="produto_fixo bg_cinza">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
-            <img src="pictures/loja/car_machine.jpeg" alt="">
+            <img src="view/pictures/loja/car_machine.jpeg" alt="">
           </div>
 
           <!-- Preço do produto fixo -->
@@ -497,7 +497,7 @@
         <div class="produto_fixo bg_cinza">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
-            <img src="pictures/loja/fuck_wheel.jpeg" alt="">
+            <img src="view/pictures/loja/fuck_wheel.jpeg" alt="">
           </div>
 
           <!-- Preço do produto fixo -->
@@ -515,7 +515,7 @@
         <div class="produto_fixo bg_cinza">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
-            <img src="pictures/loja/steering_wheel.jpeg" alt="">
+            <img src="view/pictures/loja/steering_wheel.jpeg" alt="">
           </div>
 
           <!-- Preço do produto fixo -->
