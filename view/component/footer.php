@@ -1,4 +1,4 @@
-<footer class="">
+<footer class="margem_t_80">
       <div class="segura_conteudo_f centro_lr">
 
         <!-- Area das redes sociais -->

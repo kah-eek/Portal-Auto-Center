@@ -69,12 +69,12 @@
         </div>
       </div>
 
-      <div class="container_parceiro_premium centro_lr">
-        <div class="anuncio_parceiro_premium float_left ">
-          <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
+      <div class="container_parceiro_premium centro_lr margem_b_80">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
+          <img src="pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
         </div>
-        <div class="anuncio_parceiro_premium float_right ">
-          <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
+          <img src="pictures/loja/camaro.jpg" alt="">
         </div>
       </div>
 
@@ -444,30 +444,89 @@
 
       </div>
 
-      <div class="container_parceiro_premium centro_lr">
-        <div class="anuncio_parceiro_premium float_left ">
-          <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
+      <div class="container_parceiro_premium centro_lr margem_t_80">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
+          <img src="pictures/loja/audi.jpg" alt="">
         </div>
-        <div class="anuncio_parceiro_premium float_right">
-          <img src="pictures/cliente_parceiro/parceiro1png.png" alt="">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
+          <img src="pictures/loja/caoa.jpg" alt="">
         </div>
       </div>
 
       <!-- Divisor de conteúdo -->
       <div class="divisor"></div>
 
-      <div class="container_produto_fixo">
-        <div class="produto_fixo">
+      <div class="container_produto_fixo centro_lr">
+        <!-- Produto fixo 1 -->
+        <div class="produto_fixo bg_cinza">
+          <!-- Contáiner da imagem do produto fixo -->
+          <div class="imagem_produto_fixo bg_verde">
+            <img src="pictures/loja/wheel.jpeg" alt="">
+          </div>
 
+          <!-- Preço do produto fixo -->
+          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+            R$ 680,49
+          </div>
+
+          <!-- Descrição do produto fixo -->
+          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+            Pneu
+          </div>
         </div>
-        <div class="produto_fixo">
 
+        <!-- Produto fixo 2 -->
+        <div class="produto_fixo bg_cinza">
+          <!-- Contáiner da imagem do produto fixo -->
+          <div class="imagem_produto_fixo bg_verde">
+            <img src="pictures/loja/car_machine.jpeg" alt="">
+          </div>
+
+          <!-- Preço do produto fixo -->
+          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+            R$ 7.480,49
+          </div>
+
+          <!-- Descrição do produto fixo -->
+          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+            Motot SSR18
+          </div>
         </div>
-        <div class="produto_fixo">
 
+        <!-- Produto fixo 3 -->
+        <div class="produto_fixo bg_cinza">
+          <!-- Contáiner da imagem do produto fixo -->
+          <div class="imagem_produto_fixo bg_verde">
+            <img src="pictures/loja/fuck_wheel.jpeg" alt="">
+          </div>
+
+          <!-- Preço do produto fixo -->
+          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+            R$ 980,23
+          </div>
+
+          <!-- Descrição do produto fixo -->
+          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+            Pneu WR41
+          </div>
         </div>
-        <div class="produto_fixo">
 
+        <!-- Produto fixo 4 -->
+        <div class="produto_fixo bg_cinza">
+          <!-- Contáiner da imagem do produto fixo -->
+          <div class="imagem_produto_fixo bg_verde">
+            <img src="pictures/loja/steering_wheel.jpeg" alt="">
+          </div>
+
+          <!-- Preço do produto fixo -->
+          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+            R$ 1680,00
+          </div>
+
+          <!-- Descrição do produto fixo -->
+          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+            Volante
+          </div>
         </div>
       </div>
 

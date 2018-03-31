@@ -36,14 +36,13 @@
 .anuncio_parceiro_premium{
   width: 700px;
   height: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   /* background-color: pink; */
 }
 .anuncio_parceiro_premium img{
-  width: 700px;
-  height: 300px;
-  animation: pulse 5s infinite;
+  width: 690px;
+  height: 290px;
 }
 .container_slider_produtos{
   width: 1420px;
@@ -56,19 +55,33 @@
 .container_produto_fixo{
   width: 1420px;
   height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color:darkgrey;
 }
 .produto_fixo{
+  transition: 2s;
   width: 300px;
   height: 300px;
   margin-left: 43px;
-  background-color: black;
   float: left;
+  box-shadow: 0px 0px 10px #000;
+}
+.produto_fixo:hover{
+  transition: 1s;
+  box-shadow: 0px 0px 20px #000;
+}
+.imagem_produto_fixo{
+  width: inherit;
+  height: 220px;
+}
+.valor_produto_fixo{
+  width: inherit;
+  height: 30px;
+}
+.descricao_produto_fixo{
+  width: inherit;
+  height: 50px;
 }
 .container_campo_pesquisa_loj{
-  width: 800px;
+  width: 820px;
   height: 80px;
 }
 .fundo_opaco_loj{
@@ -77,14 +90,27 @@
   background-color: rgba(21,21,21,0.5);
 }
 
+.pulsar{
+  width: 700px;
+  height: 300px;
+  box-shadow: 0 0 0 rgba(207,216,220,0.5);
+  animation: pulse 2s infinite;
+}
+
 @keyframes pulse{
   0%{
-    box-shadow: 0px 0px 0px rgba()
+    box-shadow: 0px 0px 80px rgb(0,200,83,0.4);
+  }
+  10%{
+    box-shadow: 0px 0px 100px rgb(0,200,83,0.5);
   }
   70%{
-
+    box-shadow: 0px 0px 80px rgb(0,200,83,0.7);
+  }
+  85%{
+    box-shadow: 0px 0px 50px rgb(0,200,83,0.9);
   }
   100%{
-
+    box-shadow: 0px 0px 20px rgb(0,200,83,1);
   }
 }
