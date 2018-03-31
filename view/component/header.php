@@ -1,20 +1,37 @@
+<?php
+
+  // Arquivo CSS padrão de carregamento
+  $arquivo_css = 'view/css/loja';
+  $header_css = 'view/css/header';
+  $footer_css = 'view/css/footer';
+  $normalize_css = 'view/css/normalize';
+  $padroes_css = 'view/css/padroes';
+
+  // Verifica se existe um outro arquivo fora do padrão a ser carregado
+  if (isset($_GET['page'])) {
+    $arquivo_css= 'css/'.$_GET['page'];
+    $header_css = 'css/header';
+    $footer_css = 'css/footer';
+    $normalize_css = 'css/normalize';
+    $padroes_css = 'css/padroes';
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="br">
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
-    <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="view/css/header.css">
-    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="view/css/loja.css">
-    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="view/css/galeria.css">
-    <link rel="stylesheet" type="text/css" href="view/css/forum.css">
+    <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$header_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$footer_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$arquivo_css?>.css">
     <!-- Corrosel -->
     <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
-    <script src="../js/flip-card.js"></script>
+    <!-- <script src="view/js/flip-card.js"></script> -->
+    <script src="view/js/jquery.js"></script>
   </head>
   <body class="body">
     <header>
@@ -54,7 +71,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">contact_mail</i>
             </div>
-            CONTATO
+            <a href="view/fale_conosco.php?page=fale_conosco">
+              CONTATO
+            </a>
           </div>
         </div>
       </div>
