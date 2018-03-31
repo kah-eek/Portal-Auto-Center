@@ -11,7 +11,7 @@
         <div class="fundo_opaco_loj preenche_t_250">
           <form action="index.html" method="post">
             <div class="container_campo_pesquisa_loj centro_lr">
-              <input required class="input fs_60 float_left" type="text" name="txt_pesquisa" value="" placeholder="Digite o que você procura">
+              <input required class="input_text fs_60 float_left" type="text" name="txt_pesquisa" value="" placeholder="Digite o que você procura">
 
               <label for="btn_pesquisar">
                 <i class="material-icons fs_50 txt_branco txt_sombra_1x1x1_preto outline_none display_block float_left sem_borda transparente preenche_t_10">

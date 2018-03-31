@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/loja.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/galeria.css">
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
     <!-- Corrosel -->
     <link rel="stylesheet" type="text/css" href="css/carrosel/style.css">
     <!-- ##################################################### -->

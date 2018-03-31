@@ -1,0 +1,65 @@
+.container_conteudo_central_for{
+  width: 1420px;
+  min-height: 900px;
+  height: auto;
+}
+.container_topico_forum{
+  width: 1420px;
+  height: 500px;
+}
+.container_foto_like_for{
+  width: 290px;
+  height: 500px;
+  /* background-color: red; */
+}
+.foto_usuario_for{
+  width: 250px;
+  height: 250px;
+}
+.foto_usuario_for img{
+  width: inherit;
+  height: inherit;
+}
+.like_topico_for{
+  width: 250px;
+  height: 60px;
+}
+.curtir_numero_likes_for{
+  width: 160px;
+  height: 30px;
+}
+.curtir_for{
+  width: 40px;
+  height: 30px;
+}
+.numero_curtidas_for{
+  width: 120px;
+  height: 30px;
+}
+.container_texto_topico_for{
+  width: 1130px;
+  height: 430px;
+}
+.container_titulo_topico_for{
+  width: 1120;
+  height: 35px;
+  /* background-color: red; */
+}
+.data_topico_for{
+  width: 1030px;
+  height: 40px;
+  /* background-color: purple; */
+}
+.container_descricao_topico_for{
+  width: 1030px;
+  height: 330px;
+  /* background-color: green; */
+}
+.container_botao_topico_for{
+  width: 1130px;
+  height: 50px;
+  /* background-color: red; */
+}
+.underline{
+  text-decoration-color: #757575;
+}

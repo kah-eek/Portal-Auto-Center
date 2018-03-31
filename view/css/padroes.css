@@ -60,9 +60,12 @@ a{
 /* ********************************************************* */
 
 /* ***************** Sombra dos componentes ******************* */
+.sombra_preta_1{box-shadow: 0px 0px 1px #000;}
+.sombra_preta_2{box-shadow: 0px 0px 2px #000;}
 .sombra_preta_5{box-shadow: 0px 0px 5px #000;}
 .sombra_preta_10{box-shadow: 0px 0px 10px #000;}
 .sombra_preta_20{box-shadow: 0px 0px 20px #000;}
+.sombra_preta_30{box-shadow: 0px 0px 30px #000;}
 .sombra_preta_50{box-shadow: 0px 0px 50px #000;}
 
 .sombra_preta_b_15{box-shadow: 0px 4px 10px -3px #000;}
@@ -150,6 +153,7 @@ a{
 .preenche_l_20{padding-left: 20px;box-sizing: border-box;}
 .preenche_l_30{padding-left: 30px;box-sizing: border-box;}
 .preenche_l_40{padding-left: 40px;box-sizing: border-box;}
+.preenche_l_50{padding-left: 50px;box-sizing: border-box;}
 .preenche_l_100{padding-left: 100px;box-sizing: border-box;}
 
 .preenche_b_10{padding-bottom: 10px;box-sizing: border-box;}
@@ -159,9 +163,15 @@ a{
 
 /* ***************** Efeitos no texto ******************* */
 .negrito{font-weight: bold;} /* Negrito */
+.underline{text-decoration: underline;} /* Adiciona uma linha inferior no texto */
 .word_break{word-break: break-all;}/* 'quebra' a palavra */
 .ellipsis{text-overflow: ellipsis; overflow: hidden;} /* Aplica reticências caso o texto ultrapasse o tamnho desejado */
 .espacamento_linha_25{line-height: 25px;} /* Espaçamento entre as linhas */
+.espacamento_linha_35{line-height: 35px;} /* Espaçamento entre as linhas */
+/* ********************************************************* */
+
+/* ***************** Overflow nos componentes ******************* */
+.overflow_auto{overflow: auto;}
 /* ********************************************************* */
 
 /* ***************** Alinhamento de texto ******************* */
@@ -174,7 +184,7 @@ a{
 /* ********************************************************* */
 
 /* ***************** Campos de entrada (inputs) ******************* */
-.input{
+.input_text{ /*input do tipo text */
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -189,9 +199,23 @@ a{
   font-family: 'titulo';
   text-align: center;
 }
-.input::placeholder{
+.input_text::placeholder{
   color: #fff;
   font-family: 'titulo';
+}
+
+.input_submit{ /*input do tipo submit */
+  background-color: #263238;
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  box-shadow: 0px 4px 5px -2px #000;
+
+  /* Texto */
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
+  font-family: 'titulo';
+  text-align: center;
 }
 /* ****************************************************** */
 
@@ -202,6 +226,9 @@ a{
 .margem_t_20{margin-top: 20px;}
 .margem_t_50{margin-top: 50px;}
 .margem_t_80{margin-top: 80px;}
+.margem_t_100{margin-top: 100px;}
+.margem_t_150{margin-top: 150px;}
+.margem_t_180{margin-top: 180px;}
 
 .margem_b_10{margin-bottom: 10px;}
 .margem_b_20{margin-bottom: 20px;}
@@ -260,8 +287,10 @@ a{
 
 /* ***************** Tamanho das fontes ******************* */
 .fs_14{font-size:14px;}
+.fs_16{font-size:16px;}
 .fs_18{font-size:18px;}
 .fs_20{font-size:20px;}
+.fs_30{font-size:30px;}
 .fs_40{font-size:40px;}
 .fs_50{font-size:50px;}
 .fs_60{font-size:60px;}
@@ -278,6 +307,7 @@ a{
 .bsuavizada_5{border-radius: 5px;}
 .bsuavizada_10{border-radius: 10px;}
 .bsuavizada_25{border-radius: 25px;}
+.bsuavizada_250{border-radius: 250px;}
 /* ****************************************************** */
 
 /* ***************** Borda dos componentes ******************* */
