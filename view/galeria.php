@@ -5,7 +5,7 @@
 
 <!-- Segura conteudo -->
   <div class="principal_galeria centro_lr">
-
+    <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
     <div class="div_segura">
       <div class="titulo_galeria titulo">
         MOTOS
@@ -63,6 +63,8 @@
         </div>
       </div>
     </div>
+
+      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
     <div class="div_segura">
       <div class="titulo_galeria titulo">
         SERVIÇOS
@@ -120,6 +122,8 @@
         </div>
       </div>
     </div>
+
+      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
     <div class="div_segura">
       <div class="titulo_galeria titulo">
         CARROS
@@ -177,6 +181,7 @@
         </div>
       </div>
     </div>
+      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
     <div class="div_segura">
       <div class="titulo_galeria titulo">
         PRODUTOS
