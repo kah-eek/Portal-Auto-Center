@@ -49,7 +49,7 @@
             </div>
             <!-- Campo - E-mail -->
             <div class="campo_texto margem_b_30 preenche_l_100">
-              <input required class="input_text sem_sombra txt_preto fs_20" id="txt_email" type="text" name="txt_email" value="">
+              <input required class="input_text sem_sombra txt_preto fs_20" id="txt_email" type="email" name="txt_email" value="">
             </div>
             <!-- ___________________________________________________________________ -->
 
