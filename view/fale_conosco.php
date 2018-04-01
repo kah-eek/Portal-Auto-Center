@@ -66,7 +66,7 @@
             <!-- ___________________________________________________________________ -->
 
             <!-- Container do botão de enviar o formulário -->
-            <div class="container_botao_enviar titulo margem_t_215">
+            <div class="container_botao_enviar titulo margem_t_115">
               <input class="input_submit bg_verde_vivo negrito espacamento_letra_2" type="submit" name="btn_enviar" value="Enviar">
             </div>
             <!-- ___________________________________________________________________ -->
