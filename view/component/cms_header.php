@@ -11,9 +11,11 @@
     <link rel="stylesheet" type="text/css" href="../css/padroes.css">
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_header.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_menu_lateral.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_home.css">
   </head>
-  <body>
-
+  <body class="bg_cinza">
+    
     <!-- Contáiner do cabeçalho -->
     <header class="bg_azulado_escuro">
       <!-- Contáiner do cabeçalho centralizado -->
@@ -34,6 +36,3 @@
         </div>
       </div>
     </header>
-
-  </body>
-</html>

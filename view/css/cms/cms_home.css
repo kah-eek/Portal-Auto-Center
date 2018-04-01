@@ -1,0 +1,21 @@
+.container_principal{
+  width: 1420px;
+  height: 885px;
+}
+.conteudo_central{
+  width: 1155px;
+  height: 885px;
+  background-image: url("../../pictures/cms_home/dashboard.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.fundo_preto{
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0,0,0,0.5);
+}
+.mensgaem_saudacao{
+  width: inherit;
+  height: 100px;
+  /* background-color: red; */
+}

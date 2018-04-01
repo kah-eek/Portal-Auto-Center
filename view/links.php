@@ -12,5 +12,6 @@
     <a href="galeria.php">galeria</a><br>
     <a href="forum.php">forum</a><br>
     <a href="component/cms_header.php">CMS Header</a><br>
+    <a href="component/cms_menu_lateral.php">CMS Menu lateral</a><br>
   </body>
 </html>

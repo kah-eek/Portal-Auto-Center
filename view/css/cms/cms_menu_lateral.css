@@ -1,0 +1,54 @@
+.delete{
+  width: 1420px;
+  height: 885px;
+}
+
+.menu_lateral{
+  width: 265px;
+  height: 100%;
+}
+.item_menu_lateral{
+  transition: 1s;
+  width: 265px;
+  height: 70px;
+}
+.item_menu_lateral:hover{
+  transition: 2s;
+  background-color: #000;
+  box-shadow: 0px 5px 10px -1px #212;
+}
+.item_menu_lateral:hover .barra_decorativa_item{
+  transition: 3s;
+  width: 225px;
+  border-radius: 100px;
+}
+.item_menu_lateral:hover .titulo_item{
+  transition: 1s;
+  padding-left: 20px;
+  color: #fff;
+  text-shadow: 0px 0px 1px #000;
+}
+.item_menu_lateral:hover .seletor{
+  transition: 5s;
+  color: #00C853;
+}
+.titulo_item{
+  transition: 1s;
+  width: 230px;
+  height: 50px;
+}
+.barra_decorativa_item{
+  transition: 2s;
+  width: 0px;
+  height: 2px;
+}
+.container_item_selecionado{
+  width: 35px;
+  height: 50px;
+  /* background-color: blue; */
+}
+.faixa_inferior{
+  width: 265px;
+  height: 100px;
+  /* background-color: aqua; */
+}
