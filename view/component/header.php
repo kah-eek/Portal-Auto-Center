@@ -27,8 +27,6 @@
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
 
-    <!-- <link rel="stylesheet" type="text/css" href="css/veiculos.css"> -->
-
     <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$header_css?>.css">

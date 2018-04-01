@@ -30,9 +30,8 @@
   <div class="container_segura_item_veic centro_lr transparente">
     <a href="#">
       <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <!-- Imagem do ítem do carrosel -->
         <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos"/>
+          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="imagem de carro"/>
         </div>
         <div class="descricao_nome align_center conteudo">
           Tígua
@@ -53,9 +52,8 @@
 
     <a href="#">
       <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <!-- Imagem do ítem do carrosel -->
         <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos"/>
+          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="imagem de carro"/>
         </div>
         <div class="descricao_nome align_center conteudo">
           Tígua
@@ -76,9 +74,8 @@
 
     <a href="#">
       <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <!-- Imagem do ítem do carrosel -->
         <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos"/>
+          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
         </div>
         <div class="descricao_nome align_center conteudo">
           Tígua
@@ -99,7 +96,6 @@
 
     <a href="#">
       <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <!-- Imagem do ítem do carrosel -->
         <div class="imagem_item_veiculo">
           <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
         </div>
@@ -114,7 +110,7 @@
         </div>
         <div class="input_submit centro_lr">
           <button type="button" name="btn_detalhes">
-            <a href="#">Detalhes</a>
+            <a href="">Detalhes</a>
           </button>
         </div>
       </div>
