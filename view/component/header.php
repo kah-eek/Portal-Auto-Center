@@ -7,6 +7,7 @@
   $normalize_css = 'view/css/normalize';
   $padroes_css = 'view/css/padroes';
   $jquery = 'view/js/jquery.js';
+  $logo_pac = 'view/pictures/logo/portal_auto_center';
 
   // Verifica se existe um outro arquivo fora do padrão a ser carregado
   if (isset($_GET['page'])) {
@@ -16,6 +17,7 @@
     $normalize_css = 'css/normalize';
     $padroes_css = 'css/padroes';
     $jquery = 'js/jquery.js';
+    $logo_pac = 'pictures/logo/portal_auto_center';
   }
 
 ?>
@@ -87,7 +89,7 @@
       <div class="container_slogan_logo">
         <div class="container_segura_logo_slider centro_lr">
           <div class="container_item_logo">
-            <img src="view/pictures/logo/portal_auto_center.png" alt="" />
+            <img src="<?=$logo_pac?>.png" alt="Logo da Portal Auto Center" />
           </div>
           <div class="container_item_slogan titulo txt_branco ">
             Deixe que nós cuidamos de tudo para você.

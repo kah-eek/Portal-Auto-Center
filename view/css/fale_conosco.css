@@ -1,0 +1,59 @@
+.container_principal{
+  width: 100%;
+  height: 100%;
+  background-image: url("../pictures/fale_conosco/bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container_fundo_escuro{
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0,0,0,0.7);
+}
+.container_conteudo_centralizado{
+  width: 1000px;
+  height: 1000px;
+  /* background-color: rgba(0,0,0,0.8); */
+}
+.titulo_pagina{
+  width: 1000px;
+  height: 220px;
+  /* background-color: green; */
+}
+.subtitulo{
+  width: 1000px;
+  height: 55px;
+}
+.titulo_principal{
+  width: 1000px;
+  height: 80px;
+}
+.label_campo{
+  width: 800px;
+  height: 20px;
+  /* background-color: red; */
+}
+.campo_texto{
+  width: 800px;
+  height: 50px;
+  /* background-color: blue; */
+}
+.campo_texto_textarea{
+  width: 800px;
+  height: 210px;
+  /* background-color: blue; */
+}
+.input_text{
+  width: 800px;
+  text-align: left;
+}
+.input_submit{
+  width: 100%;
+  height: 45px;
+  border-radius: 0;
+}
+.container_botao_enviar{
+  width: 100%;
+  height: 45px;
+  /* background-color: green; */
+}
