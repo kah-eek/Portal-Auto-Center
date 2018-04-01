@@ -10,5 +10,6 @@
     <a href="view/loja.php">HOME</a><br>
     <a href="view/component/footer.php">footer</a><br>
     <a href="view/galeria.php">galeria</a><br>
+    <a href="view/forum.php">forum</a><br>
   </body>
 </html>

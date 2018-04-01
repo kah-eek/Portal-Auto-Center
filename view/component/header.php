@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
-    <link rel="stylesheet" type="text/css" href="css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/loja.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <link rel="stylesheet" type="text/css" href="css/galeria.css">
-    <link rel="stylesheet" type="text/css" href="css/veiculos.css">
+    <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
+    <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="view/css/header.css">
+    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="view/css/loja.css">
+    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="view/css/galeria.css">
+    <link rel="stylesheet" type="text/css" href="view/css/forum.css">
+    <link rel="stylesheet" type="text/css" href="view/css/veiculos.css">
+
     <!-- Corrosel -->
-    <link rel="stylesheet" type="text/css" href="css/carrosel/style.css">
+    <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
     <script src="../js/flip-card.js"></script>
   </head>
@@ -64,7 +66,7 @@
       <div class="container_slogan_logo">
         <div class="container_segura_logo_slider centro_lr">
           <div class="container_item_logo">
-            <img src="pictures/logo/portal_auto_center.png" alt="" />
+            <img src="view/pictures/logo/portal_auto_center.png" alt="" />
           </div>
           <div class="container_item_slogan titulo txt_branco ">
             Deixe que nós cuidamos de tudo para você.
