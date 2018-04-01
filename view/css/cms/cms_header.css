@@ -1,0 +1,24 @@
+header{
+  width: 100%;
+  height: 80px;
+}
+.cabecalho_centralizado{
+  width: 1420px;
+  height: 80px;
+}
+.logo_pac{
+  width: 150px;
+  height: 80px;
+}
+.logo_pac img{
+  width: inherit;
+  height: inherit;
+}
+.titulo_cabecalho{
+  width: 900px;
+  height: 80px;
+}
+.saudacao_cabecalho{
+  width: 370px;
+  height: 80px;
+}

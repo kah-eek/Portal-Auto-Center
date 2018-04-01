@@ -67,6 +67,8 @@ a{
 .sombra_preta_20{box-shadow: 0px 0px 20px #000;}
 .sombra_preta_30{box-shadow: 0px 0px 30px #000;}
 .sombra_preta_50{box-shadow: 0px 0px 50px #000;}
+.sombra_preta_100{box-shadow: 0px 0px 100px #000;}
+.sombra_preta_200{box-shadow: 0px 0px 200px #000;}
 
 .sombra_preta_b_15{box-shadow: 0px 4px 10px -3px #000;}
 
@@ -130,10 +132,13 @@ a{
 .preenche_20{padding: 20px;box-sizing: border-box;}
 .preenche_30{padding: 30px;box-sizing: border-box;}
 .preenche_50{padding: 50px;box-sizing: border-box;}
+.preenche_80{padding: 80px;box-sizing: border-box;}
+.preenche_100{padding: 100px;box-sizing: border-box;}
 
 .preenche_t_10{padding-top: 10px;box-sizing: border-box;}
 .preenche_t_20{padding-top: 20px;box-sizing: border-box;}
 .preenche_t_30{padding-top: 30px;box-sizing: border-box;}
+.preenche_t_40{padding-top: 40px;box-sizing: border-box;}
 .preenche_t_50{padding-top: 50px;box-sizing: border-box;}
 .preenche_t_60{padding-top: 60px;box-sizing: border-box;}
 .preenche_t_80{padding-top: 80px;box-sizing: border-box;}
@@ -166,6 +171,10 @@ a{
 .underline{text-decoration: underline;} /* Adiciona uma linha inferior no texto */
 .word_break{word-break: break-all;}/* 'quebra' a palavra */
 .ellipsis{text-overflow: ellipsis; overflow: hidden;} /* Aplica reticências caso o texto ultrapasse o tamnho desejado */
+
+.espacamento_letra_2{letter-spacing: 2px;} /* Espaçamento entre as linhas */
+.espacamento_letra_5{letter-spacing: 5px;} /* Espaçamento entre as linhas */
+
 .espacamento_linha_25{line-height: 25px;} /* Espaçamento entre as linhas */
 .espacamento_linha_35{line-height: 35px;} /* Espaçamento entre as linhas */
 /* ********************************************************* */
@@ -227,11 +236,18 @@ a{
 .margem_t_50{margin-top: 50px;}
 .margem_t_80{margin-top: 80px;}
 .margem_t_100{margin-top: 100px;}
+.margem_t_110{margin-top: 110px;}
+.margem_t_115{margin-top: 115px;}
 .margem_t_150{margin-top: 150px;}
 .margem_t_180{margin-top: 180px;}
+.margem_t_200{margin-top: 200px;}
+.margem_t_210{margin-top: 210px;}
+.margem_t_215{margin-top: 215px;}
 
 .margem_b_10{margin-bottom: 10px;}
 .margem_b_20{margin-bottom: 20px;}
+.margem_b_30{margin-bottom: 30px;}
+.margem_b_40{margin-bottom: 40px;}
 .margem_b_50{margin-bottom: 50px;}
 .margem_b_80{margin-bottom: 80px;}
 /* ****************************************************** */
@@ -253,6 +269,10 @@ a{
 .bg_azulado_escuro{background-color:#263238;}
 
 .transparente{background-color:transparent;}
+/* ****************************************************** */
+
+/* ***************** Redimensionamento dos componentes ******************* */
+.no_resize{resize: none;}
 /* ****************************************************** */
 
 /* ***************** Cores das fontes ******************* */
@@ -285,11 +305,16 @@ a{
 .sem_margem{margin:0px;}
 /* ****************************************************** */
 
+/* ***************** Remove a sombra dos componentes ******************* */
+.sem_sombra{box-shadow: none;}
+/* ****************************************************** */
+
 /* ***************** Tamanho das fontes ******************* */
 .fs_14{font-size:14px;}
 .fs_16{font-size:16px;}
 .fs_18{font-size:18px;}
 .fs_20{font-size:20px;}
+.fs_25{font-size:25px;}
 .fs_30{font-size:30px;}
 .fs_40{font-size:40px;}
 .fs_50{font-size:50px;}
