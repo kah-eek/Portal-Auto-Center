@@ -33,12 +33,20 @@
   font-family: 'titulo';
 }
 
+.container_segura_item_veic{
+  width: 1305px;
+  min-height: 350px;
+  height: auto;
+  /*background-color: red;*/
+  overflow: hidden;
+
+}
 
 
 .container_item_veiculo{
   transition: 1s;
   width: 300px;
-  height: 300px;
+  height: 350px;
   margin-left: 20px;
   /*box-shadow: 0px 0px 5px #000;*/
 }
@@ -98,18 +106,35 @@
   transition:1s;
   width: 300px;
   height: 30px;
+  padding-top: 10px;
 
 }
 
 .descricao_marca{
   transition:1s;
   width: 300px;
-  height: 30px;
+  height: 25px;
+  padding-top: 5px;
 
 }
 
 .descricao_data{
   transition:1s;
   width: 300px;
-  height: 30px;
+  height: 25px;
+  padding-top: 5px;
 }
+
+.input_submit{
+  margin-top: 5px;
+
+}
+/*.container_btn_detalhes{
+  width: 100px;
+  height: 30px;
+
+}
+button{
+  width: 100px;
+  height: 30px;
+}*/
