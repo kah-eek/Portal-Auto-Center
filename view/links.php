@@ -5,11 +5,11 @@
     <title></title>
   </head>
   <body>
-    <a href="view/index.php">Inico</a><br>
-    <a href="view/component/header.php">header</a><br>
-    <a href="view/loja.php">HOME</a><br>
-    <a href="view/component/footer.php">footer</a><br>
-    <a href="view/galeria.php">galeria</a><br>
-    <a href="view/forum.php">forum</a><br>
+    <a href="index.php">Inico</a><br>
+    <a href="component/header.php">header</a><br>
+    <a href="component/footer.php">footer</a><br>
+    <a href="fale_conosco.php">Fale Conosco</a><br>
+    <a href="galeria.php">galeria</a><br>
+    <a href="forum.php">forum</a><br>
   </body>
 </html>

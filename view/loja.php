@@ -92,8 +92,8 @@
                   <div id="carrossel" class="preenche_t_20 preenche_b_20">
                     <ul>
                       <!-- Item 1 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -109,12 +109,12 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
                       <!-- Item 3 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/221325/pexels-photo-221325.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -130,13 +130,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 4 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -152,13 +152,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 5 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -174,13 +174,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 6 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -196,16 +196,16 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 7 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
-                            <img src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&h=650&w=940 1x, https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 2x" alt="Item Carrosel" title="Item Carrosel"/>
+                            <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
                           </div>
 
                           <!-- Valor do iítem do carrosel -->
@@ -218,13 +218,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 8 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/38637/car-audi-auto-automotive-38637.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -240,8 +240,8 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
                     </ul>
                   </div>
@@ -274,8 +274,8 @@
                   <div id="carrossel1" class="preenche_t_20 preenche_b_20">
                     <ul>
                       <!-- Item 1 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -291,12 +291,12 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
                       <!-- Item 3 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/221325/pexels-photo-221325.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -312,13 +312,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 4 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/337909/pexels-photo-337909.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -334,13 +334,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 5 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -356,13 +356,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 6 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -378,16 +378,16 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 7 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
-                            <img src="https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&h=650&w=940 1x, https://images.pexels.com/photos/119435/pexels-photo-119435.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 2x" alt="Item Carrosel" title="Item Carrosel"/>
+                            <img src="view/pictures/loja/jeep.jpeg" alt="Item Carrosel" title="Item Carrosel"/>
                           </div>
 
                           <!-- Valor do iítem do carrosel -->
@@ -400,13 +400,13 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
 
                       <!-- Item 8 -->
-                      <a href="#">
-                        <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                      <li class="container_item_carrosel_loj borda_verde_vivo_2 bsuavizada_5 bg_cinza">
+                        <a href="#">
                           <!-- Imagem do ítem do carrosel -->
                           <div class="imagem_item_carrosel_loj">
                             <img src="https://images.pexels.com/photos/38637/car-audi-auto-automotive-38637.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Item Carrosel" title="Item Carrosel"/>
@@ -422,8 +422,8 @@
                           <div class="descricao_item_carrosel_loj bg_branco conteudo preenche_5 ellipsis align_center">
                             Motor V8
                           </div>
-                        </li>
-                      </a>
+                        </a>
+                      </li>
                       <!-- ****************** -->
                     </ul>
                   </div>
@@ -437,9 +437,9 @@
         </div>
 
         <!-- scripts do carrosel -->
-        <script type="text/javascript" src="view/js/carrosel/carrosel.js"></script>
-        <script type="text/javascript" src="view/js/carrosel/jcarousellite.js"></script>
-        <script type="text/javascript" src="view/js/carrosel/carrossel.js"></script>
+        <script src="view/js/carrosel/carrosel.js"></script>
+        <script src="view/js/carrosel/jcarousellite.js"></script>
+        <script src="view/js/carrosel/carrossel.js"></script>
         <!-- ################################################################ -->
 
       </div>

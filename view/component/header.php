@@ -1,8 +1,30 @@
+<?php
+
+  // Arquivo CSS padrão de carregamento
+  $arquivo_css = 'view/css/loja';
+  $header_css = 'view/css/header';
+  $footer_css = 'view/css/footer';
+  $normalize_css = 'view/css/normalize';
+  $padroes_css = 'view/css/padroes';
+  $jquery = 'view/js/jquery.js';
+
+  // Verifica se existe um outro arquivo fora do padrão a ser carregado
+  if (isset($_GET['page'])) {
+    $arquivo_css= 'css/'.$_GET['page'];
+    $header_css = 'css/header';
+    $footer_css = 'css/footer';
+    $normalize_css = 'css/normalize';
+    $padroes_css = 'css/padroes';
+    $jquery = 'js/jquery.js';
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="br">
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
     <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="view/css/header.css">
@@ -13,10 +35,18 @@
     <link rel="stylesheet" type="text/css" href="view/css/forum.css">
     <link rel="stylesheet" type="text/css" href="view/css/veiculos.css">
 
+=======
+    <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$header_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$footer_css?>.css">
+    <link rel="stylesheet" type="text/css" href="<?=$arquivo_css?>.css">
+>>>>>>> 24e6061c6d6976fa6d00823c7253b106a0c85d4c
     <!-- Corrosel -->
     <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
-    <script src="../js/flip-card.js"></script>
+    <!-- <script src="view/js/flip-card.js"></script> -->
+    <script src="<?=$jquery?>"></script>
   </head>
   <body class="body">
     <header>
@@ -26,7 +56,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">home</i>
             </div>
-            HOME
+            <a href="<?php if(isset($_GET['page'])) echo '../index.php' ?>">
+              HOME
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
@@ -56,7 +88,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">contact_mail</i>
             </div>
-            CONTATO
+            <a href="view/fale_conosco.php?page=fale_conosco">
+              CONTATO
+            </a>
           </div>
         </div>
       </div>
