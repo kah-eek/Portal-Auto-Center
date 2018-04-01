@@ -27,7 +27,7 @@
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
 
-    <link rel="stylesheet" type="text/css" href="css/veiculos.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/veiculos.css"> -->
 
     <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
@@ -57,7 +57,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">directions_car</i>
             </div>
-            CARROS
+            <a href="view/veiculos.php?page=veiculos">
+              CARROS
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
