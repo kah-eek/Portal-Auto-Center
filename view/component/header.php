@@ -24,24 +24,15 @@
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="view/css/header.css">
-    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="view/css/loja.css">
-    <link rel="stylesheet" type="text/css" href="view/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="view/css/galeria.css">
-    <link rel="stylesheet" type="text/css" href="view/css/forum.css">
-    <link rel="stylesheet" type="text/css" href="view/css/veiculos.css">
 
-=======
+    <link rel="stylesheet" type="text/css" href="css/veiculos.css">
+
     <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$header_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$footer_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$arquivo_css?>.css">
->>>>>>> 24e6061c6d6976fa6d00823c7253b106a0c85d4c
+
     <!-- Corrosel -->
     <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
