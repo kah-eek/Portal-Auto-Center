@@ -69,7 +69,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">photo_size_select_actual</i>
             </div>
+            <a href="view/galeria.php?page=galeria">
             GALERIA
+            </a>
           </div>
           <div class="item_menu1 float_left titulo ">
             <div class="icone_item_menu1">
