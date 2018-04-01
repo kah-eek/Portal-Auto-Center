@@ -13,9 +13,10 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_header.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_menu_lateral.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_home.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_cliente_parceiro.css">
   </head>
   <body class="bg_cinza">
-    
+
     <!-- Contáiner do cabeçalho -->
     <header class="bg_azulado_escuro">
       <!-- Contáiner do cabeçalho centralizado -->

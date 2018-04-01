@@ -26,11 +26,13 @@
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
+
     <link rel="stylesheet" type="text/css" href="<?=$padroes_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$normalize_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$header_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$footer_css?>.css">
     <link rel="stylesheet" type="text/css" href="<?=$arquivo_css?>.css">
+
     <!-- Corrosel -->
     <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
@@ -53,7 +55,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">directions_car</i>
             </div>
-            CARROS
+            <a href="view/veiculos.php?page=veiculos">
+              CARROS
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
@@ -65,7 +69,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">photo_size_select_actual</i>
             </div>
+            <a href="view/galeria.php?page=galeria">
             GALERIA
+            </a>
           </div>
           <div class="item_menu1 float_left titulo ">
             <div class="icone_item_menu1">

@@ -1,0 +1,140 @@
+.container_imagem_veiculos{
+  width: 100%;
+  height: 800px;
+  background-image: url(../pictures/background/imagem_veiculos.jpg);
+  background-size: cover;
+  /*background-color: red;*/
+  background-attachment: fixed;
+}
+
+.container_campo_pesquisa_veic{
+  width: 820px;
+  height: 80px;
+}
+
+.input_veic{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-color: #00C853;
+  outline: none;
+  background-color: transparent;
+  box-shadow: 0px 1px 25px -2px #000;
+  text-overflow: ellipsis;
+
+  /* Texto */
+  color: #fff;
+  font-family: 'titulo';
+  text-align: left;
+}
+
+.input_veic::placeholder{
+  color: #fff;
+  font-family: 'titulo';
+}
+
+.container_segura_item_veic{
+  width: 1305px;
+  min-height: 350px;
+  height: auto;
+  /*background-color: red;*/
+  overflow: hidden;
+
+}
+
+
+.container_item_veiculo{
+  transition: 1s;
+  width: 300px;
+  height: 350px;
+  margin-left: 20px;
+  /*box-shadow: 0px 0px 5px #000;*/
+}
+.container_item_veiculo:hover{
+  transition:1s;
+  box-shadow: 0px 0px 50px #000;
+}
+.container_item_veiculo:hover{
+  transition:1s;
+
+  /* Texto */
+  /*font-weight: bold;*/
+  /*color: #000;*/
+  /*text-shadow: 1px 1px 1px #00C853;*/
+}
+.container_item_veiculo:hover .descricao_nome{
+  transition:1s;
+  /*background-color: #00C853;*/
+
+  /* Texto */
+  color: #000;
+  /*font-weight: bold;*/
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px #00C853;
+}
+
+
+
+.container_item_veiculo:hover .descricao_marca{
+  transition:1s;
+  background-color: #00C853;
+
+  /* Texto */
+  color: #fff;
+  /* font-weight: bold; */
+  text-shadow: 1px 1px 2px #000;
+
+}
+
+.container_item_veiculo:hover .descricao_data{
+  transition:1s;
+  background-color: #00C853;
+
+  /* Texto */
+  color: #fff;
+  /* font-weight: bold; */
+  text-shadow: 1px 1px 2px #000;
+
+}
+
+.imagem_item_veiculo img{
+  width: 300px;
+  height: 200px;
+}
+
+.descricao_nome{
+  transition:1s;
+  width: 300px;
+  height: 30px;
+  padding-top: 10px;
+
+}
+
+.descricao_marca{
+  transition:1s;
+  width: 300px;
+  height: 25px;
+  padding-top: 5px;
+
+}
+
+.descricao_data{
+  transition:1s;
+  width: 300px;
+  height: 25px;
+  padding-top: 5px;
+}
+
+.input_submit{
+  margin-top: 5px;
+
+}
+/*.container_btn_detalhes{
+  width: 100px;
+  height: 30px;
+
+}
+button{
+  width: 100px;
+  height: 30px;
+}*/

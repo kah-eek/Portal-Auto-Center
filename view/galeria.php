@@ -19,7 +19,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrthrthrtnrtnre
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrthrthrtnr
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrthrthrt
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrthrthr
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrt
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhr
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrt
           </div>
         </div>
       </div>
@@ -115,7 +115,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthr
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherh
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthr
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrth
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthr
           </div>
         </div>
       </div>
@@ -190,7 +190,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrth
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthr
           </div>
         </div>
       </div>
@@ -216,7 +216,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthr
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@
               Parceiro Tal xxxxx
           </div>
           <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnregthgrwhjw5rj
+            dsgggrgregerherhrthrthr
           </div>
         </div>
       </div>

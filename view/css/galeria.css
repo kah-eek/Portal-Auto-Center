@@ -1,6 +1,6 @@
 .principal_galeria{
   width: 1430px;
-  min-height: 1320px;
+  min-height: 1440px;
   height: auto;
   overflow: hidden;
   margin-top: 10px;
@@ -10,7 +10,7 @@
 .div_segura{
   min-width: 350px;
   width: auto;
-  min-height:1300px;
+  min-height:1440px;
   height: auto;
   float:left;
   margin-right: 5px;
