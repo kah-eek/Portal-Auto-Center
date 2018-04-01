@@ -6,6 +6,7 @@
   $footer_css = 'view/css/footer';
   $normalize_css = 'view/css/normalize';
   $padroes_css = 'view/css/padroes';
+  $jquery = 'view/js/jquery.js';
 
   // Verifica se existe um outro arquivo fora do padrão a ser carregado
   if (isset($_GET['page'])) {
@@ -14,6 +15,7 @@
     $footer_css = 'css/footer';
     $normalize_css = 'css/normalize';
     $padroes_css = 'css/padroes';
+    $jquery = 'js/jquery.js';
   }
 
 ?>
@@ -31,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
     <!-- ##################################################### -->
     <!-- <script src="view/js/flip-card.js"></script> -->
-    <script src="view/js/jquery.js"></script>
+    <script src="<?=$jquery?>"></script>
   </head>
   <body class="body">
     <header>
@@ -41,7 +43,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">home</i>
             </div>
-            HOME
+            <a href="<?php if(isset($_GET['page'])) echo '../index.php' ?>">
+              HOME
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
