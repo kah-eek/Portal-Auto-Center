@@ -13,5 +13,6 @@
     <a href="forum.php">forum</a><br>
     <a href="component/cms_header.php">CMS Header</a><br>
     <a href="component/cms_menu_lateral.php">CMS Menu lateral</a><br>
+    <a href="cliente_parceiro.php">cliente_parceiro</a><br>
   </body>
 </html>
