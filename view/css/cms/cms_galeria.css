@@ -1,0 +1,133 @@
+/*edita a imagem fazendo ela pegar 100%% da div*/
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+/********************************/
+
+.container_principal{
+  width: 1420px;
+  height: 885px;
+}
+
+.conteiner_conteudo{
+  width: 1155px;
+  height: 100%;
+}
+
+.conteudo_galeria{
+  width: 1000px;
+  height: 200px;
+  margin-top: 20px;
+  background-color: #DCDCDC;
+  /*background-color: #b3b3b3;*/
+}
+
+.titulo_galeria{
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  background-color: #000;
+}
+
+.segura_conteudo{
+  width: 996px;
+  height: 166px;
+  border: solid 2px #000;
+}
+
+.segura_img{
+  width: 140px;
+  height: 140px;
+  margin-top: 13px;
+  margin-left: 13px;
+  float: left;
+}
+
+
+
+/**********************/
+
+.segura_botoes{
+  width: 500px;
+  height: 100%;
+  margin-left: 20px;
+  float: left;
+}
+
+.segura_icone{
+  width: 250px;
+  height: 45px;
+  margin-top: 25px;
+}
+
+.icone{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border: solid 1px #000;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.icone img{
+  width: 80%;
+  height: 80%;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+
+.icone_delete{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border: solid 1px #000;
+  border-radius: 50px 50px 50px 50px;
+}
+
+.icone_delete img{
+  width: 65%;
+  height: 65%;
+  margin-top: 7px;
+  margin-left: 7px;
+}
+
+.inf_icone{
+  width: 150px;
+  height: 20px;
+  padding-top: 10px;
+  padding-left: 5px;
+  float: left;
+}
+
+/********************************/
+.img_pags{
+  width: 250px;
+  height: 100%;
+  float: left;
+}
+
+.titulo_img{
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.container_img{
+  width: 248px;
+  height: 135px;
+  border: solid 1px #000;
+  overflow: auto;
+}
+
+.img_galeria{
+  width: 100px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}

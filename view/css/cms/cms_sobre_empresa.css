@@ -1,0 +1,61 @@
+/*edita a imagem fazendo ela pegar 100%% da div*/
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+/********************************/
+
+.container_principal{
+  width: 1420px;
+  height: 885px;
+}
+
+.conteiner_conteudo{
+  width: 1155px;
+  height: 100%;
+}
+
+
+/*Dividi a div do conteudo em duas partes*/
+.metade{
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+/*Area Sobre a empresa*/
+.sobre{
+  width: 100%;
+  height: 60%;
+}
+
+
+.metade:hover >.sobre{
+  width: 10px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+/*Are dos valores*/
+.valores{
+  width: 100%;
+  height: 40%;
+  background-color: grey;
+}
+
+/*Area  visao*/
+.visao{
+  width: 100%;
+  height: 45%;
+  background-color: pink;
+}
+
+
+/*Area missao*/
+.missao{
+  width: 100%;
+  height: 55%;
+  background-color: yellow;
+}

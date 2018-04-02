@@ -2,7 +2,11 @@
   // Importando o cabeçalho
   require_once("component/header.php");
 ?>
-
+<!--
+@autor Allan Alves
+@data 31/03/2018
+@descricao Página da galeria
+-->
 <!-- Segura conteudo -->
   <div class="principal_galeria centro_lr">
     <!-- Coluna que contem fotos relacionado ao titulo da coluna -->

@@ -2,6 +2,12 @@
   // Importando o cabeçalho
   require_once("component/header.php");
 ?>
+
+<!--
+@autor Allan Alves
+@data 01/04/2018
+@descricao Página Sobre a Empresa PAC
+-->
   <!-- Conteudo -->
   <div class="container_sobre_empresa centro_lr">
     <!-- Conteudo referente Sobre Nos -->
@@ -78,7 +84,6 @@
           <img src="pictures/sobre_empresa/valores.png" alt="Imagem">
         </div>
       </div>
-    </div>
     </div>
   </div>
 
