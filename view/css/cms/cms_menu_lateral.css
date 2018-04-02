@@ -1,16 +1,12 @@
-.delete{
-  width: 1420px;
-  height: 885px;
-}
-
 .menu_lateral{
   width: 265px;
   height: 100%;
 }
 .item_menu_lateral{
   transition: 1s;
-  width: 265px;
+  width: 263px;
   height: 70px;
+  /* background-color: red; */
 }
 .item_menu_lateral:hover{
   transition: 2s;
@@ -30,22 +26,25 @@
 }
 .item_menu_lateral:hover .seletor{
   transition: 5s;
+  text-shadow: 0px 0px 1px #000;
   color: #00C853;
 }
 .titulo_item{
   transition: 1s;
   width: 230px;
   height: 50px;
+  /* background-color: green; */
 }
 .barra_decorativa_item{
   transition: 2s;
   width: 0px;
   height: 2px;
+  /* background-color: blue; */
 }
 .container_item_selecionado{
-  width: 35px;
+  width: 33px;
   height: 50px;
-  /* background-color: blue; */
+  /* background-color: aqua; */
 }
 .faixa_inferior{
   width: 265px;
