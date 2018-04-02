@@ -6,6 +6,10 @@
   @autor Caique M. Oliveira
   @data 25/03/2018
   @descricao Página informativa sobre o Parceiro e o Cliente
+
+  @autor Allan Alves
+  @data 02/04/2018
+  @Edição da pagina  
   -->
 
   <!-- Container principal do conteúdo sobre o Cliente -->

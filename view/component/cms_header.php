@@ -8,14 +8,15 @@
     <meta name="author" content="Caique M. Oliveira">
     <meta charset="utf-8">
     <title>Portal Auto Center - CMS</title>
-    <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_header.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_menu_lateral.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_home.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_cliente_parceiro.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_galeria.css">
-    <link rel="stylesheet" type="text/css" href="view/css/cms/cms_sobre_empresa.css">
+    <link rel="stylesheet" type="text/css" href="../css/padroes.css">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_header.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_menu_lateral.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_home.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_cliente_parceiro.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
+    <script src="../js/jquery.js"></script>
   </head>
   <body class="bg_cinza">
 
