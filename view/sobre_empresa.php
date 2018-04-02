@@ -33,6 +33,8 @@
         </div>
       </div>
     </div>
+    <!-- Separa conteudo -->
+    <div class="divisor_se"></div>
     <!-- Conteudo referente Missao da empresa -->
     <div class="caixa_inf">
       <div class="titulo_inf titulo ">
@@ -50,6 +52,8 @@
         </div>
       </div>
     </div>
+    <!-- Separa conteudo -->
+    <div class="divisor_se"></div>
     <!-- Conteudo referente Visao da empresa -->
     <div class="caixa_inf">
       <div class="titulo_inf titulo">
@@ -67,6 +71,8 @@
         </div>
       </div>
     </div>
+    <!-- Separa conteudo -->
+    <div class="divisor_se"></div>
     <div class="caixa_inf">
       <!-- Conteudo referente Valores da empresa -->
       <div class="titulo_inf titulo">
