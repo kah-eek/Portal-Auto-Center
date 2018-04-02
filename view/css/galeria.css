@@ -76,7 +76,6 @@
   margin-left: 5px;
   margin-right: 8px;
   margin-top: 8px;
-  margin-bottom: 8px;
   border-radius: 40px 40px 40px 40px;
 }
 
@@ -85,6 +84,7 @@
 }
 
 .img_galeria:hover >.escondidinha{
+  width: 340px;
   display:block;
   background-color: #000;
   opacity: 0.6;

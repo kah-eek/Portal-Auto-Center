@@ -89,7 +89,9 @@
             <div class="icone_item_menu1">
               <i class="material-icons">person_add</i>
             </div>
-            CLIENTE/<br>PARCEIRO
+            <a href="view/cliente_parceiro.php?page=cliente_parceiro">
+              CLIENTE/<br>PARCEIRO
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
