@@ -2,15 +2,15 @@
 .container_principal_cliente{
   width: 1420px;
   height: 885px;
-  background-color: red;
+  /*background-color: red;*/
 }
 
-.container_segura_cadastro_cliente{
+.container_segura_tudo{
   width: 1155px;
   min-height: 300px;
   overflow: hidden;
   height: auto;
-  background-color: gray;
+  /*background-color: gray;*/
 
 }
 
@@ -18,14 +18,16 @@
   width: 300px;
   height: 300px;
   margin-left: 30px;
-  /*background-color: blue;*/
+  /*background-color: #f5f5f5;*/
 
 }
 
 .texto_imagem{
   width: 300px;
   height: 30px;
-  background-color: green;
+  border-radius: 20px;
+
+  /*background-color: #f5f5f5;*/
 
 }
 
@@ -38,29 +40,33 @@
 
 .container_segura_texto_cadastro_cliente{
   width: 500px;
-  height: 250px;
+  height: 300px;
   overflow: hidden;
-  background-color: blue;
+  /*background-color: #f5f5f5;*/
 
 }
 
-.texto_cadastro{
+.texto_cadastro_cliente{
   width: 500px;
   height: 30px;
-  background-color: #fff;
+  border-radius: 20px;
+
+  /*background-color: #f5f5f5*/
 
 }
 
 .edit_texto{
   width: 350px;
   height: 300px;
+  /*background-color: #f5f5f5;*/
 
 }
 
 .container_segura_botao{
   width: 325px;
-  height: 100px;
-  float: left;
+  height: 270px;
+  overflow: hidden;
+  /*background-color: #f5f5f5;*/
 
 }
 
@@ -74,21 +80,114 @@
   min-height: 300px;
   overflow: hidden;
   height: auto;
-  background-color: #0066ff;
+  /*background-color: #f5f5f5;*/
 
 }
 
 .container_texto_imagem_parceiro{
   width: 300px;
-  height: 30px;
-  background-color: green;
+  height: 300px;
+  margin-left: 30px;
+  /*background-color: #660066;*/
 
+}
+
+.texto_foto_parceiro{
+  width: 300px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 20px;
 }
 
 .imagem_cadastro_parceiro{
   width: 250px;
   height: 200px;
-  overflow: hidden;
   background-color: yellow;
+
+}
+
+.container_segura_texto_cadastro_parceiro{
+  width: 500px;
+  height: 250px;
+  overflow: hidden;
+  /*background-color: blue;*/
+
+}
+
+.texto_cadastro_parceiro{
+  width: 500px;
+  height: 30px;
+  border-radius: 20px;
+
+  /*background-color: #fff;*/
+
+}
+
+.edit_texto_parceiro{
+  width: 350px;
+  height: 300px;
+
+}
+
+.container_edit_cadastros{
+  width: 1155px;
+  height: 290px;
+  background-color: #009933;
+
+}
+
+.titulo_cadastros{
+  width: 1050px;
+  height: 30px;
+  float:right;
+  background-color: red;
+
+}
+
+.edit_infs{
+  width: 1050px;
+  height: 260px;
+  float: right;
+  background-color: #cc00ff;
+
+}
+
+.imagem_infs{
+  width: 250px;
+  height: 200px;
+  margin-left: 20px;
+  background-color: yellow;
+
+}
+
+.texto_infs{
+  width: 600px;
+  height: 200px;
+  overflow: auto;
+  background-color: #990000;
+
+}
+
+.segura_editar_apagar{
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+  overflow: hidden;
+  background-color: #000;
+
+}
+
+.apagar{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+
+}
+
+.editar{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: red;
 
 }
