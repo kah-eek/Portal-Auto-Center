@@ -26,7 +26,7 @@
       <div class="cabecalho_centralizado txt_sombra_1x1x1_preto centro_lr">
         <!-- Logo da PAC -->
         <div class="logo_pac float_left">
-          <img src="../pictures/logo/portal_auto_center.png" alt="Logo da Portal Auto Center">
+          <img src="view/pictures/logo/portal_auto_center.png" alt="Logo da Portal Auto Center">
         </div>
 
         <!-- Título do cabeçalho -->

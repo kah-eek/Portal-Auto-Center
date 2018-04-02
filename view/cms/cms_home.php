@@ -1,13 +1,13 @@
 <?php
   // Importação do cabeçalho
-  require_once('../component/cms_header.php');
+  require_once('view/component/cms_header.php');
 ?>
 
     <div class="container_principal sombra_preta_r_2 centro_lr">
 
       <?php
         // Importação do menu lateral
-        require_once('../component/cms_menu_lateral.php');
+        require_once('view/component/cms_menu_lateral.php');
       ?>
 
       <!-- Contáiner do conteúdo em si gerenciável do CMS -->
