@@ -73,7 +73,9 @@
             <div class="icone_item_menu">
               <i class="material-icons">forum</i>
             </div>
-            FÓRUM
+            <a href="<?php echo isset($_GET['page']) == true ? 'forum.php?page=forum' : 'view/forum.php?page=forum' ?>">
+              FÓRUM
+            </a>
           </div>
           <div class="item_menu float_left titulo ">
             <div class="icone_item_menu">
