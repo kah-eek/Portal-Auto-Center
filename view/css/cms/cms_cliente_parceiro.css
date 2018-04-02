@@ -1,0 +1,71 @@
+
+.container_principal_cliente{
+  width: 1420px;
+  height: 885px;
+  background-color: red;
+}
+
+.container_conteudo{
+  width: 1155px;
+  min-height: 300px;
+  overflow: hidden;
+  height: auto;
+  background-color: gray;
+
+}
+
+.container_segura_texto_imagem{
+  width: 300px;
+  height: 300px;
+  margin-left: 30px;
+  /*background-color: blue;*/
+
+}
+
+.container_texto_imagem{
+  width: 300px;
+  height: 30px;
+  background-color: green;
+
+}
+
+.container_imagem_cliente{
+  width: 250px;
+  height: 250px;
+  background-color: yellow;
+
+}
+
+.container_segura_texto_cadastro_cliente{
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+  background-color: blue;
+
+}
+
+.container_segura_texto_cadastro{
+  width: 500px;
+  height: 30px;
+  background-color: #fff;
+
+}
+
+.container_edit_texto{
+  width: 350px;
+  height: 300px;
+  resize: none;
+
+}
+
+.container_segura_botao{
+  width: 325px;
+  height: 100px;
+  float: left;
+
+}
+
+.input_submit{
+  width: 100px;
+
+}
