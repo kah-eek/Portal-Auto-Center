@@ -18,194 +18,203 @@
       <div class="conteiner_conteudo float_left bg_branco">
         <!-- Referente as fotos da pag galeria relacionado com a coluna motos -->
         <div class="conteudo_galeria centro_lr">
-          <!-- Titulo  -->
-          <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
-            Motos
-          </div>
-          <div class="segura_conteudo">
-            <div class="segura_img">
-              <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-              <input id="add_img" class="display_none add_img" type="file" name="btnImagem" value="">
-            </div>
-            <div class="segura_botoes">
-              <div class="segura_icone">
-                <div class="icone">
-                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> TIRAR -->
-                </div>
-                <div class="inf_icone conteudo">
-                  <label for="add_img">add. new picture</label>
-                </div>
-              </div>
-              <div class="segura_icone">
-                <div class="icone_delete">
-                  <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
-                </div>
-                <div class="inf_icone conteudo">
-                  delete picture
-                </div>
-              </div>
-            </div>
-            <div class="img_pags">
-              <div class="titulo_img conteudo">
-                fotos
-              </div>
-              <div class="container_img">
-                <div class="img_galeria">
-                  <img id="imagem" src="<?php echo($imagem); ?>">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <form method="post">
 
-        <!-- Referente as fotos da pag galeria relacionado com a coluna serviços -->
-        <div class="conteudo_galeria centro_lr">
-          <!-- Titulo  -->
-          <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
-            serviços
-          </div>
-          <div class="segura_conteudo">
-            <div class="segura_img">
-              <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-              <input id="add_img2" class="display_none" type="file" name="" value="">
+            <!-- Titulo  -->
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
+              Motos
             </div>
-            <div class="segura_botoes">
-              <div class="segura_icone">
-                <div class="icone">
-                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
+            <div class="segura_conteudo">
+              <div class="segura_img">
+                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                <input id="add_img" class="display_none add_img" type="file" name="btnImagem">
+              </div>
+              <div class="segura_botoes">
+                <div class="segura_icone">
+                  <div class="icone">
+                    <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> TIRAR -->
+                  </div>
+                  <div class="inf_icone conteudo">
+                    <label for="add_img">add. new picture</label>
+                  </div>
                 </div>
-                <div class="inf_icone conteudo">
-                  <label for="add_img2">add. new picture</label>
+                <div class="segura_icone">
+                  <div class="icone_delete">
+                    <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
+                  </div>
+                  <div class="inf_icone conteudo">
+                    delete picture
+                  </div>
                 </div>
               </div>
-              <div class="segura_icone">
-                <div class="icone_delete">
-                  <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
+              <div class="img_pags">
+                <div class="titulo_img conteudo">
+                  fotos
                 </div>
-                <div class="inf_icone conteudo">
-                  delete picture
-                </div>
-              </div>
-            </div>
-            <div class="img_pags">
-              <div class="titulo_img conteudo">
-                fotos
-              </div>
-              <div class="container_img">
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                <div class="container_img">
+                  <div class="img_galeria">
+                    <!-- <img id="imagem" src="<?php// echo($imagem); ?>"> -->
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          <!-- Referente as fotos da pag galeria relacionado com a coluna serviços -->
+          <div class="conteudo_galeria centro_lr">
+            <!-- Titulo  -->
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
+              serviços
+            </div>
+            <div class="segura_conteudo">
+              <div class="segura_img">
+                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                <input id="add_img2" class="display_none" type="file" name="btnImagem" >
+              </div>
+              <div class="segura_botoes">
+                <div class="segura_icone">
+                  <div class="icone">
+                    <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
+                  </div>
+                  <div class="inf_icone conteudo">
+                    <label for="add_img2">add. new picture</label>
+                  </div>
+                </div>
+                <div class="segura_icone">
+                  <div class="icone_delete">
+                    <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
+                  </div>
+                  <div class="inf_icone conteudo">
+                    delete picture
+                  </div>
+                </div>
+              </div>
+              <div class="img_pags">
+                <div class="titulo_img conteudo">
+                  fotos
+                </div>
+                <div class="container_img">
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Referente as fotos da pag galeria relacionado com a coluna carros -->
-        <div class="conteudo_galeria centro_lr">
-          <!-- Titulo  -->
-          <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
-            Carros
+          <!-- Referente as fotos da pag galeria relacionado com a coluna carros -->
+          <div class="conteudo_galeria centro_lr">
+            <!-- Titulo  -->
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
+              Carros
+            </div>
+            <div class="segura_conteudo">
+              <div class="segura_img">
+                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                <input id="add_img3" class="display_none" type="file" name="btnImagem" >
+              </div>
+              <div class="segura_botoes">
+                <div class="segura_icone">
+                  <div class="icone">
+                    <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
+                  </div>
+                  <div class="inf_icone conteudo">
+                    <label for="add_img3">add. new picture</label>
+                  </div>
+                </div>
+                <div class="segura_icone">
+                  <div class="icone_delete">
+                    <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
+                  </div>
+                  <div class="inf_icone conteudo">
+                    delete picture
+                  </div>
+                </div>
+              </div>
+              <div class="img_pags">
+                <div class="titulo_img conteudo">
+                  fotos
+                </div>
+                <div class="container_img">
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="segura_conteudo">
-            <div class="segura_img">
-              <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-              <input id="add_img3" class="display_none" type="file" name="" value="">
-            </div>
-            <div class="segura_botoes">
-              <div class="segura_icone">
-                <div class="icone">
-                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
-                </div>
-                <div class="inf_icone conteudo">
-                  <label for="add_img3">add. new picture</label>
-                </div>
-              </div>
-              <div class="segura_icone">
-                <div class="icone_delete">
-                  <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
-                </div>
-                <div class="inf_icone conteudo">
-                  delete picture
-                </div>
-              </div>
-            </div>
-            <div class="img_pags">
-              <div class="titulo_img conteudo">
-                fotos
-              </div>
-              <div class="container_img">
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Referente as fotos da pag galeria relacionado com a coluna Produtos -->
-        <div class="conteudo_galeria centro_lr">
-          <!-- Titulo  -->
-          <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
-            Produtos
+          <!-- Referente as fotos da pag galeria relacionado com a coluna Produtos -->
+          <div class="conteudo_galeria centro_lr">
+            <!-- Titulo  -->
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
+              Produtos
+            </div>
+            <div class="segura_conteudo">
+              <div class="segura_img">
+                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                <input id="add_img4" class="display_none" type="file" name="btnImagem" >
+              </div>
+              <div class="segura_botoes">
+                <div class="segura_icone">
+                  <div class="icone">
+                    <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
+                  </div>
+                  <div class="inf_icone conteudo">
+                    <label for="add_img4">add. new picture</label>
+                  </div>
+                </div>
+                <div class="segura_icone">
+                  <div class="icone_delete">
+                    <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
+                  </div>
+                  <div class="inf_icone conteudo">
+                    delete picture
+                  </div>
+                </div>
+              </div>
+              <div class="img_pags">
+                <div class="titulo_img conteudo">
+                  fotos
+                </div>
+                <div class="container_img">
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="segura_conteudo">
-            <div class="segura_img">
-              <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-              <input id="add_img4" class="display_none" type="file" name="" value="">
-            </div>
-            <div class="segura_botoes">
-              <div class="segura_icone">
-                <div class="icone">
-                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
-                </div>
-                <div class="inf_icone conteudo">
-                  <label for="add_img4">add. new picture</label>
-                </div>
-              </div>
-              <div class="segura_icone">
-                <div class="icone_delete">
-                  <img src="../pictures/galeria/delete.svg" alt="deletar imagem">
-                </div>
-                <div class="inf_icone conteudo">
-                  delete picture
-                </div>
-              </div>
-            </div>
-            <div class="img_pags">
-              <div class="titulo_img conteudo">
-                fotos
-              </div>
-              <div class="container_img">
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 
     <script>
       $('.add_img').on('change',function(){
-        $.ajax()
+        $.ajax({
+          type: 'POST',
+          url: '../../model/cms_galeria_class.php',
+          async: true,
+          success: function(dados){
+            console.log(dados);
+          }
+        });
       });
     </script>
