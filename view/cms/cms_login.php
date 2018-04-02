@@ -1,6 +1,6 @@
 
 <?php
-  mysql_connect('10.107.144.10','root','bcd127');
+  mysql_connect('localhost','root','bcd127');
   mysql_select_db('db_auto_center');
 
   if(isset($_POST["btn_login"]))
@@ -31,17 +31,17 @@
   }
   ?>
 <!DOCTYPE html>
-<html lang="br" dir="ltr">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title></title>
-      <link rel="stylesheet" type="text/css" href="../css/cms/cms_login.css">
-      <link rel="stylesheet" type="text/css" href="../css/padroes.css">
-      <link rel="stylesheet" type="text/css" href="../css/cms/cms_pagina.css">
+    <title>Portal Auto Center - CMS</title>
+      <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
+      <link rel="stylesheet" type="text/css" href="view/css/cms/cms_login.css">
   </head>
   <body class="background_login">
-    <div class="foto_fundo">
-        <img src="../pictures/cms_login/img_login_cms" alt="">
+    <div class="foto_fundo fixed">
+        <!-- <img src="view/pictures/cms_login/img_login_cms.jpeg" alt=""> -->
       <form name="frmhome" method="post" action="">
         <div class="caixa_login">
           <div class="container_foto_perfil">
