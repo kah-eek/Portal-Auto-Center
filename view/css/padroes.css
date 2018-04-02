@@ -191,6 +191,7 @@ a{
 
 /* ***************** Overflow nos componentes ******************* */
 .overflow_auto{overflow: auto;}
+.overflow_hidden{overflow: hidden;}
 /* ********************************************************* */
 
 /* ***************** Alinhamento de texto ******************* */
