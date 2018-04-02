@@ -19,7 +19,7 @@
 
           // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
 
-           header('location:../cliente_parceiro.php');
+           header('location:view/cms/cms_home.php');
       }else{
 ?>
   <script>
