@@ -6,8 +6,13 @@
   $footer_css = 'view/css/footer';
   $normalize_css = 'view/css/normalize';
   $padroes_css = 'view/css/padroes';
+  $carrosel_css = 'view/css/carrosel/style';
   $jquery = 'view/js/jquery.js';
   $logo_pac = 'view/pictures/logo/portal_auto_center';
+  $facebook_icon = 'view/pictures/rede_social/facebook';
+  $instagram_icon = 'view/pictures/rede_social/instagram';
+  $twtter_icon = 'view/pictures/rede_social/twitter';
+  $youtube_icon = 'view/pictures/rede_social/youtube';
 
   // Verifica se existe um outro arquivo fora do padrão a ser carregado
   if (isset($_GET['page'])) {
@@ -16,8 +21,13 @@
     $footer_css = 'css/footer';
     $normalize_css = 'css/normalize';
     $padroes_css = 'css/padroes';
+    $carrosel_css = 'css/carrosel/style';
     $jquery = 'js/jquery.js';
     $logo_pac = 'pictures/logo/portal_auto_center';
+    $facebook_icon = 'pictures/rede_social/facebook';
+    $instagram_icon = 'pictures/rede_social/instagram';
+    $twtter_icon = 'pictures/rede_social/twitter';
+    $youtube_icon = 'pictures/rede_social/youtube';
   }
 
 ?>
@@ -34,7 +44,7 @@
     <link rel="stylesheet" type="text/css" href="<?=$arquivo_css?>.css">
 
     <!-- Corrosel -->
-    <link rel="stylesheet" type="text/css" href="view/css/carrosel/style.css">
+    <link rel="stylesheet" type="text/css" href="<?=$carrosel_css?>.css">
     <!-- ##################################################### -->
     <!-- <script src="view/js/flip-card.js"></script> -->
     <script src="<?=$jquery?>"></script>
@@ -47,7 +57,7 @@
             <div class="icone_item_menu">
               <i class="material-icons">home</i>
             </div>
-            <a href="<?php if(isset($_GET['page'])) echo '../index.php' ?>">
+            <a href="<?php echo isset($_GET['page']) == true ? '../index.php' : '' ?>">
               HOME
             </a>
           </div>
@@ -55,7 +65,7 @@
             <div class="icone_item_menu">
               <i class="material-icons">directions_car</i>
             </div>
-            <a href="view/veiculos.php?page=veiculos">
+            <a href="<?php echo isset($_GET['page']) == true ? 'veiculos.php?page=veiculos' : 'view/veiculos.php?page=veiculos' ?>">
               CARROS
             </a>
           </div>
@@ -69,7 +79,7 @@
             <div class="icone_item_menu">
               <i class="material-icons">photo_size_select_actual</i>
             </div>
-            <a href="view/galeria.php?page=galeria">
+            <a href="<?php echo isset($_GET['page']) == true ? 'galeria.php?page=galeria' : 'view/galeria.php?page=galeria' ?>">
             GALERIA
             </a>
           </div>
@@ -83,7 +93,7 @@
             <div class="icone_item_menu">
               <i class="material-icons">contact_mail</i>
             </div>
-            <a href="view/fale_conosco.php?page=fale_conosco">
+            <a href="<?php echo isset($_GET['page']) == true ? 'fale_conosco.php?page=fale_conosco' : 'view/fale_conosco.php?page=fale_conosco' ?>">
               CONTATO
             </a>
           </div>
