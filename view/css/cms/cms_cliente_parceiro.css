@@ -5,7 +5,7 @@
   background-color: red;
 }
 
-.container_conteudo{
+.container_segura_cadastro_cliente{
   width: 1155px;
   min-height: 300px;
   overflow: hidden;
@@ -22,39 +22,38 @@
 
 }
 
-.container_texto_imagem{
+.texto_imagem{
   width: 300px;
   height: 30px;
   background-color: green;
 
 }
 
-.container_imagem_cliente{
+.imagem_cliente{
   width: 250px;
-  height: 250px;
+  height: 200px;
   background-color: yellow;
 
 }
 
 .container_segura_texto_cadastro_cliente{
   width: 500px;
-  height: 300px;
+  height: 250px;
   overflow: hidden;
   background-color: blue;
 
 }
 
-.container_segura_texto_cadastro{
+.texto_cadastro{
   width: 500px;
   height: 30px;
   background-color: #fff;
 
 }
 
-.container_edit_texto{
+.edit_texto{
   width: 350px;
   height: 300px;
-  resize: none;
 
 }
 
@@ -67,5 +66,29 @@
 
 .input_submit{
   width: 100px;
+
+}
+
+.container_segura_cadastro_parceiro{
+  width: 1155px;
+  min-height: 300px;
+  overflow: hidden;
+  height: auto;
+  background-color: #0066ff;
+
+}
+
+.container_texto_imagem_parceiro{
+  width: 300px;
+  height: 30px;
+  background-color: green;
+
+}
+
+.imagem_cadastro_parceiro{
+  width: 250px;
+  height: 200px;
+  overflow: hidden;
+  background-color: yellow;
 
 }
