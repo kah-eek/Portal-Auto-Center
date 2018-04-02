@@ -7,23 +7,23 @@
             <div class="segura_rede preenche_t_20 centro_lr">
               <div class="tamanho_rede">
                 <a target="_blank" href="https://www.facebook.com">
-                  <img src="pictures/rede_social/facebook.svg" alt="link para rede social">
+                  <img src="<?=$facebook_icon?>.svg" alt="link para rede social">
                 </a>
               </div>
               <div class="tamanho_rede">
                 <a target="_blank" href="https://www.instagram.com">
-                  <img src="pictures/rede_social/instagram.svg" alt="link para rede social">
+                  <img src="<?=$instagram_icon?>.svg" alt="link para rede social">
                 </a>
               </div>
               <div class="tamanho_rede">
                 <a target="_blank" href="https://www.twitter.com">
-                  <img src="pictures/rede_social/twitter.svg" alt="link para rede social">
+                  <img src="<?=$twtter_icon?>.svg" alt="link para rede social">
                 </a>
 
               </div>
               <div class="tamanho_rede">
                 <a target="_blank" href="https://www.youtube.com">
-                  <img src="pictures/rede_social/youtube.svg" alt="link para rede social">
+                  <img src="<?=$youtube_icon?>.svg" alt="link para rede social">
                 </a>
               </div>
             </div>
