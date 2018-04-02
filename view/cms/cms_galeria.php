@@ -1,4 +1,9 @@
 <?php
+
+ ?>
+
+
+<?php
   // Importação do cabeçalho
   require_once('../component/cms_header.php');
 ?>
@@ -20,14 +25,15 @@
           <div class="segura_conteudo">
             <div class="segura_img">
               <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+              <input id="add_img" class="display_none add_img" type="file" name="btnImagem" value="">
             </div>
             <div class="segura_botoes">
               <div class="segura_icone">
                 <div class="icone">
-                  <img src="../pictures/galeria/add.svg" alt="adicionar imagem">
+                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> TIRAR -->
                 </div>
                 <div class="inf_icone conteudo">
-                  add. new picture
+                  <label for="add_img">add. new picture</label>
                 </div>
               </div>
               <div class="segura_icone">
@@ -45,13 +51,7 @@
               </div>
               <div class="container_img">
                 <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                </div>
-                <div class="img_galeria">
-                  <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                  <img id="imagem" src="<?php echo($imagem); ?>">
                 </div>
               </div>
             </div>
@@ -67,14 +67,15 @@
           <div class="segura_conteudo">
             <div class="segura_img">
               <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+              <input id="add_img2" class="display_none" type="file" name="" value="">
             </div>
             <div class="segura_botoes">
               <div class="segura_icone">
                 <div class="icone">
-                  <img src="../pictures/galeria/add.svg" alt="adicionar imagem">
+                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
                 </div>
                 <div class="inf_icone conteudo">
-                  add. new picture
+                  <label for="add_img2">add. new picture</label>
                 </div>
               </div>
               <div class="segura_icone">
@@ -114,14 +115,15 @@
           <div class="segura_conteudo">
             <div class="segura_img">
               <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+              <input id="add_img3" class="display_none" type="file" name="" value="">
             </div>
             <div class="segura_botoes">
               <div class="segura_icone">
                 <div class="icone">
-                  <img src="../pictures/galeria/add.svg" alt="adicionar imagem">
+                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
                 </div>
                 <div class="inf_icone conteudo">
-                  add. new picture
+                  <label for="add_img3">add. new picture</label>
                 </div>
               </div>
               <div class="segura_icone">
@@ -161,14 +163,15 @@
           <div class="segura_conteudo">
             <div class="segura_img">
               <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+              <input id="add_img4" class="display_none" type="file" name="" value="">
             </div>
             <div class="segura_botoes">
               <div class="segura_icone">
                 <div class="icone">
-                  <img src="../pictures/galeria/add.svg" alt="adicionar imagem">
+                  <!-- <img src="../pictures/galeria/add.svg" alt="adicionar imagem"> -->
                 </div>
                 <div class="inf_icone conteudo">
-                  add. new picture
+                  <label for="add_img4">add. new picture</label>
                 </div>
               </div>
               <div class="segura_icone">
@@ -200,3 +203,9 @@
         </div>
       </div>
     </div>
+
+    <script>
+      $('.add_img').on('change',function(){
+        $.ajax()
+      });
+    </script>
