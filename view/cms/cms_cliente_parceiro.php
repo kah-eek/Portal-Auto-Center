@@ -45,7 +45,7 @@
           Foto Cadastro Parceiro
         </div>
         <div class="imagem_cadastro_parceiro centro_lr margem_t_20">
-          <img src="" alt="">
+          <img src="../pctures/cms_cliente_parceiro/cliente.jpg" alt="">
         </div>
       </div>
 
