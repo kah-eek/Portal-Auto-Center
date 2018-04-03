@@ -1,4 +1,5 @@
 <?php
+
   // Importação do cabeçalho
   require_once('../component/cms_header.php');
 ?>
@@ -14,19 +15,42 @@
         <!-- Lado esquerdo da tela -->
         <div class="metade">
           <div class="sobre">
-            <img src="../pictures/sobre_empresa/sobre-nos.jpg" alt="">
+            <div class="fundo_s">
+              <img src="../pictures/sobre_empresa/sobre-nos.jpg">
+              <input class="inp_sobre input_submit" type="submit" name="" value="">
+            </div>
+            <div class="frente_s">
+              <img src="../pictures/sobre_empresa/sobre-nos.jpg" alt="">
+            </div>
+
           </div>
           <div class="valores">
-            <img src="../pictures/sobre_empresa/valores.png" alt="">
+            <div class="fundo_v">
+              <img src="../pictures/sobre_empresa/valores.png" alt="">
+            </div>
+            <div class="frente_v">
+              <img src="../pictures/sobre_empresa/valores.png" alt="">
+            </div>
+
           </div>
         </div>
         <!-- Lado direito da tela -->
         <div class="metade">
           <div class="visao">
-            <img src="../pictures/sobre_empresa/visao.png" alt="">
+            <div class="fundo_vi">
+              <img src="../pictures/sobre_empresa/visao.png" alt="">
+            </div>
+            <div class="frente_vi">
+              <img src="../pictures/sobre_empresa/visao.png" alt="">
+            </div>
           </div>
           <div class="missao">
-            <img src="../pictures/sobre_empresa/missao.png" alt="">
+            <div class="fundo_m">
+              <img src="../pictures/sobre_empresa/missao.png" alt="">
+            </div>
+            <div class="frente_m">
+              <img src="../pictures/sobre_empresa/missao.png" alt="">
+            </div>
           </div>
         </div>
       </div>
