@@ -7,7 +7,7 @@
  <?php
    require_once('../component/cms_menu_lateral.php');
   ?>
-
+ <!DOCTYPE html>
 <div class="container_principal_cliente">
   <div class="container_segura_tudo">
     <div class="container_segura_texto_imagem float_left">
@@ -15,7 +15,7 @@
         Foto Cadastro Cliente
       </div>
 
-      <div class="imagem_cliente centro_lr margem_t_20">
+      <div class="imagem_cliente centro_lr margem_t_30">
         <img src="" alt="">
       </div>
     </div>
@@ -44,8 +44,8 @@
         <div class="texto_foto_parceiro txt_branco align_center titulo preenche_5">
           Foto Cadastro Parceiro
         </div>
-        <div class="imagem_cadastro_parceiro centro_lr margem_t_20">
-          <img src="../pctures/cms_cliente_parceiro/cliente.jpg" alt="">
+        <div class="imagem_cadastro_parceiro centro_lr margem_t_30">
+          <img src="" alt="">
         </div>
       </div>
 

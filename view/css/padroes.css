@@ -239,6 +239,21 @@ a{
 }
 /* ****************************************************** */
 
+/*input_submit sem background*/
+.input_submit_cp{ /*input do tipo submit */
+  /*background-color: #263238;*/
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  box-shadow: 0px 4px 5px -2px #000;
+
+  /* Texto */
+  color: #fff;
+  text-shadow: 0px 0px 2px #000;
+  font-family: 'titulo';
+  text-align: center;
+}
+
 /* ***************** Margens ******************* */
 .margem_10{margin: 10px 0px;}
 
