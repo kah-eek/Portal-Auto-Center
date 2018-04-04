@@ -7,7 +7,7 @@
     -->
     <meta name="author" content="Caique M. Oliveira">
     <meta charset="utf-8">
-    <title>Portal Auto Center - CMS</title> 
+    <title>Portal Auto Center - CMS</title>
     <link rel="stylesheet" type="text/css" href="../css/padroes.css">
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_header.css">
@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
     <script src="../js/jquery.js"></script>
+    <script src="../js/cms_galeria.js"></script>
   </head>
   <body class="bg_cinza">
 
