@@ -9,90 +9,120 @@
   ?>
  <!DOCTYPE html>
 <div class="container_principal_cliente">
-  <div class="container_segura_tudo">
-    <div class="container_segura_texto_imagem float_left">
-      <div class="texto_imagem align_center preenche_5 titulo bg_preto txt_branco">
+  <div class="container_sobre_cliente float_left">
+
+    <!-- TITULOS -->
+    <div class="container_titulos bg_preto ">
+      <div class="item_titulo txt_branco align_center titulo preenche_10">
         Foto Cadastro Cliente
       </div>
-
-      <div class="imagem_cliente centro_lr margem_t_30">
-        <img src="" alt="">
+      <div class="item_titulo txt_branco align_center titulo preenche_10">
+        Texto Cadastro Cliente
       </div>
     </div>
 
-    <div class="container_segura_texto_cadastro_cliente float_left">
-      <div class="container_texto">
-        <div class="texto_cadastro_cliente align_center preenche_5 titulo bg_preto txt_branco">
-          Cadastro Cliente
-        </div>
-        <div class="edit_texto centro_lr margem_t_30">
-          <textarea class="no_resize" name="txtarea" rows="11" cols="40">
+    <div class="container_informacoes">
 
-          </textarea>
+      <!-- IMAGEM -->
+      <div class="container_imagem float_left">
+        <div class="item_imagem centro_lr margem_t_30">
+
         </div>
+      </div>
+
+      <!-- TEXTAREA -->
+      <div class="container_textarea float_left">
+        <div class="item_textarea centro_lr">
+          <textarea name="name" style="resize: none" rows="11" cols="42"></textarea>
+        </div>
+      </div>
+
+      <div class="container_botao float_left preenche_10 margem_t_80">
+        <div class="input_submit_cp">
+          <input type="submit" name="btn_enviar" value="Enviar">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container_sobre_parceiro float_left margem_t_10">
+
+    <!-- TITULOS -->
+    <div class="container_titulos bg_preto">
+      <div class="item_titulo txt_branco align_center titulo preenche_10">
+        Foto Cadastro Parceiro
+      </div>
+      <div class="item_titulo txt_branco align_center titulo preenche_10">
+        Texto Cadastro Parceiro
       </div>
     </div>
 
-    <div class="container_segura_botao margem_t_30">
-      <div class="input_submit margem_t_80">
-        <button type="button" name="btn_enviar">Enviar</button>
+    <div class="container_informacoes">
+
+      <!-- IMAGEM -->
+      <div class="container_imagem float_left">
+        <div class="item_imagem centro_lr margem_t_30">
+
+        </div>
       </div>
+
+      <!-- TEXTAREA -->
+      <div class="container_textarea float_left">
+        <div class="item_textarea centro_lr">
+          <textarea name="name" style="resize: none" rows="11" cols="42"></textarea>
+        </div>
+      </div>
+
+      <div class="container_botao float_left preenche_10 margem_t_80">
+        <div class="input_submit_cp">
+          <input type="submit" name="btn_enviar" value="Enviar">
+        </div>
+      </div>
+
     </div>
 
-    <div class="container_segura_cadastro_parceiro">
-      <div class="container_texto_imagem_parceiro align_center titulo float_left">
-        <div class="texto_foto_parceiro txt_branco align_center titulo preenche_5">
-          Foto Cadastro Parceiro
-        </div>
-        <div class="imagem_cadastro_parceiro centro_lr margem_t_30">
-          <img src="" alt="">
+    <!-- PARTE DE CADASTROS -->
+    <div class="container_cadastros float_right">
+      <div class="container_titulo_cadastro bg_preto">
+        <div class="item_titulo_cadastro bg_preto txt_branco align_center titulo preenche_10">
+          Cadastros
         </div>
       </div>
+      <!-- EDITANDO CADASTROS -->
+      <div class="container_edit_informacoes">
+        <!-- IMAGEM -->
+        <div class="container_imagem float_left">
+          <div class="item_imagem centro_lr margem_t_30">
 
-      <div class="container_segura_texto_cadastro_parceiro float_left">
-
-        <div class="texto_cadastro_parceiro align_center txt_branco bg_preto titulo preenche_5">
-          Cadastro Parceiro
-        </div>
-
-        <div class="edit_texto_parceiro centro_lr margem_t_30">
-          <textarea class="no_resize" name="txtarea" rows="11" cols="40">
-
-          </textarea>
-        </div>
-      </div>
-
-      <div class="container_segura_botao margem_t_80">
-        <div class="input_submit">
-          <button type="button" name="btn_enviar">Enviar</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="container_edit_cadastros">
-      <div class="titulo_cadastros titulo preenche_5">
-        Cadastros
-      </div>
-      <div class="edit_infs">
-
-        <div class="imagem_infs margem_t_20 float_left">
-          <img src="" alt="">
-        </div>
-
-        <div class="texto_infs margem_t_20 float_left">
-
-        </div>
-
-        <div class="segura_editar_apagar margem_t_20">
-          <div class="apagar float_left">
-            apagar
           </div>
-          <div class="editar">
-            Editar
+        </div>
+
+        <div class="container_segura_texto float_left">
+          <div class="item_texto centro_lr margem_t_30">
+
           </div>
         </div>
 
+        <div class="container_acoes margem_t_30 float_left">
+
+          <!-- ICONE EXCLUIR -->
+          <div class="excluir float_left">
+            <div class="icon centro_lr">
+              <i class="material-icons" style="font-size:30px;">delete</i>
+            </div>
+          </div>
+
+          <!-- ICONE EDITAR -->
+          <div class="editar float_left">
+            <div class="icon centro_lr">
+              <i class="material-icons" style="font-size:30px;">mode_edit</i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
