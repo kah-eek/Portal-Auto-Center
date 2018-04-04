@@ -72,5 +72,25 @@
         </div>
       </div>
     </footer>
+
+    <script>
+
+      // ***************** Fixa a barra de menu abaixo do cabeçalho ************************
+
+      // Obtém as coordenadas da barra de menu
+      var barraMenu = $('.container_menu_pesquisa_largura_tela').offset().top;
+
+      // Verifica ao acionar o scroll da tela as coordenadas
+      $(window).scroll(function(){
+        if ($(window).scrollTop() > barraMenu) {// Fixa a barra de menu
+          $('.container_menu_pesquisa_largura_tela').css({position:'fixed', top:'0px', 'z-index':'998', top:'55px', transition:'4s'});
+        }else { // Desfixa a barra de menu
+          $('.container_menu_pesquisa_largura_tela').css({position:'static', top:'0px', 'z-index':'0', top:'0px'});
+        }
+      })
+      // ***********************************************************************************
+
+    </script>
+
   </body>
 </html>
