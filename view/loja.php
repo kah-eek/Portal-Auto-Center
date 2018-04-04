@@ -70,10 +70,10 @@
       </div>
 
       <div class="container_parceiro_premium centro_lr margem_b_80">
-        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left">
           <img src="view/pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
         </div>
-        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right">
           <img src="view/pictures/loja/camaro.jpg" alt="">
         </div>
       </div>
@@ -464,10 +464,10 @@
       </div>
 
       <div class="container_parceiro_premium centro_lr margem_t_80">
-        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left pulsar">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left">
           <img src="view/pictures/loja/audi.jpg" alt="">
         </div>
-        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right pulsar">
+        <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right">
           <img src="view/pictures/loja/caoa.jpg" alt="">
         </div>
       </div>
@@ -477,7 +477,7 @@
 
       <div class="container_produto_fixo centro_lr">
         <!-- Produto fixo 1 -->
-        <div class="produto_fixo bg_cinza">
+        <div class="produto_fixo bg_branco">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
             <img src="view/pictures/loja/wheel.jpeg" alt="">
@@ -495,7 +495,7 @@
         </div>
 
         <!-- Produto fixo 2 -->
-        <div class="produto_fixo bg_cinza">
+        <div class="produto_fixo bg_branco">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
             <img src="view/pictures/loja/car_machine.jpeg" alt="">
@@ -513,7 +513,7 @@
         </div>
 
         <!-- Produto fixo 3 -->
-        <div class="produto_fixo bg_cinza">
+        <div class="produto_fixo bg_branco">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
             <img src="view/pictures/loja/fuck_wheel.jpeg" alt="">
@@ -531,7 +531,7 @@
         </div>
 
         <!-- Produto fixo 4 -->
-        <div class="produto_fixo bg_cinza">
+        <div class="produto_fixo bg_branco">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
             <img src="view/pictures/loja/steering_wheel.jpeg" alt="">
