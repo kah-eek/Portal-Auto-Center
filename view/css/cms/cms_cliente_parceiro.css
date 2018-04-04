@@ -4,186 +4,160 @@
   height: 885px;
   /*background-color: red;*/
 }
-
-.container_segura_tudo{
+/*PRIMEIRA LINHA*/
+.container_sobre_cliente{
   width: 1155px;
-  min-height: 300px;
-  overflow: hidden;
-  height: auto;
+  height: 300px;
+  /*margin-left: 10px;*/
   /*background-color: gray;*/
 
 }
 
-.container_segura_texto_imagem{
-  width: 300px;
-  height: 300px;
-  margin-left: 30px;
-  /*background-color: #f5f5f5;*/
+.container_titulos{
+  width: 1000px;
+  height: 40px;
+  margin-left: 40px;
 
 }
 
-.texto_imagem{
-  width: 300px;
-  height: 30px;
-
-  /*background-color: #f5f5f5;*/
-
-}
-
-.imagem_cliente{
-  width: 250px;
-  height: 200px;
-  background-color: yellow;
-
-}
-
-.container_segura_texto_cadastro_cliente{
-  width: 500px;
-  height: 300px;
-  overflow: hidden;
-  /*background-color: #f5f5f5;*/
-
-}
-
-.texto_cadastro_cliente{
-  width: 500px;
-  height: 30px;
-
-  /*background-color: #f5f5f5*/
-
-}
-
-.edit_texto{
+.item_titulo{
   width: 350px;
-  height: 300px;
-  /*background-color: #f5f5f5;*/
+  height: 40px;
+  float: left;
 
 }
-
-.container_segura_botao{
-  width: 325px;
-  height: 270px;
-  overflow: hidden;
-  /*background-color: #f5f5f5;*/
-
-}
-
-.input_submit{
-  width: 100px;
+/*PARTE DE ADM DE INFORMAÇÕES*/
+.container_informacoes{
+  width: 1000px;
+  height: 240px;
+  margin-left: 40px;
+  background-color: #F5F5F5;
 
 }
-
-.container_segura_cadastro_parceiro{
-  width: 1155px;
-  min-height: 300px;
-  overflow: hidden;
-  height: auto;
-  /*background-color: #f5f5f5;*/
-
-}
-
-.container_texto_imagem_parceiro{
+/*IMAGEM*/
+.container_imagem{
   width: 300px;
-  height: 300px;
-  margin-left: 30px;
-  /*background-color: #660066;*/
+  height: 260px;
+  margin-left: 20px;
+  /*background-color: pink;*/
 
 }
 
-.texto_foto_parceiro{
-  width: 300px;
-  height: 30px;
-  background-color: #000;
-}
-
-.imagem_cadastro_parceiro{
+.item_imagem{
   width: 250px;
   height: 200px;
-  background-color: yellow;
+  border: solid 1px #000;
+  /*background-color: #3333cc;*/
+
+}
+/*TEXTAREA*/
+.container_textarea{
+  width: 400px;
+  height: 260px;
+  /*background-color: #009933;*/
 
 }
 
-.container_segura_texto_cadastro_parceiro{
-  width: 500px;
-  height: 250px;
-  overflow: hidden;
-  /*background-color: blue;*/
+.item_textarea{
+  width: 350px;
+  height: 260px;
+  /*background-color: #0066ff;*/
 
 }
 
-.texto_cadastro_parceiro{
-  width: 500px;
-  height: 30px;
+textarea{
+  margin-top: 31px;
+  border: solid 1px;
 
+}
+
+/*BOTÃO ENVIAR*/
+
+.container_botao{
+  width: 100px;
+  height: 50px;
+  margin-left: 100px;
+  /*background-color: #ff0066;*/
+
+}
+
+
+.container_sobre_parceiro{
+  width: 1155px;
+  height: 300px;
+  /*background-color: gray;*/
+
+}
+
+/*PARTE DE CADASTROS*/
+
+.container_cadastros{
+  width: 1050px;
+  height: 280px;
+  /*background-color: gray;*/
+
+}
+
+.container_titulo_cadastro{
+  width: 895px;
+  height: 40px;
   /*background-color: #fff;*/
 
 }
 
-.edit_texto_parceiro{
-  width: 350px;
-  height: 300px;
+.item_titulo_cadastro{
+  width: 300px;
+  height: 40px;
 
 }
 
-.container_edit_cadastros{
-  width: 1155px;
-  height: 290px;
-  background-color: #009933;
-
-}
-
-.titulo_cadastros{
+.container_edit_informacoes{
   width: 1050px;
-  height: 30px;
-  float:right;
-  background-color: red;
-
-}
-
-.edit_infs{
-  width: 1050px;
-  height: 260px;
-  float: right;
-  background-color: #cc00ff;
-
-}
-
-.imagem_infs{
-  width: 250px;
-  height: 200px;
-  margin-left: 20px;
-  background-color: yellow;
-
-}
-
-.texto_infs{
-  width: 600px;
-  height: 200px;
+  height: 235px;
   overflow: auto;
-  background-color: #990000;
+  /*border: solid 1px;*/
+  background-color: #F5F5F5;
 
 }
 
-.segura_editar_apagar{
-  width: 100px;
-  height: 50px;
-  margin-left: 10px;
-  overflow: hidden;
-  background-color: #000;
+.container_segura_texto{
+  width: 500px;
+  height: 240px;
+  /*background-color: gray;*/
 
 }
 
-.apagar{
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+.item_texto{
+  width: 450px;
+  height: 200px;
+  border: solid 1px;
+  background-color: #FFF;
+
+}
+
+.container_acoes{
+  width: 180px;
+  height: 80px;
+  /*background-color: #ff0066;*/
+
+}
+
+.excluir{
+  width: 75px;
+  height: 80px;
+  /*background-color: #fff;*/
 
 }
 
 .editar{
-  width: 50px;
-  height: 50px;
-  overflow: hidden;
-  background-color: red;
+  width: 75px;
+  height: 80px;
+  margin-left: 10px;
+  /*background-color: #fff;*/
+
+}
+.icon{
+  width: 30px;
+  height: 30px;
 
 }
