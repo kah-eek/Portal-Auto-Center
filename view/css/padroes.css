@@ -223,6 +223,7 @@ a{
   color: #fff;
   font-family: 'titulo';
 }
+/* ****************************************************** */
 
 .input_submit{ /*input do tipo submit */
   background-color: #263238;
@@ -242,14 +243,15 @@ a{
 /*input_submit sem background*/
 .input_submit_cp{ /*input do tipo submit */
   background-color: #000;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   /*border: solid 1px #000;*/
-  padding: 5px;
-  box-shadow: 0px 4px 5px -2px #000;
+  /*padding: 5px;*/
+  /*box-shadow: 0px 4px 5px -2px #000;*/
+  border-radius: 30px 30px 30px 30px;
 
   /* Texto */
   color: #fff;
-  text-shadow: 0px 0px 2px #000;
+  text-shadow: 0px 0px 2px #fff;
   font-family: 'titulo';
   text-align: center;
 }

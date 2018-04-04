@@ -1,13 +1,18 @@
+.container_central{
+  width: 1420px;
+  height: 885px;
+}
 
 .container_principal_cliente{
   width: 1420px;
   height: 885px;
-  /*background-color: red;*/
+  /*background-color: #f5f5f5;*/
 }
 /*PRIMEIRA LINHA*/
 .container_sobre_cliente{
   width: 1155px;
   height: 300px;
+  /*border: solid 1px;*/
   /*margin-left: 10px;*/
   /*background-color: gray;*/
 
@@ -28,10 +33,11 @@
 }
 /*PARTE DE ADM DE INFORMAÇÕES*/
 .container_informacoes{
-  width: 1000px;
+  width: 998px;
   height: 240px;
   margin-left: 40px;
-  background-color: #F5F5F5;
+  border: solid 1px;
+  /*background-color: #F5F5F5;*/
 
 }
 /*IMAGEM*/
@@ -44,8 +50,8 @@
 }
 
 .item_imagem{
-  width: 250px;
-  height: 200px;
+  width: 200px;
+  height: 150px;
   border: solid 1px #000;
   /*background-color: #3333cc;*/
 
@@ -66,7 +72,7 @@
 }
 
 textarea{
-  margin-top: 31px;
+  margin-top: 20px;
   border: solid 1px;
 
 }
@@ -74,90 +80,29 @@ textarea{
 /*BOTÃO ENVIAR*/
 
 .container_botao{
-  width: 100px;
+  width: 200px;
   height: 50px;
-  margin-left: 100px;
-  /*background-color: #ff0066;*/
+  margin-left: 30px;
+  /*background-color: blue;*/
 
 }
 
+.segura_submit{
+  width: 200px;
+  height: 50px;
+  /*background-color: red*/
+
+}
+
+.input_submit_cp{
+  width: 200px;
+  height: 40px;
+
+}
 
 .container_sobre_parceiro{
   width: 1155px;
   height: 300px;
   /*background-color: gray;*/
-
-}
-
-/*PARTE DE CADASTROS*/
-
-.container_cadastros{
-  width: 1050px;
-  height: 280px;
-  /*background-color: gray;*/
-
-}
-
-.container_titulo_cadastro{
-  width: 895px;
-  height: 40px;
-  /*background-color: #fff;*/
-
-}
-
-.item_titulo_cadastro{
-  width: 300px;
-  height: 40px;
-
-}
-
-.container_edit_informacoes{
-  width: 1050px;
-  height: 235px;
-  overflow: auto;
-  /*border: solid 1px;*/
-  background-color: #F5F5F5;
-
-}
-
-.container_segura_texto{
-  width: 500px;
-  height: 240px;
-  /*background-color: gray;*/
-
-}
-
-.item_texto{
-  width: 450px;
-  height: 200px;
-  border: solid 1px;
-  background-color: #FFF;
-
-}
-
-.container_acoes{
-  width: 180px;
-  height: 80px;
-  /*background-color: #ff0066;*/
-
-}
-
-.excluir{
-  width: 75px;
-  height: 80px;
-  /*background-color: #fff;*/
-
-}
-
-.editar{
-  width: 75px;
-  height: 80px;
-  margin-left: 10px;
-  /*background-color: #fff;*/
-
-}
-.icon{
-  width: 30px;
-  height: 30px;
 
 }

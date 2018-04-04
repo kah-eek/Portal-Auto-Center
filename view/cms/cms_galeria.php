@@ -48,20 +48,53 @@ if(isset($_POST['Btn']))
   // Importação do cabeçalho
   require_once('../component/cms_header.php');
 ?>
+  <script type="text/javascript">
+
+  </script>
+  <!-- Conainer que segura tudo -->
     <div class="container_principal centro_lr">
 
       <?php
         // Importação do menu lateral
         require_once('../component/cms_menu_lateral.php');
       ?>
+      <!-- Resto do cunteudo -->
       <div class="conteiner_conteudo float_left transparente  ">
-        <form method="post" action="">
-          <!-- Card que segura as informacoes so as imagens cadastradas pelo parceioro -->
+        <!-- <form method="post" action=""> -->
+          <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
           <div class="conteudo_galeria centro_lr ">
             <div class="titulo_galeria titulo fs_25 preenche_l_5 espacamento_letra_2">
               Motos
             </div>
-            <div class="segura_conteudo">
+            <div class="pesquisa_galeria">
+              <input type="text" name="" value="" placeholder="Digite o nome do Parceiro">
+              <input  id="bt_moto" type="button" name="btn_pesquisar" value="P">
+            </div>
+            <!-- Conteudo das imagens das motos -->
+            <div id="conteudo_moto">
+              <div class="segura_img ">
+                <div class="tamanho_imagem">
+
+                </div>
+              </div>
+              <div class="inf_img">
+
+              </div>
+              <div class="imagens">
+
+              </div>
+            </div>
+          </div>
+
+          <div class="conteudo_galeria centro_lr ">
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
+              Serviços
+            </div>
+            <div class="pesquisa_galeria">
+              <input type="text" name="" value="" placeholder="Digite o nome do Parceiro">
+              <input  id="bt_servico" type="button" name="btn_pesquisar" value="P">
+            </div>
+            <div id="conteudo_servico">
               <div class="segura_img ">
                 <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
               </div>
@@ -103,70 +136,69 @@ if(isset($_POST['Btn']))
               </div>
             </div>
           </div>
-          <!-- <div class="conteudo_galeria centro_lr">
+
+          <div class="conteudo_galeria centro_lr ">
             <div class="titulo_galeria titulo fs_25 preenche_l_5 espacamento_letra_2">
+              Carro
+            </div>
+            <div class="pesquisa_galeria">
+              <input type="text" name="" value="" placeholder="Digite o nome do Parceiro">
+              <input  id="bt_carro" type="button" name="btn_pesquisar" value="P">
+            </div>
+            <div id="conteudo_carro">
+              <div class="segura_img ">
+                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+              </div>
+              <div class="segura_botoes">
+                <div class="segura_icone">
+                  <div class="icone">
+                     <!-- <i class="material-icons">visibility</i> -->
+                     <i class="material-icons">visibility_off</i>
+                   </div>
+                  <div class="inf_icone conteudo">
+
+
+                  </div>
+                </div>
+                <div class="segura_icone">
+                  <div class="icone">
+                    <i class="material-icons">delete</i>
+                  </div>
+                  <div class="inf_icone conteudo">
+
+                  </div>
+                </div>
+              </div>
+              <div class="img_pags">
+                <div class="titulo_img conteudo">
+                  fotos
+                </div>
+                <div class="container_img">
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
+                  </div>
+                  <div class="img_galeria">
+                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conteudo_galeria centro_lr ">
+            <div class="titulo_galeria titulo fs_25 preenche_l_5 ">
               Serviços
             </div>
-            <div class="segura_conteudo">
-              <div class="segura_img">
-                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                <input id="add_img2" class="display_none" type="file" name="btnImagem" >
-              </div>
-              <div class="segura_botoes">
-                <div class="segura_icone">
-                  <div class="icone">
-                     <!-- <i class="material-icons">visibility</i> -->
-                     <i class="material-icons">visibility_off</i>
-                   </div>
-                  <div class="inf_icone conteudo">
-
-
-                  </div>
-                </div>
-                <div class="segura_icone">
-                  <div class="icone">
-                    <i class="material-icons">delete</i>
-                  </div>
-                  <div class="inf_icone conteudo">
-
-                  </div>
-                </div>
-              </div>
-              <div class="img_pags">
-                <div class="titulo_img conteudo">
-                  fotos
-                </div>
-                <div class="container_img">
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
-                  </div>
-                </div>
-              </div>
+            <div class="pesquisa_galeria">
+              <input type="text" name="" value="" placeholder="Digite o nome do Parceiro">
+              <input  id="bt_produto" type="submit" name="btn_pesquisar" value="P">
             </div>
-          </div>
-          <div class="conteudo_galeria centro_lr">
-            <div class="titulo_galeria titulo fs_25 preenche_l_5 espacamento_letra_2">
-              Carros
-            </div>
-            <div class="segura_conteudo">
-              <div class="segura_img">
+            <div id="conteudo_produto">
+              <div class="segura_img ">
                 <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                <input id="add_img3" class="display_none" type="file" name="btnImagem" >
               </div>
               <div class="segura_botoes">
                 <div class="segura_icone">
@@ -206,53 +238,7 @@ if(isset($_POST['Btn']))
               </div>
             </div>
           </div>
-          <div class="conteudo_galeria centro_lr sombra_preta_10">
-            <div class="titulo_galeria titulo fs_25 preenche_l_5 espacamento_letra_2">
-              Produtos
-            </div>
-            <div class="segura_conteudo">
-              <div class="segura_img">
-                <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                <input id="add_img4" class="display_none" type="file" name="" value="">
-              </div>
-              <div class="segura_botoes">
-                <div class="segura_icone">
-                  <div class="icone">
-                     <!-- <i class="material-icons">visibility</i> -->
-                     <i class="material-icons">visibility_off</i>
-                   </div>
-                  <div class="inf_icone conteudo">
 
-
-                  </div>
-                </div>
-                <div class="segura_icone">
-                  <div class="icone">
-                    <i class="material-icons">delete</i>
-                  </div>
-                  <div class="inf_icone conteudo">
-
-                  </div>
-                </div>
-              </div>
-              <div class="img_pags">
-                <div class="titulo_img conteudo">
-                  fotos
-                </div>
-                <div class="container_img">
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_um.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                  </div>
-                  <div class="img_galeria">
-                    <img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </form>
+        <!-- </form> -->
       </div>
     </div>

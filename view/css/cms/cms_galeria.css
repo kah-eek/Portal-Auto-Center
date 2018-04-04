@@ -9,7 +9,8 @@ img{
 
 .container_principal{
   width: 1420px;
-  height: 885px;
+  min-height: 885px;
+  background-color: #fff;
 }
 
 .conteiner_conteudo{
@@ -17,47 +18,106 @@ img{
   height: 100%;
 }
 
+/*Formata os cards padrao  */
 .conteudo_galeria{
-  width: 900px;
-  height: 200px;
+  width: 1000px;
+  min-height: 30px;
+  height: auto;
   margin-top: 20px;
-  box-shadow: 0px 0px 20px #fff;
-  background-color: #DCDCDC;
+  box-shadow: 0px 0px 20px #000;
+  overflow: hidden;
   /*background-color: #b3b3b3;*/
 }
 
 .titulo_galeria{
-  width: 100%;
+  width: 70%;
   height: 30px;
+  float: left;
+  color: #fff;
+  background-color: #000;
+}
+.pesquisa_galeria{
+  width: 30%;
+  height: 30px;
+  float: left;
   color: #fff;
   background-color: #000;
 }
 
-.segura_conteudo{
-  width: 896px;
-  height: 166px;
-  background-color: red;
+input{
+  float: left;
+  height: 100%;
 }
 
+/*parte da imagem*/
 .segura_img{
-  width: 140px;
-  height: 140px;
-  margin-top: 13px;
-  margin-left: 13px;
+  width: 300px;
+  height: 100%;
+  background-color: red;
   float: left;
-  box-shadow: 0px 0px 10px #000;
+
 }
+
+.tamanho_imagem{}
+
+/**/
+
+.inf_img{
+  width: 300px;
+  height: 100%;
+  float: left;
+  background-color: blue;
+}
+
+.imagens{
+  width:400px;
+  height: 100%;
+  float: left;
+  background-color: brown;
+}
+
+
+
+/********************************************/
+
+/*Esconder as divs*/
+.escondido{
+  display: none;
+}
+
+
+/**/
+#conteudo_moto{
+  width: 1000px;
+  height: 470px;
+}
+
+
+#conteudo_carro{
+  width: 1000px;
+  height: 470px;
+}
+
+#conteudo_servico{
+  width: 1000px;
+  height: 470px;
+}
+
+
+#conteudo_produto{
+  width: 1000px;
+  height: 470px;
+}
+
+
+
+
 
 
 
 /**********************/
 
-.segura_botoes{
-  width: 330px;
-  height: 100%;
-  margin-left: 20px;
-  float: left;
-}
+
 
 .segura_icone{
   width: 250px;
