@@ -101,6 +101,14 @@
               CONTATO
             </a>
           </div>
+          <div class="item_menu float_left titulo">
+            <div class="icone_item_menu">
+              <i class="material-icons">shopping_cart</i>
+            </div>
+            <a href="<?php echo isset($_GET['page']) == true ? 'fale_conosco.php?page=fale_conosco' : 'view/fale_conosco.php?page=fale_conosco' ?>">
+              CARRINHO
+            </a>
+          </div>
         </div>
       </div>
       <div class="arruma_menu">
@@ -113,6 +121,10 @@
           </div>
           <div class="container_item_slogan titulo txt_branco ">
             Deixe que nós cuidamos de tudo para você.
+          </div>
+          <div class="container_rede_social float_left fixed bg_verde_vivo sombra_preta_20 margem_l_74_cento bsuavizada_10 margem_t_115">
+            <i class="material-icons material-icons flexa_esqueda fs_50">keyboard_arrow_left</i>
+            <i title="Rede Social" class="rede_social material-icons fs_100">account_circle</i>
           </div>
         </div>
       </div>
