@@ -52,7 +52,7 @@
                 Contato
               </div>
               <div class="link_pags conteudo titulo">
-                <a href="<?php echo isset($_GET['page']) == true ? '../index.php' : '' ?>">
+                <a href="<?php echo isset($_GET['page']) == true ? 'sobre_empresa.php?page=sobre_empresa' : 'view/sobre_empresa.php?page=sobre_empresa' ?>">
                   Sobre Nós
                 </a>
               </div>
