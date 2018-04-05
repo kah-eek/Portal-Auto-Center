@@ -11,12 +11,12 @@
   <!-- Conteudo -->
   <div class="container_sobre_empresa centro_lr">
     <!-- Conteudo referente Sobre Nos -->
-    <div class="caixa_inf ">
+    <div class="caixa_inf sombra_preta_20">
       <div class="titulo_inf titulo">
         Sobre Nós
       </div>
-      <div class="img_inf">
-        <div class="segura_img centro_lr">
+      <div class="img_inf_esq">
+        <div class="segura_img_esq ">
           <img src="pictures/sobre_empresa/sobre-nos.jpg" alt="Imagem">
         </div>
       </div>
@@ -36,7 +36,7 @@
     <!-- Separa conteudo -->
     <div class="divisor_se"></div>
     <!-- Conteudo referente Missao da empresa -->
-    <div class="caixa_inf">
+    <div class="caixa_inf sombra_preta_20">
       <div class="titulo_inf titulo ">
         Missão
       </div>
@@ -46,8 +46,8 @@
             clientes e da sociedade, valorizando o constante desenvolvimento profissional e social de nossos funcionários.
         </div>
       </div>
-      <div class="img_inf">
-        <div class="segura_img centro_lr">
+      <div class="img_inf_dir">
+        <div class="segura_img_dir">
           <img src="pictures/sobre_empresa/missao.png" alt="Imagem">
         </div>
       </div>
@@ -55,12 +55,12 @@
     <!-- Separa conteudo -->
     <div class="divisor_se"></div>
     <!-- Conteudo referente Visao da empresa -->
-    <div class="caixa_inf">
+    <div class="caixa_inf sombra_preta_20">
       <div class="titulo_inf titulo">
         Visão
       </div>
-      <div class="img_inf">
-        <div class="segura_img centro_lr">
+      <div class="img_inf_esq">
+        <div class="segura_img_esq ">
           <img src="pictures/sobre_empresa/visao.png" alt="Imagem">
         </div>
       </div>
@@ -73,7 +73,7 @@
     </div>
     <!-- Separa conteudo -->
     <div class="divisor_se"></div>
-    <div class="caixa_inf">
+    <div class="caixa_inf sombra_preta_20">
       <!-- Conteudo referente Valores da empresa -->
       <div class="titulo_inf titulo">
         Valores
@@ -85,8 +85,8 @@
           Capacitação contínua potencializando o entusiasmo e comprometimento de nossos colaboradores.
         </div>
       </div>
-      <div class="img_inf">
-        <div class="segura_img centro_lr">
+      <div class="img_inf_dir">
+        <div class="segura_img_dir">
           <img src="pictures/sobre_empresa/valores.png" alt="Imagem">
         </div>
       </div>
