@@ -472,14 +472,6 @@
             <img src="view/pictures/loja/caoa.jpg" alt="">
           </div>
         </div>
-        <div class="container_conteudo_rotante bg_azulado_escuro float_left">
-          <div class="anuncio_parceiro_premium bg_branco float_left foto_frente">
-            <img src="https://images.pexels.com/photos/235222/pexels-photo-235222.jpeg?auto=compress&cs=tinysrgb&h=650&w=940 1x, https://images.pexels.com/photos/235222/pexels-photo-235222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-          </div>
-          <div class="anuncio_parceiro_premium bg_branco float_right foto_fundo">
-            <img src="https://images.pexels.com/photos/72581/pexels-photo-72581.jpeg?auto=compress&cs=tinysrgb&h=650&w=940 1x, https://images.pexels.com/photos/72581/pexels-photo-72581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-          </div>
-        </div>
       </div>
 
       <!-- Divisor de conteúdo -->
