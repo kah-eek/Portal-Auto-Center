@@ -71,14 +71,16 @@ if(isset($_POST['Btn']))
               <input  id="bt_moto" type="button" name="btn_pesquisar" value="P">
             </div>
             <!-- Conteudo das imagens das motos -->
-            <div id="conteudo_moto">
+            <div id="conteudo_moto display_none">
               <div class="segura_img ">
-                <div class="tamanho_imagem">
-
-                </div>
+                <!-- <div class="tamanho_imagem sombra_preta_10"> -->
+                  <!-- <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"> -->
+                <!-- </div> -->
               </div>
               <div class="inf_img">
+                <div class="parceiro">
 
+                </div>
               </div>
               <div class="imagens">
 
@@ -238,6 +240,24 @@ if(isset($_POST['Btn']))
               </div>
             </div>
           </div>
+
+          <script>
+            $('#bt_moto').click(function(){// aciona o evento do click
+              $(this).show();// PESQUISAR
+              $(this).hide();// PESQUISAR
+              $('.titulo_item').css('height','700px','transition','4s');// ALtera o css do componentes
+              $('.carros').css('height','700px','transition','4s');// Oculta
+              $('.servicos').css('height','700px','transition','4s');// Servicos
+            });
+
+            $('#bt_carro ').click(function(){// aciona o evento do click
+              $(this).show();// PESQUISAR
+              $(this).hide();// PESQUISAR
+              $('.titulo_item').css('height','700px','transition','4s');// ALtera o css do componentes
+              $('.carros').css('height','700px','transition','4s');// Oculta
+              $('.servicos').css('height','700px','transition','4s');// Servicos
+            });
+          </script>
 
         <!-- </form> -->
       </div>
