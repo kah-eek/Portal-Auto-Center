@@ -15,34 +15,13 @@ require_once('../component/cms_header.php');
         require_once('../component/cms_menu_lateral.php');
       ?>
       <!-- Resto do cunteudo -->
-      <div class="conteiner_conteudo float_left   ">
+      <div class="conteiner_conteudo float_left ">
+
         <!-- <form method="post" action=""> -->
           <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
-          <div class="conteudo_galeria centro_lr ">
+          <div class="conteudo_galeria centro_lr">
             <!-- Tirulo do card -->
-            <div class="titulo_galeria titulo fs_25 preenche_l_5 espacamento_letra_2">
-              Motos
-            </div>
-            <div class="pesquisa_galeria">
-              <input type="text" name="" value="" placeholder="Digite o nome do Parceiro">
-              <input  id="bt_moto" type="submit" name="btn_pesquisar" value="P">
-            </div>
-            <!-- Conteudo das imagens das motos -->
-            <div id="conteudo_moto ">
-              <div class="segura_img ">
-                <div class="tamanho_imagem sombra_preta_10">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste">
-                </div>
-              </div>
-              <div class="inf_img">
-                <div class="parceiro">
 
-                </div>
-              </div>
-              <div class="imagens">
-
-              </div>
-            </div>
           </div>
 
 
