@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
     <script src="../js/jquery.js"></script>
-    <script src="../js/cms_galeria.js"></script>
   </head>
   <body class="bg_cinza">
 
