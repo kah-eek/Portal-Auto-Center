@@ -4,9 +4,9 @@
 
 }
 
-.container_missao{
+.container_geral{
   width: 1155px;
-  height: 220px;
+  height: 216px;
 
 }
 
@@ -21,10 +21,18 @@
   height: 30px;
 }
 
+
 .container_infs{
-  width: 1000px;
-  height: 190px;
-  background-color: #9900cc;
+  width: 900px;
+  height: 175px;
+  margin-left: 40px;
+  /*background-color: #9900cc;*/
+
+}
+
+.container_infs:hover{
+  transition: 1s;
+  box-shadow: 0px 0px 50px #000;
 
 }
 
@@ -37,14 +45,45 @@
 
 .item_img{
   width: 200px;
-  height: 190px;
-  background-color: #009900;
+  height: 154px;
+  margin-left: 20px;
+  /*background-color: #009900;*/
 
 }
 
 .container_segura_textarea{
   width: 500px;
+  height: 180px;
+  margin-left: 40px;
+  /*background-color: #ff99ff;*/
+
+}
+
+.segura_textarea{
+  width: 500px;
   height: 190px;
-  background-color: #ff99ff;
+  /*background-color: #0033cc*/
+
+}
+
+textarea{
+  width: 494px;
+  height: 150px;
+  border: solid 1px;
+  margin-top: 10px;
+
+}
+
+.container_salvar{
+  width: 100px;
+  height: 100px;
+  /*background-color: red;*/
+
+}
+
+.segura_salvar_foto{
+  width: 25px;
+  height: 25px;
+  /*background-color: #fff;*/
 
 }
