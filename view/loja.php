@@ -452,7 +452,7 @@
           // Verifica ao acionar o scroll da tela as coordenadas
           $(window).scroll(function(){
             if ($(window).scrollTop() > barraMenu) {// Fixa a barra de menu
-              $('.container_menu_pesquisa_largura_tela').css({position:'fixed', top:'0px', 'z-index':'998', top:'55px', transition:'4s'});
+              $('.container_menu_pesquisa_largura_tela').css({position:'fixed', top:'0px', 'z-index':'997', top:'55px', transition:'2s'});
             }else { // Desfixa a barra de menu
               $('.container_menu_pesquisa_largura_tela').css({position:'static', top:'0px', 'z-index':'0', top:'0px'});
             }

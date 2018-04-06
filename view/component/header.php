@@ -8,6 +8,7 @@
   $padroes_css = 'view/css/padroes';
   $carrosel_css = 'view/css/carrosel/style';
   $jquery = 'view/js/jquery.js';
+  $modalCadastroCliente = 'view/js/modal.js';
   $logo_pac = 'view/pictures/logo/portal_auto_center';
   $facebook_icon = 'view/pictures/rede_social/facebook';
   $instagram_icon = 'view/pictures/rede_social/instagram';
@@ -23,6 +24,7 @@
     $padroes_css = 'css/padroes';
     $carrosel_css = 'css/carrosel/style';
     $jquery = 'js/jquery.js';
+    $modalCadastroCliente = 'js/modal.js';
     $logo_pac = 'pictures/logo/portal_auto_center';
     $facebook_icon = 'pictures/rede_social/facebook';
     $instagram_icon = 'pictures/rede_social/instagram';
@@ -48,8 +50,16 @@
     <!-- ##################################################### -->
     <!-- <script src="view/js/flip-card.js"></script> -->
     <script src="<?=$jquery?>"></script>
+    <script src="<?=$modalCadastroCliente?>"></script>
   </head>
   <body class="body">
+
+    <div class="container_modal">
+      <div class="modal centro_lr margem_t_100 bg_branco">
+
+      </div>
+    </div>
+
     <header>
       <div class="container_menu sem_margem fixed">
         <div class="container_item_menu">

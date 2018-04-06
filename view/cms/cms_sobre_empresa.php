@@ -25,9 +25,12 @@
       <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
         <!-- IMAGEM -->
         <div class="segura_imagem float_left">
-          <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
-
-          </div>
+          <label for="btn_img_missao">
+            <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
+              
+            </div>
+          </label>
+          <input class="display_none" id="btn_img_missao" type="file" name="btn_img_missao" value="">
         </div>
         <!-- TEXTAREA -->
         <div class="container_segura_textarea float_left">
@@ -60,9 +63,12 @@
       <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
         <!-- IMAGEM -->
         <div class="segura_imagem float_left">
-          <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
+          <label for="btn_img_visao">
+            <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
 
-          </div>
+            </div>
+          </label>
+          <input id="btn_img_visao" class="display_none" type="file" name="btn_img_visao" value="">
         </div>
         <!-- TEXTAREA -->
         <div class="container_segura_textarea float_left">
@@ -95,9 +101,12 @@
       <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
         <!-- IMAGEM -->
         <div class="segura_imagem float_left">
-          <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
+          <label for="btn_img_valores">
+            <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
 
-          </div>
+            </div>
+            <input class="display_none" id="btn_img_valores" type="file" name="btn_img_valores" value="">
+          </label>
         </div>
         <!-- TEXTAREA -->
         <div class="container_segura_textarea float_left">
@@ -130,9 +139,12 @@
       <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
         <!-- IMAGEM -->
         <div class="segura_imagem float_left">
-          <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
+          <label for="btn_img_empresa">
+            <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
 
-          </div>
+            </div>
+            <input class="display_none" id="btn_img_empresa" type="file" name="btn_img_empresa" value="">
+          </label>
         </div>
         <!-- TEXTAREA -->
         <div class="container_segura_textarea float_left">

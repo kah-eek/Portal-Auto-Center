@@ -2,6 +2,7 @@
   // Importando o cabeçalho
   require_once("component/header.php");
 ?>
+
   <!--
   @autor Caique M. Oliveira
   @data 25/03/2018
@@ -9,7 +10,7 @@
 
   @autor Allan Alves
   @data 02/04/2018
-  @Edição da pagina  
+  @Edição da pagina
   -->
 
   <!-- Container principal do conteúdo sobre o Cliente -->
@@ -29,7 +30,7 @@
 
       <!-- Área de cadastro do Cliente -->
       <div class="area_cadastrese float_left preenche_r_30 align_right link">
-        <a href="#">Cadastrar-se como cliente</a>
+        <a id="cadastrarCliente" href="#">Cadastrar-se como cliente</a>
       </div>
 
     </div>
@@ -57,11 +58,21 @@
 
       <!-- Área de cadastro do Parceiro -->
       <div class="area_cadastrese float_right align_left preenche_l_20 preenche_b_30 link">
-        <a href="#">Cadastrar-se como parceiro</a>
+        <a id="cadastrarParceiro" href="#">Cadastrar-se como parceiro</a>
       </div>
 
     </div>
   </div>
+
+  <script>
+    $('#cadastrarCliente').click(function(){
+      modalCadastroCliente();
+    })
+
+    $('#cadastrarParceiro').click(function(){
+      modalCadastroParceiro();
+    })
+  </script>
 
 <?php
   // Importando o rodapé
