@@ -8,9 +8,18 @@ require_once('../component/cms_header.php');
  ?>
 
 
+
   <!-- Conainer que segura tudo -->
     <div class="container_principal centro_lr">
-      <script type="text/javascript">
+      <script>
+
+        window.onload = function(){
+          $('.conteudo_moto').hide(),
+          $('.conteudo_servico').hide(),
+          $('.conteudo_carro').hide(),
+          $('.conteudo_produto').hide()
+        }
+
       $(function() {
           $("#carrossel_moto"). jCarouselLite({
               btnPrev: '.prev_moto',
@@ -59,15 +68,18 @@ require_once('../component/cms_header.php');
                 Motos
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
-              <div class="pesquisa_galeria float_left">
-                <input type="text" name="txtPesquisaM" value="" class="pes" >
-                <input type="submit" name="bt_moto" value="P" class="bt_moto bot">
+              <div class="pesquisa_galeria ">
+                <div class="inp_texto">
+                  <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                </div>
+                <div class="inp_bot">
+                    <input type="submit" name="bt_moto" value="buscar" class="bt_moto bot">
+                </div>
               </div>
-
             </div>
 
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_moto display_none">
+            <div class="conteudo_moto ">
               <!-- Lugar onde a imagem principal aparece -->
               <div class="segura_principal">
                 <div class="principal sombra_preta_10">
@@ -77,13 +89,13 @@ require_once('../component/cms_header.php');
                       <div class="ti">
                         Ocultar
                       </div>
-                      <button type="button" class="bt" name="button"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_ocultar_moto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
                     </div>
                     <div class="excluir">
                       <div class="ti">
                         Deletar
                       </div>
-                      <button type="button" class="bt" name="button"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_delete_moto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
                     </div>
                   </div>
                 </div>
@@ -102,7 +114,7 @@ require_once('../component/cms_header.php');
               <!-- Demais imagens referente ao parceiro -->
 
 
-<!-- ************************************************************************  -->
+
 
               <div class="segura_outras">
                 <div class="menu_carrosel">
@@ -139,15 +151,19 @@ require_once('../component/cms_header.php');
                 Serviços
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
-              <div class="pesquisa_galeria float_left">
-                <input type="text" name="txtPesquisaM" value="" class="pes" >
-                <input type="submit" name="bt_moto" value="P" class="bt_servico bot">
-              </div>
+                <div class="pesquisa_galeria ">
+                  <div class="inp_texto">
+                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                  </div>
+                  <div class="inp_bot">
+                      <input type="submit" name="bt_moto" value="buscar" class="bt_servico bot">
+                  </div>
+                </div>
 
             </div>
 
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_servico display_none">
+            <div class="conteudo_servico ">
               <!-- Lugar onde a imagem principal aparece -->
               <div class="segura_principal">
                 <div class="principal sombra_preta_10">
@@ -157,13 +173,13 @@ require_once('../component/cms_header.php');
                       <div class="ti">
                         Ocultar
                       </div>
-                      <button type="button" class="bt" name="button"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_ocultar_servico"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
                     </div>
                     <div class="excluir">
                       <div class="ti">
                         Deletar
                       </div>
-                      <button type="button" class="bt" name="button"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_delete_servico"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
                     </div>
                   </div>
                 </div>
@@ -204,6 +220,7 @@ require_once('../component/cms_header.php');
                   </a>
                 </div>
               </div>
+            </div>
           </div>
 
           <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
@@ -214,15 +231,17 @@ require_once('../component/cms_header.php');
                 Carros
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
-              <div class="pesquisa_galeria float_left">
-                <input type="text" name="txtPesquisaM" value="" class="pes" >
-                <input type="submit" name="bt_moto" value="P" class="bt_carro bot">
-              </div>
-
+                <div class="pesquisa_galeria ">
+                  <div class="inp_texto">
+                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                  </div>
+                  <div class="inp_bot">
+                      <input type="submit" name="bt_moto" value="buscar" class="bt_carro bot">
+                  </div>
+                </div>
             </div>
-
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_carro display_none">
+            <div class="conteudo_carro ">
               <!-- Lugar onde a imagem principal aparece -->
               <div class="segura_principal">
                 <div class="principal sombra_preta_10">
@@ -232,13 +251,13 @@ require_once('../component/cms_header.php');
                       <div class="ti">
                         Ocultar
                       </div>
-                      <button type="button" class="bt" name="button"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_oculta_carro"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
                     </div>
                     <div class="excluir">
                       <div class="ti">
                         Deletar
                       </div>
-                      <button type="button" class="bt" name="button"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_delete_carro"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
                     </div>
                   </div>
                 </div>
@@ -290,15 +309,19 @@ require_once('../component/cms_header.php');
                 Produtos
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
-              <div class="pesquisa_galeria float_left">
-                <input type="text" name="txtPesquisaM" value="" class="pes" >
-                <input type="submit" name="bt_moto" value="P" class="bt_produto bot">
-              </div>
+                <div class="pesquisa_galeria ">
+                  <div class="inp_texto">
+                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                  </div>
+                  <div class="inp_bot">
+                      <input type="submit" name="bt_moto" value="buscar" class="bt_produto bot">
+                  </div>
+                </div>
 
             </div>
 
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_produto display_none">
+            <div class="conteudo_produto ">
               <!-- Lugar onde a imagem principal aparece -->
               <div class="segura_principal">
                 <div class="principal sombra_preta_10">
@@ -308,13 +331,13 @@ require_once('../component/cms_header.php');
                       <div class="ti">
                         Ocultar
                       </div>
-                      <button type="button" class="bt" name="button"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="btn_oculta_produto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
                     </div>
                     <div class="excluir">
                       <div class="ti">
                         Deletar
                       </div>
-                      <button type="button" class="bt" name="button"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
+                      <button type="button" class="bt" name="bt_delete_produto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
                     </div>
                   </div>
                 </div>

@@ -9,6 +9,56 @@
 -->
 <!-- Segura conteudo -->
   <div class="principal_galeria centro_lr">
+    <script type="text/javascript">
+    // function ocultar_div(){
+    //    $('#TipodeDocumento_6').on('change', function() {
+    //       $('.div-sel').hide();
+    //       var selecionado = $(this).val();
+    //       $('.div-sel').each(function() {
+    //          if ($(this).attr('id') == selecionado) {
+    //             $(this).toggle();
+    //          } else {
+    //             $(this).hide();
+    //          }
+    //       });
+    //    });
+    // }
+
+
+    $(window).on('load',function(){
+       $('#conteudo_moto').hide();
+    });
+
+    $(function() {
+        $(".carrossel_moto"). jCarouselLite({
+            btnPrev: '.prev_moto',
+            btnNext: '.next_moto',
+            visible: 3
+
+        })
+
+        $(".carrossel_servico"). jCarouselLite({
+            btnPrev: '.prev_servico',
+            btnNext: '.next_servico',
+            visible: 3
+        })
+
+        $(".carrossel_carro"). jCarouselLite({
+            btnPrev: '.prev_carro',
+            btnNext: '.next_carro',
+            visible: 3
+
+        })
+
+        $(".carrossel_produto"). jCarouselLite({
+            btnPrev: '.prev_produto',
+            btnNext: '.next_produto',
+            visible: 3
+        })
+
+    })
+
+    </script>
     <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
     <div class="div_segura">
       <div class="titulo_galeria titulo">

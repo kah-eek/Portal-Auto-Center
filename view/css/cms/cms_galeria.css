@@ -29,22 +29,36 @@
 }
 
 .pesquisa_galeria{
-  width: 400px;
+  width: 515px;
   height: 40px;
   float: right;
 }
 
-.pes{
-  width: 270px;
+.inp_texto{
+  width: 364px;
   height: 35px;
+  float: left;
+  margin-top: 2px;
+}
+
+.pes{
+  width: 99%;
+  height: 30px;
+  border-radius: 7px 0px 0px 7px;
+}
+
+.inp_bot{
+  width: 150px;
+  height: 35px;
+  float: left;
+  margin-top: 3px;
 }
 
 .bot{
-  width: 50px;
-  height:40px;
-
+  width: 110px;
+  height:35px;
+  border-radius: 0px 7px 7px 0px;
 }
-
 
 /*Formataçao padrao para todas as imagens principais*/
 .segura_principal{
@@ -161,15 +175,12 @@
   width: 500px;
   height: 100%;
   float: left;
-  display: block;
-  background-color: red;
 }
 
 .container_carousel{
   width: 500px;
   height: 170px;
   margin-top: 120px;
-  background-color: orange;
 }
 
 li img {
@@ -181,12 +192,22 @@ li img {
   height: 40px;
   float: left;
   margin-top: 190px;
-  background-color: blue;
 }
 
 ul{
   width: 450px;
   height: 180px;
+}
+
+ul li{
+  float: left;
+  width: 135px;
+  height: 135px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline;
+  box-shadow: 0px 0px 5px #000;
 }
 
 
@@ -205,15 +226,7 @@ ul{
 
 
 
-#carrossel_moto ul li{
-  float: left;
-  width: 135px;
-  height: 135px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  box-shadow: 0px 0px 5px #000;
-}
+
 
 /*Carrosel dos produto*/
 .carrossel_servico{
@@ -228,15 +241,7 @@ ul{
 
 
 
-.carrossel_servico ul li{
-  float: left;
-  width: 135px;
-  height: 135px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  box-shadow: 0px 0px 5px #000;
-}
+
 
 
 /*Carrosel dos carros*/
@@ -252,15 +257,6 @@ ul{
 
 
 
-.carrossel_carro ul li{
-  float: left;
-  width: 135px;
-  height: 135px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  box-shadow: 0px 0px 5px #000;
-}
 
 /*Carrosel dos produto*/
 .carrossel_produto{
@@ -274,25 +270,6 @@ ul{
   margin-right: 5px;
 }
 
-/*Carrosel dos produto*/
-.carrossel_produto ul{
-  width: 450px;
-  height: 180px;
-  float: left;
-  display: block;
-}
-
-
-
-.carrossel_produto ul li{
-  float: left;
-  width: 135px;
-  height: 135px;
-  margin-top: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  box-shadow: 0px 0px 5px #000;
-}
 
 
 /*************************************************/
@@ -320,119 +297,4 @@ ul{
 .conteudo_produto{
   width: 1100px;
   height: 420px;
-}
-
-
-
-
-
-
-
-
-
-
-#content {
-	margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  background-color: blue;
-}
-
-#menu-carrossel {
-	float: left;
-	/* clear: both; */
-  width: 100%;
-	height: 100%;
-	text-align: center;
-}
-
-
-.conatiner_img{
-  width: 440px;
-  height: inherit;
-  /* background-color: gray; */
-}
-
-
-#carrossel {
-	float: left;
-  height: inherit;
-  width: 300px;
-	/* height: 150px; */
-  overflow: hidden;
-  /* background-color: green; */
-}
-
-#carrossel ul li {
-  width: 130px;
-  height: 130px;
-   background-color: purple;
-	/* width: 200px;
-	height: 150px; */
-	float: left;
-	margin: 0 60px;
-}
-
-#carrossel ul li img{
-  width: inherit;
-  height: inherit;
-}
-
-
-
-/* ######################## Carrosel 1 ############################## */
-
-
-
-.container_botoes_carossel{
-  width: 30px;
-	background-color: orange;
-  float: left;
-  height: inherit;
-  /* background-color: red; */
-}
-.container_item_carrosel_loj{
-  transition: 1s;
-  width: 300px;
-  height: 260px;
-  box-shadow: 0px 0px 5px #000;
-}
-.container_item_carrosel_loj:hover{
-  transition:1s;
-  box-shadow: 0px 0px 50px #000;
-}
-.container_item_carrosel_loj:hover .valor_item_carrosel_loj{
-  transition:1s;
-  /* background-color: #fff; */
-
-  /* Texto */
-  font-weight: bold;
-  color: #000;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 1px #00C853;
-}
-.container_item_carrosel_loj:hover .descricao_item_carrosel_loj{
-  transition:1s;
-  background-color: #00C853;
-
-  /* Texto */
-  color: #fff;
-  /* font-weight: bold; */
-  text-shadow: 1px 1px 2px #000;
-}
-.imagem_item_carrosel_loj{
-  width: 300px;
-  height: 200px;
-}
-.valor_item_carrosel_loj{
-  transition:1s;
-  width: 300px;
-  height: 30px;
-  /* background-color: orange; */
-}
-.descricao_item_carrosel_loj{
-  transition:1s;
-  width: 300px;
-  height: 30px;
-  /* background-color: aqua; */
 }
