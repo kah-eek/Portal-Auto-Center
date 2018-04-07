@@ -4,9 +4,10 @@
 */
 
 .modal{
-  margin-top: 0;
+  margin-top: 0px;
+  padding: 0px;
   width: 700px;
-  height: 600px;
+  height: 400px;
 }
 
 /* Container principal do conteúdo sobre o Cliente */

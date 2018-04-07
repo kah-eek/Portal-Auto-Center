@@ -1,35 +1,52 @@
 
+
 .container_principal_cp{
   width: 700px;
-  height: 700px;
+  height: 672px;
 }
 
 .container_titulo{
   width: 700px;
-  height: 40px;
-  background-color: #ff6600;
+  height: 20px;
+  background-color: #00C853;
+  /*background-color: #ff6600;*/
 
 }
 
 .item_titulo{
   width: 300px;
-  height: 40px;
+  height: 20px;
+  background-color: #00C853;
+}
 
+.titulo_form_veic{
+  width: 250px;
+  height: 30px;
+  border-radius: 50px 50px 50px 50px;
+  margin-left: 30px;
+
+}
+
+.item_titulo_form_veic{
+  width: 250px;
+  height: 30px;
+  border-radius: 50px 50px 50px 50px;
+  background-color: #00C853;
 }
 
 /*IMAGENS*/
 
 .container_imagens{
   width: 550px;
-  height: 130px;
-  background-color: #33cc33;
+  height: 120px;
+  /*background-color: #33cc33;*/
 
 }
 
 .item_imagens{
   width: 150px;
-  height: 130px;
-  background-color: #990033;
+  height: 120px;
+  border: solid 1px;
 
 }
 
@@ -37,14 +54,15 @@
 
 .form_cadastro_cliente{
   width: 300px;
-  height: 530px;
+  height: 520px;
   /*background-color: #737373;*/
 
 }
 
 .container_infs{
-  width: 300px;
+  width: 275px;
   height: 520px;
+  margin-left: 10px;
   /*background-color: #fff;*/
 
 }
@@ -52,6 +70,7 @@
 .input_text{
   width: 250px;
   height: 20px;
+  margin-left: 20px;
 
 }
 .input_text::placeholder{
@@ -64,11 +83,10 @@
 .segura_input{
   width: 250px;
   height: 30px;
-  margin-left: 30px;
+  margin-left: 10px;
   /*background-color: green;*/
 
 }
-
 .titulo_form{
   width: 250px;
   height: 20px;
@@ -85,12 +103,36 @@
 .data_nasc{
   width: 150px;
   height: 26px;
+  margin-left: 20px;
   border: solid 1px;
 
 }
 
 .form_cadastro_veiculo{
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 230px;
 
+}
+
+.segura_inputs_veic{
+  width: 300px;
+  height: 220px;
+  margin-left: 100px;
+
+}
+
+
+.segura_bt{ /*input do tipo submit */
+  width: 200px;
+  height: 40px;
+  /*background-color: red;*/
+  margin-left: 150px;
+
+}
+
+.input_submit{
+  width: 200px;
+  background-color: #00C853;
+  border-radius: 50px 50px 50px 50px;
+  color: #000;
 }
