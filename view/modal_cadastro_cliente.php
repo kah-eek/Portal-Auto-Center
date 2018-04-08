@@ -9,21 +9,31 @@
     <div class="container_principal_cp bg_cinza">
       <!-- TITULO -->
       <div class="container_titulo">
-        <div class="item_titulo txt_sombra_1x1x1_preto float_right txt_preto titulo preenche_10 bg_branco align_center">
+        <div class="item_titulo txt_sombra_1x1x1_preto float_right txt_preto titulo align_center">
           Cadastro Clientes
         </div>
       </div>
       <!-- IMAGENS -->
-      <div class="container_imagens centro_lr">
-        <div class="item_imagens float_left">
+      <div class="container_imagens margem_t_5 centro_lr">
 
-        </div>
-        <div class="item_imagens float_right">
+        <!-- LABEL IMAGEM CLIENTE -->
+        <label for="btn_img_cliente">
+          <div class="item_imagens bg_branco float_left">
 
-        </div>
+          </div>
+        </label>
+        <input type="file" class="display_none" id="btn_img_cliente" name="btn_img_cliente" value="">
+
+        <!-- LABEL IMAGEM VEICULO -->
+        <label for="btn_img_veiculo">
+          <div class="item_imagens bg_branco float_right">
+
+          </div>
+          <input class="display_none" id="btn_img_veiculo" type="file" name="btn_img_veiculo" value="">
+        </label>
       </div>
       <!-- FORM -->
-      <form class="form_cadastro_cliente float_left bg_branco" action="modal_cadastro_cliente.php" method="post">
+      <form class="form_cadastro_cliente margem_t_5 float_left" action="modal_cadastro_cliente.php" method="post">
         <div class="container_infs">
 
           <!-- INPUT NOME -->
@@ -65,8 +75,8 @@
 
           <!-- INPUT RADIO -->
           <div class="segura_input margem_t_5 float_left">
-            <input type="radio" name="sexo" value="M"> Masculino
-            <input type="radio" name="sexo" value="F"> Feminino
+            <input class="margem_l_20" type="radio" name="sexo" value="M"> Masculino
+            <input class="margem_l_20 txt_preto" type="radio" name="sexo" value="F"> Feminino
           </div>
 
           <!-- TITULO ENDEREÇO -->
@@ -120,51 +130,55 @@
 
           <!-- INPUT SENHA -->
           <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Senha" type="text" name="txt_senha" value="">
+            <input class="input_text txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
           </div>
         </div>
       </form>
+
       <!-- FORM CADASTRO DE VEICULO -->
-      <form class="form_cadastro_veiculo float_right bg_branco" action="modal_cadastro_cliente.php" method="post">
+      <form class="form_cadastro_veiculo float_left" action="modal_cadastro_cliente.php" method="post">
+        <div class="segura_inputs_veic">
+          <!-- TITULO VEICULO -->
+          <div class="titulo_form_veic margem_t_10 float_left">
+            <div class="item_titulo_form_veic align_center bg_branco titulo preenche_t_5 sombra_preta_b_15 margem_t_10">
+              Veículo
+            </div>
+          </div>
 
-        <!-- TITULO VEICULO -->
-        <div class="titulo_form">
-          <div class="item_titulo_form align_center bg_verde titulo float_left">
-            Veículo
+          <!-- INPUT ANO DE FABRICACAO -->
+          <div class="segura_input margem_t_20 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Ano De Fabricação" type="text" name="txt_ano_fabri" value="">
+          </div>
+
+          <!-- INPUT PLACA -->
+          <div class="segura_input margem_t_10 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Placa" type="text" name="txt_placa" value="">
+          </div>
+
+          <!-- INPUT QUANTIDADE DE PORTAS -->
+          <div class="segura_input margem_t_10 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Qtd de Portas" type="text" name="txt_portas" value="">
+          </div>
+
+          <!-- INPUT KILOMETRAGEM -->
+          <div class="segura_input margem_t_10 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Kilometragem" type="text" name="txt_km" value="">
+          </div>
+
+          <!-- INPUT MODELO -->
+          <div class="segura_input margem_t_10 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Modelo" type="text" name="txt_modelo" value="">
+          </div>
+
+          <!-- INPUT FABRICANTE -->
+          <div class="segura_input margem_t_10 float_left">
+            <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
           </div>
         </div>
-
-        <!-- INPUT ANO DE FABRICACAO -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Ano De Fabricação" type="text" name="txt_ano_fabri" value="">
-        </div>
-
-        <!-- INPUT PLACA -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Placa" type="text" name="txt_placa" value="">
-        </div>
-
-        <!-- INPUT QUANTIDADE DE PORTAS -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Qtd de Portas" type="text" name="txt_portas" value="">
-        </div>
-
-        <!-- INPUT KILOMETRAGEM -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Kilometragem" type="text" name="txt_km" value="">
-        </div>
-
-        <!-- INPUT MODELO -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Modelo" type="text" name="txt_modelo" value="">
-        </div>
-
-        <!-- INPUT FABRICANTE -->
-        <div class="segura_input float_left">
-          <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
-        </div>
-        
       </form>
+      <div class="segura_bt float_left margem_t_150">
+        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
+      </div>
     </div>
   </body>
 </html>
