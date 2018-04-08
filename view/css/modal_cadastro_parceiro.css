@@ -1,0 +1,167 @@
+.modal{
+  margin-top: 0px;
+  padding: 0px;
+  width: 700px;
+  height: 675px;
+}
+
+.container_principal_m_cp{
+    width: 700px;
+    height: 675px;
+    /*background-color: #4286f4;*/
+}
+
+.container_titulo_parceiro{
+  width: 700px;
+  height: 17px;
+  /*background-color: red;*/
+
+}
+
+.container_lado_esquerdo{
+  width: 350px;
+  height: 675px;
+  /*background-color: green;*/
+
+}
+
+.container_lado_direito{
+  width: 350px;
+  height: 675px;
+  /*background-color: #645515;*/
+
+}
+
+.container_img_parceiro{
+  width: 210px;
+  height: 150px;
+  /*background-color: red;*/
+
+}
+
+.item_img_parceiro{
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+
+}
+
+.form_segurando_inputs{
+  width: 260px;
+  height: 500px;
+  margin-left: 30px;
+  /*background-color: #9900cc;*/
+
+}
+
+.item_contendo_inputs{
+  width: 275px;
+  height: 500px;
+  /*background-color: #fff;*/
+
+}
+
+.segura_input_p{
+  width: 250px;
+  height: 30px;
+  /*background-color: green;*/
+
+}
+
+.input_text_p{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  width: 250px;
+  height: 20px;
+  border-color: #00C853;
+  outline: none;
+  background-color: transparent;
+  box-shadow: 0px 1px 25px -2px #000;
+  text-overflow: ellipsis;
+}
+
+.input_text_p::placeholder{
+  color: #000;
+  font-family: 'titulo';
+  text-align: left;
+
+}
+
+.titulo_form_p{
+  width: 250px;
+  height: 20px;
+
+}
+
+.item_titulo_form_p{
+  width: 250px;
+  height: 20px;
+
+}
+
+.container_planos{
+  width: 320px;
+  height: 665px;
+  /*background-color: #fff;*/
+
+}
+
+.titulo_planos{
+  width: 320px;
+  height: 30px;
+  /*background-color: #ff6600;*/
+
+}
+
+.item_titulo_planos{
+  width: 200px;
+  height: 30px;
+  /*background-color: green;*/
+
+}
+
+.container_select{
+  width: 320px;
+  height: 20px;
+  /*background-color: #813;*/
+
+}
+
+.slc_planos{
+  width: 200px;
+  height: 20px;
+
+}
+
+.container_desc_planos{
+  width: 320px;
+  height: 30px;
+  /*background-color: #cc0066;*/
+
+}
+
+.item_desc_planos{
+  width: 200px;
+  height: 30px;
+
+}
+
+.container_texto_planos{
+  width: 320px;
+  height: 200px;
+
+}
+
+.item_texto_planos{
+  width: 320px;
+  height: 200px;
+
+}
+
+.section_endereco{
+  width: 200px;
+  height: 40px;
+  background-color: red;
+
+}
