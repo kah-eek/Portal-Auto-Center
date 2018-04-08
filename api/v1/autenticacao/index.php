@@ -17,11 +17,11 @@
     if ($action == 'autenticar') {// Autentica o usuário
 
       // Obtém as keys do request
-      $usuario = $_POST['usuario'];
-      $senha = $_POST['senha'];
+      // $usuario = $_POST['usuario'];
+      // $senha = $_POST['senha'];
 
       // Cria um objeto para realizar a autenticação
-      $autenticacao = new Autenticacao($usuario,$senha);
+      $autenticacao = new Autenticacao('adm','123');
 
       // Verifica se o usuário existe na base de dados
       if($autenticacao->login($autenticacao))// Existe na base de dados
@@ -57,7 +57,7 @@
               );
 
   // Exibe o response no formato JSON
-  echo json_encode($response);
+  echo '<pre>'.json_encode($response, JSON_PRETTY_PRINT)."</pre>";
   // ################################
 
 
