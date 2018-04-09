@@ -17,11 +17,11 @@
     if (isset($_GET['action']) && $_GET['action'] == 'autenticar') {// Autentica o usuário
 
       // Obtém as keys do request
-      // $usuario = $_POST['usuario'];
-      // $senha = $_POST['senha'];
+      $usuario = $_POST['usuario'];
+      $senha = $_POST['senha'];
 
       // Cria um objeto para realizar a autenticação
-      $autenticacao = new Autenticacao('adm','123');
+      $autenticacao = new Autenticacao($usuario,$senha);
 
       // Verifica se o usuário existe na base de dados
       if($autenticacao->credencialExistente($autenticacao))// Existe na base de dados

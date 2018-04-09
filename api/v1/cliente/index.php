@@ -21,28 +21,28 @@
 
       // Obtém as keys do request
       // ************ Dados Gerais ***********
-      $nome = $_GET['nome'];
-      $email = $_GET['email'];
-      $dtNasc = $_GET['dtNasc'];
-      $cpf = $_GET['cpf'];
-      $celular = $_GET['celular'];
-      $sexo = $_GET['sexo'];
-      $telefone = $_GET['telefone'];
-      $foto = $_GET['foto'];
+      $nome = $_POST['nome'];
+      $email = $_POST['email'];
+      $dtNasc = $_POST['dtNasc'];
+      $cpf = $_POST['cpf'];
+      $celular = $_POST['celular'];
+      $sexo = $_POST['sexo'];
+      $telefone = $_POST['telefone'];
+      $foto = $_POST['foto'];
 
       // ************ Usuário ***********
-      $nomeUsuario = $_GET['usuario'];
-      $senha = $_GET['senha'];
-      $idNivelUsuario = $_GET['idNivelUsuario'];
+      $nomeUsuario = $_POST['usuario'];
+      $senha = $_POST['senha'];
+      $idNivelUsuario = $_POST['idNivelUsuario'];
 
       // ************ Endereço ***********
-      $idEstado = $_GET['idEstado'];
-      $numero = $_GET['numero'];
-      $cidade = $_GET['cidade'];
-      $cep = $_GET['cep'];
-      $bairro = $_GET['bairro'];
-      $complemento = $_GET['complemento'];
-      $logradouro = $_GET['logradouro'];
+      $idEstado = $_POST['idEstado'];
+      $numero = $_POST['numero'];
+      $cidade = $_POST['cidade'];
+      $cep = $_POST['cep'];
+      $bairro = $_POST['bairro'];
+      $complemento = $_POST['complemento'];
+      $logradouro = $_POST['logradouro'];
 
       // Cria um objeto Usuario
       $usuario = new Usuario(null, $nomeUsuario, $senha, $idNivelUsuario, null, null);
