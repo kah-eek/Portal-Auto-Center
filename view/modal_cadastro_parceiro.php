@@ -8,8 +8,11 @@
   <body>
     <div class="container_principal_m_cp bg_cinza">
       <div class="container_titulo_parceiro">
-        <div class="item_titulo_parceiro align_center titulo preenche_3">
+        <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
           Cadastro Parceiro
+        </div>
+        <div class="container_btn_sair_mp float_right negrito">
+          <a href="cliente_parceiro.php?page=cliente_parceiro">Sair(X)</a>
         </div>
       </div>
       <div class="container_lado_esquerdo float_left bg_cinza">

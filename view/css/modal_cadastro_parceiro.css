@@ -21,6 +21,13 @@
     /*background-color: #4286f4;*/
 }
 
+.container_btn_sair_mp{
+  width: 50px;
+  height: 25px;
+  /*background-color: pink;*/
+
+}
+
 .container_titulo_parceiro{
   width: 700px;
   height: 25px;
@@ -28,10 +35,15 @@
 
 }
 
+.item_titulo_parceiro{
+  width: 650px;
+  height: 25px;
+  background-color: #00C853;
+}
+
 .container_lado_esquerdo{
   width: 350px;
   height: 675px;
-  /*background-color: green;*/
 
 }
 

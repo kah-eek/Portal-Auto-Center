@@ -9,8 +9,11 @@
     <div class="container_principal_mc_cp bg_cinza">
       <!-- TITULO -->
       <div class="container_titulo">
-        <div class="item_titulo txt_sombra_1x1x1_preto float_right txt_preto titulo align_center">
+        <div class="item_titulo txt_sombra_1x1x1_preto float_left txt_preto titulo align_center">
           Cadastro Clientes
+        </div>
+        <div class="container_btn_sair float_right negrito">
+          <a href="cliente_parceiro.php?page=cliente_parceiro">Sair(X)</a>
         </div>
       </div>
       <!-- IMAGENS -->

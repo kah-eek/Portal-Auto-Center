@@ -37,7 +37,7 @@
   </div>
 
   <!-- Divisor de conteúdo -->
-  <div class="divisor "></div>
+  <div class="divisor centro_lr">dfgfdgfdg</div>
   <!-- ******************* -->
 
   <!-- Container principal do conteúdo sobre o Parceiro -->
@@ -58,7 +58,7 @@
 
       <!-- Área de cadastro do Parceiro -->
       <div class="area_cadastrese float_right align_left preenche_l_20 preenche_b_30 link">
-        <a id="cadastrarParceiro" href="#">Cadastrar-se como parceiro</a>
+        <span id="cadastrarParceiro">Cadastrar-se como parceiro</span>
       </div>
 
     </div>

@@ -1,3 +1,4 @@
+
 .modal{
   /*margin-top: 0px;*/
   /*padding: 0px;*/
@@ -12,6 +13,12 @@
   height: auto;
 }
 
+.container_btn_sair{
+  width: 50px;
+  height: 20px;
+
+}
+
 .container_titulo{
   width: 700px;
   height: 20px;
@@ -20,8 +27,9 @@
 }
 
 .item_titulo{
-  width: 300px;
+  width: 200px;
   height: 20px;
+  margin-left: 450px;
   background-color: rgb(0, 200, 83);
 }
 
