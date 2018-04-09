@@ -37,7 +37,7 @@
   height: 240px;
   margin-left: 40px;
   border: solid 1px;
-  /*background-color: #F5F5F5;*/
+  background-color: #F5F5F5;
 
 }
 /*IMAGEM*/
@@ -58,51 +58,46 @@
 }
 /*TEXTAREA*/
 .container_textarea{
-  width: 400px;
-  height: 260px;
+  width: 500px;
+  height: 240px;
   /*background-color: #009933;*/
 
 }
 
 .item_textarea{
-  width: 350px;
-  height: 260px;
+  width: 500px;
+  height: 240px;
   /*background-color: #0066ff;*/
 
 }
 
-textarea{
-  margin-top: 20px;
-  border: solid 1px;
+.textarea_cp{
+  margin-top: 17px;
+  /*border: solid 1px;*/
 
 }
 
 /*BOTÃO ENVIAR*/
 
-.container_botao{
-  width: 200px;
-  height: 50px;
-  margin-left: 30px;
-  /*background-color: blue;*/
+.container_btn{
+  width: 178px;
+  height: 240px;
+  /*background-color: red;*/
 
 }
 
 .segura_submit{
-  width: 200px;
-  height: 50px;
-	transition: .5s ease-in-out;
-	opacity: 0.5;
-  /*background-color: red*/
+  width: 150px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: blue;
 
-}
-
-.segura_submit:hover{
-	opacity: 1;
 }
 
 .input_submit_cp{
-  width: 200px;
-  height: 40px;
+  width: 150px;
+  height: 30px;
+  border-radius: 100px;
 
 }
 

@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!-- Importando Cabeçalho CMS -->
 <?php
   require_once('../component/cms_header.php');
@@ -22,7 +27,7 @@
          </div>
        </div>
 
-       <div class="container_informacoes bg_branco margem_t_10 sombra_preta_b_15">
+       <div class="container_informacoes margem_t_10 sombra_preta_b_15">
 
          <!-- IMAGEM -->
          <div class="container_imagem float_left">
@@ -33,17 +38,15 @@
 
          <!-- TEXTAREA -->
          <div class="container_textarea float_left">
-           <div class="item_textarea centro_lr">
-             <textarea name="name" style="resize: none" rows="11" cols="42"></textarea>
+           <div class="item_textarea">
+             <textarea class="textarea_cp float_left" name="name" style="resize: none" rows="11" cols="42"></textarea>
            </div>
          </div>
-
-         <div class="container_botao float_left margem_t_80">
-           <div class="segura_submit">
-             <input type="submit" name="btn_enviar" class="input_submit_cp margem_t_10" value="Enviar">
+         <div class="container_btn float_left">
+           <div class="segura_submit margem_t_100 centro_lr">
+             <input type="submit" name="btn_enviar" class="input_submit_cp" value="Enviar">
            </div>
          </div>
-
        </div>
 
      </div>
@@ -72,13 +75,13 @@
          <!-- TEXTAREA -->
          <div class="container_textarea float_left">
            <div class="item_textarea centro_lr">
-             <textarea name="name" style="resize: none" rows="11" cols="42"></textarea>
+             <textarea class="textarea_cp" name="name" style="resize: none" rows="11" cols="42"></textarea>
            </div>
          </div>
 
-         <div class="container_botao float_left margem_t_80">
-           <div class="segura_submit">
-             <input type="submit" name="btn_enviar" class="input_submit_cp margem_t_10" value="Enviar">
+         <div class="container_btn float_left">
+           <div class="segura_submit margem_t_100 centro_lr">
+             <input type="submit" name="btn_enviar" class="input_submit_cp" value="Enviar">
            </div>
          </div>
 
