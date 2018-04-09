@@ -73,14 +73,14 @@ li img{
 /*Informacoes da imagem*/
 .escondidinha{
   width: 325px;
-  min-height: 80px;
-  max-height: 140px;
+  display: none;
+  height: 0px;
+  /*max-height: 140px;*/
   float: left;
   padding: 15px;
   position: absolute;
-  margin-top: -285px;
-  display: none;
-  background-color: #DCDCDC;
+  margin-top: -135px;
+  background-color: #000;
 }
 
 /*Parceiro*/
@@ -100,11 +100,16 @@ li img{
 /*feito na imagem principal*/
 .imgs:hover .blur{
   opacity: 0.6;
+  transition: 1s;
 }
 
 li:hover .escondidinha{
+  height: 100px;
+  opacity: 0.7;
   display: block;
+
 }
+
 
 
 /*Carousel moto*/
