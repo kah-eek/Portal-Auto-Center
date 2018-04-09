@@ -1,0 +1,1 @@
+127.0.0.1/site/Portal-Auto-Center/api/v1/cliente/?action=inserir&nome=test&email=test@test&dtNasc=2018-03-1&cpf=11236584574&celular=122548142&sexo=M&telefone=&foto=&usuario=test&senha=123&idNivelUsuario=3&idEstado=1&numero=215&cidade=disnay&cep=45785412&bairro=lapa&complemento=casa01&logradouro=carmen

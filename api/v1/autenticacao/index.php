@@ -1,7 +1,7 @@
 <?php
 
   // Imports
-  require_once('Autenticacao.php');
+  require_once('../Autenticacao.php');
 
   $error = '';
   $mensagem = '';
@@ -10,11 +10,11 @@
   // Verifica qual o método de acesso está sendo utilizado pela requisição
   if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
-    // Obtém qual recurso a request deseja utilizar
-    $action = $_GET['action'];
+    // Recurso qual a request deseja utilizar
+    // $_GET['action'];
 
     // Verifica qual recurso deve ser utilizado
-    if ($action == 'autenticar') {// Autentica o usuário
+    if (isset($_GET['action']) && $_GET['action'] == 'autenticar') {// Autentica o usuário
 
       // Obtém as keys do request
       // $usuario = $_POST['usuario'];
@@ -24,9 +24,9 @@
       $autenticacao = new Autenticacao('adm','123');
 
       // Verifica se o usuário existe na base de dados
-      if($autenticacao->login($autenticacao))// Existe na base de dados
+      if($autenticacao->credencialExistente($autenticacao))// Existe na base de dados
       {
-        $mensagem = 'usu&#225;rio autenticado com sucesso';
+        $mensagem = 'usuário autenticado com sucesso';
         $status = true;
       }
       else // Não existe na base de dados
@@ -37,7 +37,7 @@
     }
     else // Nenhum recurso selecionado ou inexistente
     {
-      $mensagem = 'recurso n&#227;o encontrado';
+      $mensagem = 'recurso não encontrado';
       $error = '404';
     }
 
@@ -57,7 +57,7 @@
               );
 
   // Exibe o response no formato JSON
-  echo '<pre>'.json_encode($response, JSON_PRETTY_PRINT)."</pre>";
+  echo json_encode($response);
   // ################################
 
 

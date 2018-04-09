@@ -1,7 +1,7 @@
 <?php
 
 // Imports
-require_once('../database.php');
+require_once('MySql.php');
 // #############################
 
 class Autenticacao
@@ -22,7 +22,7 @@ class Autenticacao
   * @return true Credencial confirmada com sucesso
   * @return false Credencial não existente ou ocorra alguma falha ao tentar buscar o registro no banco de dados
   */
-  function login($autenticacaoObj)
+  function credencialExistente($autenticacaoObj)
   {
     // Instância de acesso ao db
     $mySql = new MySql();
@@ -30,7 +30,7 @@ class Autenticacao
     // Abre uma nova conexão com o db
     $con = $mySql->getConnection();
 
-    $stmt = $con->prepare('SELECT COUNT(*) AS rows FROM tbl_usuario WHERE usuario=? AND senha=?');
+    $stmt = $con->prepare('SELECT COUNT(*) AS rows FROM tbl_usuario WHERE usuario= ? AND senha= ?');
     $stmt->bindParam(1,$autenticacaoObj->usuario);
     $stmt->bindParam(2,$autenticacaoObj->senha);
     $stmt->execute();
