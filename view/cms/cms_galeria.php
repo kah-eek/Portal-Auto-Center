@@ -20,34 +20,7 @@ require_once('../component/cms_header.php');
           $('.conteudo_produto').hide()
         }
 
-      $(function() {
-          $("#carrossel_moto"). jCarouselLite({
-              btnPrev: '.prev_moto',
-              btnNext: '.next_moto',
-              visible: 3
 
-          })
-
-          $(".carrossel_servico"). jCarouselLite({
-              btnPrev: '.prev_servico',
-              btnNext: '.next_servico',
-              visible: 3
-          })
-
-          $(".carrossel_carro"). jCarouselLite({
-              btnPrev: '.prev_carro',
-              btnNext: '.next_carro',
-              visible: 3
-
-          })
-
-          $(".carrossel_produto"). jCarouselLite({
-              btnPrev: '.prev_produto',
-              btnNext: '.next_produto',
-              visible: 3
-          })
-
-      })
 
       </script>
 
@@ -122,7 +95,7 @@ require_once('../component/cms_header.php');
                     <img src="../pictures/icons/previous.svg" alt="Voltar">
                   </a>
                 </div>
-                <div id="carrossel_moto" class="sombra_preta_10">
+                <div class="carrossel_moto sombra_preta_10">
                   <ul>
                     <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
                     <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
@@ -384,12 +357,39 @@ require_once('../component/cms_header.php');
 
           <script>
 
+          $(function() {
+              $(".carrossel_moto"). jCarouselLite({
+                  btnPrev: '.prev_moto',
+                  btnNext: '.next_moto',
+                  visible: 3
+              })
+
+              $(".carrossel_servico"). jCarouselLite({
+                  btnPrev: '.prev_servico',
+                  btnNext: '.next_servico',
+                  visible: 3
+              })
+
+              $(".carrossel_carro"). jCarouselLite({
+                  btnPrev: '.prev_carro',
+                  btnNext: '.next_carro',
+                  visible: 3
+
+              })
+
+              $(".carrossel_produto"). jCarouselLite({
+                  btnPrev: '.prev_produto',
+                  btnNext: '.next_produto',
+                  visible: 3
+              })
+
+          })
 
 
           // function para deixar visivel a caixa de conteudo moto
           //e ocultar as demais caixas
             $('.bt_moto').click(function(){// aciona o evento do click
-              $('.conteudo_moto').show(3000);// PESQUISAR
+              $('.conteudo_moto').show(1500);// PESQUISAR
               // $(this).hide();// PESQUISAR
               $('.conteudo_servico').hide(1000);
               $('.conteudo_carro').hide(1000);
@@ -399,7 +399,7 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo serviço
             //e ocultar as demais caixas
             $('.bt_servico').click(function(){// aciona o evento do click
-              $('.conteudo_servico').show(3000);
+              $('.conteudo_servico').show(1500);
               $('.conteudo_moto').hide(1000);
               $('.conteudo_carro').hide(1000);
               $('.conteudo_produto').hide(1000);
@@ -408,7 +408,7 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo carro
             //e ocultar as demais caixas
             $('.bt_carro').click(function(){// aciona o evento do click
-              $('.conteudo_carro').show(3000);
+              $('.conteudo_carro').show(1500);
               $('.conteudo_moto').hide(1000);
               $('.conteudo_servico').hide(1000);
               $('.conteudo_produto').hide(1000);
@@ -417,7 +417,7 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo produto
             //e ocultar as demais caixas
             $('.bt_produto').click(function(){// aciona o evento do click
-              $('.conteudo_produto').show(3000);
+              $('.conteudo_produto').show(1500);
               $('.segura_outras').css('display','block');
               $('.conteudo_moto').hide(1000);
               $('.conteudo_carro').hide(1000);

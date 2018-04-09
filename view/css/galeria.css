@@ -1,92 +1,132 @@
-.principal_galeria{
-  width: 1430px;
-  min-height: 1440px;
+.segura_tudo{
+  width: 100%;
   height: auto;
-  overflow: hidden;
-  margin-top: 10px;
 }
 
-/**/
-.div_segura{
-  min-width: 350px;
-  width: auto;
-  min-height:1440px;
-  height: auto;
-  float:left;
-  margin-right: 5px;
+/*Conteudo*/
+.conteudo_galeria{
+  width: 1420px;
+  height: 1255px;
+  background-color: #A9A9A9;
 }
 
+
+/*Formataçao padrao dos cards*/
+.coluna_img{
+  width: 355px;
+  height: inherit;
+  float: left;
+}
+
+
+/****** Carousel******/
+/*Menu do carousel*/
+.menu_carousel{
+  width: 100%;
+  height: 40px;
+  background-color: gray;
+}
+
+/* formatacao padao dos titulos dos cards*/
 .titulo_galeria{
   width: auto;
   height: 40px;
+  padding-top: 15px;
   font-size: 20px;
-  padding-top: 14px;
   text-align: center;
   background-color: black;
   color: #00C853;
 }
 
-.img_galeria{
-  width: 330px;
-  min-height: 300px;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
+/*formatacao padrao da coluna que segura o carousel*/
+.segura_carousel{
+  width: inherit;
+  height: 1120px;
+  overflow: hidden;
 }
 
-.segura_img{
-  width: 330px;
-  height: 300px;
+ul{
+  width: inherit;
+  height: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.img_galeria img{
+li{
+  width: 100%;
+  height: 280px;
+}
+
+.imgs{
   width: 100%;
   height: 100%;
 }
 
+
+li img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/*Informacoes da imagem*/
 .escondidinha{
-  width: 330px;
-  min-height: 50px;
-  height: auto;
+  width: 325px;
+  min-height: 80px;
+  max-height: 140px;
+  float: left;
+  padding: 15px;
+  position: absolute;
+  margin-top: -285px;
   display: none;
-
+  background-color: #DCDCDC;
 }
 
+/*Parceiro*/
 .parceiro_titulo{
-  width: 330px;
-  height: 20px;
-  font-size: 15px;
-  color: #fff;
-}
-
-.detalhe_img{
-  width: 330px;
+  width:325px;
   min-height: 20px;
-  height: auto;
-  font-size: 15px;
-  color: #fff;
+  margin-bottom: 5px;
 }
 
-
-
-.img_galeria .segura_img:hover {
-  width: 340px;
-  height: 310px;
-  margin-left: 5px;
-  margin-right: 8px;
-  margin-top: 8px;
-  border-radius: 40px 40px 40px 40px;
+/*Inf da imagem*/
+.inf_img{
+  width:325px;
+  min-height: 20px;
+  margin-bottom: 5px;
 }
 
-.img_galeria .segura_img:hover >img{
-  border-radius: 15px 15px 0px 0px;
-}
-
-.img_galeria:hover >.escondidinha{
-  width: 340px;
-  display:block;
-  background-color: #000;
+/*feito na imagem principal*/
+.imgs:hover .blur{
   opacity: 0.6;
-  margin-left: 5px;
+}
+
+li:hover .escondidinha{
+  display: block;
+}
+
+
+/*Carousel moto*/
+.carousel_moto{
+  width: inherit;
+  height: 1360px;
+}
+
+/*Carousel servico*/
+.carousel_servico{
+  width: inherit;
+  height: 1360px;
+}
+
+/*Carousel carro*/
+.carousel_carro{
+  width: inherit;
+  height: 1360px;
+}
+
+/*Carousel produto*/
+.carousel_produto{
+  width: inherit;
+  height: 1360px;
 }

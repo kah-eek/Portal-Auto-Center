@@ -214,14 +214,13 @@ ul li{
 /**/
 
 /**/
-#carrossel_moto{
+.carrossel_moto{
   width: 450px;
-  height: 180px;
+  height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
-  overflow: hidden;
 }
 
 
@@ -231,7 +230,7 @@ ul li{
 /*Carrosel dos produto*/
 .carrossel_servico{
   width: 450px;
-  height: 180px;
+  height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
@@ -248,7 +247,7 @@ ul li{
 .carrossel_carro{
   overflow: hidden;
   width: 450px;
-  height: 180px;
+  height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
@@ -263,7 +262,7 @@ ul li{
   display: block;
   overflow: hidden;
   width: 450px;
-  height: 180px;
+  height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;

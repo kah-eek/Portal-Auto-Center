@@ -1,302 +1,577 @@
-<?php
-  // Importando o cabeçalho
-  require_once("component/header.php");
-?>
 <!--
 @autor Allan Alves
 @data 31/03/2018
 @descricao Página da galeria
 -->
-<!-- Segura conteudo -->
-  <div class="principal_galeria centro_lr">
-    <script type="text/javascript">
-    // function ocultar_div(){
-    //    $('#TipodeDocumento_6').on('change', function() {
-    //       $('.div-sel').hide();
-    //       var selecionado = $(this).val();
-    //       $('.div-sel').each(function() {
-    //          if ($(this).attr('id') == selecionado) {
-    //             $(this).toggle();
-    //          } else {
-    //             $(this).hide();
-    //          }
-    //       });
-    //    });
-    // }
+  <!-- segura todo o conteudo da pagina -->
+  <!-- Parte do cabeçalho -->
+  <?php
+    // Importando o cabeçalho
+    require_once("component/header.php");
+  ?>
+
+  <div class="segura_tudo">
+    <!--Conteudo  -->
+    <div class="conteudo_galeria centro_lr">
+      <!-- Coluna das fotos sobre motos -->
+      <div class="coluna_img">
+        <div class="titulo_galeria titulo">
+          MOTOS
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado prev_moto fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_up</i>
+          </a>
+        </div>
+        <!-- Carousel -->
+        <div class="segura_carousel">
+          <div class="carousel_moto">
+            <ul>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado next_moto fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_down</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna das fotos sobre serviços -->
+      <div class="coluna_img">
+        <div class="titulo_galeria titulo">
+          SERVIÇOS
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado prev_servico fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_up</i>
+          </a>
+        </div>
+        <!-- Carousel -->
+        <div class="segura_carousel">
+          <div class="carousel_servico">
+            <ul>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/auto_eletrica.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/pintura_carro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/polimento.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/troca_oleo.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado next_servico fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_down</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna das fotos sobre carro -->
+      <div class="coluna_img">
+        <div class="titulo_galeria titulo">
+          CARROS
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado prev_carro fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_up</i>
+          </a>
+        </div>
+        <!-- Carousel -->
+        <div class="segura_carousel">
+          <div class="carousel_carro">
+            <ul>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado next_carro fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_down</i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna das fotos sobre produto -->
+      <div class="coluna_img">
+        <div class="titulo_galeria titulo">
+          PRODUTOS
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado prev_produto fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_up</i>
+          </a>
+        </div>
+        <!-- Carousel -->
+        <div class="segura_carousel">
+          <div class="carousel_produto">
+            <ul>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="imgs txt_sombra_1x1x1_preto">
+                  <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
+                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                    <div class="parceiro_titulo">
+                      Por:
+                    </div>
+                    <div class="inf_img">
+                      XXXXXXX XXXXn x  XJKJ
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Seta do menu  -->
+        <div class="menu_carousel">
+          <a href="#">
+            <i class="material-icons centralizado next_produto fs_50 txt_sombra_1x1x10_branco txt_branco">keyboard_arrow_down</i>
+          </a>
+        </div>
+      </div>
 
 
-    $(window).on('load',function(){
-       $('#conteudo_moto').hide();
-    });
-
-    $(function() {
-        $(".carrossel_moto"). jCarouselLite({
+    </div>
+    <script>
+      $(function(){
+        $(".carousel_moto"). jCarouselLite({
             btnPrev: '.prev_moto',
             btnNext: '.next_moto',
-            visible: 3
-
+            visible: 4,
+            mouseWheel: true,
+            vertical: true
         })
 
-        $(".carrossel_servico"). jCarouselLite({
+        $(".carousel_servico"). jCarouselLite({
             btnPrev: '.prev_servico',
             btnNext: '.next_servico',
-            visible: 3
+            visible: 4,
+            mouseWheel: true,
+            vertical: true
         })
 
-        $(".carrossel_carro"). jCarouselLite({
-            btnPrev: '.prev_carro',
-            btnNext: '.next_carro',
-            visible: 3
+        $(".carousel_carro"). jCarouselLite({
+              btnPrev: '.prev_carro',
+              btnNext: '.next_carro',
+              visible: 4,
+              mouseWheel: true,
+              vertical: true
+          })
 
-        })
-
-        $(".carrossel_produto"). jCarouselLite({
-            btnPrev: '.prev_produto',
-            btnNext: '.next_produto',
-            visible: 3
-        })
-
-    })
-
+        $(".carousel_produto"). jCarouselLite({
+              btnPrev: '.prev_produto',
+              btnNext: '.next_produto',
+              visible: 4,
+              mouseWheel: true,
+              vertical: true
+          })
+      })
     </script>
-    <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
-    <div class="div_segura">
-      <div class="titulo_galeria titulo">
-        MOTOS
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_um.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnrtnre
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_dois.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrtnr
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_tres.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthrt
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_quatro.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthrthr
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
-    <div class="div_segura">
-      <div class="titulo_galeria titulo">
-        SERVIÇOS
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/pintura_carro.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrt
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/troca_oleo.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhr
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/auto_eletrica.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrt
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/polimento.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthr
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
-    <div class="div_segura">
-      <div class="titulo_galeria titulo">
-        CARROS
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_um.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherh
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_dois.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthr
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_tres.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrth
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/moto_quatro.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthr
-          </div>
-        </div>
-      </div>
-    </div>
-      <!-- Coluna que contem fotos relacionado ao titulo da coluna -->
-    <div class="div_segura">
-      <div class="titulo_galeria titulo">
-        PRODUTOS
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/pintura_carro.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrth
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/troca_oleo.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthr
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/auto_eletrica.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthr
-          </div>
-        </div>
-      </div>
-      <div class="img_galeria">
-        <div class="segura_img">
-          <img src="pictures/galeria/polimento.jpg" alt="Imagem da Galeria">
-        </div>
-        <div class="escondidinha">
-          <div class="parceiro_titulo conteudo ">
-              Parceiro Tal xxxxx
-          </div>
-          <div class="detalhe_img conteudo ">
-            dsgggrgregerherhrthrthr
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
-
-  <!-- Rodape -->
-<?php
-  require_once('component/footer.php');
-?>
+  <?php
+    require_once('component/footer.php');
+  ?>
