@@ -29,9 +29,9 @@
           <div class="carousel_moto">
             <ul>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -42,9 +42,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -55,9 +55,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -68,9 +68,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -81,9 +81,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -94,9 +94,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -107,9 +107,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -120,9 +120,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -159,9 +159,9 @@
           <div class="carousel_servico">
             <ul>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/auto_eletrica.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -172,9 +172,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/pintura_carro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -185,9 +185,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/polimento.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -198,9 +198,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/troca_oleo.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -211,9 +211,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -224,9 +224,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -237,9 +237,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -250,9 +250,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -289,9 +289,9 @@
           <div class="carousel_carro">
             <ul>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -302,9 +302,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -315,9 +315,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -328,9 +328,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -341,9 +341,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -354,9 +354,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -367,9 +367,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -380,9 +380,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -419,9 +419,9 @@
           <div class="carousel_produto">
             <ul>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -432,9 +432,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -445,9 +445,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -458,9 +458,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -471,9 +471,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_um.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -484,9 +484,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_dois.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -497,9 +497,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_tres.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -510,9 +510,9 @@
                 </div>
               </li>
               <li>
-                <div class="imgs txt_sombra_1x1x1_preto">
+                <div class="imgs ">
                   <img src="pictures/galeria/moto_quatro.jpg" class="blur" alt="Imagem da Galeria">
-                  <div class="escondidinha conteudo  txt_preto fs_25 espacamento_letra_2">
+                  <div class="escondidinha conteudo  txt_branco fs_25 espacamento_letra_2">
                     <div class="parceiro_titulo">
                       Por:
                     </div>
@@ -537,7 +537,7 @@
     </div>
     <script>
       $(function(){
-        $(".carousel_moto"). jCarouselLite({
+        $(".carousel_moto").jCarouselLite({
             btnPrev: '.prev_moto',
             btnNext: '.next_moto',
             visible: 4,
@@ -545,7 +545,7 @@
             vertical: true
         })
 
-        $(".carousel_servico"). jCarouselLite({
+        $(".carousel_servico").jCarouselLite({
             btnPrev: '.prev_servico',
             btnNext: '.next_servico',
             visible: 4,
@@ -553,7 +553,7 @@
             vertical: true
         })
 
-        $(".carousel_carro"). jCarouselLite({
+        $(".carousel_carro").jCarouselLite({
               btnPrev: '.prev_carro',
               btnNext: '.next_carro',
               visible: 4,
@@ -561,7 +561,7 @@
               vertical: true
           })
 
-        $(".carousel_produto"). jCarouselLite({
+        $(".segura_carousel .carousel_produto").jCarouselLite({
               btnPrev: '.prev_produto',
               btnNext: '.next_produto',
               visible: 4,
