@@ -4,18 +4,16 @@
 */
 
 .modal{
-  margin-top: 0px;
-  padding: 0px;
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
   width: 700px;
-  height: 400px;
+  height: 672px;
 }
 
 /* Container principal do conteúdo sobre o Cliente */
 .container_principal_conteudo_cliente_cp{
   width: 100%;
   height: 400px;
-
-
 
 }
 /* ******************* */

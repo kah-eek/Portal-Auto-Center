@@ -1,8 +1,18 @@
 .modal{
-  margin-top: 0px;
-  padding: 0px;
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
   width: 700px;
-  height: 675px;
+  min-height: 672px;
+  height: auto;
+}
+
+.divisor{
+  display: block;
+  width: 90%;
+  height: 1px;
+  border-radius: 100px;
+  background-color: #607D8B;
+  margin: 3px;
 }
 
 .container_principal_m_cp{
@@ -13,8 +23,8 @@
 
 .container_titulo_parceiro{
   width: 700px;
-  height: 17px;
-  /*background-color: red;*/
+  height: 25px;
+  background-color: #00C853;
 
 }
 
@@ -33,15 +43,16 @@
 }
 
 .container_img_parceiro{
-  width: 210px;
-  height: 150px;
+  width: 150px;
+  height: 120px;
+  margin-left: 30px;
   /*background-color: red;*/
 
 }
 
 .item_img_parceiro{
   width: 150px;
-  height: 150px;
+  height: 120px;
   background-color: #fff;
 
 }
@@ -148,20 +159,13 @@
 }
 
 .container_texto_planos{
-  width: 320px;
+  width: 310px;
   height: 200px;
 
 }
 
 .item_texto_planos{
-  width: 320px;
+  width: 310px;
   height: 200px;
-
-}
-
-.section_endereco{
-  width: 200px;
-  height: 40px;
-  background-color: red;
 
 }

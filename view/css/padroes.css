@@ -132,6 +132,7 @@ a{
 /* ********************************************************* */
 
 /* ***************** Preenchimento de componente ******************* */
+.preenche_3{padding: 3px;box-sizing: border-box;}
 .preenche_5{padding: 5px;box-sizing: border-box;}
 .preenche_10{padding: 10px;box-sizing: border-box;}
 .preenche_15{padding: 15px;box-sizing: border-box;}
