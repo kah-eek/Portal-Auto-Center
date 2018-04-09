@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
   </head>
   <body>
-    <div class="container_principal_m_cp">
+    <div class="container_principal_m_cp bg_cinza">
       <div class="container_titulo_parceiro">
-        <div class="item_titulo_parceiro align_center titulo">
+        <div class="item_titulo_parceiro align_center titulo preenche_3">
           Cadastro Parceiro
         </div>
       </div>
-      <div class="container_lado_esquerdo float_left bg_branco">
+      <div class="container_lado_esquerdo float_left bg_cinza">
         <!-- IMAGEM -->
         <div class="container_img_parceiro">
           <label for="btn_img_parceiro">
@@ -23,10 +23,10 @@
           </label>
         </div>
         <!-- FORM SEGURA INPUTS -->
-        <form class="form_segurando_inputs margem_t_5 float_left">
+        <form class="form_segurando_inputs float_left margem_t_10">
           <div class="item_contendo_inputs">
             <!-- INPUT NOME -->
-            <div class="segura_input_p ">
+            <div class="segura_input_p">
               <input class="input_text_p txt_preto margem_t_5" placeholder="Nome" type="text" name="txt_nome" value="">
             </div>
 
@@ -59,13 +59,13 @@
             </div>
 
             <!-- TITULO ENDEREÇO -->
-            <div class="titulo_form_p ">
-              <div class="item_titulo_form_p margem_t_5 titulo float_left">
+            <div class="titulo_form_p">
+              <div class="item_titulo_form_p titulo margem_t_10 float_left">
                 Endereço
               </div>
             </div>
             <!-- INPUT RUA -->
-            <div class="segura_input_p float_left">
+            <div class="segura_input_p float_left margem_t_5">
               <input class="input_text_p txt_preto margem_t_5" placeholder="Rua" type="text" name="txt_rua" value="">
             </div>
 
@@ -94,13 +94,13 @@
               <input class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
             </div>
             <!-- TITULO LOGIN -->
-            <div class="titulo_form_p ">
-              <div class="item_titulo_form_p margem_t_5 titulo float_left">
+            <div class="titulo_form_p">
+              <div class="item_titulo_form_p margem_t_10 titulo float_left">
                 Login
               </div>
             </div>
             <!-- INPUT USER -->
-            <div class="segura_input_p float_left">
+            <div class="segura_input_p float_left margem_t_5">
               <input class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
             </div>
 
@@ -113,11 +113,11 @@
       </div>
 
       <!-- LADO DIREITO -->
-      <div class="container_lado_direito float_left bg_branco">
+      <div class="container_lado_direito float_left bg_cinza">
         <div class="container_planos float_right">
           <!-- TITULO PLANOS -->
           <div class="titulo_planos margem_t_30">
-            <div class="item_titulo_planos preenche_5 titulo borda_preta_1">
+            <div class="item_titulo_planos preenche_5 titulo">
               Meu Plano
             </div>
           </div>
@@ -145,6 +145,9 @@
             <div class="item_texto_planos">
               <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
             </div>
+          </div>
+          <div class="divisor float_left">
+
           </div>
           <!-- PLANO 2 -->
           <div class="container_desc_planos margem_t_20 titulo">
