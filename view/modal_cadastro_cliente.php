@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/modal_cadastro_cliente.css">
   </head>
   <body>
-    <div class="container_principal_cp bg_cinza">
+    <div class="container_principal_mc_cp bg_cinza">
       <!-- TITULO -->
       <div class="container_titulo">
         <div class="item_titulo txt_sombra_1x1x1_preto float_right txt_preto titulo align_center">
@@ -43,45 +43,45 @@
 
           <!-- TITULO DATA -->
           <div class="titulo_form">
-            <div class="item_titulo_form titulo">
+            <div class="item_titulo_form titulo margem_t_10">
               Data de Nascimento
             </div>
           </div>
 
           <!-- INPUT CALENDÁRIO -->
-          <div class="segura_input float_left">
-            <input class="data_nasc" type="date" name="dt_nasc" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="data_nasc margem_10" type="date" name="dt_nasc" value="">
           </div>
 
           <!-- INPUT CPF -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Cpf" type="text" name="txt_cpf" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Cpf" type="text" name="txt_cpf" value="">
           </div>
 
           <!-- INPUT EMAIL -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Email Address" type="text" name="txt_email" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Email Address" type="text" name="txt_email" value="">
           </div>
 
           <!-- INPUT CELULAR -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Celular" type="text" name="txt_celular" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Celular" type="text" name="txt_celular" value="">
           </div>
 
           <!-- INPUT TELEFONE -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Telefone" type="text" name="txt_telefone" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Telefone" type="text" name="txt_telefone" value="">
           </div>
 
           <!-- INPUT RADIO -->
-          <div class="segura_input margem_t_5 float_left">
-            <input class="margem_l_20" type="radio" name="sexo" value="M"> Masculino
-            <input class="margem_l_20 txt_preto" type="radio" name="sexo" value="F"> Feminino
+          <div class="segura_input margem_t_20 float_left">
+            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="M"> Masculino
+            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="F"> Feminino
           </div>
 
           <!-- TITULO ENDEREÇO -->
           <div class="titulo_form">
-            <div class="item_titulo_form titulo float_left">
+            <div class="item_titulo_form titulo float_left margem_t_5">
               Endereço
             </div>
           </div>
@@ -92,45 +92,28 @@
           </div>
 
           <!-- INPUT NUMERO -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Número" type="text" name="txt_numero" value="">
           </div>
 
           <!-- INPUT CIDADE -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Cidade" type="text" name="txt_cidade" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Cidade" type="text" name="txt_cidade" value="">
           </div>
 
           <!-- INPUT CEP -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Cep" type="text" name="txt_cep" value="">
           </div>
 
           <!-- INPUT BAIRRO -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Bairro" type="text" name="txt_bairro" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Bairro" type="text" name="txt_bairro" value="">
           </div>
 
           <!-- INPUT COMPLEMENTO -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
-          </div>
-
-          <!-- TITULO LOGIN -->
-          <div class="titulo_form">
-            <div class="item_titulo_form titulo float_left">
-              Login
-            </div>
-          </div>
-
-          <!-- INPUT USER -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
-          </div>
-
-          <!-- INPUT SENHA -->
-          <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
+          <div class="segura_input float_left margem_t_5">
+            <input class="input_text txt_preto margem_t_10" placeholder="Complemento" type="text" name="txt_complemento" value="">
           </div>
         </div>
       </form>
@@ -174,9 +157,25 @@
           <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
           </div>
+          <!-- TITULO LOGIN -->
+          <div class="titulo_form">
+            <div class="item_titulo_form titulo margem_t_50 float_left">
+              Login
+            </div>
+          </div>
+
+          <!-- INPUT USER -->
+          <div class="segura_input float_left margem_t_10">
+            <input class="input_text txt_preto" placeholder="Usuário" type="text" name="txt_use" value="">
+          </div>
+
+          <!-- INPUT SENHA -->
+          <div class="segura_input float_left margem_t_10">
+            <input class="input_text txt_preto" placeholder="Senha" type="password" name="txt_senha" value="">
+          </div>
         </div>
       </form>
-      <div class="segura_bt float_left margem_t_150">
+      <div class="segura_bt float_left">
         <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
       </div>
     </div>

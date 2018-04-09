@@ -1,22 +1,28 @@
-
-
-.container_principal_cp{
+.modal{
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
   width: 700px;
-  height: 672px;
+  min-height: 713px;
+  height: auto;
+}
+
+.container_principal_mc_cp{
+  width: 700px;
+  min-height: 713px;
+  height: auto;
 }
 
 .container_titulo{
   width: 700px;
   height: 20px;
-  background-color: #00C853;
-  /*background-color: #ff6600;*/
+  background-color: rgb(0, 200, 83);
 
 }
 
 .item_titulo{
   width: 300px;
   height: 20px;
-  background-color: #00C853;
+  background-color: rgb(0, 200, 83);
 }
 
 .titulo_form_veic{
@@ -38,7 +44,7 @@
 
 .container_imagens{
   width: 550px;
-  height: 120px;
+  height: 125px;
   /*background-color: #33cc33;*/
 
 }
@@ -54,7 +60,7 @@
 
 .form_cadastro_cliente{
   width: 300px;
-  height: 520px;
+  height: 523px;
   /*background-color: #737373;*/
 
 }
@@ -110,7 +116,7 @@
 
 .form_cadastro_veiculo{
   width: 400px;
-  height: 230px;
+  height: 450px;
 
 }
 
@@ -123,16 +129,14 @@
 
 
 .segura_bt{ /*input do tipo submit */
-  width: 200px;
+  width: 700px;
   height: 40px;
-  /*background-color: red;*/
-  margin-left: 150px;
 
 }
 
 .input_submit{
-  width: 200px;
+  width: 700px;
   background-color: #00C853;
-  border-radius: 50px 50px 50px 50px;
+  /*border-radius: 50px 50px 50px 50px;*/
   color: #000;
 }
