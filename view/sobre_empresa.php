@@ -61,7 +61,7 @@
       </div>
       <div class="img_inf_esq">
         <div class="segura_img_esq ">
-          <img src="pictures/sobre_empresa/visao.png" alt="Imagem">
+          <img src="pictures/sobre_empresa/v.jpg" alt="Imagem">
         </div>
       </div>
       <div class="inf conteudo">
@@ -87,7 +87,7 @@
       </div>
       <div class="img_inf_dir">
         <div class="segura_img_dir">
-          <img src="pictures/sobre_empresa/valores.png" alt="Imagem">
+          <img src="pictures/sobre_empresa/valores_.jpg" alt="Imagem">
         </div>
       </div>
     </div>
