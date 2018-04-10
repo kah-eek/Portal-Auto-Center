@@ -1,0 +1,91 @@
+.modal{
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
+  width: 500px;
+  height: 400px;
+  /*background-color: green;*/
+}
+body{
+  /*background-color: red;*/
+
+}
+
+.container_titulo_redefinicao{
+  width: 500px;
+  height: 50px;
+  /*background-color: red;*/
+
+}
+
+.item_titulo_redefinicao{
+  width: 250px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.form_redefinicao{
+  width: 500px;
+  height: 250px;
+  /*background-color: #fff;*/
+
+}
+
+.container_cfp_senha{
+  width: 500px;
+  height: 250px;
+  /*background-color: gray;*/
+
+}
+
+.item_cpf{
+  width: 500px;
+  height: 50px;
+  /*background-color: #fff;*/
+
+}
+
+.input_text{
+  width: 480px;
+  height: 20px;
+  margin-left: 10px;
+  box-shadow: 0px 0px 0px 0px #000;
+
+}
+.input_text::placeholder{
+  color: #000;
+  font-family: 'titulo';
+  text-align: left;
+
+}
+
+.container_botao{
+  width: 500px;
+  height: 30px;
+  /*background-color: red;*/
+
+}
+
+.item_botao_r{
+  width: 200px;
+  height: 30px;
+  /*background-color: #fff;*/
+
+}
+
+.input_submit_r{ /*input do tipo submit */
+  width: 200px;
+  height: 30px;
+  /*background-color: #000;*/
+  /*border-radius: 5px;*/
+  /*border: solid 1px #000;*/
+  /*padding: 5px;*/
+  /*box-shadow: 0px 4px 5px -2px #000;*/
+  border-radius:5px;
+
+  /* Texto */
+  color: #000;
+  /*text-shadow: 0px 0px 2px #000;*/
+  font-family: 'titulo';
+  text-align: center;
+}

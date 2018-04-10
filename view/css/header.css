@@ -126,3 +126,8 @@
 }
 .container_rede_social:hover .rede_social{display: block;}
 .container_rede_social:hover .flexa_esqueda{display: none;}
+
+#redeSocial{
+  border-radius: 500px;
+
+}

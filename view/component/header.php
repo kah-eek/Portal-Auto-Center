@@ -58,13 +58,12 @@
   </head>
   <body class="body">
 
-    <div class="container_modal">
-      <div class="modal centro_lr margem_t_100 bg_branco">
-
-      </div>
-    </div>
-
     <header>
+      <div class="container_modal" id="modalHeader">
+        <div class="modal centro_lr margem_t_100 bg_branco">
+
+        </div>
+      </div>
       <div class="container_menu sem_margem fixed">
         <div class="container_item_menu">
           <div class="item_menu float_left titulo ">
@@ -136,10 +135,15 @@
           <div class="container_item_slogan titulo txt_branco ">
             Deixe que nós cuidamos de tudo para você.
           </div>
-          <div class="container_rede_social float_left fixed bg_verde_vivo sombra_preta_20 margem_l_74_cento bsuavizada_10 margem_t_115">
+          <div id="loginRedeSocial" class="container_rede_social float_left fixed bg_verde_vivo sombra_preta_20 margem_l_74_cento bsuavizada_10 margem_t_115">
             <i class="material-icons material-icons flexa_esqueda fs_50">keyboard_arrow_left</i>
             <i title="Rede Social" class="rede_social material-icons fs_100">account_circle</i>
           </div>
         </div>
       </div>
+      <script>
+      $('#loginRedeSocial').click(function(){
+        modalLoginRedeSocial();
+      })
+      </script>
     </header>
