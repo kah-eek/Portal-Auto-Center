@@ -11,7 +11,7 @@
   $status = false;
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
-  if($_SERVER['REQUEST_METHOD'] == 'GET'){
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     // Recurso qual a request deseja utilizar
     // $_GET['action'];
@@ -28,7 +28,8 @@
       $celular = $_POST['celular'];
       $sexo = $_POST['sexo'];
       $telefone = $_POST['telefone'];
-      $foto = $_POST['foto'];
+      // $foto = $_POST['foto'];
+      $foto = null;
 
       // ************ Usuário ***********
       $nomeUsuario = $_POST['usuario'];
