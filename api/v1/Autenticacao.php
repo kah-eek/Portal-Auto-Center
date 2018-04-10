@@ -1,7 +1,7 @@
 <?php
 
 // Imports
-require_once('MySql.php');
+require_once('../../../model/MySql.php');
 // #############################
 
 class Autenticacao
