@@ -19,7 +19,7 @@
 
           // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
 
-           header('location:view/cms/cms_home.php');
+           header('location:../view/cms/cms_home.php');
       }else{
 ?>
   <script>
@@ -35,9 +35,9 @@
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center - CMS</title>
-      <link rel="stylesheet" type="text/css" href="view/css/normalize.css">
-      <link rel="stylesheet" type="text/css" href="view/css/padroes.css">
-      <link rel="stylesheet" type="text/css" href="view/css/cms/cms_login.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/padroes.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/cms/cms_login.css">
   </head>
   <body class="background_login">
     <div class="foto_fundo fixed">
