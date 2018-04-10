@@ -15,17 +15,24 @@
   margin: 3px;
 }
 
+
 .container_principal_m_cp{
     width: 700px;
-    height: 675px;
+    height: 720px;
     /*background-color: #4286f4;*/
 }
 
 .container_btn_sair_mp{
-  width: 50px;
-  height: 25px;
+  width: 15px;
+  height: 20px;
+  margin-top: -4px;
+  margin-left: 4px;
   /*background-color: pink;*/
 
+}
+
+.btn_x{
+  margin-left: 32px;
 }
 
 .container_titulo_parceiro{
@@ -55,10 +62,10 @@
 }
 
 .container_img_parceiro{
-  width: 150px;
+  width: 250px;
   height: 120px;
   margin-left: 30px;
-  /*background-color: red;*/
+  /* background-color: red; */
 
 }
 
@@ -84,7 +91,7 @@
 
 }
 
-.segura_input_p{
+.segura_input_mp{
   width: 250px;
   height: 30px;
   /*background-color: green;*/
@@ -99,8 +106,7 @@
   height: 20px;
   border-color: #00C853;
   outline: none;
-  background-color: transparent;
-  box-shadow: 0px 1px 25px -2px #000;
+  box-shadow: 0px 0px 0px 0px #000;
   text-overflow: ellipsis;
 }
 
@@ -160,7 +166,15 @@
 .container_desc_planos{
   width: 320px;
   height: 30px;
-  /*background-color: #cc0066;*/
+  /* background-color: #cc0066; */
+
+}
+
+.segura_planos{
+  width: 320px;
+  height: 500px;
+  overflow: auto;
+  /* background-color: red; */
 
 }
 
@@ -180,4 +194,18 @@
   width: 310px;
   height: 200px;
 
+}
+
+.segura_bt_p{ /*input do tipo submit */
+  width: 700px;
+  height: 40px;
+  /*background-color: red;*/
+
+}
+
+.input_submit{
+  width: 700px;
+  background-color: #00C853;
+  border-radius: 50px 50px 50px 50px;
+  color: #000;
 }

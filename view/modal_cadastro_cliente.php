@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/modal_cadastro_cliente.css">
   </head>
   <body>
-    <div class="container_principal_mc_cp bg_cinza">
+    <div class="container_principal_mc_cp bg_branco">
       <!-- TITULO -->
       <div class="container_titulo">
-        <div class="item_titulo txt_sombra_1x1x1_preto float_left txt_preto titulo align_center">
+        <div class="item_titulo float_left txt_preto titulo align_center">
           Cadastro Clientes
         </div>
         <div class="container_btn_sair float_right negrito">
-          <a href="cliente_parceiro.php?page=cliente_parceiro">Sair(X)</a>
+          <a class="btn_x fs_20 txt_preto" href="cliente_parceiro.php?page=cliente_parceiro">X</a>
         </div>
       </div>
       <!-- IMAGENS -->
-      <div class="container_imagens margem_t_5 centro_lr">
+      <div class="container_imagens margem_t_10 centro_lr">
 
         <!-- LABEL IMAGEM CLIENTE -->
         <label for="btn_img_cliente">
@@ -77,14 +77,17 @@
           </div>
 
           <!-- INPUT RADIO -->
-          <div class="segura_input margem_t_20 float_left">
+          <div class="segura_input margem_t_10 float_left">
             <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="M"> Masculino
             <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="F"> Feminino
+          </div>
+          <div class="divisor_c margem_t_5 float_left">
+
           </div>
 
           <!-- TITULO ENDEREÇO -->
           <div class="titulo_form">
-            <div class="item_titulo_form titulo float_left margem_t_5">
+            <div class="item_titulo_form titulo float_left margem_t_10">
               Endereço
             </div>
           </div>
@@ -126,8 +129,10 @@
         <div class="segura_inputs_veic">
           <!-- TITULO VEICULO -->
           <div class="titulo_form_veic margem_t_10 float_left">
-            <div class="item_titulo_form_veic align_center bg_branco titulo preenche_t_5 sombra_preta_b_15 margem_t_10">
-              Veículo
+            <div class="titulo_form">
+              <div class="item_titulo_form fs_20 align_center titulo margem_t_10 float_left">
+                Veículo
+              </div>
             </div>
           </div>
 
@@ -160,9 +165,12 @@
           <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
           </div>
+          <div class="divisor_c margem_t_30 float_left">
+
+          </div>
           <!-- TITULO LOGIN -->
           <div class="titulo_form">
-            <div class="item_titulo_form titulo margem_t_50 float_left">
+            <div class="item_titulo_form titulo margem_t_20 float_left">
               Login
             </div>
           </div>
@@ -179,7 +187,7 @@
         </div>
       </form>
       <div class="segura_bt float_left">
-        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
+        <input class="input_submit margem_t_25 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
       </div>
     </div>
   </body>

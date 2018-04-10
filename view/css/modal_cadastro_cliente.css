@@ -3,8 +3,24 @@
   /*margin-top: 0px;*/
   /*padding: 0px;*/
   width: 700px;
-  min-height: 713px;
+  min-height: 732px;
   height: auto;
+}
+
+.btn_x{
+  margin-left: 35px;
+  /*margin-top: -5px;*/
+
+}
+
+.divisor_c{
+  display: block;
+  width: 80%;
+  height: 1px;
+  margin-left: 25px;
+  border-radius: 100px;
+  background-color: #607D8B;
+
 }
 
 .container_principal_mc_cp{
@@ -16,12 +32,15 @@
 .container_btn_sair{
   width: 50px;
   height: 20px;
+  margin-top: -4px;
+  /*background-color: red;*/
 
 }
 
 .container_titulo{
   width: 700px;
   height: 20px;
+  /*background-color: blue;*/
   background-color: rgb(0, 200, 83);
 
 }
@@ -36,16 +55,13 @@
 .titulo_form_veic{
   width: 250px;
   height: 30px;
-  border-radius: 50px 50px 50px 50px;
-  margin-left: 30px;
+  /*margin-left: 30px;*/
 
 }
 
 .item_titulo_form_veic{
   width: 250px;
   height: 30px;
-  border-radius: 50px 50px 50px 50px;
-  background-color: #00C853;
 }
 
 /*IMAGENS*/
@@ -85,6 +101,7 @@
   width: 250px;
   height: 20px;
   margin-left: 20px;
+  box-shadow: 0px 0px 0px 0px #000;
 
 }
 .input_text::placeholder{

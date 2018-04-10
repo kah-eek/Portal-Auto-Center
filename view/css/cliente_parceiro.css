@@ -7,7 +7,17 @@
   /*margin-top: 0px;*/
   /*padding: 0px;*/
   width: 700px;
-  height: 672px;
+  height: 700px;
+}
+
+#cadastrarCliente{
+  cursor:pointer;
+
+}
+
+#cadastrarParceiro{
+  cursor:pointer;
+
 }
 
 /* Container principal do conteúdo sobre o Cliente */

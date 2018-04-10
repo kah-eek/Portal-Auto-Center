@@ -30,14 +30,14 @@
 
       <!-- Área de cadastro do Cliente -->
       <div class="area_cadastrese float_left preenche_r_30 align_right link">
-        <a id="cadastrarCliente" href="#">Cadastrar-se como cliente</a>
+        <span id="cadastrarCliente">Cadastrar-se como cliente</span>
       </div>
 
     </div>
   </div>
 
   <!-- Divisor de conteúdo -->
-  <div class="divisor centro_lr">dfgfdgfdg</div>
+  <div class="divisor centro_lr"></div>
   <!-- ******************* -->
 
   <!-- Container principal do conteúdo sobre o Parceiro -->

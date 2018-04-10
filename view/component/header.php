@@ -1,6 +1,6 @@
 <?php
 
-  // Arquivo CSS padrão de carregamento
+  // Arquivo CSS padrão de carregamento e outros
   $arquivo_css = 'view/css/loja';
   $header_css = 'view/css/header';
   $footer_css = 'view/css/footer';

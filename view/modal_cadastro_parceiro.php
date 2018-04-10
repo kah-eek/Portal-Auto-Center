@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
   </head>
   <body>
-    <div class="container_principal_m_cp bg_cinza">
+    <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
           Cadastro Parceiro
         </div>
-        <div class="container_btn_sair_mp float_right negrito">
-          <a href="cliente_parceiro.php?page=cliente_parceiro">Sair(X)</a>
+        <div class="container_btn_sair_mp float_left negrito">
+          <a class="btn_x fs_20 txt_preto" href="cliente_parceiro.php?page=cliente_parceiro">X</a>
         </div>
       </div>
-      <div class="container_lado_esquerdo float_left bg_cinza">
+      <div class="container_lado_esquerdo float_left bg_branco">
         <!-- IMAGEM -->
-        <div class="container_img_parceiro">
+        <div class="container_img_parceiro margem_t_20">
           <label for="btn_img_parceiro">
             <div class="item_img_parceiro centro_lr borda_preta_1">
 
@@ -116,7 +116,7 @@
       </div>
 
       <!-- LADO DIREITO -->
-      <div class="container_lado_direito float_left bg_cinza">
+      <div class="container_lado_direito float_left bg_branco">
         <div class="container_planos float_right">
           <!-- TITULO PLANOS -->
           <div class="titulo_planos margem_t_30">
@@ -131,6 +131,7 @@
               <option value="">Planos</option>
             </select>
           </div>
+
           <!-- DESCRICAO PLANOS -->
           <div class="container_desc_planos margem_t_30 titulo">
             <div class="item_desc_planos preenche_5">
@@ -138,33 +139,38 @@
             </div>
           </div>
           <!-- PLANO 1 -->
-          <div class="container_desc_planos margem_t_10 titulo">
-            <div class="item_desc_planos fs_25">
-              Plano 1
+          <div class="segura_planos">
+            <div class="container_desc_planos margem_t_10 titulo">
+              <div class="item_desc_planos fs_25">
+                Plano 1
+              </div>
             </div>
-          </div>
-          <!-- TEXTO -->
-          <div class="container_texto_planos">
-            <div class="item_texto_planos">
-              <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            <!-- TEXTO -->
+            <div class="container_texto_planos">
+              <div class="item_texto_planos">
+                <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </div>
             </div>
-          </div>
-          <div class="divisor float_left">
+            <div class="divisor float_left">
 
-          </div>
-          <!-- PLANO 2 -->
-          <div class="container_desc_planos margem_t_20 titulo">
-            <div class="item_desc_planos fs_25">
-              Plano 2
             </div>
-          </div>
-          <!-- TEXTO -->
-          <div class="container_texto_planos">
-            <div class="item_texto_planos">
-              <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            <!-- PLANO 2 -->
+            <div class="container_desc_planos margem_t_20 titulo">
+              <div class="item_desc_planos fs_25">
+                Plano 2
+              </div>
+            </div>
+            <!-- TEXTO -->
+            <div class="container_texto_planos">
+              <div class="item_texto_planos">
+                <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="segura_bt_p float_left">
+        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
       </div>
     </div>
   </body>
