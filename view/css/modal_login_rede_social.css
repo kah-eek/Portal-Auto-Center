@@ -1,0 +1,113 @@
+.modal{
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
+  width: 500px;
+  height: 400px;
+  /*background-color: green;*/
+}
+body{
+  /*background-color: red;*/
+
+}
+
+.container_titulo_login{
+  width: 500px;
+  height: 50px;
+  /*background-color: red;*/
+
+}
+
+.item_titulo_login{
+  width: 250px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.form_login{
+  width: 500px;
+  height: 250px;
+  /*background-color: #fff;*/
+
+}
+
+.container_usuario_senha{
+  width: 500px;
+  height: 250px;
+  /*background-color: gray;*/
+
+}
+
+.item_usuario{
+  width: 500px;
+  height: 50px;
+  /*background-color: #fff;*/
+
+}
+
+.input_text{
+  width: 480px;
+  height: 20px;
+  margin-left: 10px;
+  box-shadow: 0px 0px 0px 0px #000;
+
+}
+.input_text::placeholder{
+  color: #000;
+  font-family: 'titulo';
+  text-align: left;
+
+}
+
+.container_botao{
+  width: 500px;
+  height: 30px;
+  /*background-color: red;*/
+
+}
+
+.item_botao_l{
+  width: 200px;
+  height: 30px;
+  /*background-color: #fff;*/
+
+}
+
+.input_submit_l{ /*input do tipo submit */
+  width: 200px;
+  height: 30px;
+  /*background-color: #000;*/
+  /*border-radius: 5px;*/
+  /*border: solid 1px #000;*/
+  /*padding: 5px;*/
+  /*box-shadow: 0px 4px 5px -2px #000;*/
+  border-radius:5px;
+
+  /* Texto */
+  color: #000;
+  /*text-shadow: 0px 0px 2px #000;*/
+  font-family: 'titulo';
+  text-align: center;
+}
+
+.item_link_login{
+  width:200px;
+  height: 30px;
+
+}
+
+.link_login{
+  transition: 1s;
+  font-family: titulo;
+  color: #000;
+  font-weight: bold;
+  margin-left: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-decoration: underline;
+  /*text-shadow: 0px 0px 1px blue;*/
+}
+.link_login:hover{
+  transition: 1s;
+  color: blue;
+}

@@ -1,0 +1,27 @@
+.modal{
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
+  width: 1800px;
+  height: 800px;
+}
+
+.container_menu_m{
+  width: 400px;
+  height: 800px;
+  background-color: red;
+
+}
+
+.itens_menu{
+  width: 400px;
+  height: 800px;
+  background-color: green;
+
+}
+
+.container_lado_direito{
+  width: 1400px;
+  height: 800px;
+  background-color: gray;
+
+}
