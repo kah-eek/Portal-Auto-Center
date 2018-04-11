@@ -1,3 +1,4 @@
+
 <?php
   // Importação do cabeçalho
   require_once('../component/cms_header.php');
@@ -12,7 +13,6 @@
     <!-- PARTE MISSAO -->
 
     <!-- *************************************************************** -->
-
     <div class="container_geral bg_cinza">
       <!-- TITULO -->
       <div class="container_titulo margem_t_5">
@@ -27,7 +27,7 @@
         <div class="segura_imagem float_left">
           <label for="btn_img_missao">
             <div class="item_img margem_t_10 borda_preta_1 margem_t_5">
-              
+
             </div>
           </label>
           <input class="display_none" id="btn_img_missao" type="file" name="btn_img_missao" value="">
@@ -43,6 +43,9 @@
           <div class="segura_salvar_foto margem_t_20 centro_lr">
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
+        </div>
+        <div class="mais_informações float_left align_center item_titulo">
+            Informações
         </div>
       </div>
     </div>
@@ -82,6 +85,9 @@
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
         </div>
+        <div class="mais_informações float_left align_center item_titulo">
+            Informações
+        </div>
       </div>
     </div>
 
@@ -119,6 +125,9 @@
           <div class="segura_salvar_foto margem_t_20 centro_lr">
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
+        </div>
+        <div class="mais_informações float_left align_center item_titulo">
+            Informações
         </div>
       </div>
     </div>
@@ -158,10 +167,12 @@
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
         </div>
+        <div class="mais_informações float_left align_center item_titulo">
+            Informações
+        </div>
       </div>
     </div>
 
     <!-- FINALIZA -->
-
   </div>
 </div>

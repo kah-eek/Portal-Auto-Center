@@ -57,6 +57,19 @@ class ControllerSobreEmpresa
     $empresa->delete($empresa);
   }
 
+  //LOCALIZANDO UM REGISTRO EXISTENTE
+  public function buscar
+  {
+    $empresa = new Empresa();
+    $dados_empresa = new Empresa();
+
+    $empresa->id = $id_sobre_empresa;
+
+    $dados_empresa = $empresa->selectById($empresa);
+
+    require_once("cms_sobre_empresa");
+  }
+
 
 }
 

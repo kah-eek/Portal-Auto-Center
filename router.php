@@ -18,7 +18,20 @@
 
         $empresa_controller->novo();
         break;
-      case 'editar'
+      case 'editar':
+        $empresa_controller = new EmpresaController();
+
+        $empresa_controller->editar();
+
+        require_once("cms_sobre_empresa.php");
+
+        break;
+      case 'excluir':
+        $empresa_controller = new EmpresaController();
+
+        $empresa_controller->excluir();
+
+        break;
     }
   }
  ?>
