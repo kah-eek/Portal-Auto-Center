@@ -206,7 +206,7 @@ CREATE TABLE `tbl_categoria_produto` (
   `id_categoria_produto` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(380) NOT NULL,
   PRIMARY KEY (`id_categoria_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,6 +215,7 @@ CREATE TABLE `tbl_categoria_produto` (
 
 LOCK TABLES `tbl_categoria_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria_produto` DISABLE KEYS */;
+INSERT INTO `tbl_categoria_produto` VALUES (1,'AAAA');
 /*!40000 ALTER TABLE `tbl_categoria_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,7 +291,7 @@ CREATE TABLE `tbl_cliente` (
   PRIMARY KEY (`id_cliente`),
   KEY `fk_tbl_cliente_id_usuario_idx` (`id_usuario`),
   CONSTRAINT `fk_tbl_cliente_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -299,6 +300,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
+INSERT INTO `tbl_cliente` VALUES (1,'test','2018-03-01','11236584574','test@test','122548142',8,'M','',30,''),(2,'caique','2018-01-23','12345678912','testercaique@aaaa.com','11999999999',13,'M','1112334569',35,NULL);
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +464,7 @@ CREATE TABLE `tbl_cor` (
   `id_cor` int(11) NOT NULL AUTO_INCREMENT,
   `cor` varchar(80) NOT NULL,
   PRIMARY KEY (`id_cor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -471,6 +473,7 @@ CREATE TABLE `tbl_cor` (
 
 LOCK TABLES `tbl_cor` WRITE;
 /*!40000 ALTER TABLE `tbl_cor` DISABLE KEYS */;
+INSERT INTO `tbl_cor` VALUES (1,'preto');
 /*!40000 ALTER TABLE `tbl_cor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -522,7 +525,7 @@ CREATE TABLE `tbl_endereco` (
   PRIMARY KEY (`id_edereco`),
   KEY `fk_tbl_endereco_id_estado_idx` (`id_estado`),
   CONSTRAINT `fk_tbl_endereco_id_estado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -531,6 +534,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
+INSERT INTO `tbl_endereco` VALUES (8,'carmen','215','disnay',1,'45785412','lapa','casa01'),(9,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl'),(10,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl'),(11,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl'),(12,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl'),(13,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl');
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -545,7 +549,7 @@ CREATE TABLE `tbl_estado` (
   `id_estado` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(180) NOT NULL,
   PRIMARY KEY (`id_estado`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -554,6 +558,7 @@ CREATE TABLE `tbl_estado` (
 
 LOCK TABLES `tbl_estado` WRITE;
 /*!40000 ALTER TABLE `tbl_estado` DISABLE KEYS */;
+INSERT INTO `tbl_estado` VALUES (1,'São Paulo');
 /*!40000 ALTER TABLE `tbl_estado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -568,7 +573,7 @@ CREATE TABLE `tbl_fabricante` (
   `id_fabricante` int(11) NOT NULL AUTO_INCREMENT,
   `fabricante` varchar(180) NOT NULL,
   PRIMARY KEY (`id_fabricante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -577,6 +582,7 @@ CREATE TABLE `tbl_fabricante` (
 
 LOCK TABLES `tbl_fabricante` WRITE;
 /*!40000 ALTER TABLE `tbl_fabricante` DISABLE KEYS */;
+INSERT INTO `tbl_fabricante` VALUES (1,'Ferrari');
 /*!40000 ALTER TABLE `tbl_fabricante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -591,7 +597,7 @@ CREATE TABLE `tbl_fabricante_produto` (
   `id_fabricante_produto` int(11) NOT NULL AUTO_INCREMENT,
   `fabricante` varchar(320) NOT NULL,
   PRIMARY KEY (`id_fabricante_produto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -600,6 +606,7 @@ CREATE TABLE `tbl_fabricante_produto` (
 
 LOCK TABLES `tbl_fabricante_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_fabricante_produto` DISABLE KEYS */;
+INSERT INTO `tbl_fabricante_produto` VALUES (1,'Ferrari');
 /*!40000 ALTER TABLE `tbl_fabricante_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -791,7 +798,7 @@ CREATE TABLE `tbl_modelo_produto` (
   PRIMARY KEY (`id_modelo_produto`),
   KEY `fk_tbl_modelo_produto_id_fabricante_produto__idx` (`id_fabricante_produto`),
   CONSTRAINT `fk_tbl_modelo_produto_id_fabricante_produto_` FOREIGN KEY (`id_fabricante_produto`) REFERENCES `tbl_fabricante_produto` (`id_fabricante_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -800,6 +807,7 @@ CREATE TABLE `tbl_modelo_produto` (
 
 LOCK TABLES `tbl_modelo_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_modelo_produto` DISABLE KEYS */;
+INSERT INTO `tbl_modelo_produto` VALUES (3,'test',1,568,0.84,0.82);
 /*!40000 ALTER TABLE `tbl_modelo_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -863,7 +871,7 @@ CREATE TABLE `tbl_nivel_usuario` (
   `id_nivel_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nivel` varchar(45) NOT NULL,
   PRIMARY KEY (`id_nivel_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -872,7 +880,7 @@ CREATE TABLE `tbl_nivel_usuario` (
 
 LOCK TABLES `tbl_nivel_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_usuario` VALUES (1,'administrador'),(2,'marketing');
+INSERT INTO `tbl_nivel_usuario` VALUES (1,'administrador'),(2,'marketing'),(3,'cliente');
 /*!40000 ALTER TABLE `tbl_nivel_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -930,7 +938,7 @@ CREATE TABLE `tbl_parceiro` (
   KEY `fk_tbl_parceiro_id_usuario_idx` (`id_usuario`),
   CONSTRAINT `fk_tbl_parceiro_id_plano_contratacao` FOREIGN KEY (`id_plano_contratacao`) REFERENCES `tbl_plano_contratacao` (`id_plano_contratacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_parceiro_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='			';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='			';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -939,6 +947,7 @@ CREATE TABLE `tbl_parceiro` (
 
 LOCK TABLES `tbl_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_parceiro` DISABLE KEYS */;
+INSERT INTO `tbl_parceiro` VALUES (2,'asdasd','asdas','56.146.',1,0,1,'asd@sadas','4561','dasds','6451','2018-04-10 22:47:43',1,1);
 /*!40000 ALTER TABLE `tbl_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1036,7 +1045,7 @@ CREATE TABLE `tbl_plano_contratacao` (
   `valor` decimal(8,2) NOT NULL,
   `descricao` varchar(2400) NOT NULL,
   PRIMARY KEY (`id_plano_contratacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1045,6 +1054,7 @@ CREATE TABLE `tbl_plano_contratacao` (
 
 LOCK TABLES `tbl_plano_contratacao` WRITE;
 /*!40000 ALTER TABLE `tbl_plano_contratacao` DISABLE KEYS */;
+INSERT INTO `tbl_plano_contratacao` VALUES (1,'aaaa',25.00,'asddasd');
 /*!40000 ALTER TABLE `tbl_plano_contratacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1104,7 +1114,7 @@ CREATE TABLE `tbl_produto` (
   CONSTRAINT `fk_tbl_produto_id_cor` FOREIGN KEY (`id_cor`) REFERENCES `tbl_cor` (`id_cor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_produto_id_modelo_produto` FOREIGN KEY (`id_modelo_produto`) REFERENCES `tbl_modelo_produto` (`id_modelo_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_produto_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1113,6 +1123,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
+INSERT INTO `tbl_produto` VALUES (3,3,2,1,1,'xdas',6516.00,'asdsdasdasdas','.612d.asd','asdasdasdas','dasdasdasdas');
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1428,7 +1439,7 @@ CREATE TABLE `tbl_usuario` (
   PRIMARY KEY (`id_usuario`),
   KEY `fk_tbl_usuario_id_nivel_usuario_idx` (`id_nivel_usuario`),
   CONSTRAINT `fk_tbl_usuario_id_nivel_usuario` FOREIGN KEY (`id_nivel_usuario`) REFERENCES `tbl_nivel_usuario` (`id_nivel_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1437,7 +1448,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'adm','123','2018-04-07 21:38:14',1,1);
+INSERT INTO `tbl_usuario` VALUES (1,'adm','123','2018-04-07 21:38:14',1,1),(30,'test','123','2018-04-08 23:44:02',3,1),(31,'caique','123','2018-04-09 21:53:30',3,1),(32,'caiqueaaa','123a','2018-04-09 21:54:43',3,1),(33,'caiqueaaa','123asss','2018-04-09 21:54:51',3,1),(34,'caiqueaaa','123asssaaa','2018-04-09 21:55:23',3,1),(35,'caiqueaaawet','123asssaaa','2018-04-09 21:56:00',3,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1558,6 +1569,124 @@ LOCK TABLES `tbl_veiculo_tipo_combustivel` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo_tipo_combustivel` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_veiculo_tipo_combustivel` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Temporary view structure for view `view_produto`
+--
+
+DROP TABLE IF EXISTS `view_produto`;
+/*!50001 DROP VIEW IF EXISTS `view_produto`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `view_produto` AS SELECT 
+ 1 AS `id_produto`,
+ 1 AS `conteudo_embalagem`,
+ 1 AS `garantia`,
+ 1 AS `observacao`,
+ 1 AS `preco`,
+ 1 AS `descricao`,
+ 1 AS `imagem`,
+ 1 AS `modelo`,
+ 1 AS `nome_fantasia`,
+ 1 AS `id_endereco`,
+ 1 AS `telefone`,
+ 1 AS `celular`,
+ 1 AS `logradouro`,
+ 1 AS `numero`,
+ 1 AS `cidade`,
+ 1 AS `id_estado`,
+ 1 AS `cep`,
+ 1 AS `bairro`,
+ 1 AS `complemento`,
+ 1 AS `estado`,
+ 1 AS `categoria`,
+ 1 AS `id_categoria_produto`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_produto_detalhado`
+--
+
+DROP TABLE IF EXISTS `view_produto_detalhado`;
+/*!50001 DROP VIEW IF EXISTS `view_produto_detalhado`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `view_produto_detalhado` AS SELECT 
+ 1 AS `id_produto`,
+ 1 AS `id_modelo_produto`,
+ 1 AS `id_parceiro`,
+ 1 AS `id_cor`,
+ 1 AS `id_categoria_produto`,
+ 1 AS `nome`,
+ 1 AS `preco`,
+ 1 AS `conteudo_embalagem`,
+ 1 AS `garantia`,
+ 1 AS `descricao`,
+ 1 AS `observacao`,
+ 1 AS `modelo`,
+ 1 AS `id_fabricante_produto`,
+ 1 AS `peso`,
+ 1 AS `altura`,
+ 1 AS `comprimento`,
+ 1 AS `fabricante`,
+ 1 AS `nome_fantasia`,
+ 1 AS `razao_social`,
+ 1 AS `cnpj`,
+ 1 AS `id_endereco`,
+ 1 AS `ativo`,
+ 1 AS `socorrista`,
+ 1 AS `email`,
+ 1 AS `telefone`,
+ 1 AS `foto_perfil`,
+ 1 AS `celular`,
+ 1 AS `log_parceiro`,
+ 1 AS `logradouro`,
+ 1 AS `numero`,
+ 1 AS `cidade`,
+ 1 AS `id_estado`,
+ 1 AS `cep`,
+ 1 AS `bairro`,
+ 1 AS `complemento`,
+ 1 AS `estado`,
+ 1 AS `cor`,
+ 1 AS `categoria`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Final view structure for view `view_produto`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_produto`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_produto` AS select `pdrt`.`id_produto` AS `id_produto`,`pdrt`.`conteudo_embalagem` AS `conteudo_embalagem`,`pdrt`.`garantia` AS `garantia`,`pdrt`.`observacao` AS `observacao`,`pdrt`.`preco` AS `preco`,`pdrt`.`descricao` AS `descricao`,`img_pdrt_parc`.`imagem` AS `imagem`,`mdl_pdrt`.`modelo` AS `modelo`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`id_endereco` AS `id_endereco`,`parc`.`telefone` AS `telefone`,`parc`.`celular` AS `celular`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado`,`ctg_pdrt`.`categoria` AS `categoria`,`ctg_pdrt`.`id_categoria_produto` AS `id_categoria_produto` from ((((((`tbl_produto` `pdrt` join `tbl_modelo_produto` `mdl_pdrt` on((`mdl_pdrt`.`id_modelo_produto` = `pdrt`.`id_modelo_produto`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `pdrt`.`id_parceiro`))) join `tbl_endereco` `endrc` on((`endrc`.`id_edereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) join `tbl_categoria_produto` `ctg_pdrt` on((`ctg_pdrt`.`id_categoria_produto` = `pdrt`.`id_categoria_produto`))) join `tbl_imagem_produto_parceiro` `img_pdrt_parc` on((`img_pdrt_parc`.`id_imagem_produto_parceiro` = `pdrt`.`id_produto`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `view_produto_detalhado`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_produto_detalhado`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_produto_detalhado` AS select `pdrt`.`id_produto` AS `id_produto`,`pdrt`.`id_modelo_produto` AS `id_modelo_produto`,`pdrt`.`id_parceiro` AS `id_parceiro`,`pdrt`.`id_cor` AS `id_cor`,`pdrt`.`id_categoria_produto` AS `id_categoria_produto`,`pdrt`.`nome` AS `nome`,`pdrt`.`preco` AS `preco`,`pdrt`.`conteudo_embalagem` AS `conteudo_embalagem`,`pdrt`.`garantia` AS `garantia`,`pdrt`.`descricao` AS `descricao`,`pdrt`.`observacao` AS `observacao`,`mdl_pdrt`.`modelo` AS `modelo`,`mdl_pdrt`.`id_fabricante_produto` AS `id_fabricante_produto`,`mdl_pdrt`.`peso` AS `peso`,`mdl_pdrt`.`altura` AS `altura`,`mdl_pdrt`.`comprimento` AS `comprimento`,`fbcnt_pdrt`.`fabricante` AS `fabricante`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social`,`parc`.`cnpj` AS `cnpj`,`parc`.`id_endereco` AS `id_endereco`,`parc`.`ativo` AS `ativo`,`parc`.`socorrista` AS `socorrista`,`parc`.`email` AS `email`,`parc`.`telefone` AS `telefone`,`parc`.`foto_perfil` AS `foto_perfil`,`parc`.`celular` AS `celular`,`parc`.`log_parceiro` AS `log_parceiro`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado`,`cor`.`cor` AS `cor`,`ctg_pdrt`.`categoria` AS `categoria` from (((((((`tbl_produto` `pdrt` join `tbl_modelo_produto` `mdl_pdrt` on((`mdl_pdrt`.`id_modelo_produto` = `pdrt`.`id_modelo_produto`))) join `tbl_fabricante_produto` `fbcnt_pdrt` on((`fbcnt_pdrt`.`id_fabricante_produto` = `mdl_pdrt`.`id_fabricante_produto`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `pdrt`.`id_parceiro`))) join `tbl_endereco` `endrc` on((`endrc`.`id_edereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) join `tbl_cor` `cor` on((`cor`.`id_cor` = `pdrt`.`id_cor`))) join `tbl_categoria_produto` `ctg_pdrt` on((`ctg_pdrt`.`id_categoria_produto` = `pdrt`.`id_categoria_produto`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1568,4 +1697,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-08  0:21:03
+-- Dump completed on 2018-04-10 22:53:19
