@@ -48,7 +48,7 @@ ON fbcnt_pdrt.id_fabricante_produto = mdl_pdrt.id_fabricante_produto
 INNER JOIN tbl_parceiro AS parc 
 ON parc.id_parceiro = pdrt.id_parceiro
 INNER JOIN tbl_endereco AS endrc
-ON endrc.id_edereco = parc.id_endereco
+ON endrc.id_endereco = parc.id_endereco
 INNER JOIN tbl_estado AS estd
 ON estd.id_estado = endrc.id_estado
 INNER JOIN tbl_cor AS cor 

@@ -1,7 +1,7 @@
 /*
 	VIEW DE PRODUTO, POSSIBILITANDO A OBTENÇÃO DE DADOS BÁSICOS VINCULADOS AO PRODUTO
 */
-ALTER VIEW view_produto AS 
+CREATE VIEW view_produto AS 
 
 SELECT 
 /* PRODUTO */
@@ -12,7 +12,7 @@ pdrt.observacao,
 pdrt.preco,
 pdrt.descricao,
 /* IMAGEM PRODUTO PARCEIRO */
-img_pdrt_parc.imagem,
+/*img_pdrt_parc.imagem,*/
 /* MODELO PRODUTO */
 mdl_pdrt.modelo,
 /* PARCEIRO */
@@ -42,7 +42,7 @@ INNER JOIN tbl_parceiro AS parc
 ON parc.id_parceiro = pdrt.id_parceiro
 
 INNER JOIN tbl_endereco AS endrc
-ON endrc.id_edereco = parc.id_endereco
+ON endrc.id_endereco = parc.id_endereco
 
 INNER JOIN tbl_estado AS estd
 ON estd.id_estado = endrc.id_estado
