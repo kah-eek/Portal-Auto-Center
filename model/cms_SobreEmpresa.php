@@ -40,7 +40,7 @@ class Empresa
     //EXECUTAR O SCRIPT NO BD
     if ($PDO_CONEX->query($sql))
     {
-      header("");
+      header("modal_cms_empresa.php");
     }else{
       echo "Erro ao inserir no Banco de Dados";
     }
@@ -79,7 +79,7 @@ class Empresa
     //EXECUTA O SCRIPT NO BANCO
     if($PDO_CONEX->query($sql))
     {
-      header("");
+      header("modal_cms_empresa.php");
     }else {
       echo "Erro ao deletar no Banco de Dados";
     }

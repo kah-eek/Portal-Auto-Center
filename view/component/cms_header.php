@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
     <script src="../js/carrosel/jquery.js"></script>
     <script src="../js/carrosel/jcarousellite.js"></script>
+    <script src="../js/modal.js"></script>
   </head>
   <body class="bg_cinza">
 
