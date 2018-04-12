@@ -6,7 +6,7 @@
 
   $error = '';
   $mensagem = '';
-  $produto = '';
+  $produtos = '';
   $status = false;
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
@@ -15,7 +15,29 @@
     // Recurso qual a request deseja utilizar
     // $_GET['action'];
 
-    var_dump(Produto::obterProdutos());
+    // Obtém todos os produtos existentes na base de dados
+    $produtos = Produto::obterDetalhesProdutos();
+
+    // Verifica se ocorreu algum erro ao obter os produtos do banco de dados
+    if (isset($produtos['error']))// Obteve falha
+    {
+      // Remove o índice de erro do array
+      unset($produtos['error']);
+
+      // Defini a mensagem de erro
+      $mensagem = 'Falha ao obter os produtos';
+
+      // Defini o erro
+      $error = '003';
+    }
+    else // Obteve êxito
+    {
+      // Defini a mensagem de sucesso
+      $mensagem = 'Produtos obtidos com êxito';
+
+      // Define o status para sucesso (true)
+      $status = true;
+    }
 
   }
   else
@@ -29,8 +51,8 @@
               (
                 'error'=>$error,
                 'mensagem'=>$mensagem,
-                'produto'=>$produto,
-                'status'=>$status
+                'status'=>$status,
+                'produtos'=>$produtos
               );
 
   // Exibe o response no formato JSON

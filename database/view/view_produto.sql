@@ -1,25 +1,38 @@
 /*
-	VIEW DE PRODUTO, POSSIBILITANDO A OBTENÇÃO DE DADOS BÁSICOS VINCULADOS AO PRODUTO
+	VIEW DE PRODUTO, POSSIBILITANDO A OBTENÇÃO DE DADOS BÁSICOS VINCULADOS AO PRODUTO COMO: 
+    PARCEIRO;
+    ENDEREÇO DO PARCEIRO;
+    MODELO DO PRODUTO;
+    IMAGEM DO PRODUTO;
+    CATEGORIA DO PRODUTO.
+    
 */
 CREATE VIEW view_produto AS 
 
 SELECT 
+
 /* PRODUTO */
-pdrt.id_produto,
-pdrt.conteudo_embalagem, 
-pdrt.garantia,
-pdrt.observacao,
-pdrt.preco,
-pdrt.descricao,
+prdt.id_produto,
+prdt.nome,
+prdt.conteudo_embalagem,
+prdt.garantia,
+prdt.observacao,
+prdt.preco,
+prdt.descricao,
+
 /* IMAGEM PRODUTO PARCEIRO */
-/*img_pdrt_parc.imagem,*/
+img_prdt_parc.imagem,
+
 /* MODELO PRODUTO */
-mdl_pdrt.modelo,
+mdl_prdt.modelo,
+
 /* PARCEIRO */
+parc.id_parceiro,
 parc.nome_fantasia,
 parc.id_endereco,
 parc.telefone,
 parc.celular,
+
 /* ENDERECO */
 endrc.logradouro,
 endrc.numero,
@@ -28,27 +41,36 @@ endrc.id_estado,
 endrc.cep,
 endrc.bairro,
 endrc.complemento,
+
 /* ESTADO */
 estd.estado,
+
 /* CATEGORIA PRODUTO*/
-ctg_pdrt.categoria,
-ctg_pdrt.id_categoria_produto
-FROM tbl_produto AS pdrt
+ctg_prdt.categoria,
+ctg_prdt.id_categoria_produto
 
-INNER JOIN tbl_modelo_produto AS mdl_pdrt 
-ON mdl_pdrt.id_modelo_produto = pdrt.id_modelo_produto
+FROM tbl_produto AS prdt
 
-INNER JOIN tbl_parceiro AS parc 
-ON parc.id_parceiro = pdrt.id_parceiro
+/* IMAGEM DO PRODUTO DO PARCEIRO */
+INNER JOIN tbl_imagem_produto_parceiro AS img_prdt_parc
+ON img_prdt_parc.id_produto = prdt.id_produto
 
+/* MODELO DO PRODUTO */
+INNER JOIN tbl_modelo_produto AS mdl_prdt
+ON mdl_prdt.id_modelo_produto = prdt.id_modelo_produto
+
+/* PARCEIRO */
+INNER JOIN tbl_parceiro AS parc
+ON parc.id_parceiro = prdt.id_parceiro
+
+/* ENDEREÇO */
 INNER JOIN tbl_endereco AS endrc
 ON endrc.id_endereco = parc.id_endereco
 
-INNER JOIN tbl_estado AS estd
+/* ESTADO */
+INNER JOIN tbl_estado AS estd 
 ON estd.id_estado = endrc.id_estado
 
-INNER JOIN tbl_categoria_produto AS ctg_pdrt
-ON ctg_pdrt.id_categoria_produto = pdrt.id_categoria_produto
-
-INNER JOIN tbl_imagem_produto_parceiro AS img_pdrt_parc
-ON img_pdrt_parc.id_imagem_produto_parceiro = pdrt.id_produto;
+/* CATEGORIA DO PRODUTO*/
+INNER JOIN tbl_categoria_produto AS ctg_prdt
+ON ctg_prdt.id_categoria_produto = prdt.id_categoria_produto;
