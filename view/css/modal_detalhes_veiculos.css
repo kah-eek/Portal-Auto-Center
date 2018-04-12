@@ -1,14 +1,14 @@
 .modal{
-  margin-top: 0px;
-  padding: 0px;
-  width: 800px;
-  height: 700px;
+  /*margin: 0px;*/
+  /*padding: 0px;*/
+  width: 850px;
+  height: 750px;
 
 }
 
 .linha1_dv{
-  width: 800px;
-  height: 300px;
+  width: 425px;
+  height: 750px;
   /*background-color: gray;*/
 
 }
@@ -23,70 +23,28 @@
 .item_img_detalhes_veiculos{
   width: 350px;
   height: 300px;
-  background-color: #3366ff;
+  /*background-color: #3366ff;*/
 
 }
 
 .container_descricao_veiculo{
   width: 400px;
-  height: 300px;
-
+  height: 365px;
+  /*background-color: red;*/
 
 }
 
 .item_descricao_veiculo{
   width: 400px;
-  height: 300px;
+  height: 365px;
   /*background-color: #009999;*/
 
 }
 
 .desc{
   width: 400px;
-  height: 60px;
+  height: 40px;
   /*background-color: gray;*/
-
-}
-
-.linha2_dv{
-  width: 800px;
-  height: 100px;
-  /*background-color: pink;*/
-
-}
-
-.fotos_pequenas{
-  width: 68px;
-  height: 60px;
-  background-color: #000;
-
-}
-
-.preco{
-  width: 410px;
-  height: 100px;
-  /*background-color: #fff;*/
-
-}
-
-.item_preco{
-  width: 410px;
-  height: 100px;
-  /*background-color: blue;*/
-
-}
-
-.linha3_dv{
-  width: 800px;
-  height: 300px;
-  /*height: red;*/
-
-}
-
-.container_descricao{
-  width: 400px;
-  height: 300px;
-  /*background-color: red;*/
 
 }
 
@@ -97,13 +55,48 @@
 
 }
 
-.texto_desc{
+.container_descricao{
   width: 400px;
-  height: 250px;
+  height: 300px;
+  /*background-color: red;*/
 
 }
 
-.segura_bt_ok{
+.texto_desc{
+  width: 400px;
+  height: 300px;
+
+}
+
+.fotos_pequenas{
+  width: 68px;
+  height: 60px;
+  /*background-color: #000;*/
+
+}
+
+.linha2_dv{
+  width: 425px;
+  height: 750px;
+  /*background-color: pink;*/
+
+}
+
+.preco{
+  width: 400px;
+  height: 50px;
+  /*background-color: green;*/
+
+}
+
+.item_preco{
+  width: 200px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.segura_bt_comprar{
   width: 400px;
   height: 50px;
   /*background-color: black;*/
