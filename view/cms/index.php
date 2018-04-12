@@ -11,7 +11,7 @@
       ?>
 
       <!-- Contáiner do conteúdo em si gerenciável do CMS -->
-      <div class="conteudo_central bg_branco float_left preenche_t_260">
+      <div id="conteudo_central_cms" class="conteudo_central bg_branco float_left"> <!--preenche_t_260-->
 
         <!-- Contáiner da mensagem de saudação -->
         <div class="mensgaem_saudacao conteudo align_center preenche_25">

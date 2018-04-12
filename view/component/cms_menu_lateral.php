@@ -32,7 +32,7 @@
       <a href="#">
         <div class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
           <!-- Título do item do menu -->
-          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+          <div id="btnCmsEmpresa" class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Sobre a Empresa
           </div>
 
@@ -112,3 +112,10 @@
       <div class="faixa_inferior margem_t_275 bg_azulado_escuro"></div>
 
     </div>
+    <script>
+      $('#btnCmsEmpresa').click(function(){
+        modalCmsEmpresa();
+
+      })
+
+    </script>
