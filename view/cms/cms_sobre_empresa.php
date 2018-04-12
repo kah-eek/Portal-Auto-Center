@@ -8,11 +8,13 @@
     // Importação do menu lateral
     require_once('../component/cms_menu_lateral.php');
   ?>
+
   <div class="container_conteudo float_left bg_cinza">
 
     <!-- PARTE MISSAO -->
 
     <!-- *************************************************************** -->
+     <form name="frmEmpresa" method="POST" enctype="multipart/form-data">
     <div class="container_geral bg_cinza">
       <!-- TITULO -->
       <div class="container_titulo margem_t_5">
@@ -43,9 +45,6 @@
           <div class="segura_salvar_foto margem_t_20 centro_lr">
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
-        </div>
-        <div class="mais_informações float_left align_center item_titulo">
-            Informações
         </div>
       </div>
     </div>
@@ -85,9 +84,6 @@
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
         </div>
-        <div class="mais_informações float_left align_center item_titulo">
-            Informações
-        </div>
       </div>
     </div>
 
@@ -125,9 +121,6 @@
           <div class="segura_salvar_foto margem_t_20 centro_lr">
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
-        </div>
-        <div class="mais_informações float_left align_center item_titulo">
-            Informações
         </div>
       </div>
     </div>
@@ -167,12 +160,8 @@
             <i class="material-icons" style="font-size:35px;">save</i>
           </div>
         </div>
-        <div class="mais_informações float_left align_center item_titulo">
-            Informações
-        </div>
       </div>
     </div>
-
     <!-- FINALIZA -->
   </div>
 </div>

@@ -38,7 +38,7 @@ class ControllerSobreEmpresa
     $empresa->texto = $_POST["txttexto"];
     $empresa->id_sobre_empresa = $_GET["id_sobre_empresa"];
 
-    $empresa->update($cempresa);
+    $empresa->update($empresa);
   }
 
   //APAGANDO UM REGISTRO EXISTENTE
@@ -67,7 +67,7 @@ class ControllerSobreEmpresa
 
     $dados_empresa = $empresa->selectById($empresa);
 
-    require_once("cms_sobre_empresa");
+    require_once("modal_sobre_empresa");
   }
 
 
