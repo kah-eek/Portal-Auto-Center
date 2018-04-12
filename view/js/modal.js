@@ -83,7 +83,7 @@ function modalAgendaRedeSocial(){
     contentType:false,
     processData:false,
     success:function(dadosPagina){
-      $('.modal').html(dadosPagina);
+      $('#agenda_central_rs').html(dadosPagina);
     }
   });
 }

@@ -59,14 +59,14 @@
               </div>
             </div>
 
-            <div class="item_titulo_usuario titulo txt_preto fs_25 float_left preenche_t_35">
+            <div class="item_titulo_usuario float_left titulo txt_preto fs_25 float_left preenche_t_35">
               Nome de Usuário
             </div>
           </div>
 
           <!-- PARTE PUBLICACAO -->
           <div class="container_post float_left bg_cinza borda_preta_1">
-            <div class="item_post">
+            <div id="agenda_central_rs" class="item_post">
               <div class="container_img_post float_left margem_t_10">
                 <label for="btn_img_post">
                   <div class="item_img_post borda_preta_1">
@@ -104,6 +104,11 @@
     </div>
 
     <script>
+      // $('#agendaRedeSocial').click(function(){
+      //   modalAgendaRedeSocial();
+      //
+      // })
+
       $('#agendaRedeSocial').click(function(){
         modalAgendaRedeSocial();
 

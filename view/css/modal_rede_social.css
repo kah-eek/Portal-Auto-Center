@@ -166,7 +166,7 @@
 }
 
 .item_titulo_usuario{
-  width: 100%px;
+  width: 200px;
   height: 100px;
   margin-left: 20px;
   /*background-color: #fff;*/
@@ -174,17 +174,18 @@
 }
 
 .container_post{
-  width: 1400px;
+  width: 100%;
   min-height: 1000px;
   height: auto;
   overflow: auto;
-  /*background-color: #0099ff;*/
+  background-color: #0099ff;
 
 }
 
 .item_post{
   width:1300px;
   height: 600px;
+  background-color: gray;
 
 }
 

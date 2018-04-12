@@ -1,14 +1,8 @@
-.modal{
-  margin-top: 0px;
-  padding: 0px;
-  width: 1400px;
-  height: 100%;
-}
 
 .container_principal_agenda{
   width: 100%;
-  height: 100%;
-  /*background-color: gray;*/
+  height: auto;
+  background-color: gray;
 
 }
 
@@ -34,7 +28,7 @@
 /*CAIXAS CENTRAIS*/
 
 .container_caixas_agenda{
-  width: 500px;
+  width: 400px;
   height: 900px;
   /*background-color: green;*/
 
@@ -44,6 +38,12 @@
   width: 400px;
   height: 80px;
   background-color: #fff;
+
+}
+
+.item_caixas_agenda:hover{
+  transition: 1s;
+  box-shadow: 0px 0px 25px #000;
 
 }
 
@@ -62,13 +62,13 @@
 
 .container_propaganda{
   width: 500px;
-  height: 750px;
+  height: 700px;
   /*background-color: pink;*/
 
 }
 
 .item_propaganda{
   width: 500px;
-  height: 750px;
+  height: 700px;
 
 }
