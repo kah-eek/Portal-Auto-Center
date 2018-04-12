@@ -8,7 +8,7 @@
 .container_principal_agenda{
   width: 100%;
   height: 100%;
-  background-color: gray;
+  /*background-color: gray;*/
 
 }
 
@@ -20,15 +20,14 @@
 
 .container_datas{
   width: 200px;
-  height: 100%;
-  background-color: #ff66ff;
+  height: 900px;
 
 }
 
 .item_datas_agenda{
   width: 200px;
   height: 80px;
-  background-color: #fff;
+  background-color: rgb(0, 200, 83);
 
 }
 
@@ -36,8 +35,8 @@
 
 .container_caixas_agenda{
   width: 500px;
-  height: 100%;
-  background-color: green;
+  height: 900px;
+  /*background-color: green;*/
 
 }
 
@@ -64,6 +63,12 @@
 .container_propaganda{
   width: 500px;
   height: 750px;
-  background-color: pink;
+  /*background-color: pink;*/
+
+}
+
+.item_propaganda{
+  width: 500px;
+  height: 750px;
 
 }

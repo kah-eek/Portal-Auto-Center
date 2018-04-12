@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/modal_agenda.css">
   </head>
   <body>
-    <div class="container_principal_agenda centro_lr">
+    <div class="container_principal_agenda centro_lr bg_branco">
       <!-- SEGURA DATAS -->
       <div class="container_datas float_left">
         <div class="espaco">
@@ -48,7 +48,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_30 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_30 align_center fs_20 negrito">
 
         </div>
 
@@ -56,7 +56,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
 
@@ -64,7 +64,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
 
@@ -72,7 +72,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
 
@@ -80,7 +80,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
 
@@ -88,7 +88,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
 
@@ -96,7 +96,7 @@
 
         </div>
 
-        <div class="item_caixas_agenda centro_lr preenche_t_30 margem_t_20 align_center fs_20 negrito">
+        <div class="item_caixas_agenda centro_lr borda_preta_1 preenche_t_30 margem_t_20 align_center fs_20 negrito">
 
         </div>
       </div>
@@ -105,8 +105,10 @@
       <div class="espaco">
 
       </div>
-      <div class="container_propaganda float_left margem_l_70 margem_t_30">
+      <div class="container_propaganda borda_preta_1 float_left margem_l_70 margem_t_30">
+        <div class="item_propaganda">
 
+        </div>
       </div>
     </div>
   </body>
