@@ -59,7 +59,7 @@
   <body class="body">
 
     <header>
-      <div class="container_modal" id="modalHeader">
+      <div class="container_modal">
         <div class="modal centro_lr margem_t_100 bg_branco">
 
         </div>

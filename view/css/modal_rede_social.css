@@ -13,21 +13,21 @@
 .container_menu_m{
   width: 20%;
   height: 100%;
-  background-color: red;
+  /*background-color: red;*/
 
 }
 
 .itens_menu{
   width: 100%;
   height: 100%;
-  background-color: green;
+  /*background-color: green;*/
 
 }
 
 .container_img_menu_rs{
   width: 100%;
   height: 250px;
-  background-color: #fff;
+  /*background-color: #fff;*/
 
 }
 
@@ -40,37 +40,43 @@
 }
 
 .container_edit_perfil{
-  width: 400px;
+  width: 301px;
   height: 40px;
   /*background-color: pink;*/
 
 }
 
+.container_edit_perfil:hover{
+  transition: 1s;
+  background-color: rgb(0, 200, 83);
+  cursor: pointer;
+}
+
 .item_edit_perfil{
-  width: 200px;
+  width: 300px;
   height: 40px;
-  background-color: #009999;
+  /*background-color: #009999;*/
 
 }
 
 .img_configs{
   width: 50px;
   height: 40px;
-  background-color: black;
+  /*background-color: black;*/
 
 }
 
 .titulo_editar_perfil{
   width: 200px;
   height: 40px;
-  background-color: yellow;
+  /*background-color: yellow;*/
 
 }
 
 .item_editar_perfil{
   width: 200px;
   height: 40px;
-  background-color: red;
+  /*background-color: red;*/
 
 }
 
@@ -84,30 +90,36 @@
 }
 
 .item_agenda{
-  width: 200px;
+  width: 300px;
   height: 40px;
-  background-color: #009999;
+  /*background-color: #009999;*/
 
+}
+
+.item_agenda:hover{
+  transition: 1s;
+  background-color: rgb(0, 200, 83);
+  cursor: pointer;
 }
 
 .img_agenda{
   width: 50px;
   height: 40px;
-  background-color: black;
+  /*background-color: black;*/
 
 }
 
 .titulo_agenda{
   width: 200px;
   height: 40px;
-  background-color: yellow;
+  /*background-color: yellow;*/
 
 }
 
 .item_agenda_titulo{
   width: 200px;
   height: 40px;
-  background-color: red;
+  /*background-color: red;*/
 
 }
 
@@ -122,27 +134,103 @@
 .container_conteudo_rs{
   width: 100%;
   height: 100%;
-  background-color: gray;
+  /*background-color: gray;*/
+
+}
+
+.container_img_titulo_usuario{
+  width: 100px;
+  height: 95px;
+  margin-left: 20px;
+  border-radius: 500px;
+  /*background-color: #fff;*/
+
+}
+
+.item_img_titulo_usuario{
+  width: 100px;
+  height: 95px;
+  border-radius: 500px;
+  /*background-color: black;*/
 
 }
 
 .container_titulo_usuario{
   width: 100%;
   height: 100px;
-  background-color: #009999;
+  background-color: rgb(0, 200, 83);
+  /*background-color: #009999;*/
 
 }
 
-.container_img_titulo_usuario{
-  width: 150px;
-  height: 100px;
-  background-color: red;
-
-}
-
-.img_titulo_usuario{
+.item_titulo_usuario{
   width: 200px;
   height: 100px;
-  background-color: black;
+  margin-left: 20px;
+  /*background-color: #fff;*/
+
+}
+
+.container_post{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /*background-color: #0099ff;*/
+
+}
+
+.container_img_post{
+  width: 500px;
+  height: 400px;
+  margin-left: 20px;
+  /*background-color: #666666;*/
+
+}
+
+.item_img_post{
+  width: 500px;
+  height: 399px;
+  cursor: pointer;
+  /*background-color: #fff;*/
+
+}
+
+.container_descricao_post{
+  width: 600px;
+  height: 400px;
+  /*background-color: gray;*/
+
+}
+
+.item_titulo_post{
+  width: 400px;
+  height: 40px;
+  /*background-color: blue;*/
+
+}
+
+.divisor_rs{
+  display: block;
+  width: 80%;
+  height: 1px;
+  border-radius: 100px;
+  background-color: #000;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.container_reacao{
+  width: 500px;
+  height: 40px;
+  background-color: rgb(0, 200, 83);
+  /*background-color: red;*/
+
+}
+
+.item_img_reacao{
+  width: 50px;
+  height: 40px;
+  margin-left: 10px;
+  /*background-color: pink*/
 
 }

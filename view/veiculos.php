@@ -41,7 +41,7 @@
           2012/2013
         </div>
       <div class="input_submit centro_lr transparente preenche_t_10">
-        <input type="submit" name="btn_datalhes" value="Detalhes">
+        <input id="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
       </div>
     </div>
 
@@ -59,7 +59,7 @@
           2012/2013
         </div>
       <div class="input_submit centro_lr transparente preenche_t_10">
-        <input type="submit" name="btn_datalhes" value="Detalhes">
+        <input id="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
       </div>
     </div>
 
@@ -77,7 +77,7 @@
           2012/2013
         </div>
       <div class="input_submit centro_lr transparente preenche_t_10">
-        <input type="submit" name="btn_datalhes" value="Detalhes">
+        <input id="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
       </div>
     </div>
 
@@ -95,10 +95,15 @@
           2012/2013
         </div>
       <div class="input_submit centro_lr transparente preenche_t_10">
-        <input type="submit" name="btn_datalhes" value="Detalhes">
+        <input id="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
       </div>
     </div>
   </div>
+  <script>
+    $('#detalhesVeiculos').click(function(){
+      modalDetalhesVeiculos();
+    })
+  </script>
 
 <!-- Importando Rodape -->
 <?php

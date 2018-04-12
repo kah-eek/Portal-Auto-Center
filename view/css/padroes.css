@@ -151,6 +151,7 @@ a{
 .preenche_t_20{padding-top: 20px;box-sizing: border-box;}
 .preenche_t_25{padding-top: 25px;box-sizing: border-box;}
 .preenche_t_30{padding-top: 30px;box-sizing: border-box;}
+.preenche_t_35{padding-top: 35px;box-sizing: border-box;}
 .preenche_t_40{padding-top: 40px;box-sizing: border-box;}
 .preenche_t_50{padding-top: 50px;box-sizing: border-box;}
 .preenche_t_60{padding-top: 60px;box-sizing: border-box;}
@@ -269,6 +270,8 @@ a{
 .margem_t_20{margin-top: 20px;}
 .margem_t_25{margin-top: 25px;}
 .margem_t_30{margin-top: 30px;}
+.margem_t_35{margin-top: 35px;}
+.margem_t_36{margin-top: 36px;}
 .margem_t_40{margin-top: 40px;}
 .margem_t_50{margin-top: 50px;}
 .margem_t_80{margin-top: 80px;}
@@ -285,7 +288,20 @@ a{
 .margem_t_275{margin-top: 275px;}
 .margem_t_280{margin-top: 280px;}
 
+.margem_l_5{margin-left: 5px;}
+.margem_l_10{margin-left: 10px;}
+.margem_l_15{margin-left: 15px;}
 .margem_l_20{margin-left: 20px;}
+.margem_l_30{margin-left: 30px;}
+.margem_l_35{margin-left: 35px;}
+.margem_l_40{margin-left: 40px;}
+.margem_l_50{margin-left: 50px;}
+.margem_l_60{margin-left: 60px;}
+.margem_l_70{margin-left: 70px;}
+.margem_l_80{margin-left: 80px;}
+.margem_l_90{margin-left: 90px;}
+.margem_l_100{margin-left: 100px;}
+.margem_l_150{margin-left: 150px;}
 
 .margem_l_70_cento{margin-left: 70%;}
 .margem_l_72_cento{margin-left: 72%;}

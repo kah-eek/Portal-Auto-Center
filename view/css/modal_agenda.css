@@ -1,0 +1,69 @@
+.modal{
+  margin-top: 0px;
+  padding: 0px;
+  width: 1400px;
+  height: 100%;
+}
+
+.container_principal_agenda{
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+
+}
+
+.espaco{
+  width: 200px;
+  height: 20px;
+
+}
+
+.container_datas{
+  width: 200px;
+  height: 100%;
+  background-color: #ff66ff;
+
+}
+
+.item_datas_agenda{
+  width: 200px;
+  height: 80px;
+  background-color: #fff;
+
+}
+
+/*CAIXAS CENTRAIS*/
+
+.container_caixas_agenda{
+  width: 500px;
+  height: 100%;
+  background-color: green;
+
+}
+
+.item_caixas_agenda{
+  width: 400px;
+  height: 80px;
+  background-color: #fff;
+
+}
+
+.divisor_agenda{
+  display: block;
+  width: 400px;
+  height: 1px;
+  border-radius: 100px;
+  background-color: #000;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*PROPAGANDA*/
+
+.container_propaganda{
+  width: 500px;
+  height: 750px;
+  background-color: pink;
+
+}

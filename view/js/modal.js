@@ -72,3 +72,33 @@ function modalRedeSocial(){
     }
   });
 }
+
+function modalAgendaRedeSocial(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_agenda.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina);
+    }
+  });
+}
+
+function modalDetalhesVeiculos(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_detalhes_veiculos.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina);
+    }
+  });
+}
