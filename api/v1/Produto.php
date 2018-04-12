@@ -61,7 +61,6 @@ class Produto
     if ($stmt->execute())
     {
       while ($produto = $stmt->fetch(PDO::FETCH_OBJ)) {
-        echo 'ok';
         $produtos[] = $produto;
       }
     }
@@ -71,7 +70,6 @@ class Produto
 
     return $produtos;
   }
-
 
 }
 

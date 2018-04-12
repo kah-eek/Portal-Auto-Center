@@ -15,7 +15,7 @@
     // Recurso qual a request deseja utilizar
     // $_GET['action'];
 
-    var_dump(Produto::obterProdutos());
+    $produto = Produto::obterProdutos();
 
   }
   else

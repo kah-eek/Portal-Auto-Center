@@ -24,4 +24,8 @@ SELECT * FROM view_produto;
 
 SELECT * FROM tbl_imagem_produto_parceiro;
 
-SHOW TABLES
+SHOW TABLES;
+
+CREATE DATABASE db_auto_center;
+
+USE db_auto_center;
