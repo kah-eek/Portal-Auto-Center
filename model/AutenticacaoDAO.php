@@ -1,21 +1,15 @@
 <?php
 
 // Imports
-require_once('../../../model/MySql.php');
+require_once('../controller/MySql.php');
 // #############################
 
-class Autenticacao
+// @author Caique M. Oliveira
+// @data 12/04/2018
+// @description Classe autenticacaoDAO
+
+class AutenticacaoDAO
 {
-  public $usuario;
-  public $senha;
-
-  // Construtor default
-  function __construct($usuario, $senha)
-  {
-    $this->usuario = $usuario;
-    $this->senha = $senha;
-  }
-
   /**
   * verifica as credencias do usuário
   * @param $autenticacaoObj Objeto contendo os dados da autenticação do usuário a ser verificado

@@ -1,5 +1,9 @@
 <?php
 
+// @author Caique M. Oliveira
+// @data 12/04/2018
+// @description Classe cliente
+
 class Cliente
 {
   public $idUsuario;
