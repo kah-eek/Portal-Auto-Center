@@ -2,28 +2,10 @@
 
 // @author Caique M. Oliveira
 // @data 12/04/2018
-// @description Classe Usuario
+// @description Classe UsuarioDAO
 
-class Usuario
+class UsuarioDAO
 {
-  public $idUsuario;
-  public $usuario;
-  public $senha;
-  public $idNivelUsuario;
-  public $ativo;
-  public $log;
-
-  // Construtor default
-  function __construct($idUsuario, $usuario, $senha, $idNivelUsuario, $ativo, $log)
-  {
-    $this->idUsuario = $idUsuario;
-    $this->usuario = $usuario;
-    $this->senha = $senha;
-    $this->idNivelUsuario = $idNivelUsuario;
-    $this->ativo = $ativo;
-    $this->log = $log;
-  }
-
   /**
   * Insere um novo usuário no banco de dados
   * @param $usuarioObj Objeto Usuario qual será inserido no banco de dados
