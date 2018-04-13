@@ -53,7 +53,7 @@ class Usuario
     // Fecha a conexão com o db
     $con = null;
 
-    return $result; 
+    return $result;
   }
 
   /**
@@ -70,7 +70,7 @@ class Usuario
     // Abre uma nova conexão com o db
     $con = $mySql->getConnection();
 
-    $stmt = $con-prepare(
+    $stmt = $con->prepare(
       'UPDATE tbl_usuario '.
       'SET '.
       'usuario = ?, '.
@@ -87,14 +87,14 @@ class Usuario
     $stmt->bindParam(4, $usuarioObj->ativo);
     $stmt->bindParam(5, $usuarioObj->idUsuario);
 
-    // Executa a statement
-    $result = $stmt->execute();
+    // Executa a statement e armazena a quantidade de registros que foram modificados
+    $result = $stmt->execute() ? $stmt->rowCount() : -1;
 
     // Fecha a conexão com o db
-    $con = null
+    $con = null;
 
     // Verifica se a atualização do registro ocorreu com sucesso
-    return $result ? true : false;
+    return $result == -1 ? false : true;
 
   }
 

@@ -1,7 +1,8 @@
 <?php
 
   // Imports
-  // require_once('../Autenticacao.php');
+  require_once('../Usuario.php');
+  require_once('../Autenticacao.php');
 
   $error = '';
   $mensagem = '';
@@ -16,15 +17,22 @@
     // Verifica qual recurso deve ser utilizado
     if (isset($_GET['action']) && $_GET['action'] == 'atualizar') {// Atualiza um cliente
 
-      // Verifica se existe a variável de identificação do usuário an URL
-      if (isset($_GET['id']))// Existe a variável ID na URL
-      {
+      // Verifica se os parâmetros obrigatórios foram informados
+      if
+      (
+        isset($_GET['id']) &&
+        isset($_POST['nomeUsuario']) &&
+        isset($_POST['senha']) &&
+        isset($_POST['idNivelUsuario']) &&
+        isset($_POST['idNivelUsuario'])
+      )
+      {// Parâmetros obrigatórios informados
         // Obtém as keys do request
         $idUsuario = $_GET['id'];
         $nomeUsuario = $_POST['nomeUsuario'];
         $senha = $_POST['senha'];
         $idNivelUsuario = $_POST['idNivelUsuario'];
-        $ativo = $_POST['idNivelUsuario'];
+        $ativo = $_POST['ativo'];
 
         // Cria um objeto Usuario
         $usuario = new Usuario($idUsuario, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
@@ -56,10 +64,10 @@
         }
 
       }
-      else // Não existe a variável ID na URL
+      else // Parâmetros obrigatórios não informados
       {
-        $error = '004';
-        $mensagem = 'Identificação do usuário (ID) não informada';
+        $error = '007';
+        $mensagem = 'Parâmetros obrigatórios não informados';
       }
 
     }
