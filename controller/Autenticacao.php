@@ -17,6 +17,9 @@ class Autenticacao
     $this->senha = $senha;
   }
 
+  // CRIAR OS METODOS DE ACESSO AOS DAOs
+  
+
 }
 
 ?>
