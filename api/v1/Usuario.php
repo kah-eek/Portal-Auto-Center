@@ -48,10 +48,12 @@ class Usuario
     $stmt->bindParam(3, $usuarioObj->idNivelUsuario);
 
     // Verifica se a inserção do registro ocorreu com sucesso e retorna a resposta adquirida
-    return $stmt->execute() ? $con->lastInsertId() : null;
+    $result = $stmt->execute() ? $con->lastInsertId() : null;
 
     // Fecha a conexão com o db
     $con = null;
+
+    return $result; 
   }
 
   /**
@@ -85,8 +87,14 @@ class Usuario
     $stmt->bindParam(4, $usuarioObj->ativo);
     $stmt->bindParam(5, $usuarioObj->idUsuario);
 
-    // Verifica se a inserção do registro ocorreu com sucesso e retorna a resposta adquirida
-    return $stmt->execute() ? true: false;
+    // Executa a statement
+    $result = $stmt->execute();
+
+    // Fecha a conexão com o db
+    $con = null
+
+    // Verifica se a atualização do registro ocorreu com sucesso
+    return $result ? true : false;
 
   }
 
