@@ -39,10 +39,10 @@
       </div>
 
       <div class="container_descricao float_left">
-        <div class="titulo_desc titulo preenche_t_5 margem_l_5 fs_20 margem_t_20">
+        <div class="titulo_desc titulo preenche_t_5 margem_l_10 fs_20 margem_t_20">
           Descrição:
         </div>
-        <div class="texto_desc justificado margem_l_5">
+        <div class="texto_desc justificado  margem_l_10 ">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         </div>
       </div>
@@ -71,10 +71,6 @@
           </div>
 
           <div class="desc titulo fs_18 negrito preenche_t_10 margem_t_5">
-            Obs:
-          </div>
-
-          <div class="desc titulo fs_18 negrito preenche_t_10 margem_t_5">
             Nome Parceiro:
           </div>
 
@@ -88,6 +84,10 @@
 
           <div class="desc titulo fs_18 negrito preenche_t_10 margem_t_5">
             Celular Parceiro:
+          </div>
+
+          <div class="desc titulo fs_18 negrito preenche_t_10 margem_t_5">
+            Obs:
           </div>
 
           <div class="preco float_left margem_t_180">
