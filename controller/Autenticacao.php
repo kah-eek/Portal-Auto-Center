@@ -1,5 +1,9 @@
 <?php
 
+// Imports
+require_once('../model/AutenticacaoDAO.php');
+
+
 // @author Caique M. Oliveira
 // @data 12/04/2018
 // @description Classe autenticacao
@@ -17,8 +21,18 @@ class Autenticacao
     $this->senha = $senha;
   }
 
-  // CRIAR OS METODOS DE ACESSO AOS DAOs
-  
+  /**
+  * verifica as credencias do usuário
+  * @param $autenticacaoObj Objeto contendo os dados da autenticação do usuário a ser verificado
+  * @return true Credencial confirmada com sucesso
+  * @return false Credencial não existente ou ocorra alguma falha ao tentar buscar o registro no banco de dados
+  */
+  function credencialExistente($autenticacaoObj)
+  {
+    $autenticacaoDAO = new AutenticacaoDAO();
+    return $autenticacaoDAO->credencialExistente($autenticacaoObj);
+  }
+
 
 }
 

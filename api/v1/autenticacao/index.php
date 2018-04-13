@@ -1,7 +1,7 @@
 <?php
 
   // Imports
-  require_once('../Autenticacao.php');
+  require_once('../../../controller/Autenticacao.php');
 
   $error = '';
   $mensagem = '';
@@ -13,8 +13,8 @@
     // Recurso qual a request deseja utilizar
     // $_GET['action'];
 
-    // Verifica qual recurso deve ser utilizado
-    if (isset($_GET['action']) && $_GET['action'] == 'autenticar') {// Autentica o usuário
+    // Verifica a existêcia dos parâmetros obrigatórios
+    if (isset($_POST['usuario']) && isset($_POST['senha'])) {// Autentica o usuário
 
       // Obtém as keys do request
       $usuario = $_POST['usuario'];
@@ -26,19 +26,19 @@
       // Verifica se o usuário existe na base de dados
       if($autenticacao->credencialExistente($autenticacao))// Existe na base de dados
       {
-        $mensagem = 'usuário autenticado com sucesso';
+        $mensagem = 'Usuário autenticado com sucesso';
         $status = true;
       }
       else // Não existe na base de dados
       {
-        $mensagem = 'usuário inexistente';
+        $mensagem = 'Usuário inexistente';
       }
 
     }
     else // Nenhum recurso selecionado ou inexistente
     {
-      $mensagem = 'recurso não encontrado';
-      $error = '404';
+      $mensagem = 'Parâmetros obrigatórios não informados';
+      $error = '007';
     }
 
   }
