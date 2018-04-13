@@ -1,0 +1,6 @@
+001 - Usuário já existente no banco de dados
+002 - Cliente já cadastrado no banco de dados
+004 - Identificação do usuário (ID) não informada
+006 - Falha ao tentar atualizar o usuário
+404 - Recurso não encontrado ou "action" não existe na URL
+405 - Method not allowed
