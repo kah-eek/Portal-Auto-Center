@@ -178,14 +178,14 @@
   min-height: 1000px;
   height: auto;
   overflow: auto;
-  background-color: #0099ff;
+  background-color: # fff;
 
 }
 
 .item_post{
   width:1300px;
   height: 600px;
-  background-color: gray;
+  /*background-color: gray;*/
 
 }
 
