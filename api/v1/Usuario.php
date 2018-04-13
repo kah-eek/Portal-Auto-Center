@@ -42,6 +42,7 @@ class Usuario
       ') VALUES(?,?,?)'
     );
 
+    // Preenche a statement com os respectivos parâmetros
     $stmt->bindParam(1, $usuarioObj->usuario);
     $stmt->bindParam(2, $usuarioObj->senha);
     $stmt->bindParam(3, $usuarioObj->idNivelUsuario);
@@ -51,6 +52,42 @@ class Usuario
 
     // Fecha a conexão com o db
     $con = null;
+  }
+
+  /**
+  * Atualiza os dados do usuário no banco de dados
+  * @param $usuarioObj Objeto Usuario qual será atualizado no banco de dados
+  * @return true Atualização realizada com sucesso na base de dados
+  * @return false Falha ao tentar atualizar os dados do usuário no banco de dados
+  */
+  function atualizarUsuario($usuarioObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con-prepare(
+      'UPDATE tbl_usuario '.
+      'SET '.
+      'usuario = ?, '.
+      'senha = ?, '.
+      'id_nivel_usuario = ?, '.
+      'ativo = ? '.
+      'WHERE id_usuario = ?'
+    );
+
+    // Preenche a statement com os respectivos parâmetros
+    $stmt->bindParam(1, $usuarioObj->usuario);
+    $stmt->bindParam(2, $usuarioObj->senha);
+    $stmt->bindParam(3, $usuarioObj->idNivelUsuario);
+    $stmt->bindParam(4, $usuarioObj->ativo);
+    $stmt->bindParam(5, $usuarioObj->idUsuario);
+
+    // Verifica se a inserção do registro ocorreu com sucesso e retorna a resposta adquirida
+    return $stmt->execute() ? true: false;
+
   }
 
 }
