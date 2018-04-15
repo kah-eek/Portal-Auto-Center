@@ -48,66 +48,69 @@
 
         </div>
       </div>
-      <!-- LADO DIREITO(REDE SOCIAL) -->
-      <div class="container_lado_direito float_left">
-        <div class="container_conteudo_rs">
-          <!-- PARTE TITULO -->
-          <div class="container_titulo_usuario float_left">
-            <div class="container_img_titulo_usuario borda_preta_1 float_left">
-              <div class="item_img_titulo_usuario">
 
-              </div>
-            </div>
+      <!-- (REDE SOCIAL) -->
+      <div id="agenda_central_rs" class="segura_rede_social float_left bg_cinza">
+        <div class="item_segura_rs float_left borda_preta_1">
 
-            <div class="item_titulo_usuario float_left titulo txt_preto fs_25 float_left preenche_t_35">
-              Nome de Usuário
+          <div class="container_img_rs float_left">
+            <div class="item_img_rs margem_l_20 borda_preta_1">
+
             </div>
           </div>
 
-          <!-- PARTE PUBLICACAO -->
-          <div class="container_post float_left bg_cinza borda_preta_1">
-            <div id="agenda_central_rs" class="item_post">
-              <div class="container_img_post float_left margem_t_10">
-                <label for="btn_img_post">
-                  <div class="item_img_post borda_preta_1">
-                    CLICK-ME
-                  </div>
-                </label>
-                <input class="display_none" id="btn_img_post" type="file" name="btn_img_btn_img_post" value="">
+          <!-- REAÇÃO -->
+          <div class="container_reacao float_left margem_l_20 margem_t_10">
+            <div class="segura_itens_reacao">
+              <div class="item_img_reacao float_left">
+                <i class="material-icons" style="font-size:40px;">chat_bubble</i>
               </div>
-
-              <div class="container_descricao_post float_left margem_t_10 margem_l_20">
-
-                <div class="item_titulo_post titulo fs_25 preenche_t_10">
-                  Titulo do Post
-                </div>
-                <div class="divisor_rs bg_preto">
-
-                </div>
-                <div class="item_titulo_post titulo fs_25 preenche_t_10">
-                  Comentários
-                </div>
-              </div>
-
-              <div class="container_reacao float_left margem_l_20 margem_t_10">
-                <div class="item_img_reacao float_left">
-                  <i class="material-icons preenche_t_5 margem_l_5" style="font-size:35px;">favorite</i>
-                </div>
-                <div class="item_img_reacao float_left">
-                  <i class="material-icons preenche_t_5 margem_l_5" style="font-size:35px;">mode_comment</i>
-                </div>
+              <div class="item_img_reacao float_left margem_l_20">
+                <i class="material-icons" style="font-size:40px;">favorite</i>
               </div>
             </div>
           </div>
+
+          <div class="container_titulo_post float_left margem_l_20">
+            <div class="item_titulo_post preenche_t_10 titulo fs_25">
+              Título do Post
+            </div>
+          </div>
+
+          <div class="container_texto_titulo float_left margem_l_20">
+            <div class="item_texto_titulo float_left justificado fs_20">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+
+          <div class="container_titulo_post float_left margem_l_40">
+            <div class="item_titulo_post preenche_t_10 titulo fs_25">
+              Comentários
+            </div>
+          </div>
+
+          <div class="container_img_data margem_l_20 float_left">
+            <div class="item_img_data margem_l_20">
+              <div class="img_comentario float_left">
+
+              </div>
+
+              <div class="txt_data float_left preenche_t_10 fs_20 margem_l_20 align_center">
+                Data
+              </div>
+            </div>
+          </div>
+
+          <div class="container_texto_comentario float_left margem_l_100">
+            <div class="item_texto_comentario float_left justificado fs_20">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
 
     <script>
-      // $('#agendaRedeSocial').click(function(){
-      //   modalAgendaRedeSocial();
-      //
-      // })
 
       $('#agendaRedeSocial').click(function(){
         modalAgendaRedeSocial();
