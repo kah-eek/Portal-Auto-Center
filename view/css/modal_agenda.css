@@ -41,12 +41,6 @@
 
 }
 
-.item_caixas_agenda:hover{
-  transition: 1s;
-  box-shadow: 0px 0px 25px #000;
-
-}
-
 .divisor_agenda{
   display: block;
   width: 400px;
