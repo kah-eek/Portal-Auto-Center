@@ -182,6 +182,7 @@
   width: 200px;
   height: 30px;
 
+
 }
 
 .container_texto_planos{
@@ -206,6 +207,5 @@
 .input_submit{
   width: 700px;
   background-color: #00C853;
-  border-radius: 50px 50px 50px 50px;
   color: #000;
 }
