@@ -1,0 +1,3 @@
+ALTER TABLE tbl_sobre_empresa ADD COLUMN id_topico_sobre_empresa INT NOT NULL;
+ALTER TABLE tbl_sobre_empresa ADD CONSTRAINT fk_tbl_topico_sobre_empresa_id_topico_sobre_empresa FOREIGN KEY(id_topico_sobre_empresa) REFERENCES tbl_topico_sobre_empresa(id_topico_sobre_empresa);
+DESCRIBE tbl_sobre_empresa;
