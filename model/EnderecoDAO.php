@@ -42,10 +42,12 @@ class EnderecoDAO
     $stmt->bindParam(7, $enderecoObj->complemento);
 
     // Verifica se a inserção do registro ocorreu com sucesso e retorna a resposta adquirida
-    return $stmt->execute() ? $con->lastInsertId() : null;
+    $result = $stmt->execute() ? $con->lastInsertId() : null;
 
     // Fecha a conexão com o db
     $con = null;
+
+    return $result;
   }
 
 }
