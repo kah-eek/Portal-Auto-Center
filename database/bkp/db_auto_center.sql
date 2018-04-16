@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,8 +29,8 @@ CREATE TABLE `tbl_acao_nivel_usuario` (
   PRIMARY KEY (`id_acoes_nivel`),
   KEY `fk_tbl_acao_nivel_usuario_id_nivel_usuario_idx` (`id_nivel_usuario`),
   KEY `fk_tbl_acao_nivel_usuario_id_acao_usuario_idx` (`id_acao_usuario`),
-  CONSTRAINT `fk_tbl_acao_nivel_usuario_id_nivel_usuario` FOREIGN KEY (`id_nivel_usuario`) REFERENCES `tbl_nivel_usuario` (`id_nivel_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_acao_nivel_usuario_id_acao_usuario` FOREIGN KEY (`id_acao_usuario`) REFERENCES `tbl_acao_usuario` (`id_acao_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_acao_nivel_usuario_id_acao_usuario` FOREIGN KEY (`id_acao_usuario`) REFERENCES `tbl_acao_usuario` (`id_acao_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_acao_nivel_usuario_id_nivel_usuario` FOREIGN KEY (`id_nivel_usuario`) REFERENCES `tbl_nivel_usuario` (`id_nivel_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -206,7 +206,7 @@ CREATE TABLE `tbl_categoria_produto` (
   `id_categoria_produto` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(380) NOT NULL,
   PRIMARY KEY (`id_categoria_produto`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `tbl_categoria_produto` (
 
 LOCK TABLES `tbl_categoria_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria_produto` DISABLE KEYS */;
-INSERT INTO `tbl_categoria_produto` VALUES (1,'Faróis');
+INSERT INTO `tbl_categoria_produto` VALUES (1,'Produto'),(2,'Serviço');
 /*!40000 ALTER TABLE `tbl_categoria_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,8 +378,8 @@ CREATE TABLE `tbl_compatibilidade_produto_veiculo` (
   PRIMARY KEY (`id_compatibilidade_produto_veiculo`),
   KEY `fk_tbl_compatibilidade_produto_veiculo_id_veiculo_idx` (`id_veiculo`),
   KEY `fk_tbl_compatibilidade_produto_veiculo_id_produto_idx` (`id_produto`),
-  CONSTRAINT `fk_tbl_compatibilidade_produto_veiculo_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_compatibilidade_produto_veiculo_id_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_compatibilidade_produto_veiculo_id_produto` FOREIGN KEY (`id_produto`) REFERENCES `tbl_produto` (`id_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_compatibilidade_produto_veiculo_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -472,7 +472,7 @@ CREATE TABLE `tbl_cor` (
 
 LOCK TABLES `tbl_cor` WRITE;
 /*!40000 ALTER TABLE `tbl_cor` DISABLE KEYS */;
-INSERT INTO `tbl_cor` VALUES (1,'preto');
+INSERT INTO `tbl_cor` VALUES (1,'Preto');
 /*!40000 ALTER TABLE `tbl_cor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -524,7 +524,7 @@ CREATE TABLE `tbl_endereco` (
   PRIMARY KEY (`id_endereco`),
   KEY `fk_tbl_endereco_id_estado_idx` (`id_estado`),
   CONSTRAINT `fk_tbl_endereco_id_estado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -533,7 +533,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (9,'quaklquer rua','452','Barueri',1,'45216785','teste do bairro','n tem compl');
+INSERT INTO `tbl_endereco` VALUES (1,'Rua Flamingo','8452','São Paulo',1,'01000452','Jardim Paulista','');
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -604,7 +604,7 @@ CREATE TABLE `tbl_fabricante_produto` (
 
 LOCK TABLES `tbl_fabricante_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_fabricante_produto` DISABLE KEYS */;
-INSERT INTO `tbl_fabricante_produto` VALUES (1,'Sport System');
+INSERT INTO `tbl_fabricante_produto` VALUES (1,'Porsch');
 /*!40000 ALTER TABLE `tbl_fabricante_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -686,8 +686,8 @@ CREATE TABLE `tbl_funcionario_pac` (
   PRIMARY KEY (`id_funcionario_pac`),
   KEY `fk_tbl_funcionario_pac_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_funcionario_pac_id_cargo_funcionario_pac_idx` (`id_cargo_funcionario_pac`),
-  CONSTRAINT `fk_tbl_funcionario_pac_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_funcionario_pac_id_cargo_funcionario_pac` FOREIGN KEY (`id_cargo_funcionario_pac`) REFERENCES `tbl_cargo_funcionario_pac` (`id_cargo_funcionario_pac`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_funcionario_pac_id_cargo_funcionario_pac` FOREIGN KEY (`id_cargo_funcionario_pac`) REFERENCES `tbl_cargo_funcionario_pac` (`id_cargo_funcionario_pac`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_funcionario_pac_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -723,7 +723,7 @@ CREATE TABLE `tbl_imagem_produto_parceiro` (
 
 LOCK TABLES `tbl_imagem_produto_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_imagem_produto_parceiro` DISABLE KEYS */;
-INSERT INTO `tbl_imagem_produto_parceiro` VALUES (3,2,'fwerfwefef');
+INSERT INTO `tbl_imagem_produto_parceiro` VALUES (2,3,'path/photo'),(3,3,'path/photoasd');
 /*!40000 ALTER TABLE `tbl_imagem_produto_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -806,7 +806,7 @@ CREATE TABLE `tbl_modelo_produto` (
 
 LOCK TABLES `tbl_modelo_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_modelo_produto` DISABLE KEYS */;
-INSERT INTO `tbl_modelo_produto` VALUES (1,'Farol Dianteiro',1,0.4,0.27,0.6);
+INSERT INTO `tbl_modelo_produto` VALUES (1,'41A-52FD',1,0.452,0.28,0.69);
 /*!40000 ALTER TABLE `tbl_modelo_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -870,7 +870,7 @@ CREATE TABLE `tbl_nivel_usuario` (
   `id_nivel_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nivel` varchar(45) NOT NULL,
   PRIMARY KEY (`id_nivel_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -879,7 +879,7 @@ CREATE TABLE `tbl_nivel_usuario` (
 
 LOCK TABLES `tbl_nivel_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_usuario` VALUES (1,'Administrador');
+INSERT INTO `tbl_nivel_usuario` VALUES (1,'Administrador'),(2,'Parceiro'),(3,'Cliente');
 /*!40000 ALTER TABLE `tbl_nivel_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -936,10 +936,10 @@ CREATE TABLE `tbl_parceiro` (
   KEY `fk_tbl_parceiro_id_plano_contratacao_idx` (`id_plano_contratacao`),
   KEY `fk_tbl_parceiro_id_usuario_idx` (`id_usuario`),
   KEY `fk_tbl_parceiro_id_endereco_idx` (`id_endereco`),
+  CONSTRAINT `fk_tbl_parceiro_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_parceiro_id_plano_contratacao` FOREIGN KEY (`id_plano_contratacao`) REFERENCES `tbl_plano_contratacao` (`id_plano_contratacao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_parceiro_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_parceiro_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='			';
+  CONSTRAINT `fk_tbl_parceiro_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='			';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -948,7 +948,7 @@ CREATE TABLE `tbl_parceiro` (
 
 LOCK TABLES `tbl_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_parceiro` DISABLE KEYS */;
-INSERT INTO `tbl_parceiro` VALUES (2,'asdasd','asdas','56.146.',9,0,1,'asd@sadas','4561','dasds','6451','2018-04-10 22:47:43',1,1);
+INSERT INTO `tbl_parceiro` VALUES (1,'Fast & Run','Fast & Run Importados LTDA','4656516565',1,0,1,'fast&run@fastrun.com.br','1145228475','photo/path','1142158745','2018-04-12 09:47:39',1,1);
 /*!40000 ALTER TABLE `tbl_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1055,7 +1055,7 @@ CREATE TABLE `tbl_plano_contratacao` (
 
 LOCK TABLES `tbl_plano_contratacao` WRITE;
 /*!40000 ALTER TABLE `tbl_plano_contratacao` DISABLE KEYS */;
-INSERT INTO `tbl_plano_contratacao` VALUES (1,'Premium',280.00,'Seja premium');
+INSERT INTO `tbl_plano_contratacao` VALUES (1,'Premium',580.00,'O melhor plano da PAC');
 /*!40000 ALTER TABLE `tbl_plano_contratacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1110,12 +1110,12 @@ CREATE TABLE `tbl_produto` (
   KEY `fk_tbl_produto_id_modelo_produto_idx` (`id_modelo_produto`),
   KEY `fk_tbl_produto_id_parceiro_idx` (`id_parceiro`),
   KEY `fk_tbl_produto_id_cor_idx` (`id_cor`),
-  KEY `fk_tbl_produto_id_categoria_produto_idx` (`id_categoria_produto`),
-  CONSTRAINT `fk_tbl_produto_id_modelo_produto` FOREIGN KEY (`id_modelo_produto`) REFERENCES `tbl_modelo_produto` (`id_modelo_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_produto_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  KEY `fk_tbl_produto_id_categoria_idx` (`id_categoria_produto`),
+  CONSTRAINT `fk_tbl_produto_id_categoria` FOREIGN KEY (`id_categoria_produto`) REFERENCES `tbl_categoria_produto` (`id_categoria_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_produto_id_cor` FOREIGN KEY (`id_cor`) REFERENCES `tbl_cor` (`id_cor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_produto_id_categoria_produto` FOREIGN KEY (`id_categoria_produto`) REFERENCES `tbl_categoria_produto` (`id_categoria_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_tbl_produto_id_modelo_produto` FOREIGN KEY (`id_modelo_produto`) REFERENCES `tbl_modelo_produto` (`id_modelo_produto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_produto_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1124,7 +1124,7 @@ CREATE TABLE `tbl_produto` (
 
 LOCK TABLES `tbl_produto` WRITE;
 /*!40000 ALTER TABLE `tbl_produto` DISABLE KEYS */;
-INSERT INTO `tbl_produto` VALUES (2,1,2,1,1,'Faróis',891.00,'11s','5 meses','sdas','asdasdas');
+INSERT INTO `tbl_produto` VALUES (3,1,1,1,1,'Farol',875.00,'1 farol','5 meses','test',NULL),(4,1,1,1,1,'Pneu',300.00,'1 pneu','12 meses','',NULL);
 /*!40000 ALTER TABLE `tbl_produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1166,8 +1166,8 @@ CREATE TABLE `tbl_seguir_rede_social` (
   PRIMARY KEY (`id_seguir_rede_social`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguidor_idx` (`usuario_seguidor`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguido_idx` (`usuario_seguido`),
-  CONSTRAINT `fk_tbl_seguir_rede_social_usuario_seguidor` FOREIGN KEY (`usuario_seguidor`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_seguir_rede_social_usuario_seguido` FOREIGN KEY (`usuario_seguido`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_seguir_rede_social_usuario_seguido` FOREIGN KEY (`usuario_seguido`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_seguir_rede_social_usuario_seguidor` FOREIGN KEY (`usuario_seguidor`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1248,7 +1248,10 @@ CREATE TABLE `tbl_sobre_empresa` (
   `id_sobre_empresa` int(11) NOT NULL AUTO_INCREMENT,
   `imagem` varchar(480) NOT NULL,
   `texto` varchar(2800) NOT NULL,
-  PRIMARY KEY (`id_sobre_empresa`)
+  `id_topico_sobre_empresa` int(11) NOT NULL,
+  PRIMARY KEY (`id_sobre_empresa`),
+  KEY `fk_tbl_topico_sobre_empresa_id_topico_sobre_empresa` (`id_topico_sobre_empresa`),
+  CONSTRAINT `fk_tbl_topico_sobre_empresa_id_topico_sobre_empresa` FOREIGN KEY (`id_topico_sobre_empresa`) REFERENCES `tbl_topico_sobre_empresa` (`id_topico_sobre_empresa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1307,8 +1310,8 @@ CREATE TABLE `tbl_socorro_ja` (
   PRIMARY KEY (`id_socorro_ja`),
   KEY `fk_tbl_socorro_ja_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_socorro_ja_id_cliente_idx` (`id_cliente`),
-  CONSTRAINT `fk_tbl_socorro_ja_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_socorro_ja_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_socorro_ja_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_socorro_ja_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1424,6 +1427,29 @@ LOCK TABLES `tbl_topico_forum` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_topico_sobre_empresa`
+--
+
+DROP TABLE IF EXISTS `tbl_topico_sobre_empresa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_topico_sobre_empresa` (
+  `id_topico_sobre_empresa` int(11) NOT NULL AUTO_INCREMENT,
+  `topico_sobre_empresa` varchar(120) NOT NULL,
+  PRIMARY KEY (`id_topico_sobre_empresa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_topico_sobre_empresa`
+--
+
+LOCK TABLES `tbl_topico_sobre_empresa` WRITE;
+/*!40000 ALTER TABLE `tbl_topico_sobre_empresa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_topico_sobre_empresa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_usuario`
 --
 
@@ -1449,7 +1475,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'adm','123','2018-04-11 10:53:42',1,1);
+INSERT INTO `tbl_usuario` VALUES (1,'fast&run','123','2018-04-12 09:45:06',2,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1501,8 +1527,8 @@ CREATE TABLE `tbl_veiculo_cliente` (
   PRIMARY KEY (`id_veiculo_cliente`),
   KEY `fk_veiculo_cliente_id_veiculo_idx` (`id_veiculo`),
   KEY `fk_veiculo_cliente_id_cliente_idx` (`id_cliente`),
-  CONSTRAINT `fk_veiculo_cliente_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_veiculo_cliente_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_veiculo_cliente_id_cliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbl_cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_veiculo_cliente_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1557,8 +1583,8 @@ CREATE TABLE `tbl_veiculo_tipo_combustivel` (
   PRIMARY KEY (`id_veiculo_tipo_combustivel`),
   KEY `fk_tbl_veiculo_tipo_combustivel_id_veiculo_idx` (`id_veiculo`),
   KEY `fk_tbl_veiculo_tipo_combustivel_id_tipo_combustivel_idx` (`id_tipo_combustivel`),
-  CONSTRAINT `fk_tbl_veiculo_tipo_combustivel_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_tbl_veiculo_tipo_combustivel_id_tipo_combustivel` FOREIGN KEY (`id_tipo_combustivel`) REFERENCES `tbl_tipo_combustivel` (`id_tipo_combustivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_tbl_veiculo_tipo_combustivel_id_tipo_combustivel` FOREIGN KEY (`id_tipo_combustivel`) REFERENCES `tbl_tipo_combustivel` (`id_tipo_combustivel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tbl_veiculo_tipo_combustivel_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1581,6 +1607,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE VIEW `view_produto` AS SELECT 
  1 AS `id_produto`,
+ 1 AS `nome`,
  1 AS `conteudo_embalagem`,
  1 AS `garantia`,
  1 AS `observacao`,
@@ -1588,6 +1615,7 @@ SET character_set_client = utf8;
  1 AS `descricao`,
  1 AS `imagem`,
  1 AS `modelo`,
+ 1 AS `id_parceiro`,
  1 AS `nome_fantasia`,
  1 AS `id_endereco`,
  1 AS `telefone`,
@@ -1666,7 +1694,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_produto` AS select `pdrt`.`id_produto` AS `id_produto`,`pdrt`.`conteudo_embalagem` AS `conteudo_embalagem`,`pdrt`.`garantia` AS `garantia`,`pdrt`.`observacao` AS `observacao`,`pdrt`.`preco` AS `preco`,`pdrt`.`descricao` AS `descricao`,`img_pdrt_parc`.`imagem` AS `imagem`,`mdl_pdrt`.`modelo` AS `modelo`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`id_endereco` AS `id_endereco`,`parc`.`telefone` AS `telefone`,`parc`.`celular` AS `celular`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado`,`ctg_pdrt`.`categoria` AS `categoria`,`ctg_pdrt`.`id_categoria_produto` AS `id_categoria_produto` from ((((((`tbl_produto` `pdrt` join `tbl_modelo_produto` `mdl_pdrt` on((`mdl_pdrt`.`id_modelo_produto` = `pdrt`.`id_modelo_produto`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `pdrt`.`id_parceiro`))) join `tbl_endereco` `endrc` on((`endrc`.`id_endereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) join `tbl_categoria_produto` `ctg_pdrt` on((`ctg_pdrt`.`id_categoria_produto` = `pdrt`.`id_categoria_produto`))) join `tbl_imagem_produto_parceiro` `img_pdrt_parc` on((`img_pdrt_parc`.`id_imagem_produto_parceiro` = `pdrt`.`id_produto`))) */;
+/*!50001 VIEW `view_produto` AS select `prdt`.`id_produto` AS `id_produto`,`prdt`.`nome` AS `nome`,`prdt`.`conteudo_embalagem` AS `conteudo_embalagem`,`prdt`.`garantia` AS `garantia`,`prdt`.`observacao` AS `observacao`,`prdt`.`preco` AS `preco`,`prdt`.`descricao` AS `descricao`,`img_prdt_parc`.`imagem` AS `imagem`,`mdl_prdt`.`modelo` AS `modelo`,`parc`.`id_parceiro` AS `id_parceiro`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`id_endereco` AS `id_endereco`,`parc`.`telefone` AS `telefone`,`parc`.`celular` AS `celular`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado`,`ctg_prdt`.`categoria` AS `categoria`,`ctg_prdt`.`id_categoria_produto` AS `id_categoria_produto` from ((((((`tbl_produto` `prdt` join `tbl_imagem_produto_parceiro` `img_prdt_parc` on((`img_prdt_parc`.`id_produto` = `prdt`.`id_produto`))) join `tbl_modelo_produto` `mdl_prdt` on((`mdl_prdt`.`id_modelo_produto` = `prdt`.`id_modelo_produto`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `prdt`.`id_parceiro`))) join `tbl_endereco` `endrc` on((`endrc`.`id_endereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) join `tbl_categoria_produto` `ctg_prdt` on((`ctg_prdt`.`id_categoria_produto` = `prdt`.`id_categoria_produto`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1698,4 +1726,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-11 11:26:00
+-- Dump completed on 2018-04-16 10:12:59

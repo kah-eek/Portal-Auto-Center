@@ -1,4 +1,17 @@
+<?php
 
+if(isset($dados_empresa)){
+  $imagem = $dados_empresa->btn_img_missao;
+  $texto = $dados_empresa->name_missao;
+  $action = "editar&id=".$dados_empresa->id;
+}else{
+  $imagem = null;
+  $texto = null;
+  $action = novo;
+}
+
+?>
+  <form="frmEmpresa" method="POST" action="router.php?controller=empresa&modo=<?=$action?>">
    <div class="container_geral bg_cinza">
      <!-- TITULO -->
      <div class="container_titulo margem_t_5">
@@ -21,7 +34,7 @@
        <!-- TEXTAREA -->
        <div class="container_segura_textarea float_left">
          <div class="segura_textarea">
-           <textarea placeholder="Digite Aqui!!!" name="name" rows="9" style="resize: none" cols="61"></textarea>
+           <textarea placeholder="Digite Aqui!!!" name="name_missao" rows="9" style="resize: none" cols="61"></textarea>
          </div>
        </div>
        <!-- BOTÃO -->
@@ -59,7 +72,7 @@
        <!-- TEXTAREA -->
        <div class="container_segura_textarea float_left">
          <div class="segura_textarea">
-           <textarea placeholder="Digite Aqui!!!" name="name" rows="9" style="resize: none" cols="61"></textarea>
+           <textarea placeholder="Digite Aqui!!!" name="name_visao" rows="9" style="resize: none" cols="61"></textarea>
          </div>
        </div>
        <!-- BOTÃO -->
@@ -97,7 +110,7 @@
        <!-- TEXTAREA -->
        <div class="container_segura_textarea float_left">
          <div class="segura_textarea">
-           <textarea placeholder="Digite Aqui!!!" name="name" rows="9" style="resize: none" cols="61"></textarea>
+           <textarea placeholder="Digite Aqui!!!" name="name_valores" rows="9" style="resize: none" cols="61"></textarea>
          </div>
        </div>
        <!-- BOTÃO -->
@@ -135,7 +148,7 @@
        <!-- TEXTAREA -->
        <div class="container_segura_textarea float_left">
          <div class="segura_textarea">
-           <textarea placeholder="Digite Aqui!!!" name="name" rows="9" style="resize: none" cols="61"></textarea>
+           <textarea placeholder="Digite Aqui!!!" name="name_empresa" rows="9" style="resize: none" cols="61"></textarea>
          </div>
        </div>
        <!-- BOTÃO -->

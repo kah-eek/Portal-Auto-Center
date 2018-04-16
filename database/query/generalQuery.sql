@@ -16,6 +16,8 @@ SELECT * FROM tbl_parceiro;
 
 SELECT * FROM tbl_endereco;
 
+SELECT * FROM tbl_funcionario_pac;
+
 SELECT * FROM tbl_estado;
 
 SELECT * FROM tbl_plano_contratacao;

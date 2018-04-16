@@ -1,7 +1,7 @@
 <?php
 
 // Imports
-require_once('../controller/MySql.php');
+require_once('../../../controller/MySql_class.php');
 // #############################
 
 // @author Caique M. Oliveira

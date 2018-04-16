@@ -1,8 +1,9 @@
 <?php
 
   // Imports
-  require_once('../Usuario.php');
-  require_once('../Autenticacao.php');
+  require_once('../../../controller/Usuario_class.php');
+  require_once('../../../controller/Autenticacao_class.php');
+  require_once('../../../model/UsuarioDAO.php');
 
   $error = '';
   $mensagem = '';
@@ -24,7 +25,7 @@
         isset($_POST['nomeUsuario']) &&
         isset($_POST['senha']) &&
         isset($_POST['idNivelUsuario']) &&
-        isset($_POST['idNivelUsuario'])
+        isset($_POST['ativo'])
       )
       {// Parâmetros obrigatórios informados
         // Obtém as keys do request
@@ -48,8 +49,11 @@
         }
         else // Credenciais não existente - continua com a atualização do usuário
         {
+          // Instância um objeto de acesso ao banco de dados
+          $usuarioDAO = new UsuarioDAO();
+
           // Atualiza o usuário no banco de dados
-          $usuarioAtualizado = $usuario->atualizarUsuario($usuario);
+          $usuarioAtualizado = $usuarioDAO->atualizarUsuario($usuario);
 
           if ($usuarioAtualizado)
           {
