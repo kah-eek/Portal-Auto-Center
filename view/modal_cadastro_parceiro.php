@@ -33,9 +33,9 @@
               <input class="input_text_p txt_preto margem_t_5" placeholder="Nome" type="text" name="txt_nome" value="">
             </div>
 
-            <!-- INPUT CPF -->
+            <!-- INPUT CNPJ -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Cpf" type="text" name="txt_cpf" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Cnpj" type="text" name="txt_cnpj  " value="">
             </div>
 
             <!-- INPUT EMAIL -->
