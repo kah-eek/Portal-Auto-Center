@@ -1,30 +1,33 @@
 <?php
 
   // Imports
-  require_once('../Usuario.php');
-  require_once('../Autenticacao.php');
+  require_once('../../../controller/Usuario_class.php');
+  require_once('../../../controller/Autenticacao_class.php');
 
   $error = '';
   $mensagem = '';
   $status = false;
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
-  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  if($_SERVER['REQUEST_METHOD'] == 'PUT'){
 
-    // Recurso qual a request deseja utilizar
-    // $_GET['action'];
+    // Obtém as vaiáveis advindas da request
+    parse_str(file_get_contents('php://input'), $_PUT);
 
-    // Verifica qual recurso deve ser utilizado
-    if (isset($_GET['action']) && $_GET['action'] == 'atualizar') {// Atualiza um cliente
+    // print_r($_PUT);
+    echo $_PUT['ativo'];
+
+    // Atualiza um cliente
+    // if (isset($_GET['action']) && $_GET['action'] == 'atualizar') {
 
       // Verifica se os parâmetros obrigatórios foram informados
       if
       (
         isset($_GET['id']) &&
-        isset($_POST['nomeUsuario']) &&
-        isset($_POST['senha']) &&
-        isset($_POST['idNivelUsuario']) &&
-        isset($_POST['idNivelUsuario'])
+        isset($_PUT['nomeUsuario']) &&
+        isset($_PUT['senha']) &&
+        isset($_PUT['idNivelUsuario']) &&
+        isset($_PUT['ativo'])
       )
       {// Parâmetros obrigatórios informados
         // Obtém as keys do request
@@ -70,12 +73,12 @@
         $mensagem = 'Parâmetros obrigatórios não informados';
       }
 
-    }
-    else // Nenhum recurso selecionado ou inexistente
-    {
-      $mensagem = 'recurso não encontrado';
-      $error = '404';
-    }
+    // }
+    // else // Nenhum recurso selecionado ou inexistente
+    // {
+    //   $mensagem = 'recurso não encontrado';
+    //   $error = '404';
+    // }
 
   }
   else

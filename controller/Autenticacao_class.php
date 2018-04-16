@@ -1,7 +1,7 @@
 <?php
 
 // Imports
-require_once('../model/AutenticacaoDAO.php');
+require_once('../../../model/AutenticacaoDAO.php');
 
 
 // @author Caique M. Oliveira
