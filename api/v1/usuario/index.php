@@ -123,6 +123,30 @@
 
         }
 
+        // Delete um usuário
+        if ($_GET['action'] == 'deletar') {
+
+          // Verifica se o parâmetro obrigatório (id) existe na URL
+          if (isset($_GET['id'])) { // Variável ID existete na URL
+
+            // Obtém a key da request
+            $idUsuario = $_GET['id'];
+
+            $usuario = new Usuario();
+
+            if($usuario->deletarUsuario($idUsuario))
+            {
+              $status = true;
+              $mensagem = 
+            }
+
+          }
+          else // Variável ID não existete na URL
+          {
+            $error = '010';
+            $mensagem = 'Parâmetro obrigatório de identificação não informado';
+          }
+        }
       }
       else // Parâmetros obrigatórios não informados
       {

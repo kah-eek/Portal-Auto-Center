@@ -88,15 +88,46 @@ class UsuarioDAO
     $con = null;
 
     return $result;
+  }
 
-    // Executa a statement e armazena a quantidade de registros que foram modificados
-    // $result = $stmt->execute() ? $stmt->rowCount() : -1;
+  /**
+  * Deleta o usuário da base de dados
+  * @param $idUsuario Identificação do usuário qual será excluído
+  * @return true Usuário excluído com sucesso
+  * @return false Falha ao tentar excluir o usuário
+  */
+  function deletarUsuario($idUsuario)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'DELETE FROM tbl_usuario '.
+      'WHERE id_usuario = ?'
+    );
+
+    // Preenche a statement com o respectivo parâmetro
+    $stmt->bindParam(1,$idUsuario);
+
+    try {
+
+      // Executa a statement e armazena a quantidade de registros que foram deletados
+      $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+      // Verifica se a exclusão do registro ocorreu com sucesso
+      $result = $result == -1 ? false : true;
+
+    } catch (\Exception $e) {
+      $result = false;
+    }
 
     // Fecha a conexão com o db
-    // $con = null;
+    $con = null;
 
-    // Verifica se a atualização do registro ocorreu com sucesso
-    // return $result == -1 ? false : true;
+    return $result;
 
   }
 
