@@ -1,3 +1,36 @@
+<?php
+/**
+* VERFIFICA SE A VARIÁVEL $dados_cadastro EXISTE. OBS.:ESSA VARIÁVEL FOI CRIADA NA CONTROLLER:Parceiro_class.
+*/
+  if(isset($dados_cadastro)){
+    $nome_fantasia = $dados_cadastro->nome_fantasia;
+    $razao_social = $dados_cadastro->razao_social;
+    $cnpj = $dados_cadastro->cnpj;
+    $id_endereco = $dados_cadastro->id_endereco;
+    $socorrista = $dados_cadastro->socorrista;
+    $email = $dados_cadastro->$email;
+    $telefone = $dados_cadastro->telefone;
+    $foto_perfil = $dados_cadastro->foto_perfil;
+    $celular = $dados_cadastro->celular;
+    $id_usuario = $dados_cadastro->id_usuario;
+    $id_plano_contratacao = $dados_cadastro->id_plano_contratacao;
+    $action ="editar&id_pac".$dados_cadastro->id_pac;
+  }else{
+    //CRIANDO AS VARIÁVEIS PADRÕES LOCAIS.
+    $nome_fantasia = null;
+    $razao_social = null;
+    $cnpj = null;
+    $id_endereco = null;
+    $socorrista = null;
+    $email = null;
+    $telefone = null;
+    $foto_perfil = null;
+    $celular = null;
+    $id_usuario = null;
+    $id_plano_contratacao = null;
+    $action = "novo";
+  }
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -30,7 +63,12 @@
           <div class="item_contendo_inputs">
             <!-- INPUT NOME -->
             <div class="segura_input_p">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Nome" type="text" name="txt_nome" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Nome Fantasia" type="text" name="txt_nome" value="">
+            </div>
+
+            <!-- INPUT RAZÃO SOCIAL -->
+            <div class="segura_input_p">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Razão Social" type="text" name="txt_razao" value="">
             </div>
 
             <!-- INPUT CNPJ -->
@@ -40,7 +78,7 @@
 
             <!-- INPUT EMAIL -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Email Address" type="text" name="txt_email" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Email" type="text" name="txt_email" value="">
             </div>
 
             <!-- INPUT CELULAR -->
