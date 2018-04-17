@@ -16,8 +16,8 @@
     // $_GET['action'];
 
     // Verifica qual recurso deve ser utilizado
-    if (isset($_GET['action']) && $_GET['action'] == 'atualizar') {// Atualiza um cliente
-
+    if (isset($_GET['action']))
+    {
       // Verifica se os parâmetros obrigatórios foram informados
       if
       (
@@ -27,7 +27,8 @@
         isset($_POST['idNivelUsuario']) &&
         isset($_POST['ativo'])
       )
-      {// Parâmetros obrigatórios informados
+      {
+
         // Obtém as keys do request
         $idUsuario = $_GET['id'];
         $nomeUsuario = $_POST['nomeUsuario'];
@@ -73,7 +74,6 @@
         $error = '007';
         $mensagem = 'Parâmetros obrigatórios não informados';
       }
-
     }
     else // Nenhum recurso selecionado ou inexistente
     {
