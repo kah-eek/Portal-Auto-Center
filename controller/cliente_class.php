@@ -49,8 +49,8 @@ class Cliente
   /**
   * Insere um novo cliente no banco de dados
   * @param $clienteObj Objeto Cliente qual será inserido no banco de dados
-  * @return true Cliente registrado com sucesso na base de dados
-  * @return false Falha ao registrar o cliente na base de dados
+  * @return Int Identificação (idCliente) do novo cliente inserido no banco de dados
+  * @return null Falha ao tentar registrar o cliente na base de dados
   */
   function cadastrarCliente($clienteObj)
   {

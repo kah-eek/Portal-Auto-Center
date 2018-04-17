@@ -9,8 +9,8 @@ class ClienteDAO
   /**
   * Insere um novo cliente no banco de dados
   * @param $clienteObj Objeto Cliente qual será inserido no banco de dados
-  * @return true Cliente registrado com sucesso na base de dados
-  * @return false Falha ao registrar o cliente na base de dados
+  * @return Int Identificação (idCliente) do novo cliente inserido no banco de dados
+  * @return null Falha ao tentar registrar o cliente na base de dados
   */
   function cadastrarCliente($clienteObj)
   {
@@ -47,10 +47,12 @@ class ClienteDAO
     $stmt->bindParam(10, $clienteObj->foto);
 
     // Verifica se a inserção do registro ocorreu com sucesso e retorna a resposta adquirida
-    return $stmt->execute() ? true : false;
+    $result = $stmt->execute() ? $con->lastInsertId() : null;
 
     // Fecha a conexão com o db
     $con = null;
+
+    return $result;
   }
 
   /**
