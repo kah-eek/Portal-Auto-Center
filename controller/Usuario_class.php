@@ -48,6 +48,19 @@ class Usuario
     return $usuarioDAO->atualizarUsuario($usuarioObj);
   }
 
+  /**
+  * Deleta o usuário da base de dados
+  * @param $idUsuario Identificação do usuário qual será excluído
+  * @return true Usuário excluído com sucesso
+  * @return false Falha ao tentar excluir o usuário
+  */
+  function deletarUsuario($idUsuario)
+  {
+    $usuarioDAO = new UsuarioDAO();
+    return $usuarioDAO->deletarUsuario($idUsuario);
+  }
+
+
 }
 
 ?>

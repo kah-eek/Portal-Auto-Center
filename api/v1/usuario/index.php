@@ -15,65 +15,144 @@
     // Recurso qual a request deseja utilizar
     // $_GET['action'];
 
-    // Verifica qual recurso deve ser utilizado
-    if (isset($_GET['action']) && $_GET['action'] == 'atualizar') {// Atualiza um cliente
-
+    // Verifica se existe a variável do recurso desejado na URL
+    if (isset($_GET['action']))
+    {
       // Verifica se os parâmetros obrigatórios foram informados
       if
       (
-        isset($_GET['id']) &&
         isset($_POST['nomeUsuario']) &&
         isset($_POST['senha']) &&
         isset($_POST['idNivelUsuario']) &&
         isset($_POST['ativo'])
       )
-      {// Parâmetros obrigatórios informados
+      {
+
         // Obtém as keys do request
-        $idUsuario = $_GET['id'];
         $nomeUsuario = $_POST['nomeUsuario'];
         $senha = $_POST['senha'];
         $idNivelUsuario = $_POST['idNivelUsuario'];
         $ativo = $_POST['ativo'];
 
-        // Cria um objeto Usuario
-        $usuario = new Usuario($idUsuario, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
+        /* Verifica qual recurso deve ser utilizado */
 
-        // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
-        $autenticacao = new Autenticacao($nomeUsuario, $senha);
+        // Atualiza o usuário
+        if ($_GET['action'] == 'atualizar') {
 
-        // Verifica se as credenciais já existem
-        if ($autenticacao->credencialExistente($autenticacao))
-        {// Credencial existente
-          $mensagem = 'Usuário já existente';
-          $error = '001';
-        }
-        else // Credenciais não existente - continua com a atualização do usuário
-        {
-          // Instância um objeto de acesso ao banco de dados
-          $usuarioDAO = new UsuarioDAO();
+          // Verifica se o parâmetro obrigatório (id) existe na URL
+          if (isset($_GET['id'])) { // Variável ID existete na URL
 
-          // Atualiza o usuário no banco de dados
-          $usuarioAtualizado = $usuarioDAO->atualizarUsuario($usuario);
+            // Obtém a key da request
+            $idUsuario = $_GET['id'];
 
-          if ($usuarioAtualizado)
-          {
-            $status = true;
-            $mensagem = 'Usuário atualizado com sucesso';
+            // Cria um objeto Usuario
+            $usuario = new Usuario($idUsuario, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
+
+            // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
+            $autenticacao = new Autenticacao($nomeUsuario, $senha);
+
+            // Verifica se as credenciais já existem
+            if ($autenticacao->credencialExistente($autenticacao))
+            {// Credencial existente
+              $mensagem = 'Usuário já existente';
+              $error = '001';
+            }
+            else // Credenciais não existente - continua com a atualização do usuário
+            {
+              // Instância um objeto de acesso ao banco de dados
+              $usuarioDAO = new UsuarioDAO();
+
+              // Atualiza o usuário no banco de dados
+              $usuarioAtualizado = $usuarioDAO->atualizarUsuario($usuario);
+
+              if ($usuarioAtualizado)
+              {
+                $status = true;
+                $mensagem = 'Usuário atualizado com sucesso';
+              }
+              else
+              {
+                $error = '006';
+                $mensagem = 'Falha ao tentar atualizar o usuário';
+              }
+            }
+
           }
-          else
+          else // Variável ID não existete na URL
           {
-            $error = '006';
-            $mensagem = 'Falha ao tentar atualizar o usuário';
+            $error = '010';
+            $mensagem = 'Parâmetro obrigatório de identificação não informado';
           }
+
         }
 
+        // Insere um novo usuário
+        if ($_GET['action'] == 'inserir') {
+
+          // Cria um objeto Usuario
+          $usuario = new Usuario(null, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
+
+          // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
+          $autenticacao = new Autenticacao($nomeUsuario, $senha);
+
+          // Verifica se as credenciais já existem
+          if ($autenticacao->credencialExistente($autenticacao))
+          {// Credencial existente
+            $mensagem = 'Usuário já existente';
+            $error = '001';
+          }
+          else // Credenciais não existente - continua com o registro do usuário
+          {
+            // Instância um objeto de acesso ao banco de dados
+            $usuarioDAO = new UsuarioDAO();
+
+            // Insere o usuário no banco de dados
+            $idUsuario = $usuarioDAO->inserirUsuario($usuario);
+
+            if ($idUsuario != null)
+            {
+              $status = true;
+              $mensagem = 'Usuário registrado com sucesso';
+            }
+            else
+            {
+              $error = '006';
+              $mensagem = 'Falha ao tentar registrar o usuário';
+            }
+          }
+
+        }
+
+        // Delete um usuário
+        if ($_GET['action'] == 'deletar') {
+
+          // Verifica se o parâmetro obrigatório (id) existe na URL
+          if (isset($_GET['id'])) { // Variável ID existete na URL
+
+            // Obtém a key da request
+            $idUsuario = $_GET['id'];
+
+            $usuario = new Usuario();
+
+            if($usuario->deletarUsuario($idUsuario))
+            {
+              $status = true;
+              $mensagem = 
+            }
+
+          }
+          else // Variável ID não existete na URL
+          {
+            $error = '010';
+            $mensagem = 'Parâmetro obrigatório de identificação não informado';
+          }
+        }
       }
       else // Parâmetros obrigatórios não informados
       {
         $error = '007';
         $mensagem = 'Parâmetros obrigatórios não informados';
       }
-
     }
     else // Nenhum recurso selecionado ou inexistente
     {
