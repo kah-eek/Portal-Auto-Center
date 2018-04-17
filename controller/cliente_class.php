@@ -34,7 +34,29 @@ class Cliente
     $this->idUsuario = $idUsuario;
   }
 
-  // CRIAR OS METODOS DE ACESSO AOS DAOs
+  /**
+  * Verifica se o cliente informado já encontra-se cadastrado na base de dados
+  * @param $clienteObj Objeto Cliente qual será verificado sua existência
+  * @return true Cliente já existente na base de dados
+  * @return false Cliente não existente na base de dados
+  */
+  function clienteExistente($clienteObj)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->clienteExistente($clienteObj);
+  }
+
+  /**
+  * Insere um novo cliente no banco de dados
+  * @param $clienteObj Objeto Cliente qual será inserido no banco de dados
+  * @return true Cliente registrado com sucesso na base de dados
+  * @return false Falha ao registrar o cliente na base de dados
+  */
+  function cadastrarCliente($clienteObj)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->cadastrarCliente($clienteObj);
+  }
 
 }
 
