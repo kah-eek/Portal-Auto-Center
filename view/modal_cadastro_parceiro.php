@@ -53,14 +53,6 @@
               <input class="input_text_p txt_preto margem_t_5" placeholder="Telefone" type="text" name="txt_telefone" value="">
             </div>
 
-            <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Email Address" type="text" name="txt_email" value="">
-            </div>
-
-            <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Email Address" type="text" name="txt_email" value="">
-            </div>
-
             <!-- TITULO ENDEREÇO -->
             <div class="titulo_form_p">
               <div class="item_titulo_form_p titulo margem_t_10 float_left">
@@ -158,6 +150,18 @@
             <div class="container_desc_planos margem_t_20 titulo">
               <div class="item_desc_planos fs_25">
                 Plano 2
+              </div>
+            </div>
+            <!-- TEXTO -->
+            <div class="container_texto_planos">
+              <div class="item_texto_planos">
+                <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </div>
+            </div>
+
+            <div class="container_desc_planos margem_t_20 titulo">
+              <div class="item_desc_planos fs_25">
+                Plano 3
               </div>
             </div>
             <!-- TEXTO -->

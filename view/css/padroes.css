@@ -148,6 +148,7 @@ a{
 
 .preenche_t_5{padding-top: 5px;box-sizing: border-box;}
 .preenche_t_10{padding-top: 10px;box-sizing: border-box;}
+.preenche_t_15{padding-top: 15px;box-sizing: border-box;}
 .preenche_t_20{padding-top: 20px;box-sizing: border-box;}
 .preenche_t_25{padding-top: 25px;box-sizing: border-box;}
 .preenche_t_30{padding-top: 30px;box-sizing: border-box;}
@@ -162,6 +163,7 @@ a{
 .preenche_t_130{padding-top: 130px;box-sizing: border-box;}
 .preenche_t_140{padding-top: 140px;box-sizing: border-box;}
 .preenche_t_150{padding-top: 150px;box-sizing: border-box;}
+.preenche_t_200{padding-top: 200px;box-sizing: border-box;}
 .preenche_t_250{padding-top: 250px;box-sizing: border-box;}
 .preenche_t_260{padding-top: 260px;box-sizing: border-box;}
 
@@ -303,6 +305,7 @@ a{
 .margem_l_90{margin-left: 90px;}
 .margem_l_100{margin-left: 100px;}
 .margem_l_150{margin-left: 150px;}
+.margem_l_180{margin-left: 180px;}
 
 .margem_l_70_cento{margin-left: 70%;}
 .margem_l_72_cento{margin-left: 72%;}

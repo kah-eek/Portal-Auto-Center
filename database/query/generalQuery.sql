@@ -1,5 +1,7 @@
 SELECT * FROM tbl_produto;
 
+SELECT * FROM tbl_cliente;
+
 SELECT * FROM tbl_cor;
 
 SELECT * FROM tbl_usuario;
