@@ -24,8 +24,29 @@ class Usuario
     $this->log = $log;
   }
 
-  // CRIAR OS METODOS DE ACESSO AOS DAOs
-  
+  /**
+  * Insere um novo usuário no banco de dados
+  * @param $usuarioObj Objeto Usuario qual será inserido no banco de dados
+  * @return Int Identificação (idUsuario) do novo usuário inserido no banco de dados
+  * @return null Falha ao tentar registrar o usuário na base de dados
+  */
+  function inserirUsuario($usuarioObj)
+  {
+    $usuarioDAO = new UsuarioDAO();
+    return $usuarioDAO->inserirUsuario($usuarioObj);
+  }
+
+  /**
+  * Atualiza os dados do usuário no banco de dados
+  * @param $usuarioObj Objeto Usuario qual será atualizado no banco de dados
+  * @return true Atualização realizada com sucesso na base de dados
+  * @return false Falha ao tentar atualizar os dados do usuário no banco de dados
+  */
+  function atualizarUsuario($usuarioObj)
+  {
+    $usuarioDAO = new UsuarioDAO();
+    return $usuarioDAO->atualizarUsuario($usuarioObj);
+  }
 
 }
 

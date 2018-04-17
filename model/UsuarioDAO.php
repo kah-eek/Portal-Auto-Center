@@ -73,14 +73,30 @@ class UsuarioDAO
     $stmt->bindParam(4, $usuarioObj->ativo);
     $stmt->bindParam(5, $usuarioObj->idUsuario);
 
-    // Executa a statement e armazena a quantidade de registros que foram modificados
-    $result = $stmt->execute() ? $stmt->rowCount() : -1;
+    try {
+      // Executa a statement e armazena a quantidade de registros que foram modificados
+      $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+      // Verifica se a atualização do registro ocorreu com sucesso
+      $result = $result == -1 ? false : true;
+
+    } catch (\Exception $e) {
+      $result = false;
+    }
 
     // Fecha a conexão com o db
     $con = null;
 
+    return $result;
+
+    // Executa a statement e armazena a quantidade de registros que foram modificados
+    // $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+    // Fecha a conexão com o db
+    // $con = null;
+
     // Verifica se a atualização do registro ocorreu com sucesso
-    return $result == -1 ? false : true;
+    // return $result == -1 ? false : true;
 
   }
 
