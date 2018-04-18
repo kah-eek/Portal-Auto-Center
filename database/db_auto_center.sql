@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.7.21-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -291,7 +291,7 @@ CREATE TABLE `tbl_cliente` (
   PRIMARY KEY (`id_cliente`),
   KEY `fk_tbl_cliente_id_usuario_idx` (`id_usuario`),
   CONSTRAINT `fk_tbl_cliente_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,6 +300,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
+INSERT INTO `tbl_cliente` VALUES (1,'tester','2018-03-21','4521544','emai@ll.com','116',1,'M','',1,'path/');
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1727,4 +1728,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 11:01:46
+-- Dump completed on 2018-04-18 14:30:21

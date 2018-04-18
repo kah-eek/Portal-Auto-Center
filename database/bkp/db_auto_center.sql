@@ -683,6 +683,7 @@ CREATE TABLE `tbl_funcionario_pac` (
   `cnh` varchar(11) DEFAULT NULL,
   `pis` varchar(13) DEFAULT NULL,
   `certificado_reservista` varchar(10) DEFAULT NULL,
+  `log_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_funcionario_pac`),
   KEY `fk_tbl_funcionario_pac_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_funcionario_pac_id_cargo_funcionario_pac_idx` (`id_cargo_funcionario_pac`),
@@ -1475,7 +1476,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'fast&run','123','2018-04-12 09:45:06',2,1);
+INSERT INTO `tbl_usuario` VALUES (1,'leticia','lele','2018-04-12 09:45:06',2,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1726,4 +1727,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-16 10:12:59
+-- Dump completed on 2018-04-16 11:01:46

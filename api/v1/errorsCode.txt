@@ -4,6 +4,7 @@
 006 - Falha ao tentar atualizar o usuário
 007 - Parâmetros obrigatórios não informados
 008 - Falha ao tentar registrar o endereço
+011 - Falha ao tentar atualizar o cliente
 009 - Falha ao tentar registrar o novo cliente
 010 - Parâmetro obrigatório de identificação não informado
 404 - Recurso não encontrado ou "action" não existe na URL
