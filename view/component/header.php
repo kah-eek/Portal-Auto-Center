@@ -142,9 +142,10 @@
           </div>
         </div>
       </div>
-      <script>
-      $('#loginRedeSocial').click(function(){
-        modalLoginRedeSocial();
-      })
-      </script>
     </header>
+    <script>
+    $('#loginRedeSocial').click(function(){
+      modalLoginRedeSocial();
+    })
+    </script>
+  </body>
