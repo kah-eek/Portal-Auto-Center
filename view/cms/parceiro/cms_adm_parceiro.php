@@ -33,7 +33,7 @@
         <!-- PLANOS -->
         <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            Gerenciar Planos
+            <a href="cms_agenda_parceiro.php">Gerenciar Planos</a>
           </div>
         </div>
         <!-- SERVIÇOS -->
