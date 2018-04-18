@@ -58,6 +58,18 @@ class Cliente
     return $clienteDAO->cadastrarCliente($clienteObj);
   }
 
+  /**
+  * Atualiza o cliente no banco de dados
+  * @param $clienteObj Objeto Cliente qual será atualizado no banco de dados
+  * @return true Cliente atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o cliente na base de dados
+  */
+  function atualizarCliente($clienteObj)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->atualizarCliente($clienteObj);
+  }
+
 }
 
 ?>

@@ -13,25 +13,25 @@
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
 
-    // Verifica a existência dos parâmetros obrigatórios
-    if
-    (
-      isset($_POST['nome']) &&
-      isset($_POST['email']) &&
-      isset($_POST['dtNasc']) &&
-      isset($_POST['cpf']) &&
-      isset($_POST['celular']) &&
-      isset($_POST['telefone']) &&
-      isset($_POST['foto']) &&
-      isset($_POST['sexo'])
-    )
-    { // Parâmtros obrigatórios existentes
+    // Verifica se existe a variável do recurso desejado na URL
+    if (isset($_GET['action']))
+    {
+      // Verifica a existência dos parâmetros obrigatórios
+      if
+      (
+        isset($_POST['nome']) &&
+        isset($_POST['email']) &&
+        isset($_POST['dtNasc']) &&
+        isset($_POST['cpf']) &&
+        isset($_POST['celular']) &&
+        isset($_POST['telefone']) &&
+        isset($_POST['foto']) &&
+        isset($_POST['sexo'])
+      )
+      { // Parâmtros obrigatórios existentes
 
-      // Recurso qual a request deseja utilizar
-      // $_GET['action'];
-
-      // Verifica qual recurso deve ser utilizado
-      if (isset($_GET['action']) && $_GET['action'] == 'inserir') {// Insere um novo clinete
+        // Recurso qual a request deseja utilizar
+        // $_GET['action'];
 
         // Obtém as keys do request
         $idEndereco = $_POST['idEndereco'];
@@ -45,49 +45,92 @@
         $telefone = $_POST['telefone'];
         $foto = $_POST['foto'];
 
-        // ************ Usuário ***********
-        // $nomeUsuario = $_POST['usuario'];
-        // $senha = $_POST['senha'];
-        // $idNivelUsuario = $_POST['idNivelUsuario'];
+        // Verifica qual recurso deve ser utilizado
+        if ($_GET['action'] == 'inserir') {// Insere um novo clinete
 
-        // Cria um objeto Cliente
-        $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,null,$idEndereco,$idUsuario);
+          // Cria um objeto Cliente
+          $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,null,$idEndereco,$idUsuario);
 
-        // Verifica se o cliente já encontra-se cadastrado na base de dados
-        if (!$cliente->clienteExistente($cliente)) // Não cadastrado
-        {
-
-          // Insere um novo cliente no banco de dados
-          if($cliente->cadastrarCliente($cliente)) // Inserido com êxito
+          // Verifica se o cliente já encontra-se cadastrado na base de dados
+          if (!$cliente->clienteExistente($cliente)) // Não cadastrado
           {
-            $mensagem = 'Cliente cadastrado com sucesso';
-            $status = true;
+
+            // Insere um novo cliente no banco de dados
+            if($cliente->cadastrarCliente($cliente)) // Inserido com êxito
+            {
+              $mensagem = 'Cliente cadastrado com sucesso';
+              $status = true;
+            }
+            else // Falha ao tentar inserir o novo cliente
+            {
+              $error = '009';
+              $mensagem = 'Falha ao tentar registrar o novo cliente';
+            }
+
           }
-          else // Falha ao tentar inserir o novo cliente
+          else // Já cadastrado
           {
-            $error = '009';
-            $mensagem = 'Falha ao tentar registrar o novo cliente';
+            $error = '002';
+            $error = 'Cliente já cadastrado';
           }
 
         }
-        else // Já cadastrado
-        {
-          $error = '002';
-          $error = 'Cliente já cadastrado';
-        }
 
+        if ($_GET['action'] == 'atualizar')// Atualiza o cliente
+        {
+
+          // Verifica a existência do parâmetro obrigatório de identificação (idCliente)
+          if (isset($_GET['id']))// Parâmetro obrigatório de identificação existente
+          {
+
+            // Obtém a key do request
+            $idCliente = $_GET['id'];
+
+            // Cria um objeto Cliente
+            $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,$idCliente,$idEndereco,$idUsuario);
+
+            // Verifica se o cliente já encontra-se cadastrado na base de dados
+            if (!$cliente->clienteExistente($cliente)) // Não cadastrado
+            {
+
+              // Atualiza o cliente no banco de dados
+              if($cliente->atualizarCliente($cliente)) // Atualizado com êxito
+              {
+                $mensagem = 'Cliente atualizado com sucesso';
+                $status = true;
+              }
+              else // Falha ao tentar atualizar o cliente
+              {
+                $error = '011';
+                $mensagem = 'Falha ao tentar atualizar o cliente';
+              }
+
+            }
+            else // Já cadastrado
+            {
+              $error = '002';
+              $error = 'Cliente já cadastrado';
+            }
+
+          }
+          else // Parâmetro obrigatório de identificação não existente
+          {
+            $error = '010';
+            $mensagem = 'Parâmetro obrigatório de identificação não informado';
+          }
+        }
       }
-      else // Nenhum recurso selecionado ou inexistente
-      {
-        $mensagem = 'recurso não encontrado';
-        $error = '404';
+      else
+      { // Parâmtros obrigatórios não informados
+        $error = '007';
+        $mensagem = 'Parâmetros obrigatórios não informados';
       }
 
     }
-    else
-    { // Parâmtros obrigatórios não informados
-      $error = '007';
-      $mensagem = 'Parâmetros obrigatórios não informados';
+    else // Nenhum recurso selecionado ou inexistente
+    {
+      $mensagem = 'recurso não encontrado';
+      $error = '404';
     }
 
   }

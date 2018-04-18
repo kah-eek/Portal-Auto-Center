@@ -93,7 +93,7 @@ class ClienteDAO
     $stmt->bindParam(7, $clienteObj->sexo);
     $stmt->bindParam(8, $clienteObj->telefone);
     $stmt->bindParam(9, $clienteObj->foto);
-    $stmt->bindParam(9, $clienteObj->idCliente);
+    $stmt->bindParam(10, $clienteObj->idCliente);
 
     // Verifica se a atualização do registro ocorreu com sucesso e retorna a resposta adquirida
     $result = $stmt->execute() ? true : false;
@@ -119,8 +119,9 @@ class ClienteDAO
     // Abre uma nova conexão com o db
     $con = $mySql->getConnection();
 
-    $stmt = $con->prepare('SELECT COUNT(*) AS counter FROM tbl_cliente WHERE cpf = ?');
+    $stmt = $con->prepare('SELECT COUNT(*) AS counter FROM tbl_cliente WHERE cpf = ? AND id_cliente <> ?');
     $stmt->bindParam(1, $clienteObj->cpf);
+    $stmt->bindParam(2, $clienteObj->idCliente);
 
     // Verifica se o select foi executado com êxito
     if($stmt->execute())
