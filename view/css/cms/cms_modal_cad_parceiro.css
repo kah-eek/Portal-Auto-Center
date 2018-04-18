@@ -1,0 +1,18 @@
+.container_{
+  width: 300px;
+  height: 200px;
+}
+
+.dados_inf{
+  width: 150px;
+  height: 150px;
+  background-color: #745632;
+}
+
+.container_modal{
+  /*margin-top: 0px;*/
+  /*padding: 0px;*/
+  width: 700px;
+  min-height: 672px;
+  height: auto;
+}

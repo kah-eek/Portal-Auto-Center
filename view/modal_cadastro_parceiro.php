@@ -8,7 +8,7 @@
     $cnpj = $dados_cadastro->cnpj;
     $id_endereco = $dados_cadastro->id_endereco;
     $socorrista = $dados_cadastro->socorrista;
-    $email = $dados_cadastro->$email;
+    $email = $dados_cadastro->email;
     $telefone = $dados_cadastro->telefone;
     $foto_perfil = $dados_cadastro->foto_perfil;
     $celular = $dados_cadastro->celular;
@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
   </head>
   <body>
+  <form name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -55,40 +56,40 @@
             <div class="item_img_parceiro centro_lr borda_preta_1">
 
             </div>
-            <input class="display_none" id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="">
+            <input class="display_none" id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="<?php echo($foto_perfil); ?>">
           </label>
         </div>
         <!-- FORM SEGURA INPUTS -->
         <form class="form_segurando_inputs float_left margem_t_10">
           <div class="item_contendo_inputs">
-            <!-- INPUT NOME -->
+            <!-- INPUT NOME FANTASIA -->
             <div class="segura_input_p">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Nome Fantasia" type="text" name="txt_nome" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Nome Fantasia" type="text" name="txt_nome" value="<?php echo($nome_fantasia); ?>">
             </div>
 
             <!-- INPUT RAZÃO SOCIAL -->
             <div class="segura_input_p">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Razão Social" type="text" name="txt_razao" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Razão Social" type="text" name="txt_razao" value="<?php echo($razao_social); ?>">
             </div>
 
             <!-- INPUT CNPJ -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Cnpj" type="text" name="txt_cnpj  " value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Cnpj" type="text" name="txt_cnpj  " value="<?php echo($cnpj); ?>">
             </div>
 
             <!-- INPUT EMAIL -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Email" type="text" name="txt_email" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Email" type="text" name="txt_email" value="<?php echo($email); ?>">
             </div>
 
             <!-- INPUT CELULAR -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Celular" type="text" name="txt_celular" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Celular" type="text" name="txt_celular" value="<?php echo($celular); ?>">
             </div>
 
             <!-- INPUT TELEFONE -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Telefone" type="text" name="txt_telefone" value="">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Telefone" type="text" name="txt_telefone" value="<?php echo($telefone); ?>">
             </div>
 
             <!-- TITULO ENDEREÇO -->
@@ -212,8 +213,9 @@
         </div>
       </div>
       <div class="segura_bt_p float_left">
-        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
+        <input  class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
       </div>
     </div>
+  </form>
   </body>
 </html>

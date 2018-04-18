@@ -51,6 +51,7 @@
     <!-- <script src="view/js/flip-card.js"></script> -->
     <script src="<?=$jquery?>"></script>
     <script src="<?=$modalCadastroCliente?>"></script>
+    <script src="js/ajax/site.js"></script>
 
     <script src="js/carrosel/jquery.js"></script>
     <script src="js/carrosel/jcarousellite.js"></script>

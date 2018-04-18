@@ -1,18 +1,4 @@
-<?php
-
-if(isset($dados_empresa)){
-  $imagem = $dados_empresa->btn_img_missao;
-  $texto = $dados_empresa->name_missao;
-  $action = "editar&id=".$dados_empresa->id;
-}else{
-  $imagem = null;
-  $texto = null;
-  $action = novo;
-}
-
-?>
-  <form="frmEmpresa" method="POST" action="router.php?controller=empresa&modo=<?=$action?>">
-   <div class="container_geral bg_cinza">
+<div class="container_geral bg_cinza">
      <!-- TITULO -->
      <div class="container_titulo margem_t_5">
        <div class="item_titulo align_center txt_sombra_1x1x1_preto negrito fs_20 titulo">
@@ -20,7 +6,7 @@ if(isset($dados_empresa)){
        </div>
      </div>
 
-     <!-- INFORMAÇÕES -->
+     <!-- INAÇÕES -->
      <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
        <!-- IMAGEM -->
        <div class="segura_imagem float_left">
@@ -58,7 +44,7 @@ if(isset($dados_empresa)){
        </div>
      </div>
 
-     <!-- INFORMAÇÕES -->
+     <!-- INAÇÕES -->
      <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
        <!-- IMAGEM -->
        <div class="segura_imagem float_left">
@@ -96,7 +82,7 @@ if(isset($dados_empresa)){
        </div>
      </div>
 
-     <!-- INFORMAÇÕES -->
+     <!-- INAÇÕES -->
      <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
        <!-- IMAGEM -->
        <div class="segura_imagem float_left">
@@ -134,7 +120,7 @@ if(isset($dados_empresa)){
        </div>
      </div>
 
-     <!-- INFORMAÇÕES -->
+     <!-- INAÇÕES -->
      <div class="container_infs bg_branco borda_preta_1 sombra_preta_b_15">
        <!-- IMAGEM -->
        <div class="segura_imagem float_left">
