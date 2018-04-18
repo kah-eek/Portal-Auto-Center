@@ -550,7 +550,6 @@
           </div>
         </div>
       </div>
-
       <!-- Rodape -->
       <?php
         require_once('component/footer.php');
