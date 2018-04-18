@@ -51,7 +51,11 @@
     <!-- LINHA 2 -->
     <div class="linha2_dv float_left bg_cinza">
 
-      <div class="container_descricao_veiculo float_left">
+      <div class="container_btn_sair_dv float_right negrito preenche_r_5">
+        <a class="btn_x_dv fs_20 txt_preto" href="veiculos.php?page=veiculos">X</a>
+      </div>
+
+      <div class="container_descricao_veiculo float_left margem_t_10">
         <div class="item_descricao_veiculo centro_lr">
 
           <div class="desc titulo fs_18 negrito preenche_t_10 margem_t_5">
@@ -91,7 +95,7 @@
           </div>
 
           <div class="preco float_left margem_t_180">
-            <div class="item_preco float_right titulo align_center preenche_t_10 fs_20 borda_preta_1">
+            <div class="item_preco float_right titulo align_center preenche_t_10 fs_20 borda_preta_1 bg_verde_vivo">
               Preço
             </div>
           </div>

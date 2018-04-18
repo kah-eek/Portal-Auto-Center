@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/modal_agenda.css">
   </head>
   <body>
-    <div class="container_principal_agenda centro_lr bg_branco float_left">
+    <div class="container_principal_agenda centro_lr bg_branco float_left borda_preta_1 margem_l_20">
       <!-- SEGURA DATAS -->
       <div class="container_datas float_left">
 
