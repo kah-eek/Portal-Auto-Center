@@ -8,6 +8,7 @@
   $error = '';
   $mensagem = '';
   $status = false;
+  $id = '';
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -147,6 +148,7 @@
               {
                 $status = true;
                 $mensagem = 'Usuário registrado com sucesso';
+                $id = $idUsuario;
               }
               else
               {
@@ -186,8 +188,12 @@
               (
                 'error'=>$error,
                 'mensagem'=>$mensagem,
-                'status'=>$status
+                'status'=>$status,
+                'id'=>$id
               );
+
+  // Verifica se a variável id é vazia e então a remove da response caso verdadeiro
+  if(empty($id)) unset($response['id']);
 
   // Exibe o response no formato JSON
   echo json_encode($response);

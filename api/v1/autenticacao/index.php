@@ -1,7 +1,7 @@
 <?php
 
   // Imports
-  require_once('../../../controller/Autenticacao.php');
+  require_once('../../../controller/Autenticacao_class.php');
 
   $error = '';
   $mensagem = '';

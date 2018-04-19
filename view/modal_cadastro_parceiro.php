@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
   </head>
   <body>
-  <form name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>">
+  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -105,28 +105,39 @@
 
             <!-- INPUT NUMERO -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="">
+              <input id="txt_numero" class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="">
             </div>
 
             <!-- INPUT CIDADE -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Cidade" type="text" name="txt_cidade" value="">
+              <input id="txt_cidade" class="input_text_p txt_preto margem_t_5" placeholder="Cidade" type="text" name="txt_cidade" value="">
+            </div>
+
+            <!-- INPUT ESTADO -->
+            <div class="segura_input_p float_left">
+              <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value="">
             </div>
 
             <!-- INPUT CEP -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="">
+              <input id="txt_cep" class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="">
             </div>
 
             <!-- INPUT BAIRRO -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Bairro" type="text" name="txt_bairro" value="">
+              <input id="txt_bairro" class="input_text_p txt_preto margem_t_5" placeholder="Bairro" type="text" name="txt_bairro" value="">
             </div>
 
             <!-- INPUT COMPLEMENTO -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
+              <input id="txt_complemento" class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
             </div>
+
+            <!-- INPUT LOGRADOURO -->
+            <div class="segura_input_p float_left">
+              <input id="txt_logradouro" class="input_text_p txt_preto margem_t_5" placeholder="Logradouro" type="text" name="txt_logradouro" value="">
+            </div>
+
             <!-- TITULO LOGIN -->
             <div class="titulo_form_p">
               <div class="item_titulo_form_p margem_t_10 titulo float_left">
@@ -213,9 +224,17 @@
         </div>
       </div>
       <div class="segura_bt_p float_left">
-        <input  class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
+        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
       </div>
     </div>
   </form>
+
+  <script>
+    // Listener do botão salvar
+    $('#frmcadparceiro').submit(function(e){
+      inserirEndereco(e);
+    });
+  </script>
+
   </body>
 </html>
