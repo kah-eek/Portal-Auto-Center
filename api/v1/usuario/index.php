@@ -132,12 +132,19 @@
             // Obtém a key da request
             $idUsuario = $_GET['id'];
 
-            $usuario = new Usuario();
+            // Instância o objeto qual será excluído
+            $usuario = new Usuario($idUsuario,null, null, null, null, null);
 
-            if($usuario->deletarUsuario($idUsuario))
+            // Verifica se a exclusão ocorreu com êxito
+            if($usuario->deletarUsuario($usuario))// êxito
             {
               $status = true;
-              $mensagem = 
+              $mensagem = 'Usuário excluído com sucesso';
+            }
+            else // Falha
+            {
+              $error = '011';
+              $mensagem = 'Falha ao tentar excluir o usuário';
             }
 
           }

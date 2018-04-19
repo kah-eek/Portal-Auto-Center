@@ -50,14 +50,14 @@ class Usuario
 
   /**
   * Deleta o usuário da base de dados
-  * @param $idUsuario Identificação do usuário qual será excluído
+  * @param $usuarioObj Objeto usuário qual será excluído
   * @return true Usuário excluído com sucesso
   * @return false Falha ao tentar excluir o usuário
   */
-  function deletarUsuario($idUsuario)
+  function deletarUsuario($usuarioObj)
   {
     $usuarioDAO = new UsuarioDAO();
-    return $usuarioDAO->deletarUsuario($idUsuario);
+    return $usuarioDAO->deletarUsuario($usuarioObj);
   }
 
 

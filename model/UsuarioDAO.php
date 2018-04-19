@@ -92,11 +92,11 @@ class UsuarioDAO
 
   /**
   * Deleta o usuário da base de dados
-  * @param $idUsuario Identificação do usuário qual será excluído
+  * @param $usuarioObj Objeto usuário qual será excluído
   * @return true Usuário excluído com sucesso
   * @return false Falha ao tentar excluir o usuário
   */
-  function deletarUsuario($idUsuario)
+  function deletarUsuario($usuarioObj)
   {
     // Instância de acesso ao db
     $mySql = new MySql();
@@ -110,7 +110,7 @@ class UsuarioDAO
     );
 
     // Preenche a statement com o respectivo parâmetro
-    $stmt->bindParam(1,$idUsuario);
+    $stmt->bindParam(1,$usuarioObj->idUsuario);
 
     try {
 
