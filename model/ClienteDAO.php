@@ -106,12 +106,12 @@ class ClienteDAO
   }
 
   /**
-  * Verifica se o cliente informado já encontra-se cadastrado na base de dados
-  * @param $clienteObj Objeto Cliente qual será verificado sua existência
-  * @return true Cliente já existente na base de dados
-  * @return false Cliente não existente na base de dados
+  * Verifica se o cpf existente na base de dados pertence ao objeto informado
+  * @param $clienteObj Objeto Cliente qual terá seu CPF checada
+  * @return true Cliente proprietário do cpf contido no objeto Cliente
+  * @return false Cliente não proprietário do cpf contido no objeto Cliente
   */
-  function clienteExistente($clienteObj)
+  function proprietarioCpf($clienteObj)
   {
     // Instância de acesso ao db
     $mySql = new MySql();
@@ -127,8 +127,74 @@ class ClienteDAO
     if($stmt->execute())
     {
       while ($answer = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $result = $answer['counter'] > 0 ? false : true;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+  }
+
+  /**
+  * Verifica se já encontra-se cadastrado o cpf na base de dados
+  * @param $clienteObj Objeto Cliente qual terá seu CPF verificado
+  * @return true CPF existente na base de dados
+  * @return false CPF inexistente na base de dados
+  */
+  function cpfExistente($clienteObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare('SELECT COUNT(*) AS counter FROM tbl_cliente WHERE cpf = ?');
+    $stmt->bindParam(1, $clienteObj->cpf);
+
+    // Verifica se o select foi executado com êxito
+    if($stmt->execute())
+    {
+      while ($answer = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $result = $answer['counter'] > 0 ? true : false;
       }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+  }
+
+  /**
+  * Deleta o cliente da base de dados
+  * @param $clienteObj Objeto cliente qual será excluído
+  * @return true Cliente excluído com sucesso
+  * @return false Falha ao tentar excluir o cliente
+  */
+  function deletarCliente($clienteObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare('DELETE FROM tbl_cliente WHERE id_cliente = ?');
+    $stmt->bindParam(1, $clienteObj->idCliente);
+
+    try {
+
+      // Executa a statement e armazena a quantidade de registros que foram deletados
+      $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+      // Verifica se a exclusão do registro ocorreu com sucesso
+      $result = $result == -1 ? false : true;
+
+    } catch (\Exception $e) {
+      $result = false;
     }
 
     // Fecha a conexão com o db

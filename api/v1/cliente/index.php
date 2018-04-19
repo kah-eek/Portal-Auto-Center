@@ -16,93 +16,92 @@
     // Verifica se existe a variável do recurso desejado na URL
     if (isset($_GET['action']))
     {
-      // Verifica a existência dos parâmetros obrigatórios
-      if
-      (
-        isset($_POST['nome']) &&
-        isset($_POST['email']) &&
-        isset($_POST['dtNasc']) &&
-        isset($_POST['cpf']) &&
-        isset($_POST['celular']) &&
-        isset($_POST['telefone']) &&
-        isset($_POST['foto']) &&
-        isset($_POST['sexo'])
-      )
-      { // Parâmtros obrigatórios existentes
 
-        // Recurso qual a request deseja utilizar
-        // $_GET['action'];
+      // Delete um cliente
+      if ($_GET['action'] == 'deletar') {
 
-        // Obtém as keys do request
-        $idEndereco = $_POST['idEndereco'];
-        $idUsuario = $_POST['idUsuario'];
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $dtNasc = $_POST['dtNasc'];
-        $cpf = $_POST['cpf'];
-        $celular = $_POST['celular'];
-        $sexo = $_POST['sexo'];
-        $telefone = $_POST['telefone'];
-        $foto = $_POST['foto'];
+        // Verifica se o parâmetro obrigatório (id) existe na URL
+        if (isset($_GET['id'])) { // Variável ID existete na URL
 
-        // Verifica qual recurso deve ser utilizado
-        if ($_GET['action'] == 'inserir') {// Insere um novo clinete
+          // Obtém a key da request
+          $idCliente = $_GET['id'];
 
-          // Cria um objeto Cliente
-          $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,null,$idEndereco,$idUsuario);
+          // Instância o objeto qual será excluído
+          $cliente = new Cliente(null,null,null,null,null,null,null,null,$idCliente,null,null);
 
-          // Verifica se o cliente já encontra-se cadastrado na base de dados
-          if (!$cliente->clienteExistente($cliente)) // Não cadastrado
+          // Verifica se a exclusão ocorreu com êxito
+          if($cliente->deletarCliente($cliente))// êxito
           {
-
-            // Insere um novo cliente no banco de dados
-            if($cliente->cadastrarCliente($cliente)) // Inserido com êxito
-            {
-              $mensagem = 'Cliente cadastrado com sucesso';
-              $status = true;
-            }
-            else // Falha ao tentar inserir o novo cliente
-            {
-              $error = '009';
-              $mensagem = 'Falha ao tentar registrar o novo cliente';
-            }
-
+            $status = true;
+            $mensagem = 'Cliente excluído com sucesso';
           }
-          else // Já cadastrado
+          else // Falha
           {
-            $error = '002';
-            $error = 'Cliente já cadastrado';
+            $error = '012';
+            $mensagem = 'Falha ao tentar excluir o cliente';
           }
 
         }
-
-        if ($_GET['action'] == 'atualizar')// Atualiza o cliente
+        else // Variável ID não existete na URL
         {
+          $error = '010';
+          $mensagem = 'Parâmetro obrigatório de identificação não informado';
+        }
+      }
+      else
+      {
 
-          // Verifica a existência do parâmetro obrigatório de identificação (idCliente)
-          if (isset($_GET['id']))// Parâmetro obrigatório de identificação existente
-          {
+        // Verifica a existência dos parâmetros obrigatórios
+        if
+        (
+          isset($_POST['idUsuario']) &&
+          isset($_POST['idEndereco']) &&
+          isset($_POST['nome']) &&
+          isset($_POST['email']) &&
+          isset($_POST['dtNasc']) &&
+          isset($_POST['cpf']) &&
+          isset($_POST['celular']) &&
+          isset($_POST['telefone']) &&
+          isset($_POST['foto']) &&
+          isset($_POST['sexo'])
+        )
+        { // Parâmtros obrigatórios existentes
 
-            // Obtém a key do request
-            $idCliente = $_GET['id'];
+          // Recurso qual a request deseja utilizar
+          // $_GET['action'];
+
+          // Obtém as keys do request
+          $idEndereco = $_POST['idEndereco'];
+          $idUsuario = $_POST['idUsuario'];
+          $nome = $_POST['nome'];
+          $email = $_POST['email'];
+          $dtNasc = $_POST['dtNasc'];
+          $cpf = $_POST['cpf'];
+          $celular = $_POST['celular'];
+          $sexo = $_POST['sexo'];
+          $telefone = $_POST['telefone'];
+          $foto = $_POST['foto'];
+
+          // Verifica qual recurso deve ser utilizado
+          if ($_GET['action'] == 'inserir') {// Insere um novo clinete
 
             // Cria um objeto Cliente
-            $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,$idCliente,$idEndereco,$idUsuario);
+            $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,null,$idEndereco,$idUsuario);
 
             // Verifica se o cliente já encontra-se cadastrado na base de dados
-            if (!$cliente->clienteExistente($cliente)) // Não cadastrado
+            if (!$cliente->cpfExistente($cliente)) // Não cadastrado
             {
 
-              // Atualiza o cliente no banco de dados
-              if($cliente->atualizarCliente($cliente)) // Atualizado com êxito
+              // Insere um novo cliente no banco de dados
+              if($cliente->cadastrarCliente($cliente)) // Inserido com êxito
               {
-                $mensagem = 'Cliente atualizado com sucesso';
+                $mensagem = 'Cliente cadastrado com sucesso';
                 $status = true;
               }
-              else // Falha ao tentar atualizar o cliente
+              else // Falha ao tentar inserir o novo cliente
               {
-                $error = '011';
-                $mensagem = 'Falha ao tentar atualizar o cliente';
+                $error = '009';
+                $mensagem = 'Falha ao tentar registrar o novo cliente';
               }
 
             }
@@ -113,17 +112,57 @@
             }
 
           }
-          else // Parâmetro obrigatório de identificação não existente
+
+          if ($_GET['action'] == 'atualizar')// Atualiza o cliente
           {
-            $error = '010';
-            $mensagem = 'Parâmetro obrigatório de identificação não informado';
+
+            // Verifica a existência do parâmetro obrigatório de identificação (idCliente)
+            if (isset($_GET['id']))// Parâmetro obrigatório de identificação existente
+            {
+
+              // Obtém a key do request
+              $idCliente = $_GET['id'];
+
+              // Cria um objeto Cliente
+              $cliente = new Cliente($nome,$email,$dtNasc,$cpf,$celular,$sexo,$telefone,$foto,$idCliente,$idEndereco,$idUsuario);
+
+              // Verifica se o cliente está tentando utilizar o cpf de outro cliente para atualizar o seu cpf
+              if ($cliente->proprietarioCpf($cliente)) // Utilizando de seu próprio cpf - edição permitida
+              {
+
+                // Atualiza o cliente no banco de dados
+                if($cliente->atualizarCliente($cliente)) // Atualizado com êxito
+                {
+                  $mensagem = 'Cliente atualizado com sucesso';
+                  $status = true;
+                }
+                else // Falha ao tentar atualizar o cliente
+                {
+                  $error = '011';
+                  $mensagem = 'Falha ao tentar atualizar o cliente';
+                }
+
+              }
+              else // Utilizando o cpf de outro cliente já existente - edição não permitida
+              {
+                $error = '002';
+                $mensagem = 'Cliente já cadastrado';
+              }
+
+            }
+            else // Parâmetro obrigatório de identificação não existente
+            {
+              $error = '010';
+              $mensagem = 'Parâmetro obrigatório de identificação não informado';
+            }
           }
         }
-      }
-      else
-      { // Parâmtros obrigatórios não informados
-        $error = '007';
-        $mensagem = 'Parâmetros obrigatórios não informados';
+        else
+        { // Parâmtros obrigatórios não informados
+          $error = '007';
+          $mensagem = 'Parâmetros obrigatórios não informados';
+        }
+
       }
 
     }

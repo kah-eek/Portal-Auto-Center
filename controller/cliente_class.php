@@ -35,15 +35,27 @@ class Cliente
   }
 
   /**
-  * Verifica se o cliente informado já encontra-se cadastrado na base de dados
-  * @param $clienteObj Objeto Cliente qual será verificado sua existência
-  * @return true Cliente já existente na base de dados
-  * @return false Cliente não existente na base de dados
+  * Verifica se o cpf existente na base de dados pertence ao objeto informado
+  * @param $clienteObj Objeto Cliente qual terá seu CPF checada
+  * @return true Cliente proprietário do cpf contido no objeto Cliente
+  * @return false Cliente não proprietário do cpf contido no objeto Cliente
   */
-  function clienteExistente($clienteObj)
+  function proprietarioCpf($clienteObj)
   {
     $clienteDAO = new ClienteDAO();
-    return $clienteDAO->clienteExistente($clienteObj);
+    return $clienteDAO->proprietarioCpf($clienteObj);
+  }
+
+  /**
+  * Verifica se já encontra-se cadastrado o cpf na base de dados
+  * @param $clienteObj Objeto Cliente qual terá seu CPF verificado
+  * @return true CPF existente na base de dados
+  * @return false CPF inexistente na base de dados
+  */
+  function cpfExistente($clienteObj)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->cpfExistente($clienteObj);
   }
 
   /**
@@ -68,6 +80,18 @@ class Cliente
   {
     $clienteDAO = new ClienteDAO();
     return $clienteDAO->atualizarCliente($clienteObj);
+  }
+
+  /**
+  * Deleta o cliente da base de dados
+  * @param $clienteObj Objeto cliente qual será excluído
+  * @return true Cliente excluído com sucesso
+  * @return false Falha ao tentar excluir o cliente
+  */
+  function deletarCliente($clienteObj)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->deletarCliente($clienteObj);
   }
 
 }

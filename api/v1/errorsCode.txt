@@ -8,5 +8,6 @@
 011 - Falha ao tentar atualizar o cliente
 009 - Falha ao tentar registrar o novo cliente
 010 - Parâmetro obrigatório de identificação não informado
+012 - Falha ao tentar excluir o cliente
 404 - Recurso não encontrado ou "action" não existe na URL
 405 - Method not allowed
