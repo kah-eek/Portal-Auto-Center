@@ -1,0 +1,99 @@
+.container_principal_ph{
+  width: 1155px;
+  height: 885px;
+  background-image: url('../../pictures/cms_produtos_home/carro.jpg');
+  background-repeat: no-repeat;
+  /*background-color: pink;*/
+
+}
+
+.container_titulo_ph{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #3366ff;*/
+
+}
+
+.item_titulo_ph{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #fff;*/
+
+}
+
+.container_produto_ph{
+  width: 1030px;
+  height: 400px;
+  /*background-color: pink;*/
+
+}
+
+.item_produto_ph{
+  width: 400px;
+  height: 400px;
+  /*background-color: red;*/
+
+}
+
+.container_img_produto_ph{
+  width: 400px;
+  height: 250px;
+  /*background-color: #006666;*/
+
+}
+
+.item_img_produto_ph{
+  width: 300px;
+  height: 200px;
+  /*background-color: #fff;*/
+
+}
+
+.container_caixa_desc_ph{
+  width: 400px;
+  height: 75px;
+  /*background-color: pink;*/
+
+}
+
+.item_caixa_desc_ph{
+  width: 350px;
+  height: 50px;
+  /*background-color: red;*/
+
+}
+
+.container_ckb_ph{
+  width: 150px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #fff;
+
+}
+
+.item_ckb_ph{
+  width: 50px;
+  height: 30px;
+  /*background-color: blue;*/
+
+}
+
+.item_ckb{
+  width: 20px;
+  height: 30px;
+
+}
+
+.txt_ativo{
+  width: 70px;
+  height: 50px;
+  border-radius: 100px;
+
+}
+
+.item_txt_ativo{
+  width: 70px;
+  height: 50px;
+  border-radius: 100px;
+
+}
