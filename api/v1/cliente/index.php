@@ -8,6 +8,7 @@
   $error = '';
   $mensagem = '';
   $status = false;
+  $id = '';
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
   if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -91,12 +92,15 @@
             // Verifica se o cliente já encontra-se cadastrado na base de dados
             if (!$cliente->cpfExistente($cliente)) // Não cadastrado
             {
-
               // Insere um novo cliente no banco de dados
-              if($cliente->cadastrarCliente($cliente)) // Inserido com êxito
+              $idCliente = $cliente->cadastrarCliente($cliente);
+
+              // Verifica se o registro foi inserido com sucesso na base de dados
+              if($idCliente != null) // Inserido com êxito
               {
                 $mensagem = 'Cliente cadastrado com sucesso';
                 $status = true;
+                $id = $idCliente;
               }
               else // Falha ao tentar inserir o novo cliente
               {
@@ -185,8 +189,12 @@
               (
                 'error'=>$error,
                 'mensagem'=>$mensagem,
-                'status'=>$status
+                'status'=>$status,
+                'id'=>$id
               );
+
+  // Verifica se a variável id é vazia e então a remove da response caso verdadeiro
+  if(empty($id)) unset($response['id']);
 
   // Exibe o response no formato JSON
   echo json_encode($response);
