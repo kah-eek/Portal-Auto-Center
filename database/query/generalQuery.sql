@@ -35,3 +35,5 @@ CREATE DATABASE db_auto_center;
 USE db_auto_center;
 
 DROP DATABASE db_auto_center;
+
+'1', 'Rua Flamingo', '8452', 'São Paulo', '1', '01000452', 'Jardim Paulista', ''

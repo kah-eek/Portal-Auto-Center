@@ -28,7 +28,29 @@ class Endereco
     $this->idEndereco = $idEndereco;
   }
 
-  // CRIAR OS METODOS DE ACESSO AOS DAOs
+  /**
+  * Deleta o endereço da base de dados
+  * @param $enderecoObj Objeto endereço qual será excluído
+  * @return true Endereço excluído com sucesso
+  * @return false Falha ao tentar excluir o endereço
+  */
+  function deletarEndereco($enderecoObj)
+  {
+    $enderecoDAO = new EnderecoDAO();
+    return $enderecoDAO->deletarEndereco($enderecoObj);
+  }
+
+  /**
+  * Atualiza o endereço no banco de dados
+  * @param $enderecoObj Objeto Endereco qual será atualizado no banco de dados
+  * @return true Endereço atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o endereço na base de dados
+  */
+  function atualizarEndereco($enderecoObj)
+  {
+    $enderecoDAO = new EnderecoDAO();
+    return $enderecoDAO->atualizarEndereco($enderecoObj);
+  }
 
 }
 
