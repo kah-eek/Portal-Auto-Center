@@ -1,5 +1,9 @@
 <?php
 
+// Imports
+require_once('../../../controller/MySql_class.php');
+require_once('../../../model/ProdutoDAO.php');
+
 // @author Caique M. Oliveira
 // @data 12/04/2018
 // @description Classe produto
@@ -50,8 +54,17 @@ class Produto
   }
   // ###############################################
 
-  // CRIAR OS METODOS DE ACESSO AOS DAOs
-  
+  /**
+  * Obtém todos os produtos existentes na base de dados
+  * @return Array Contendo todos os produtos existentes na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  static function obterDetalhesProdutos()
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->obterDetalhesProdutos();
+  }
+
 
 }
 

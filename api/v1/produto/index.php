@@ -1,8 +1,7 @@
 <?php
 
   // Imports
-  require_once('../Produto.php');
-  require_once('../../../model/MySql.php');
+  require_once('../../../controller/Produto_class.php');
 
   $error = '';
   $mensagem = '';

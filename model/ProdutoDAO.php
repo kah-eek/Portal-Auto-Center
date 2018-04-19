@@ -11,7 +11,7 @@ class ProdutoDAO
   * @return Array Contendo todos os produtos existentes na base de dados
   * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
   */
-  static function obterDetalhesProdutos()
+  function obterDetalhesProdutos()
   {
     // Instância de acesso ao db
     $mySql = new MySql();
