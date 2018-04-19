@@ -52,6 +52,18 @@ class Endereco
     return $enderecoDAO->atualizarEndereco($enderecoObj);
   }
 
+  /**
+  * Insere um novo endereço no banco de dados
+  * @param $enderecoObj Objeto Endereco qual será inserido no banco de dados
+  * @return Int Identificação (idEndereco) do novo endereço inserido no banco de dados
+  * @return null Falha ao tentar registrar o endereço na base de dados
+  */
+  function registrarEndereco($enderecoObj)
+  {
+    $enderecoDAO = new EnderecoDAO();
+    return $enderecoDAO->registrarEndereco($enderecoObj);
+  }
+
 }
 
 ?>

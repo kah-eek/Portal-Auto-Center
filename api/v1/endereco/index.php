@@ -79,11 +79,8 @@
             // Cria um objeto Endereco
             $endereco = new Endereco($numero,$cidade,$cep,$bairro,$complemento,$logradouro,$idEstado,null);
 
-            // Cria um objeto com acesso ao banco de dados
-            $enderecoDAO = new EnderecoDAO();
-
             // Insere um novo endereço no banco de dados
-            $idEndereco = $enderecoDAO->registrarEndereco($endereco);
+            $idEndereco = $endereco->registrarEndereco($endereco);
 
             // Verifica se o registro foi inserido com sucesso na base de dados
             if ($idEndereco != null)// Inserido com sucesso
