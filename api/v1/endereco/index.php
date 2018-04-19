@@ -8,6 +8,7 @@
   $error = '';
   $mensagem = '';
   $status = false;
+  $id = '';
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -87,6 +88,7 @@
             {
               $mensagem = 'Endereço inserido com sucesso';
               $status = true;
+              $id = $idEndereco;
             }
             else // Falha ao tentar inserir o registro na base de dados
             {
@@ -153,8 +155,12 @@
               (
                 'error'=>$error,
                 'mensagem'=>$mensagem,
-                'status'=>$status
+                'status'=>$status,
+                'id'=>$id
               );
+
+  // Verifica se a variável id é vazia e então a remove da response caso verdadeiro
+  if(empty($id)) unset($response['id']);
 
   // Exibe o response no formato JSON
   echo json_encode($response);
