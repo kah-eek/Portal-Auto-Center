@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
   </head>
   <body>
-  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>">
+  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>" enctype="multipart/form-data">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -146,12 +146,12 @@
             </div>
             <!-- INPUT USER -->
             <div class="segura_input_p float_left margem_t_5">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
+              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
             </div>
 
             <!-- INPUT SENHA -->
             <div class="segura_input_p float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
+              <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
             </div>
           </div>
         </form>
@@ -230,9 +230,23 @@
   </form>
 
   <script>
+
     // Listener do botão salvar
     $('#frmcadparceiro').submit(function(e){
-      inserirEndereco(e);
+      // Salva o endereco
+      var idEndereco = inserirEndereco(e, function(idNovoEndereco){
+        if (idNovoEndereco != null)
+        {
+          //SALVA O LOGIN.
+          var idUsuario = inserirUsuario(e, function(idNovoUsuario){
+            // Remove listener do submit para não ficar em loop
+            $(this).off('submit');
+
+            // Executa o submit novamente no form para encaminhá-lo a router
+            $(this).submit();
+          });
+        }
+      });
     });
   </script>
 

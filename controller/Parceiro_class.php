@@ -1,10 +1,14 @@
 <?php
+
+session_start();
+
 /**
 * @author Letícia S. Jesus
 * @date 16/04/2018
 * Obs.: Realiza o CRUD relacionado a Parceiro
 * @controller Parceiro.
 */
+
 
 class Parceiro{
 
@@ -15,16 +19,24 @@ class Parceiro{
 
     $cadastro = new cadastro();
 
+    require_once(upload_imagem.php);
+
     //CARREGANDO OS DADOS DIGITADOS PELO USUÁRIO NOS ATRIBUTOS DO objeto/classe.
     //OBS.: INFORMAR OS NOMES DAS TEXTS QUE ESTÃO FALTANDO.
     $cadastro->nome_fantasia = $_POST["txt_nome"];
-    $cadastro->razao_social = $_POST[""];
-    $cadastro->cnpj = $_POST["cnpj"];
+    $cadastro->razao_social = $_POST["txt_razao"];
+    $cadastro->cnpj = $_POST["txt_cnpj"];
     $cadastro->id_endereco = $_POST[""];
-    $cadastro->socorrista = $_POST[""];
+    $cadastro->socorrista = $_POST["txt_socorrista"];
     $cadastro->email = $_POST["txt_email"];
     $cadastro->telefone = $_POST["txt_telefone"];
-    $cadastro->foto_perfil = $_POST[""];
+    //$cadastro->foto_perfil = SalvarImagem($_FILES["btn_img_parceiro"]);
+    $salvarimagem = SalvarImagem($_FILES['btn_img_parceiro']);
+         //var_dump($_FILES['imagem']);
+         if($salvarimagem == "false"){
+           echo('Erro no uploade ');
+         }else{
+    $cadastro->foto_perfil=$salvarimagem;
     $cadastro->celular = $_POST["txt_celular"];
     $cadastro->id_usuario = $_POST[""];
     $cadastro->id_plano_contratacao = $_POST["slc_planos"];
@@ -49,7 +61,7 @@ class Parceiro{
     $cadastro->socorrista = $_POST[""];
     $cadastro->email = $_POST["txt_email"];
     $cadastro->telefone = $_POST["txt_telefone"];
-    $cadastro->foto_perfil = $_POST[""];
+    $cadastro->foto_perfil = Upload($_FILES["btn_img_parceiro"]);
     $cadastro->celular = $_POST["txt_celular"];
     $cadastro->id_usuario = $_POST[""];
     $cadastro->id_plano_contratacao = $_POST["slc_planos"];

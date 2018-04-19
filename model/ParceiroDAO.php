@@ -7,6 +7,8 @@
 * campos do DB com os métodos de ações do CRUD
 */
 
+require_once(upload_imagem);
+
 class ParceiroDao{
 
   //ATRIBUTOS

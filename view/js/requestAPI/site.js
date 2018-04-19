@@ -1,9 +1,10 @@
 var rotas = {
-  'inserirEndereco':'http://localhost/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir'
+  'inserirEndereco':'http://localhost/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir',
+  'inserirUsuario':'http://localhost/inf4m/Portal-Auto-Center/api/v1/usuario/?action=inserir'
 }
 
 
-function inserirEndereco(submitEvent)
+function inserirEndereco(submitEvent, callback)
 {
 
   // Remove o submit padrão da página
@@ -34,7 +35,34 @@ function inserirEndereco(submitEvent)
     data: {numero:txt_numero, cidade:txt_cidade, cep:txt_cep, bairro:txt_bairro, idEstado:txt_estado, complemento:txt_complemento, logradouro: txt_logradouro},
     dataType: 'json',
     success: function(respostaAPI){
-      return respostaAPI['status'] > 1 ? true : false;
+      var idEndereco = respostaAPI['status'] ? respostaAPI['id'] : null;
+      callback(idEndereco);
+    },
+    error: function(){
+      return false;
+    }
+  });
+}
+
+function inserirUsuario(submitEvent)
+{
+
+  //REMOVE O SUBMIT PADRÃO DA PÁGINA.
+  submitEvent.preventDefault();
+
+  //OBTENDO OS VALORES ARMAZENADOS NAS INPUTS.
+  var txt_use = $('#txt_use').val();
+  var txt_senha = $('#txt_senha').val();
+  // #############################################
+
+  //REALIZA A REQUEST.
+  $.ajax({
+    type:"POST",
+    url:rotas['inserirUsuario'],
+    data: {nomeUsuario:txt_use, senha:txt_senha, idNivelUsuario:2, ativo:1},
+    dataType:'json',
+    success: function(respAPI){
+      return respAPI['status'];
     },
     error: function(){
       return false;
