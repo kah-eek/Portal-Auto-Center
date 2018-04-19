@@ -18,35 +18,113 @@
     // Verifica se existe a variável do recurso desejado na URL
     if (isset($_GET['action']))
     {
-      // Verifica se os parâmetros obrigatórios foram informados
-      if
-      (
-        isset($_POST['nomeUsuario']) &&
-        isset($_POST['senha']) &&
-        isset($_POST['idNivelUsuario']) &&
-        isset($_POST['ativo'])
-      )
+      // Delete um usuário
+      if ($_GET['action'] == 'deletar') {
+
+        // Verifica se o parâmetro obrigatório (id) existe na URL
+        if (isset($_GET['id'])) { // Variável ID existete na URL
+
+          // Obtém a key da request
+          $idUsuario = $_GET['id'];
+
+          // Instância o objeto qual será excluído
+          $usuario = new Usuario($idUsuario,null, null, null, null, null);
+
+          // Verifica se a exclusão ocorreu com êxito
+          if($usuario->deletarUsuario($usuario))// êxito
+          {
+            $status = true;
+            $mensagem = 'Usuário excluído com sucesso';
+          }
+          else // Falha
+          {
+            $error = '011';
+            $mensagem = 'Falha ao tentar excluir o usuário';
+          }
+
+        }
+        else // Variável ID não existete na URL
+        {
+          $error = '010';
+          $mensagem = 'Parâmetro obrigatório de identificação não informado';
+        }
+      }
+      else
       {
 
-        // Obtém as keys do request
-        $nomeUsuario = $_POST['nomeUsuario'];
-        $senha = $_POST['senha'];
-        $idNivelUsuario = $_POST['idNivelUsuario'];
-        $ativo = $_POST['ativo'];
+        // Verifica se os parâmetros obrigatórios foram informados
+        if
+        (
+          isset($_POST['nomeUsuario']) &&
+          isset($_POST['senha']) &&
+          isset($_POST['idNivelUsuario']) &&
+          isset($_POST['ativo'])
+        )
+        {
 
-        /* Verifica qual recurso deve ser utilizado */
+          // Obtém as keys do request
+          $nomeUsuario = $_POST['nomeUsuario'];
+          $senha = $_POST['senha'];
+          $idNivelUsuario = $_POST['idNivelUsuario'];
+          $ativo = $_POST['ativo'];
 
-        // Atualiza o usuário
-        if ($_GET['action'] == 'atualizar') {
+          /* Verifica qual recurso deve ser utilizado */
 
-          // Verifica se o parâmetro obrigatório (id) existe na URL
-          if (isset($_GET['id'])) { // Variável ID existete na URL
+          // Atualiza o usuário
+          if ($_GET['action'] == 'atualizar') {
 
-            // Obtém a key da request
-            $idUsuario = $_GET['id'];
+            // Verifica se o parâmetro obrigatório (id) existe na URL
+            if (isset($_GET['id'])) { // Variável ID existete na URL
+
+              // Obtém a key da request
+              $idUsuario = $_GET['id'];
+
+              // Cria um objeto Usuario
+              $usuario = new Usuario($idUsuario, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
+
+              // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
+              $autenticacao = new Autenticacao($nomeUsuario, $senha);
+
+              // Verifica se as credenciais já existem
+              if ($autenticacao->credencialExistente($autenticacao))
+              {// Credencial existente
+                $mensagem = 'Usuário já existente';
+                $error = '001';
+              }
+              else // Credenciais não existente - continua com a atualização do usuário
+              {
+                // Instância um objeto de acesso ao banco de dados
+                $usuarioDAO = new UsuarioDAO();
+
+                // Atualiza o usuário no banco de dados
+                $usuarioAtualizado = $usuarioDAO->atualizarUsuario($usuario);
+
+                if ($usuarioAtualizado)
+                {
+                  $status = true;
+                  $mensagem = 'Usuário atualizado com sucesso';
+                }
+                else
+                {
+                  $error = '006';
+                  $mensagem = 'Falha ao tentar atualizar o usuário';
+                }
+              }
+
+            }
+            else // Variável ID não existete na URL
+            {
+              $error = '010';
+              $mensagem = 'Parâmetro obrigatório de identificação não informado';
+            }
+
+          }
+
+          // Insere um novo usuário
+          if ($_GET['action'] == 'inserir') {
 
             // Cria um objeto Usuario
-            $usuario = new Usuario($idUsuario, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
+            $usuario = new Usuario(null, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
 
             // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
             $autenticacao = new Autenticacao($nomeUsuario, $senha);
@@ -57,109 +135,37 @@
               $mensagem = 'Usuário já existente';
               $error = '001';
             }
-            else // Credenciais não existente - continua com a atualização do usuário
+            else // Credenciais não existente - continua com o registro do usuário
             {
               // Instância um objeto de acesso ao banco de dados
               $usuarioDAO = new UsuarioDAO();
 
-              // Atualiza o usuário no banco de dados
-              $usuarioAtualizado = $usuarioDAO->atualizarUsuario($usuario);
+              // Insere o usuário no banco de dados
+              $idUsuario = $usuarioDAO->inserirUsuario($usuario);
 
-              if ($usuarioAtualizado)
+              if ($idUsuario != null)
               {
                 $status = true;
-                $mensagem = 'Usuário atualizado com sucesso';
+                $mensagem = 'Usuário registrado com sucesso';
               }
               else
               {
                 $error = '006';
-                $mensagem = 'Falha ao tentar atualizar o usuário';
+                $mensagem = 'Falha ao tentar registrar o usuário';
               }
             }
 
           }
-          else // Variável ID não existete na URL
-          {
-            $error = '010';
-            $mensagem = 'Parâmetro obrigatório de identificação não informado';
-          }
 
         }
-
-        // Insere um novo usuário
-        if ($_GET['action'] == 'inserir') {
-
-          // Cria um objeto Usuario
-          $usuario = new Usuario(null, $nomeUsuario, $senha, $idNivelUsuario, $ativo, null);
-
-          // Cria um obj Autenticacao para verificar se as credenciais já exsiste no DB
-          $autenticacao = new Autenticacao($nomeUsuario, $senha);
-
-          // Verifica se as credenciais já existem
-          if ($autenticacao->credencialExistente($autenticacao))
-          {// Credencial existente
-            $mensagem = 'Usuário já existente';
-            $error = '001';
-          }
-          else // Credenciais não existente - continua com o registro do usuário
-          {
-            // Instância um objeto de acesso ao banco de dados
-            $usuarioDAO = new UsuarioDAO();
-
-            // Insere o usuário no banco de dados
-            $idUsuario = $usuarioDAO->inserirUsuario($usuario);
-
-            if ($idUsuario != null)
-            {
-              $status = true;
-              $mensagem = 'Usuário registrado com sucesso';
-            }
-            else
-            {
-              $error = '006';
-              $mensagem = 'Falha ao tentar registrar o usuário';
-            }
-          }
-
+        else // Parâmetros obrigatórios não informados
+        {
+          $error = '007';
+          $mensagem = 'Parâmetros obrigatórios não informados';
         }
 
-        // Delete um usuário
-        if ($_GET['action'] == 'deletar') {
-
-          // Verifica se o parâmetro obrigatório (id) existe na URL
-          if (isset($_GET['id'])) { // Variável ID existete na URL
-
-            // Obtém a key da request
-            $idUsuario = $_GET['id'];
-
-            // Instância o objeto qual será excluído
-            $usuario = new Usuario($idUsuario,null, null, null, null, null);
-
-            // Verifica se a exclusão ocorreu com êxito
-            if($usuario->deletarUsuario($usuario))// êxito
-            {
-              $status = true;
-              $mensagem = 'Usuário excluído com sucesso';
-            }
-            else // Falha
-            {
-              $error = '011';
-              $mensagem = 'Falha ao tentar excluir o usuário';
-            }
-
-          }
-          else // Variável ID não existete na URL
-          {
-            $error = '010';
-            $mensagem = 'Parâmetro obrigatório de identificação não informado';
-          }
-        }
       }
-      else // Parâmetros obrigatórios não informados
-      {
-        $error = '007';
-        $mensagem = 'Parâmetros obrigatórios não informados';
-      }
+
     }
     else // Nenhum recurso selecionado ou inexistente
     {
