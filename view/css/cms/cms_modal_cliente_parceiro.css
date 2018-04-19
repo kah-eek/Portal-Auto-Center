@@ -1,0 +1,80 @@
+.container_principal_cp_cadastrados{
+  width: 1155px;
+  height: 884px;
+  background-image: url('../../pictures/cms_cliente_parceiro_cadastrados/carro2.jpg');
+  background-repeat: no-repeat;
+  /*background-color: pink;*/
+  float: left;
+
+}
+
+.container_titulo_cp{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #3366ff;*/
+
+}
+
+.item_titulo_cp{
+  width: 300px;
+  height: 70px;
+  /*background-color: #fff;*/
+
+}
+
+.container_visualiza_cp{
+  width: 1030px;
+  height: 300px;
+  overflow: auto;
+  /*background-color: #669999;*/
+
+}
+
+.container_topicos{
+  width: 1030px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.item_titulo_topicos{
+  width: 250px;
+  height: 50px;
+  /*background-color: #fff;*/
+
+}
+
+.ativo_ver{
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+
+}
+
+.container_dados_topicos{
+  width: 1030px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.item_dados_topicos{
+  width: 250px;
+  height: 50px;
+  overflow: auto;
+  background-color: #fff;
+
+}
+
+.ativo_ver_dados{
+  width: 101px;
+  height: 50px;
+  background-color: #fff;
+
+}
+
+.tamanho_ckb{
+  width: 20px;
+  height: 20px;
+
+}
