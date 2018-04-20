@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/cms/cms_redefinir_senha_parceiro.css">
+    <link rel="stylesheet" href="../css/parceiro/cms_redefinir_senha_parceiro.css">
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../css/cms/cms_veiculos_cadastrados.css">
+    <link rel="stylesheet" href="../css/parceiro/cms_veiculos_cadastrados.css">
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>
