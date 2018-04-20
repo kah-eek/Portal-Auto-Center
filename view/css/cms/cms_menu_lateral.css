@@ -1,6 +1,6 @@
 .menu_lateral{
   width: 265px;
-  height: 100%;
+  height: auto;
 }
 .item_menu_lateral{
   transition: 1s;

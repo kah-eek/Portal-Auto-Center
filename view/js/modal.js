@@ -132,3 +132,63 @@ function modalCmsCadastroParceiros(){
     }
   });
 }
+
+function modalCmsClienteParceiro(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cms_cliente_parceiro.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCmsFaleConosco(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cms_fale_conosco.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCmsProdutosCadastrados(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cms_produtos_home.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCmsCadastrarProdutos(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cms_cadastrar_produtos.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
