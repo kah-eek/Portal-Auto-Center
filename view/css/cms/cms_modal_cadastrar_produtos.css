@@ -1,0 +1,110 @@
+.container_principal_cadastrar_produto{
+  width: 1155px;
+  height: 885px;
+  background-image: url('../../pictures/cms_cadastrar_produtos/carro.jpg');
+  background-repeat: no-repeat;
+  /*background-color: pink;*/
+
+}
+
+.container_titulo_cnp{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #3366ff;*/
+
+}
+
+.item_titulo_cnp{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #fff;*/
+
+}
+
+.form_cadastro_produto{
+  width: 1030px;
+  height: 600px;
+  /*background-color: #009999;*/
+
+}
+
+.container_segura_infs{
+  width: 600px;
+  height: 600px;
+  /*background-color: gray;*/
+
+}
+
+.segura_input_cnp{
+  width: 600px;
+  height: 50px;
+  /*background-color: green;*/
+
+}
+
+.input_text_cnp{
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  width: 300px;
+  height: 35px;
+  border-color: #00C853;
+  outline: none;
+  box-shadow: 0px 0px 0px 0px #000;
+  text-overflow: ellipsis;
+}
+
+.input_text_cnp::placeholder{
+  color: #000;
+  font-family: 'titulo';
+  text-align: left;
+
+}
+
+.container_select{
+  width: 600px;
+  height: 40px;
+  /*background-color: #813;*/
+
+}
+
+.slc_tg{
+  width: 300px;
+  height: 40px;
+
+}
+
+.container_txtarea{
+  width: 600px;
+  height: 140px;
+  /*background-color: green;*/
+
+}
+
+.item_txtarea{
+  width: 300px;
+  height: 40px;
+
+}
+
+.textarea_desc{
+  width: 300px;
+  height: 120px;
+  resize: none;
+
+}
+
+.container_imagem{
+  width: 400px;
+  height: 600px;
+  /*background-color: red;*/
+
+}
+
+.item_imagem_cnp{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #000;
+
+}
