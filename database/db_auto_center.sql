@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.21, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
@@ -1600,7 +1600,7 @@ LOCK TABLES `tbl_veiculo_tipo_combustivel` WRITE;
 UNLOCK TABLES;
 
 --
--- Temporary view structure for view `view_produto`
+-- Temporary table structure for view `view_produto`
 --
 
 DROP TABLE IF EXISTS `view_produto`;
@@ -1635,7 +1635,7 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `view_produto_detalhado`
+-- Temporary table structure for view `view_produto_detalhado`
 --
 
 DROP TABLE IF EXISTS `view_produto_detalhado`;
@@ -1728,4 +1728,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-18 14:30:21
+-- Dump completed on 2018-04-20 20:56:49
