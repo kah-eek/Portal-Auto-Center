@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../../css/cms/cms_veiculos_cadastrados.css">
-    <link rel="stylesheet" href="../../css/padroes.css">
+    <link rel="stylesheet" href="../css/cms/cms_veiculos_cadastrados.css">
+    <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>
     <div class="container_conteudo_central_vc">

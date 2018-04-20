@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../../css/cms/cms_adm_parceiro.css">
-    <link rel="stylesheet" href="../../css/padroes.css">
+    <link rel="stylesheet" href="../css/cms/cms_adm_parceiro.css">
+    <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>
     <div class="container_conteudo_central_ap centro_lr">
