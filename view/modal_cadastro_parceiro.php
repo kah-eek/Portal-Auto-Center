@@ -2,6 +2,10 @@
 /**
 * VERFIFICA SE A VARIÁVEL $dados_cadastro EXISTE. OBS.:ESSA VARIÁVEL FOI CRIADA NA CONTROLLER:Parceiro_class.
 */
+
+  // Imports
+  require_once('../controller/Plano_class.php');
+
   if(isset($dados_cadastro)){
     $nome_fantasia = $dados_cadastro->nome_fantasia;
     $razao_social = $dados_cadastro->razao_social;
@@ -102,7 +106,7 @@
 
             <!-- INPUT CEP -->
             <div class="segura_input_p float_left">
-              <input id="txt_cep" class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="06286180">
+              <input id="txt_cep" class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="">
             </div>
 
             <!-- INPUT RUA -->
@@ -112,7 +116,7 @@
 
             <!-- INPUT NUMERO -->
             <div class="segura_input_p float_left">
-              <input id="txt_numero" class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="000">
+              <input id="txt_numero" class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="">
             </div>
 
             <!-- INPUT CIDADE -->
@@ -135,12 +139,12 @@
 
             <!-- INPUT COMPLEMENTO -->
             <div class="segura_input_p float_left">
-              <input id="txt_complemento" class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="aaaa">
+              <input id="txt_complemento" class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
             </div>
 
             <!-- INPUT LOGRADOURO -->
             <div class="segura_input_p float_left">
-              <input id="txt_logradouro" class="input_text_p txt_preto margem_t_5" placeholder="Logradouro" type="text" name="txt_logradouro" value="aaaaa">
+              <input id="txt_logradouro" class="input_text_p txt_preto margem_t_5" placeholder="Logradouro" type="text" name="txt_logradouro" value="">
             </div>
 
             <!-- TITULO LOGIN -->
@@ -151,12 +155,12 @@
             </div>
             <!-- INPUT USER -->
             <div class="segura_input_p float_left margem_t_5">
-              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="aaaaaa">
+              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
             </div>
 
             <!-- INPUT SENHA -->
             <div class="segura_input_p float_left">
-              <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="aaaaaaa">
+              <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
             </div>
           </div>
         </form>
@@ -174,8 +178,17 @@
 
           <!-- DIV SELECT -->
           <div class="container_select margem_t_10">
-            <select class="slc_planos borda_preta_1" name="slc_planos">
-              <option value="">Planos</option>
+            <select required class="slc_planos borda_preta_1" name="cbx_plano">
+              <option selected disabled="true" value="">Planos</option>
+              <?php
+                // Obtém todos os planos existente no DB
+                $planos = Plano::getPlanos();
+
+                // Preenche o select com todos os planos advindos do DB
+                for ($i=0; $i < sizeof($planos); $i++) {
+                  echo "<option value='".$planos[$i]->idPlanoContratacao."'>".$planos[$i]->plano."</option>";
+                }
+              ?>
             </select>
           </div>
 
@@ -285,7 +298,7 @@
     );
     // #######################
 
-    // Listener do botão salvar
+    // Listener do botão salvar - Insere um novo parceiro
     $('#frmcadparceiro').submit(function(e){
       // Salva o endereco
       inserirEndereco(e, function(idNovoEndereco){
@@ -308,7 +321,7 @@
               'POST', // Protocolo
               '../router.php?controller=parceiro&modo=novo', // Url
               function(respostaJson){ // Callback de sucesso
-
+                console.log(respostaJson);
                 // Verifica se a inserção foi executada com sucesso
                 if (respostaJson) {// Sucesso
                   $('.container_modal').slideToggle(5000);

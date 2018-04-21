@@ -34,7 +34,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="br">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center</title>
@@ -148,4 +148,3 @@
       modalLoginRedeSocial();
     })
     </script>
-  </body>
