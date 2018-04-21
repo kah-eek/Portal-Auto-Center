@@ -196,7 +196,7 @@
   if(empty($id)) unset($response['id']);
 
   // Exibe o response no formato JSON
-  echo json_encode($response);
+  echo json_encode($response,JSON_UNESCAPED_UNICODE);
   // ################################
 
 ?>
