@@ -40,7 +40,7 @@
     <script src="js/util.js"></script>
   </head>
   <body>
-  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?controller=empresa&mod=<?=$action?>" enctype="multipart/form-data">
+  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" enctype="multipart/form-data">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -122,9 +122,8 @@
 
             <!-- COMBOBOX ESTADO -->
             <div class="segura_input_p float_left">
-              <select  required name="cbx_estado">
+              <select id="cbx_estado" required name="cbx_estado">
                 <option disabled="true" selected value="">Estado</option>
-                <option value="1">São Paulo</option>
               </select>
               <!-- <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value=""> -->
             </div>
@@ -245,11 +244,46 @@
         success: function(viaCepRetorno){
           $('#txt_rua').val(viaCepRetorno.logradouro);
           $('#txt_bairro').val(viaCepRetorno.bairro);
-          $('#txt_estado').val(1);
           $('#txt_cidade').val(viaCepRetorno.localidade);
         }
       });
     });
+
+    // Preenche os Estados na combobox
+    obterEstados(
+      // Callback de sucesso da ontenção dos dados
+      function(respostaAPI){
+
+        // Armazenas os estados advindos da response
+        var estados = respostaAPI['estados'];
+
+        // Verifica se a obtenção dos Estados ocorreu comm êxito
+        if (respostaAPI['status']) {// Êxito
+
+          // Preenche a combobox dos Estados com cada estado advindo do banco
+          for (var i = 0; i < estados.length; i++) {
+
+            // Obtém apenas o id do Estado
+            var idEstado = estados[i].id;
+            // Obtém apenas o nome do Estado
+            var estado = estados[i].estado;
+
+            // Preenche de fato o combobox
+            $('#cbx_estado').append(
+              '<option value="'+idEstado+'">'+estado+'</option>'
+            );
+          }
+        }
+        else {// Falha
+          console.error('Falha ao tentar obter os Estados');
+        }
+      },
+      function(){ // Callback de falhada da obtenção dos dados
+        console.error('falha tentar acessar o recurso de obtenção dos Estados');
+      }
+
+    );
+    // #######################
 
     // Listener do botão salvar
     $('#frmcadparceiro').submit(function(e){
@@ -279,12 +313,12 @@
                 if (respostaJson) {// Sucesso
                   $('.container_modal').slideToggle(5000);
                 }else {// Falha
-                   alert('Falha ao tentar registrar o parceiro');
+                   console.error('Falha ao tentar registrar o parceiro');
                 }
 
               },
               function(){ // Callback de falha
-                alert('Falha ao tentar acessar o recurso de inserção de parceiro');
+                console.error('Falha ao tentar acessar o recurso de inserção de parceiro');
               },
               formulario,
               null
