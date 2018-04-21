@@ -6,7 +6,7 @@
 * Obs.: REALIZA O CRUD RELACIONADA A EMPRESA
 */
 
-require_once(../model/upload_imagem.php);
+require_once('model/upload_imagem.php');
 
 class ControllerSobreEmpresa
 {
@@ -58,7 +58,7 @@ class ControllerSobreEmpresa
   }
 
   //LOCALIZANDO UM REGISTRO EXISTENTE
-  public function buscar
+  public function buscar()
   {
     $empresa = new Empresa();
     $dados_empresa = new Empresa();

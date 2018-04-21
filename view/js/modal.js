@@ -14,7 +14,7 @@ function modalCadastroCliente(){
 }
 
 function modalCadastroParceiro(){
-  $('.container_modal').fadeIn(1500);
+  $('.container_modal').slideToggle(500);
 
   $.ajax({
     type: "POST",

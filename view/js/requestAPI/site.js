@@ -4,7 +4,7 @@ var rotas = {
 }
 
 
-function inserirEndereco(submitEvent, callback)
+function inserirEndereco(submitEvent, callbackSuccess, callbackFail)
 {
 
   // Remove o submit padrão da página
@@ -20,14 +20,6 @@ function inserirEndereco(submitEvent, callback)
   var txt_logradouro = $('#txt_logradouro').val();
   // ################################################
 
-  // console.log(txt_numero);
-  // console.log(txt_cidade);
-  // console.log(txt_cep);
-  // console.log(txt_bairro);
-  // console.log(txt_estado);
-  // console.log(txt_complemento);
-  // console.log(txt_logradouro);
-
   // Realiza a request
   $.ajax({
     type:"POST",
@@ -36,10 +28,10 @@ function inserirEndereco(submitEvent, callback)
     dataType: 'json',
     success: function(respostaAPI){
       var idEndereco = respostaAPI['status'] ? respostaAPI['id'] : null;
-      callback(idEndereco);
+      callbackSuccess(idEndereco);
     },
     error: function(){
-      return false;
+      callbackFail();
     }
   });
 }
@@ -67,9 +59,9 @@ function inserirUsuario(submitEvent, callbackSuccess, callbackFail)
       // Executa o callback de sucesso
       callbackSuccess(idUsuario);
     },
-    error: function(e){
+    error: function(){
       // Executa o callback de falha
-      callbackFail(e);
+      callbackFail();
     }
   });
 }

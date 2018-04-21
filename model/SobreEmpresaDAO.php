@@ -8,7 +8,7 @@
 * campos do DB com os métodos de ações do CRUD
 */
 
-require_once(upload_imagem.php);
+require_once('upload_imagem.php');
 
 class Empresa
 {
@@ -19,7 +19,7 @@ class Empresa
 
   public function __construct()
   {
-    require_once("MySql.php");
+    require_once("controller/MySql_class.php");
   }
 
   //INSERIR O REGISTRO NO BD

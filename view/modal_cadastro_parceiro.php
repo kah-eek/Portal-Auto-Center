@@ -37,9 +37,10 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
+    <script src="js/util.js"></script>
   </head>
   <body>
-  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?cont=empresa&mod=<?=$action?>" enctype="multipart/form-data">
+  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" action="router.php?controller=empresa&mod=<?=$action?>" enctype="multipart/form-data">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -74,7 +75,7 @@
 
             <!-- INPUT CNPJ -->
             <div class="segura_input_p  float_left">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Cnpj" type="text" name="txt_cnpj  " value="<?php echo($cnpj); ?>">
+              <input class="input_text_p txt_preto margem_t_5" placeholder="Cnpj" type="text" name="txt_cnpj" value="<?php echo($cnpj); ?>">
             </div>
 
             <!-- INPUT EMAIL -->
@@ -98,14 +99,20 @@
                 Endereço
               </div>
             </div>
+
+            <!-- INPUT CEP -->
+            <div class="segura_input_p float_left">
+              <input id="txt_cep" class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="06286180">
+            </div>
+
             <!-- INPUT RUA -->
             <div class="segura_input_p float_left margem_t_5">
-              <input class="input_text_p txt_preto margem_t_5" placeholder="Rua" type="text" name="txt_rua" value="">
+              <input id="txt_rua" class="input_text_p txt_preto margem_t_5" placeholder="Rua" type="text" name="txt_rua" value="">
             </div>
 
             <!-- INPUT NUMERO -->
             <div class="segura_input_p float_left">
-              <input id="txt_numero" class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="">
+              <input id="txt_numero" class="input_text_p txt_preto margem_t_5" placeholder="Número" type="text" name="txt_numero" value="000">
             </div>
 
             <!-- INPUT CIDADE -->
@@ -113,14 +120,13 @@
               <input id="txt_cidade" class="input_text_p txt_preto margem_t_5" placeholder="Cidade" type="text" name="txt_cidade" value="">
             </div>
 
-            <!-- INPUT ESTADO -->
+            <!-- COMBOBOX ESTADO -->
             <div class="segura_input_p float_left">
-              <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value="">
-            </div>
-
-            <!-- INPUT CEP -->
-            <div class="segura_input_p float_left">
-              <input id="txt_cep" class="input_text_p txt_preto margem_t_5" placeholder="Cep" type="text" name="txt_cep" value="">
+              <select  required name="cbx_estado">
+                <option disabled="true" selected value="">Estado</option>
+                <option value="1">São Paulo</option>
+              </select>
+              <!-- <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value=""> -->
             </div>
 
             <!-- INPUT BAIRRO -->
@@ -130,12 +136,12 @@
 
             <!-- INPUT COMPLEMENTO -->
             <div class="segura_input_p float_left">
-              <input id="txt_complemento" class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="">
+              <input id="txt_complemento" class="input_text_p txt_preto margem_t_5" placeholder="Complemento" type="text" name="txt_complemento" value="aaaa">
             </div>
 
             <!-- INPUT LOGRADOURO -->
             <div class="segura_input_p float_left">
-              <input id="txt_logradouro" class="input_text_p txt_preto margem_t_5" placeholder="Logradouro" type="text" name="txt_logradouro" value="">
+              <input id="txt_logradouro" class="input_text_p txt_preto margem_t_5" placeholder="Logradouro" type="text" name="txt_logradouro" value="aaaaa">
             </div>
 
             <!-- TITULO LOGIN -->
@@ -146,12 +152,12 @@
             </div>
             <!-- INPUT USER -->
             <div class="segura_input_p float_left margem_t_5">
-              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
+              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="aaaaaa">
             </div>
 
             <!-- INPUT SENHA -->
             <div class="segura_input_p float_left">
-              <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
+              <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="aaaaaaa">
             </div>
           </div>
         </form>
@@ -231,23 +237,59 @@
 
   <script>
 
+    $('#txt_cep').blur(function(){
+      var cep = $('#txt_cep').val();
+      $.ajax({
+        type:'GET',
+        url:'https://viacep.com.br/ws/'+cep+'/json/unicode/',
+        success: function(viaCepRetorno){
+          $('#txt_rua').val(viaCepRetorno.logradouro);
+          $('#txt_bairro').val(viaCepRetorno.bairro);
+          $('#txt_estado').val(1);
+          $('#txt_cidade').val(viaCepRetorno.localidade);
+        }
+      });
+    });
+
     // Listener do botão salvar
     $('#frmcadparceiro').submit(function(e){
       // Salva o endereco
-      var idEndereco = inserirEndereco(e, function(idNovoEndereco){
+      inserirEndereco(e, function(idNovoEndereco){
+
+        // Verifica se o idEndereco é diferente de null para prosseguir com as inserções
         if (idNovoEndereco != null)
         {
-          //SALVA O LOGIN.
-          var idUsuario = inserirUsuario(e, function(idNovoUsuario){
-            // Remove listener do submit para não ficar em loop
-            $(this).off('submit');
+          // Insere o usuário no db
+          inserirUsuario(e, function(idNovoUsuario){
 
-            // Executa o submit novamente no form para encaminhá-lo a router
-            $(this).submit();
-          },
-        function(erro){
-          console.log(erro);
-        });
+            // Armazena o form na variável
+            var formulario = new FormData($('#frmcadparceiro')[0]);
+
+            // Adiciona os dados complementares no form
+            formulario.append('idUsuario',idNovoUsuario);
+            formulario.append('idEndereco',idNovoEndereco);
+
+            // Envia os dados do parceiro para a router e junto a opção de qual a ação tem de ser realizada
+            getResponse(
+              'POST', // Protocolo
+              '../router.php?controller=parceiro&modo=novo', // Url
+              function(respostaJson){ // Callback de sucesso
+
+                // Verifica se a inserção foi executada com sucesso
+                if (respostaJson) {// Sucesso
+                  $('.container_modal').slideToggle(5000);
+                }else {// Falha
+                   alert('Falha ao tentar registrar o parceiro');
+                }
+
+              },
+              function(){ // Callback de falha
+                alert('Falha ao tentar acessar o recurso de inserção de parceiro');
+              },
+              formulario,
+              null
+            );
+          });
         }
       });
     });

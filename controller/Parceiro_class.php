@@ -1,116 +1,107 @@
 <?php
 
-session_start();
+// Imports
+require_once('model/ParceiroDAO.php');
 
 /**
-* @author Letícia S. Jesus
-* @date 16/04/2018
-* Obs.: Realiza o CRUD relacionado a Parceiro
-* @controller Parceiro.
+* @author Caique M. Oliveira
+* @date 20/04/2018
+* @description Classe Parceiro
 */
 
+class Parceiro
+{
 
-class Parceiro{
+  // Atributos
+  public $idParceiro;
+  public $idEndereco;
+  public $idUsuario;
+  public $idPlanoContratacao;
+  public $nomeFantasia;
+  public $razaoSocial;
+  public $cnpj;
+  public $ativo;
+  public $socorrista;
+  public $email;
+  public $telefone;
+  public $celular;
+  public $fotoPerfil;
+  public $logParceiro;
+
+  // Construtor default
+  function __construct
+  (
+    $idParceiro,
+    $idEndereco,
+    $idUsuario,
+    $idPlanoContratacao,
+    $nomeFantasia,
+    $razaoSocial,
+    $cnpj,
+    $ativo,
+    $socorrista,
+    $email,
+    $telefone,
+    $celular,
+    $fotoPerfil,
+    $logParceiro
+  )
+  {
+    $this->idParceiro = $idParceiro;
+    $this->idEndereco = $idEndereco;
+    $this->idUsuario = $idUsuario;
+    $this->idPlanoContratacao = $idPlanoContratacao;
+    $this->nomeFantasia = $nomeFantasia;
+    $this->razaoSocial = $razaoSocial;
+    $this->cnpj = $cnpj;
+    $this->ativo = $ativo;
+    $this->socorrista = $socorrista;
+    $this->email = $email;
+    $this->telefone = $telefone;
+    $this->celular = $celular;
+    $this->fotoPerfil = $fotoPerfil;
+    $this->logParceiro = $logParceiro;
+  }
+  // ###############################
 
   /**
-  * INSERE UM NOVO REGISTRO.
+  * Insere um novo parceiro no banco de dados
+  * @param $parceiroObj Objeto Parceiro qual será inserido no banco de dados
+  * @return Int Identificação (idParceiro) do novo parceiro inserido no banco de dados
+  * @return null Falha ao tentar registrar o parceiro na base de dados
   */
-  public function novo(){
-
-    $cadastro = new cadastro();
-
-    require_once(upload_imagem.php);
-
-    //CARREGANDO OS DADOS DIGITADOS PELO USUÁRIO NOS ATRIBUTOS DO objeto/classe.
-    //OBS.: INFORMAR OS NOMES DAS TEXTS QUE ESTÃO FALTANDO.
-    $cadastro->nome_fantasia = $_POST["txt_nome"];
-    $cadastro->razao_social = $_POST["txt_razao"];
-    $cadastro->cnpj = $_POST["txt_cnpj"];
-    $cadastro->id_endereco = $_POST[""];
-    $cadastro->socorrista = $_POST["txt_socorrista"];
-    $cadastro->email = $_POST["txt_email"];
-    $cadastro->telefone = $_POST["txt_telefone"];
-    //$cadastro->foto_perfil = SalvarImagem($_FILES["btn_img_parceiro"]);
-    $salvarimagem = SalvarImagem($_FILES['btn_img_parceiro']);
-         //var_dump($_FILES['imagem']);
-         if($salvarimagem == "false"){
-           echo('Erro no uploade ');
-         }else{
-    $cadastro->foto_perfil=$salvarimagem;
-    $cadastro->celular = $_POST["txt_celular"];
-    $cadastro->id_usuario = $_POST[""];
-    $cadastro->id_plano_contratacao = $_POST["slc_planos"];
-
-    //CHAMANDO O MÉTODO INSERT DA CLASSE ParceiroDAO.
-    Cadastro::insert($cadastro);
+  function inserirParceiro($parceiroObj)
+  {
+    // Instância um obj com acesso ao db
+    $parceiroDAO = new ParceiroDAO();
+    // Insere o parceiro no db
+    return $parceiroDAO->inserirParceiro($parceiroObj);
   }
+
   /**
-  * ATUALIZANDO UM REGISTRO EXISTENTE.
+  * Deleta o parceiro da base de dados
+  * @param $parceiroObj Objeto parceiro qual será excluído
+  * @return true Parceiro excluído com sucesso
+  * @return false Falha ao tentar excluir o parceiro
   */
-  public function editar(){
-
-    //GUARDA O id DO CADASTRO QUE ESTÁ SENDO PASSADO PELA VIEW.
-    $id_cadastro = $_GET['id_pac'];
-
-    $cadastro = new Cadastro();
-
-    $cadastro->nome_fantasia = $_POST["txt_nome"];
-    $cadastro->razao_social = $_POST["txt_tazao"];
-    $cadastro->cnpj = $_POST["txt_cnpj"];
-    $cadastro->id_endereco = $_POST[""];
-    $cadastro->socorrista = $_POST[""];
-    $cadastro->email = $_POST["txt_email"];
-    $cadastro->telefone = $_POST["txt_telefone"];
-    $cadastro->foto_perfil = Upload($_FILES["btn_img_parceiro"]);
-    $cadastro->celular = $_POST["txt_celular"];
-    $cadastro->id_usuario = $_POST[""];
-    $cadastro->id_plano_contratacao = $_POST["slc_planos"];
-
-    //CHAMANDO O MÉTODO UPDATE DA CLASSE ParceiroDAO.
-    Cadastro::update($cadastro);
+  function deletarParceiro($parceiroObj)
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->deletarParceiro($parceiroObj);
   }
+
   /**
-  * EXCLUÍNDO UM REGISTRO.
+  * Atualiza o parceiro no banco de dados
+  * @param $parceiroObj Objeto Parceiro qual será atualizado no banco de dados
+  * @return true Parceiro atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o parceiro na base de dados
   */
-  public function excluir(){
-
-    //GUARDA O id DO CADASTRO QUE ESTÁ SENDO PASSADO PELA VIEW.
-    $id_cadastro = $_GET['id_pac'];
-
-    //INSTÂNCIA DA CLASSE ParceiroDAO.
-    $cadastro = new Cadastro();
-
-     //CARREGA O id DO REGISTRO PRA DENTRO DO OBJETO.
-    $cadastro->id_parceiro = $id_cadastro;
-
-    //CHAMANDO O MÉTODO DELETE DA CLASSE ParceiroDAO.
-    Cadastro::delete($cadastro);
+  function atualizarParceiro($parceiroObj)
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->atualizarParceiro($parceiroObj);
   }
-  /**
-  * LOCALIZANDO UM REGISTRO EXISTENTE.
-  */
-  public function buscar(){
-    //INSTÂNCIA A CLASSE ParceiroDAO.
-    $cadastro = new Cadastro();
 
-    $dados_cadastro = new Cadastro();
-    //GUARDA OS DADOS DO CADASTRO QUE FOI PASSADO PELA VIEW DENTRO DO OBJETO ProdutoDAO.
-    $cadastro->idparceiro = $_GET['id_pac'];
-
-    $dados_cadastro-> $cadastro->SelectById($cadastro);
-
-    //OBS.:ESPECIFICAR O CAMINHO QUANDO A TELA DO CMS ESTIVER PRONTA.
-    //require_once("");
-  }
-  /**
-  * LISTANDO TODOS OS REGISTROS EXISTENTES.
-  */
-  public function listar{
-    //INSTÂNCIA A CLASSE ParceiroDAO.
-    $cadastro = new Cadastro();
-
-    //CHAMA O MÉTODO PARA SE OBTER TODOS OS REGISTROS.
-    return $cadastro->select();
-  }
 }
+
 ?>

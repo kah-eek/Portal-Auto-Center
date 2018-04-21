@@ -1,75 +1,57 @@
-<!-- CRUD SOBRE  A EMPRESA -->
 <?php
 
+  // Obtém a controller desejada
   $controller = $_GET["controller"];
+
+  // Obtém o modo de operação
   $modo = $_GET["modo"];
 
   //VERIFICA QUAL CONTROLLER SERÁ UTILIZADA
   switch ($controller)
   {
-    case 'empresa'
+    case 'parceiro':
 
-    require_once("./controller/SobreEmpresa_class.php");
-    require_once("./model/SobreEmpresaDAO.php");
+      require_once("controller/Parceiro_class.php");
 
-    switch ($modo) {
-      case 'novo':
-        $empresa_controller = new EmpresaController();
+      // Verifica qual o recurso será utilizado
+      switch ($modo) {
+        case 'novo': // Insere um parceiro
 
-        $empresa_controller->novo();
-        break;
-      case 'editar':
-        $empresa_controller = new EmpresaController();
+          // Instância um objeto parceiro e o popula com os dados do form
+          $parceiro = new Parceiro(
+            null,
+            $_POST['idEndereco'],
+            $_POST['idUsuario'],
+            1,
+            $_POST['txt_nome'],
+            $_POST['txt_razao'],
+            $_POST['txt_cnpj'],
+            null,
+            1,
+            $_POST['txt_email'],
+            $_POST['txt_telefone'],
+            $_POST['txt_celular'],
+            $_FILES['btn_img_parceiro']['name'],
+            null
+          );
 
-        $empresa_controller->editar();
+          // Verifica se a inserção ocorreu com êxito
+          if($parceiro->inserirParceiro($parceiro))// Êxito
+          {
+            // Define o status como sucesso na inserção
+            $response = array('status'=>true);
+          }
+          else // Falha
+          {
+            // Define o status como falha ao tentar realizar a inserção
+            $response = array('status'=>false);
+          }
 
-        require_once("modal_cms_empresa.php");
+          // exibe o retorno da inserção do parceiro
+          echo JSON_encode($response);
 
-        break;
-      case 'excluir':
-        $empresa_controller = new EmpresaController();
-
-        $empresa_controller->excluir();
-
-        break;
-    }
+          break;
+      }
+      break;
   }
  ?>
-
- <!-- CRUD CADASTRO PARCEIRO -->
- <?php
-
-  $controllers = $_GET["cont"];
-  $modos = $_GET["mod"];
-
-  //VERIFICA QUAL CONTROLLER SERÁ UTILIZADA
-  switch($controllers)
-  {
-    case 'parceiro'
-
-    require_once("./controller/Parceiro_class.php");
-    require_once(".model/PerceiroDAO.php");
-
-    switch ($modo){
-      case 'novo':
-      $parceiro_controller = new ParceiroController();
-
-      $parceiro_controller->novo();
-      break;
-    case 'editar':
-      $parceiro_controller = new ParceiroController();
-
-      $parceiro_controller->editar;
-
-      require_once("modal_cad_parceiro");
-
-      break;
-    case 'excluir':
-    $parceiro_controller = new ParceiroController();
-
-    $parceiro_controller->excluir();
-
-    break;
-    }
-  }
-  ?>

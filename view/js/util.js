@@ -28,3 +28,13 @@ function getResponse(protocolo, urlAddress,callbackSuccess, callbackFail,dados,t
 
   });
 }
+
+// /**
+// * Retorna os dados informados no parâmetro em formatação JSON
+// * @param arrayDados Array contendo os dados a serem formatados
+// * @return JSON Os dados informados em formatção JSON
+// */
+// function toJson(arrayDados)
+// {
+//   return JSON_encode(arrayDados);
+// }
