@@ -11,11 +11,15 @@
   {
     case 'parceiro':
 
-      require_once("controller/Parceiro_class.php");
+    require_once("controller/Parceiro_class.php");
+    require_once("controller/Imagem_class.php");
 
       // Verifica qual o recurso será utilizado
       switch ($modo) {
         case 'novo': // Insere um parceiro
+
+          // Instância um objeto imagem e o popula com a imagem vinda do form
+          $imagem = new Imagem($_FILES['btn_img_parceiro'], 'view/pictures/parceiro/');
 
           // Instância um objeto parceiro e o popula com os dados do form
           $parceiro = new Parceiro(
@@ -31,7 +35,7 @@
             $_POST['txt_email'],
             $_POST['txt_telefone'],
             $_POST['txt_celular'],
-            $_FILES['btn_img_parceiro']['name'],
+            $imagem->salvarImagem($imagem),
             null
           );
 

@@ -1,6 +1,6 @@
 <?php
 
-function SalvarImagem($objeto){
+function SalvarImagem($objeto, ){
 
 
   $upload_dir="arquivo/";//CAMIMHO DA PASTA ONDE AS IMAGENS SERÃO ARMAZENADAS.
