@@ -244,7 +244,10 @@
 
             // Executa o submit novamente no form para encaminhá-lo a router
             $(this).submit();
-          });
+          },
+        function(erro){
+          console.log(erro);
+        });
         }
       });
     });

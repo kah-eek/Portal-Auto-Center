@@ -1,6 +1,6 @@
 var rotas = {
-  'inserirEndereco':'http://localhost/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir',
-  'inserirUsuario':'http://localhost/inf4m/Portal-Auto-Center/api/v1/usuario/?action=inserir'
+  'inserirEndereco':'http://localhost/site/Portal-Auto-Center/api/v1/endereco/?action=inserir',
+  'inserirUsuario':'http://localhost/site/Portal-Auto-Center/api/v1/usuario/?action=inserir'
 }
 
 
@@ -44,7 +44,7 @@ function inserirEndereco(submitEvent, callback)
   });
 }
 
-function inserirUsuario(submitEvent)
+function inserirUsuario(submitEvent, callbackSuccess, callbackFail)
 {
 
   //REMOVE O SUBMIT PADRÃO DA PÁGINA.
@@ -61,11 +61,15 @@ function inserirUsuario(submitEvent)
     url:rotas['inserirUsuario'],
     data: {nomeUsuario:txt_use, senha:txt_senha, idNivelUsuario:2, ativo:1},
     dataType:'json',
-    success: function(respAPI){
-      return respAPI['status'];
+    success: function(respostaAPI){
+      // Armazena o retorno da request - id do usuário ou null caso tenha ocorrido alguma falha
+      var idUsuario = respostaAPI['status'] ? respostaAPI['id'] : null;
+      // Executa o callback de sucesso
+      callbackSuccess(idUsuario);
     },
-    error: function(){
-      return false;
+    error: function(e){
+      // Executa o callback de falha
+      callbackFail(e);
     }
   });
 }
