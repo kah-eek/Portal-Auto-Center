@@ -6,6 +6,8 @@
       <link rel="stylesheet" type="text/css" href="../view/css/normalize.css">
       <link rel="stylesheet" type="text/css" href="../view/css/padroes.css">
       <link rel="stylesheet" type="text/css" href="../view/css/cms/cms_login.css">
+      <script src="../view/js/jquery.js"></script>
+      <script src="../view/js/requestAPI/site.js"></script>
   </head>
   <body class="background_login">
     <div class="foto_fundo fixed">
@@ -19,13 +21,13 @@
           </div>
           <div class="container_login">
 
-              <input type="text" name="txt_login" placeholder="Usuário">
+              <input id="txt_use" type="text" name="txt_use" placeholder="Usuário">
 
           </div>
 
           <div class="container_senha">
 
-              <input type="password" name="txt_senha" placeholder="Senha">
+              <input id="txt_senha" type="password" name="txt_senha" placeholder="Senha">
 
           </div>
           <div class="container_botao_login ">
@@ -37,8 +39,46 @@
         </div>
       </form>
     </div>
+
+    <script>
+      $('form[name="frmhome"]').submit(function(e){
+
+        // Verifica se o usuário existe no DB
+        verificarAutenticacao(e,
+          function(autenticacao){ // Callback de sucesso
+
+            // Verifica se o usuário encontra-se autenticado
+            if (autenticacao.status) { // Usuário autenticado com sucesso
+
+              // Armazena o tipo de nível do usuário - Parceiro, cliente, adm, etc.
+              var nivel = autenticacao.nivel.nivel;
+
+              if (nivel.toLowerCase() == 'administrador')
+              {
+                location.replace('../view/cms/index.php');
+              }
+              else
+              {
+                  alert("Acesso negado!");
+              }
+
+            }
+            else // Usuário ao tentar autenticar o usuário
+            {
+                alert(autenticacao.mensagem);
+            }
+
+          },
+          function(){ // Callback de falha
+            console.error("Falha ao tentar utilizar do recurso de autenticação");
+          }
+        )
+
+      });
+    </script>
+
   </body>
 
 
-  
+
 </html>

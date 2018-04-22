@@ -2,13 +2,15 @@ var rotas = {
   'inserirEndereco':'http://localhost/site/Portal-Auto-Center/api/v1/endereco/?action=inserir',
   'inserirUsuario':'http://localhost/site/Portal-Auto-Center/api/v1/usuario/?action=inserir',
   'obterEstados':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/estado/',
-  'verificarAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/autenticacao/'
+  'verificarAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/autenticacao/',
+  'nivelAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/usuario/?action=nivel'
 }
 
 /**
 * Registra um novo endereço no banco de dados
 * @param callbackSuccess Callback de sucesso da inserção dos dados
 * @param callbackFail Callback de falha ao tentar inserir os dados
+* @param submitEvent Evento de submit do formulario
 */
 function inserirEndereco(submitEvent, callbackSuccess, callbackFail)
 {
@@ -39,12 +41,12 @@ function inserirEndereco(submitEvent, callbackSuccess, callbackFail)
 
       // Armazena o retorno da request - id do endereço ou null caso tenha ocorrido alguma falha
       var idEndereco = respostaAPI['status'] ? respostaAPI['id'] : null;
-      // Executa o callback de sucesso
-      callbackSuccess(idEndereco);
+      // Executa o callback de sucesso apenas se existir
+      if(callbackSuccess != undefined){callbackSuccess(idEndereco);}
     },
     error: function(){
-      // Executa o callback de falha
-      callbackFail();
+      // Executa o callback de falha apenas se existir
+      if(callbackFail != undefined){callbackFail();}
     }
   });
 }
@@ -53,6 +55,7 @@ function inserirEndereco(submitEvent, callbackSuccess, callbackFail)
 * Registra um novo usuário no banco de dados
 * @param callbackSuccess Callback de sucesso da inserção dos dados
 * @param callbackFail Callback de falha ao tentar inserir os dados
+* @param submitEvent Evento de submit do formulario
 */
 function inserirUsuario(submitEvent, callbackSuccess, callbackFail)
 {
@@ -79,11 +82,78 @@ function inserirUsuario(submitEvent, callbackSuccess, callbackFail)
       // Armazena o retorno da request - id do usuário ou null caso tenha ocorrido alguma falha
       var idUsuario = respostaAPI['status'] ? respostaAPI['id'] : null;
       // Executa o callback de sucesso
-      callbackSuccess(idUsuario);
+      // Executa o callback de sucesso apenas se existir
+      if(callbackSuccess != undefined){callbackSuccess(idUsuario);}
     },
     error: function(){
-      // Executa o callback de falha
-      callbackFail();
+      // Executa o callback de falha apenas se existir
+      if(callbackFail != undefined){callbackFail();}
+    }
+  });
+}
+
+/**
+* Obtém o nível de autenticação do usuário
+* @param callbackSuccess Callback de sucesso da obtenção dos dados
+* @param callbackFail Callback de falha ao tentar obter os dados
+* @param submitEvent Evento de submit do formulario
+*/
+// function obterNivelAutenticacao(callbackSuccess, callbackFail)
+// {
+//   //REALIZA A REQUEST.
+//   $.ajax({
+//     type:"POST",
+//     url:rotas['nivelAutenticacao'],
+//     data:{nomeUsuario:txt_use,senha:txt_senha},
+//     dataType:'json',
+//     success: function(respostaAPI){
+//       // Debbug
+//       console.log(respostaAPI);
+//       // *************************
+//
+//       // Executa o callback de sucesso apenas se existir
+//       if(callbackSuccess != undefined){callbackSuccess(respostaAPI);}
+//     },
+//     error: function(){
+//       // Executa o callback de falha apenas se existir
+//       if(callbackFail != undefined){callbackFail();}
+//     }
+//   });
+// }
+
+/**
+* Verifica a existência do usuário na base de dados
+* @param callbackSuccess Callback de sucesso da obtenção dos dados
+* @param callbackFail Callback de falha ao tentar obter os dados
+* @param submitEvent Evento de submit do formulario
+*/
+function verificarAutenticacao(submitEvent, callbackSuccess, callbackFail)
+{
+  //REMOVE O SUBMIT PADRÃO DA PÁGINA.
+  submitEvent.preventDefault();
+
+  //OBTENDO OS VALORES ARMAZENADOS NAS INPUTS.
+  var txt_use = $('#txt_use').val();
+  var txt_senha = $('#txt_senha').val();
+  // #############################################
+
+  //REALIZA A REQUEST.
+  $.ajax({
+    type:"POST",
+    url:rotas['verificarAutenticacao'],
+    data:{usuario:txt_use,senha:txt_senha},
+    dataType:'json',
+    success: function(respostaAPI){
+      // Debbug
+      console.log(respostaAPI);
+      // *************************
+
+      // Executa o callback de sucesso apenas se existir
+      if(callbackSuccess != undefined){callbackSuccess(respostaAPI);}
+    },
+    error: function(){
+      // Executa o callback de falha apenas se existir
+      if(callbackFail != undefined){callbackFail();}
     }
   });
 }
@@ -106,40 +176,13 @@ function obterEstados(callbackSuccess, callbackFail)
       console.log(respostaAPI);
       // *************************
 
-      // Executa o callback de sucesso
-      callbackSuccess(respostaAPI);
+      // Executa o callback de sucesso apenas se existir
+      if(callbackSuccess != undefined){callbackSuccess(respostaAPI);}
+
     },
     error: function(){
-      // Executa o callback de falha
-      callbackFail();
-    }
-  });
-}
-
-/**
-* Obtém os Estados existente no banco de dados
-* @param callbackSuccess Callback de sucesso da obtenção dos dados
-* @param callbackFail Callback de falha ao tentar obter os dados
-*/
-function verificarAutenticacao(callbackSuccess, callbackFail)
-{
-
-  //REALIZA A REQUEST.
-  $.ajax({
-    type:"GET",
-    url:rotas['obterEstados'],
-    dataType:'json',
-    success: function(respostaAPI){
-      // Debbug
-      console.log(respostaAPI);
-      // *************************
-
-      // Executa o callback de sucesso
-      callbackSuccess(respostaAPI);
-    },
-    error: function(){
-      // Executa o callback de falha
-      callbackFail();
+      // Executa o callback de falha apenas se existir
+      if(callbackFail != undefined){callbackFail();}
     }
   });
 }
