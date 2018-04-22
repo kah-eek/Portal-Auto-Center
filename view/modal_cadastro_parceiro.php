@@ -61,7 +61,7 @@
             <div class="item_img_parceiro centro_lr borda_preta_1">
 
             </div>
-            <input class="display_none" id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="<?php echo($foto_perfil); ?>">
+            <input class="display_none" required id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="<?php echo($foto_perfil); ?>">
           </label>
         </div>
         <!-- FORM SEGURA INPUTS -->

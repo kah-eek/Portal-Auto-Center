@@ -35,7 +35,7 @@
             $_POST['txt_email'],
             $_POST['txt_telefone'],
             $_POST['txt_celular'],
-            $imagem->salvarImagem($imagem),
+            $imagem->salvarImagem($imagem), // Retorna o caminho da imagem
             null
           );
 
