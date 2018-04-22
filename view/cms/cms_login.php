@@ -1,43 +1,11 @@
-
-<?php
-  mysql_connect('localhost','root','bcd127');
-  mysql_select_db('db_auto_center');
-
-  if(isset($_POST["btn_login"]))
-  {
-      $usuario = $_POST['txt_login'];
-      $senha = $_POST['txt_senha'];
-
-      addslashes($sql = "SELECT * FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."'");
-
-      // echo ($sql);
-
-      $result = mysql_query($sql);
-
-      //if(mysql_num_rows($result) >0){
-      if ($rsUsuario=mysql_fetch_array($result)){
-
-          // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
-
-           header('location:../view/cms/cms_home.php');
-      }else{
-?>
-  <script>
-      alert("Usuário ou Senha incorretos!!!");
-  </script>
-  <?php
-      }
-
-  }
-  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <title>Portal Auto Center - CMS</title>
-      <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-      <link rel="stylesheet" type="text/css" href="../css/padroes.css">
-      <link rel="stylesheet" type="text/css" href="../css/cms/cms_login.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/normalize.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/padroes.css">
+      <link rel="stylesheet" type="text/css" href="../view/css/cms/cms_login.css">
   </head>
   <body class="background_login">
     <div class="foto_fundo fixed">
@@ -51,7 +19,7 @@
           </div>
           <div class="container_login">
 
-              <input type="text" name="txt_login" placeholder="Login">
+              <input type="text" name="txt_login" placeholder="Usuário">
 
           </div>
 
