@@ -186,6 +186,12 @@ a{
 /* ********************************************************* */
 
 /* ***************** Efeitos no texto ******************* */
+.semSelecao{ /* Retira a possibilidade de selecionar o texto */
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select: none;
+}
 .negrito{font-weight: bold;} /* Negrito */
 .underline{text-decoration: underline;} /* Adiciona uma linha inferior no texto */
 .word_break{word-break: break-all;}/* 'quebra' a palavra */

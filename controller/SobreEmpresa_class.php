@@ -1,76 +1,30 @@
 <?php
 /**
-* @author letícia Santos
-* @date 10/04/2018
-* @class Empresa
-* Obs.: REALIZA O CRUD RELACIONADA A EMPRESA
+* @author Caique M Oliveira
+* @date 22/04/2018
 */
 
-require_once('model/upload_imagem.php');
-
-class ControllerSobreEmpresa
+class SobreEmpresa
 {
-  //INSERINDO UM NOVO REGISTRO
-  public  function novo()
+  // Atributos
+  public $idSobreEmpresa;
+  public $idTopicoSobreEmpresa;
+  public $imagem;
+  public $texto;
+
+  /**
+  * Atualiza a tabela responsável pelos registros da tela sobre a empresa
+  * @param $sobreEmpresaObj Objeto SobreEmpresa qual será atualizado no banco de dados
+  * @return true SobreEmpresa atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o SobreEmpresa na base de dados
+  */
+  function atualizar($sobreEmpresaObj)
   {
-    //INSTÂNCIA DA CLASSE SOBRE EMPRESA
-    $empresa = new Empresa();
-
-    // Carregando os dados digitados pelo usuário nos atributos do objeto/classe
-    $empresa->imagem = Upload($_FILES["flefoto"]);
-    $empresa->texto = $_POST["txttexto"];
-
-    // Chama o método insert da classe Conatto
-     // Existe também a possibilidade de chamar o método da seguinte forma:
-     // $contato->insert($contato);
-     Empresa::insert($empresa);
-  }
-
-  //ATUALIZANDO UM REGISTRO EXISTENTE
-  public function editar()
-  {
-     // Guarda o id do contato que foi passado pela view
-    $id_sobre_empresa = $_GET["id"];
-
-    $empresa = new Empresa();
-
-    $empresa->imagem = Upload($_FILES["flefoto"]);
-    $empresa->texto = $_POST["txttexto"];
-    $empresa->id_sobre_empresa = $_GET["id_sobre_empresa"];
-
-    $empresa->update($empresa);
-  }
-
-  //APAGANDO UM REGISTRO EXISTENTE
-  public function excluir()
-  {
-    // Guarda o id do contato que foi passado pela view
-    $sobre_empresa = $_GET["id"];
-
-    // Instância da classe Conatto
-    $empresa = new Empresa();
-
-    // Carrega o id do registro para dentro do objeto
-    $empresa->id = $id_sobre_empresa;
-
-    // Chama o método da model para deletar o registro
-    $empresa->delete($empresa);
-  }
-
-  //LOCALIZANDO UM REGISTRO EXISTENTE
-  public function buscar()
-  {
-    $empresa = new Empresa();
-    $dados_empresa = new Empresa();
-
-    $empresa->id = $id_sobre_empresa;
-
-    $dados_empresa = $empresa->selectById($empresa);
-
-    require_once("modal_sobre_empresa");
+    $sobreEmpresaDAO = new SobreEmpresaDAO();
+    return $sobreEmpresaDAO->atualizar($sobreEmpresaObj);
   }
 
 
 }
 
- ?>
+?>

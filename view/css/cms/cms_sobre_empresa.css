@@ -50,7 +50,10 @@
   height: 154px;
   margin-left: 20px;
   /*background-color: #009900;*/
-
+}
+.item_img img{
+  width: inherit;
+  height: inherit;
 }
 
 .container_segura_textarea{
