@@ -131,6 +131,57 @@ class UsuarioDAO
 
   }
 
+  /**
+  * Obtém as informações de nível de autenticação do usuário informado
+  * @return Array Contendo todos os dados do nível de autenticação do usuário informado
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  function obterNivelAutenticacao($usuarioObj)
+  {
+
+    // Array qual irá armazenas o nivel do usuário
+    $response = array("error"=>true);
+
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'SELECT '.
+      'usu.id_nivel_usuario AS id, '.
+      'nvl_usu.nivel '.
+      'FROM tbl_usuario AS usu '.
+      'INNER JOIN tbl_nivel_usuario AS nvl_usu '.
+      'ON nvl_usu.id_nivel_usuario = usu.id_nivel_usuario '.
+      'WHERE '.
+      'usuario = ? AND '.
+      'senha = ?'
+    );
+
+    // Preenche a statement com os respectivos parâmetros
+    $stmt->bindParam(1, $usuarioObj->usuario);
+    $stmt->bindParam(2, $usuarioObj->senha);
+
+    // Verifica se a execução da query ocorreu com sucesso
+    if ($stmt->execute()) // Êxito
+    {
+      // Remove o índice de erro do array
+      unset($response['error']);
+
+      // Preenche o array com os produtos advindos do banco
+      while ($nivelUsuario = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $response[] = $nivelUsuario;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $response;
+  }
+
 }
 
 ?>

@@ -1,7 +1,8 @@
 var rotas = {
   'inserirEndereco':'http://localhost/site/Portal-Auto-Center/api/v1/endereco/?action=inserir',
   'inserirUsuario':'http://localhost/site/Portal-Auto-Center/api/v1/usuario/?action=inserir',
-  'obterEstados':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/estado/'
+  'obterEstados':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/estado/',
+  'verificarAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/autenticacao/'
 }
 
 /**
@@ -104,7 +105,35 @@ function obterEstados(callbackSuccess, callbackFail)
       // Debbug
       console.log(respostaAPI);
       // *************************
-      
+
+      // Executa o callback de sucesso
+      callbackSuccess(respostaAPI);
+    },
+    error: function(){
+      // Executa o callback de falha
+      callbackFail();
+    }
+  });
+}
+
+/**
+* Obtém os Estados existente no banco de dados
+* @param callbackSuccess Callback de sucesso da obtenção dos dados
+* @param callbackFail Callback de falha ao tentar obter os dados
+*/
+function verificarAutenticacao(callbackSuccess, callbackFail)
+{
+
+  //REALIZA A REQUEST.
+  $.ajax({
+    type:"GET",
+    url:rotas['obterEstados'],
+    dataType:'json',
+    success: function(respostaAPI){
+      // Debbug
+      console.log(respostaAPI);
+      // *************************
+
       // Executa o callback de sucesso
       callbackSuccess(respostaAPI);
     },

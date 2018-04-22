@@ -13,5 +13,7 @@
 013 - Falha ao tentar excluir o endereço
 014 - Falha ao tentar atualizar o endereço
 015 - Falha ao tentar obter os Estados
+016 - Falha ao obter os dados de nível de autenticação do usuário
+017 - Usuário inexistente
 404 - Recurso não encontrado ou "action" não existe na URL
 405 - Method not allowed

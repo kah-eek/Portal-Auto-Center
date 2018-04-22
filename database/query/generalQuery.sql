@@ -35,3 +35,5 @@ CREATE DATABASE db_auto_center;
 USE db_auto_center;
 
 DROP DATABASE db_auto_center;
+
+DESCRIBE tbl_parceiro;

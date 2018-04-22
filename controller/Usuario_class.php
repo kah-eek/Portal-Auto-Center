@@ -60,6 +60,17 @@ class Usuario
     return $usuarioDAO->deletarUsuario($usuarioObj);
   }
 
+  /**
+  * Obtém as informações de nível de autenticação do usuário informado
+  * @return Array Contendo todos os dados do nível de autenticação do usuário informado
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  function obterNivelAutenticacao($usuarioObj)
+  {
+    $usuarioDAO = new UsuarioDAO();
+    return $usuarioDAO->obterNivelAutenticacao($usuarioObj);
+  }
+
 
 }
 

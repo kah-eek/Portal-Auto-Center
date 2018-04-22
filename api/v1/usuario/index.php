@@ -9,6 +9,7 @@
   $mensagem = '';
   $status = false;
   $id = '';
+  $nivelUsuario = '';
 
   // Verifica qual o método de acesso está sendo utilizado pela requisição
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -48,6 +49,60 @@
         {
           $error = '010';
           $mensagem = 'Parâmetro obrigatório de identificação não informado';
+        }
+      }
+      else if($_GET['action'] == 'nivel') // Obtém as informações do nível de autenticação do usuário
+      {
+        // Verifica se os parâmetros obrigatórios existe
+        if (isset($_POST['nomeUsuario']) && isset($_POST['senha'])) {// Parâmetros obrigatíros existentes
+
+          // Obtém as keys do request
+          $nomeUsuario = $_POST['nomeUsuario'];
+          $senha = $_POST['senha'];
+
+          // Cria um objeto Usuario
+          $usuario = new Usuario(null, $nomeUsuario, $senha, null, null, null);
+
+          // Cria um obj Autenticacao para verificar se o usuário existe no DB
+          $autenticacao = new Autenticacao($nomeUsuario, $senha);
+
+          // Verifica se o usuário existe
+          if($autenticacao->credencialExistente($autenticacao))// Usuário existente
+          {
+            // Obtém as informações de nível de autenticação do usuário
+            $nivelUsuario = $usuario->obterNivelAutenticacao($usuario);
+
+            // Verifica se ocorreu algum erro ao obter os dados do nível de autenticação
+            if (isset($nivelUsuario['error']))// Obteve falha
+            {
+              // Remove o índice de erro do array
+              unset($nivelUsuario['error']);
+
+              // Defini a mensagem de erro
+              $mensagem = 'Falha ao obter os dados de nível de autenticação do usuário';
+
+              // Defini o erro
+              $error = '016';
+            }
+            else // Obteve êxito
+            {
+              // Defini a mensagem de sucesso
+              $mensagem = 'Dados do nível de autenticação obtidos com êxito';
+
+              // Define o status para sucesso (true)
+              $status = true;
+            }
+          }
+          else // Usuário inexistente
+          {
+            $mensagem = 'Usuário inexistente';
+            $error = '017';
+          }
+        }
+        else // Parâmetros obrigatórios não informados
+        {
+          $error = '007';
+          $mensagem = 'Parâmetros obrigatórios não informados';
         }
       }
       else
@@ -158,7 +213,6 @@
             }
 
           }
-
         }
         else // Parâmetros obrigatórios não informados
         {
@@ -189,11 +243,14 @@
                 'error'=>$error,
                 'mensagem'=>$mensagem,
                 'status'=>$status,
-                'id'=>$id
+                'id'=>$id,
+                'nivel'=>$nivelUsuario
               );
 
-  // Verifica se a variável id é vazia e então a remove da response caso verdadeiro
+  // Verifica se a variável $id é vazia e então a remove da response caso verdadeiro
   if(empty($id)) unset($response['id']);
+  // Verifica se a variável $nivelUsuario é vazia e então a remove da response caso verdadeiro
+  if(empty($nivelUsuario)) unset($response['nivel']);
 
   // Exibe o response no formato JSON
   echo json_encode($response,JSON_UNESCAPED_UNICODE);
