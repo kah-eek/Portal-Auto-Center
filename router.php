@@ -60,13 +60,35 @@
 
       case 'sobreEmpresa':
 
+        require_once("controller/SobreEmpresa_class.php");
+
         // Verifica qual o recurso será utilizado
         switch ($modo)
         {
           case 'atualizar':
 
-            
+            // Instância um objeto SobreEmpresa e o popula com os dados do form
+            $sobreEmpresa = new SobreEmpresa(
+              $_POST['id'], // id_sobre_empresa
+              $_POST['idTopico'], // id_topico_sobre_empresa (missao,visao,valores e empresa)
+              $_POST['srcImg'], // Caminho da imagem
+              $_POST['textoDescritivo'] // Texto descritivo
+            );
 
+            // Verifica se a atualização ocorreu com êxito
+            if($sobreEmpresa->atualizar($sobreEmpresa))// Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else // Falha
+            {
+              // Define o status como falha ao tentar realizar a atualização
+              $response = array('status'=>false);
+            }
+
+            // exibe o retorno da inserção do parceiro
+            echo JSON_encode($response);
 
           break;
         }

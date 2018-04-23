@@ -5,6 +5,9 @@
 * @date 22/04/2018
 */
 
+// Imports
+require_once('controller/MySql_class.php');
+
 class SobreEmpresaDAO
 {
 

@@ -4,6 +4,9 @@
 * @date 22/04/2018
 */
 
+// Imports
+require_once('model/SobreEmpresaDAO.php');
+
 class SobreEmpresa
 {
   // Atributos
@@ -11,6 +14,15 @@ class SobreEmpresa
   public $idTopicoSobreEmpresa;
   public $imagem;
   public $texto;
+
+  // Construtor default
+  function __construct($idSobreEmpresa,$idTopicoSobreEmpresa, $imagem, $texto)
+  {
+    $this->idSobreEmpresa = $idSobreEmpresa;
+    $this->idTopicoSobreEmpresa = $idTopicoSobreEmpresa;
+    $this->imagem = $imagem;
+    $this->texto = $texto;
+  }
 
   /**
   * Atualiza a tabela responsável pelos registros da tela sobre a empresa
