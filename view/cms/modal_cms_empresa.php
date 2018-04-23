@@ -173,7 +173,7 @@
          <!-- TEXTAREA -->
          <div class="container_segura_textarea float_left">
            <div class="segura_textarea">
-             <textarea placeholder="Digite Aqui!!!" name="textoDescritivo" rows="9" style="resize: none" cols="61"></textarea>
+             <textarea placeholder="Digite Aqui!!!" required name="textoDescritivo" rows="9" style="resize: none" cols="61"></textarea>
            </div>
          </div>
          <!-- BOTÃO -->
