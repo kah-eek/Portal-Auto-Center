@@ -1,7 +1,14 @@
 <?php
 
 // Imports
-require_once('../../../model/UsuarioDAO.php');
+if(file_exists('../../../model/UsuarioDAO.php'))
+{
+  require_once('../../../model/UsuarioDAO.php');
+}
+elseif(file_exists('../../model/UsuarioDAO.php'))
+{
+  require_once('../../model/UsuarioDAO.php');
+}
 
 // @author Caique M. Oliveira
 // @data 12/04/2018
@@ -49,6 +56,18 @@ class Usuario
   {
     $usuarioDAO = new UsuarioDAO();
     return $usuarioDAO->atualizarUsuario($usuarioObj);
+  }
+
+  /**
+  * Atualiza o status (ativo ou não ativo) do usuário no banco de dados
+  * @param $usuarioObj Objeto Usuario qual será atualizado no banco de dados
+  * @return true Usuario atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o usuario na base de dados
+  */
+  function atualizarStatusUsuario($usuarioObj)
+  {
+    $usuarioDAO = new UsuarioDAO();
+    return $usuarioDAO->atualizarStatusUsuario($usuarioObj);
   }
 
   /**

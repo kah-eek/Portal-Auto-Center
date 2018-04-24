@@ -1,5 +1,6 @@
 <?php
 
+
 // @author Caique M. Oliveira
 // @data 12/04/2018
 // @description Classe cliente
@@ -32,6 +33,29 @@ class Cliente
     $this->idCliente = $idCliente;
     $this->idEndereco = $idEndereco;
     $this->idUsuario = $idUsuario;
+  }
+
+  /**
+  * Obtém um cliente da base de dados
+  * @param $idCliente Id do cliente a ser obtido
+  * @return PDO (FETCH_OBJ) Objeto cliente existente na base de dados
+  * @return null Falha ao tentar obter o cliente na base de dados
+  */
+  static function obterDadosClienteById($idCliente)
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->obterClienteById($idCliente);
+  }
+
+  /**
+  * Obtém todos os clientes existentes na base de dados
+  * @return Array Contendo todos os clientes existentes na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  static function obterClientes()
+  {
+    $clienteDAO = new ClienteDAO();
+    return $clienteDAO->obterClientes();
   }
 
   /**

@@ -94,5 +94,39 @@
         }
 
       break;
+
+      case 'usuario':
+
+      require_once("controller/Usuario_class.php");
+        require_once("controller/MySql_class.php");
+        require_once("model/UsuarioDAO.php");
+
+        // Verifica qual o recurso será utilizado
+        switch ($modo)
+        {
+          case 'atualizarStatus':
+
+            // Instância um objeto Usuario para atualiza-lo no banco de dados
+            $usuario = new Usuario($_POST['idUsuario'], null, null, null, $_POST['ativo'], null);
+
+            // Verifica se a atualização ocorreu com êxito
+            if($usuario->atualizarStatusUsuario($usuario))// Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else // Falha
+            {
+              // Define o status como falha ao tentar realizar a atualização
+              $response = array('status'=>false);
+            }
+
+            // exibe o retorno da inserção do parceiro
+            echo JSON_encode($response);
+
+          break;
+        }
+
+      break;
   }
  ?>
