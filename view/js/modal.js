@@ -149,7 +149,7 @@ function modalCmsClienteParceiro(){
 }
 
 function modalCmsFaleConosco(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -164,7 +164,7 @@ function modalCmsFaleConosco(){
 }
 
 function modalCmsProdutosCadastrados(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",

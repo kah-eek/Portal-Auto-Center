@@ -1,8 +1,8 @@
 <?php
 
 // Imports
-require_once('../../../controller/MySql_class.php');
-require_once('../../../model/ProdutoDAO.php');
+require_once('../../controller/MySql_class.php');
+require_once('../../model/ProdutoDAO.php');
 
 // @author Caique M. Oliveira
 // @data 12/04/2018
@@ -64,7 +64,11 @@ class Produto
     $produtoDAO = new ProdutoDAO();
     return $produtoDAO->obterDetalhesProdutos();
   }
-
+  static function obterDetalhesSimplesProdutos()
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->obterDetalhesSimplesProdutos();
+  }
 
 }
 

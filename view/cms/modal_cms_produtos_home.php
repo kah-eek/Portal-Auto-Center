@@ -1,3 +1,11 @@
+<?php
+  // Imports
+  require_once('../../controller/produto_class.php');
+  require_once('../../controller/MySql_class.php');
+  require_once('../../model/ProdutoDAO.php');
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,25 +21,32 @@
       </div>
     </div>
 
+    <?php
+
+      // Obtém os clientes existentes no DB
+      $produtosSimples = Produto::obterDetalhesSimplesProdutos();
+
+      for ($i=0; $i < sizeof($produtosSimples)-1; $i++) {
+    ?>
     <!-- PARTE PRODUTO -->
     <div class="container_produto_ph centro_lr margem_t_10">
       <div class="item_produto_ph float_left">
         <!-- IMAGEM -->
         <div class="container_img_produto_ph float_left centro_lr">
           <div class="item_img_produto_ph centro_lr margem_t_20 bg_branco">
-
+            <img src="<?=$produtosSimples[$i]->imagem?>" alt="">
           </div>
         </div>
         <!-- NOME E VALOR DO PRODUTO -->
         <div class="container_caixa_desc_ph float_left centro_lr">
           <div class="item_caixa_desc_ph preenche_t_10 fs_25 negrito align_center borda_preta_1 bg_verde_vivo sombra_preta_20 margem_t_10 centro_lr">
-            Nome do Produto
+            <?=$produtosSimples[$i]->nome?>
           </div>
         </div>
 
         <div class="container_caixa_desc_ph float_left centro_lr">
           <div class="item_caixa_desc_ph preenche_t_10 fs_25 negrito align_center borda_preta_1 bg_verde_vivo sombra_preta_20 margem_t_20 centro_lr">
-            Valor do Produto
+            <?=$produtosSimples[$i]->preco?>
           </div>
         </div>
       </div>
@@ -47,6 +62,9 @@
             Ativo
           </div>
         </div>
+        <?php
+          }
+        ?>
 
       </div>
     </div>
