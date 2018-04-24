@@ -138,6 +138,57 @@ class ClienteDAO
   }
 
   /**
+  * Obtém todos os clientes existentes na base de dados
+  * @return Array Contendo todos os clientes existentes na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  function obterClientes()
+  {
+
+    // Array qual irá armazenas os clientes existentes
+    $clientes = array('error'=>true);
+
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'SELECT '.
+      'tbl_cliente.id_usuario AS idUsuario, '.
+      'id_endereco AS idEndereco, '.
+      'id_cliente AS idCliente, '.
+      'foto_perfil AS foto, '.
+      'nome, '.
+      'dtNasc, '.
+      'cpf, '.
+      'email, '.
+      'celular, '.
+      'telefone, '.
+      'sexo, '.
+      'usr.ativo '.
+      'FROM tbl_cliente '.
+      'INNER JOIN tbl_usuario AS usr '.
+      'ON usr.id_usuario = tbl_cliente.id_usuario'
+    );
+
+    // Verifica se o select foi executado com êxito
+    if($stmt->execute())
+    {
+      // Popula a lista com os objetos clientes advindos do DB
+      while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $clientes[] = $rs;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $clientes;
+  }
+
+  /**
   * Verifica se já encontra-se cadastrado o cpf na base de dados
   * @param $clienteObj Objeto Cliente qual terá seu CPF verificado
   * @return true CPF existente na base de dados
@@ -166,6 +217,40 @@ class ClienteDAO
     $con = null;
 
     return $result;
+  }
+
+  /**
+  * Obtém um cliente da base de dados
+  * @param $idCliente Id do cliente a ser obtido
+  * @return PDO (FETCH_OBJ) Objeto cliente existente na base de dados
+  * @return null Falha ao tentar obter o cliente na base de dados
+  */
+  function obterDadosClienteById($idCliente)
+  {
+    // Armazena os dados do cliente
+    $dadosCliente = null;
+
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare('SELECT * FROM view_cliente WHERE id_cliente = ?');
+    $stmt->bindParam(1, $idCliente);
+
+    // Verifica se o select foi executado com êxito
+    if($stmt->execute())
+    {
+      while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $dadosCliente = $rs;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $dadosCliente;
   }
 
   /**

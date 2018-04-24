@@ -91,6 +91,48 @@ class UsuarioDAO
   }
 
   /**
+  * Atualiza o status (ativo ou não ativo) do usuário no banco de dados
+  * @param $usuarioObj Objeto Usuario qual será atualizado no banco de dados
+  * @return true Usuario atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o usuario na base de dados
+  */
+  function atualizarStatusUsuario($usuarioObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'UPDATE tbl_usuario SET '.
+        'ativo = ?'.
+        'WHERE '.
+        'id_usuario = ?'
+    );
+
+    $stmt->bindParam(1, $usuarioObj->ativo);
+    $stmt->bindParam(2, $usuarioObj->idUsuario);
+
+    try {
+      // Executa a statement e armazena a quantidade de registros que foram modificados
+      $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+      // Verifica se a atualização do registro ocorreu com sucesso
+      $result = $result == -1 ? false : true;
+
+    } catch (\Exception $e) {
+      $result = false;
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+
+  }
+
+  /**
   * Deleta o usuário da base de dados
   * @param $usuarioObj Objeto usuário qual será excluído
   * @return true Usuário excluído com sucesso

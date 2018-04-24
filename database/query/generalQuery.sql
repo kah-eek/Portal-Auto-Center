@@ -26,6 +26,10 @@ SELECT * FROM tbl_plano_contratacao;
 
 SELECT * FROM view_produto;
 
+SELECT * FROM tbl_sobre_empresa;
+
+SELECT * FROM tbl_topico_sobre_empresa;
+
 SELECT * FROM tbl_imagem_produto_parceiro;
 
 SHOW TABLES;
