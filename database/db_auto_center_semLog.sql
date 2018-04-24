@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+﻿-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
@@ -79,7 +79,7 @@ CREATE TABLE `tbl_anuncio_parceiro` (
   `foto` varchar(420) NOT NULL,
   `link_redirecionamento` varchar(580) NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT '0',
-  `log_anuncio_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_anuncio_parceiro` datetime NOT NULL,
   PRIMARY KEY (`id_anuncio_parceiro`),
   KEY `fk_tbl_anuncio_parceiro_id_parceiro_idx` (`id_parceiro`),
   CONSTRAINT `fk_tbl_anuncio_parceiro_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -253,7 +253,7 @@ CREATE TABLE `tbl_click_anuncio_parceiro` (
   `id_click_anuncio_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_anuncio_parceiro` int(11) NOT NULL,
   `clicado` int(11) NOT NULL,
-  `log_click_anuncio_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_click_anuncio_parceiro` datetime NOT NULL,
   PRIMARY KEY (`id_click_anuncio_parceiro`),
   KEY `fk_tbl_click_anuncio_parceiro_id_anuncio_parceiro_idx` (`id_anuncio_parceiro`),
   CONSTRAINT `fk_tbl_click_anuncio_parceiro_id_anuncio_parceiro` FOREIGN KEY (`id_anuncio_parceiro`) REFERENCES `tbl_anuncio_parceiro` (`id_anuncio_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -347,7 +347,7 @@ CREATE TABLE `tbl_comentario_topico_forum` (
   `id_cliente` int(11) NOT NULL,
   `mensagem` varchar(5500) NOT NULL,
   `foto` varchar(350) DEFAULT NULL,
-  `log` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log` datetime NOT NULL,
   PRIMARY KEY (`id_comentario_forum`),
   KEY `fk_tbl_comentario_topico_forum_idx` (`id_topico_forum`),
   KEY `fk_tbl_situacao_pedido_id_cliente_idx` (`id_cliente`),
@@ -435,7 +435,7 @@ CREATE TABLE `tbl_controle_abastecimento` (
   `valor_abastecimento` decimal(6,2) NOT NULL,
   `latitute` double NOT NULL,
   `longitude` double NOT NULL,
-  `log_controle_abastecimento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_controle_abastecimento` datetime NOT NULL,
   PRIMARY KEY (`id_controle_abastecimento`),
   KEY `fk_tbl_controle_abastecimento_id_veiculo_cliente_id_tipo_co_idx` (`id_tipo_combustivel`),
   KEY `fk_tbl_controle_abastecimento_id_veiculo_cliente_idx` (`id_veiculo_cliente`),
@@ -645,7 +645,7 @@ CREATE TABLE `tbl_feedback_cliente` (
   `id_feedback_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `feedback` varchar(2500) NOT NULL,
-  `log_feedback` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_feedback` datetime NOT NULL,
   PRIMARY KEY (`id_feedback_cliente`),
   KEY `fk_tbl_feedback_cliente_id_pedido_idx` (`id_pedido`),
   CONSTRAINT `fk_tbl_feedback_cliente_id_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -684,7 +684,7 @@ CREATE TABLE `tbl_funcionario_pac` (
   `cnh` varchar(11) DEFAULT NULL,
   `pis` varchar(13) DEFAULT NULL,
   `certificado_reservista` varchar(10) DEFAULT NULL,
-  `log_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_funcionario_pac` datetime NOT NULL,
   PRIMARY KEY (`id_funcionario_pac`),
   KEY `fk_tbl_funcionario_pac_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_funcionario_pac_id_cargo_funcionario_pac_idx` (`id_cargo_funcionario_pac`),
@@ -896,7 +896,7 @@ CREATE TABLE `tbl_pagamento_funcionario_pac` (
   `id_pagamento_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario_pac` int(11) NOT NULL,
   `pago` tinyint(1) NOT NULL DEFAULT '0',
-  `log_pagamento_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_pagamento_funcionario_pac` datetime NOT NULL,
   PRIMARY KEY (`id_pagamento_funcionario_pac`),
   KEY `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac_idx` (`id_funcionario_pac`),
   CONSTRAINT `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac` FOREIGN KEY (`id_funcionario_pac`) REFERENCES `tbl_funcionario_pac` (`id_funcionario_pac`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -931,7 +931,7 @@ CREATE TABLE `tbl_parceiro` (
   `telefone` varchar(11) DEFAULT NULL,
   `foto_perfil` varchar(350) NOT NULL,
   `celular` varchar(12) DEFAULT NULL,
-  `log_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_parceiro` datetime NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_plano_contratacao` int(11) NOT NULL,
   PRIMARY KEY (`id_parceiro`),
@@ -966,7 +966,7 @@ CREATE TABLE `tbl_pedido` (
   `id_cliente` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `data_agendada` datetime DEFAULT NULL,
-  `log_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_pedido` datetime NOT NULL,
   PRIMARY KEY (`id_pedido`),
   KEY `fk_tbl_pedido_id_cliente_idx` (`id_cliente`),
   KEY `fk_tbl_pedido_id_produto_idx` (`id_produto`),
@@ -1073,7 +1073,7 @@ CREATE TABLE `tbl_post_rede_social` (
   `id_usuario` int(11) NOT NULL,
   `post` varchar(1500) DEFAULT NULL,
   `foto` varchar(350) DEFAULT NULL,
-  `log_post_rede_social` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_post_rede_social` datetime NOT NULL,
   PRIMARY KEY (`id_post_rede_social`),
   KEY `fk_tbl_post_rede_social_id_usuario_idx` (`id_usuario`),
   CONSTRAINT `fk_tbl_post_rede_social_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1164,7 +1164,7 @@ CREATE TABLE `tbl_seguir_rede_social` (
   `id_seguir_rede_social` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_seguidor` int(11) NOT NULL,
   `usuario_seguido` int(11) NOT NULL,
-  `log_seguir_rede_social` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_seguir_rede_social` datetime NOT NULL,
   PRIMARY KEY (`id_seguir_rede_social`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguidor_idx` (`usuario_seguidor`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguido_idx` (`usuario_seguido`),
@@ -1193,7 +1193,7 @@ CREATE TABLE `tbl_situacao_pedido` (
   `id_situacao_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `id_tipo_situacao_pedido` int(11) NOT NULL,
-  `log_situacao_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_situacao_pedido` datetime NOT NULL,
   PRIMARY KEY (`id_situacao_pedido`),
   KEY `fk_tbl_situacao_pedido_id_pedido_idx` (`id_pedido`),
   KEY `fk_tbl_situacao_pedido_id_tipo_situacao_pedido_idx` (`id_tipo_situacao_pedido`),
@@ -1223,7 +1223,7 @@ CREATE TABLE `tbl_sobre_cliente_parceiro` (
   `imagem` varchar(300) NOT NULL,
   `descricao` varchar(1800) NOT NULL,
   `id_tipo_descricao` int(11) NOT NULL,
-  `log_sobre_cliente_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_sobre_cliente_parceiro` datetime NOT NULL,
   PRIMARY KEY (`id_sobre_cliente_parceiro`),
   KEY `fk_tbl_sobre_cliente_parceiro_id_tipo_descricao_idx` (`id_tipo_descricao`),
   CONSTRAINT `fk_tbl_sobre_cliente_parceiro_id_tipo_descricao` FOREIGN KEY (`id_tipo_descricao`) REFERENCES `tbl_tipo_descricao` (`id_tipo_descricao`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1278,7 +1278,7 @@ CREATE TABLE `tbl_socorrista_socorro_ja` (
   `id_socorrista_socorro_ja` int(11) NOT NULL AUTO_INCREMENT,
   `id_parceiro` int(11) NOT NULL,
   `id_socorro_ja` int(11) NOT NULL,
-  `log_socorrista_socorro_ja` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_socorrista_socorro_ja` datetime NOT NULL,
   PRIMARY KEY (`id_socorrista_socorro_ja`),
   KEY `fk_tbl_socorrista_socorro_ja_id_parceiro_idx` (`id_parceiro`),
   KEY `fk_tbl_socorrista_socorro_ja_id_socorro_ja_idx` (`id_socorro_ja`),
@@ -1309,7 +1309,7 @@ CREATE TABLE `tbl_socorro_ja` (
   `id_endereco` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `atendido` tinyint(1) NOT NULL,
-  `log_socorro_ja` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_socorro_ja` datetime NOT NULL,
   PRIMARY KEY (`id_socorro_ja`),
   KEY `fk_tbl_socorro_ja_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_socorro_ja_id_cliente_idx` (`id_cliente`),
@@ -1408,7 +1408,7 @@ CREATE TABLE `tbl_topico_forum` (
   `foto` varchar(350) DEFAULT NULL,
   `mensagem` varchar(5500) NOT NULL,
   `titulo` varchar(45) NOT NULL,
-  `log_topico_forum` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log_topico_forum` datetime NOT NULL,
   `id_categoria_topico_forum` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `finalizado` tinyint(1) NOT NULL DEFAULT '0',
@@ -1464,7 +1464,7 @@ CREATE TABLE `tbl_usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(160) NOT NULL,
   `senha` varchar(280) NOT NULL,
-  `log` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `log` datetime NOT NULL,
   `id_nivel_usuario` int(11) NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_usuario`),
@@ -1609,7 +1609,7 @@ DROP TABLE IF EXISTS `view_produto`;
 /*!50001 DROP VIEW IF EXISTS `view_produto`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `view_produto` AS SELECT 
+/*!50001 CREATE VIEW `view_produto` AS SELECT
  1 AS `id_produto`,
  1 AS `nome`,
  1 AS `conteudo_embalagem`,
@@ -1644,7 +1644,7 @@ DROP TABLE IF EXISTS `view_produto_detalhado`;
 /*!50001 DROP VIEW IF EXISTS `view_produto_detalhado`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE VIEW `view_produto_detalhado` AS SELECT 
+/*!50001 CREATE VIEW `view_produto_detalhado` AS SELECT
  1 AS `id_produto`,
  1 AS `id_modelo_produto`,
  1 AS `id_parceiro`,
