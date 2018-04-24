@@ -104,7 +104,7 @@ function modalDetalhesVeiculos(){
 }
 
 function modalCmsEmpresa(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -119,7 +119,7 @@ function modalCmsEmpresa(){
 }
 
 function modalCmsCadastroParceiros(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -179,7 +179,7 @@ function modalCmsProdutosCadastrados(){
 }
 
 function modalCmsCadastrarProdutos(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
