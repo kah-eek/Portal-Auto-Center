@@ -45,8 +45,13 @@
 .item_img_produto_ph{
   width: 300px;
   height: 200px;
-  /*background-color: #fff;*/
 
+
+  /*background-color: #fff;*/
+}
+.item_img_produto_ph img{
+  width: inherit;
+  height: inherit;
 }
 
 .container_caixa_desc_ph{
