@@ -1,8 +1,10 @@
 <?php
   // Imports
   require_once('../../controller/cliente_class.php');
+  require_once('../../controller/Parceiro_class.php');
   require_once('../../controller/MySql_class.php');
   require_once('../../model/ClienteDAO.php');
+  require_once('../../model/ParceiroDAO.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +56,7 @@
         ?>
 
           <!-- DADOS QUE VIRÃO DO BANCO -->
-          <div data-idcliente="<?=$clientes[$i]->idCliente?>" data-idusuario="<?=$clientes[$i]->idUsuario?>" class="container_dados_topicos margem_t_5">
+          <div class="container_dados_topicos margem_t_5">
             <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
               <?=$clientes[$i]->nome?>
             </div>
@@ -69,11 +71,11 @@
 
             <div class="ativo_ver_dados float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
               <?php
-                echo $clientes[$i]->ativo == 1 ? '<input class="ckb_ativo tamanho_ckb" type="checkbox" checked name="ckb_ativo">' : '<input class="ckb_ativo tamanho_ckb" type="checkbox" name="ckb_ativo">';
+                echo $clientes[$i]->ativo == 1 ? '<input onclick="ativarDesativar(this,'.$clientes[$i]->idUsuario.', '."'usuario'".')" class="ckb_ativo tamanho_ckb" type="checkbox" checked name="ckb_ativo">' : '<input onclick="ativarDesativar(this,'.$clientes[$i]->idUsuario.', '."'usuario'".')" class="ckb_ativo tamanho_ckb" type="checkbox" name="ckb_ativo">';
               ?>
             </div>
 
-            <div class="ativo_ver_dados float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+            <div onclick="modalCmsDadosDetalheCliente(<?=$clientes[$i]->idCliente?>)" class="ativo_ver_dados float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
               <a class="visualizarCliente" href="#">
                 <i class="material-icons" style="font-size:30px;">visibility</i>
               </a>
@@ -117,61 +119,72 @@
         </div>
 
         <!-- DADOS QUE VIRÃO DO BANCO -->
-        <div class="container_dados_topicos margem_t_5">
-          <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-            Igor
+
+        <?php
+
+          // Obtém os parceiros existentes no DB
+          $parceiros = Parceiro::obterParceiros();
+
+          for ($i=0; $i < sizeof($parceiros)-1; $i++)
+          {
+        ?>
+
+          <div class="container_dados_topicos margem_t_5">
+            <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+              <?=$parceiros[$i]->nome_fantasia?>
+            </div>
+
+            <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+              <?=$parceiros[$i]->telefone?>
+            </div>
+
+            <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+              <?=$parceiros[$i]->email?>
+            </div>
+
+            <div class="ativo_ver_dados float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+              <?php
+                echo $parceiros[$i]->ativo == 1 ? '<input onclick="ativarDesativar(this,'.$parceiros[$i]->id_parceiro.', '."'parceiro'".')" class="ckb_ativo tamanho_ckb" type="checkbox" checked name="ckb_ativo">' : '<input onclick="ativarDesativar(this,'.$parceiros[$i]->id_parceiro.', '."'parceiro'".')" class="ckb_ativo tamanho_ckb" type="checkbox" name="ckb_ativo">';
+              ?>
+            </div>
+
+            <div onclick="modalCmsDadosDetalheParceiro(<?=$parceiros[$i]->id_parceiro?>);" class="ativo_ver_dados float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+              <a class="visualizarParceiro" href="#">
+                <i class="material-icons" style="font-size:30px;">visibility</i>
+              </a>
+            </div>
           </div>
 
-          <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-            (11) 99999-9999
-          </div>
+        <?php
+          }
+        ?>
 
-          <div class="item_dados_topicos float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-            igor-lalala@outlook.com
-          </div>
-
-          <div class="ativo_ver_dados float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-            <input class="tamanho_ckb" type="checkbox" name="ckb_ativo">
-          </div>
-
-          <div class="ativo_ver_dados float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-            <i class="material-icons" style="font-size:30px;">visibility</i>
-          </div>
-        </div>
       </div>
     </div>
 
     <script>
 
-      // Exibe a modal com os dados do cliente ao clicar sobre o ícone de visualizar
-      $('.visualizarCliente').click(function(){
+      /**
+      * Ativa e desativa o usuário do cliente no banco de dados
+      * @param e Evento do click para saber qual cliente da lista foi clicado
+      * @param idUsuario Id do usuário a ser atualizado no DB
+      */
+      function ativarDesativar(e,id, atualizar)
+      {
 
-        // Obtém o id do cliente a ter seus dados exibidos na modal
-        var idCliente = $('.container_dados_topicos').data('idcliente');
-
-        // Invoca a modal de exibição das inormações do clinete
-        modalCmsDadosDetalheCliente(idCliente);
-
-      });
-
-      $('.ckb_ativo').change(function(){
-
-        // Obtém o id do cliente a ter seus dados exibidos na modal
-        var idUsuario = $('.container_dados_topicos').data('idusuario');
-
-        console.log('idUsuario:'+idUsuario);
+        // Verifica qual controller será acionada para atualizar o registro - Parceiro ou Cliente
+        var controller = atualizar == 'usuario' ? 'usuario' : 'parceiro';
 
         // Armazena o status do usuário (se ele está ativo ou não - 0 ou 1)
-        var statusUsuario = $(this).is(':checked') ? 1 : 0;
+        var statusUsuario = $(e).is(':checked') ? 1 : 0;
 
         // Envia a solicitação de atualização do status do usuário para a router
         $.ajax({
           type:"POST",
-          url:'../../router.php?controller=usuario&modo=atualizarStatus',
+          url:'../../router.php?controller='+controller+'&modo=atualizarStatus',
           dataType:'json',
-          data:{'idUsuario':idUsuario,'ativo':statusUsuario},
+          data:{'id':id,'ativo':statusUsuario},
           success:function(respostaRouter){
-            console.log(idUsuario);
             console.log(respostaRouter);
           },
           error: function(a,b,c){
@@ -180,8 +193,8 @@
             console.log(c);
           }
         });
+      }
 
-      });
     </script>
 
   </body>

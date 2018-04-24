@@ -207,3 +207,18 @@ function modalCmsDadosDetalheCliente(idCliente){
     }
   });
 }
+
+function modalCmsDadosDetalheParceiro(idCliente){
+  $('.container_modal').slideToggle(1500);
+
+  $.ajax({
+    type: "GET",
+    url: "modal_cms_exibir_dados_parceiro.php?id="+idCliente,
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina)
+    }
+  });
+}
