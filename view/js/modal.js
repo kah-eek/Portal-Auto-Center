@@ -134,7 +134,7 @@ function modalCmsCadastroParceiros(){
 }
 
 function modalCmsClienteParceiro(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -149,7 +149,7 @@ function modalCmsClienteParceiro(){
 }
 
 function modalCmsFaleConosco(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -164,7 +164,7 @@ function modalCmsFaleConosco(){
 }
 
 function modalCmsProdutosCadastrados(){
-  $('.container_modal').fadeIn(1500);
+  // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
@@ -189,6 +189,36 @@ function modalCmsCadastrarProdutos(){
     processData:false,
     success:function(dadosPagina){
       $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCmsDadosDetalheCliente(idCliente){
+  $('.container_modal').slideToggle(1500);
+
+  $.ajax({
+    type: "GET",
+    url: "modal_cms_exibir_dados_cliente.php?id="+idCliente,
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina)
+    }
+  });
+}
+
+function modalCmsDadosDetalheParceiro(idCliente){
+  $('.container_modal').slideToggle(1500);
+
+  $.ajax({
+    type: "GET",
+    url: "modal_cms_exibir_dados_parceiro.php?id="+idCliente,
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina)
     }
   });
 }

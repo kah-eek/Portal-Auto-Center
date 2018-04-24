@@ -1,7 +1,14 @@
 <?php
 
 // Imports
-require_once('model/ParceiroDAO.php');
+if(file_exists('model/ParceiroDAO.php'))
+{
+  require_once('model/ParceiroDAO.php');
+}
+elseif(file_exists('../../model/ParceiroDAO.php'))
+{
+  require_once('../../model/ParceiroDAO.php');
+}
 
 /**
 * @author Caique M. Oliveira
@@ -63,6 +70,42 @@ class Parceiro
     $this->logParceiro = $logParceiro;
   }
   // ###############################
+
+  /**
+  * Obtém um parceiro da base de dados
+  * @param $idParceiro Id do parceiro a ser obtido
+  * @return PDO (FETCH_OBJ) Objeto parceiro existente na base de dados
+  * @return null Falha ao tentar obter o parceiro na base de dados
+  */
+  static function obterDadosParceiroById($idParceiro)
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->obterDadosParceiroById($idParceiro);
+  }
+
+  /**
+  * Atualiza o status (ativo ou não ativo) do parceiro no banco de dados
+  * @param $parceiroObj Objeto Parceiro qual será atualizado no banco de dados
+  * @return true Parceiro atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o parceiro na base de dados
+  */
+  function atualizarStatusParceiro($parceiroObj)
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->atualizarStatusParceiro($parceiroObj);
+  }
+
+  /**
+  * Obtém todos os parceiros existentes na base de dados
+  * @return Array Contendo todos os parceiros existentes na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  * Obs.: Os objetos Parceiros armazenados no array são objetos PDO (FECTH_OBJ)
+  */
+  static function obterParceiros()
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->obterParceiros();
+  }
 
   /**
   * Insere um novo parceiro no banco de dados

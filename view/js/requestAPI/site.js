@@ -1,9 +1,9 @@
 var rotas = {
-  'inserirEndereco':'http://localhost/site/Portal-Auto-Center/api/v1/endereco/?action=inserir',
-  'inserirUsuario':'http://localhost/site/Portal-Auto-Center/api/v1/usuario/?action=inserir',
-  'obterEstados':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/estado/',
-  'verificarAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/autenticacao/',
-  'nivelAutenticacao':'http://127.0.0.1/site/Portal-Auto-Center/api/v1/usuario/?action=nivel'
+  'inserirEndereco':'http://localhost/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir',
+  'inserirUsuario':'http://localhost/inf4m/Portal-Auto-Center/api/v1/usuario/?action=inserir',
+  'obterEstados':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/estado/',
+  'verificarAutenticacao':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/autenticacao/',
+  'nivelAutenticacao':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/usuario/?action=nivel'
 }
 
 /**

@@ -20,8 +20,15 @@
     <script src="../js/carrosel/jcarousellite.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/jquery.form.js"></script>
+    <script src="../js/jquery.js"></script>
   </head>
   <body class="bg_cinza">
+
+    <div class="container_modal">
+      <div class="modal centro_lr margem_t_100 bg_branco">
+
+      </div>
+    </div>
 
     <!-- Contáiner do cabeçalho -->
     <header class="bg_azulado_escuro">

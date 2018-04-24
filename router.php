@@ -55,6 +55,44 @@
           echo JSON_encode($response);
 
           break;
+
+          case 'atualizarStatus':
+
+            // Instância um objeto Parceiro para atualiza-lo no banco de dados
+            $parceiro = new Parceiro
+            (
+              $_POST['id'],
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              $_POST['ativo'],
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            );
+
+            // Verifica se a atualização ocorreu com êxito
+            if($parceiro->atualizarStatusParceiro($parceiro))// Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else // Falha
+            {
+              // Define o status como falha ao tentar realizar a atualização
+              $response = array('status'=>false);
+            }
+
+            // exibe o retorno da inserção do parceiro
+            echo JSON_encode($response);
+
+          break;
       }
       break;
 
@@ -94,5 +132,76 @@
         }
 
       break;
+
+      case 'usuario':
+
+        require_once("controller/Usuario_class.php");
+        require_once("controller/MySql_class.php");
+        require_once("model/UsuarioDAO.php");
+
+        // Verifica qual o recurso será utilizado
+        switch ($modo)
+        {
+          case 'atualizarStatus':
+
+            // Instância um objeto Usuario para atualiza-lo no banco de dados
+            $usuario = new Usuario($_POST['id'], null, null, null, $_POST['ativo'], null);
+
+            // Verifica se a atualização ocorreu com êxito
+            if($usuario->atualizarStatusUsuario($usuario))// Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else // Falha
+            {
+              // Define o status como falha ao tentar realizar a atualização
+              $response = array('status'=>false);
+            }
+
+            // exibe o retorno da inserção do parceiro
+            echo JSON_encode($response);
+
+          break;
+        }
+
+      break;
+
   }
+      case 'faleConosco':
+
+        require_once("controller/FaleConosco_class.php");
+
+        // Verifica qual o recurso será utilizado
+        switch ($modo)
+        {
+          case 'excluir':
+
+            // Instância um objeto SobreEmpresa e o popula com os dados do form
+            $faleConosco = new FaleConosco(
+              $_POST['id'], // id_sobre_empresa
+              $_POST['nome'], // id_topico_sobre_empresa (missao,visao,valores e empresa)
+              $_POST['email'], // Caminho da imagem
+              $_POST['pergunta_sugestao_critica'] // Texto descritivo
+            );
+
+            // Verifica se a atualização ocorreu com êxito
+            if($faleConosco->excluir($faleConosco))// Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else // Falha
+            {
+              // Define o status como falha ao tentar realizar a atualização
+              $response = array('status'=>false);
+            }
+
+            // exibe o retorno da inserção do parceiro
+            echo JSON_encode($response);
+
+          break;
+        }
+
+      break;
  ?>
