@@ -44,7 +44,7 @@ class Cliente
   static function obterDadosClienteById($idCliente)
   {
     $clienteDAO = new ClienteDAO();
-    return $clienteDAO->obterClienteById($idCliente);
+    return $clienteDAO->obterDadosClienteById($idCliente);
   }
 
   /**

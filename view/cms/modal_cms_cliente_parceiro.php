@@ -159,14 +159,16 @@
         // Obtém o id do cliente a ter seus dados exibidos na modal
         var idUsuario = $('.container_dados_topicos').data('idusuario');
 
+        console.log('idUsuario:'+idUsuario);
+
         // Armazena o status do usuário (se ele está ativo ou não - 0 ou 1)
-        var statusUsuario = $(this).is(':checked') ? 0 : 1;
+        var statusUsuario = $(this).is(':checked') ? 1 : 0;
 
         // Envia a solicitação de atualização do status do usuário para a router
         $.ajax({
           type:"POST",
           url:'../../router.php?controller=usuario&modo=atualizarStatus',
-          // dataType:'json',
+          dataType:'json',
           data:{'idUsuario':idUsuario,'ativo':statusUsuario},
           success:function(respostaRouter){
             console.log(idUsuario);
