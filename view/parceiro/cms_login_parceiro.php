@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/parceiro/cms_login_parceiro.css">
-    <link rel="stylesheet" href="../css/padroes.css">
+    <link rel="stylesheet" type="text/css" href="../view/css/normalize.css">
+    <link rel="stylesheet" href="../view/css/parceiro/cms_login_parceiro.css">
+    <link rel="stylesheet" href="../view/css/padroes.css">
   </head>
   <body>
     <div class="imagem_fundo_gp fixed">
@@ -31,7 +31,7 @@
             <input class="bg_preto" type="submit" name="btn_login" value="LOGIN" >
           </div>
           <div class="container_esqueci_senha_gp link">
-            <a href="cms_redefinir_senha_parceiro.php" class="txt_branco">Esqueci minha senha.</a>
+            <a href="../view/parceiro/cms_redefinir_senha_parceiro.php" class="txt_branco">Esqueci minha senha.</a>
           </div>
         </div>
       </form>
