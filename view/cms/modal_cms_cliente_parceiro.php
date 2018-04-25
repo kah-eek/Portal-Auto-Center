@@ -182,7 +182,7 @@
         $.ajax({
           type:"POST",
           url:'../../router.php?controller='+controller+'&modo=atualizarStatus',
-          dataType:'json',
+          // dataType:'json',
           data:{'id':id,'ativo':statusUsuario},
           success:function(respostaRouter){
             console.log(respostaRouter);
