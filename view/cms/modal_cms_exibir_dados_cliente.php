@@ -223,7 +223,7 @@
 
           <!-- Container da div que mostra o logradouro do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            Rua SENAI
+            <?=$dadosCliente->logradouro?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -235,7 +235,7 @@
 
           <!-- Container da div que mostra o número do endereço do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            214
+            <?=$dadosCliente->numero?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -247,7 +247,7 @@
 
           <!-- Container da div que mostra a cidade do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            Barueri
+            <?=$dadosCliente->cidade?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -259,7 +259,7 @@
 
           <!-- Container da div que mostra o Estado do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            São Paulo
+            <?=$dadosCliente->estado?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -271,7 +271,7 @@
 
           <!-- Container da div que mostra o cep do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            45128-465
+            <?=$dadosCliente->cep?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -288,7 +288,7 @@
 
           <!-- Container da div que mostra o bairro do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-            Jd. Blinka
+            <?=$dadosCliente->bairro?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>
@@ -300,7 +300,16 @@
 
           <!-- Container da div que mostra o complemento do endereço do cliente -->
           <div class="InputExibicaoDados preenche_l_25 txt_preto fs_18 conteudo">
-
+            <?php
+              if (empty($dadosCliente->complemento))
+              {
+                echo "Sem registro";
+              }
+              else
+              {
+                echo $dadosCliente->complemento;
+              }
+            ?>
             <!-- Linha que "seguura o texto" -->
             <div class="linha_l"></div>
           </div>

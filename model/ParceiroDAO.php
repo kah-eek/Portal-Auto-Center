@@ -34,7 +34,7 @@ class ParceiroDAO
     // Abre uma nova conexão com o db
     $con = $mySql->getConnection();
 
-    $stmt = $con->prepare('SELECT * FROM tbl_parceiro WHERE id_parceiro = ?');
+    $stmt = $con->prepare('SELECT * FROM view_parceiro WHERE id_parceiro = ?');
     $stmt->bindParam(1, $idParceiro);
 
     // Verifica se o select foi executado com êxito
