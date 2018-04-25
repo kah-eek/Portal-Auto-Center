@@ -17,11 +17,11 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_exibir_dados_cliente.css">
+    <script src="../js/jquery.js"></script>
     <script src="../js/carrosel/jquery.js"></script>
     <script src="../js/carrosel/jcarousellite.js"></script>
     <script src="../js/modal.js"></script>
     <script src="../js/jquery.form.js"></script>
-    <script src="../js/jquery.js"></script>
   </head>
   <body class="bg_cinza">
 
