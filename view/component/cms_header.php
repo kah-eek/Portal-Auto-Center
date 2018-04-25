@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_cliente_parceiro.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_exibir_dados_cliente.css">
     <script src="../js/carrosel/jquery.js"></script>
     <script src="../js/carrosel/jcarousellite.js"></script>
     <script src="../js/modal.js"></script>
@@ -25,7 +26,7 @@
   <body class="bg_cinza">
 
     <div class="container_modal">
-      <div class="modal centro_lr margem_t_100 bg_branco">
+      <div class="modal centro_lr">
 
       </div>
     </div>

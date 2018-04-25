@@ -15,8 +15,10 @@ body{
 }
 /* OBS.: NUNCA ALTERE ESTA CLASSE. PARA ALTERA-LÁ REESCREVA-A */
 .modal{
+  margin-top: 100px;
   width: 800px;
   height: 400px;
+  background-color: #fff;
 }
 header{
   width: 100%;

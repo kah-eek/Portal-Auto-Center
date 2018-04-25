@@ -1,10 +1,40 @@
-.labelExibicaoDados{
-  width: 100%;
-  height: 25px;
+.modal{
+  margin-top: 20px;
+  width: 500px;
+  height: auto;
+}
+.label_campo{
+  width: 800px;
+  height: 20px;
   /* background-color: aqua; */
 }
-
-.divisor_l{
+.divisor{
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.container_img_cliente{
+  width: 100%;
+  height: 200px;
+}
+.container_img_cliente img{
+  width: inherit;
+  height: inherit;
+}
+.container_label_campos_cliente{
+  width: 100%;
+  height: 500px;
+  display: none;
+  /* background-color: purple; */
+}
+.container_label_campos_usuario{
+  width: 100%;
+  height: 300px;
+  display: none;
+  /* background-color: yellow; */
+}
+.container_label_campos_endereco{
+  width: 100%;
+  height: 520px;
+  display: none;
+  /* background-color: purple; */
 }
