@@ -67,10 +67,12 @@
             </div>
             <form id="frmExcluirFale" name="frmExcluirFale" action="index.html" method="post">
               <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-                <label for="btndeletaRegistro">
+                <!-- <label for="btndeletaRegistro"> -->
+                <a onclick="excluir(<?=$faleConosco[$i]->id_fale_conosco?>)" href="#">
                   <i class="material-icons" style="font-size:30px;">delete_forever</i>
-                  <input id="btndeletaRegistro" type="submit" name="btndeletaRegistro" value="" hidden>
-                </label>
+                </a>
+                <!-- </label> -->
+                <!-- <input id="btndeletaRegistro" type="submit" name="btndeletaRegistro" value="" hidden> -->
               </div>
             </form>
             <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
@@ -83,21 +85,27 @@
   </div>
 </html>
 <script>
-$.ajax({
-  type: 'POST',
-  url: '../../router.php?controller=faleConosco&modo=excluir',
-  data: frmExcluirFale,
-  processData: false,
-  contentType: false,
-  cache:false,
-  dataType:'json',
-  success:function(response){
-    if (response.status){alert('Dados excluidos com sucesso');}
-  },
-  error:function(jqXHR, textStatus, errorThrown){
-    console.error(textStatus);
-    console.error(jqXHR);
-    console.error(errorThrown);
+  function excluir(id_fale_conosco){
+
+    $.ajax({
+      type: 'POST',
+      url: '../../router.php?controller=faleConosco&modo=excluir',
+      data: {'id':id_fale_conosco},
+      // processData: false,
+      // contentType: false,
+      cache:false,
+      dataType:'json',
+      success:function(response){
+        console.log(response);
+
+        if (response.status){alert('Dados excluidos com sucesso');}
+      },
+      error:function(jqXHR, textStatus, errorThrown){
+        console.error(textStatus);
+        console.error(jqXHR);
+        console.error(errorThrown);
+      }
+    });
+
   }
-});
 </script>

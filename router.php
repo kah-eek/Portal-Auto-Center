@@ -166,9 +166,12 @@
         }
 
       break;
-      
+
       case 'faleConosco':
 
+        // require_once("controller/Usuario_class.php");
+        require_once("controller/MySql_class.php");
+        require_once("model/FaleConoscoDAO.php");
         require_once("controller/FaleConosco_class.php");
 
         // Verifica qual o recurso será utilizado
@@ -176,19 +179,12 @@
         {
           case 'excluir':
 
-            // Instância um objeto SobreEmpresa e o popula com os dados do form
-            $faleConosco = new FaleConosco(
-              $_POST['id'], // id_sobre_empresa
-              $_POST['nome'], // id_topico_sobre_empresa (missao,visao,valores e empresa)
-              $_POST['email'], // Caminho da imagem
-              $_POST['pergunta_sugestao_critica'] // Texto descritivo
-            );
-
             // Verifica se a atualização ocorreu com êxito
-            if($faleConosco->excluir($faleConosco))// Êxito
+            if(FaleConosco::deletaCadastrosFaleConosco($_POST['id']))// Êxito
             {
               // Define o status como sucesso na inserção
               $response = array('status'=>true);
+
             }
             else // Falha
             {

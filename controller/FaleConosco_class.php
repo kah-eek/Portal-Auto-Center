@@ -1,8 +1,21 @@
 <?php
 
 // Imports
-require_once('../../controller/MySql_class.php');
-require_once('../../model/FaleConoscoDAO.php');
+if(file_exists('../../controller/MySql_class.php'))
+{
+  require_once('../../controller/MySql_class.php');
+}
+elseif (file_exists('../controller/MySql_class.php')) {
+  require_once('../controller/MySql_class.php');
+}
+elseif(file_exists('../../model/FaleConoscoDAO.php'))
+{
+  require_once('../../model/FaleConoscoDAO.php');
+}
+// elseif('../model/FaleConoscoDAO.php')
+// {
+//   require_once('../model/FaleConoscoDAO.php');
+// }
 
 // @author Henrique Otremba
 // @data 24/04/2018
@@ -45,10 +58,12 @@ class FaleConosco
     $FaleConoscoDAO = new FaleConoscoDAO();
     return $FaleConoscoDAO->cadastrosFaleConosco();
   }
-  function excluir($faleConoscoObj)
+
+
+  static function deletaCadastrosFaleConosco($faleConoscoObj)
   {
     $FaleConoscoDAO = new FaleConoscoDAO();
-    return $FaleConoscoDAO->excluir($faleConoscoObj);
+    return $FaleConoscoDAO->deletaCadastrosFaleConosco($faleConoscoObj);
   }
 
 }
