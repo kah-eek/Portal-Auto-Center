@@ -166,8 +166,7 @@
         }
 
       break;
-
-  }
+      
       case 'faleConosco':
 
         require_once("controller/FaleConosco_class.php");
@@ -204,4 +203,7 @@
         }
 
       break;
+
+  }
+
  ?>

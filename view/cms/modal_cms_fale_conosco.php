@@ -65,18 +65,39 @@
             <div class="item_dados_topicos_fc float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20 justificado">
               <?=$faleConosco[$i]->pergunta_sugestao_critica?>
             </div>
-
-            <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
-              <i class="material-icons" style="font-size:30px;">delete_forever</i>
-            </div>
-
+            <form id="frmExcluirFale" name="frmExcluirFale" action="index.html" method="post">
+              <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
+                <label for="btndeletaRegistro">
+                  <i class="material-icons" style="font-size:30px;">delete_forever</i>
+                  <input id="btndeletaRegistro" type="submit" name="btndeletaRegistro" value="" hidden>
+                </label>
+              </div>
+            </form>
             <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
               <i class="material-icons" style="font-size:30px;">visibility</i>
             </div>
-
         </div>
       <?php
         }
       ?>
   </div>
 </html>
+<script>
+$.ajax({
+  type: 'POST',
+  url: '../../router.php?controller=faleConosco&modo=excluir',
+  data: frmExcluirFale,
+  processData: false,
+  contentType: false,
+  cache:false,
+  dataType:'json',
+  success:function(response){
+    if (response.status){alert('Dados excluidos com sucesso');}
+  },
+  error:function(jqXHR, textStatus, errorThrown){
+    console.error(textStatus);
+    console.error(jqXHR);
+    console.error(errorThrown);
+  }
+});
+</script>
