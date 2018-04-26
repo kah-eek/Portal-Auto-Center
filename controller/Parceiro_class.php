@@ -73,6 +73,18 @@ class Parceiro
 
   /**
   * Obtém um parceiro da base de dados
+  * @param $nomeParceiro nome do parceiro a ser obtido
+  * @return PDO (FETCH_OBJ) Objeto parceiro existente na base de dados
+  * @return null Falha ao tentar obter o parceiro na base de dados
+  */
+  static function obterDadosParceiroByName($nomeParceiro)
+  {
+    $parceiroDAO = new ParceiroDAO();
+    return $parceiroDAO->obterDadosParceiroByName($nomeParceiro);
+  }
+
+  /**
+  * Obtém um parceiro da base de dados
   * @param $idParceiro Id do parceiro a ser obtido
   * @return PDO (FETCH_OBJ) Objeto parceiro existente na base de dados
   * @return null Falha ao tentar obter o parceiro na base de dados

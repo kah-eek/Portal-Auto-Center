@@ -2,9 +2,11 @@ SELECT * FROM tbl_produto;
 
 SELECT * FROM tbl_cliente;
 
+SELECT * FROM view_cliente WHERE id_cliente = 1;
+
 SELECT * FROM tbl_cor;
 
-SELECT * FROM tbl_usuario;
+SELECT * FROM view_parceiro WHERE id_parceiro = 1;
 
 SELECT * FROM tbl_modelo_produto;
 
@@ -14,7 +16,9 @@ SELECT * FROM tbl_fabricante_produto;
 
 SELECT * FROM tbl_categoria_produto;
 
-SELECT * FROM tbl_parceiro;
+SELECT * FROM tbl_parceiro WHERE nome_fantasia OR razao_social LIKE '%a%';
+
+SELECT * FROM view_parceiro WHERE id_parceiro =1;
 
 SELECT * FROM tbl_endereco;
 

@@ -52,6 +52,40 @@ class ParceiroDAO
   }
 
   /**
+  * Obtém um(ns) parceiro(s) da base de dados
+  * @param $nomeParceiro nome do parceiro a ser obtido
+  * @return Array Array contendo os parceiros (PDO - FETCH_OBJ) existentes na base de dados conforme solicitado pelo nome
+  * @return null Falha ao tentar obter o parceiro na base de dados
+  */
+  function obterDadosParceiroByName($nomeParceiro)
+  {
+    // Armazena os dados do cliente
+    $parceiros = null;
+
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare("SELECT * FROM tbl_parceiro WHERE nome_fantasia OR razao_social LIKE '%?%'");
+    $stmt->bindParam(1, $nomeParceiro);
+
+    // Verifica se o select foi executado com êxito
+    if($stmt->execute())
+    {
+      while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $parceiros = $rs;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $parceiros;
+  }
+
+  /**
   * Atualiza o status (ativo ou não ativo) do parceiro no banco de dados
   * @param $parceiroObj Objeto Parceiro qual será atualizado no banco de dados
   * @return true Parceiro atualizado com sucesso na base de dados
