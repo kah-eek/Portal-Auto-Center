@@ -36,6 +36,8 @@ SELECT * FROM tbl_topico_sobre_empresa;
 
 SELECT * FROM tbl_imagem_produto_parceiro;
 
+SELECT * FROM tbl_produto;
+
 SHOW TABLES;
 
 CREATE DATABASE db_auto_center;
@@ -45,3 +47,5 @@ USE db_auto_center;
 DROP DATABASE db_auto_center;
 
 DESCRIBE tbl_parceiro;
+
+SELECT  tp.nome, tp.preco, img.imagem FROM tbl_imagem_produto_parceiro as img INNER JOIN tbl_produto as tp;
