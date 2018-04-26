@@ -19,7 +19,7 @@
         Produtos Cadastrados
       </div>
     </div>
-
+    <div class="container_produto_ph margem_t_10 float_left margem_l_50">
     <!-- PARTE PRODUTO -->
       <?php
 
@@ -28,8 +28,8 @@
 
       for ($i=0; $i < sizeof($produtosSimples); $i++) {
         ?>
-        <div class="container_produto_ph margem_t_10 float_left">
-        <div class="item_produto_ph float_left">
+
+        <div class="item_produto_ph float_left margem_l_40 margem_t_30">
           <!-- IMAGEM -->
           <div class="container_img_produto_ph float_left centro_lr">
             <div class="item_img_produto_ph centro_lr margem_t_20 bg_branco">
@@ -50,21 +50,21 @@
           </div>
         </div>
         <!-- PARTE CHECKBOX -->
-        <div class="container_ckb_ph float_left margem_t_180 bg_verde_vivo">
+        <div class="container_ckb_ph float_left bg_verde_vivo margem_t_180">
 
-          <div class="item_ckb_ph float_left bg_verde_vivo margem_l_15 margem_t_10">
-            <input class="item_ckb" type="checkbox" name="ckb_ph" value="">
+          <div class="item_ckb_ph float_left margem_l_15 margem_t_10">
+            <input class="item_ckb margem_l_10" type="checkbox" name="ckb_ph" value="">
           </div>
 
           <div class="txt_ativo float_left">
-            <div class="item_txt_ativo preenche_t_10 fs_25 bg_verde_vivo align_center">
+            <div class="item_txt_ativo preenche_t_10 fs_25 align_center">
               Ativo
             </div>
           </div>
+        </div>
         <?php
-          }
+        }
         ?>
-      </div>
     </div>
   </div>
 </html>
