@@ -200,6 +200,51 @@
 
       break;
 
+      case 'produto':
+
+        require_once("controller/MySql_class.php");
+        require_once("controller/produto_class.php");
+
+        // Verifica qual o recurso será utilizado
+        switch ($modo)
+        {
+          case 'novo': //Insere um produto
+
+          // Instância um objeto produto e o popula com os dados do form
+          $produto = new Produto(
+            1, //id do produto
+            null, //id modelo produto
+            null, //id parceiro
+            $_POST['cor'], //id_cor
+            null, //id categoria do produto
+            $_POST['nome'], //nome do produto
+            $_POST['preco'], //preco do produto
+            $_POST['conteudo_embalagem'],
+            $_POST['garantia'], //garantia do produto
+            $_POST['descricao'], //descricao do produto
+            $_POST['observacao'] //obsrvacao do produto
+          );
+
+          var_dump($produto);
+
+          // Verifica se a inserção ocorreu com êxito
+          if($produto->inserirProduto($produto))//Êxito
+          {
+            // Define o status como sucesso na inserção
+            $response = array('status'=>true);
+          }
+          else //Falha
+          {
+            //Define o status como falha ao tentar realizar a inserção
+            $response = array('status'=>false);
+          }
+
+          // Exibe o retorno da inserção do produto
+          echo JSON_encode($response);
+
+          break;
+        }
+
   }
 
  ?>

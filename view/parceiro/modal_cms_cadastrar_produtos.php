@@ -1,4 +1,11 @@
+<?php
+    // Imports
+    require_once('../../controller/produto_class.php');
+    require_once('../../controller/MySql_class.php');
+    require_once('../../model/ProdutoDAO.php');
 
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,6 +13,8 @@
     <title></title>
     <link rel="stylesheet" href="../css/parceiro/modal_cms_cadastrar_produtos.css">
     <link rel="stylesheet" href="../css/padroes.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/util.js"></script>
   </head>
   <body>
     <div class="container_conteudo_central_cnp">
@@ -32,38 +41,44 @@
           </div>
         </div>
 
-        <form class="container_informacoes margem_t_20 centro_lr borda_preta_1" action="modal_cms_cadastrar_produto.php" method="post">
+        <form id="frmcadproduto" name="frmcadproduto" class="container_informacoes margem_t_20 centro_lr borda_preta_1" method="post" enctype="multipart/form-data">
           <div class="item_form_cadastro sombra_preta_20">
 
             <!-- INPUT NOME DO PRODUTO -->
             <div class="container_inputs_cnp float_left">
               <div class="item_inputs_cnp centro_lr margem_t_20">
-                <input class="input_cnp sombra_preta_20" type="text" name="txt_nome_produto" placeholder="Nome do Produto" value="">
+                <input class="input_cnp sombra_preta_20" type="text" name="nome" placeholder="Nome do Produto" value="">
               </div>
               <!-- INPUT QUANTIDADE NA EMBALAGEM -->
               <div class="item_inputs_cnp centro_lr margem_t_20">
-                <input class="input_cnp sombra_preta_20" type="text" name="txt_qtd_embalagem" placeholder="Quantidade na Embalagem" value="">
+                <input class="input_cnp sombra_preta_20" type="text" name="conteudo_embalagem" placeholder="Quantidade na Embalagem" value="">
+              </div>
+              <!-- INPUT garantia -->
+              <div class="item_inputs_cnp centro_lr margem_t_20">
+                <input class="input_cnp sombra_preta_20" type="text" name="garantia" placeholder="garantia" value="">
               </div>
               <!-- DIV SELECT -->
               <div class="container_select_cnp margem_t_20 centro_lr">
-                <select class="slc_tempo sombra_preta_20" name="slc_planos">
-                  <option value="">Tempo de Garantia</option>
+                <select class="slc_tempo sombra_preta_20" name="cor">
+                  <option value="">
+
+                  </option>
                 </select>
               </div>
               <!-- INPUT OBSERVACOES -->
               <div class="item_inputs_cnp centro_lr margem_t_20">
-                <input class="input_cnp sombra_preta_20" type="text" name="txt_obs" placeholder="Observações" value="">
+                <input class="input_cnp sombra_preta_20" type="text" name="observacao" placeholder="Observações" value="">
               </div>
               <!-- INPUT TEXTAREA -->
               <div class="container_textarea_cnp centro_lr margem_t_20">
-                <textarea class="textarea_cnp sombra_preta_20" name="txt_textarea" placeholder="Descrição" rows="8" cols="80"></textarea>
+                <textarea class="textarea_cnp sombra_preta_20" name="descricao" placeholder="Descrição" rows="8" cols="80" value=""></textarea>
               </div>
               <!-- INPUT VALOR PRADUTO -->
               <div class="item_inputs_cnp centro_lr margem_t_20">
-                <input class="input_cnp sombra_preta_20" type="text" name="txt_valor_produto" placeholder="Valor do Produto" value="">
+                <input class="input_cnp sombra_preta_20" type="text" name="preco" placeholder="Valor do Produto" value="">
               </div>
               <!-- BOTÃO -->
-              <div class="container_botao_cnp margem_l_70 margem_t_50 float_left">
+              <div class="container_botao_cnp margem_l_70 margem_t_10 float_left">
                 <input class="input_submit_cnp" type="submit" name="btn_salvar_cnp" value="Salvar">
               </div>
               <!-- DELETE -->
@@ -77,33 +92,48 @@
             <div class="container_imagens_cnp float_left margem_l_70 margem_t_20 sombra_preta_20 borda_preta_1 bg_branco">
 
               <div class="container_item_imagem_cnp margem_t_10 ">
-                <div class="item_imagem_cnp centro_lr borda_preta_1">
+                <label for="btn_img_produto">
+                  <div class="item_imagem_cnp centro_lr borda_preta_1">
 
-                </div>
+                  </div>
+                </label>
+                <input class="display_none" id="btn_img_produto" type="file" name="btn_img_produto" value="">
               </div>
 
-              <div class="container_item_imagem_cnp margem_t_20">
-                <div class="item_imagem_cnp centro_lr borda_preta_1">
+              <div class="container_item_imagem_cnp margem_t_10 ">
+                <label for="btn_img_produto">
+                  <div class="item_imagem_cnp centro_lr borda_preta_1">
 
-                </div>
+                  </div>
+                </label>
+                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
               </div>
 
-              <div class="container_item_imagem_cnp margem_t_20">
-                <div class="item_imagem_cnp centro_lr borda_preta_1">
+              <div class="container_item_imagem_cnp margem_t_10 ">
+                <label for="btn_img_produto">
+                  <div class="item_imagem_cnp centro_lr borda_preta_1">
 
-                </div>
+                  </div>
+                </label>
+                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
               </div>
 
-              <div class="container_item_imagem_cnp margem_t_20">
-                <div class="item_imagem_cnp centro_lr borda_preta_1">
+              <div class="container_item_imagem_cnp margem_t_10 ">
+                <label for="btn_img_produto">
+                  <div class="item_imagem_cnp centro_lr borda_preta_1">
 
-                </div>
+                  </div>
+                </label>
+                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
               </div>
 
-              <div class="container_item_imagem_cnp margem_t_20">
-                <div class="item_imagem_cnp centro_lr borda_preta_1">
+              <div class="container_item_imagem_cnp margem_t_10 ">
+                <label for="btn_img_produto">
+                  <div class="item_imagem_cnp centro_lr borda_preta_1">
 
-                </div>
+                  </div>
+                </label>
+                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
               </div>
 
             </div>
@@ -152,5 +182,35 @@
         </div>
       </div>
     </div>
+    <script>
+      // Listener do botão Salvar
+      $('#frmcadproduto').submit(function(e){
+        e.preventDefault(); // Retirar o piscar do submit
+        // Salvar o produto
+
+        // cria um obj formulario
+        var formulario = new FormData($('#frmcadproduto')[0]);
+
+        getResponse(
+          'POST', //Protocolo
+          '../../router.php?controller=produto&modo=novo', //Url
+          function(respostaJson){//Callback de sucesso
+            console.log(respostaJson);
+            // Verifica se a inserção foi executada com sucesso
+            if (respostaJson) {//sucesso
+              $('.container_modal').slideToggle(5000);
+            }else { //Falha
+              console.error('Falha ao tentar registrar o produto');
+            }
+          },
+          function(){ //Callback de Falha
+            console.error('Falha ao tentar acessar o recurso de inserção de produto');
+          },
+          formulario,
+          null
+        );
+
+      });
+    </script>
   </body>
 </html>

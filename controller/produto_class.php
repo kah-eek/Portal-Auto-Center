@@ -1,8 +1,26 @@
 <?php
 
 // Imports
-require_once('../../controller/MySql_class.php');
-require_once('../../model/ProdutoDAO.php');
+
+if(file_exists('../../../model/ProdutoDAO.php'))
+{
+  require_once('../../../model/ProdutoDAO.php');
+}
+elseif(file_exists('model/ProdutoDAO.php'))
+{
+  require_once('model/ProdutoDAO.php');
+}
+elseif(file_exists('../../../controller/MySql_class.php'))
+{
+  require_once('../../../controller/MySql_class.php');
+}
+elseif(file_exists('controller/MySql_class.php'))
+{
+  require_once('controller/MySql_class.php');
+}
+
+// require_once('../../controller/MySql_class.php');
+// require_once('../../model/ProdutoDAO.php');
 
 // @author Caique M. Oliveira
 // @data 12/04/2018
@@ -45,7 +63,6 @@ class Produto
     $this->idParceiro = $idParceiro;
     $this->idCor = $idCor;
     $this->idCategoriaProduto = $idCategoriaProduto;
-    $this->modelo = $modelo;
     $this->preco = $preco;
     $this->conteudoEmbalagem = $conteudoEmbalagem;
     $this->garantia = $garantia;
@@ -68,6 +85,12 @@ class Produto
   {
     $produtoDAO = new ProdutoDAO();
     return $produtoDAO->obterDetalhesSimplesProdutos();
+  }
+
+  static function inserirProduto($produtoObj)
+  {
+    $produtoDAO = new produtoDAO();
+    return $produtoDAO->inserirProduto($produtoObj);
   }
 
 }
