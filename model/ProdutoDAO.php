@@ -82,6 +82,56 @@ class ProdutoDAO
     return $produtosSimples;
   }
 
+  /**
+  * Insere um novo produto no banco de dados
+  * @param $produtoObj Objeto qual será inserido no banco de dados
+  * @return Int Identificação (idProduto) do novo produto inserido no banco de dados
+  * @return null Falha ao tentar registrar o produto na base de dados
+  */
+
+  function inserirProduto($produtoObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new Mysql();
+
+    // abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'INSERT INTO tbl_produto ('.
+      'id_modelo_produto,'.
+      'id_parceiro'.
+      'id_cor,'.
+      'id_categoria_produto,'.
+      'nome,'.
+      'preco,'.
+      'conteudo_embalagem,'.
+      'garantia,'.
+      'descricao,'.
+      'observacao'.
+      ') VALUES(?,?,?,?,?,?,?,?,?,?)'
+    );
+
+    // Preenche a statement com os parâmetros
+    $stmt->bindParam(1, $produtoObj->id_modelo_produto);
+    $stmt->bindParam(2, $produtoObj->id_parceiro);
+    $stmt->bindParam(3, $produtoObj->id_cor);
+    $stmt->bindParam(4, $produtoObj->id_categoria_produto);
+    $stmt->bindParam(5, $produtoObj->nome);
+    $stmt->bindParam(6, $produtoObj->preco);
+    $stmt->bindParam(7, $produtoObj->conteudo_embalagem);
+    $stmt->bindParam(8, $produtoObj->garantia);
+    $stmt->bindParam(9, $produtoObj->descricao);
+    $stmt->bindParam(10, $produtoObj->observacao);
+
+    // Verifica se a inserção ocorreu com sucesso e retorna a resposta adquirida
+    $result = $stmt->execute() ? $con->lastInsertId() : null;
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+  }
 
 
 }
