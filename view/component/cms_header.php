@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_galeria.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_sobre_empresa.css">
     <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_exibir_dados_cliente.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_produtos_home.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/carrosel/jquery.js"></script>
     <script src="../js/carrosel/jcarousellite.js"></script>
