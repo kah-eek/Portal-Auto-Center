@@ -1,26 +1,16 @@
-SELECT * FROM tbl_veiculo_parceiro;
-
-SELECT * FROM tbl_veiculo;
-
-SELECT * FROM tbl_imagem_veiculo_parceiro;
-
-SELECT * FROM tbl_cor;
-
-SELECT * FROM tbl_tipo_veiculo;
-
-SELECT * FROM tbl_modelo_veiculo;
-
-SELECT * FROM tbl_fabricante;
-
-SELECT * FROM tbl_parceiro;
+/*
+	VIEW DA IMAGEM DE VEÍCLOS DO PARCEIRO, POSSIBILITANDO A OBTENÇÃO DE TODOS AS IMAGENS VINCULADAS AO PARCEIRO ATRAVÉS DE SEU NOME (nome_fantazia e razao_social) e seu ID (id_parceiro)
+*/
+CREATE VIEW view_imagem_veiculo_parceiro AS 
 
 SELECT 
 
 /* tbl_imagem_veiculo_parceiro */
-img_vei_parc.* ,
+img_vei_parc.*,
 
 /* tbl_veiculo_parceiro */
 vei_parc.id_parceiro,
+
 
 /* tbl_parceiro */
 parc.nome_fantasia,

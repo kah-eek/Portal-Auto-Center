@@ -59,6 +59,9 @@ class ParceiroDAO
   */
   function obterDadosParceiroByName($nomeParceiro)
   {
+    // Formata o valor informado para o formato like desejado
+    $nomeParceiro = '%'.$nomeParceiro.'%';
+
     // Armazena os dados do cliente
     $parceiros = null;
 
@@ -68,7 +71,7 @@ class ParceiroDAO
     // Abre uma nova conexão com o db
     $con = $mySql->getConnection();
 
-    $stmt = $con->prepare("SELECT * FROM tbl_parceiro WHERE nome_fantasia OR razao_social LIKE '%?%'");
+    $stmt = $con->prepare("SELECT * FROM view_parceiro WHERE nome_fantasia OR razao_social LIKE ?");
     $stmt->bindParam(1, $nomeParceiro);
 
     // Verifica se o select foi executado com êxito

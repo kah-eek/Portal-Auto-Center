@@ -2,12 +2,14 @@
 
   // Imports
   require_once('../../controller/Parceiro_class.php');
-
-  echo $_GET['nomeParceiro'];
+  require_once('../../controller/Veiculo_class.php');
 
   $parceiro = Parceiro::obterDadosParceiroByName($_GET['nomeParceiro']);
+  $imagens = Veiculo::getImagensVeiculoByNomeParceiro($_GET['nomeParceiro']);
 
-  var_dump($parceiro);
+  // print_r($parceiro);
+  print_r($imagens);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,20 +25,27 @@
     <div class="container_interna_moto">
       <!-- Lugar onde a imagem principal aparece -->
       <div class="segura_principal">
-        <div class="principal sombra_preta_10">
-          <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur">
+        <div id="foto_principal" class="principal sombra_preta_10">
+          <img id="img_foto_principal" src="<?=$imagens[0]->imagem?>" alt="Moto teste" class="blur">
+          <!-- <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur"> -->
           <div class="segura_botao display_none conteudo negrito">
             <div class="ocultar">
               <div class="ti">
                 Ocultar
               </div>
-              <button type="button" class="bt" name="bt_ocultar_moto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
+              <a id="ocultar_foto_principal" href="#">
+                <i class="material-icons bt fs_30">remove_red_eye</i>
+              </a>
+              <!-- <button type="button" class="bt" name="bt_ocultar_moto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button> -->
             </div>
             <div class="excluir">
               <div class="ti">
                 Deletar
               </div>
-              <button type="button" class="bt" name="bt_delete_moto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
+              <a href="#">
+                <i class="material-icons fs_30 bt">delete_forever</i>
+              </a>
+              <!-- <button type="button" class="bt" name="bt_delete_moto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button> -->
             </div>
           </div>
         </div>
@@ -45,10 +54,13 @@
       <div class="segura_inf">
         <div class="texto_inf conteudo sombra_preta_2 transparente fs_18">
           <div class="inf_parceiro">
-            Parceiro:
+            Parceiro: <?=$parceiro->nome_fantasia?>
           </div>
           <div class="inf_img">
-            efnbf ibiuabibfi iubafibi ijfosn fmeimsm m
+            E-mail: <?=$parceiro->email?> <br>
+            Telefone: <?=$parceiro->telefone?> <br>
+            Cidade: <?=$parceiro->cidade?> <br>
+            Estado: <?=$parceiro->estado?> <br>
           </div>
         </div>
       </div>
@@ -61,14 +73,14 @@
         </div>
         <div class="carrossel_moto sombra_preta_10">
           <ul>
-            <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-            <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
+            <?php
+              for ($i=0; $i < sizeof($imagens); $i++)
+              {
+            ?>
+                <li><img onclick="obterCLick('<?=$imagens[$i]->imagem?>', <?=$imagens[$i]->id_imagem_veiculo_parceiro?>)" src="<?=$imagens[$i]->imagem?>" alt="Veiculo"></li>
+            <?php
+              }
+            ?>
           </ul>
         </div>
         <div class="menu_carrosel">
@@ -84,9 +96,29 @@
         $(".carrossel_moto"). jCarouselLite({
             btnPrev: '.prev_moto',
             btnNext: '.next_moto',
-            visible: 3
+            visible: 1
         })
+
+        $('#ocultar_foto_principal').click(function(e){
+          e.preventDefault();
+          console.log('ok');
+        });
+
       });
+
+      function obterCLick(caminhoImg, idVeiculoParceiro)
+      {
+        // Troca a imagem da foto principal (#img_foto_principal)
+        $('#img_foto_principal').attr('src',caminhoImg);
+
+        // Insere o data atribute na div foto_principal
+        $('#foto_principal').attr('data-id',idVeiculoParceiro);
+
+        // OBTENDO O DATA ATRIBUTE
+        console.log($('#foto_principal').data('id'));
+
+      }
+
     </script>
 
   </body>

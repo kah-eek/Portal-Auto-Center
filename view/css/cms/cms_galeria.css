@@ -161,9 +161,13 @@
 }
 
 .inf_img{
-  width: 97%;
-  max-height: 140px;
+  /* background-color: pink; */
+  width: 100%;
+  line-height: 35px;
+  max-height: 200px;
   margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*****/
@@ -215,12 +219,13 @@ ul li{
 
 /**/
 .carrossel_moto{
-  width: 450px;
+  width: 6  50px;
   height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: red;
 }
 
 

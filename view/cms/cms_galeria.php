@@ -296,6 +296,8 @@ require_once('../component/cms_header.php');
 
           $(function() {
 
+            // COLOCAR NA MODAL A RESPECTIVA FUNCAO
+
               // $(".carrossel_moto"). jCarouselLite({
               //     btnPrev: '.prev_moto',
               //     btnNext: '.next_moto',
@@ -382,7 +384,8 @@ require_once('../component/cms_header.php');
                 processData:false,
                 success:function(response){
                   $('.conteudo_moto').html(response);
-                  console.log(response);
+                  // EXIBE O QUE RETORNOU DA PAGINA
+                  // console.log(response);
                 }
               });
 
