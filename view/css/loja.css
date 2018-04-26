@@ -55,13 +55,17 @@
 }
 .container_produto_fixo{
   width: 1420px;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
+  overflow: hidden;
+  background-color: #584;
 }
 .produto_fixo{
   transition: 2s;
   width: 300px;
   height: 300px;
   margin-left: 43px;
+  margin-top: 20px;
   float: left;
   box-shadow: 0px 0px 10px #000;
 }

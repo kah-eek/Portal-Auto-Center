@@ -549,6 +549,24 @@
             Volante
           </div>
         </div>
+
+        <!-- Produto fixo 2 -->
+        <div class="produto_fixo bg_branco">
+          <!-- Contáiner da imagem do produto fixo -->
+          <div class="imagem_produto_fixo bg_verde">
+            <img src="view/pictures/loja/car_machine.jpeg" alt="">
+          </div>
+
+          <!-- Preço do produto fixo -->
+          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+            R$ 7.480,49
+          </div>
+
+          <!-- Descrição do produto fixo -->
+          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+            Motot SSR18
+          </div>
+        </div>
       </div>
       <!-- Rodape -->
       <?php
