@@ -245,6 +245,37 @@
           break;
         }
 
+      break;
+
+      case 'veiculo':
+
+        require_once("controller/Veiculo_class.php");
+        require_once("controller/MySql_class.php");
+        require_once("model/VeiculoDAO.php");
+
+        switch($modo)
+        {
+          case 'status':
+
+            // Verifica se a inserção ocorreu com êxito
+            if(Veiculo::atualizarStatusImagem($_POST['idImg'], $_POST['statusImg']))//Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else //Falha
+            {
+              //Define o status como falha ao tentar realizar a inserção
+              $response = array('status'=>false);
+            }
+
+            // Exibe o retorno da inserção do produto
+            echo JSON_encode($response);
+
+          break;
+        }
+
+      break;
   }
 
  ?>

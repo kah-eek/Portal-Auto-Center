@@ -1,7 +1,10 @@
 <?php
 
 // Imports
-require_once('../../model/VeiculoDAO.php');
+if(file_exists('../../model/VeiculoDAO.php'))
+{
+  require_once('../../model/VeiculoDAO.php');
+}
 
 // @author Caique M. Oliveira
 // @data 26/04/2018
@@ -56,6 +59,19 @@ class Veiculo
     $veiculoDAO = new VeiculoDAO();
     return $veiculoDAO->getImagensVeiculoByNomeParceiro($nomeParceiro);
   }
+
+  /**
+  * Atualiza o status (ativada ou desativada) da imagem do veículo no banco de dados
+  * @param $idImagem Id da imagem qaul será atualizado no banco de dados
+  * @return true Atualização realizada com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o status da imagem no banco de dados
+  */
+  static function atualizarStatusImagem($idImagem, $statusImg)
+  {
+    $veiculoDAO = new VeiculoDAO();
+    return $veiculoDAO->atualizarStatusImagem($idImagem, $statusImg);
+  }
+
 
 }
 

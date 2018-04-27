@@ -34,7 +34,9 @@
                 Ocultar
               </div>
               <a id="ocultar_foto_principal" href="#">
-                <i class="material-icons bt fs_30">remove_red_eye</i>
+                <?php
+                  echo $imagens[0]->ativo == 1 ? '<i class="material-icons bt fs_30 txt_verde_vivo">remove_red_eye</i>' : '<i class="material-icons txt_vermelho bt fs_30">remove_red_eye</i>';
+                ?>
               </a>
               <!-- <button type="button" class="bt" name="bt_ocultar_moto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button> -->
             </div>
@@ -77,7 +79,7 @@
               for ($i=0; $i < sizeof($imagens); $i++)
               {
             ?>
-                <li><img onclick="obterCLick('<?=$imagens[$i]->imagem?>', <?=$imagens[$i]->id_imagem_veiculo_parceiro?>)" src="<?=$imagens[$i]->imagem?>" alt="Veiculo"></li>
+                <li><img onclick="obterCLick('<?=$imagens[$i]->imagem?>', <?=$imagens[$i]->id_imagem_veiculo_parceiro?>, <?=$imagens[$i]->ativo?>)" src="<?=$imagens[$i]->imagem?>" alt="Veiculo"></li>
             <?php
               }
             ?>
@@ -99,23 +101,54 @@
             visible: 1
         })
 
+        // Evento do click no btn ocultar
         $('#ocultar_foto_principal').click(function(e){
+          // Remove o click padrão da tag </a>
           e.preventDefault();
-          console.log('ok');
+
+          var idImg = $('#foto_principal').data('id');
+          var statusImg = $('#foto_principal').data('status') == 1 ? 0 : 1;
+
+          // Atualiza o id-status da foto
+          $('#foto_principal').data('status',statusImg);
+
+          altera a cor do icone para vermelho
+
+          // Invoca a router para ocultar a foto do parceiro
+          $.ajax({
+            type:'POST',
+            url:'../../router.php?controller=veiculo&modo=status', // modo=status - Foto ativada ou desativada
+            data:{'idImg':idImg,'statusImg':statusImg},
+            // processData:false,
+            // contentType:false,
+            // dataType:'json',
+            success:function(response){
+              // EXIBE O QUE RETORNOU DA PAGINA
+              console.log(response);
+            }
+          });
+
         });
 
       });
 
-      function obterCLick(caminhoImg, idVeiculoParceiro)
+      // Obtém os dados da imagem clicada
+      function obterCLick(caminhoImg, idImagemVeiculoParceiro, statusFoto)
       {
         // Troca a imagem da foto principal (#img_foto_principal)
         $('#img_foto_principal').attr('src',caminhoImg);
 
         // Insere o data atribute na div foto_principal
-        $('#foto_principal').attr('data-id',idVeiculoParceiro);
+        $('#foto_principal').data('id',idImagemVeiculoParceiro);
+
+        // Insere o data atribute status na div foto_principal
+        $('#foto_principal').data('status',statusFoto);
+
 
         // OBTENDO O DATA ATRIBUTE
-        console.log($('#foto_principal').data('id'));
+        console.log('data-status: '+$('#foto_principal').data('status'));
+        console.log('data-id: '+$('#foto_principal').data('id'));
+        console.log('idImagemVeiculoParceiro: '+idImagemVeiculoParceiro);
 
       }
 
