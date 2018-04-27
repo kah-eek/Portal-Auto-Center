@@ -23,7 +23,7 @@
     <!-- PARTE PRODUTO -->
       <?php
 
-      // Obtém os clientes existentes no DB
+      // Obtém os produtos existentes no DB
       $produtosSimples = Produto::obterDetalhesSimplesProdutos();
 
       for ($i=0; $i < sizeof($produtosSimples); $i++) {

@@ -58,7 +58,7 @@
   min-height: 300px;
   height: auto;
   overflow: hidden;
-  background-color: #584;
+  /*background-color: #584;-*/
 }
 .produto_fixo{
   transition: 2s;

@@ -1,7 +1,12 @@
 <?php
   // Importando o cabeçalho
   require_once("component/header.php");
+  // Imports
+  require_once('controller/produto_class.php');
+  require_once('controller/MySql_class.php');
+  require_once('model/ProdutoDAO.php');
 ?>
+
   <!--
   @autor Henrique Otremba
   @data 28/03/2018
@@ -478,95 +483,34 @@
       <div class="divisor"></div>
 
       <div class="container_produto_fixo centro_lr">
+        <?php
+
+        // Obtém os produtos existentes no DB
+        $produtosSimples = Produto::obterDetalhesSimplesProdutos();
+
+        for ($i=0; $i < sizeof($produtosSimples); $i++) {
+          ?>
+
         <!-- Produto fixo 1 -->
         <div class="produto_fixo bg_branco">
           <!-- Contáiner da imagem do produto fixo -->
           <div class="imagem_produto_fixo bg_verde">
-            <img src="view/pictures/loja/wheel.jpeg" alt="">
+            <img src="<?=$produtosSimples[$i]->imagem?>" alt="">
           </div>
 
           <!-- Preço do produto fixo -->
           <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            R$ 680,49
+            <?=$produtosSimples[$i]->preco?>
           </div>
 
           <!-- Descrição do produto fixo -->
           <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            Pneu
+            <?=$produtosSimples[$i]->nome?>
           </div>
         </div>
-
-        <!-- Produto fixo 2 -->
-        <div class="produto_fixo bg_branco">
-          <!-- Contáiner da imagem do produto fixo -->
-          <div class="imagem_produto_fixo bg_verde">
-            <img src="view/pictures/loja/car_machine.jpeg" alt="">
-          </div>
-
-          <!-- Preço do produto fixo -->
-          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            R$ 7.480,49
-          </div>
-
-          <!-- Descrição do produto fixo -->
-          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            Motot SSR18
-          </div>
-        </div>
-
-        <!-- Produto fixo 3 -->
-        <div class="produto_fixo bg_branco">
-          <!-- Contáiner da imagem do produto fixo -->
-          <div class="imagem_produto_fixo bg_verde">
-            <img src="view/pictures/loja/fuck_wheel.jpeg" alt="">
-          </div>
-
-          <!-- Preço do produto fixo -->
-          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            R$ 980,23
-          </div>
-
-          <!-- Descrição do produto fixo -->
-          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            Pneu WR41
-          </div>
-        </div>
-
-        <!-- Produto fixo 4 -->
-        <div class="produto_fixo bg_branco">
-          <!-- Contáiner da imagem do produto fixo -->
-          <div class="imagem_produto_fixo bg_verde">
-            <img src="view/pictures/loja/steering_wheel.jpeg" alt="">
-          </div>
-
-          <!-- Preço do produto fixo -->
-          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            R$ 1680,00
-          </div>
-
-          <!-- Descrição do produto fixo -->
-          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            Volante
-          </div>
-        </div>
-
-        <!-- Produto fixo 2 -->
-        <div class="produto_fixo bg_branco">
-          <!-- Contáiner da imagem do produto fixo -->
-          <div class="imagem_produto_fixo bg_verde">
-            <img src="view/pictures/loja/car_machine.jpeg" alt="">
-          </div>
-
-          <!-- Preço do produto fixo -->
-          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            R$ 7.480,49
-          </div>
-
-          <!-- Descrição do produto fixo -->
-          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            Motot SSR18
-          </div>
-        </div>
+        <?php
+        }
+        ?>
       </div>
       <!-- Rodape -->
       <?php
