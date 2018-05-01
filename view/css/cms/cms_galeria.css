@@ -243,29 +243,41 @@ ul li{
 
 /*Carrosel dos produto*/
 .carrossel_servico{
-  width: 450px;
+  width: 650px;
   height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
+  /* background-color: red; */
   overflow: hidden;
 }
 
+.carrossel_servico li{
+  width: 300px;
+}
 
-
-
-
+.carrossel_servico img{
+  width: inherit;
+}
 
 /*Carrosel dos carros*/
 .carrossel_carro{
   overflow: hidden;
-  width: 450px;
+  width: 650px;
   height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.carrossel_carro li{
+  width: 300px;
+}
+
+.carrossel_carro img{
+  width: inherit;
 }
 
 
@@ -275,12 +287,20 @@ ul li{
 .carrossel_produto{
   display: block;
   overflow: hidden;
-  width: 450px;
+  width: 650px;
   height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.carrossel_produto li{
+  width: 300px;
+}
+
+.carrossel_produto img{
+  width: inherit;
 }
 
 

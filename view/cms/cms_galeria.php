@@ -183,100 +183,45 @@ require_once('../component/cms_header.php');
             });
           }
 
-          // function para deixar visivel a caixa de conteudo moto
-          //e ocultar as demais caixas
-            $('.bt_moto').click(function(){// aciona o evento do click
-              // Verifica se a caixa de pesquisa esta vazia
-              if ($('#txtPesquisaM').val().length != 0)
-              {
-                $('.conteudo_moto').show(1500);// PESQUISAR
-                // $(this).hide();// PESQUISAR
-                $('.conteudo_servico').hide(1000);
-                $('.conteudo_carro').hide(1000);
-                $('.conteudo_produto').hide(1000);
-              }
-            });
+          // Descarrega a modal de motos
+          $('#frmBuscarParceiroMoto').submit(function(e){
+            // Remove o submit do form
+            e.preventDefault();
 
-            // function para deixar visivel a caixa de conteudo serviço
-            //e ocultar as demais caixas
-            $('.bt_servico').click(function(){// aciona o evento do click
-              // Verifica se a caixa de pesquisa esta vazia
-              if ($('#txtPesquisaS').val().length != 0)
-              {
-                $('.conteudo_servico').show(1500);
-                $('.conteudo_moto').hide(1000);
-                $('.conteudo_carro').hide(1000);
-                $('.conteudo_produto').hide(1000);
-              }
+            // Descarrega as fotos das motos
+            descarrega_conteudo_moto();
 
-            });
+          });
 
-            // function para deixar visivel a caixa de conteudo carro
-            //e ocultar as demais caixas
-            $('.bt_carro').click(function(){// aciona o evento do click
-              // Verifica se a caixa de pesquisa esta vazia
-              if ($('#txtPesquisaC').val().length != 0)
-              {
-                $('.conteudo_carro').show(1500);
-                $('.conteudo_moto').hide(1000);
-                $('.conteudo_servico').hide(1000);
-                $('.conteudo_produto').hide(1000);
-              }
-            });
+          // Descarrega a modal de servicos
+          $('#frmBuscarParceirServico').submit(function(e){
+            // Remove o submit do form
+            e.preventDefault();
 
-            // function para deixar visivel a caixa de conteudo produto
-            //e ocultar as demais caixas
-            $('.bt_produto').click(function(){// aciona o evento do click
-              // Verifica se a caixa de pesquisa esta vazia
-              if ($('#txtPesquisaP').val().length != 0)
-              {
-                $('.conteudo_produto').show(1500);
-                $('.segura_outras').css('display','block');
-                $('.conteudo_moto').hide(1000);
-                $('.conteudo_carro').hide(1000);
-                $('.conteudo_servico').hide(1000);
-              }
-            });
+            // Descarrega as fotos das motos
+            descarrega_conteudo_servico();
 
-            // Descarrega a modal de motos
-            $('#frmBuscarParceiroMoto').submit(function(e){
-              // Remove o submit do form
-              e.preventDefault();
+          });
 
-              // Descarrega as fotos das motos
-              descarrega_conteudo_moto();
+          // Descarrega a modal dos carros
+          $('#frmBuscarParceirCarro').submit(function(e){
+            // Remove o submit do form
+            e.preventDefault();
 
-            });
+            // Descarrega as fotos das motos
+            descarrega_conteudo_carro();
 
-            // Descarrega a modal de servicos
-            $('#frmBuscarParceirServico').submit(function(e){
-              // Remove o submit do form
-              e.preventDefault();
+          });
 
-              // Descarrega as fotos das motos
-              descarrega_conteudo_servico();
+          // Descarrega a modal dos produtos
+          $('#frmBuscarParceirProduto').submit(function(e){
+            // Remove o submit do form
+            e.preventDefault();
 
-            });
+            // Descarrega as fotos das motos
+            descarrega_conteudo_produto();
 
-            // Descarrega a modal dos carros
-            $('#frmBuscarParceirCarro').submit(function(e){
-              // Remove o submit do form
-              e.preventDefault();
-
-              // Descarrega as fotos das motos
-              descarrega_conteudo_carro();
-
-            });
-
-            // Descarrega a modal dos produtos
-            $('#frmBuscarParceirProduto').submit(function(e){
-              // Remove o submit do form
-              e.preventDefault();
-
-              // Descarrega as fotos das motos
-              descarrega_conteudo_produto();
-
-            });
+          });
 
           </script>
 
