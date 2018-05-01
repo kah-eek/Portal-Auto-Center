@@ -255,7 +255,7 @@
 
         switch($modo)
         {
-          case 'status':
+          case 'updateStatus':
 
             // Verifica se a inserção ocorreu com êxito
             if(Veiculo::atualizarStatusImagem($_POST['idImg'], $_POST['statusImg']))//Êxito
@@ -272,6 +272,17 @@
             // Exibe o retorno da inserção do produto
             echo JSON_encode($response);
 
+          break;
+
+          case 'obterStatus':
+            // Obtém o status da imagem
+            $statusImg = Veiculo::getStatusImagemVeiculoByIdImg($_GET['idImg']);
+
+            // Prepara a resposta para o formato JSON
+            $response = array('status_img'=>$statusImg);
+
+            // Exibe o retorno da obtenção do status da imagem no formato JSON
+            echo JSON_encode($response);
           break;
         }
 

@@ -50,6 +50,18 @@ class Veiculo
   }
 
   /**
+  * Obtém o status da imagem conforme o id da imagem informada
+  * @param $idImagem Id da imagem a ter o status recuperado do DB
+  * @return Int Contendo o status da imagens (0 = desativada e 1 = ativada)
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um int contendo o número -1
+  */
+  static function getStatusImagemVeiculoByIdImg($idImagem)
+  {
+    $veiculoDAO = new VeiculoDAO();
+    return $veiculoDAO->getStatusImagemVeiculoByIdImg($idImagem);
+  }
+
+  /**
   * Obtém todos as imagens dos veícuços vinculados ao parceiro informado
   * @return Array Contendo todos as imagens existentes na base de dados
   * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)

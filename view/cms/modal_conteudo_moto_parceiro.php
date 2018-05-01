@@ -8,7 +8,7 @@
   $imagens = Veiculo::getImagensVeiculoByNomeParceiro($_GET['nomeParceiro']);
 
   // print_r($parceiro);
-  print_r($imagens);
+  // print_r($imagens);
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
     <div class="container_interna_moto">
       <!-- Lugar onde a imagem principal aparece -->
       <div class="segura_principal">
-        <div id="foto_principal" class="principal sombra_preta_10">
+        <div data-id="<?=$imagens[0]->id_imagem_veiculo_parceiro?>" data-status="<?=$imagens[0]->ativo?>" id="foto_principal" class="principal sombra_preta_10">
           <img id="img_foto_principal" src="<?=$imagens[0]->imagem?>" alt="Moto teste" class="blur">
           <!-- <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur"> -->
           <div class="segura_botao display_none conteudo negrito">
@@ -35,7 +35,7 @@
               </div>
               <a id="ocultar_foto_principal" href="#">
                 <?php
-                  echo $imagens[0]->ativo == 1 ? '<i class="material-icons bt fs_30 txt_verde_vivo">remove_red_eye</i>' : '<i class="material-icons txt_vermelho bt fs_30">remove_red_eye</i>';
+                  echo $imagens[0]->ativo == 1 ? '<i id="eye" class="material-icons bt fs_30 txt_verde_vivo">remove_red_eye</i>' : '<i id="eye" class="material-icons txt_vermelho bt fs_30">remove_red_eye</i>';
                 ?>
               </a>
               <!-- <button type="button" class="bt" name="bt_ocultar_moto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button> -->
@@ -79,7 +79,7 @@
               for ($i=0; $i < sizeof($imagens); $i++)
               {
             ?>
-                <li><img onclick="obterCLick('<?=$imagens[$i]->imagem?>', <?=$imagens[$i]->id_imagem_veiculo_parceiro?>, <?=$imagens[$i]->ativo?>)" src="<?=$imagens[$i]->imagem?>" alt="Veiculo"></li>
+                <li><img onclick="obterCLick('<?=$imagens[$i]->imagem?>', <?=$imagens[$i]->id_imagem_veiculo_parceiro?>)" src="<?=$imagens[$i]->imagem?>" alt="Veiculo"></li>
             <?php
               }
             ?>
@@ -106,25 +106,47 @@
           // Remove o click padrão da tag </a>
           e.preventDefault();
 
+          // Armazena o id da imagem
           var idImg = $('#foto_principal').data('id');
+
+          // Armazena o status da imagem
           var statusImg = $('#foto_principal').data('status') == 1 ? 0 : 1;
 
           // Atualiza o id-status da foto
           $('#foto_principal').data('status',statusImg);
 
-          altera a cor do icone para vermelho
-
-          // Invoca a router para ocultar a foto do parceiro
+          // Invoca a router para ocultar/exibir a foto do parceiro
           $.ajax({
             type:'POST',
-            url:'../../router.php?controller=veiculo&modo=status', // modo=status - Foto ativada ou desativada
+            url:'../../router.php?controller=veiculo&modo=updateStatus', // modo=status - Foto ativada ou desativada
             data:{'idImg':idImg,'statusImg':statusImg},
             // processData:false,
             // contentType:false,
-            // dataType:'json',
+            dataType:'json',
             success:function(response){
               // EXIBE O QUE RETORNOU DA PAGINA
-              console.log(response);
+              // console.log(response);
+
+              // Verfica se o reponse retornou sucesso
+              if (response.status)
+              {
+                // Altera a cor do ícone representando o satus da imagem (verde e vermelho)
+                // Ícone do status da foto
+                var eye = $('#eye');
+
+                // Verifica se a imagem está com o status igual à ativada
+                if (statusImg == 1)// Imagem ativada - status = 1
+                {
+                    eye.removeClass('txt_vermelho');
+                    eye.addClass('txt_verde_vivo');
+                }
+                else// Imagem desativada - status = 0
+                {
+                  eye.removeClass('txt_verde_vivo');
+                  eye.addClass('txt_vermelho');
+                }
+              }
+
             }
           });
 
@@ -133,7 +155,7 @@
       });
 
       // Obtém os dados da imagem clicada
-      function obterCLick(caminhoImg, idImagemVeiculoParceiro, statusFoto)
+      function obterCLick(caminhoImg, idImagemVeiculoParceiro)
       {
         // Troca a imagem da foto principal (#img_foto_principal)
         $('#img_foto_principal').attr('src',caminhoImg);
@@ -141,14 +163,45 @@
         // Insere o data atribute na div foto_principal
         $('#foto_principal').data('id',idImagemVeiculoParceiro);
 
-        // Insere o data atribute status na div foto_principal
-        $('#foto_principal').data('status',statusFoto);
+        // Obtém o status atual da imagem
+        $.ajax({
+          type:'GET',
+          url:'../../router.php?controller=veiculo&modo=obterStatus&idImg='+idImagemVeiculoParceiro,
+          processData:false,
+          dataType:'json',
+          success:function(response){
+            // EXIBE O QUE RETORNOU DA PAGINA
+            // console.log(response);
+
+            // Armazena o status da imagem (0 ou 1)
+            var statusImg = response.status_img;
+
+            // Insere o data atribute status na div foto_principal
+            $('#foto_principal').data('status',statusImg);
+
+            // Altera a cor do ícone de representacao do status da imagem
+            // Ícone do status da foto
+            var eye = $('#eye')
+
+            // Verfiica se a imagem está com o status igual à ativada
+            if (statusImg == 1)// Imagem ativada - status = 1
+            {
+                eye.removeClass('txt_vermelho');
+                eye.addClass('txt_verde_vivo');
+            }
+            else// Imagem desativada - status = 0
+            {
+              eye.removeClass('txt_verde_vivo');
+              eye.addClass('txt_vermelho');
+            }
+          }
+        });
 
 
         // OBTENDO O DATA ATRIBUTE
-        console.log('data-status: '+$('#foto_principal').data('status'));
-        console.log('data-id: '+$('#foto_principal').data('id'));
-        console.log('idImagemVeiculoParceiro: '+idImagemVeiculoParceiro);
+        // console.log('data-status: '+$('#foto_principal').data('status'));
+        // console.log('data-id: '+$('#foto_principal').data('id'));
+        // console.log('idImagemVeiculoParceiro: '+idImagemVeiculoParceiro);
 
       }
 

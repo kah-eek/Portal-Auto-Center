@@ -49,6 +49,48 @@ class VeiculoDAO
   }
 
   /**
+  * Obtém o status da imagem conforme o id da imagem informada
+  * @param $idImagem Id da imagem a ter o status recuperado do DB
+  * @return Int Contendo o status da imagens (0 = desativada e 1 = ativada)
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um int contendo o número -1
+  */
+  function getStatusImagemVeiculoByIdImg($idImagem)
+  {
+
+    // Armazena o status da imagem
+    $statusImg = -1;
+
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'SELECT '.
+      'ativo '.
+      'FROM view_imagem_veiculo_parceiro '.
+      'WHERE id_imagem_veiculo_parceiro = ?'
+    );
+
+    $stmt->bindParam(1,$idImagem);
+
+    // Verifica se o select foi executado com êxito
+    if($stmt->execute())
+    {
+      // Armazena o status da imagem advinda do DB
+      while ($rs = $stmt->fetch(PDO::FETCH_OBJ)) {
+        $statusImg = $rs->ativo;
+      }
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $statusImg;
+  }
+
+  /**
   * Obtém todos as imagens dos veícuços e suas informações entreladas a ela conforme o parceiro informado
   * @return Array Contendo todos as imagens e suas informações entreladas a ela na base de dados
   * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
