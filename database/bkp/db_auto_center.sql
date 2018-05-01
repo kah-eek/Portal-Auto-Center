@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_auto_center
 -- ------------------------------------------------------
--- Server version	5.7.21-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -79,7 +79,7 @@ CREATE TABLE `tbl_anuncio_parceiro` (
   `foto` varchar(420) NOT NULL,
   `link_redirecionamento` varchar(580) NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT '0',
-  `log_anuncio_parceiro` datetime NOT NULL,
+  `log_anuncio_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_anuncio_parceiro`),
   KEY `fk_tbl_anuncio_parceiro_id_parceiro_idx` (`id_parceiro`),
   CONSTRAINT `fk_tbl_anuncio_parceiro_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -253,7 +253,7 @@ CREATE TABLE `tbl_click_anuncio_parceiro` (
   `id_click_anuncio_parceiro` int(11) NOT NULL AUTO_INCREMENT,
   `id_anuncio_parceiro` int(11) NOT NULL,
   `clicado` int(11) NOT NULL,
-  `log_click_anuncio_parceiro` datetime NOT NULL,
+  `log_click_anuncio_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_click_anuncio_parceiro`),
   KEY `fk_tbl_click_anuncio_parceiro_id_anuncio_parceiro_idx` (`id_anuncio_parceiro`),
   CONSTRAINT `fk_tbl_click_anuncio_parceiro_id_anuncio_parceiro` FOREIGN KEY (`id_anuncio_parceiro`) REFERENCES `tbl_anuncio_parceiro` (`id_anuncio_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -347,7 +347,7 @@ CREATE TABLE `tbl_comentario_topico_forum` (
   `id_cliente` int(11) NOT NULL,
   `mensagem` varchar(5500) NOT NULL,
   `foto` varchar(350) DEFAULT NULL,
-  `log` datetime NOT NULL,
+  `log` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_comentario_forum`),
   KEY `fk_tbl_comentario_topico_forum_idx` (`id_topico_forum`),
   KEY `fk_tbl_situacao_pedido_id_cliente_idx` (`id_cliente`),
@@ -435,7 +435,7 @@ CREATE TABLE `tbl_controle_abastecimento` (
   `valor_abastecimento` decimal(6,2) NOT NULL,
   `latitute` double NOT NULL,
   `longitude` double NOT NULL,
-  `log_controle_abastecimento` datetime NOT NULL,
+  `log_controle_abastecimento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_controle_abastecimento`),
   KEY `fk_tbl_controle_abastecimento_id_veiculo_cliente_id_tipo_co_idx` (`id_tipo_combustivel`),
   KEY `fk_tbl_controle_abastecimento_id_veiculo_cliente_idx` (`id_veiculo_cliente`),
@@ -573,7 +573,7 @@ CREATE TABLE `tbl_fabricante` (
   `id_fabricante` int(11) NOT NULL AUTO_INCREMENT,
   `fabricante` varchar(180) NOT NULL,
   PRIMARY KEY (`id_fabricante`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -582,6 +582,7 @@ CREATE TABLE `tbl_fabricante` (
 
 LOCK TABLES `tbl_fabricante` WRITE;
 /*!40000 ALTER TABLE `tbl_fabricante` DISABLE KEYS */;
+INSERT INTO `tbl_fabricante` VALUES (1,'BMW');
 /*!40000 ALTER TABLE `tbl_fabricante` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -645,7 +646,7 @@ CREATE TABLE `tbl_feedback_cliente` (
   `id_feedback_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `feedback` varchar(2500) NOT NULL,
-  `log_feedback` datetime NOT NULL,
+  `log_feedback` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_feedback_cliente`),
   KEY `fk_tbl_feedback_cliente_id_pedido_idx` (`id_pedido`),
   CONSTRAINT `fk_tbl_feedback_cliente_id_pedido` FOREIGN KEY (`id_pedido`) REFERENCES `tbl_pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -684,7 +685,7 @@ CREATE TABLE `tbl_funcionario_pac` (
   `cnh` varchar(11) DEFAULT NULL,
   `pis` varchar(13) DEFAULT NULL,
   `certificado_reservista` varchar(10) DEFAULT NULL,
-  `log_funcionario_pac` datetime NOT NULL,
+  `log_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_funcionario_pac`),
   KEY `fk_tbl_funcionario_pac_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_funcionario_pac_id_cargo_funcionario_pac_idx` (`id_cargo_funcionario_pac`),
@@ -770,7 +771,7 @@ CREATE TABLE `tbl_imagem_veiculo_parceiro` (
   PRIMARY KEY (`id_imagem_veiculo_parceiro`),
   KEY `fk_tbl_imagem_veiculo_parceiro_id_veiculo_parceiro_idx` (`id_veiculo_parceiro`),
   CONSTRAINT `fk_tbl_imagem_veiculo_parceiro_id_veiculo_parceiro` FOREIGN KEY (`id_veiculo_parceiro`) REFERENCES `tbl_veiculo_parceiro` (`id_veiculo_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -779,6 +780,7 @@ CREATE TABLE `tbl_imagem_veiculo_parceiro` (
 
 LOCK TABLES `tbl_imagem_veiculo_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_imagem_veiculo_parceiro` DISABLE KEYS */;
+INSERT INTO `tbl_imagem_veiculo_parceiro` VALUES (2,1,'../pictures/galeria/car.jpg',1),(3,1,'../pictures/galeria/blue.jpg',1);
 /*!40000 ALTER TABLE `tbl_imagem_veiculo_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -826,7 +828,7 @@ CREATE TABLE `tbl_modelo_veiculo` (
   PRIMARY KEY (`id_modelo_veiculo`),
   KEY `fk_tbl_modelo_veiculo_idx` (`id_fabricante`),
   CONSTRAINT `fk_tbl_modelo_veiculo_id_fabricante` FOREIGN KEY (`id_fabricante`) REFERENCES `tbl_fabricante` (`id_fabricante`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -835,6 +837,7 @@ CREATE TABLE `tbl_modelo_veiculo` (
 
 LOCK TABLES `tbl_modelo_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_modelo_veiculo` VALUES (1,1,'FGM-25K');
 /*!40000 ALTER TABLE `tbl_modelo_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -896,7 +899,7 @@ CREATE TABLE `tbl_pagamento_funcionario_pac` (
   `id_pagamento_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario_pac` int(11) NOT NULL,
   `pago` tinyint(1) NOT NULL DEFAULT '0',
-  `log_pagamento_funcionario_pac` datetime NOT NULL,
+  `log_pagamento_funcionario_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pagamento_funcionario_pac`),
   KEY `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac_idx` (`id_funcionario_pac`),
   CONSTRAINT `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac` FOREIGN KEY (`id_funcionario_pac`) REFERENCES `tbl_funcionario_pac` (`id_funcionario_pac`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -931,7 +934,7 @@ CREATE TABLE `tbl_parceiro` (
   `telefone` varchar(11) DEFAULT NULL,
   `foto_perfil` varchar(350) NOT NULL,
   `celular` varchar(12) DEFAULT NULL,
-  `log_parceiro` datetime NOT NULL,
+  `log_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_usuario` int(11) NOT NULL,
   `id_plano_contratacao` int(11) NOT NULL,
   PRIMARY KEY (`id_parceiro`),
@@ -950,7 +953,7 @@ CREATE TABLE `tbl_parceiro` (
 
 LOCK TABLES `tbl_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_parceiro` DISABLE KEYS */;
-INSERT INTO `tbl_parceiro` VALUES (1,'Fast & Run','Fast & Run Importados LTDA','4656516565',1,0,1,'fast&run@fastrun.com.br','1145228475','photo/path','1142158745','2018-04-12 09:47:39',1,1),(15,'asdas','asdasd','12561265',96,0,1,'asdasd','5156','','4561','2018-04-21 03:56:44',33,1),(16,'asdas','asdasd','56165',97,0,1,'asdas','156156','','561256.','2018-04-21 03:57:19',34,1),(17,'sadasd','asdf','4514561',99,0,1,'asdd','156165','','56165','2018-04-21 03:59:00',35,1),(18,'sadasd','asdf','4514561',101,0,1,'asdd','156165','','56165','2018-04-21 03:59:09',36,1),(19,'asdasd','asdasd','56156',102,0,1,'asd','15665','','56165','2018-04-21 04:00:43',37,1),(20,'asdas','asds','56156',103,0,1,'xdaf','51656','','56.1256','2018-04-21 04:01:06',38,1),(21,'asdas','asd','561256',104,0,1,'asd','156165','','56156','2018-04-21 04:01:38',39,1),(22,'asdas','asd','564156',105,0,1,'asd','156156','','5616','2018-04-21 04:08:22',40,1),(23,'sadas','asdfas','1556',106,0,1,'asd','5616','','561','2018-04-21 14:17:06',41,1),(24,'adfasdas','asdas','1456156',107,0,1,'asdas','56165','','51561','2018-04-21 14:18:01',42,1),(25,'dfsdf','sdafasd','561456',108,0,1,'asd','15656','','5616','2018-04-21 14:19:59',43,1),(26,'asdas','asd','651256',113,0,0,'as','56.1256.','','26.','2018-04-21 17:10:28',48,2),(27,'t','t','1',114,0,0,'t','1','','1','2018-04-21 17:11:49',49,2),(28,'asdas','dasd','456165',120,0,0,'asds','56156','view/pictures/parceiro/cb8dd5855b1f2a8d0f1ecab00063da9f.png','561','2018-04-21 20:18:27',55,1),(29,'','','',123,0,0,'','','view/pictures/parceiro/9ff4d4e3c57397dea7bac86d1f9bad42.png','','2018-04-22 11:36:45',56,2);
+INSERT INTO `tbl_parceiro` VALUES (1,'Fast & Run','Fast & Run Importados LTDA','4656516565',1,0,1,'fast&run@fastrun.com.br','1145228475','','1142158745','2018-04-12 09:47:39',1,1),(15,'asdas','asdasd','12561265',96,1,1,'asdasd','5156','','4561','2018-04-21 03:56:44',33,1),(16,'asdas','asdasd','56165',97,0,1,'asdas','156156','','561256.','2018-04-21 03:57:19',34,1),(17,'sadasd','asdf','4514561',99,0,1,'asdd','156165','','56165','2018-04-21 03:59:00',35,1),(18,'sadasd','asdf','4514561',101,0,1,'asdd','156165','','56165','2018-04-21 03:59:09',36,1),(19,'asdasd','asdasd','56156',102,0,1,'asd','15665','','56165','2018-04-21 04:00:43',37,1),(20,'asdas','asds','56156',103,0,1,'xdaf','51656','','56.1256','2018-04-21 04:01:06',38,1),(21,'asdas','asd','561256',104,0,1,'asd','156165','','56156','2018-04-21 04:01:38',39,1),(22,'asdas','asd','564156',105,0,1,'asd','156156','','5616','2018-04-21 04:08:22',40,1),(23,'sadas','asdfas','1556',106,0,1,'asd','5616','','561','2018-04-21 14:17:06',41,1),(24,'adfasdas','asdas','1456156',107,0,1,'asdas','56165','','51561','2018-04-21 14:18:01',42,1),(25,'dfsdf','sdafasd','561456',108,0,1,'asd','15656','','5616','2018-04-21 14:19:59',43,1),(26,'asdas','asd','651256',113,0,0,'as','56.1256.','','26.','2018-04-21 17:10:28',48,2),(27,'t','t','1',114,0,0,'t','1','','1','2018-04-21 17:11:49',49,2),(28,'asdas','dasd','456165',120,0,0,'asds','56156','view/pictures/parceiro/cb8dd5855b1f2a8d0f1ecab00063da9f.png','561','2018-04-21 20:18:27',55,1),(29,'','','',123,0,0,'','','view/pictures/parceiro/9ff4d4e3c57397dea7bac86d1f9bad42.png','','2018-04-22 11:36:45',56,2);
 /*!40000 ALTER TABLE `tbl_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -966,7 +969,7 @@ CREATE TABLE `tbl_pedido` (
   `id_cliente` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `data_agendada` datetime DEFAULT NULL,
-  `log_pedido` datetime NOT NULL,
+  `log_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_pedido`),
   KEY `fk_tbl_pedido_id_cliente_idx` (`id_cliente`),
   KEY `fk_tbl_pedido_id_produto_idx` (`id_produto`),
@@ -1073,7 +1076,7 @@ CREATE TABLE `tbl_post_rede_social` (
   `id_usuario` int(11) NOT NULL,
   `post` varchar(1500) DEFAULT NULL,
   `foto` varchar(350) DEFAULT NULL,
-  `log_post_rede_social` datetime NOT NULL,
+  `log_post_rede_social` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_post_rede_social`),
   KEY `fk_tbl_post_rede_social_id_usuario_idx` (`id_usuario`),
   CONSTRAINT `fk_tbl_post_rede_social_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1164,7 +1167,7 @@ CREATE TABLE `tbl_seguir_rede_social` (
   `id_seguir_rede_social` int(11) NOT NULL AUTO_INCREMENT,
   `usuario_seguidor` int(11) NOT NULL,
   `usuario_seguido` int(11) NOT NULL,
-  `log_seguir_rede_social` datetime NOT NULL,
+  `log_seguir_rede_social` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_seguir_rede_social`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguidor_idx` (`usuario_seguidor`),
   KEY `fk_tbl_seguir_rede_social_usuario_seguido_idx` (`usuario_seguido`),
@@ -1193,7 +1196,7 @@ CREATE TABLE `tbl_situacao_pedido` (
   `id_situacao_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `id_pedido` int(11) NOT NULL,
   `id_tipo_situacao_pedido` int(11) NOT NULL,
-  `log_situacao_pedido` datetime NOT NULL,
+  `log_situacao_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_situacao_pedido`),
   KEY `fk_tbl_situacao_pedido_id_pedido_idx` (`id_pedido`),
   KEY `fk_tbl_situacao_pedido_id_tipo_situacao_pedido_idx` (`id_tipo_situacao_pedido`),
@@ -1223,7 +1226,7 @@ CREATE TABLE `tbl_sobre_cliente_parceiro` (
   `imagem` varchar(300) NOT NULL,
   `descricao` varchar(1800) NOT NULL,
   `id_tipo_descricao` int(11) NOT NULL,
-  `log_sobre_cliente_parceiro` datetime NOT NULL,
+  `log_sobre_cliente_parceiro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_sobre_cliente_parceiro`),
   KEY `fk_tbl_sobre_cliente_parceiro_id_tipo_descricao_idx` (`id_tipo_descricao`),
   CONSTRAINT `fk_tbl_sobre_cliente_parceiro_id_tipo_descricao` FOREIGN KEY (`id_tipo_descricao`) REFERENCES `tbl_tipo_descricao` (`id_tipo_descricao`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1278,7 +1281,7 @@ CREATE TABLE `tbl_socorrista_socorro_ja` (
   `id_socorrista_socorro_ja` int(11) NOT NULL AUTO_INCREMENT,
   `id_parceiro` int(11) NOT NULL,
   `id_socorro_ja` int(11) NOT NULL,
-  `log_socorrista_socorro_ja` datetime NOT NULL,
+  `log_socorrista_socorro_ja` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_socorrista_socorro_ja`),
   KEY `fk_tbl_socorrista_socorro_ja_id_parceiro_idx` (`id_parceiro`),
   KEY `fk_tbl_socorrista_socorro_ja_id_socorro_ja_idx` (`id_socorro_ja`),
@@ -1309,7 +1312,7 @@ CREATE TABLE `tbl_socorro_ja` (
   `id_endereco` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `atendido` tinyint(1) NOT NULL,
-  `log_socorro_ja` datetime NOT NULL,
+  `log_socorro_ja` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_socorro_ja`),
   KEY `fk_tbl_socorro_ja_id_endereco_idx` (`id_endereco`),
   KEY `fk_tbl_socorro_ja_id_cliente_idx` (`id_cliente`),
@@ -1397,6 +1400,30 @@ LOCK TABLES `tbl_tipo_situacao_pedido` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_tipo_veiculo`
+--
+
+DROP TABLE IF EXISTS `tbl_tipo_veiculo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_tipo_veiculo` (
+  `id_tipo_veiculo` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(120) NOT NULL,
+  PRIMARY KEY (`id_tipo_veiculo`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_tipo_veiculo`
+--
+
+LOCK TABLES `tbl_tipo_veiculo` WRITE;
+/*!40000 ALTER TABLE `tbl_tipo_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_tipo_veiculo` VALUES (1,'Carro'),(2,'Moto');
+/*!40000 ALTER TABLE `tbl_tipo_veiculo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_topico_forum`
 --
 
@@ -1408,7 +1435,7 @@ CREATE TABLE `tbl_topico_forum` (
   `foto` varchar(350) DEFAULT NULL,
   `mensagem` varchar(5500) NOT NULL,
   `titulo` varchar(45) NOT NULL,
-  `log_topico_forum` datetime NOT NULL,
+  `log_topico_forum` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_categoria_topico_forum` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `finalizado` tinyint(1) NOT NULL DEFAULT '0',
@@ -1464,7 +1491,7 @@ CREATE TABLE `tbl_usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(160) NOT NULL,
   `senha` varchar(280) NOT NULL,
-  `log` datetime NOT NULL,
+  `log` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_nivel_usuario` int(11) NOT NULL,
   `ativo` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_usuario`),
@@ -1505,7 +1532,7 @@ CREATE TABLE `tbl_veiculo` (
   KEY `fk_tbl_veiculo_id_modelo_veiculo_idx` (`id_modelo_veiculo`),
   CONSTRAINT `fk_tbl_veiculo_id_cor` FOREIGN KEY (`id_cor`) REFERENCES `tbl_cor` (`id_cor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_veiculo_id_modelo_veiculo` FOREIGN KEY (`id_modelo_veiculo`) REFERENCES `tbl_modelo_veiculo` (`id_modelo_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1514,6 +1541,7 @@ CREATE TABLE `tbl_veiculo` (
 
 LOCK TABLES `tbl_veiculo` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo` DISABLE KEYS */;
+INSERT INTO `tbl_veiculo` VALUES (1,2018,'DFR-2154',1,1,4,0,1,1);
 /*!40000 ALTER TABLE `tbl_veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1561,7 +1589,7 @@ CREATE TABLE `tbl_veiculo_parceiro` (
   KEY `fk_tbl_veiculo_parceiro_id_veiculo_idx` (`id_veiculo`),
   CONSTRAINT `fk_tbl_veiculo_parceiro_id_parceiro` FOREIGN KEY (`id_parceiro`) REFERENCES `tbl_parceiro` (`id_parceiro`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_veiculo_parceiro_id_veiculo` FOREIGN KEY (`id_veiculo`) REFERENCES `tbl_veiculo` (`id_veiculo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1570,6 +1598,7 @@ CREATE TABLE `tbl_veiculo_parceiro` (
 
 LOCK TABLES `tbl_veiculo_parceiro` WRITE;
 /*!40000 ALTER TABLE `tbl_veiculo_parceiro` DISABLE KEYS */;
+INSERT INTO `tbl_veiculo_parceiro` VALUES (1,1,1);
 /*!40000 ALTER TABLE `tbl_veiculo_parceiro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1635,6 +1664,24 @@ SET character_set_client = utf8;
  1 AS `bairro`,
  1 AS `complemento`,
  1 AS `estado`*/;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Temporary view structure for view `view_imagem_veiculo_parceiro`
+--
+
+DROP TABLE IF EXISTS `view_imagem_veiculo_parceiro`;
+/*!50001 DROP VIEW IF EXISTS `view_imagem_veiculo_parceiro`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `view_imagem_veiculo_parceiro` AS SELECT 
+ 1 AS `id_imagem_veiculo_parceiro`,
+ 1 AS `id_veiculo_parceiro`,
+ 1 AS `imagem`,
+ 1 AS `ativo`,
+ 1 AS `id_parceiro`,
+ 1 AS `nome_fantasia`,
+ 1 AS `razao_social`*/;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -1779,6 +1826,24 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
+-- Final view structure for view `view_imagem_veiculo_parceiro`
+--
+
+/*!50001 DROP VIEW IF EXISTS `view_imagem_veiculo_parceiro`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `view_imagem_veiculo_parceiro` AS select `img_vei_parc`.`id_imagem_veiculo_parceiro` AS `id_imagem_veiculo_parceiro`,`img_vei_parc`.`id_veiculo_parceiro` AS `id_veiculo_parceiro`,`img_vei_parc`.`imagem` AS `imagem`,`img_vei_parc`.`ativo` AS `ativo`,`vei_parc`.`id_parceiro` AS `id_parceiro`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social` from ((`tbl_imagem_veiculo_parceiro` `img_vei_parc` join `tbl_veiculo_parceiro` `vei_parc` on((`vei_parc`.`id_veiculo_parceiro` = `img_vei_parc`.`id_veiculo_parceiro`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `vei_parc`.`id_parceiro`))) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
 -- Final view structure for view `view_parceiro`
 --
 
@@ -1841,4 +1906,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-25  1:27:28
+-- Dump completed on 2018-04-26 11:01:18
