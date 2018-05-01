@@ -85,74 +85,19 @@ require_once('../component/cms_header.php');
                 Carros
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
+              <form id="frmBuscarParceirCarro"  action="" method="POST">
                 <div class="pesquisa_galeria ">
                   <div class="inp_texto">
-                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                    <input type="text" id="txtPesquisaC" required name="txtPesquisaC" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
                   </div>
                   <div class="inp_bot">
                       <input type="submit" name="bt_moto" value="buscar" class="bt_carro bot">
                   </div>
                 </div>
+              </form>
             </div>
-            <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_carro ">
-              <!-- Lugar onde a imagem principal aparece -->
-              <div class="segura_principal">
-                <div class="principal sombra_preta_10">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur">
-                  <div class="segura_botao display_none conteudo negrito">
-                    <div class="ocultar">
-                      <div class="ti">
-                        Ocultar
-                      </div>
-                      <button type="button" class="bt" name="bt_oculta_carro"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
-                    </div>
-                    <div class="excluir">
-                      <div class="ti">
-                        Deletar
-                      </div>
-                      <button type="button" class="bt" name="bt_delete_carro"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Informativo sobre a imagem selecionada -->
-              <div class="segura_inf">
-                <div class="texto_inf conteudo sombra_preta_2 transparente fs_18">
-                  <div class="inf_parceiro">
-                    Parceiro:
-                  </div>
-                  <div class="inf_img">
-                    efnbf ibiuabibfi iubafibi ijfosn fmeimsm m
-                  </div>
-                </div>
-              </div>
-              <!-- Demais imagens referente ao parceiro -->
-              <div class="segura_outras">
-                <div class="menu_carrosel">
-                  <a href="#" class="prev_carro" title="Anterior">
-                    <img src="../pictures/icons/previous.svg" alt="Voltar">
-                  </a>
-                </div>
-                <div class="carrossel_carro sombra_preta_10">
-                  <ul>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                  </ul>
-                </div>
-                <div class="menu_carrosel">
-                  <a href="#" class="next_carro" title="Próximo">
-                    <img src="../pictures/icons/next.svg" alt="Avançar">
-                  </a>
-                </div>
-              </div>
-            </div>
+            <!-- Conteudo das imagens dos carros -->
+            <div class="conteudo_carro"></div>
           </div>
 
           <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
@@ -266,6 +211,20 @@ require_once('../component/cms_header.php');
             });
           }
 
+          // Descarrega as fotos dos servicos
+          function descarrega_conteudo_carro(){
+            $.ajax({
+              type:'GET',
+              url:'modal_conteudo_carro_parceiro.php?nomeParceiro='+$('#txtPesquisaC').val(),
+              processData:false,
+              success:function(response){
+                $('.conteudo_carro').html(response);
+                // EXIBE O QUE RETORNOU DA PAGINA
+                // console.log(response);
+              }
+            });
+          }
+
           $(function() {
 
             // COLOCAR NA MODAL A RESPECTIVA FUNCAO
@@ -282,12 +241,12 @@ require_once('../component/cms_header.php');
               //     visible: 3
               // })
 
-              $(".carrossel_carro"). jCarouselLite({
-                  btnPrev: '.prev_carro',
-                  btnNext: '.next_carro',
-                  visible: 3
-
-              })
+              // $(".carrossel_carro"). jCarouselLite({
+              //     btnPrev: '.prev_carro',
+              //     btnNext: '.next_carro',
+              //     visible: 3
+              //
+              // })
 
               $(".carrossel_produto"). jCarouselLite({
                   btnPrev: '.prev_produto',
@@ -329,10 +288,14 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo carro
             //e ocultar as demais caixas
             $('.bt_carro').click(function(){// aciona o evento do click
-              $('.conteudo_carro').show(1500);
-              $('.conteudo_moto').hide(1000);
-              $('.conteudo_servico').hide(1000);
-              $('.conteudo_produto').hide(1000);
+              // Verifica se a caixa de pesquisa esta vazia
+              if ($('#txtPesquisaC').val().length != 0)
+              {
+                $('.conteudo_carro').show(1500);
+                $('.conteudo_moto').hide(1000);
+                $('.conteudo_servico').hide(1000);
+                $('.conteudo_produto').hide(1000);
+              }
             });
 
             // function para deixar visivel a caixa de conteudo produto
@@ -364,6 +327,17 @@ require_once('../component/cms_header.php');
               descarrega_conteudo_servico();
 
             });
+
+            // Descarrega a modal dos carros
+            $('#frmBuscarParceirCarro').submit(function(e){
+              // Remove o submit do form
+              e.preventDefault();
+
+              // Descarrega as fotos das motos
+              descarrega_conteudo_carro();
+
+            });
+
           </script>
 
         <!-- </form> -->

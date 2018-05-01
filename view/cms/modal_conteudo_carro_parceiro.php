@@ -5,7 +5,7 @@
   require_once('../../controller/Veiculo_class.php');
 
   $parceiro = Parceiro::obterDadosParceiroByName($_GET['nomeParceiro']);
-  $imagens = Veiculo::getImagensMotoByNomeParceiro($_GET['nomeParceiro']);
+  $imagens = Veiculo::getImagensCarroByNomeParceiro($_GET['nomeParceiro']);
 
   // print_r($parceiro);
   // print_r($imagens);
@@ -69,11 +69,11 @@
       <!-- Demais imagens referente ao parceiro -->
       <div class="segura_outras">
         <div class="menu_carrosel">
-          <a href="#" class="prev_moto" title="Anterior">
+          <a href="#" class="prev_carro" title="Anterior">
             <img src="../pictures/icons/previous.svg" alt="Voltar">
           </a>
         </div>
-        <div class="carrossel_moto sombra_preta_10">
+        <div class="carrossel_carro sombra_preta_10">
           <ul>
             <?php
               for ($i=0; $i < sizeof($imagens); $i++)
@@ -86,7 +86,7 @@
           </ul>
         </div>
         <div class="menu_carrosel">
-          <a href="#" class="next_moto" title="Próximo">
+          <a href="#" class="next_carro" title="Próximo">
             <img src="../pictures/icons/next.svg" alt="Avançar">
           </a>
         </div>
@@ -95,9 +95,9 @@
 
     <script>
       $(function(){
-        $(".carrossel_moto"). jCarouselLite({
-            btnPrev: '.prev_moto',
-            btnNext: '.next_moto',
+        $(".carrossel_carro"). jCarouselLite({
+            btnPrev: '.prev_carro',
+            btnNext: '.next_carro',
             visible: 1
         })
 
@@ -129,7 +129,7 @@
                 if (response.delete) // Sucesso ao deletar a foto do veículo
                 {
                   // Recarrega as fotos das motos
-                  descarrega_conteudo_moto();
+                  descarrega_conteudo_carro();
                 }
               }
             });
