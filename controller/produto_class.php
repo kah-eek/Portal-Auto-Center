@@ -76,15 +76,14 @@ class Produto
   // ###############################################
 
   /**
-  * Obtém o status da imagem conforme o id da imagem informada
-  * @param $idImagem Id da imagem a ter o status recuperado do DB
-  * @return Int Contendo o status da imagens (0 = desativada e 1 = ativada)
-  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um int contendo o número -1
+  * Obtém todos as imagens dos produtos e suas informações entreladas a ela conforme o parceiro informado
+  * @return Array Contendo todos as imagens e suas informações entreladas a ela na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
   */
-  static function getStatusImagemProdutoByIdImg($idImagem)
+  static function getImagensProdutosByNomeParceiro($nomeParceiro)
   {
     $produtoDAO = new ProdutoDAO();
-    return $produtoDAO->getStatusImagemProdutoByIdImg($idImagem);
+    return $produtoDAO->getImagensProdutosByNomeParceiro($nomeParceiro);
   }
 
   /**

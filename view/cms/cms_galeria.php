@@ -108,76 +108,20 @@ require_once('../component/cms_header.php');
                 Produtos
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
+              <form id="frmBuscarParceirProduto"  action="" method="POST">
                 <div class="pesquisa_galeria ">
                   <div class="inp_texto">
-                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                    <input type="text" id="txtPesquisaP" required name="txtPesquisaP" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
                   </div>
                   <div class="inp_bot">
                       <input type="submit" name="bt_moto" value="buscar" class="bt_produto bot">
                   </div>
                 </div>
-
+              </form>
             </div>
 
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_produto ">
-              <!-- Lugar onde a imagem principal aparece -->
-              <div class="segura_principal">
-                <div class="principal sombra_preta_10">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur">
-                  <div class="segura_botao display_none conteudo negrito">
-                    <div class="ocultar">
-                      <div class="ti">
-                        Ocultar
-                      </div>
-                      <button type="button" class="bt" name="btn_oculta_produto"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
-                    </div>
-                    <div class="excluir">
-                      <div class="ti">
-                        Deletar
-                      </div>
-                      <button type="button" class="bt" name="bt_delete_produto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Informativo sobre a imagem selecionada -->
-              <div class="segura_inf">
-                <div class="texto_inf conteudo sombra_preta_2 transparente fs_18">
-                  <div class="inf_parceiro">
-                    Parceiro:
-                  </div>
-                  <div class="inf_img">
-                    efnbf ibiuabibfi iubafibi ijfosn fmeimsm m
-                  </div>
-                </div>
-              </div>
-              <!-- Demais imagens referente ao parceiro -->
-              <div class="segura_outras">
-                <div class="menu_carrosel">
-                  <a href="#" class="prev_produto" title="Anterior">
-                    <img src="../pictures/icons/previous.svg" alt="Voltar">
-                  </a>
-                </div>
-                <div class="carrossel_produto sombra_preta_10">
-                  <ul>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                  </ul>
-                </div>
-                <div class="menu_carrosel">
-                  <a href="#" class="next_produto" title="Próximo">
-                    <img src="../pictures/icons/next.svg" alt="Avançar">
-                  </a>
-                </div>
-              </div>
-            </div>
+            <div class="conteudo_produto"></div>
           </div>
 
 
@@ -225,37 +169,19 @@ require_once('../component/cms_header.php');
             });
           }
 
-          $(function() {
-
-            // COLOCAR NA MODAL A RESPECTIVA FUNCAO
-
-              // $(".carrossel_moto"). jCarouselLite({
-              //     btnPrev: '.prev_moto',
-              //     btnNext: '.next_moto',
-              //     visible: 3
-              // })
-
-              // $(".carrossel_servico"). jCarouselLite({
-              //     btnPrev: '.prev_servico',
-              //     btnNext: '.next_servico',
-              //     visible: 3
-              // })
-
-              // $(".carrossel_carro"). jCarouselLite({
-              //     btnPrev: '.prev_carro',
-              //     btnNext: '.next_carro',
-              //     visible: 3
-              //
-              // })
-
-              $(".carrossel_produto"). jCarouselLite({
-                  btnPrev: '.prev_produto',
-                  btnNext: '.next_produto',
-                  visible: 3
-              })
-
-          })
-
+          // Descarrega as fotos dos produtos
+          function descarrega_conteudo_produto(){
+            $.ajax({
+              type:'GET',
+              url:'modal_conteudo_produto_parceiro.php?nomeParceiro='+$('#txtPesquisaP').val(),
+              processData:false,
+              success:function(response){
+                $('.conteudo_produto').html(response);
+                // EXIBE O QUE RETORNOU DA PAGINA
+                // console.log(response);
+              }
+            });
+          }
 
           // function para deixar visivel a caixa de conteudo moto
           //e ocultar as demais caixas
@@ -301,11 +227,15 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo produto
             //e ocultar as demais caixas
             $('.bt_produto').click(function(){// aciona o evento do click
-              $('.conteudo_produto').show(1500);
-              $('.segura_outras').css('display','block');
-              $('.conteudo_moto').hide(1000);
-              $('.conteudo_carro').hide(1000);
-              $('.conteudo_servico').hide(1000);
+              // Verifica se a caixa de pesquisa esta vazia
+              if ($('#txtPesquisaP').val().length != 0)
+              {
+                $('.conteudo_produto').show(1500);
+                $('.segura_outras').css('display','block');
+                $('.conteudo_moto').hide(1000);
+                $('.conteudo_carro').hide(1000);
+                $('.conteudo_servico').hide(1000);
+              }
             });
 
             // Descarrega a modal de motos
@@ -335,6 +265,16 @@ require_once('../component/cms_header.php');
 
               // Descarrega as fotos das motos
               descarrega_conteudo_carro();
+
+            });
+
+            // Descarrega a modal dos produtos
+            $('#frmBuscarParceirProduto').submit(function(e){
+              // Remove o submit do form
+              e.preventDefault();
+
+              // Descarrega as fotos das motos
+              descarrega_conteudo_produto();
 
             });
 
