@@ -176,8 +176,10 @@
 /*        CAROUSEL                              */
 /*Formataçao padrao do carousel moto*/
 .segura_outras{
-  width: 500px;
+  width: 400px;
+  padding-left: 85px;
   height: 100%;
+  /* background-color: green; */
   float: left;
 }
 
@@ -219,15 +221,22 @@ ul li{
 
 /**/
 .carrossel_moto{
-  width: 6  50px;
+  width: 650px;
   height: 175px;
   float: left;
   margin-top: 125px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: red;
+  /* background-color: red; */
 }
 
+.carrossel_moto li{
+  width: 300px;
+}
+
+.carrossel_moto img{
+  width: inherit;
+}
 
 
 

@@ -294,6 +294,20 @@ require_once('../component/cms_header.php');
 
           <script>
 
+          // Descarrega as fotos das motos
+          function descarrega_conteudo_moto(){
+            $.ajax({
+              type:'GET',
+              url:'modal_conteudo_moto_parceiro.php?nomeParceiro='+$('#txtPesquisaM').val(),
+              processData:false,
+              success:function(response){
+                $('.conteudo_moto').html(response);
+                // EXIBE O QUE RETORNOU DA PAGINA
+                // console.log(response);
+              }
+            });
+          }
+
           $(function() {
 
             // COLOCAR NA MODAL A RESPECTIVA FUNCAO
@@ -373,21 +387,8 @@ require_once('../component/cms_header.php');
               // Remove o submit do form
               e.preventDefault();
 
-              // Debug do form
-              // for (var par of new FormData($('#frmBuscarParceiroMoto')[0]).entries()) {
-              //   console.log(par[0]+" : "+par[1]);
-              // }
-
-              $.ajax({
-                type:'GET',
-                url:'modal_conteudo_moto_parceiro.php?nomeParceiro='+$('#txtPesquisaM').val(),
-                processData:false,
-                success:function(response){
-                  $('.conteudo_moto').html(response);
-                  // EXIBE O QUE RETORNOU DA PAGINA
-                  // console.log(response);
-                }
-              });
+              // Descarrega as fotos das motos
+              descarrega_conteudo_moto();
 
             });
           </script>

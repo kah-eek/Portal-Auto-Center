@@ -50,6 +50,18 @@ class Veiculo
   }
 
   /**
+  * Deleta a imagem do veículo da base de dados
+  * @param $idImg Id da imagem qual será excluída
+  * @return true Imagem excluída com sucesso
+  * @return false Falha ao tentar excluir a imagem
+  */
+  static function deletarImagemVeiculo($idImg)
+  {
+    $veiculoDAO = new VeiculoDAO();
+    return $veiculoDAO->deletarImagemVeiculo($idImg);
+  }
+
+  /**
   * Obtém o status da imagem conforme o id da imagem informada
   * @param $idImagem Id da imagem a ter o status recuperado do DB
   * @return Int Contendo o status da imagens (0 = desativada e 1 = ativada)

@@ -275,6 +275,7 @@
           break;
 
           case 'obterStatus':
+
             // Obtém o status da imagem
             $statusImg = Veiculo::getStatusImagemVeiculoByIdImg($_GET['idImg']);
 
@@ -283,6 +284,26 @@
 
             // Exibe o retorno da obtenção do status da imagem no formato JSON
             echo JSON_encode($response);
+
+          break;
+
+          case 'deletarImgVeiculo':
+
+            // Verifica se a exclusão ocorreu com êxito
+            if(Veiculo::deletarImagemVeiculo($_POST['idImg']))//Êxito
+            {
+              // Define o status como sucesso na exlusão
+              $response = array('delete'=>true);
+            }
+            else //Falha
+            {
+              //Define o status como falha ao tentar realizar a exlusão
+              $response = array('delete'=>false);
+            }
+
+            // Exibe o retorno da exclusão da imagem no formato JSON
+            echo JSON_encode($response);
+
           break;
         }
 

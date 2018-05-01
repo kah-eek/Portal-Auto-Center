@@ -8,6 +8,47 @@ class VeiculoDAO
 {
 
   /**
+  * Deleta a imagem do veículo da base de dados
+  * @param $idImg Id da imagem qual será excluída
+  * @return true Imagem excluída com sucesso
+  * @return false Falha ao tentar excluir a imagem
+  */
+  function deletarImagemVeiculo($idImg)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'DELETE FROM tbl_imagem_veiculo_parceiro '.
+      'WHERE id_imagem_veiculo_parceiro = ?'
+    );
+
+    // Preenche a statement com o respectivo parâmetro
+    $stmt->bindParam(1,$idImg);
+
+    try {
+
+      // Executa a statement e armazena a quantidade de registros que foram deletados
+      $result = $stmt->execute() ? $stmt->rowCount() : -1;
+
+      // Verifica se a exclusão do registro ocorreu com sucesso
+      $result = $result == -1 ? false : true;
+
+    } catch (\Exception $e) {
+      $result = false;
+    }
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+
+  }
+
+  /**
   * Atualiza o status (ativada ou desativada) da imagem do veículo no banco de dados
   * @param $idImagem Id da imagem qaul será atualizado no banco de dados
   * @return true Atualização realizada com sucesso na base de dados

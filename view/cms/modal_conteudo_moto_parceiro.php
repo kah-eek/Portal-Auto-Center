@@ -44,7 +44,7 @@
               <div class="ti">
                 Deletar
               </div>
-              <a href="#">
+              <a id="excluir_foto_principal" href="#">
                 <i class="material-icons fs_30 bt">delete_forever</i>
               </a>
               <!-- <button type="button" class="bt" name="bt_delete_moto"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button> -->
@@ -100,6 +100,42 @@
             btnNext: '.next_moto',
             visible: 1
         })
+
+
+        // Evento do click no btn excluir
+        $('#excluir_foto_principal').click(function(e){
+          // Remove o click padrão da tag </a>
+          e.preventDefault();
+
+          // Verifica se o usuário realmente que excluir a foto
+          if (confirm('Deseja realmente excluir esta foto ?'))
+          {
+            // Armazena o id da imagem
+            var idImg = $('#foto_principal').data('id');
+
+            // Invoca a router para exlcluir a foto do veículo
+            $.ajax({
+              type:'POST',
+              url:'../../router.php?controller=veiculo&modo=deletarImgVeiculo',
+              data:{'idImg':idImg},
+              // processData:false,
+              // contentType:false,
+              dataType:'json',
+              success:function(response){
+                // EXIBE O QUE RETORNOU DA PAGINA
+                // console.log(response);
+
+                // Verifica de o delete da foto ocorreu com sucesso
+                if (response.delete) // Sucesso ao deletar a foto do veículo
+                {
+                  // Recarrega as fotos das motos
+                  descarrega_conteudo_moto();
+                }
+              }
+            });
+          }
+        });
+
 
         // Evento do click no btn ocultar
         $('#ocultar_foto_principal').click(function(e){
