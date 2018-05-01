@@ -243,6 +243,57 @@
           echo JSON_encode($response);
 
           break;
+
+          case 'deletarImgProduto':
+
+            // Verifica se a exclusão ocorreu com êxito
+            if(Produto::deletarImagemProduto($_POST['idImg']))//Êxito
+            {
+              // Define o status como sucesso na exlusão
+              $response = array('delete'=>true);
+            }
+            else //Falha
+            {
+              //Define o status como falha ao tentar realizar a exlusão
+              $response = array('delete'=>false);
+            }
+
+            // Exibe o retorno da exclusão da imagem no formato JSON
+            echo JSON_encode($response);
+
+          break;
+
+          case 'updateStatus':
+
+            // Verifica se a inserção ocorreu com êxito
+            if(Produto::atualizarStatusImagem($_POST['idImg'], $_POST['statusImg']))//Êxito
+            {
+              // Define o status como sucesso na inserção
+              $response = array('status'=>true);
+            }
+            else //Falha
+            {
+              //Define o status como falha ao tentar realizar a inserção
+              $response = array('status'=>false);
+            }
+
+            // Exibe o retorno da inserção do produto
+            echo JSON_encode($response);
+
+          break;
+
+          case 'obterStatus':
+
+            // Obtém o status da imagem
+            $statusImg = Produto::getStatusImagemProdutoByIdImg($_GET['idImg']);
+
+            // Prepara a resposta para o formato JSON
+            $response = array('status_img'=>$statusImg);
+
+            // Exibe o retorno da obtenção do status da imagem no formato JSON
+            echo JSON_encode($response);
+
+          break;
         }
 
       break;
@@ -307,6 +358,10 @@
           break;
         }
 
+      break;
+
+      case 'servico':
+        echo "string";
       break;
   }
 

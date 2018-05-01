@@ -50,7 +50,7 @@ require_once('../component/cms_header.php');
             </div>
 
             <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_moto "></div>
+            <div class="conteudo_moto"></div>
           </div>
 
           <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
@@ -61,76 +61,20 @@ require_once('../component/cms_header.php');
                 Serviços
               </div>
                 <!-- Campo para pesquisar o parceiro desejado -->
+              <form id="frmBuscarParceirServico"  action="" method="POST">
                 <div class="pesquisa_galeria ">
                   <div class="inp_texto">
-                    <input type="text" name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
+                    <input id="txtPesquisaS" type="text" required name="txtPesquisaM" placeholder="Digite o nome do Parceiro" value="" class="pes conteudo">
                   </div>
                   <div class="inp_bot">
-                      <input type="submit" name="bt_moto" value="buscar" class="bt_servico bot">
+                      <input id="btn_buscar_servico" type="submit" name="bt_moto" value="buscar" class="bt_servico bot">
                   </div>
                 </div>
-
+              </form>
             </div>
 
-            <!-- Conteudo das imagens das motos -->
-            <div class="conteudo_servico ">
-              <!-- Lugar onde a imagem principal aparece -->
-              <div class="segura_principal">
-                <div class="principal sombra_preta_10">
-                  <img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste" class="blur">
-                  <div class="segura_botao display_none conteudo negrito">
-                    <div class="ocultar">
-                      <div class="ti">
-                        Ocultar
-                      </div>
-                      <button type="button" class="bt" name="bt_ocultar_servico"><img  src="../pictures/icons/visualizar.svg" alt="Moto teste"></button>
-                    </div>
-                    <div class="excluir">
-                      <div class="ti">
-                        Deletar
-                      </div>
-                      <button type="button" class="bt" name="bt_delete_servico"><img src="../pictures/icons/delete.svg" alt="Moto teste"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="segura_inf">
-                <div class="texto_inf conteudo sombra_preta_2 transparente fs_18">
-                  <div class="inf_parceiro">
-                    Parceiro:
-                  </div>
-                  <div class="inf_img">
-                    efnbf ibiuabibfi iubafibi ijfosn fmeimsm m
-                  </div>
-                </div>
-              </div>
-              <!-- Informativo sobre a imagem selecionada -->
-              <div class="segura_outras">
-                <div class="menu_carrosel">
-                  <a href="#" class="prev_servico" title="Anterior">
-                    <img src="../pictures/icons/previous.svg" alt="Voltar">
-                  </a>
-                </div>
-                <div class="carrossel_servico sombra_preta_10">
-                  <ul>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_um.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_dois.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_tres.jpg" alt="Moto teste"></li>
-                    <li><img src="../pictures/galeria/moto_quatro.jpg" alt="Moto teste"></li>
-                  </ul>
-                </div>
-                <div class="menu_carrosel">
-                  <a href="#" class="next_servico" title="Próximo">
-                    <img src="../pictures/icons/next.svg" alt="Avançar">
-                  </a>
-                </div>
-              </div>
-            </div>
+            <!-- Conteudo das imagens dos servicos -->
+            <div class="conteudo_servico"></div>
           </div>
 
           <!-- Card que segura as informacoes das imagens cadastradas pelo parceiro -->
@@ -308,6 +252,20 @@ require_once('../component/cms_header.php');
             });
           }
 
+          // Descarrega as fotos dos servicos
+          function descarrega_conteudo_servico(){
+            $.ajax({
+              type:'GET',
+              url:'modal_conteudo_servico_parceiro.php?nomeParceiro='+$('#txtPesquisaS').val(),
+              processData:false,
+              success:function(response){
+                $('.conteudo_servico').html(response);
+                // EXIBE O QUE RETORNOU DA PAGINA
+                // console.log(response);
+              }
+            });
+          }
+
           $(function() {
 
             // COLOCAR NA MODAL A RESPECTIVA FUNCAO
@@ -318,11 +276,11 @@ require_once('../component/cms_header.php');
               //     visible: 3
               // })
 
-              $(".carrossel_servico"). jCarouselLite({
-                  btnPrev: '.prev_servico',
-                  btnNext: '.next_servico',
-                  visible: 3
-              })
+              // $(".carrossel_servico"). jCarouselLite({
+              //     btnPrev: '.prev_servico',
+              //     btnNext: '.next_servico',
+              //     visible: 3
+              // })
 
               $(".carrossel_carro"). jCarouselLite({
                   btnPrev: '.prev_carro',
@@ -357,10 +315,15 @@ require_once('../component/cms_header.php');
             // function para deixar visivel a caixa de conteudo serviço
             //e ocultar as demais caixas
             $('.bt_servico').click(function(){// aciona o evento do click
-              $('.conteudo_servico').show(1500);
-              $('.conteudo_moto').hide(1000);
-              $('.conteudo_carro').hide(1000);
-              $('.conteudo_produto').hide(1000);
+              // Verifica se a caixa de pesquisa esta vazia
+              if ($('#txtPesquisaS').val().length != 0)
+              {
+                $('.conteudo_servico').show(1500);
+                $('.conteudo_moto').hide(1000);
+                $('.conteudo_carro').hide(1000);
+                $('.conteudo_produto').hide(1000);
+              }
+
             });
 
             // function para deixar visivel a caixa de conteudo carro
@@ -389,6 +352,16 @@ require_once('../component/cms_header.php');
 
               // Descarrega as fotos das motos
               descarrega_conteudo_moto();
+
+            });
+
+            // Descarrega a modal de servicos
+            $('#frmBuscarParceirServico').submit(function(e){
+              // Remove o submit do form
+              e.preventDefault();
+
+              // Descarrega as fotos das motos
+              descarrega_conteudo_servico();
 
             });
           </script>

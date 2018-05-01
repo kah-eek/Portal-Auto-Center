@@ -18,6 +18,10 @@ elseif(file_exists('controller/MySql_class.php'))
 {
   require_once('controller/MySql_class.php');
 }
+elseif(file_exists('../../model/ProdutoDAO.php'))
+{
+  require_once('../../model/ProdutoDAO.php');
+}
 
 // require_once('../../controller/MySql_class.php');
 // require_once('../../model/ProdutoDAO.php');
@@ -72,6 +76,41 @@ class Produto
   // ###############################################
 
   /**
+  * Obtém o status da imagem conforme o id da imagem informada
+  * @param $idImagem Id da imagem a ter o status recuperado do DB
+  * @return Int Contendo o status da imagens (0 = desativada e 1 = ativada)
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um int contendo o número -1
+  */
+  static function getStatusImagemProdutoByIdImg($idImagem)
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->getStatusImagemProdutoByIdImg($idImagem);
+  }
+
+  /**
+  * Atualiza o status (ativada ou desativada) da imagem do produto no banco de dados
+  * @param $idImagem Id da imagem qual será atualizado no banco de dados
+  * @return true Atualização realizada com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o status da imagem no banco de dados
+  */
+  static function atualizarStatusImagem($idImagem, $statusImg)
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->atualizarStatusImagem($idImagem, $statusImg);
+  }
+
+  /**
+  * Obtém todos as imagens dos produtos e suas informações entreladas a ela conforme o parceiro informado
+  * @return Array Contendo todos as imagens e suas informações entreladas a ela na base de dados
+  * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
+  */
+  static function getImagensServicosByNomeParceiro($nomeParceiro)
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->getImagensServicosByNomeParceiro($nomeParceiro);
+  }
+
+  /**
   * Obtém todos os produtos existentes na base de dados
   * @return Array Contendo todos os produtos existentes na base de dados
   * Obs.: Caso ocorra algum erro ao tentar realizar a consulta na base de dados este retornará um array contendo um índice ("error") com o valor true ("error":true)
@@ -81,6 +120,19 @@ class Produto
     $produtoDAO = new ProdutoDAO();
     return $produtoDAO->obterDetalhesProdutos();
   }
+
+  /**
+  * Deleta a imagem do produto da base de dados
+  * @param $idImg Id da imagem qual será excluída
+  * @return true Imagem excluída com sucesso
+  * @return false Falha ao tentar excluir a imagem
+  */
+  static function deletarImagemProduto($idImg)
+  {
+    $produtoDAO = new ProdutoDAO();
+    return $produtoDAO->deletarImagemProduto($idImg);
+  }
+
   static function obterDetalhesSimplesProdutos()
   {
     $produtoDAO = new ProdutoDAO();
