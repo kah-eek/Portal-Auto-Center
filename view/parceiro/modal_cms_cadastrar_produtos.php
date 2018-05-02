@@ -57,14 +57,6 @@
               <div class="item_inputs_cnp centro_lr margem_t_20">
                 <input class="input_cnp sombra_preta_20" type="text" name="garantia" placeholder="garantia" value="">
               </div>
-              <!-- DIV SELECT -->
-              <div class="container_select_cnp margem_t_20 centro_lr">
-                <select class="slc_tempo sombra_preta_20" name="cor">
-                  <option value="">
-
-                  </option>
-                </select>
-              </div>
               <!-- INPUT OBSERVACOES -->
               <div class="item_inputs_cnp centro_lr margem_t_20">
                 <input class="input_cnp sombra_preta_20" type="text" name="observacao" placeholder="Observações" value="">

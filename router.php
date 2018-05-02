@@ -213,10 +213,10 @@
           // Instância um objeto produto e o popula com os dados do form
           $produto = new Produto(
             1, //id do produto
-            null, //id modelo produto
-            null, //id parceiro
-            $_POST['cor'], //id_cor
-            null, //id categoria do produto
+            1, //id modelo produto
+            1, //id parceiro
+            1, //id_cor
+            1, //id categoria do produto
             $_POST['nome'], //nome do produto
             $_POST['preco'], //preco do produto
             $_POST['conteudo_embalagem'],
@@ -225,7 +225,7 @@
             $_POST['observacao'] //obsrvacao do produto
           );
 
-          var_dump($produto);
+          //var_dump($produto);
 
           // Verifica se a inserção ocorreu com êxito
           if($produto->inserirProduto($produto))//Êxito

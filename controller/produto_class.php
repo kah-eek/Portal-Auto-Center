@@ -38,7 +38,6 @@ class Produto
   public $idParceiro;
   public $idCor;
   public $idCategoriaProduto;
-  public $modelo;
   public $preco;
   public $conteudoEmbalagem;
   public $garantia;
@@ -67,11 +66,14 @@ class Produto
     $this->idParceiro = $idParceiro;
     $this->idCor = $idCor;
     $this->idCategoriaProduto = $idCategoriaProduto;
+    $this->nome = $nome;
     $this->preco = $preco;
     $this->conteudoEmbalagem = $conteudoEmbalagem;
     $this->garantia = $garantia;
     $this->descricao = $descricao;
     $this->observacao = $observacao;
+
+
   }
   // ###############################################
 
@@ -82,6 +84,7 @@ class Produto
   */
   static function getImagensProdutosByNomeParceiro($nomeParceiro)
   {
+
     $produtoDAO = new ProdutoDAO();
     return $produtoDAO->getImagensProdutosByNomeParceiro($nomeParceiro);
   }

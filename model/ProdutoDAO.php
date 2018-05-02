@@ -314,6 +314,8 @@ class ProdutoDAO
 
   function inserirProduto($produtoObj)
   {
+
+    var_dump($produtoObj);
     // Instância de acesso ao db
     $mySql = new Mysql();
 
@@ -323,7 +325,7 @@ class ProdutoDAO
     $stmt = $con->prepare(
       'INSERT INTO tbl_produto ('.
       'id_modelo_produto,'.
-      'id_parceiro'.
+      'id_parceiro,'.
       'id_cor,'.
       'id_categoria_produto,'.
       'nome,'.
@@ -336,19 +338,20 @@ class ProdutoDAO
     );
 
     // Preenche a statement com os parâmetros
-    $stmt->bindParam(1, $produtoObj->id_modelo_produto);
-    $stmt->bindParam(2, $produtoObj->id_parceiro);
-    $stmt->bindParam(3, $produtoObj->id_cor);
-    $stmt->bindParam(4, $produtoObj->id_categoria_produto);
+    $stmt->bindParam(1, $produtoObj->idModeloProduto);
+    $stmt->bindParam(2, $produtoObj->idParceiro);
+    $stmt->bindParam(3, $produtoObj->idCor);
+    $stmt->bindParam(4, $produtoObj->idCategoriaProduto);
     $stmt->bindParam(5, $produtoObj->nome);
     $stmt->bindParam(6, $produtoObj->preco);
-    $stmt->bindParam(7, $produtoObj->conteudo_embalagem);
+    $stmt->bindParam(7, $produtoObj->conteudoEmbalagem);
     $stmt->bindParam(8, $produtoObj->garantia);
     $stmt->bindParam(9, $produtoObj->descricao);
     $stmt->bindParam(10, $produtoObj->observacao);
 
     // Verifica se a inserção ocorreu com sucesso e retorna a resposta adquirida
-    $result = $stmt->execute() ? $con->lastInsertId() : null;
+    $result = $stmt->execute();
+    //$con->lastInsertId() : null;
 
     // Fecha a conexão com o db
     $con = null;
