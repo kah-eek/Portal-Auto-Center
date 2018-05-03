@@ -32,29 +32,31 @@
            <!-- IMAGEM -->
            <div class="container_imagem float_left">
              <label for="btn_img_cliente">
+               <div hidden id="pathImgCliente"></div>
                <div class="item_imagem centro_lr margem_t_20">
-
+                 <img id="imgCliente" src="" alt="">
                </div>
              </label>
              <input class="display_none" id="btn_img_cliente" type="file" name="btn_img_cliente" value="">
            </div>
          </form>
 
-         <!-- TEXTAREA -->
-         <div class="container_textarea float_left">
-           <div class="item_textarea">
-             <textarea placeholder="Digite Aqui!!!" class="textarea_cp float_left" name="name" style="resize: none" rows="11" cols="42"></textarea>
-           </div>
-         </div>
+         <form id="frmDescritivoCliente" name="frmDescritivoCliente" action="index.html" method="post">
+             <!-- TEXTAREA -->
+             <div class="container_textarea float_left">
+               <div class="item_textarea">
+                 <textarea placeholder="Digite Aqui!!!" class="textarea_cp float_left" name="name" style="resize: none" rows="11" cols="42"></textarea>
+               </div>
+             </div>
 
-         <!-- BOTÃO -->
-         <div class="container_btn float_left">
-           <div class="segura_submit margem_t_100 centro_lr">
-             <input id="btnSalvarClienteParceiro" type="submit" name="btn_enviar" class="input_submit_cp" value="Enviar">
-           </div>
-         </div>
-       </div>
-
+             <!-- BOTÃO -->
+             <div class="container_btn float_left">
+               <div class="segura_submit margem_t_100 centro_lr">
+                 <input id="btnSalvarCliente" type="submit" name="btn_enviar" class="input_submit_cp" value="Enviar">
+               </div>
+             </div>
+           </form>
+        </div>
      </div>
 
      <div class="container_sobre_parceiro float_left margem_t_10">
@@ -105,50 +107,51 @@
  // Carrega a imagem de forma dinâmica - Missão
   $('#btn_img_cliente').change(function(){
     $('#frmImagemCliente').ajaxForm({
-      target:'#pathImgMissao',
+      target:'#pathImgCliente',
       success:function(){ // Callback de sucesso
         // Armazena o caminho da imagem cortada para se adaptar ao atual diretório encontrado
-        caminhoImg = $('#pathImgMissao').html().substring(7);
+        caminhoImg = $('#pathImgCliente').html().substring(7);
 
         // Define o src do componente img com o caminho da imagem recém carregada
-        $('#imgMissao').attr('src','../'+caminhoImg);
+        $('#imgCliente').attr('src','../'+caminhoImg);
       }
     }).submit();
 
   });
 
   // Submit do form contendo o texto descritivo do tópico de Missão
-  $('#frmDescritivoMissao').submit(function(e){
+  $('#frmDescritivoCliente').submit(function(e){
 
     // Retira o submit do form
     e.preventDefault();
 
     // Armazena o form em um obj
-    var formDescritivoMissao = new FormData($('#frmDescritivoMissao')[0]);
+    var formDescritivoCliente = new FormData($('#frmDescritivoCliente')[0]);
 
     // adiciona a imagem no form
-    formDescritivoMissao.append('srcImg',caminhoImg);
+    formDescritivoCliente.append('srcImg',caminhoImg);
     // adiciona o id do tópico no form
-    formDescritivoMissao.append('idTopico',1);
+    formDescritivoCliente.append('idTopico',1);
     // adiciona o id do registro a ser atualizado no form
-    formDescritivoMissao.append('id',1);
+    formDescritivoCliente.append('id',1);
 
     // Debbug form
-    // for (var i of formDescritivoMissao.entries()) {
+    // for (var i of formDescritivoCliente.entries()) {
     //   console.log(i[0]+" "+i[1]);
     // }
 
     // Envia a solicitação para a router
     $.ajax({
       type: 'POST',
-      url: '../../router.php?controller=sobreEmpresa&modo=atualizar',
-      data: formDescritivoMissao,
+      url: '../../router.php?controller=clienteParceiro&modo=atualizar',
+      data: formDescritivoCliente,
       processData: false,
-      contentType: false,
-      cache:false,
-      dataType:'json',
+      // contentType: false,
+      // cache:false,
+      // dataType:'json',
       success:function(response){
-        if (response.status){alert('Dados atualizados com sucesso');}
+        // if (response.status){alert('Dados atualizados com sucesso');}
+        console.log(response);
       },
       error:function(jqXHR, textStatus, errorThrown){
         console.error(textStatus);
