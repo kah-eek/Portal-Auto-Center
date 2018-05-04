@@ -147,6 +147,12 @@ class Produto
     return $produtoDAO->inserirProduto($produtoObj);
   }
 
+  static function inserirImagemProduto($produtoObj)
+  {
+    $produtoObj = new produtoDAO();
+    return $produtoDAO->inserirImagemProduto($produtoObj);
+  }
+
 }
 
 ?>

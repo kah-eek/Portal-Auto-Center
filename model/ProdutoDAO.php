@@ -359,6 +359,40 @@ class ProdutoDAO
     return $result;
   }
 
+  /**
+  * Atualiza a tabela responsável pelos registros da tela cadastrar produto
+  * @param $produtoObj Objeto Produto qual será atualizado no banco de dados
+  * @return true Produto atualizado com sucesso na base de dados
+  * @return false Falha ao tentar atualizar o Produto na base de dados
+  */
+  function inserirImagemProduto($produtoObj)
+  {
+    // Instância de acesso ao db
+    $mySql = new MySql();
+
+    // Abre uma nova conexão com o db
+    $con = $mySql->getConnection();
+
+    $stmt = $con->prepare(
+      'UPDATE tbl_imagem_produto_parceiro SET '.
+        'imagem = ?'.
+        'WHERE '.
+        'id_imagem_produto_parceiro = ?'
+    );
+
+    $stmt->bindParam(1, $produtoObj->imagem);
+    $stmt->bindParam(2, $produtoObj->idImagemProdutoParceiro);
+
+    // Verifica se a atualização do registro ocorreu com sucesso e retorna a resposta adquirida
+    $result = $stmt->execute() ? true : false;
+
+    // Fecha a conexão com o db
+    $con = null;
+
+    return $result;
+
+  }
+
 
 }
 

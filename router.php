@@ -240,11 +240,15 @@
 
         require_once("controller/MySql_class.php");
         require_once("controller/produto_class.php");
+        require_once("controller/Imagem_class.php");
 
         // Verifica qual o recurso será utilizado
         switch ($modo)
         {
           case 'novo': //Insere um produto
+
+          // Instância um objeto imagem e o popula com a imagem vinda do form
+          $imagem = new Imagem($_FILES['btn_img_produto'], 'view/pictures/cadastrar_produtos_parceiro/');
 
           // Instância um objeto produto e o popula com os dados do form
           $produto = new Produto(
@@ -259,6 +263,7 @@
             $_POST['garantia'], //garantia do produto
             $_POST['descricao'], //descricao do produto
             $_POST['observacao'] //obsrvacao do produto
+            $imagem->salvarImagem($imagem), // Retorna o caminho da imagem
           );
 
           //var_dump($produto);
