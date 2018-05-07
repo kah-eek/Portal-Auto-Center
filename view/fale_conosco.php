@@ -1,3 +1,35 @@
+<!--
+@autor Henrique Otremba dos Santos
+@data 06/05/2018
+@descricao Página do faleconosco da pac
+-->
+<?php
+//************conexão com o Msql************************
+require_once('../database/conect.php');
+Conexao_db();
+//******************************************************
+if(isset($_POST["BtnSalvar"]))
+{
+    //Resgatar os dados fornecidos pelo usuario
+    //usando o metod POST, conforme escolhido pelo Form
+    $nome=$_POST["txtNome"];
+    $email=$_POST["txtEmail"];
+    $sugestao=$_POST["txtsugestao"];
+
+    //Monta o Script para enviar para o BD
+    addslashes($sql = "insert into tbl_fale_conosco (nome, email, pergunta_sugestao_critica) values ('".$nome."','".$email."','".$sugestao."') ");
+
+    //Executa o script no BD
+    mysql_query($sql);
+
+   header('location:fale_conosco.php?page=fale_conosco');
+    //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
+   // echo($sql);
+
+}
+
+ ?>
+
   <?php
     // Importando o cabeçalho
     require_once("component/header.php");
@@ -31,7 +63,7 @@
           <!-- Divisor de conteúdo -->
           <div class="divisor"></div>
 
-          <form action="" method="POST">
+          <form name="frmFaleConosco" method="post" action="fale_conosco.php">
 
             <!-- Label do campo - Nome -->
             <div class="label_campo margem_b_10 preenche_l_100">
@@ -39,7 +71,8 @@
             </div>
             <!-- Campo - Nome -->
             <div class="campo_texto margem_b_30 preenche_l_100">
-              <input required class="input_text sem_sombra txt_preto fs_20" id="txt_nome" type="text" name="txt_nome" value="">
+              <input placeholder="Digite seu nome" type="text" name="txtNome" value="" class="input_text txt_preto sem_sombra" required pattern="[a-z A-Z ã Ã õ Õ é É ô Ô ç Ç]*"
+                                   title="Permitido apenas letras" onkeypress="return validar(event,'number')">
             </div>
             <!-- ___________________________________________________________________ -->
 
@@ -49,7 +82,7 @@
             </div>
             <!-- Campo - E-mail -->
             <div class="campo_texto margem_b_30 preenche_l_100">
-              <input required class="input_text sem_sombra txt_preto fs_20" id="txt_email" type="email" name="txt_email" value="">
+              <input required placeholder="Digite seu email" type="email" name="txtEmail" value="" class="input_text sem_sombra txt_preto fs_20" >
             </div>
             <!-- ___________________________________________________________________ -->
 
@@ -60,14 +93,14 @@
             </div>
             <!-- Campo - Mensagem -->
             <div class="campo_texto_textarea margem_b_30 preenche_l_100">
-              <textarea required id="txt_mensagem" class="no_resize conteudo fs_20" name="txt_mensagem" maxlength="500" rows="8" cols="81"></textarea>
+              <textarea required class="no_resize conteudo fs_20" name="txtsugestao" maxlength="500" rows="8" cols="81"></textarea>
               <!-- <input class="input_text sem_sombra txt_preto fs_20" id="txt_mensagem" type="text" name="txt_mensagem" value=""> -->
             </div>
             <!-- ___________________________________________________________________ -->
 
             <!-- Container do botão de enviar o formulário -->
             <div class="container_botao_enviar titulo margem_t_115">
-              <input class="input_submit bg_verde_vivo negrito espacamento_letra_2" type="submit" name="btn_enviar" value="Enviar">
+              <input class="input_submit bg_verde_vivo negrito espacamento_letra_2" type="submit" name="BtnSalvar" value="Enviar">
             </div>
             <!-- ___________________________________________________________________ -->
 
