@@ -7,14 +7,14 @@ session_start();
 // if da escolha , visualizar ou excluir
 if(isset($_GET['escolha'])){
     $escolha = $_GET['escolha'];
-    $id = $_GET['id_fale_conosco'];
+    $id = $_GET['id'];
 
     //if da escolha excluir
     if($escolha == 'excluir'){
         $sql = "DELETE FROM tbl_fale_conosco WHERE id_fale_conosco= ".$id;
         mysql_query($sql);
-        echo ($sql);
-        header('location:cms_modal_fale_conosco.php');
+        // echo ($sql)
+        header('location:modal_cms_fale_conosco.php');
       }
     }
 
@@ -80,7 +80,7 @@ if(isset($_GET['escolha'])){
               </div>
                 <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
                   <!-- <label for="btndeletaRegistro"> -->
-                  <a id="excluir_faleConosco" href="?escolha=excluir&id=<?php echo($rsFC['id_fale_conosco']);?>">
+                  <a id="excluir_faleConosco" href="modal_cms_fale_conosco.php?escolha=excluir&id=<?php echo($rsFC['id_fale_conosco']);?>">
                     <i class="material-icons" style="font-size:30px;">delete_forever</i>
                   </a>
                   <!-- </label> -->
