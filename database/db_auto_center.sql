@@ -160,7 +160,7 @@ CREATE TABLE `tbl_cargo_funcionario_pac` (
   `id_cargo_funcionario_pac` int(11) NOT NULL AUTO_INCREMENT,
   `cargo` varchar(280) NOT NULL,
   PRIMARY KEY (`id_cargo_funcionario_pac`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +169,6 @@ CREATE TABLE `tbl_cargo_funcionario_pac` (
 
 LOCK TABLES `tbl_cargo_funcionario_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_cargo_funcionario_pac` DISABLE KEYS */;
-INSERT INTO `tbl_cargo_funcionario_pac` VALUES (1,'Tester');
 /*!40000 ALTER TABLE `tbl_cargo_funcionario_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +183,7 @@ CREATE TABLE `tbl_categoria_conta_pac` (
   `id_categoria_conta_pac` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(180) NOT NULL,
   PRIMARY KEY (`id_categoria_conta_pac`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -193,7 +192,6 @@ CREATE TABLE `tbl_categoria_conta_pac` (
 
 LOCK TABLES `tbl_categoria_conta_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_categoria_conta_pac` DISABLE KEYS */;
-INSERT INTO `tbl_categoria_conta_pac` VALUES (1,'Luz'),(2,'Água'),(3,'Internet'),(4,'Telefone');
 /*!40000 ALTER TABLE `tbl_categoria_conta_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -411,7 +409,7 @@ CREATE TABLE `tbl_conta_pac` (
   PRIMARY KEY (`id_conta_pac`),
   KEY `fk_tbl_conta_pac_id_categoria_conta_idx` (`id_categoria_conta_pac`),
   CONSTRAINT `fk_tbl_conta_pac_id_categoria_conta` FOREIGN KEY (`id_categoria_conta_pac`) REFERENCES `tbl_categoria_conta_pac` (`id_categoria_conta_pac`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -420,7 +418,6 @@ CREATE TABLE `tbl_conta_pac` (
 
 LOCK TABLES `tbl_conta_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_conta_pac` DISABLE KEYS */;
-INSERT INTO `tbl_conta_pac` VALUES (1,1,3245.00,'2018-05-24',0);
 /*!40000 ALTER TABLE `tbl_conta_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -697,7 +694,7 @@ CREATE TABLE `tbl_funcionario_pac` (
   CONSTRAINT `fk_tbl_funcionario_pac_id_cargo_funcionario_pac` FOREIGN KEY (`id_cargo_funcionario_pac`) REFERENCES `tbl_cargo_funcionario_pac` (`id_cargo_funcionario_pac`),
   CONSTRAINT `fk_tbl_funcionario_pac_id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`),
   CONSTRAINT `tbl_funcionario_pac` FOREIGN KEY (`id_usuario`) REFERENCES `tbl_usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -706,7 +703,6 @@ CREATE TABLE `tbl_funcionario_pac` (
 
 LOCK TABLES `tbl_funcionario_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario_pac` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario_pac` VALUES (1,'Ricardo Freitas da Silva','4561561','56156',1,'1971-02-25',1,2600.00,'M','6156','tester@pac.com.br','path','51489496','45141','15615616','2018-05-06 18:08:50',1);
 /*!40000 ALTER TABLE `tbl_funcionario_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -911,7 +907,7 @@ CREATE TABLE `tbl_pagamento_funcionario_pac` (
   PRIMARY KEY (`id_pagamento_funcionario_pac`),
   KEY `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac_idx` (`id_funcionario_pac`),
   CONSTRAINT `fk_tbl_pagamento_funcionario_pac_id_funcionario_pac` FOREIGN KEY (`id_funcionario_pac`) REFERENCES `tbl_funcionario_pac` (`id_funcionario_pac`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -920,7 +916,6 @@ CREATE TABLE `tbl_pagamento_funcionario_pac` (
 
 LOCK TABLES `tbl_pagamento_funcionario_pac` WRITE;
 /*!40000 ALTER TABLE `tbl_pagamento_funcionario_pac` DISABLE KEYS */;
-INSERT INTO `tbl_pagamento_funcionario_pac` VALUES (1,1,0,'2018-05-06 22:40:58');
 /*!40000 ALTER TABLE `tbl_pagamento_funcionario_pac` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1838,30 +1833,6 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `view_receita_plano_contratacao`
---
-
-DROP TABLE IF EXISTS `view_receita_plano_contratacao`;
-/*!50001 DROP VIEW IF EXISTS `view_receita_plano_contratacao`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_receita_plano_contratacao` AS SELECT 
- 1 AS `receita`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `view_total_despesas_internas`
---
-
-DROP TABLE IF EXISTS `view_total_despesas_internas`;
-/*!50001 DROP VIEW IF EXISTS `view_total_despesas_internas`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_total_despesas_internas` AS SELECT 
- 1 AS `total_despesa`*/;
-SET character_set_client = @saved_cs_client;
-
---
 -- Final view structure for view `view_cliente`
 --
 
@@ -1968,42 +1939,6 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `view_receita_plano_contratacao`
---
-
-/*!50001 DROP VIEW IF EXISTS `view_receita_plano_contratacao`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_receita_plano_contratacao` AS select sum(`pln_contr`.`valor`) AS `receita` from (`tbl_plano_contratacao` `pln_contr` join `tbl_parceiro` `parc` on((`parc`.`id_plano_contratacao` = `pln_contr`.`id_plano_contratacao`))) where (`parc`.`ativo` = 1) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `view_total_despesas_internas`
---
-
-/*!50001 DROP VIEW IF EXISTS `view_total_despesas_internas`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_total_despesas_internas` AS select (sum(`contas`.`valor`) + sum(`func`.`salario`)) AS `total_despesa` from (`tbl_conta_pac` `contas` join `tbl_funcionario_pac` `func`) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -2014,4 +1949,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-06 23:11:10
+-- Dump completed on 2018-05-06 17:29:04
