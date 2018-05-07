@@ -1,7 +1,7 @@
 body{
   width: 100%;
   height: 100%;
-  background-image: url("../../pictures/cms_home/bg_cms.jpeg");
+  /* background-image: url("../../pictures/cms_home/bg_cms.jpeg"); */
   background-size: cover;
   background-attachment: fixed;
 }
@@ -29,18 +29,28 @@ header{
   height: 80px;
 }
 .logo_pac{
-  width: 150px;
-  height: 80px;
+  width: 195px;
+  height: 55px;
+  /* background-color: red; */
+  font-size: 40px;
+  font-family: verdana;
+  padding-left: 80px;
+  padding-top: 10px;
+  color: #00C853;
 }
 .logo_pac img{
   width: inherit;
   height: inherit;
 }
 .titulo_cabecalho{
-  width: 900px;
-  height: 80px;
+  width: 790px;
+  height: 60px;
+  font-size: 30px;
+  padding-top: 20px;
+  /* background-color: red; */
 }
 .saudacao_cabecalho{
-  width: 370px;
-  height: 80px;
+  width: 320px;
+  height: 55px;
+  padding-top: 25px;
 }

@@ -72,17 +72,15 @@ if(isset($_GET['escolha'])){
               <div class="item_dados_topicos_fc float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
                 <?php echo($rsFC['nome']) ?>
               </div>
-
               <div class="item_dados_topicos_fc float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20">
                 <?php echo($rsFC['email']) ?>
               </div>
-
               <div class="item_dados_topicos_fc float_left preenche_t_15 margem_l_10 align_center borda_preta_1 sombra_preta_20 justificado">
                 <?php echo($rsFC['pergunta_sugestao_critica']) ?>
               </div>
                 <div class="ativo_ver_dados_fc float_left preenche_t_10 margem_l_10 align_center borda_preta_1 sombra_preta_20">
                   <!-- <label for="btndeletaRegistro"> -->
-                  <a href="#escolha=excluir&id=<?php echo($rsFC['id_fale_conosco']);?>">
+                  <a id="excluir_faleConosco" href="?escolha=excluir&id=<?php echo($rsFC['id_fale_conosco']);?>">
                     <i class="material-icons" style="font-size:30px;">delete_forever</i>
                   </a>
                   <!-- </label> -->
