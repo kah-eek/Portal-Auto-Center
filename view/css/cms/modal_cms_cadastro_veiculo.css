@@ -1,0 +1,41 @@
+body{
+  margin: 0px;
+}
+.cadastro_veiculo{
+  width: 1155px;
+  height: 885px;
+  background-color: blue;
+}
+.nome_inputs{
+  height: auto;
+  width: auto;
+  float: left;
+}
+.nome_input{
+  width: 150px;
+  height: 80px;
+  background-color: green;
+  margin-bottom: 5px;
+}
+.item{
+  width: 400px;
+  height: 80px;
+  background-color: red;
+  margin-bottom: 5px;
+  float: left;
+}
+.inputs{
+  width: 800px;
+  height: 700px;
+  background-color: magenta;
+}
+.botaoSalvar{
+  width: 550px;
+  height: 50px;
+  background-color: black;
+  float: left;
+}
+.botaoSalvar input{
+  width: 200px;
+  height: 20px;
+}
