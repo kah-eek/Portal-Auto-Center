@@ -3,6 +3,7 @@
   /*margin-top: 0px;*/
   /*padding: 0px;*/
   width: 700px;
+  height: 930px;
   min-height: 732px;
   height: auto;
 }
@@ -25,8 +26,9 @@
 
 .container_principal_mc_cp{
   width: 700px;
-  min-height: 713px;
+  min-height: 930px;
   height: auto;
+  /*background-color: red;*/
 }
 
 .container_btn_sair{
@@ -84,16 +86,16 @@
 
 .form_cadastro_cliente{
   width: 300px;
-  height: 523px;
+  height: 770px;
   /*background-color: #737373;*/
 
 }
 
 .container_infs{
   width: 275px;
-  height: 520px;
+  height: 720px;
   margin-left: 10px;
-  /*background-color: #fff;*/
+  /*background-color: blue;*/
 
 }
 
@@ -154,14 +156,27 @@
 
 
 .segura_bt{ /*input do tipo submit */
-  width: 700px;
+  width: 200px;
   height: 40px;
 
 }
 
-.input_submit{
-  width: 700px;
+.input_submit_cc{
   background-color: #00C853;
-  /*border-radius: 50px 50px 50px 50px;*/
+  border-radius: 5px;
+  border: 0;
+  padding: 5px;
+  box-shadow: 0px 4px 5px -2px #000;
+
+  /* Texto */
   color: #000;
+  text-shadow: 0px 0px 2px #000;
+  font-family: 'titulo';
+  text-align: center;
+}
+
+.select_opt{
+  width: 230px;
+  height: 30px;
+
 }
