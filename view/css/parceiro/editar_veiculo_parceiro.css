@@ -1,0 +1,9 @@
+body{
+  margin: 0px;
+}
+.item{
+  width: 200px;
+  height: 30px;
+  background-color: red;
+  margin-bottom: 5px;
+}

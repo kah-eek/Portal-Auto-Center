@@ -1,0 +1,49 @@
+body{
+  margin: 0px;
+}
+
+.container_geral{
+  width: 1155px;
+  height: 985px;
+  background-color: red;
+}
+.item_dados{
+  width: 283px;
+  height: 80px;
+  margin-right: 5px;
+  background-color: blue;
+  float: left;
+
+}
+.editar{
+  width: 141px;
+  height: 80px;
+  background-color: green;
+  float: left;
+}
+.excluir{
+  width: 141px;
+  height: 80px;
+  background-color: magenta;
+  float: left;
+}
+.item_visu{
+  width: 283px;
+  height: 50px;
+  margin-right:5px;
+  background-color: grey;
+  margin-bottom: 2px;
+  float: left;
+}
+.editar_visu{
+  width: 141px;
+  height: 50px;
+  background-color: tomato;
+  float: left;
+}
+.excluir_visu{
+  width: 141px;
+  height: 50px;
+  background-color: yellow;
+  float: left;
+}
