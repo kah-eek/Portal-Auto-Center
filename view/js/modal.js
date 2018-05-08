@@ -222,3 +222,18 @@ function modalCmsDadosDetalheParceiro(idCliente){
     }
   });
 }
+
+function modalCadCategoria(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cad_categoria.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}

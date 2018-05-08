@@ -187,6 +187,24 @@
         </div>
       </a>
       <!-- ########################################################################### -->
+      <!-- Item do menu lateral - Produtos -->
+      <a href="#">
+        <div id="btnCadCategoria" class="item_menu_lateral txt_branco  ">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Cadastrar Categoria
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
 
       <!-- Faixa decorativa inferior -->
       <!-- <div class="faixa_inferior bg_azulado_escuro"></div> -->
@@ -225,5 +243,11 @@
     <script>
       $('#btnCmsCadastrarProdutos').click(function(){
         modalCmsCadastrarProdutos();
+      })
+    </script>
+    
+    <script>
+      $('#btnCadCategoria').click(function(){
+        modalCadCategoria();
       })
     </script>
