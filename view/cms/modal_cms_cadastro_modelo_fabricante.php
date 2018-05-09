@@ -1,8 +1,11 @@
 <?php
+
+session_start();
 require_once("../../database/conect.php");
 Conexao_db();
 $modelo=null;
 $fabricante=null;
+$botao="Salvar";
 if(isset($_GET['escolha'])){
 
     $escolha = $_GET['escolha'];
@@ -22,6 +25,10 @@ if(isset($_GET['escolha'])){
         header('location:modal_cms_cadastro_modelo_fabricante.php');
     }elseif ($escolha == 'editarFabricante')
      {
+       $botao="atualizar";
+
+       $id=$_GET['id'];
+       $_SESSION['id']=$id;
        $sql = "select * from tbl_fabricante WHERE id_fabricante=".$id;
 
        $select = mysql_query($sql);
@@ -46,11 +53,18 @@ if(isset($_GET['escolha'])){
 
 if(isset($_POST["btnSalvarFab"]))
 {
+    $fabricante=$_POST["txtFabricante"];
+    if ($_POST["btnSalvarFab"]=='Salvar') {
+      addslashes($sql = "insert into tbl_fabricante (fabricante) values ('".$fabricante."');");
+    }else if($_POST["btnSalvarFab"]=='atualizar')
+      {
+
+        $sql = "UPDATE tbl_fabricante set fabricante = '".$fabricante."' where id_fabricante=".$_SESSION['id'];
+
+      }
     //Resgatar os dados fornecidos pelo usuario
     //usando o metod POST, conforme escolhido pelo Form
-    $fabricante=$_POST["txtFabricante"];
 
-    addslashes($sql = "insert into tbl_fabricante (fabricante) values ('".$fabricante."');");
 
     //Executa o script no BD
     mysql_query($sql);
@@ -89,7 +103,7 @@ if(isset($_POST["btnSalvarFab"]))
         <div class="container_cadFabricante">
           CADASTRAR FABRICANTE
           <input type="text" name="txtFabricante" value="<?php echo($fabricante) ?>">
-          <input type="submit" name="btnSalvarFab" value="Salvar">
+          <input type="submit" name="btnSalvarFab" value="<?php echo($botao) ?>">
         </div>
       </form>
       <form class="" action="modal_cms_cadastro_modelo_fabricante.php" method="post">
