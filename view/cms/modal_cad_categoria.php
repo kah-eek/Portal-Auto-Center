@@ -82,7 +82,7 @@ if(isset($_POST["btnSalvar"]))
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../css/modal_cad_categoria.css">
+    <link rel="stylesheet" href="../css/cms/modal_cad_categoria.css">
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>

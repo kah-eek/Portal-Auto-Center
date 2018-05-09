@@ -237,3 +237,33 @@ function modalCadCategoria(){
     }
   });
 }
+
+function modalCadUsuario(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cad_acao_usuario.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCadCor(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cad_cor.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
