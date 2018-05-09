@@ -22,12 +22,10 @@ if(isset($_POST["btnSalvar"]))
 
     //Executa o script no BD
     mysql_query($sql);
-    // echo ($sql);
 
     header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
    // echo($sql);
-
 }
 
  ?>
