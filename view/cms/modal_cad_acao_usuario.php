@@ -63,7 +63,7 @@ if(isset($_POST["btnSalvar"]))
 
   }else if($_POST["btnSalvar"]=='atualizar')
     {
-      $sql = "UPDATE tbl_acao_usuario set categoria = '".$acao."' where id_categoria_topico_forum=".$_SESSION['id'];
+      $sql = "UPDATE tbl_acao_usuario set acao = '".$acao."' where id_acao_usuario=".$_SESSION['id'];
 
     }
 
@@ -92,7 +92,7 @@ if(isset($_POST["btnSalvar"]))
           Cadastro Ação Usuário
         </div>
       </div>
-      <form class="frmCadUsuario centro_lr" action="modal_cad_usuario.php" method="post">
+      <form class="frmCadUsuario centro_lr" action="modal_cad_acao_usuario.php" method="post">
         <div class="container_subs float_left">
           <div class="item_subs float_left align_center preenche_t_20 fs_20 negrito">
             Ação

@@ -63,7 +63,7 @@ if(isset($_POST['btnSalvar']))
 
   }else if($_POST["btnSalvar"]=='atualizar')
     {
-      $sql = "UPDATE tbl_cor set '".$cor."' where id=".$_SESSION['id'];
+      $sql = "UPDATE tbl_cor set cor = '".$cor."' where id_cor=".$_SESSION['id'];
     }
 
     //Executa o script no BD
