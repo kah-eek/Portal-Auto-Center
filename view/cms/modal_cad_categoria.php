@@ -65,7 +65,7 @@ if(isset($_POST["btnSalvar"]))
 
     }else if($_POST["btnSalvar"]=='atualizar')
       {
-        $sql = "UPDATE tbl_categoria_topico_forum set '".$categoria."' where id=".$_SESSION['id'];
+        $sql = "UPDATE tbl_categoria_topico_forum set categoria = '".$categoria."' where id_categoria_topico_forum=".$_SESSION['id'];
 
       }
     //Executa o script no BD

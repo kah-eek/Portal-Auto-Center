@@ -19,9 +19,9 @@ if(isset($_GET['escolha']))
 
     $sql = "DELETE FROM tbl_acao_usuario WHERE id_acao_usuario= ".$id;
 
-    // mysql_query($sql);
-    echo ($sql)
-    // header('location:index.php#.php');
+    mysql_query($sql);
+    // echo ($sql);
+    header('location:index.php#.php');
 /////////////////////////////////////////////////////////////
 //Verificando se a variavel modo = consulta_editar
   }else if($escolha=='atualizar')
@@ -63,7 +63,7 @@ if(isset($_POST["btnSalvar"]))
 
   }else if($_POST["btnSalvar"]=='atualizar')
     {
-      $sql = "UPDATE tbl_acao_usuario set '".$acao."' where id=".$_SESSION['id'];
+      $sql = "UPDATE tbl_acao_usuario set categoria = '".$acao."' where id_categoria_topico_forum=".$_SESSION['id'];
 
     }
 
@@ -118,8 +118,8 @@ if(isset($_POST["btnSalvar"]))
         $sql = "SELECT * FROM tbl_acao_usuario";
           $select = mysql_query($sql);
           while ($rsConsulta = mysql_fetch_array($select))
-          {
 
+          {
         ?>
         <div class="container_exibindo_acoes float_left">
           <div class="item_exibindo_acoes">
