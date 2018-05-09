@@ -9,10 +9,9 @@
 
   mysql_select_db('db_auto_center');
 #####################################################################################################################################################################################
-  $id_anuncio_produto="";
+  $id_compatibilidade_produto_veiculo="";
   $id_produto="";
-  $preco="";
-  $cbxAtivo="";
+  $id_veiculo="";
   $btnCadastro="Cadastrar";
 #####################################################################################################################################################################################
 if(isset($_GET['modo']))//MODO EXCLUIR
@@ -21,20 +20,20 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
       if($modo=='excluir')
       {
-          $id_anuncio_produto=$_GET['id_anuncio_produto'];
+          $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
 
-          $sql = "delete from tbl_anuncio_produto_parceiro where id_anuncio_produto=".$id_anuncio_produto;
+          $sql = "delete from tbl_compatibilidade_produto_veiculo where id_compatibilidade_produto_veiculo=".$id_compatibilidade_produto_veiculo;
           mysql_query($sql);
 
 
-      header('location:modal_cms_anuncio_produto_parceiro.php');
+      header('location:modal_cms_compatibilidade_produto_veiculo.php');
 #####################################################################################################################################################################################
 }else if($modo=='consulta_editar')//MODO EDITAR
        {
            $btnCadastro="Editar";
-           $id_anuncio_produto=$_GET['id_anuncio_produto'];
+           $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
 
-           $_SESSION['id']= $id_anuncio_produto;
+           $_SESSION['id']= $id_compatibilidade_produto_veiculo;
 
            $sql = "SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_produto.nome as nome_produto FROM tbl_anuncio_produto_parceiro INNER JOIN
            tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto WHERE tbl_anuncio_produto_parceiro.id_anuncio_produto=".$id_anuncio_produto;
@@ -43,10 +42,10 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
             if($rsConsulta=mysql_fetch_array($select)){
 
-                $preco=$rsConsulta['preco'];
                 $id_produto=$rsConsulta['id_produto'];
                 $nomeProduto=$rsConsulta['nome_produto'];
-                $cbxAtivo=$rsConsulta['ativo'];
+                $id_veiculo=$rsConsulta['id_veiculo'];
+                $nomeVeiculo=$rsConsulta['nome_placa'];
 
           }
        }
@@ -55,19 +54,18 @@ if(isset($_GET['modo']))//MODO EXCLUIR
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
   $id_produto=$_POST["sltProduto"];
-  $preco=$_POST["txtPreco"];
-  $cbxAtivo=$_POST["sltAtivo"];
+  $id_veiculo=$_POST["sltVeiculo"];
 
   if($_POST["btnCadastro"]=='Cadastrar'){
-    $sql="INSERT INTO tbl_anuncio_produto_parceiro(id_produto,preco,ativo)
-    VALUES ('".$id_produto."', $preco, '".$cbxAtivo."')";
+    $sql="INSERT INTO tbl_compatibilidade_produto_veiculo(id_produto,id_veiculo)
+    VALUES ('".$id_produto."','".$id_veiculo."')";
 
   }else if($_POST["btnCadastro"]=='Editar'){
-    $sql="UPDATE tbl_anuncio_produto_parceiro SET preco='".$preco."', ativo='".$cbxAtivo."', id_produto='".$id_produto."' WHERE id_anuncio_produto=".$_SESSION['id'];
+    $sql="UPDATE tbl_compatibilidade_produto_veiculo SET id_produto='".$id_produto."', id_veiculo='".$id_veiculo."' WHERE id_compatibilidade_produto_veiculo=".$_SESSION['id'];
   }
       mysql_query($sql);
 
-      header('location:modal_cms_anuncio_produto_parceiro.php');
+      header('location:modal_cms_compatibilidade_produto_veiculo.php');
       // echo($sql);
 }
 #####################################################################################################################################################################################
@@ -78,15 +76,15 @@ if(isset($_POST["btnCadastro"])){
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="../css/cms/cms_anuncio_produto_parceiro.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_compatibilidade_produto_veiculo.css">
 
   </head>
   <body>
-   <form name="frmcadastroanuncioprodutosparceiro" method="post" action="modal_cms_anuncio_produto_parceiro.php">
+   <form name="frmcadastroprodutoveiculo" method="post" action="modal_cms_compatibilidade_produto_veiculo.php">
   <div class="container_principal_ph float_left">
     <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
       <div class="item_titulo_ph align_center preenche_t_20 fs_25 negrito">
-        Cadastrar Anúncios de Produtos.
+        Compatibilidade Veículo Parceiro.
       </div>
     </div>
     <div class="campos">
@@ -95,10 +93,7 @@ if(isset($_POST["btnCadastro"])){
           Produto
         </div>
         <div class="name_campo" >
-          Preço
-        </div>
-        <div class="name_campo">
-          Ativo
+          Veiculo
         </div>
       </div>
       <div class="preencher_inputs">
@@ -131,15 +126,35 @@ if(isset($_POST["btnCadastro"])){
           </select>
       </div>
       <div class="preencher_inputs">
-          <input type="txtPreco" name="txtPreco" value="<?php echo($preco); ?>" id="float" class="color">
-      </div>
-      <div class="preencher_inputs">
+          <select name="sltVeiculo" id="float" class="color">
+            <?php
+            if($id_veiculo == ""){
+                $id_veiculo = 0;
+                ?>
+                 <option>Selecione</option>
+              <?php
+            }else{
+                ?>
+        <option value="<?php echo($id_veiculo); ?>">
+            <?php echo($id_veiculo);?></option>
+        <?php
 
-        <select required name="sltAtivo" class="color">
-          <option value="1">Sim</option>
-          <option value="0">Não</option>
-        </select>
+            }
+            $sql = "SELECT id_veiculo, placa as nome_placa FROM tbl_veiculo Where id_veiculo <> ".$id_veiculo;
+            $select=mysql_query($sql);
+
+           while($rsProduto = mysql_fetch_array($select)){
+               ?>
+
+            <option value="<?php echo($rsProduto['id_veiculo']); ?>">
+            <?php echo($rsProduto['nome_placa']); ?> </option>
+
+        <?php
+           }
+        ?>
+          </select>
       </div>
+
 
         <div class="button">
           <input type="submit" name="btnCadastro" value="<?php echo($btnCadastro); ?>" >
@@ -151,7 +166,7 @@ if(isset($_POST["btnCadastro"])){
           Produto
         </div>
         <div class="campos_table">
-          Preço
+          Veículo
         </div>
         <div class="campos_table">
           Excluir
@@ -174,15 +189,15 @@ if(isset($_POST["btnCadastro"])){
           <?php echo($rsConsulta['nomeProduto']) ?>
         </div>
         <div class="campos_table">
-          <?php echo($rsConsulta['preco']) ?>
+          <?php echo($rsConsulta['nomeProduto']) ?>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_anuncio_produto_parceiro.php?modo=excluir&id_anuncio_produto=<?php echo($rsConsulta['id_anuncio_produto'])?>">
+          <a href="modal_cms_compatibilidade_produto_veiculo.php?modo=excluir&id_compatibilidade_produto_veiculo=<?php echo($rsConsulta['id_compatibilidade_produto_veiculo'])?>">
               <img src="../pictures/icones/delete1.png">
           </a>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_anuncio_produto_parceiro.php?modo=consulta_editar&id_anuncio_produto=<?php echo($rsConsulta['id_anuncio_produto'])?>">
+          <a href="modal_cms_compatibilidade_produto_veiculo.php?modo=consulta_editar&id_compatibilidade_produto_veiculo=<?php echo($rsConsulta['id_compatibilidade_produto_veiculo'])?>">
               <img src="../pictures/icones/edit.png">
           </a>
         </div>
