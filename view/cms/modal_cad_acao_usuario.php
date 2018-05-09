@@ -4,7 +4,8 @@
   $acao="";
   $botao="Salvar";
 
-  mysqli_connect('localhost','root','bcd127','db_auto_center');
+  require_once('../../database/conect.php');
+  Conexao_db();
 
 if(isset($_GET['escolha']))
 {
@@ -18,9 +19,9 @@ if(isset($_GET['escolha']))
 
     $sql = "DELETE FROM tbl_acao_usuario WHERE id_acao_usuario= ".$id;
 
-    mysqli_query($sql);
-    // echo ($sql)
-    header('location:index.php#.php');
+    // mysql_query($sql);
+    echo ($sql)
+    // header('location:index.php#.php');
 /////////////////////////////////////////////////////////////
 //Verificando se a variavel modo = consulta_editar
   }else if($escolha=='atualizar')
@@ -67,7 +68,7 @@ if(isset($_POST["btnSalvar"]))
     }
 
     //Executa o script no BD
-    mysqli_query($sql);
+    mysql_query($sql);
 
    header('location:index.php#');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
