@@ -1,9 +1,13 @@
 <?php
 require_once("../../database/conect.php");
 Conexao_db();
+$modelo=null;
+$fabricante=null;
 if(isset($_GET['escolha'])){
+
     $escolha = $_GET['escolha'];
     $id = $_GET['id'];
+
 
     //if da escolha excluir
     if($escolha == 'excluirFabricante'){
@@ -16,6 +20,27 @@ if(isset($_GET['escolha'])){
         mysql_query($sql);
         // echo ($sql);
         header('location:modal_cms_cadastro_modelo_fabricante.php');
+    }elseif ($escolha == 'editarFabricante')
+     {
+       $sql = "select * from tbl_fabricante WHERE id_fabricante=".$id;
+
+       $select = mysql_query($sql);
+
+       if($rsMF=mysql_fetch_array($select))
+       {
+         $fabricante=$rsMF['fabricante'];
+       }
+    }elseif ($escolha == 'editarModelo')
+     {
+       $sql = "select * from tbl_modelo_veiculo WHERE id_modelo_veiculo=".$id;
+
+       $select = mysql_query($sql);
+
+       if($rsMF=mysql_fetch_array($select))
+       {
+         $modelo=$rsMF['modelo'];
+       }
+
     }
 }
 
@@ -63,7 +88,7 @@ if(isset($_POST["btnSalvarFab"]))
       <form class="" action="modal_cms_cadastro_modelo_fabricante.php" method="post">
         <div class="container_cadFabricante">
           CADASTRAR FABRICANTE
-          <input type="text" name="txtFabricante" value="">
+          <input type="text" name="txtFabricante" value="<?php echo($fabricante) ?>">
           <input type="submit" name="btnSalvarFab" value="Salvar">
         </div>
       </form>
@@ -83,7 +108,7 @@ if(isset($_POST["btnSalvarFab"]))
             }
              ?>
           </select>
-          <input type="text" name="txtModelo" value="">
+          <input type="text" name="txtModelo" value="<?php echo($modelo) ?>">
           <input type="submit" name="btnSalvarModelo" value="Salvar">
         </div>
       </form>
