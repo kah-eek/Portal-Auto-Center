@@ -1,0 +1,41 @@
+.container_cadastra{
+  width: 500px;
+  height: 80px;
+  background-color: magenta;
+}
+.container_cadFabricante{
+  width: 250px;
+  height: 80px;
+  background-color: grey;
+  float: left;
+}
+.container_modelo{
+  width:250px;
+  height: 80px;
+  background-color: red;
+  float: left;
+}
+.container_view_fab{
+  width: 250px;
+  min-height: 50px;
+  background: green;
+  float: left;
+}
+.fabricantes{
+  width: 250px;
+  min-height: 50px;
+  border-bottom: 1px solid black;
+  background-color: magenta;
+}
+.modelos{
+  width: 250px;
+  min-height: 50px;
+  border-bottom: 1px solid black;
+  background-color: tomato;
+}
+.container_view_mod{
+  width: 250px;
+  min-height: 50px;
+  background-color: yellow;
+  float: left;
+}
