@@ -22,7 +22,7 @@ if(isset($_GET['escolha']))
         $sql = "DELETE FROM tbl_categoria_topico_forum WHERE id_categoria_topico_forum= ".$id;
         mysql_query($sql);
         // echo ($sql)
-        header('location:index.php#.php');
+        header('location:index.php#');
 
 /////////////////////////////////////////////////////////
 //Verificando se a variavel modo = consulta_editar
