@@ -1,0 +1,150 @@
+.container_principal_user{
+  width: 1155px;
+  height: 890px;
+  background-color: pink;
+
+}
+
+.container_titulo_user{
+  width: 1155px;
+  height: 80px;
+  background-color: green;
+
+}
+
+.item_titulo_user{
+  width: 1000px;
+  height: 80px;
+  background-color: green;
+
+}
+
+.frmCadUser{
+  width: 1100px;
+  height: 810px;
+  background-color: #006699;
+
+}
+
+.container_subs_user{
+  width: 250px;
+  height: 300px;
+  background-color: gray;
+
+}
+
+.item_subs_user{
+  width: 250px;
+  height: 60px;
+  background-color: #fff;
+
+}
+
+.container_inputs_user{
+  width: 350px;
+  height: 300px;
+  background-color: green;
+
+}
+
+.item_inputs_user{
+  width: 350px;
+  height: 60px;
+  background-color: pink;
+
+}
+
+.input_user{
+  width: 349px;
+  height: 35px;
+
+}
+
+.slt_nivel_user{
+  width: 350px;
+  height: 35px;
+
+}
+
+.radio_user{
+  width: 20px;
+  height: 20px;
+
+}
+
+.container_bt_user{
+  width: 100px;
+  height: 40px;
+  /*background-color: blue;*/
+
+}
+
+.item_bt_user{
+  width: 400px;
+  height: 40px;
+  /*background-color: blue;*/
+
+}
+
+.btn_user{
+  width: 150px;
+  height: 40px;
+
+}
+
+.container_titulo_visualizar_user{
+  width: 1000px;
+  height: 80px;
+  /*background-color: red;*/
+
+}
+
+.item_titulo_visualizar_user{
+  width: 1000px;
+  height: 80px;
+  background-color: #fff;
+
+}
+
+.container_subs_users{
+  width: 1000px;
+  height: 60px;
+  background-color: green;
+
+}
+
+.subs_exibindo_users{
+  width: 250px;
+  height: 60px;
+  background-color: brown;
+
+}
+
+.container_exibindo_users{
+  width: 1035px;
+  height: 320px;
+  overflow: auto;
+  background-color: #6699ff;
+
+}
+
+.item_exibindo_users{
+  width: 250px;
+  height: 60px;
+  background-color: #fff;
+
+}
+
+.container_escolhas_user{
+  width: 250px;
+  height: 60px;
+  background-color: green;
+
+}
+
+.item_escolha_user{
+  width: 125px;
+  height: 59px;
+  background-color: #fff;
+
+}
