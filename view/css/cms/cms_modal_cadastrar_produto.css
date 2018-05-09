@@ -1,0 +1,23 @@
+.container_principal{
+  width: 1155px;
+  height: 885px;
+  background-image: url('../../pictures/cms_produtos_home/carro.jpg');
+  background-repeat: no-repeat;
+  /*background-color: gray;*/
+
+}
+
+.container_titulo{
+  width: 1030px;
+  height: 70px;
+
+  background-color: #3366ff;
+
+}
+
+.item_titulo{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #fff;*/
+
+}
