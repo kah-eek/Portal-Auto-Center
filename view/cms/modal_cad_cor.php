@@ -3,7 +3,8 @@
   $cor="";
   $botao="Salvar";
 
-  mysqli_connect('localhost','root','bcd127','db_auto_center');
+  require_once('../../database/conect.php');
+  Conexao_db();
 
 if(isset($_GET['escolha']))
 {
@@ -17,7 +18,7 @@ if(isset($_GET['escolha']))
 
     $sql = "DELETE FROM tbl_cor WHERE id_cor= ".$id;
 
-    mysqli_query($sql);
+    mysql_query($sql);
     // echo ($sql)
     header('location:index.php#.php');
 /////////////////////////////////////////////////////
@@ -63,11 +64,10 @@ if(isset($_POST['btnSalvar']))
   }else if($_POST["btnSalvar"]=='atualizar')
     {
       $sql = "UPDATE tbl_cor set '".$cor."' where id=".$_SESSION['id'];
-
     }
 
     //Executa o script no BD
-    mysqli_query($sql);
+    mysql_query($sql);
 
    header('location:index.php#');
     //Dar um echo na variavel sql sempre que der erro no insert, para ver qual é o erro
