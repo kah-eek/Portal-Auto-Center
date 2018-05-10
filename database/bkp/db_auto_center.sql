@@ -406,7 +406,6 @@ CREATE TABLE `tbl_conta_pac` (
   `valor` decimal(9,2) NOT NULL,
   `vencimento` date NOT NULL,
   `paga` tinyint(1) NOT NULL DEFAULT '0',
-  `log_conta_pac` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_conta_pac`),
   KEY `fk_tbl_conta_pac_id_categoria_conta_idx` (`id_categoria_conta_pac`),
   CONSTRAINT `fk_tbl_conta_pac_id_categoria_conta` FOREIGN KEY (`id_categoria_conta_pac`) REFERENCES `tbl_categoria_conta_pac` (`id_categoria_conta_pac`)
@@ -1750,42 +1749,6 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `view_parceiro_formatado`
---
-
-DROP TABLE IF EXISTS `view_parceiro_formatado`;
-/*!50001 DROP VIEW IF EXISTS `view_parceiro_formatado`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_parceiro_formatado` AS SELECT 
- 1 AS `id_parceiro`,
- 1 AS `nome_fantasia`,
- 1 AS `razao_social`,
- 1 AS `cnpj`,
- 1 AS `id_endereco`,
- 1 AS `ativo`,
- 1 AS `socorrista`,
- 1 AS `email`,
- 1 AS `telefone`,
- 1 AS `foto_perfil`,
- 1 AS `celular`,
- 1 AS `log_parceiro`,
- 1 AS `id_usuario`,
- 1 AS `plano`,
- 1 AS `logradouro`,
- 1 AS `cep`,
- 1 AS `bairro`,
- 1 AS `cidade`,
- 1 AS `complemento`,
- 1 AS `numero`,
- 1 AS `estado`,
- 1 AS `usuario`,
- 1 AS `senha`,
- 1 AS `id_nivel_usuario`,
- 1 AS `nivel`*/;
-SET character_set_client = @saved_cs_client;
-
---
 -- Temporary view structure for view `view_produto`
 --
 
@@ -1870,30 +1833,6 @@ SET character_set_client = utf8mb4;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `view_receita_plano_contratacao`
---
-
-DROP TABLE IF EXISTS `view_receita_plano_contratacao`;
-/*!50001 DROP VIEW IF EXISTS `view_receita_plano_contratacao`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_receita_plano_contratacao` AS SELECT 
- 1 AS `receita`*/;
-SET character_set_client = @saved_cs_client;
-
---
--- Temporary view structure for view `view_total_despesas_internas`
---
-
-DROP TABLE IF EXISTS `view_total_despesas_internas`;
-/*!50001 DROP VIEW IF EXISTS `view_total_despesas_internas`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8mb4;
-/*!50001 CREATE VIEW `view_total_despesas_internas` AS SELECT 
- 1 AS `total_despesa`*/;
-SET character_set_client = @saved_cs_client;
-
---
 -- Final view structure for view `view_cliente`
 --
 
@@ -1966,24 +1905,6 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Final view structure for view `view_parceiro_formatado`
---
-
-/*!50001 DROP VIEW IF EXISTS `view_parceiro_formatado`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_parceiro_formatado` AS select `parc`.`id_parceiro` AS `id_parceiro`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social`,`parc`.`cnpj` AS `cnpj`,`parc`.`id_endereco` AS `id_endereco`,if((`parc`.`ativo` = 1),'Sim','Não') AS `ativo`,if((`parc`.`socorrista` = 1),'Sim','Não') AS `socorrista`,`parc`.`email` AS `email`,`parc`.`telefone` AS `telefone`,`parc`.`foto_perfil` AS `foto_perfil`,`parc`.`celular` AS `celular`,cast(`parc`.`log_parceiro` as date) AS `log_parceiro`,`parc`.`id_usuario` AS `id_usuario`,`pln_contr`.`plano` AS `plano`,`endr`.`logradouro` AS `logradouro`,`endr`.`cep` AS `cep`,`endr`.`bairro` AS `bairro`,`endr`.`cidade` AS `cidade`,`endr`.`complemento` AS `complemento`,`endr`.`numero` AS `numero`,`estd`.`estado` AS `estado`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`nvl_usr`.`nivel` AS `nivel` from (((((`tbl_parceiro` `parc` join `tbl_plano_contratacao` `pln_contr` on((`pln_contr`.`id_plano_contratacao` = `parc`.`id_plano_contratacao`))) join `tbl_endereco` `endr` on((`endr`.`id_endereco` = `parc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endr`.`id_estado`))) join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `parc`.`id_usuario`))) join `tbl_nivel_usuario` `nvl_usr` on((`nvl_usr`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
 -- Final view structure for view `view_produto`
 --
 
@@ -2018,42 +1939,6 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `view_receita_plano_contratacao`
---
-
-/*!50001 DROP VIEW IF EXISTS `view_receita_plano_contratacao`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_receita_plano_contratacao` AS select sum(`pln_contr`.`valor`) AS `receita` from (`tbl_plano_contratacao` `pln_contr` join `tbl_parceiro` `parc` on((`parc`.`id_plano_contratacao` = `pln_contr`.`id_plano_contratacao`))) where (`parc`.`ativo` = 1) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
-
---
--- Final view structure for view `view_total_despesas_internas`
---
-
-/*!50001 DROP VIEW IF EXISTS `view_total_despesas_internas`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `view_total_despesas_internas` AS select (sum(`contas`.`valor`) + sum(`func`.`salario`)) AS `total_despesa` from (`tbl_conta_pac` `contas` join `tbl_funcionario_pac` `func`) */;
-/*!50001 SET character_set_client      = @saved_cs_client */;
-/*!50001 SET character_set_results     = @saved_cs_results */;
-/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -2064,4 +1949,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-10  0:03:51
+-- Dump completed on 2018-05-06 17:29:04
