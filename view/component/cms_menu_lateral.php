@@ -10,9 +10,9 @@
 
       <!-- Item do menu lateral - Galeria -->
       <a href="#">
-        <div class="item_menu_lateral txt_branco">
+        <div  class="item_menu_lateral txt_branco">
           <!-- Título do item do menu -->
-          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+          <div id="btnCmsGaleria" class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Galeria
           </div>
 
@@ -268,6 +268,11 @@
       <!-- <div class="faixa_inferior bg_azulado_escuro"></div> -->
 
     </div>
+    <script>
+      $('#btnCmsGaleria').click(function(){
+        modalCmsGaleria();
+      })
+    </script>
     <script>
       $('#btnCmsEmpresa').click(function(){
         modalCmsEmpresa();

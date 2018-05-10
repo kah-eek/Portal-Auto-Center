@@ -14,18 +14,31 @@ if(isset($_POST["btnSalvar"]))
     $portas=$_POST["slcQtdPortas"];
     $quilometragem=$_POST["txtQuilometragem"];
     $tipo=$_POST["slcTipoVeiculo"];
+    $combustivel=$_POST["slcCombustivel"];
 
 
     //Monta o Script para enviar para o BD
     addslashes($sql = "insert into tbl_veiculo (ano_fabricacao, placa, id_cor, id_modelo, qtd_porta, quilometro_rodado, id_tipo_veiculo, id_modelo_veiculo) values ('".$ano."','".$placa."','".$cor."','".$modelo."',
     '".$portas."','".$quilometragem."','".$tipo."','".$fabricante."');");
 
+    addslashes($id_veiculo = "SELECT MAX(id_veiculo) FROM tbl_veiculo;");
+
+    // $sql2 = "insert into tbl_tipo_veiculo (combustivel) values ('".$combustivel."')";
+
+    $id_combustivel = $combustivel;
+
+    $sql3 = "insert into tbl_veiculo_tipo_combustivel (id_veiculo, id_tipo_combustivel) values ('".$id_veiculo."','".$id_combustivel."');";
+
     //Executa o script no BD
     mysql_query($sql);
+    mysql_query($id_veiculo);
+    mysql_query($sql3);
 
     header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
-   // echo($sql);
+  //  echo($sql);
+  //  echo($id_veiculo);
+  //  echo($sql3);
 }
 
  ?>
@@ -74,6 +87,9 @@ if(isset($_POST["btnSalvar"]))
         </div>
         <div class="nome_input">
           Tipo de veiculo
+        </div>
+        <div class="nome_input">
+          Tipo de combustivel
         </div>
       </div>
       <form name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
@@ -183,6 +199,21 @@ if(isset($_POST["btnSalvar"]))
 
               ?>
               <option value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+              <?php
+                }
+              ?>
+            </select>
+          </div>
+          <div class="item">
+            <select name="slcCombustivel">
+              <?php
+              $sql = "SELECT * FROM tbl_tipo_combustivel";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
+
+              ?>
+              <option value="<?php echo($rsCV['id_tipo_combustivel']) ?>"><?php echo($rsCV['combustivel']) ?></option>
               <?php
                 }
               ?>
