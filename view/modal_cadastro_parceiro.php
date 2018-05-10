@@ -3,23 +3,14 @@
 * VERFIFICA SE A VARIÁVEL $dados_cadastro EXISTE. OBS.:ESSA VARIÁVEL FOI CRIADA NA CONTROLLER:Parceiro_class.
 */
 
-  // Imports
-  require_once('../controller/Plano_class.php');
+require_once("modulo.php");
 
-  if(isset($dados_cadastro)){
-    $nome_fantasia = $dados_cadastro->nome_fantasia;
-    $razao_social = $dados_cadastro->razao_social;
-    $cnpj = $dados_cadastro->cnpj;
-    $id_endereco = $dados_cadastro->id_endereco;
-    $socorrista = $dados_cadastro->socorrista;
-    $email = $dados_cadastro->email;
-    $telefone = $dados_cadastro->telefone;
-    $foto_perfil = $dados_cadastro->foto_perfil;
-    $celular = $dados_cadastro->celular;
-    $id_usuario = $dados_cadastro->id_usuario;
-    $id_plano_contratacao = $dados_cadastro->id_plano_contratacao;
-    $action ="editar&id_pac".$dados_cadastro->id_pac;
-  }else{
+session_start();
+
+$conexao=mysql_connect('localhost', 'root', 'bcd127');
+
+mysql_select_db('db_auto_center');
+
     //CRIANDO AS VARIÁVEIS PADRÕES LOCAIS.
     $nome_fantasia = null;
     $razao_social = null;
@@ -32,8 +23,8 @@
     $celular = null;
     $id_usuario = null;
     $id_plano_contratacao = null;
-    $action = "novo";
-  }
+    $btnSalvar="Salvar";
+
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -64,8 +55,7 @@
             <input class="display_none" required id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="<?php echo($foto_perfil); ?>">
           </label>
         </div>
-        <!-- FORM SEGURA INPUTS -->
-        <form class="form_segurando_inputs float_left margem_t_10">
+
           <div class="item_contendo_inputs">
             <!-- INPUT NOME FANTASIA -->
             <div class="segura_input_p">
@@ -126,9 +116,33 @@
 
             <!-- COMBOBOX ESTADO -->
             <div class="segura_input_p float_left">
-              <select id="cbx_estado" required name="cbx_estado">
-                <option disabled="true" selected value="">Estado</option>
-              </select>
+              <select name="sltEndereco"  class="color">
+                <?php
+                if($id_estado== ""){
+                    $id_estado = 0;
+                    ?>
+                     <option>Selecione</option>
+                  <?php
+                }else{
+                    ?>
+            <option value="<?php echo($id_estado); ?>">
+                <?php echo($id_estado);?></option>
+            <?php
+
+                }
+                $sql = "SELECT id_estado, estado as nome_estado FROM tbl_estado Where id_estado <> ".$id_estado;
+                $select=mysql_query($sql);
+
+               while($rsEstado = mysql_fetch_array($select)){
+                   ?>
+
+                <option value="<?php echo($rsEstado['id_estado']); ?>">
+                <?php echo($rsEstado['nome_estado']); ?> </option>
+
+            <?php
+               }
+            ?>
+          </select>
               <!-- <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value=""> -->
             </div>
 
@@ -178,24 +192,39 @@
 
           <!-- DIV SELECT -->
           <div class="container_select margem_t_10">
-            <select required class="slc_planos borda_preta_1" name="cbx_plano">
-              <option selected disabled="true" value="">Planos</option>
+            <select name="sltPlano"  class="color">
               <?php
-                // Obtém todos os planos existente no DB
-                $planos = Plano::getPlanos();
+              if($id_plano_contratacao== ""){
+                  $id_plano_contratacao = 0;
+                  ?>
+                   <option>Selecione</option>
+                <?php
+              }else{
+                  ?>
+          <option value="<?php echo($id_plano_contratacao); ?>">
+              <?php echo($id_plano_contratacao);?></option>
+          <?php
 
-                // Preenche o select com todos os planos advindos do DB
-                for ($i=0; $i < sizeof($planos); $i++) {
-                  echo "<option value='".$planos[$i]->idPlanoContratacao."'>".$planos[$i]->plano."</option>";
-                }
-              ?>
-            </select>
+              }
+              $sql = "SELECT id_plano_contratacao, plano as nome_plano FROM tbl_plano_contratacao Where id_plano_contratacao <> ".$id_plano_contratacao;
+              $select=mysql_query($sql);
+
+             while($rsPlano = mysql_fetch_array($select)){
+                 ?>
+
+              <option value="<?php echo($rsPlano['id_plano_contratacao']); ?>">
+              <?php echo($rsPlano['nome_plano']); ?> </option>
+
+          <?php
+             }
+          ?>
+        </select>
           </div>
 
           <!-- DESCRICAO PLANOS -->
           <div class="container_desc_planos margem_t_30 titulo">
             <div class="item_desc_planos preenche_5">
-              Descrição Planos
+              Descrição
             </div>
           </div>
           <!-- PLANO 1 -->
@@ -246,101 +275,5 @@
       </div>
     </div>
   </form>
-
-  <script>
-
-    $('#txt_cep').blur(function(){
-      var cep = $('#txt_cep').val();
-      $.ajax({
-        type:'GET',
-        url:'https://viacep.com.br/ws/'+cep+'/json/unicode/',
-        success: function(viaCepRetorno){
-          $('#txt_rua').val(viaCepRetorno.logradouro);
-          $('#txt_bairro').val(viaCepRetorno.bairro);
-          $('#txt_cidade').val(viaCepRetorno.localidade);
-        }
-      });
-    });
-
-    // Preenche os Estados na combobox
-    obterEstados(
-      // Callback de sucesso da ontenção dos dados
-      function(respostaAPI){
-
-        // Armazenas os estados advindos da response
-        var estados = respostaAPI['estados'];
-
-        // Verifica se a obtenção dos Estados ocorreu comm êxito
-        if (respostaAPI['status']) {// Êxito
-
-          // Preenche a combobox dos Estados com cada estado advindo do banco
-          for (var i = 0; i < estados.length; i++) {
-
-            // Obtém apenas o id do Estado
-            var idEstado = estados[i].id;
-            // Obtém apenas o nome do Estado
-            var estado = estados[i].estado;
-
-            // Preenche de fato o combobox
-            $('#cbx_estado').append(
-              '<option value="'+idEstado+'">'+estado+'</option>'
-            );
-          }
-        }
-        else {// Falha
-          console.error('Falha ao tentar obter os Estados');
-        }
-      },
-      function(){ // Callback de falhada da obtenção dos dados
-        console.error('falha tentar acessar o recurso de obtenção dos Estados');
-      }
-
-    );
-    // #######################
-
-    // Listener do botão salvar - Insere um novo parceiro
-    $('#frmcadparceiro').submit(function(e){
-      // Salva o endereco
-      inserirEndereco(e, function(idNovoEndereco){
-
-        // Verifica se o idEndereco é diferente de null para prosseguir com as inserções
-        if (idNovoEndereco != null)
-        {
-          // Insere o usuário no db
-          inserirUsuario(e, function(idNovoUsuario){
-
-            // Armazena o form na variável
-            var formulario = new FormData($('#frmcadparceiro')[0]);
-
-            // Adiciona os dados complementares no form
-            formulario.append('idUsuario',idNovoUsuario);
-            formulario.append('idEndereco',idNovoEndereco);
-
-            // Envia os dados do parceiro para a router e junto a opção de qual a ação tem de ser realizada
-            getResponse(
-              'POST', // Protocolo
-              '../router.php?controller=parceiro&modo=novo', // Url
-              function(respostaJson){ // Callback de sucesso
-                console.log(respostaJson);
-                // Verifica se a inserção foi executada com sucesso
-                if (respostaJson) {// Sucesso
-                  $('.container_modal').slideToggle(5000);
-                }else {// Falha
-                   console.error('Falha ao tentar registrar o parceiro');
-                }
-
-              },
-              function(){ // Callback de falha
-                console.error('Falha ao tentar acessar o recurso de inserção de parceiro');
-              },
-              formulario,
-              null
-            );
-          });
-        }
-      });
-    });
-  </script>
-
   </body>
 </html>

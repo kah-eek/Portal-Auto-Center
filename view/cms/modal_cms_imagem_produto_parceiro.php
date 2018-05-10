@@ -57,7 +57,8 @@ if(isset($_GET['modo']))//MODO EXCLUIR
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
   $id_produto=$_POST["sltProduto"];
-  $imagem=$_POST["imagem"];
+  // $imagem=$_POST["imagem"];
+  $imagem=Upload($_FILES["imagem"]);
   $cbxAtivo=$_POST["sltAtivo"];
 
   if($_POST["btnCadastro"]=='Cadastrar'){
@@ -84,7 +85,7 @@ if(isset($_POST["btnCadastro"])){
 
   </head>
   <body>
-   <form name="frmcadastroimagemprodutoparceiro" method="post" action="modal_cms_imagem_produto_parceiro.php">
+   <form name="frmcadastroimagemprodutoparceiro" method="post" action="modal_cms_imagem_produto_parceiro.php" enctype="multipart/form-data">
   <div class="container_principal_ph float_left">
     <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
       <div class="item_titulo_ph align_center preenche_t_20 fs_25 negrito">
