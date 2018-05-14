@@ -69,6 +69,29 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
           '".$telefone."','".$sexo."','".$logradouro."','".$numero."',
           '".$cidade."','".$cep."','".$bairro."','".$complemento."','".$usuario."',
           '".$senha."')";
+
+
+          mysql_query($sql);
+
+
+      $sql2 = "select * dsjgf dsfj sdfsdkfk hsdkf"
+        $resultado1 = mysql_query($sql);
+        if($rs=mysql_fetch_assoc($resultado1))
+        {
+          $id_ttttt = $rs['id'];
+        }
+
+      $sql3 = "insert sdjkfhjksdhjkf hsdkhfkj sdhfk ksdf sdjkfh"
+        mysql_query($sql);
+
+
+        $sql4 = "select * dsjgf dsfj sdfsdkfk hsdkf"
+          $resultado1 = mysql_query($sql);
+          if($rs=mysql_fetch_assoc($resultado1))
+          {
+            $id_xxxx = $rs['id'];
+          }
+
       }
 
       //EXECUTA O SCRIPT NO BD
