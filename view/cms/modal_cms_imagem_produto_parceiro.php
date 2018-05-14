@@ -3,15 +3,17 @@
   //
   // Conexao_Database();
 
+  require_once("modulo.php");
+
   session_start();
 
   $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
   mysql_select_db('db_auto_center');
 #####################################################################################################################################################################################
-  $id_anuncio_produto="";
+  $id_imagem_produto_parceiro="";
   $id_produto="";
-  $preco="";
+  $imagem="";
   $cbxAtivo="";
   $btnCadastro="Cadastrar";
 #####################################################################################################################################################################################
@@ -21,29 +23,29 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
       if($modo=='excluir')
       {
-          $id_anuncio_produto=$_GET['id_anuncio_produto'];
+          $id_imagem_produto_parceiro=$_GET['id_imagem_produto_parceiro'];
 
-          $sql = "delete from tbl_anuncio_produto_parceiro where id_anuncio_produto=".$id_anuncio_produto;
+          $sql = "delete from tbl_imagem_produto_parceiro where id_imagem_produto_parceiro=".$id_imagem_produto_parceiro;
           mysql_query($sql);
 
 
-      header('location:modal_cms_anuncio_produto_parceiro.php');
+      header('location:modal_cms_imagem_produto_parceiro.php');
 #####################################################################################################################################################################################
 }else if($modo=='consulta_editar')//MODO EDITAR
        {
            $btnCadastro="Editar";
-           $id_anuncio_produto=$_GET['id_anuncio_produto'];
+           $id_imagem_produto_parceiro=$_GET['id_imagem_produto_parceiro'];
 
-           $_SESSION['id']= $id_anuncio_produto;
+           $_SESSION['id']= $id_imagem_produto_parceiro;
 
-           $sql = "SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_produto.nome as nome_produto FROM tbl_anuncio_produto_parceiro INNER JOIN
-           tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto WHERE tbl_anuncio_produto_parceiro.id_anuncio_produto=".$id_anuncio_produto;
+           $sql = "SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.ativo, tbl_imagem_produto_parceiro.id_produto, tbl_produto.nome as nome_produto FROM tbl_imagem_produto_parceiro INNER JOIN
+           tbl_produto on tbl_imagem_produto_parceiro.id_produto = tbl_produto.id_produto WHERE tbl_imagem_produto_parceiro.id_imagem_produto_parceiro=".$id_imagem_produto_parceiro;
 
            $select = mysql_query($sql);
 
             if($rsConsulta=mysql_fetch_array($select)){
 
-                $preco=$rsConsulta['preco'];
+                $imagem=$rsConsulta['imagem'];
                 $id_produto=$rsConsulta['id_produto'];
                 $nomeProduto=$rsConsulta['nome_produto'];
                 $cbxAtivo=$rsConsulta['ativo'];
@@ -55,20 +57,21 @@ if(isset($_GET['modo']))//MODO EXCLUIR
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
   $id_produto=$_POST["sltProduto"];
-  $preco=$_POST["txtPreco"];
+  // $imagem=$_POST["imagem"];
+  $imagem=Upload($_FILES["imagem"]);
   $cbxAtivo=$_POST["sltAtivo"];
 
   if($_POST["btnCadastro"]=='Cadastrar'){
-    $sql="INSERT INTO tbl_anuncio_produto_parceiro(id_produto,preco,ativo)
-    VALUES ('".$id_produto."', $preco, '".$cbxAtivo."')";
+    $sql="INSERT INTO tbl_imagem_produto_parceiro(id_produto,imagem,ativo)
+    VALUES ('".$id_produto."', '".$imagem."', '".$cbxAtivo."')";
 
   }else if($_POST["btnCadastro"]=='Editar'){
-    $sql="UPDATE tbl_anuncio_produto_parceiro SET preco='".$preco."', ativo='".$cbxAtivo."', id_produto='".$id_produto."' WHERE id_anuncio_produto=".$_SESSION['id'];
+    $sql="UPDATE tbl_imagem_produto_parceiro SET imagem='".$imagem."', ativo='".$cbxAtivo."', id_produto='".$id_produto."' WHERE id_imagem_produto_parceiro=".$_SESSION['id'];
   }
-      mysql_query($sql);
-
-      header('location:modal_cms_anuncio_produto_parceiro.php');
-      // echo($sql);
+      // mysql_query($sql);
+      //
+      // header('location:modal_cms_imagem_produto_parceiro.php');
+      echo($sql);
 }
 #####################################################################################################################################################################################
  ?>
@@ -78,15 +81,15 @@ if(isset($_POST["btnCadastro"])){
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="../css/padroes.css">
-    <link rel="stylesheet" type="text/css" href="../css/cms/cms_anuncio_produto_parceiro.css">
+    <link rel="stylesheet" type="text/css" href="../css/cms/cms_modal_imagem_produto_parceiro.css">
 
   </head>
   <body>
-   <form name="frmcadastroanuncioprodutosparceiro" method="post" action="modal_cms_anuncio_produto_parceiro.php">
+   <form name="frmcadastroimagemprodutoparceiro" method="post" action="modal_cms_imagem_produto_parceiro.php" enctype="multipart/form-data">
   <div class="container_principal_ph float_left">
     <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
       <div class="item_titulo_ph align_center preenche_t_20 fs_25 negrito">
-        Cadastrar Anúncios de Produtos.
+        Cadastrar Imagens de Produtos.
       </div>
     </div>
     <div class="campos">
@@ -95,9 +98,9 @@ if(isset($_POST["btnCadastro"])){
           Produto
         </div>
         <div class="name_campo" >
-          Preço
+          Imagem
         </div>
-        <div class="name_campo">
+        <div class="name_campo" >
           Ativo
         </div>
       </div>
@@ -131,7 +134,7 @@ if(isset($_POST["btnCadastro"])){
           </select>
       </div>
       <div class="preencher_inputs">
-          <input type="txtPreco" name="txtPreco" value="<?php echo($preco); ?>" id="float" class="color">
+         <input type="file" name="imagem" value="<?php echo($imagem)?>" class="color">
       </div>
       <div class="preencher_inputs">
 
@@ -151,7 +154,7 @@ if(isset($_POST["btnCadastro"])){
           Produto
         </div>
         <div class="campos_table">
-          Preço
+          Imagem
         </div>
         <div class="campos_table">
           Excluir
@@ -162,9 +165,9 @@ if(isset($_POST["btnCadastro"])){
 
       <?php
 
-      $sql="SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_anuncio_produto_parceiro.id_anuncio_produto, tbl_produto.nome as nomeProduto
-      from tbl_anuncio_produto_parceiro inner join tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto where tbl_anuncio_produto_parceiro.id_anuncio_produto
-      order by id_anuncio_produto desc";
+      $sql="SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.ativo, tbl_imagem_produto_parceiro.id_produto, tbl_imagem_produto_parceiro.id_imagem_produto_parceiro, tbl_produto.nome as nomeProduto
+      from tbl_imagem_produto_parceiro inner join tbl_produto on tbl_imagem_produto_parceiro.id_produto = tbl_produto.id_produto where tbl_imagem_produto_parceiro.id_imagem_produto_parceiro
+      order by id_imagem_produto_parceiro desc";
 
       $select=mysql_query($sql);
 
@@ -174,15 +177,15 @@ if(isset($_POST["btnCadastro"])){
           <?php echo($rsConsulta['nomeProduto']) ?>
         </div>
         <div class="campos_table">
-          <?php echo($rsConsulta['preco']) ?>
+          <?php echo($rsConsulta['imagem']) ?>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_anuncio_produto_parceiro.php?modo=excluir&id_anuncio_produto=<?php echo($rsConsulta['id_anuncio_produto'])?>">
+          <a href="modal_cms_imagem_produto_parceiro.php?modo=excluir&id_imagem_produto_parceiro=<?php echo($rsConsulta['$id_imagem_produto_parceiro'])?>">
               <img src="../pictures/icones/delete1.png">
           </a>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_anuncio_produto_parceiro.php?modo=consulta_editar&id_anuncio_produto=<?php echo($rsConsulta['id_anuncio_produto'])?>">
+          <a href="modal_cms_imagem_produto_parceiro.php?modo=consulta_editar&id_imagem_produto_parceiro=<?php echo($rsConsulta['$id_imagem_produto_parceiro'])?>">
               <img src="../pictures/icones/edit.png">
           </a>
         </div>

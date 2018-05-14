@@ -10,6 +10,7 @@
   mysql_select_db('db_auto_center');
 
   $id_produto="";
+  $id_parceiro="";
   $id_modelo_produto="";
   $id_parceiro="";
   $id_cor="";
@@ -63,23 +64,20 @@
     $garantia=$_POST["txt_garantia"];
     $descricao=$_POST["txt_descricao"];
     $observacao=$_POST["txt_observacao"];
-    $modelo=$_POST["txt_modelo"];
-    $peso=$_POST["txt_peso"];
-    $altura=$_POST["txt_altura"];
-    $comprimento=$_POST["txt_comprimento"];
+    $id_parceiro=$_POST['sltParceiro'];
     $id_categoria_produto=$_POST["sltCategoria"];
     $id_cor=$_POST["sltCor"];
     $id_modelo_produto=$_POST["sltModelo"];
 
     if($_POST["btnSalvar"]=='Salvar'){
-      $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, modelo, peso, altura, comprimento, id_cor, id_categoria_produto)
-      VALUES ('".$nome."', '".$preco."', '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$modelo."', '".$peso."', '".$altura."', '".$comprimento."', '".$id_cor."', '".$id_categoria_produto."' )";
+    $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, id_parceiro, id_categoria_produto, id_cor, id_modelo_produto)
+    VALUES('".$nome."', '".$preco."', '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$id_parceiro."', '".$id_categoria_produto."', '".$id_cor."','".$id_modelo_produto."')";
     }
 
-    // mysql_query($sql);
-    //
-    // header('location:modal_cms_produtos_home.php');
-    echo($sql);
+    mysql_query($sql);
+
+    header('location:modal_cms_produtos_home.php');
+    // echo($sql);
 
   }
  ?>
@@ -103,6 +101,9 @@
     <div class="campos">
       <div class="names_campos">
         <div class="name_campo">
+          Parceiro
+        </div>
+        <div class="name_campo">
           Nome
         </div>
         <div class="name_campo">
@@ -124,15 +125,6 @@
           Modelo
         </div>
         <div class="name_campo">
-          Peso
-        </div>
-        <div class="name_campo">
-          Altura
-        </div>
-        <div class="name_campo">
-          Comprimento
-        </div>
-        <div class="name_campo">
           Cor
         </div>
         <div class="name_campo">
@@ -141,6 +133,37 @@
       </div>
 
       <div class="inputs_campos">
+        <div class="preencher_inputs">
+            <!-- <input type="txt_modelo" class="color" name="txt_modelo" value="<?php echo($modelo)?>" id="float"> -->
+            <select name="sltParceiro" id="float" class="color">
+              <?php
+              if($id_parceiro == ""){
+                  $id_parceiro = 0;
+                  ?>
+                   <option>Selecione</option>
+                <?php
+              }else{
+                  ?>
+          <option value="<?php echo($id_parceiro); ?>">
+              <?php echo($id_parceiro);?></option>
+          <?php
+
+              }
+              $sql = "SELECT id_parceiro, nome_fantasia as nome_nome FROM tbl_parceiro Where id_parceiro <> ".$id_parceiro;
+              $select=mysql_query($sql);
+
+             while($rsParceiro = mysql_fetch_array($select)){
+                 ?>
+
+              <option value="<?php echo($rsParceiro['id_parceiro']); ?>">
+              <?php echo($rsParceiro['nome_nome']); ?> </option>
+
+          <?php
+             }
+          ?>
+
+            </select>
+        </div>
         <div class="preencher_inputs">
             <input type="txt_nome" class="color" name="txt_nome" value="<?php echo($nome)?>" id="float">
         </div>
@@ -160,7 +183,6 @@
             <input type="txt_observacao" class="color" name="txt_observacao" value="<?php echo($observacao)?>" id="float">
         </div>
         <div class="preencher_inputs">
-            <!-- <input type="txt_modelo" class="color" name="txt_modelo" value="<?php echo($modelo)?>" id="float"> -->
             <select name="sltModelo" id="float" class="color">
               <?php
               if($id_modelo_produto == ""){
@@ -181,7 +203,7 @@
              while($rsModelo = mysql_fetch_array($select)){
                  ?>
 
-              <option value="<?php echo($rsCor['id_modelo_produto']); ?>">
+              <option value="<?php echo($rsModelo['id_modelo_produto']); ?>">
               <?php echo($rsModelo['nome_modelo']); ?> </option>
 
           <?php
@@ -189,43 +211,6 @@
           ?>
 
             </select>
-        </div>
-        <div class="preencher_inputs">
-            <!-- <input type="txt_peso" class="color" name="txt_peso" value="<?php echo($peso)?>" id="float"> -->
-            <select name="sltPeso" id="float" class="color">
-              <?php
-              if($id_modelo_produto == ""){
-                  $id_modelo_produto = 0;
-                  ?>
-                   <option>Selecione</option>
-                <?php
-              }else{
-                  ?>
-          <option value="<?php echo($id_modelo_produto); ?>">
-              <?php echo($id_modelo_produto);?></option>
-          <?php
-
-              }
-              $sql = "SELECT id_modelo_produto, peso as nome_peso FROM tbl_modelo_produto Where id_modelo_produto <> ".$id_modelo_produto;
-              $select=mysql_query($sql);
-
-             while($rsPeso = mysql_fetch_array($select)){
-                 ?>
-
-              <option value="<?php echo($rsPeso['id_modelo_produto']); ?>">
-              <?php echo($rsModelo['nome_peso']); ?> </option>
-
-          <?php
-             }
-          ?>
-
-            </select>
-        </div>
-        <div class="preencher_inputs">
-            <input type="txt_altura" class="color" name="txt_altura" value="<?php echo($altura)?>" id="float">
-        </div>
-        <div class="preencher_inputs">
-            <input type="txt_comprimento" class="color" name="txt_comprimento" value="<?php echo($comprimento)?>" id="float">
         </div>
         <div class="preencher_inputs">
             <select name="sltCor" id="float" class="color">
@@ -288,12 +273,44 @@
 
             </select>
         </div>
-
-
         <div class="button">
           <input type="submit"   name="btnSalvar" value="<?php echo($btnSalvar)?>" >
         </div>
 
+      </div>
+      <div class="container_visual">
+        <div class="campos_visual">
+          Parceiro
+        </div>
+        <div class="campos_visual">
+          Nome
+        </div>
+        <div class="campos_visual">
+          Preço
+        </div>
+        <div class="campos_visual">
+        Conteúdo
+            da
+        Embalagem
+        </div>
+        <div class="campos_visual">
+          Garantia
+        </div>
+        <div class="campos_visual">
+          Descrição
+        </div>
+        <div class="campos_visual">
+          Observação
+        </div>
+        <div class="campos_visual">
+          Modelo
+        </div>
+        <div class="campos_visual">
+          Cor
+        </div>
+        <div class="campos_visual">
+          Categoria
+        </div>
       </div>
     </div>
 

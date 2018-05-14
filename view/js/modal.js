@@ -1,3 +1,4 @@
+
 function modalCadastroCliente(){
   $('.container_modal').fadeIn(1500);
 
@@ -14,7 +15,7 @@ function modalCadastroCliente(){
 }
 
 function modalCadastroParceiro(){
-  $('.container_modal').slideToggle(500);
+  $('.container_modal').slideToggle(1500);
 
   $.ajax({
     type: "POST",
@@ -289,6 +290,20 @@ function modalCadUsuario(){
   $.ajax({
     type: "POST",
     url: "modal_cad_usuario.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+function modalCmsGaleria(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "acms_galeria.php",
     cache:false,
     contentType:false,
     processData:false,
