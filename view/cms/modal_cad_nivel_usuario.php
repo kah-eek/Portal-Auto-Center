@@ -4,7 +4,8 @@ session_start();
 $nivel="";
 $botao="Salvar";
 
-$conexao=mysqli_connect('localhost','root','bcd127','db_auto_center');
+require_once('../../database/conect.php');
+Conexao_db();
 ////////////////////////////////////////////////////////
 
 // if da escolha... visualizar ou excluir
@@ -20,7 +21,7 @@ if(isset($_GET['escolha']))
 
     $sql = "DELETE FROM tbl_nivel_usuario WHERE id_nivel_usuario= ".$id;
     mysql_query($sql);
-    // echo ($sql)
+    // echo ($sql);
     header('location:index.php#.php');
 //////////////////////////////////////////////////////
 //Verificando se a variavel modo = consulta_editar
@@ -126,7 +127,7 @@ if(isset($_POST["btnSalvar"]))
           </div>
           <div class="item_escolhas_n float_left">
             <div class="escolha float_left preenche_t_15 fs_20 borda_preta_1 align_center">
-              <a href="modal_cad_nivel_usuario.php?escolha=excluir&id=<?php echo(rsConsulta['id_nivel_usuario']);?>"></a>Excluir
+              <a href="modal_cad_nivel_usuario.php?escolha=excluir&id=<?php echo($rsConsulta['id_nivel_usuario']);?>">excluir
             </div>
             <div class="escolha float_left preenche_t_15 fs_20 borda_preta_1 align_center">
               <a href="modal_cad_nivel_usuario.php?escolha=atualizar&id=<?php echo($rsConsulta['id_nivel_usuario']);?>">Editar
