@@ -1,7 +1,9 @@
 <?php
+require_once("../database/conect.php");
+Conexao_db();
 
 $id_cliente="";
-$id_endereco="";
+$id_endereco=null;
 $id_estado="";
 $id_nivel_usuario="";
 
@@ -13,7 +15,7 @@ $celular="";
 $telefone="";
 $sexo="";
 // ENDEREÇO
-$logradouro="";
+$rua="";
 $numero="";
 $cidade="";
 $cep="";
@@ -26,10 +28,6 @@ $senha="";
 
 $botao="Salvar";
 
-$conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-    //ATIVA O DATABASE A SER UTILIZADO NO PROJETO
-    mysql_select_db('db_auto_center');
 
   if(isset($_POST["btnSalvar"]))
   {
@@ -44,11 +42,11 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
     $email=$_POST["txtEmail"];
     $celular=$_POST["txtCelular"];
     $telefone=$_POST["txtTelefone"];
-    $sexo=$_POST["sexo"];
+    $sexo=$_POST["chbSexo"];
 
     // ENDEREÇO
-    $id_endereco=$_POST["id_endereco"];
-    $logradouro=$_POST["txtLogradouro"];
+    // $id_endereco=$_POST["id_endereco"];
+    $rua=$_POST["txtRua"];
     $numero=$_POST["txtNumero"];
     $cidade=$_POST["txtCidade"];
     $id_estado=$_POST["slcEstado"];
@@ -61,23 +59,40 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
     $senha=$_POST["txtSenha"];
     $id_nivel_usuario=$_POST["slcNivel"];
 
-    if($_POST["btnsalvar"]=='Salvar')
-      {
+    if($_POST["btnSalvar"]=='Salvar'){
         //MONTA O SCRIPT PARA ENVIAR PARA O BD
-      $sql = "INSERT INTO tbl_cliente(id_endereco,id_estado,id_nivel_usuario,nome,DtNasc,cpf,email,celular,telefone,sexo,logradouro,numero,cidade,cep,bairro,complemento,usuario,senha)
-          values('".$id_endereco."','".$id_estado."','".$id_nivel_usuario."','".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."',
-          '".$telefone."','".$sexo."','".$logradouro."','".$numero."',
-          '".$cidade."','".$cep."','".$bairro."','".$complemento."','".$usuario."',
-          '".$senha."')";
+      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo) values ('".$usuario."','".$senha."','".$id_nivel_usuario."','1');";
+
+      mysql_query($sql);
+
+      $sql2 = "SELECT LAST_INSERT_ID();";
+      if ($rsFC = mysql_fetch_array($sql2)){
+        $id_usuario=$rsFC['id_usuario'];
+      }
+
+      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','1','".$cep."','".$bairro."','".$complemento."');";
+
+      mysql_query($sql3);
+
+      $sql2 = "SELECT LAST_INSERT_ID();";
+      if ($rsFC = mysql_fetch_array($sql3)){
+        $id_endereco=$rsFC['id_endereco'];
+      }
+
+      $sql4 = "isert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
+
+      mysql_query($sql4);
+
+
       }
 
       //EXECUTA O SCRIPT NO BD
-      // mysql_query($sql);
+      // mysql_qu?ery($sql);
       //
       //
       // header('location:modal_cadastro_cliente.php');
 
-      // echo($sql);
+      echo($sql);
 
   }
 
@@ -162,8 +177,8 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
           <!-- INPUT RADIO -->
           <div class="segura_input margem_t_10 float_left">
-            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="M"> Masculino
-            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="sexo" value="F"> Feminino
+            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="M"> Masculino
+            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="F"> Feminino
           </div>
           <div class="divisor_c margem_t_5 float_left">
 
@@ -188,7 +203,7 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
           <!-- INPUT CIDADE -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtNidade" value="">
+            <input class="input_text txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtCidade" value="">
           </div>
 
           <!-- SELECT ESTADO -->
@@ -253,57 +268,57 @@ $conexao=mysql_connect('localhost', 'root', 'bcd127');
           </select>
 
           <div class="segura_bt float_left">
-            <input href="" class="input_submit_cc margem_t_25 sombra_preta_b_15" type="submit" name="btnSalvar" value="Salvar">
+            <input href="" class="input_submit_cc margem_t_25 sombra_preta_b_15" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
           </div>
         </div>
       </form>
 
       <!-- FORM CADASTRO DE VEICULO -->
-      <form class="form_cadastro_veiculo float_left" action="modal_cadastro_cliente.php" method="post">
-        <div class="segura_inputs_veic">
+      <!-- <form class="form_cadastro_veiculo float_left" action="modal_cadastro_cliente.php" method="post">
+        <div class="segura_inputs_veic"> -->
           <!-- TITULO VEICULO -->
-          <div class="titulo_form_veic margem_t_10 float_left">
+          <!-- <div class="titulo_form_veic margem_t_10 float_left">
             <div class="titulo_form">
               <div class="item_titulo_form fs_20 align_center titulo margem_t_10 float_left">
                 Veículo
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- INPUT ANO DE FABRICACAO -->
-          <div class="segura_input margem_t_20 float_left">
+          <!-- <div class="segura_input margem_t_20 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Ano De Fabricação" type="text" name="txt_ano_fabri" value="">
-          </div>
+          </div> -->
 
           <!-- INPUT PLACA -->
-          <div class="segura_input margem_t_10 float_left">
+          <!-- <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Placa" type="text" name="txt_placa" value="">
-          </div>
+          </div> -->
 
           <!-- INPUT QUANTIDADE DE PORTAS -->
-          <div class="segura_input margem_t_10 float_left">
+          <!-- <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Qtd de Portas" type="text" name="txt_portas" value="">
-          </div>
+          </div> -->
 
           <!-- INPUT KILOMETRAGEM -->
-          <div class="segura_input margem_t_10 float_left">
+          <!-- <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Kilometragem" type="text" name="txt_km" value="">
-          </div>
+          </div> -->
 
           <!-- INPUT MODELO -->
-          <div class="segura_input margem_t_10 float_left">
+          <!-- <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Modelo" type="text" name="txt_modelo" value="">
-          </div>
+          </div> -->
 
           <!-- INPUT FABRICANTE -->
-          <div class="segura_input margem_t_10 float_left">
+          <!-- <div class="segura_input margem_t_10 float_left">
             <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
           </div>
           <div class="divisor_c margem_t_30 float_left">
 
           </div>
         </div>
-      </form>
+      </form> -->
     </div>
   </body>
 </html>
