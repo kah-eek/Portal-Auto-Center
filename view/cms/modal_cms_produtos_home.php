@@ -65,13 +65,13 @@ if(isset($_GET['modo']))//MODO EXCLUIR
     $descricao=$rsConsulta['descricao'];
     $observacao=$rsConsulta['observacao'];
     // $id_parceiro=$rsConsulta['id_parceiro'];
-    $nomeParceiro=$rsConsulta['nome_fantasia'];
+    $id_parceiro=$rsConsulta['nome_fantasia'];
     // $id_modelo_produto=$rsConsulta['id_modelo_produto'];
-    $nomeModelo=$rsConsulta['modelo'];
+    $id_modelo_produto =$rsConsulta['modelo'];
     // $id_cor=$rsConsulta['id_cor'];
-    $nomeCor=$rsConsulta['cor'];
+    $id_cor=$rsConsulta['cor'];
     // $id_categoria_produto=$rsConsulta['id_categoria_produto'];
-    $nomeCategoria=$rsConsulta['categoria'];
+    $id_categoria_produto=$rsConsulta['categoria'];
 
     }
   }
@@ -94,11 +94,12 @@ if(isset($_GET['modo']))//MODO EXCLUIR
         $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, id_parceiro, id_categoria_produto, id_cor, id_modelo_produto)
         VALUES('".$nome."', $preco, '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$id_parceiro."', '".$id_categoria_produto."', '".$id_cor."','".$id_modelo_produto."')";
 
-     }
-    //else if($_POST['btnSalvar']=='Editar'){
-    //   $sql="UPDATE tbl_produto SET nome='".$nome."', preco='".$preco."', conteudo_embalagem='".$conteudo_embalagem."', garantia='".$garantia."', descricao='".$descricao."',
-    //   id_parceiro='".$id_parceiro."', id_categoria_produto='".$id_categoria_produto."', id_cor='".$id_cor."', id_modelo_produto='".$id_modelo_produto."' WHERE id_produto=".$_SESSION['id'];
-    // }
+     }else if($_POST['btnSalvar']=='Editar'){
+      $sql="UPDATE tbl_produto SET nome='".$nome."', preco='".$preco."', conteudo_embalagem='".$conteudo_embalagem."', garantia='".$garantia."', descricao='".$descricao."',
+      id_parceiro='".$id_parceiro."', id_categoria_produto='".$id_categoria_produto."', id_cor='".$id_cor."', id_modelo_produto='".$id_modelo_produto."' WHERE id_produto=".$_SESSION['id'];
+    }
+
+
 
     mysql_query($sql);
     header('location:modal_cms_produtos_home.php');
@@ -352,11 +353,10 @@ if(isset($_GET['modo']))//MODO EXCLUIR
         INNER JOIN tbl_categoria_produto as categoria
         INNER JOIN tbl_parceiro as nome_fantasia
         INNER JOIN tbl_modelo_produto as modelo
-        INNER JOIN tbl_parceiro as parceiro
         WHERE prod.id_cor = cor.id_cor
         AND prod.id_categoria_produto = categoria.id_categoria_produto
         AND prod.id_parceiro = nome_fantasia.id_parceiro
-        AND prod.id_modelo_produto = modelo.id_modelo_produto";
+        AND prod.id_modelo_produto = modelo.id_modelo_produto order by id_produto desc";
 
         $select=mysql_query($sql);
 

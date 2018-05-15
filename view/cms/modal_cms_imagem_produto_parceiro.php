@@ -68,10 +68,10 @@ if(isset($_POST["btnCadastro"])){
   }else if($_POST["btnCadastro"]=='Editar'){
     $sql="UPDATE tbl_imagem_produto_parceiro SET imagem='".$imagem."', ativo='".$cbxAtivo."', id_produto='".$id_produto."' WHERE id_imagem_produto_parceiro=".$_SESSION['id'];
   }
-      // mysql_query($sql);
-      //
-      // header('location:modal_cms_imagem_produto_parceiro.php');
-      echo($sql);
+      mysql_query($sql);
+
+      header('location:modal_cms_imagem_produto_parceiro.php');
+      // echo($sql);
 }
 #####################################################################################################################################################################################
  ?>

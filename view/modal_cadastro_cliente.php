@@ -95,12 +95,12 @@ $botao="Salvar";
       // mysql_qu?ery($sql);
       //
       //
-      header('location:cliente_parceiro.php?page=cliente_parceiro');
+      // header('location:cliente_parceiro.php?page=cliente_parceiro');
 
-      // echo($sql);
-      // echo($sql2);
-      // echo($sql3);
-      // echo($sql4);
+      echo($sql);
+      echo($sql2);
+      echo($sql3);
+      echo($sql4);
 
   }
 
