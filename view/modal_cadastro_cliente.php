@@ -61,30 +61,30 @@ $botao="Salvar";
 
     if($_POST["btnSalvar"]=='Salvar'){
         //MONTA O SCRIPT PARA ENVIAR PARA O BD
-      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo) values ('".$usuario."','".$senha."','".$id_nivel_usuario."','1');";
+      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo) values ('".$usuario."','".$senha."','1','1');";
 
       mysql_query($sql);
 
       $sql2 = "SELECT LAST_INSERT_ID();";
-        $resultado1 = mysql_fetch_array ($sql2);
-          if ($rs=mysql_query($resultado1))
+        $resultado1 = mysql_query ($sql2);
+          if ($rs=mysql_fetch_array($resultado1))
           {
-            $id_usuario = $rs['id_usuario'];
+            $id_usuario = $rs['LAST_INSERT_ID()'];
           }
 
 
-      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','".$id_estado."','".$cep."','".$bairro."','".$complemento."');";
+      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','1','".$cep."','".$bairro."','".$complemento."');";
 
       mysql_query($sql3);
 
       $sql4 = "SELECT LAST_INSERT_ID();";
-        $resultado2 = mysql_fetch_array ($sql4);
-          if ($rs=mysql_query($resultado2))
+        $resultado2 = mysql_query ($sql4);
+          if ($rs=mysql_fetch_array($resultado2))
           {
-            $id_endereco=$rs['id_endereco'];
+            $id_endereco=$rs['LAST_INSERT_ID()'];
           }
 
-      $sql4 = "isert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
+      $sql4 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
 
       mysql_query($sql4);
 
@@ -95,9 +95,12 @@ $botao="Salvar";
       // mysql_qu?ery($sql);
       //
       //
-      // header('location:modal_cadastro_cliente.php');
+      header('location:cliente_parceiro.php?page=cliente_parceiro');
 
-      echo($sql);
+      // echo($sql);
+      // echo($sql2);
+      // echo($sql3);
+      // echo($sql4);
 
   }
 
