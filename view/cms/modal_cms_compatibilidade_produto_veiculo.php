@@ -13,43 +13,49 @@
   $id_produto="";
   $id_veiculo="";
   $btnCadastro="Cadastrar";
-#####################################################################################################################################################################################
-if(isset($_GET['modo']))//MODO EXCLUIR
-  {
-      $modo=$_GET['modo'];
-
-      if($modo=='excluir')
-      {
-          $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
-
-          $sql = "delete from tbl_compatibilidade_produto_veiculo where id_compatibilidade_produto_veiculo=".$id_compatibilidade_produto_veiculo;
-          mysql_query($sql);
-
-
-      header('location:modal_cms_compatibilidade_produto_veiculo.php');
-#####################################################################################################################################################################################
-}else if($modo=='consulta_editar')//MODO EDITAR
-       {
-           $btnCadastro="Editar";
-           $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
-
-           $_SESSION['id']= $id_compatibilidade_produto_veiculo;
-
-           $sql = "SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_produto.nome as nome_produto FROM tbl_anuncio_produto_parceiro INNER JOIN
-           tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto WHERE tbl_anuncio_produto_parceiro.id_anuncio_produto=".$id_anuncio_produto;
-
-           $select = mysql_query($sql);
-
-            if($rsConsulta=mysql_fetch_array($select)){
-
-                $id_produto=$rsConsulta['id_produto'];
-                $nomeProduto=$rsConsulta['nome_produto'];
-                $id_veiculo=$rsConsulta['id_veiculo'];
-                $nomeVeiculo=$rsConsulta['nome_placa'];
-
-          }
-       }
-   }
+// #####################################################################################################################################################################################
+// if(isset($_GET['modo']))//MODO EXCLUIR
+//   {
+//       $modo=$_GET['modo'];
+//
+//       if($modo=='excluir')
+//       {
+//           $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
+//
+//           $sql = "delete from tbl_compatibilidade_produto_veiculo where id_compatibilidade_produto_veiculo=".$id_compatibilidade_produto_veiculo;
+//           mysql_query($sql);
+//
+//
+//       header('location:modal_cms_compatibilidade_produto_veiculo.php');
+// #####################################################################################################################################################################################
+// }else if($modo=='consulta_editar')//MODO EDITAR
+//        {
+//            $btnCadastro="Editar";
+//            $id_compatibilidade_produto_veiculo=$_GET['id_compatibilidade_produto_veiculo'];
+//
+//            $_SESSION['id']= $id_compatibilidade_produto_veiculo;
+//
+//           //  $sql = "SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_produto.nome as nome_produto FROM tbl_anuncio_produto_parceiro INNER JOIN
+//           //  tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto WHERE tbl_anuncio_produto_parceiro.id_anuncio_produto=".$id_anuncio_produto;
+//
+//            $sql="SELECT tbl_compatibilidade_produto_veiculo.id_veiculo, tbl_compatibilidade_produto_veiculo.id_produto, tbl_produto.nome as nome_produto FROM tbl_compatibilidade_produto_veiculo
+//            INNER JOIN tbl_produto ON tbl_compatibilidade_produto_veiculo.id_produto = tbl_produto.id_produto WHERE tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo=".$id_compatibilidade_produto_veiculo;
+//
+//            $sql="SELECT tbl_compatibilidade_produto_veiculo.id_veiculo, tbl_compatibilidade_produto_veiculo.id_produto, tbl_veiculo.placa as nome_placa FROM tbl_compatibilidade_produto_veiculo
+//            INNER JOIN tbl_veiculo ON tbl_compatibilidade_produto_veiculo.id_veiculo = tbl_veiculo.id_veiculo WHERE tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo=".$id_compatibilidade_produto_veiculo;
+//
+//            $select = mysql_query($sql);
+//
+//             if($rsConsulta=mysql_fetch_array($select)){
+//
+//                 $id_produto=$rsConsulta['id_produto'];
+//                 $nomeProduto=$rsConsulta['nome_produto'];
+//                 $id_veiculo=$rsConsulta['id_veiculo'];
+//                 $nomePlaca=$rsConsulta['nome_placa'];
+//
+//           }
+//        }
+//    }
 #####################################################################################################################################################################################
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
@@ -177,9 +183,17 @@ if(isset($_POST["btnCadastro"])){
 
       <?php
 
-      $sql="SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_anuncio_produto_parceiro.id_anuncio_produto, tbl_produto.nome as nomeProduto
-      from tbl_anuncio_produto_parceiro inner join tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto where tbl_anuncio_produto_parceiro.id_anuncio_produto
-      order by id_anuncio_produto desc";
+      // $sql="SELECT tbl_anuncio_produto_parceiro.preco, tbl_anuncio_produto_parceiro.ativo, tbl_anuncio_produto_parceiro.id_produto, tbl_anuncio_produto_parceiro.id_anuncio_produto, tbl_produto.nome as nomeProduto
+      // from tbl_anuncio_produto_parceiro inner join tbl_produto on tbl_anuncio_produto_parceiro.id_produto = tbl_produto.id_produto where tbl_anuncio_produto_parceiro.id_anuncio_produto
+      // order by id_anuncio_produto desc";
+
+      // $sql="SELECT tbl_compatibilidade_produto_veiculo.id_produto, tbl_compatibilidade_produto_veiculo.id_veiculo, tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo, tbl_produto.nome as nomeProduto
+      // FROM tbl_compatibilidade_produto_veiculo INNER JOIN tbl_produto ON tbl_compatibilidade_produto_veiculo.id_produto = tbl_produto.id_produto WHERE tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo
+      // ORDER BY id_compatibilidade_produto_veiculo DESC";
+      //
+      // $sql="SELECT tbl_compatibilidade_produto_veiculo.id_produto, tbl_compatibilidade_produto_veiculo.id_veiculo, tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo, tbl_produto.placa as nomePlaca
+      // FROM tbl_compatibilidade_produto_veiculo INNER JOIN tbl_veiculo ON tbl_compatibilidade_produto_veiculo.id_veiculo = tbl_produto.id_veiculo WHERE tbl_compatibilidade_produto_veiculo.id_compatibilidade_produto_veiculo
+      // ORDER BY id_compatibilidade_produto_veiculo DESC";
 
       $select=mysql_query($sql);
 
@@ -188,8 +202,8 @@ if(isset($_POST["btnCadastro"])){
         <div class="campos_table">
           <?php echo($rsConsulta['nomeProduto']) ?>
         </div>
+        <?php echo($rsConsulta['nomePlaca']) ?>
         <div class="campos_table">
-          <?php echo($rsConsulta['nomeProduto']) ?>
         </div>
         <div class="campos_table">
           <a href="modal_cms_compatibilidade_produto_veiculo.php?modo=excluir&id_compatibilidade_produto_veiculo=<?php echo($rsConsulta['id_compatibilidade_produto_veiculo'])?>">

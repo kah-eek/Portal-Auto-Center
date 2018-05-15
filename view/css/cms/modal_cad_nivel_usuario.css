@@ -1,0 +1,138 @@
+.container_nivel_usuario{
+  width: 1155px;
+  height: 890px;
+  background-color: pink;
+
+}
+
+.container_titulo_n{
+  width: 1155px;
+  height: 80px;
+  background-color: green;
+
+}
+
+.item_titulo_n{
+  width: 1000px;
+  height: 80px;
+  background-color: #fff;
+
+}
+
+.frmCadNivel{
+  width: 800px;
+  height: 500px;
+  background-color: #990000;
+
+}
+
+.container_sub_n{
+  width: 150px;
+  height: 40px;
+  background-color: blue;
+
+}
+
+.item_sub_n{
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+
+}
+
+.container_input_n{
+  width: 280px;
+  height: 42px;
+  background-color: gray;
+
+}
+
+.item_input_n{
+  width: 280px;
+  height: 42px;
+  background-color: green;
+
+}
+
+.input_n{
+  width: 280px;
+  height: 35px;
+
+}
+
+.container_bt_n{
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+
+}
+
+.item_bt_n{
+  width: 150px;
+  height: 40px;
+  background-color: #000;
+
+}
+
+.submit_n{
+  width: 150px;
+  height: 40px;
+
+}
+
+.container_visualizar_n{
+  width: 800px;
+  height: 50px;
+  background-color: red;
+
+}
+
+.item_visualizar_n{
+  width: 800px;
+  height: 50px;
+  background-color: gray;
+
+}
+
+.container_titulo_exibe_n{
+  width: 800px;
+  height: 50px;
+  /*background-color: #000;*/
+
+}
+
+.item_titulo_exibe_n{
+  width: 500px;
+  height: 50px;
+  background-color: #fff;
+
+}
+
+.container_mostrando_dados{
+  width: 500px;
+  min-height: 50px;
+  height: auto;
+  background-color: #0099ff;
+
+}
+
+.item_mostrando_dados{
+  width: 300px;
+  height: 50px;
+  background-color: grey;
+
+}
+
+.item_escolhas_n{
+  width: 200px;
+  height: 50px;
+  background-color: green;
+
+}
+
+.escolha{
+  width: 100px;
+  height: 50px;
+  background-color: #fff;
+
+}

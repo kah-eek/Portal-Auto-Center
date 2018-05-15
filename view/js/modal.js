@@ -239,7 +239,7 @@ function modalCadCategoria(){
   });
 }
 
-function modalCadUsuario(){
+function modalCadAcao(){
   // $('.container_modal').fadeIn(1500);
 
   $.ajax({
@@ -260,6 +260,21 @@ function modalCadCor(){
   $.ajax({
     type: "POST",
     url: "modal_cad_cor.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina)
+    }
+  });
+}
+
+function modalCadNivelUsuario(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cad_nivel_usuario.php",
     cache:false,
     contentType:false,
     processData:false,

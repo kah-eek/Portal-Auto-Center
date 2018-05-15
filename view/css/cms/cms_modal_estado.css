@@ -1,5 +1,5 @@
 .container_principal_ph{
-  width: 1255px;
+  width: 1155px;
   height: 885px;
   background-image: url('../../pictures/cms_produtos_home/carro.jpg');
   background-repeat: no-repeat;
@@ -12,6 +12,7 @@
   height: 70px;
   background-color: #000000;
   color:#00C853;
+  font: arial;
 
 }
 
@@ -20,32 +21,6 @@
   height: 70px;
   /*background-color: #fff;*/
 
-}
-
-.campos{
-  width: 500px;
-  height: 700px;
-  float: left;
-  background-color: #ffffff;
-}
-
-.names_campos{
-  width: 250px;
-  height: 700px;
-  float: left;
-  background-color: #000000;
-}
-
-.name_campo{
-  width: 250px;
-  height: 50px;
-  float: left;
-  margin-top: 10px;
-  color:#00C853;
-  /*margin-left: 150px;*/
-  background-color: #000000;
-  text-align: center;
-  font-style: italic;
 }
 
 .color{
@@ -57,18 +32,49 @@
     height: 20px;
 }
 
-.inputs_campos{
+.campos{
+  width: 500px;
+  height: 400px;
+  float: left;
+  margin-left: 110px;
+  /*background-color: #123654;*/
+  background-color: #ffffff;
+  margin-top: 150px;
+  border: 5px;
+  border-color: #00C853;
+}
+
+.names_campos{
   width: 250px;
-  height: 700px;
+  height: 400px;
   float: left;
   background-color: #000000;
+  color: #00C853;
+  font-style: italic;
+}
+
+.name_campo{
+  width: 250px;
+  height: 50px;
+  float: left;
+  margin-top: 20px;
+  /*margin-left: 150px;*/
+  background-color: #000000;
+  text-align: center;
+}
+
+.inputs_campos{
+  width: 250px;
+  height: 400px;
+  float: left;
+  background-color: #126549;
 }
 
 .preencher_inputs{
   width: 250px;
   height: 50px;
   float: left;
-  margin-top: 8px;
+  margin-top: 5px;
   /*margin-left: 150px;*/
   /*background-color: #412563;*/
 }
@@ -77,30 +83,24 @@
   margin-top: 15px;
 }
 
-.container_visual{
-  width: 960px;
-  height: 150px;
-  margin-top: 100px;
-  margin-left: 510px;
-  background-color: #000000;
-
-  /*overflow-y: scroll;*/
-}
-
-.campos_visual{
-  width: 80px;
-  height: 50px;
+.container_visualizar{
+  width: 380px;
+  height: 400px;
   float: left;
+  background-color: #ffffff;
+  margin-left: 20px;
   color:#00C853;
-  background-color: #000000;
-  text-align: center;
+  margin-top: 150px;
+  overflow-y: scroll;
 }
 
 .campos_table{
-  width: 80px;
+  width: 120px;
   height: 50px;
   float: left;
-  color:#ffffff;
-  background-color: #000000;
   text-align: center;
+  background-color: #000000;
+  font-style: italic;
+font-style: italic;
+
 }

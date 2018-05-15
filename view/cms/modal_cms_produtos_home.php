@@ -10,8 +10,8 @@
   mysql_select_db('db_auto_center');
 
   $id_produto="";
-  $id_modelo_produto="";
   $id_parceiro="";
+  $id_modelo_produto="";
   $id_cor="";
   $id_categoria_produto="";
   $nome="";
@@ -20,41 +20,63 @@
   $garantia="";
   $descricao="";
   $observacao="";
-  $modelo="";
-  $peso="";
-  $altura="";
-  $comprimento="";
   $btnSalvar="Salvar";
 
-// if(isset($_GET['modo'])){
-//
-//   $modo=$_GET['modo'];
-//
-//   $modo=$_GET['modo']{
-//     $id_produto=$_GET['id_produto'];
-//
-//     $sql="DELETE FROM tbl_produto WHERE id_produto".$id_produto;
-//     mysql_query($sql);
-//
-//     header('location:cmsusuario.php');
-//
-// }else if($modo=='consulta_editar'){
-//   $btnSalvar="Editar";
-//   $id_produto=$_GET['id_produto']
-//
-//   $_SESSION['id']= $id_produto;
-//
-//     $sql = "select tbl_produto.nome as nome_produto, tbl_produto.preco, tbl_produto.conteudo_embalagem, tbl_produto.garantia, tbl_produto.descricao, tbl_produto.observacao,
-//     tbl_produto.modelo, tbl_produto.peso, tbl_produto.altura, tbl_produto.comprimento, tbl_modelo_produto.modelo. tbl_modelo_produto.peso, tbl_modelo_produto.altura, tbl_modelo_produto.comprimento,
-//     tbl_produto.id_cor "
-//
-//     $sql = "select tblusuarios.nome as nome_usuario, tblusuarios.login, tblusuarios.senha, tblusuarios.idNivel, tblnivel.nome as nome_nivel from tblusuarios inner join tblnivel on tblusuarios.idNivel = tblnivel.idNivel  where tblusuarios.idUsuario=".$idUsuario;
-//
-//
-// }
-//
-// }
+#######################################################################################################################################################################
+if(isset($_GET['modo']))//MODO EXCLUIR
+  {
+      $modo=$_GET['modo'];
 
+      if($modo=='excluir')
+      {
+          $id_produto=$_GET['id_produto'];
+
+          $sql = "delete from tbl_produto where id_produto=".$id_produto;
+          mysql_query($sql);
+
+
+      header('location:modal_cms_produtos_home.php');
+#######################################################################################################################################################################
+}else if($modo=='consulta_editar')
+{
+  $btnSalvar="Editar";
+  $id_produto=$_GET['id_produto'];
+
+  $_SESSION['id']=$id_produto;
+
+  $sql="SELECT prod.id_produto, prod.nome, prod.preco, prod.garantia, prod.descricao,prod.observacao, prod.conteudo_embalagem,cor.cor,categoria.categoria,nome_fantasia.nome_fantasia,modelo.modelo
+  FROM tbl_produto as prod
+  Inner join tbl_cor as cor
+  INNER JOIN tbl_categoria_produto as categoria
+  INNER JOIN tbl_parceiro as nome_fantasia
+  INNER JOIN tbl_modelo_produto as modelo
+  WHERE prod.id_cor = cor.id_cor
+  AND prod.id_categoria_produto = categoria.id_categoria_produto
+  AND prod.id_parceiro = nome_fantasia.id_parceiro
+  AND prod.id_modelo_produto = modelo.id_modelo_produto";
+
+  $select=mysql_query($sql);
+
+  if($rsConsulta=mysql_fetch_array($select)){
+    $nome=$rsConsulta['nome'];
+    $preco=$rsConsulta['preco'];
+    $conteudo_embalagem=$rsConsulta['conteudo_embalagem'];
+    $garantia=$rsConsulta['garantia'];
+    $descricao=$rsConsulta['descricao'];
+    $observacao=$rsConsulta['observacao'];
+    // $id_parceiro=$rsConsulta['id_parceiro'];
+    $nomeParceiro=$rsConsulta['nome_fantasia'];
+    // $id_modelo_produto=$rsConsulta['id_modelo_produto'];
+    $nomeModelo=$rsConsulta['modelo'];
+    // $id_cor=$rsConsulta['id_cor'];
+    $nomeCor=$rsConsulta['cor'];
+    // $id_categoria_produto=$rsConsulta['id_categoria_produto'];
+    $nomeCategoria=$rsConsulta['categoria'];
+
+    }
+  }
+}
+#######################################################################################################################################################################
   // INSERINDO PRODUTO NO BD.
   if(isset($_POST["btnSalvar"])){
     $nome=$_POST["txt_nome"];
@@ -63,25 +85,27 @@
     $garantia=$_POST["txt_garantia"];
     $descricao=$_POST["txt_descricao"];
     $observacao=$_POST["txt_observacao"];
-    $modelo=$_POST["txt_modelo"];
-    $peso=$_POST["txt_peso"];
-    $altura=$_POST["txt_altura"];
-    $comprimento=$_POST["txt_comprimento"];
+    $id_parceiro=$_POST['sltParceiro'];
     $id_categoria_produto=$_POST["sltCategoria"];
     $id_cor=$_POST["sltCor"];
     $id_modelo_produto=$_POST["sltModelo"];
 
     if($_POST["btnSalvar"]=='Salvar'){
-      $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, modelo, peso, altura, comprimento, id_cor, id_categoria_produto)
-      VALUES ('".$nome."', '".$preco."', '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$modelo."', '".$peso."', '".$altura."', '".$comprimento."', '".$id_cor."', '".$id_categoria_produto."' )";
-    }
+        $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, id_parceiro, id_categoria_produto, id_cor, id_modelo_produto)
+        VALUES('".$nome."', $preco, '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$id_parceiro."', '".$id_categoria_produto."', '".$id_cor."','".$id_modelo_produto."')";
 
-    // mysql_query($sql);
-    //
-    // header('location:modal_cms_produtos_home.php');
-    echo($sql);
+     }
+    //else if($_POST['btnSalvar']=='Editar'){
+    //   $sql="UPDATE tbl_produto SET nome='".$nome."', preco='".$preco."', conteudo_embalagem='".$conteudo_embalagem."', garantia='".$garantia."', descricao='".$descricao."',
+    //   id_parceiro='".$id_parceiro."', id_categoria_produto='".$id_categoria_produto."', id_cor='".$id_cor."', id_modelo_produto='".$id_modelo_produto."' WHERE id_produto=".$_SESSION['id'];
+    // }
+
+    mysql_query($sql);
+    header('location:modal_cms_produtos_home.php');
+    // echo($sql);
 
   }
+#######################################################################################################################################################################
  ?>
 <!DOCTYPE html>
 <html>
@@ -102,6 +126,9 @@
     </div>
     <div class="campos">
       <div class="names_campos">
+        <div class="name_campo">
+          Parceiro
+        </div>
         <div class="name_campo">
           Nome
         </div>
@@ -124,15 +151,6 @@
           Modelo
         </div>
         <div class="name_campo">
-          Peso
-        </div>
-        <div class="name_campo">
-          Altura
-        </div>
-        <div class="name_campo">
-          Comprimento
-        </div>
-        <div class="name_campo">
           Cor
         </div>
         <div class="name_campo">
@@ -141,6 +159,37 @@
       </div>
 
       <div class="inputs_campos">
+        <div class="preencher_inputs">
+            <!-- <input type="txt_modelo" class="color" name="txt_modelo" value="<?php echo($modelo)?>" id="float"> -->
+            <select name="sltParceiro" id="float" class="color">
+              <?php
+              if($id_parceiro == ""){
+                  $id_parceiro = 0;
+                  ?>
+                   <option>Selecione</option>
+                <?php
+              }else{
+                  ?>
+          <option value="<?php echo($id_parceiro); ?>">
+              <?php echo($id_parceiro);?></option>
+          <?php
+
+              }
+              $sql = "SELECT id_parceiro, nome_fantasia as nome_fantasia FROM tbl_parceiro Where id_parceiro <> ".$id_parceiro;
+              $select=mysql_query($sql);
+
+             while($rsParceiro = mysql_fetch_array($select)){
+                 ?>
+
+              <option value="<?php echo($rsParceiro['id_parceiro']); ?>">
+              <?php echo($rsParceiro['nome_fantasia']); ?> </option>
+
+          <?php
+             }
+          ?>
+
+            </select>
+        </div>
         <div class="preencher_inputs">
             <input type="txt_nome" class="color" name="txt_nome" value="<?php echo($nome)?>" id="float">
         </div>
@@ -160,7 +209,6 @@
             <input type="txt_observacao" class="color" name="txt_observacao" value="<?php echo($observacao)?>" id="float">
         </div>
         <div class="preencher_inputs">
-            <!-- <input type="txt_modelo" class="color" name="txt_modelo" value="<?php echo($modelo)?>" id="float"> -->
             <select name="sltModelo" id="float" class="color">
               <?php
               if($id_modelo_produto == ""){
@@ -175,57 +223,20 @@
           <?php
 
               }
-              $sql = "SELECT id_modelo_produto, modelo as nome_modelo FROM tbl_modelo_produto Where id_modelo_produto <> ".$id_modelo_produto;
+              $sql = "SELECT id_modelo_produto, modelo as modelo FROM tbl_modelo_produto Where id_modelo_produto <> ".$id_modelo_produto;
               $select=mysql_query($sql);
 
              while($rsModelo = mysql_fetch_array($select)){
                  ?>
 
-              <option value="<?php echo($rsCor['id_modelo_produto']); ?>">
-              <?php echo($rsModelo['nome_modelo']); ?> </option>
+              <option value="<?php echo($rsModelo['id_modelo_produto']); ?>">
+              <?php echo($rsModelo['modelo']); ?> </option>
 
           <?php
              }
           ?>
 
             </select>
-        </div>
-        <div class="preencher_inputs">
-            <!-- <input type="txt_peso" class="color" name="txt_peso" value="<?php echo($peso)?>" id="float"> -->
-            <select name="sltPeso" id="float" class="color">
-              <?php
-              if($id_modelo_produto == ""){
-                  $id_modelo_produto = 0;
-                  ?>
-                   <option>Selecione</option>
-                <?php
-              }else{
-                  ?>
-          <option value="<?php echo($id_modelo_produto); ?>">
-              <?php echo($id_modelo_produto);?></option>
-          <?php
-
-              }
-              $sql = "SELECT id_modelo_produto, peso as nome_peso FROM tbl_modelo_produto Where id_modelo_produto <> ".$id_modelo_produto;
-              $select=mysql_query($sql);
-
-             while($rsPeso = mysql_fetch_array($select)){
-                 ?>
-
-              <option value="<?php echo($rsPeso['id_modelo_produto']); ?>">
-              <?php echo($rsModelo['nome_peso']); ?> </option>
-
-          <?php
-             }
-          ?>
-
-            </select>
-        </div>
-        <div class="preencher_inputs">
-            <input type="txt_altura" class="color" name="txt_altura" value="<?php echo($altura)?>" id="float">
-        </div>
-        <div class="preencher_inputs">
-            <input type="txt_comprimento" class="color" name="txt_comprimento" value="<?php echo($comprimento)?>" id="float">
         </div>
         <div class="preencher_inputs">
             <select name="sltCor" id="float" class="color">
@@ -242,14 +253,14 @@
           <?php
 
               }
-              $sql = "SELECT id_cor, cor as nome_cor FROM tbl_cor Where id_cor <> ".$id_cor;
+              $sql = "SELECT id_cor, cor as cor FROM tbl_cor Where id_cor <> ".$id_cor;
               $select=mysql_query($sql);
 
              while($rsCor = mysql_fetch_array($select)){
                  ?>
 
               <option value="<?php echo($rsCor['id_cor']); ?>">
-              <?php echo($rsCor['nome_cor']); ?> </option>
+              <?php echo($rsCor['cor']); ?> </option>
 
           <?php
              }
@@ -273,14 +284,14 @@
               <?php
 
               }
-              $sql = "SELECT id_categoria_produto, categoria as nome_categoria FROM tbl_categoria_produto Where id_categoria_produto <> ".$id_categoria_produto;
+              $sql = "SELECT id_categoria_produto, categoria as categoria FROM tbl_categoria_produto Where id_categoria_produto <> ".$id_categoria_produto;
               $select=mysql_query($sql);
 
               while($rsCategoria = mysql_fetch_array($select)){
                  ?>
 
               <option value="<?php echo($rsCategoria['id_categoria_produto']); ?>">
-              <?php echo($rsCategoria['nome_categoria']); ?> </option>
+              <?php echo($rsCategoria['categoria']); ?> </option>
 
               <?php
               }
@@ -288,11 +299,112 @@
 
             </select>
         </div>
-
-
         <div class="button">
           <input type="submit"   name="btnSalvar" value="<?php echo($btnSalvar)?>" >
         </div>
+
+      </div>
+      <div class="container_visual">
+        <div class="campos_visual">
+          Parceiro
+        </div>
+        <div class="campos_visual">
+          Nome
+        </div>
+        <div class="campos_visual">
+          Preço
+        </div>
+        <div class="campos_visual">
+        Conteúdo
+            da
+        Embalagem
+        </div>
+        <div class="campos_visual">
+          Garantia
+        </div>
+        <div class="campos_visual">
+          Descrição
+        </div>
+        <div class="campos_visual">
+          Observação
+        </div>
+        <div class="campos_visual">
+          Modelo
+        </div>
+        <div class="campos_visual">
+          Cor
+        </div>
+        <div class="campos_visual">
+          Categoria
+        </div>
+        <div class="campos_visual">
+          Excluir
+        </div>
+        <div class="campos_visual">
+          Editar
+        </div>
+
+        <?php
+
+        $sql="SELECT prod.id_produto, prod.nome, prod.preco, prod.garantia, prod.descricao,prod.observacao, prod.conteudo_embalagem,cor.cor,categoria.categoria,nome_fantasia.nome_fantasia,modelo.modelo
+        FROM tbl_produto as prod
+        Inner join tbl_cor as cor
+        INNER JOIN tbl_categoria_produto as categoria
+        INNER JOIN tbl_parceiro as nome_fantasia
+        INNER JOIN tbl_modelo_produto as modelo
+        INNER JOIN tbl_parceiro as parceiro
+        WHERE prod.id_cor = cor.id_cor
+        AND prod.id_categoria_produto = categoria.id_categoria_produto
+        AND prod.id_parceiro = nome_fantasia.id_parceiro
+        AND prod.id_modelo_produto = modelo.id_modelo_produto";
+
+        $select=mysql_query($sql);
+
+        while($rsConsulta=mysql_fetch_array($select)){
+          ?>
+          <div class="campos_table">
+            <?php echo($rsConsulta['nome_fantasia']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['nome']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['preco']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['conteudo_embalagem']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['garantia']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['descricao']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['observacao']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['modelo']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['cor']) ?>
+          </div>
+          <div class="campos_table">
+            <?php echo($rsConsulta['categoria']) ?>
+          </div>
+          <div class="campos_table">
+            <a href="modal_cms_produtos_home.php?modo=excluir&id_produto=<?php echo($rsConsulta['id_produto'])?>">
+                <img src="../pictures/icones/delete1.png">
+            </a>
+          </div>
+          <div class="campos_table">
+            <a href="modal_cms_produtos_home.php?modo=consulta_editar&id_produto=<?php echo($rsConsulta['id_produto'])?>">
+                <img src="../pictures/icones/edit.png">
+            </a>
+          </div>
+          <?php
+            }
+          ?>
 
       </div>
     </div>

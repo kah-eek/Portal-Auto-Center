@@ -66,18 +66,23 @@ $botao="Salvar";
       mysql_query($sql);
 
       $sql2 = "SELECT LAST_INSERT_ID();";
-      if ($rsFC = mysql_fetch_array($sql2)){
-        $id_usuario=$rsFC['id_usuario'];
-      }
+        $resultado1 = mysql_fetch_array ($sql2);
+          if ($rs=mysql_query($resultado1))
+          {
+            $id_usuario = $rs['id_usuario'];
+          }
 
-      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','1','".$cep."','".$bairro."','".$complemento."');";
+
+      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','".$id_estado."','".$cep."','".$bairro."','".$complemento."');";
 
       mysql_query($sql3);
 
-      $sql2 = "SELECT LAST_INSERT_ID();";
-      if ($rsFC = mysql_fetch_array($sql3)){
-        $id_endereco=$rsFC['id_endereco'];
-      }
+      $sql4 = "SELECT LAST_INSERT_ID();";
+        $resultado2 = mysql_fetch_array ($sql4);
+          if ($rs=mysql_query($resultado2))
+          {
+            $id_endereco=$rs['id_endereco'];
+          }
 
       $sql4 = "isert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
 
