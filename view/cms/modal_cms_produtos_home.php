@@ -50,10 +50,11 @@ if(isset($_GET['modo']))//MODO EXCLUIR
   INNER JOIN tbl_categoria_produto as categoria
   INNER JOIN tbl_parceiro as nome_fantasia
   INNER JOIN tbl_modelo_produto as modelo
-  WHERE prod.id_cor = cor.id_cor
-  AND prod.id_categoria_produto = categoria.id_categoria_produto
-  AND prod.id_parceiro = nome_fantasia.id_parceiro
-  AND prod.id_modelo_produto = modelo.id_modelo_produto";
+  WHERE prod.id_produto = $id_produto";
+  // -- WHERE prod.id_cor = cor.id_cor
+  // -- AND prod.id_categoria_produto = categoria.id_categoria_produto
+  // -- AND prod.id_parceiro = nome_fantasia.id_parceiro
+  // -- AND prod.id_modelo_produto = modelo.id_modelo_produto
 
   $select=mysql_query($sql);
 
@@ -94,11 +95,14 @@ if(isset($_GET['modo']))//MODO EXCLUIR
         $sql="INSERT INTO tbl_produto(nome, preco, conteudo_embalagem, garantia, descricao, observacao, id_parceiro, id_categoria_produto, id_cor, id_modelo_produto)
         VALUES('".$nome."', $preco, '".$conteudo_embalagem."', '".$garantia."', '".$descricao."', '".$observacao."', '".$id_parceiro."', '".$id_categoria_produto."', '".$id_cor."','".$id_modelo_produto."')";
 
-     }else if($_POST['btnSalvar']=='Editar'){
+     }
+    else if($_POST['btnSalvar']=='Editar'){
       $sql="UPDATE tbl_produto SET nome='".$nome."', preco='".$preco."', conteudo_embalagem='".$conteudo_embalagem."', garantia='".$garantia."', descricao='".$descricao."',
       id_parceiro='".$id_parceiro."', id_categoria_produto='".$id_categoria_produto."', id_cor='".$id_cor."', id_modelo_produto='".$id_modelo_produto."' WHERE id_produto=".$_SESSION['id'];
     }
 
+
+    // echo $sql;
 
 
     mysql_query($sql);
@@ -167,7 +171,7 @@ if(isset($_GET['modo']))//MODO EXCLUIR
               if($id_parceiro == ""){
                   $id_parceiro = 0;
                   ?>
-                   <option>Selecione</option>
+                   <!-- <option>Selecione</option> -->
                 <?php
               }else{
                   ?>
@@ -210,12 +214,13 @@ if(isset($_GET['modo']))//MODO EXCLUIR
             <input type="txt_observacao" class="color" name="txt_observacao" value="<?php echo($observacao)?>" id="float">
         </div>
         <div class="preencher_inputs">
-            <select name="sltModelo" id="float" class="color">
+            <select name="sltModelo" id="float" required class="color">
+              <option value="">Selecione</option>
               <?php
               if($id_modelo_produto == ""){
                   $id_modelo_produto = 0;
                   ?>
-                   <option>Selecione</option>
+                   <!-- <option>Selecione</option> -->
                 <?php
               }else{
                   ?>
@@ -240,12 +245,13 @@ if(isset($_GET['modo']))//MODO EXCLUIR
             </select>
         </div>
         <div class="preencher_inputs">
-            <select name="sltCor" id="float" class="color">
+            <select name="sltCor" id="float" required class="color">
+              <option value="">Selecione</option>
               <?php
               if($id_cor == ""){
                   $id_cor = 0;
                   ?>
-                   <option>Selecione</option>
+                   <!-- <option>Selecione</option> -->
                 <?php
               }else{
                   ?>
@@ -270,13 +276,14 @@ if(isset($_GET['modo']))//MODO EXCLUIR
             </select>
         </div>
         <div class="preencher_inputs">
-            <select name="sltCategoria" id="float" class="color">
+            <select name="sltCategoria" id="float" required class="color">
+              <option value="">Selecione</option>
               <?php
 
               if($id_categoria_produto == ""){
                   $id_categoria_produto = 0;
                   ?>
-                   <option>Selecione</option>
+                   <!-- <option>Selecione</option> -->
                 <?php
               }else{
                   ?>

@@ -1,3 +1,9 @@
+<?php
+require_once("../database/conect.php");
+Conexao_db();
+ ?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,7 +62,10 @@
 
             <div class="container_img_rs float_left margem_t_10">
               <div class="item_img_rs margem_l_20 borda_preta_1">
-
+                <div id="wrapper">
+                  <input id="fileUpload" type="file"><br />
+                  <div id="image-holder"></div>
+              </div>
               </div>
             </div>
 
@@ -121,6 +130,27 @@
         modalAgendaRedeSocial();
 
       })
+
+      $("#fileUpload").on('change', function () {
+
+        if (typeof (FileReader) != "undefined") {
+
+            var image_holder = $("#image-holder");
+            image_holder.empty();
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("<img />", {
+                    "src": e.target.result,
+                    "class": "image"
+                }).appendTo(image_holder);
+            }
+            image_holder.show();
+            reader.readAsDataURL($(this)[0].files[0]);
+        } else{
+            alert("Este navegador nao suporta FileReader.");
+        }
+    });
 
     </script>
 
