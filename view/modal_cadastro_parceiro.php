@@ -39,7 +39,7 @@ if(isset($_POST["btn_salvar"]))
   $celular=$_POST["txt_celular"];
   $telefone=$_POST["txt_telefone"];
   $foto_perfil=Upload($_FILES["imagem"]);
-  $foto_perfil=$_POST['imagem'];
+  // $foto_perfil=$_POST['imagem'];
   $socorrista=$_POST['sltSocorro'];
 
   //Plano Contratação;
@@ -111,7 +111,7 @@ if(isset($_POST["btn_salvar"]))
       $resultado5=mysql_query($sql9);
       if($rs=mysql_fetch_array($resultado5))
       {
-        $id_plano_contratacao=$rs['LAST_INSERT_ID'];
+        $id_plano_contratacao=$rs['LAST_INSERT_ID()'];
       }
 
     $sql10="INSERT INTO tbl_parceiro(nome_fantasia,razao_social, cnpj, email, celular, telefone, socorrista, foto_perfil, id_plano_contratacao, id_endereco,
