@@ -1,0 +1,78 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+
+.container_principal_mf{
+  width: 500px;
+  height: 500px;
+  background-color: #0099cc;
+}
+
+.container_imagem_cliente{
+  width: 200px;
+  height: 150px;
+  /*background-color: #fff;*/
+
+}
+
+.item_imagem_cliente{
+  width: 200px;
+  height: 150px;
+  background-color: #ffccff;
+
+}
+
+.container_mensagem{
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+
+}
+
+.item_mensagem{
+  width: 400px;
+  height: 100px;
+  background-color: pink;
+
+}
+
+.txtAreaMensagem{
+  width: 400px;
+  height: 100px;
+  resize: none;
+
+}
+
+.container_titulo_topico{
+  width: 400px;
+  height: 30px;
+  background-color: pink;
+
+}
+
+.item_titulo_topico{
+  width: 400px;
+  height: 30px;
+  background-color: black;
+
+}
+
+.input_mf{
+  width: 396px;
+  height: 30px;
+
+}
+
+.container_categorias{
+  width: 400px;
+  height: 30px;
+  background-color: pink;
+
+}
+
+.select_categorias{
+  width: 400px;
+  height: 30px;
+}

@@ -12,7 +12,7 @@
   mysql_select_db('db_auto_center');
 #####################################################################################################################################################################################
   $id_imagem_veiculo_cliente="";
-  $id_veiculo_cliente="";
+  $id_modelo_veiculo="";
   $imagem="";
   $btnCadastro="Cadastrar";
 // #####################################################################################################################################################################################
@@ -37,7 +37,7 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
            $_SESSION['id']= $id_imagem_veiculo_cliente;
 
-           $sql = "SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_veiculo_cliente.id_veiculo_cliente as nome_veiculo FROM tbl_imagem_veiculo_cliente INNER JOIN
+           $sql = "SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_modelo_veiculo.id_veiculo_cliente as nome_modelo FROM tbl_modelo_veiculo INNER JOIN
            tbl_veiculo_cliente on tbl_imagem_veiculo_cliente.id_veiculo_cliente = tbl_veiculo_cliente.id_veiculo_cliente WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente=".$id_imagem_veiculo_cliente;
 
            $select = mysql_query($sql);
@@ -45,23 +45,23 @@ if(isset($_GET['modo']))//MODO EXCLUIR
             if($rsConsulta=mysql_fetch_array($select)){
 
                 $imagem=$rsConsulta['imagem'];
-                $id_veiculo_cliente=$rsConsulta['id_veiculo_cliente'];
-                $nomeVeiculo=$rsConsulta['nome_veiculo'];
+                $id_modelo_veiculo=$rsConsulta['id_veiculo_cliente'];
+                $nomeModelo=$rsConsulta['nome_modelo'];
           }
        }
    }
 #####################################################################################################################################################################################
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
-  $id_veiculo_cliente=$_POST["sltVeiculo"];
+  $id_modelo_veiculo=$_POST["sltVeiculo"];
   $imagem=$_POST["imagem"];
 
   if($_POST["btnCadastro"]=='Cadastrar'){
     $sql="INSERT INTO tbl_imagem_veiculo_cliente(id_veiculo_cliente,imagem)
-    VALUES ('".$id_veiculo_cliente."', '".$imagem."')";
+    VALUES ('".$id_modelo_veiculo."', '".$imagem."')";
 
   }else if($_POST["btnCadastro"]=='Editar'){
-    $sql="UPDATE tbl_imagem_veiculo_cliente SET imagem='".$imagem."', ativo='".$cbxAtivo."', id_veiculo_cliente='".$id_veiculo_cliente."' WHERE id_imagem_veiculo_cliente=".$_SESSION['id'];
+    $sql="UPDATE tbl_imagem_veiculo_cliente SET imagem='".$imagem."', ativo='".$cbxAtivo."', id_veiculo_cliente='".$id_modelo_veiculo."' WHERE id_imagem_veiculo_cliente=".$_SESSION['id'];
   }
       mysql_query($sql);
 
@@ -99,26 +99,26 @@ if(isset($_POST["btnCadastro"])){
       <div class="preencher_inputs">
           <select name="sltVeiculo" id="float" class="color">
             <?php
-            if($id_veiculo_cliente == ""){
-                $id_veiculo_cliente = 0;
+            if($id_modelo_veiculo == ""){
+                $id_modelo_veiculo = 0;
                 ?>
                  <option>Selecione</option>
               <?php
             }else{
                 ?>
-        <option value="<?php echo($id_veiculo_cliente); ?>">
-            <?php echo($id_veiculo_cliente);?></option>
+        <option value="<?php echo($id_modelo_veiculo); ?>">
+            <?php echo($id_modelo_veiculo);?></option>
         <?php
 
             }
-            $sql = "SELECT id_veiculo_cliente, id_veiculo as nome_veiculo FROM tbl_veiculo_cliente Where id_veiculo_cliente <> ".$id_veiculo_cliente;
+            $sql = "SELECT id_modelo_veiculo, modelo as nome_modelo FROM tbl_modelo_veiculo Where id_modelo_veiculo <> ".$id_modelo_veiculo;
             $select=mysql_query($sql);
 
            while($rsVeiculo = mysql_fetch_array($select)){
                ?>
 
-            <option value="<?php echo($rsVeiculo['id_veiculo_cliente']); ?>">
-            <?php echo($rsVeiculo['nome_veiculo']); ?> </option>
+            <option value="<?php echo($rsVeiculo['id_modelo_veiculo']); ?>">
+            <?php echo($rsVeiculo['nome_modelo']); ?> </option>
 
         <?php
            }
@@ -149,8 +149,8 @@ if(isset($_POST["btnCadastro"])){
 
     <?php
 
-    $sql="SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente, tbl_veiculo_cliente.id_veiculo_cliente as nomeVeiculo
-    FROM tbl_imagem_veiculo_cliente INNER JOIN tbl_veiculo_cliente on tbl_imagem_veiculo_cliente.id_veiculo_cliente = tbl_veiculo_cliente.id_veiculo_cliente WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente
+    $sql="SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente, tbl_modelo_veiculo.id_veiculo_cliente as nomeModelo
+    FROM tbl_imagem_veiculo_cliente INNER JOIN tbl_modelo_veiculo on tbl_imagem_veiculo_cliente.id_modelo_veiculo = tbl_veiculo_cliente.id_modelo_veiculo WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente
     ORDER BY id_imagem_veiculo_cliente desc";
 
     echo($sql);
@@ -160,7 +160,7 @@ if(isset($_POST["btnCadastro"])){
     while($rsConsulta=mysql_fetch_array($select)){
       ?>
       <div class="campos_table">
-        <?php echo($rsConsulta['nomeVeiculo']) ?>
+        <?php echo($rsConsulta['nomeModelo']) ?>
       </div>
       <div class="campos_table">
         <?php echo($rsConsulta['imagem']) ?>
