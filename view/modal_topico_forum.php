@@ -1,7 +1,9 @@
 <?php
 
 require_once("modulo.php");
+
   session_start();
+
   $foto="";
   $mensagem="";
   $titulo="";
@@ -16,22 +18,22 @@ require_once("modulo.php");
 
 if(isset($_POST["btnSalvar"]))
 {
+  $foto=Upload($_FILES["imagem"]);
   $mensagem=$_POST["txtMensagem"];
   $titulo=$_POST["txtTitulo"];
   $id_categoria_topico_forum=$_POST["sltCategoria"];
-  $id_cliente=$_POST["id_cliente"];
-  $foto=Upload["$_Files(txtFoto)"];
+  // $id_cliente=$_POST["id_cliente"];
 
   if($_POST["btnSalvar"]=='Salvar')
   {
 
-    $sql = "INSERT INTO tbl_topico_forum (foto,mensagem,titulo,id_categoria_topico_forum,id_cliente,) values ('".$foto."','".$mensagem."','".$titulo."','".$id_categoria_topico_forum."','1')";
+    $sql = "INSERT INTO tbl_topico_forum (foto,mensagem,titulo,id_categoria_topico_forum,id_cliente) values ('".$foto."','".$mensagem."','".$titulo."','".$id_categoria_topico_forum."','1')";
 
   }
 
-  // mysql_query($sql);
-  echo ($sql);
-  // header('location:modal_topico_forum.php');
+  mysql_query($sql);
+  // echo ($sql);
+  header('location:modal_topico_forum.php');
 
 }
 ?>
@@ -48,9 +50,11 @@ if(isset($_POST["btnSalvar"]))
     <div class="container_principal_mf centro_lr">
       <form class="container_form_mf" action="modal_topico_forum.php" method="post" enctype="multipart/form-data">
         <div class="container_imagem_cliente centro_lr">
+
           <div class="item_imagem_cliente">
-            <input class="input_mf" type="file" name="txtFoto"  value="<?php echo($foto); ?>">
+            <input class="input_mf" type="file" name="imagem" value="<?php echo($foto); ?>">
           </div>
+
         </div>
         <div class="container_mensagem centro_lr margem_t_20">
           <div class="item_mensagem">
