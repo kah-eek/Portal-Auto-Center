@@ -1,0 +1,43 @@
+.container_geral{
+  width: 500px;
+  height: 600px;
+  background: magenta;
+}
+.container_foto{
+  width: 400px;
+  height: 300px;
+  margin-left: 50px;
+  background-color: red;
+}
+#image-holder{
+  width: 400px;
+  height: 300px;
+  background-color: blue;
+}
+.image{
+  width: 400px;
+  height: 300px;
+}
+.container_titulo{
+  width: 500px;
+  height: 40px;
+  background-color: green;
+}
+.container_titulo input{
+  width: 496px;
+  height: 34px;
+}
+.container_descricao{
+  width: 500px;
+  height: 220px;
+  background-color: aqua;
+}
+.container_descricao textarea{
+  margin-top: 5px;
+  margin-left: 7px;
+}
+.container_botao{
+  width: 500px;
+  height: 40px;
+  background-color: green;
+}
