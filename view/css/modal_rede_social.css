@@ -158,36 +158,33 @@
 }
 
 .item_img_rs{
-  width: 1400px;
-  height: 300px;
+  width: 1000px;
+  height: 500px;
+  margin-left: 220px;
   background-color: #548;
 
-}
-#image-holder{
-  width: 150px;
-  height: 150px;
-}
-#image-holder img{
-  width: 263px;
-  height: 270px;
-}
-.image{
-  width: inherit;
-  height: inherit;
 }
 
 
 .container_reacao{
   width: 1400px;
   height: 40px;
-  /*background-color: pink;*/
+  margin-top: 230px;
+  background-color: pink;
 
 }
 
 .item_img_reacao{
   width: 60px;
   height: 40px;
-  /*background-color: #000;*/
+  margin-left: 180px;
+  /* background-color: #000; */
+
+}
+.item_img_reacao1{
+  width: 60px;
+  height: 40px;
+  background-color: #444;
 
 }
 
@@ -207,16 +204,16 @@
 }
 
 .item_titulo_post{
-  width: 300px;
+  width: auto;
   height: 45px;
-  /*background-color: green;*/
+  background-color: green;
 
 }
 
 .container_texto_titulo{
   width: 1380px;
-  height: 200px;
-  /*background-color: #fff;*/
+  height: auto;
+  background-color: #fff;
 
 }
 
