@@ -1,10 +1,37 @@
 <?php
 
+require_once("modulo.php");
+
+session_start();
+
+$foto="";
+$mensagem="";
+$id_comentario_topico_forum="";
 $id_topico_forum="";
+$id_cliente="";
+$slt_topicos="";
 
 $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
 mysql_select_db('db_auto_center');
+////////////////////////////////////////////////
+
+if(isset($_POST["btnSalvar"]))
+{
+  $foto=Upload($_FILES["imagem"]);
+  $mensagem=$_POST["txtMensagem"];
+  $id_topico_forum=$_POST["sltTopicos"];
+
+  if($_POST["btnSalvar"]=='Salvar')
+  {
+    $sql = "INSERT INTO tbl_comentario_topico_forum (id_topico_forum,id_cliente,mensagem,foto) values ('".$id_topico_forum."','1','".$mensagem."','".$foto."')";
+
+  }
+
+  mysql_query($sql);
+  // echo ($sql);
+  header('location:modal_comentario_topico_forum.php');
+}
 ?>
 <!DOCTYPE html>
 <html>
