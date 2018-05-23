@@ -1,3 +1,10 @@
+<?php
+require_once("../database/conect.php");
+Conexao_db();
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -50,13 +57,21 @@
           </div>
         </div>
 
+        <?php
+        $sql = "SELECT * FROM tbl_post_rede_social;";
+          $select = mysql_query($sql);
+          while ($rsFC = mysql_fetch_array($select))
+          {
+
+        ?>
+
         <!-- (REDE SOCIAL) -->
         <div id="agenda_central_rs" class="segura_rede_social float_left">
           <div class="item_segura_rs float_left borda_preta_1">
 
             <div class="container_img_rs float_left margem_t_10">
               <div class="item_img_rs margem_l_20 borda_preta_1">
-
+                <img src="<?php echo($rsFC['foto']) ?>" width="1000" height="500">
               </div>
             </div>
 
@@ -64,10 +79,10 @@
             <div class="container_reacao float_left margem_l_20 margem_t_10">
               <div class="segura_itens_reacao">
                 <div class="item_img_reacao float_left">
-                  <i class="material-icons" style="font-size:40px;">chat_bubble</i>
-                </div>
-                <div class="item_img_reacao float_left margem_l_20">
                   <i class="material-icons" style="font-size:40px;">favorite</i>
+                </div>
+                <div class="item_img_reacao1 float_left margem_l_20">
+                  <i class="material-icons" style="font-size:40px;">chat_bubble</i>
                 </div>
               </div>
             </div>
@@ -75,13 +90,13 @@
             <div class="container_titulo_comentario">
               <div class="container_titulo_post float_left margem_l_20 margem_t_10">
                 <div class="item_titulo_post preenche_t_10 titulo fs_25">
-                  Título do Post
+                  <?php echo($rsFC['titulo']) ?>
                 </div>
               </div>
 
               <div class="container_texto_titulo float_left margem_l_20 margem_t_10">
                 <div class="item_texto_titulo float_left justificado fs_20">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  <?php echo($rsFC['post']) ?>
                 </div>
               </div>
 
@@ -94,7 +109,7 @@
               <div class="container_img_data margem_l_20 margem_t_10 float_left">
                 <div class="item_img_data margem_l_20">
                   <div class="img_comentario float_left">
-
+                    Cometario inline
                   </div>
 
                   <div class="txt_data float_left preenche_t_10 fs_20 margem_l_20 align_center">
@@ -105,14 +120,15 @@
 
               <div class="container_texto_comentario float_left margem_l_100 margem_t_10">
                 <div class="item_texto_comentario float_left justificado fs_20">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. enim pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  AAAAAAAAAA
                 </div>
               </div>
             </div>
-
           </div>
-
-      </div>
+        </div>
+      <?php
+        }
+      ?>
     </div>
 
     <script>
@@ -121,6 +137,27 @@
         modalAgendaRedeSocial();
 
       })
+
+      $("#fileUpload").on('change', function () {
+
+        if (typeof (FileReader) != "undefined") {
+
+            var image_holder = $("#image-holder");
+            image_holder.empty();
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("<img />", {
+                    "src": e.target.result,
+                    "class": "image"
+                }).appendTo(image_holder);
+            }
+            image_holder.show();
+            reader.readAsDataURL($(this)[0].files[0]);
+        } else{
+            alert("Este navegador nao suporta FileReader.");
+        }
+    });
 
     </script>
 

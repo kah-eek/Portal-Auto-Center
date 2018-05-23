@@ -1,5 +1,5 @@
 .container_principal_ph{
-  width: 1155px;
+  width: 1255px;
   height: 885px;
   background-image: url('../../pictures/cms_produtos_home/carro.jpg');
   background-repeat: no-repeat;
@@ -10,8 +10,8 @@
 .container_titulo_ph{
   width: 1030px;
   height: 70px;
-
-  background-color: #3366ff;
+  background-color: #000000;
+  color:#00C853;
 
 }
 
@@ -22,86 +22,85 @@
 
 }
 
-.container_produto_ph{
-  width: 1050px;
+.campos{
+  width: 500px;
   height: 700px;
-  overflow: auto;
-  /*background-color: pink;*/
-
-
+  float: left;
+  background-color: #ffffff;
 }
 
-.item_produto_ph{
-  width: 400px;
-  min-height: 400px;
-  overflow: auto;
-  /*background-color: red;*/
-
+.names_campos{
+  width: 250px;
+  height: 700px;
+  float: left;
+  background-color: #000000;
 }
 
-.container_img_produto_ph{
-  width: 400px;
-  height: 250px;
-  /*background-color: #006666;*/
-
-}
-
-.item_img_produto_ph{
-  width: 300px;
-  height: 200px;
-
-
-  /*background-color: #fff;*/
-}
-.item_img_produto_ph img{
-  width: inherit;
-  height: inherit;
-}
-
-.container_caixa_desc_ph{
-  width: 400px;
-  height: 75px;
-  /*background-color: pink;*/
-
-}
-
-.item_caixa_desc_ph{
-  width: 350px;
+.name_campo{
+  width: 250px;
   height: 50px;
-  /*background-color: red;*/
-
+  float: left;
+  margin-top: 10px;
+  color:#00C853;
+  /*margin-left: 150px;*/
+  background-color: #000000;
+  text-align: center;
+  font-style: italic;
 }
 
-.container_ckb_ph{
-  width: 70px;
-  height: 100px;
-  /*border-radius: 100px;*/
-  /*background-color: #fff;*/
+.color{
+    border: solid 1px;
+    border-color: #00C853;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 20px;
 }
 
-.item_ckb_ph{
-  width: 50px;
-  height: 30px;
-  /*background-color: blue;*/
-
+.inputs_campos{
+  width: 250px;
+  height: 700px;
+  float: left;
+  background-color: #000000;
 }
 
-.item_ckb{
-  width: 20px;
-  height: 30px;
-
-}
-
-.txt_ativo{
-  width: 70px;
+.preencher_inputs{
+  width: 250px;
   height: 50px;
-  /*border-radius: 100px;*/
-
+  float: left;
+  margin-top: 8px;
+  /*margin-left: 150px;*/
+  /*background-color: #412563;*/
 }
 
-.item_txt_ativo{
-  width: 70px;
-  height: 50px;
-  /*border-radius: 100px;*/
+#float{
+  margin-top: 15px;
+}
 
+.container_visual{
+  width: 960px;
+  height: 150px;
+  margin-top: 100px;
+  margin-left: 510px;
+  background-color: #000000;
+
+  /*overflow-y: scroll;*/
+}
+
+.campos_visual{
+  width: 80px;
+  height: 50px;
+  float: left;
+  color:#00C853;
+  background-color: #000000;
+  text-align: center;
+}
+
+.campos_table{
+  width: 80px;
+  height: 50px;
+  float: left;
+  color:#ffffff;
+  background-color: #000000;
+  text-align: center;
 }

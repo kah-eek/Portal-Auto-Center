@@ -1,0 +1,107 @@
+.container_principal_ph{
+  width: 1155px;
+  height: 885px;
+  background-image: url('../../pictures/cms_produtos_home/carro.jpg');
+  background-repeat: no-repeat;
+  /*background-color: gray;*/
+
+}
+
+.container_titulo_ph{
+  width: 1030px;
+  height: 70px;
+  background-color: #000000;
+  color:#00C853;
+  font: arial;
+
+}
+
+.item_titulo_ph{
+  width: 1030px;
+  height: 70px;
+  /*background-color: #fff;*/
+
+}
+
+.color{
+    border: solid 1px;
+    border-color: #00C853;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 20px;
+}
+
+.campos{
+  width: 500px;
+  height: 400px;
+  float: left;
+  margin-left: 64px;
+  /*background-color: #123654;*/
+  background-color: #ffffff;
+  margin-top: 150px;
+  border: 5px;
+  border-color: #00C853;
+}
+
+.names_campos{
+  width: 250px;
+  height: 400px;
+  float: left;
+  background-color: #000000;
+  color: #00C853;
+  font-style: italic;
+}
+
+.name_campo{
+  width: 250px;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+  /*margin-left: 150px;*/
+  background-color: #000000;
+  text-align: center;
+}
+
+.inputs_campos{
+  width: 250px;
+  height: 400px;
+  float: left;
+  background-color: #126549;
+}
+
+.preencher_inputs{
+  width: 250px;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+  /*margin-left: 150px;*/
+  /*background-color: #412563;*/
+}
+
+#float{
+  margin-top: 15px;
+}
+
+.container_visualizar{
+
+  width: 500px;
+  height: 400px;
+  float: left;
+  background-color: #ffffff;
+  margin-left: 30px;
+  color:#00C853;
+  margin-top: 150px;
+  overflow-y: scroll;
+}
+
+.campos_table{
+  width: 120px;
+  height: 50px;
+  float: left;
+  text-align: center;
+  background-color: #000000;
+  font-style: italic;
+font-style: italic;
+
+}

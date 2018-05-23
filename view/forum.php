@@ -1,6 +1,10 @@
 <?php
   // Importando o cabeçalho
   require_once("component/header.php");
+
+  $conexao=mysql_connect('localhost', 'root', 'bcd127');
+
+  mysql_select_db('db_auto_center');
 ?>
   <!--
   @autor Caique M Oliveira
@@ -10,15 +14,20 @@
 
   <!-- Contáiner principal que centraliza todo o conteúdo -->
   <div class="container_conteudo_central_for centro_lr preenche_t_80">
+    <?php
+    $sql = "SELECT * FROM tbl_topico_forum";
+      $select = mysql_query($sql);
+      while ($rsConsulta = mysql_fetch_array($select))
+      {
 
+    ?>
     <!-- Contáiner do tópico -->
     <div class="container_topico_forum bg_cinza sombra_preta_20">
-
       <!-- Contáiner da foto do usuário mais o botão de like -->
       <div class="container_foto_like_for preenche_20 float_left">
         <!-- Foto fo usuário -->
         <div class="foto_usuario_for">
-          <img class="bsuavizada_250 sombra_preta_2" src="pictures/forum/perfil.jpeg" alt="Foto de perfil">
+          <img class="bsuavizada_250 sombra_preta_2" src="<?php echo($rsConsulta['foto']) ?>" alt="Foto de perfil">
         </div>
         <!-- ***************************************************************************** -->
 
@@ -48,16 +57,16 @@
 
           <!-- Título do tópico -->
           <div class="container_titulo_topico_for titulo">
-            Como trocar a roda do SRFD-25P
+            <?php echo($rsConsulta['titulo']) ?>
           </div>
 
           <div class="data_topico_for fs_16">
-            31/03/2018
+            <?php echo($rsConsulta['log_topico_forum']) ?>
           </div>
 
           <!-- Texto descritivo do tópico -->
           <div class="container_descricao_topico_for preenche_t_20 overflow_auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <?php echo($rsConsulta['mensagem']) ?>
           </div>
 
         </div>
@@ -73,7 +82,9 @@
 
     <!-- Divisor de conteúdo -->
     <div class="divisor"></div>
-
+    <?php
+    }
+    ?>
     <!-- Contáiner de resposta ao tópico -->
     <div class="container_topico_forum bg_cinza sombra_preta_20">
 

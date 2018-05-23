@@ -92,42 +92,6 @@
                 <input class="display_none" id="btn_img_produto" type="file" name="btn_img_produto" value="">
               </div>
 
-              <div class="container_item_imagem_cnp margem_t_10 ">
-                <label for="btn_img_produto">
-                  <div class="item_imagem_cnp centro_lr borda_preta_1">
-
-                  </div>
-                </label>
-                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
-              </div>
-
-              <div class="container_item_imagem_cnp margem_t_10 ">
-                <label for="btn_img_produto">
-                  <div class="item_imagem_cnp centro_lr borda_preta_1">
-
-                  </div>
-                </label>
-                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
-              </div>
-
-              <div class="container_item_imagem_cnp margem_t_10 ">
-                <label for="btn_img_produto">
-                  <div class="item_imagem_cnp centro_lr borda_preta_1">
-
-                  </div>
-                </label>
-                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
-              </div>
-
-              <div class="container_item_imagem_cnp margem_t_10 ">
-                <label for="btn_img_produto">
-                  <div class="item_imagem_cnp centro_lr borda_preta_1">
-
-                  </div>
-                </label>
-                <input class="display_none" type="file" id="btn_img_produto" name="btn_img_produto" value="">
-              </div>
-
             </div>
           </div>
         </form>
@@ -175,6 +139,26 @@
       </div>
     </div>
     <script>
+
+    // Armazena o caminho da imagem
+    var caminhoImg = '';
+
+    // ************************ MISSÃO **********************************
+    // Carrega a imagem de forma dinâmica - Produto parceiro
+     $('#btn_img_produto').change(function(){
+       $('#frmcadproduto').ajaxForm({
+         target:'#pathImgProduto',
+         success:function(){ // Callback de sucesso
+           // Armazena o caminho da imagem cortada para se adaptar ao atual diretório encontrado
+           caminhoImg = $('#pathImgProduto').html().substring(7);
+
+           // Define o src do componente img com o caminho da imagem recém carregada
+           $('#imgProduto').attr('src','../'+caminhoImg);
+         }
+       }).submit();
+
+     });
+
       // Listener do botão Salvar
       $('#frmcadproduto').submit(function(e){
         e.preventDefault(); // Retirar o piscar do submit

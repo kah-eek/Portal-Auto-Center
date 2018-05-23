@@ -1,7 +1,7 @@
 <?php
 
 // Importação do cabeçalho
-require_once('../component/cms_header.php');
+// require_once('../component/cms_header.php');
 
  ?>
 
@@ -22,7 +22,7 @@ require_once('../component/cms_header.php');
 
       <?php
         // Importação do menu lateral
-        require_once('../component/cms_menu_lateral.php');
+        // require_once('../component/cms_menu_lateral.php');
       ?>
       <!-- Resto do cunteudo -->
 

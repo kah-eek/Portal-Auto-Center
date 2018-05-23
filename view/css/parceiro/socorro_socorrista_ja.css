@@ -1,0 +1,157 @@
+/*.container_principal_ph{
+  width: 1155px;
+  height: 885px;
+  background-image: url('../../pictures/cms_produtos_home/carro.jpg');
+  background-repeat: no-repeat;
+  /*background-color: gray;*/
+/*
+}*/
+
+.container_principal_ph{
+  width: 100%;
+  min-height: 1350px;
+  height: auto;
+  background-image: url("../../pictures/adm_parceiro/lago.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container_titulo_ph{
+  width: 1000px;
+  height: 70px;
+  /*background-color: #000080;*/
+  /*box-shadow: 0px 0px 20px #128;*/
+  color:#ffffff;
+  font: arial;
+  /*overflow: hidden;*/
+  background-color: rgba(0,0,128,0.1);
+
+}
+
+.item_titulo_ph{
+  width: 1030px;
+  height: 70px;
+  /*box-shadow: 0px 0px 20px #000;*/
+  background-color: rgba(0,0,128,0.1);
+
+  /*background-color: #fff;*/
+
+}
+
+.color{
+    border: solid 1px;
+    border-color: #0000CD;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 20px;
+}
+
+.campos{
+  width: 500px;
+  height: 400px;
+  float: left;
+  margin-left: 670px;
+  /*background-color: #123654;*/
+  /*background-color: #00008b;*/
+  box-shadow: 0px 0px 20px #000;
+  margin-top: 100px;
+  border: 5px;
+  border-color: #0000CD;
+}
+
+.names_campos{
+  width: 250px;
+  height: 400px;
+  float: left;
+  /*background-color: #FFFFFF;*/
+  /*box-shadow: 0px 0px 20px #000;*/
+  padding-top: 15px;
+  color:#ffffff;
+  font-style: italic;
+}
+
+.name_campo{
+  width: 250px;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+  /*margin-left: 150px;*/
+  /*background-color: #FFFFFF;*/
+  text-align: center;
+  /*box-shadow: 0px 0px 20px #000;*/
+
+}
+
+.inputs_campos{
+  width: 250px;
+  height: 400px;
+  float: left;
+  background-color: #126549;
+}
+
+.preencher_inputs{
+  width: 250px;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+  /*margin-left: 150px;*/
+  /*background-color: #412563;*/
+}
+
+#float{
+  margin-top: 15px;
+}
+
+.campos_table{
+  width: 120px;
+  height: 50px;
+  float: left;
+  text-align: center;
+  background-color: #000000;
+  font-style: italic;
+font-style: italic;
+
+}
+
+.alarde{
+  width: 400px;
+  height: 400px;
+  /*float: left;*/
+  background-color: #748569;
+  /*box-shadow: 0px 0px 20px #000;*/
+  margin-left: 30px;
+  margin-top: 80px;
+}
+
+.inf{
+  width: 400px;
+  height: 30px;
+  /*float: left;*/
+  background-color: #416875;
+  /*box-shadow: 0px 0px 20px #000;*/
+  /*float: left;*/
+}
+
+
+
+
+/*.information{
+  width: 150;
+  height: 30px;
+  /*float: left;*/
+  /*margin-top: 60px;
+  background-color: #416875;*/
+  /*box-shadow: 0px 0px 20px #000;*/
+  /*float: left;*/
+}*/
+
+/*.informacao{
+  width: 250px;
+  height: 30px;
+  /*float: left;*/
+  /*background-color: #416875;*/
+  /*box-shadow: 0px 0px 20px #000;*/
+  /*float: left;*/
+}*/

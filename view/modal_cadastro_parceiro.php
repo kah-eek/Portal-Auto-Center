@@ -3,37 +3,159 @@
 * VERFIFICA SE A VARIÁVEL $dados_cadastro EXISTE. OBS.:ESSA VARIÁVEL FOI CRIADA NA CONTROLLER:Parceiro_class.
 */
 
-  // Imports
-  require_once('../controller/Plano_class.php');
+require_once("modulo.php");
 
-  if(isset($dados_cadastro)){
-    $nome_fantasia = $dados_cadastro->nome_fantasia;
-    $razao_social = $dados_cadastro->razao_social;
-    $cnpj = $dados_cadastro->cnpj;
-    $id_endereco = $dados_cadastro->id_endereco;
-    $socorrista = $dados_cadastro->socorrista;
-    $email = $dados_cadastro->email;
-    $telefone = $dados_cadastro->telefone;
-    $foto_perfil = $dados_cadastro->foto_perfil;
-    $celular = $dados_cadastro->celular;
-    $id_usuario = $dados_cadastro->id_usuario;
-    $id_plano_contratacao = $dados_cadastro->id_plano_contratacao;
-    $action ="editar&id_pac".$dados_cadastro->id_pac;
-  }else{
+session_start();
+
+$conexao=mysql_connect('localhost', 'root', 'bcd127');
+
+mysql_select_db('db_auto_center');
+
     //CRIANDO AS VARIÁVEIS PADRÕES LOCAIS.
-    $nome_fantasia = null;
-    $razao_social = null;
-    $cnpj = null;
-    $id_endereco = null;
-    $socorrista = null;
-    $email = null;
-    $telefone = null;
-    $foto_perfil = null;
-    $celular = null;
-    $id_usuario = null;
-    $id_plano_contratacao = null;
-    $action = "novo";
+    $nome_fantasia = "";
+    $razao_social = "";
+    $cnpj = "";
+    $id_endereco = "";
+    $socorrista = "";
+    $email = "";
+    $telefone = "";
+    $foto_perfil = "";
+    $celular = "";
+    $id_usuario = "";
+    $id_plano_contratacao = "";
+    $cbxAtivo="";
+    $btnSalvar="Salvar";
+    $id_nivel_usuario="";
+    $id_estado="";
+
+###########################################################################################################################
+if(isset($_POST["btn_salvar"]))
+{
+  //Dados do Parceiro;
+  $nome_fantasia=$_POST["txt_nome"];
+  $razao_social=$_POST["txt_razao"];
+  $cnpj=$_POST["txt_cnpj"];
+  $email=$_POST["txt_email"];
+  $celular=$_POST["txt_celular"];
+  $telefone=$_POST["txt_telefone"];
+  $foto_perfil=Upload($_FILES["imagem"]);
+  // $foto_perfil=$_POST['imagem'];
+  $socorrista=$_POST['sltSocorro'];
+
+  //Plano Contratação;
+  $id_plano_contratacao=$_POST["sltPlano"];
+
+  //Endereço;
+  // $id_endereco=$_POST["id_endereco"];
+  $cep=$_POST["txt_cep"];
+  $rua=$_POST["txt_rua"];
+  $numero=$_POST["txt_numero"];
+  $cidade=$_POST["txt_cidade"];
+  $id_estado=$_POST["slcEstado"];
+  $bairro=$_POST["txt_bairro"];
+  $complemento=$_POST["txt_complemento"];
+  $logradouro=$_POST["txt_logradouro"];
+
+  //Login;
+  $usuario=$_POST["txt_usuario"];
+  $senha=$_POST["txt_senha"];
+  // $id_nivel_usuario["slcNivel"];
+
+  if($_POST["btn_salvar"]=='Salvar'){
+    // $sql="INSERT INTO tbl_nivel_usuario (nivel)values('".$id_nivel_usuario."');";
+    //
+    // mysql_query($sql);
+    //
+    // $sql2 = "SELECT LAST_INSERT_ID();";
+    //   $resultado1 = mysql_query ($sql2);
+    //     if ($rs=mysql_fetch_array($resultado1))
+    //     {
+    //       $id_nivel_usuario = $rs['LAST_INSERT_ID()'];
+    //     }
+
+    $sql3 = "insert into tbl_usuario (usuario, senha,ativo, id_nivel_usuario) values ('".$usuario."','".$senha."','1', '".$id_nivel_usuario."');";
+    mysql_query($sql3);
+
+    $sql1="SELECT LAST_INSERT_ID();";
+      $resultado2=mysql_query($sql1);
+      if($rs=mysql_fetch_array($resultado2))
+        {
+          $id_usuario=$rs['LAST_INSERT_ID()'];
+        }
+
+    $sql4="INSERT INTO tbl_estado(estado)values('".$id_estado."');";
+    mysql_query($sql4);
+
+    $sql5="SELECT LAST_INSERT_ID();";
+      $resultado3=mysql_query($sql5);
+      if($rs=mysql_fetch_array($resultado3))
+      {
+        $id_estado=$rs['LAST_INSERT_ID()'];
+      }
+
+    $sql6="INSERT INTO tbl_endereco(cep, rua, numero, cidade, bairro, complemento, logradouro, id_estado)values
+    ('".$cep."', '".$rua."', '".$numero."', '".$cidade."', '".$bairro."', '".$complemento."', '".$logradouro."', '".$id_estado."');";
+    mysql_query($sql6);
+
+    $sql7="SELECT LAST_INSERT_ID();";
+      $resultado4=mysql_query($sql7);
+      if($rs=mysql_fetch_array($resultado4))
+      {
+        $id_endereco=$rs['LAST_INSERT_ID()'];
+      }
+
+    $sql8="INSERT INTO tbl_plano_contratacao(plano)values('".$id_plano_contratacao."');";
+    mysql_query($sql8);
+
+    $sql9="SELECT LAST_INSERT_ID();";
+      $resultado5=mysql_query($sql9);
+      if($rs=mysql_fetch_array($resultado5))
+      {
+        $id_plano_contratacao=$rs['LAST_INSERT_ID()'];
+      }
+
+    $sql10="INSERT INTO tbl_parceiro(nome_fantasia,razao_social, cnpj, email, celular, telefone, socorrista, foto_perfil, id_plano_contratacao, id_endereco,
+    id_usuario)
+    VALUES('".$nome_fantasia."', '".$razao_social."', '".$cnpj."', '".$email."', '".$celular."', '".$telefone."', '".$socorrista."', '".$foto_perfil."', '".$id_plano_contratacao."',
+    '".$id_endereco."', '".$id_usuario."');";
+
+
+
+    // $sql3="INSERT INTO tbl_endereco(cep, rua, numero, cidade, id_estado, bairro, complemento,
+    // logradouro)
+    // VALUES('".$cep."', '".$rua."', '".$numero."', '".$id_estado."', '".$bairro."', '".$complemento."', '".$logradouro."');";
+    //
+    // mysql_query($sql3);
+    //
+    // $sql4="SELECT LAST_INSERT_ID();";
+    //   $resultado2=mysql_query($sql4);
+    //     if($rs=mysql_fetch_array($resultado2))
+    //     {
+    //       $id_endereco=$rs['LAST_INSERT_ID()'];
+    //     }
+    //
+    // $sql4="INSERT INTO tbl_parceiro(nome_fantasia, razao_social, cnpj, email, celular, telefone, socorrista, id_plano_contratacao, id_endereco, id_usuario)
+    // VALUES('".$nome_fantasia."', '".$razao_social."', '".$cnpj."', '".$email."', '".$celular."','".$telefone."', '".$socorrista."', '".$id_plano_contratacao."','".$id_endereco."', '".$id_usuario."');";
+    //
+    // mysql_query($sql4);
   }
+
+  // // EXECUTA O SCRIPT NO BD
+  // mysql_query($sql);
+
+
+  // header('location:modal_cadastro_parceiro.php');
+
+  // echo($sql);
+  echo($sql3);
+  echo($sql4);
+  echo($sql6);
+  echo($sql8);
+  echo($sql10);
+
+
+}
+
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,7 +166,7 @@
     <script src="js/util.js"></script>
   </head>
   <body>
-  <form id="frmcadparceiro" name="frmcadparceiro" method="POST" enctype="multipart/form-data">
+  <form id="frmcadparceiro" name="frmcadparceiro" action="modal_cadastro_parceiro.php" method="POST" enctype="multipart/form-data">
     <div class="container_principal_m_cp">
       <div class="container_titulo_parceiro">
         <div class="item_titulo_parceiro align_center float_left titulo bg_vermelho preenche_3">
@@ -56,16 +178,13 @@
       </div>
       <div class="container_lado_esquerdo float_left bg_branco">
         <!-- IMAGEM -->
-        <div class="container_img_parceiro margem_t_20">
-          <label for="btn_img_parceiro">
-            <div class="item_img_parceiro centro_lr borda_preta_1">
 
-            </div>
-            <input class="display_none" required id="btn_img_parceiro" type="file" name="btn_img_parceiro" value="<?php echo($foto_perfil); ?>">
-          </label>
-        </div>
-        <!-- FORM SEGURA INPUTS -->
-        <form class="form_segurando_inputs float_left margem_t_10">
+
+          <div class="container_img_parceiro margem_t_20">
+             <input type="file" name="imagem" value="<?php echo($foto_perfil)?>" class="color">
+          </div>
+
+
           <div class="item_contendo_inputs">
             <!-- INPUT NOME FANTASIA -->
             <div class="segura_input_p">
@@ -126,9 +245,33 @@
 
             <!-- COMBOBOX ESTADO -->
             <div class="segura_input_p float_left">
-              <select id="cbx_estado" required name="cbx_estado">
-                <option disabled="true" selected value="">Estado</option>
-              </select>
+              <select name="slcEstado"  class="color">
+                <?php
+                if($id_estado== ""){
+                    $id_estado = 0;
+                    ?>
+                     <option>Selecione</option>
+                  <?php
+                }else{
+                    ?>
+            <option value="<?php echo($id_estado); ?>">
+                <?php echo($id_estado);?></option>
+            <?php
+
+                }
+                $sql = "SELECT id_estado, estado as nome_estado FROM tbl_estado Where id_estado <> ".$id_estado;
+                $select=mysql_query($sql);
+
+               while($rsEstado = mysql_fetch_array($select)){
+                   ?>
+
+                <option value="<?php echo($rsEstado['id_estado']); ?>">
+                <?php echo($rsEstado['nome_estado']); ?> </option>
+
+            <?php
+               }
+            ?>
+          </select>
               <!-- <input id="txt_estado" class="input_text_p txt_preto margem_t_5" placeholder="Estado" type="text" name="txt_estado" value=""> -->
             </div>
 
@@ -155,15 +298,52 @@
             </div>
             <!-- INPUT USER -->
             <div class="segura_input_p float_left margem_t_5">
-              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_use" value="">
+              <input id="txt_use" class="input_text_p txt_preto margem_t_5" placeholder="Usuário" type="text" name="txt_usuario" value="">
             </div>
 
             <!-- INPUT SENHA -->
             <div class="segura_input_p float_left">
               <input id="txt_senha" class="input_text_p txt_preto margem_t_5" placeholder="Senha" type="password" name="txt_senha" value="">
             </div>
+            <div class="segura_input_p float_left">
+
+              <select name="slcNivel"  class="color">
+                <?php
+                if($id_nivel_usuario== ""){
+                    $id_nivel_usuario = 0;
+                    ?>
+                     <option>Selecione</option>
+                  <?php
+                }else{
+                    ?>
+            <option value="<?php echo($id_nivel_usuario); ?>">
+                <?php echo($id_nivel_usuario);?></option>
+            <?php
+
+                }
+                $sql = "SELECT id_nivel_usuario, nivel as nome_nivel FROM tbl_nivel_usuario Where id_nivel_usuario <> ".$id_nivel_usuario;
+                $select=mysql_query($sql);
+
+               while($rsNivel = mysql_fetch_array($select)){
+                   ?>
+
+                <option value="<?php echo($rsNivel['id_nivel_usuario']); ?>">
+                <?php echo($rsNivel['nome_nivel']); ?> </option>
+
+            <?php
+               }
+            ?>
+          </select>
+            </div>
           </div>
-        </form>
+
+      </div>
+      <div class="segura_input_p float_left">
+
+        <select required name="sltSocorro" class="color">
+          <option value="1">Sim</option>
+          <option value="0">Não</option>
+        </select>
       </div>
 
       <!-- LADO DIREITO -->
@@ -178,24 +358,39 @@
 
           <!-- DIV SELECT -->
           <div class="container_select margem_t_10">
-            <select required class="slc_planos borda_preta_1" name="cbx_plano">
-              <option selected disabled="true" value="">Planos</option>
+            <select name="sltPlano"  class="color">
               <?php
-                // Obtém todos os planos existente no DB
-                $planos = Plano::getPlanos();
+              if($id_plano_contratacao== ""){
+                  $id_plano_contratacao = 0;
+                  ?>
+                   <option>Selecione</option>
+                <?php
+              }else{
+                  ?>
+          <option value="<?php echo($id_plano_contratacao); ?>">
+              <?php echo($id_plano_contratacao);?></option>
+          <?php
 
-                // Preenche o select com todos os planos advindos do DB
-                for ($i=0; $i < sizeof($planos); $i++) {
-                  echo "<option value='".$planos[$i]->idPlanoContratacao."'>".$planos[$i]->plano."</option>";
-                }
-              ?>
-            </select>
+              }
+              $sql = "SELECT id_plano_contratacao, plano as nome_plano FROM tbl_plano_contratacao Where id_plano_contratacao <> ".$id_plano_contratacao;
+              $select=mysql_query($sql);
+
+             while($rsPlano = mysql_fetch_array($select)){
+                 ?>
+
+              <option value="<?php echo($rsPlano['id_plano_contratacao']); ?>">
+              <?php echo($rsPlano['nome_plano']); ?> </option>
+
+          <?php
+             }
+          ?>
+        </select>
           </div>
 
           <!-- DESCRICAO PLANOS -->
           <div class="container_desc_planos margem_t_30 titulo">
             <div class="item_desc_planos preenche_5">
-              Descrição Planos
+              Descrição
             </div>
           </div>
           <!-- PLANO 1 -->
@@ -242,105 +437,9 @@
         </div>
       </div>
       <div class="segura_bt_p float_left">
-        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="Salvar">
+        <input class="input_submit margem_t_5 sombra_preta_b_15" type="submit" name="btn_salvar" value="<?php echo($btnSalvar); ?>">
       </div>
     </div>
   </form>
-
-  <script>
-
-    $('#txt_cep').blur(function(){
-      var cep = $('#txt_cep').val();
-      $.ajax({
-        type:'GET',
-        url:'https://viacep.com.br/ws/'+cep+'/json/unicode/',
-        success: function(viaCepRetorno){
-          $('#txt_rua').val(viaCepRetorno.logradouro);
-          $('#txt_bairro').val(viaCepRetorno.bairro);
-          $('#txt_cidade').val(viaCepRetorno.localidade);
-        }
-      });
-    });
-
-    // Preenche os Estados na combobox
-    obterEstados(
-      // Callback de sucesso da ontenção dos dados
-      function(respostaAPI){
-
-        // Armazenas os estados advindos da response
-        var estados = respostaAPI['estados'];
-
-        // Verifica se a obtenção dos Estados ocorreu comm êxito
-        if (respostaAPI['status']) {// Êxito
-
-          // Preenche a combobox dos Estados com cada estado advindo do banco
-          for (var i = 0; i < estados.length; i++) {
-
-            // Obtém apenas o id do Estado
-            var idEstado = estados[i].id;
-            // Obtém apenas o nome do Estado
-            var estado = estados[i].estado;
-
-            // Preenche de fato o combobox
-            $('#cbx_estado').append(
-              '<option value="'+idEstado+'">'+estado+'</option>'
-            );
-          }
-        }
-        else {// Falha
-          console.error('Falha ao tentar obter os Estados');
-        }
-      },
-      function(){ // Callback de falhada da obtenção dos dados
-        console.error('falha tentar acessar o recurso de obtenção dos Estados');
-      }
-
-    );
-    // #######################
-
-    // Listener do botão salvar - Insere um novo parceiro
-    $('#frmcadparceiro').submit(function(e){
-      // Salva o endereco
-      inserirEndereco(e, function(idNovoEndereco){
-
-        // Verifica se o idEndereco é diferente de null para prosseguir com as inserções
-        if (idNovoEndereco != null)
-        {
-          // Insere o usuário no db
-          inserirUsuario(e, function(idNovoUsuario){
-
-            // Armazena o form na variável
-            var formulario = new FormData($('#frmcadparceiro')[0]);
-
-            // Adiciona os dados complementares no form
-            formulario.append('idUsuario',idNovoUsuario);
-            formulario.append('idEndereco',idNovoEndereco);
-
-            // Envia os dados do parceiro para a router e junto a opção de qual a ação tem de ser realizada
-            getResponse(
-              'POST', // Protocolo
-              '../router.php?controller=parceiro&modo=novo', // Url
-              function(respostaJson){ // Callback de sucesso
-                console.log(respostaJson);
-                // Verifica se a inserção foi executada com sucesso
-                if (respostaJson) {// Sucesso
-                  $('.container_modal').slideToggle(5000);
-                }else {// Falha
-                   console.error('Falha ao tentar registrar o parceiro');
-                }
-
-              },
-              function(){ // Callback de falha
-                console.error('Falha ao tentar acessar o recurso de inserção de parceiro');
-              },
-              formulario,
-              null
-            );
-          });
-        }
-      });
-    });
-  </script>
-
   </body>
 </html>

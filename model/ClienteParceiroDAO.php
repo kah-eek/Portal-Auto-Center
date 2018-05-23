@@ -33,9 +33,9 @@ class ClienteParceiroDAO
         'id_sobre_cliente_parceiro = ?'
     );
 
-    $stmt->bindParam(1, $sobreEmpresaObj->imagem);
-    $stmt->bindParam(2, $sobreEmpresaObj->descricao);
-    $stmt->bindParam(3, $sobreEmpresaObj->idSobreClienteParceiro);
+    $stmt->bindParam(1, $clienteParceiroObj->imagem);
+    $stmt->bindParam(2, $clienteParceiroObj->descricao);
+    $stmt->bindParam(3, $clienteParceiroObj->idSobreClienteParceiro);
 
     // Verifica se a atualização do registro ocorreu com sucesso e retorna a resposta adquirida
     $result = $stmt->execute() ? true : false;

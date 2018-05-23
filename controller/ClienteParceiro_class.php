@@ -15,6 +15,7 @@ class ClienteParceiro
   public $imagem;
   public $descricao;
 
+
   // Construtor default
   function __construct($idSobreClienteParceiro,$idTipoDescricao, $imagem, $descricao)
   {

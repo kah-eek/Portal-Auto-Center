@@ -1,0 +1,176 @@
+.container_principal_c{
+  width: 100%;
+  height: 100%;
+  background-image: url("../pictures/fale_conosco/bg.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.container_fundo_escuro_c{
+  width: inherit;
+  height: inherit;
+  background-color: rgba(0,0,0,0.7);
+}
+.container_conteudo_centralizado_c{
+  width: 1000px;
+  height: 900px;
+  /* background-color: rgba(0,0,0,0.8); */
+}
+.titulo_pagina_c{
+  width: 1000px;
+  height: 220px;
+  /* background-color: green; */
+}
+.subtitulo_c{
+  width: 1000px;
+  height: 55px;
+}
+.titulo_principal_c{
+  width: 1000px;
+  height: 80px;
+}
+.label_campo_c{
+  width: 800px;
+  height: 20px;
+  /* background-color: red; */
+}
+.campo_texto_c{
+  width: 800px;
+  height: 50px;
+  /* background-color: blue; */
+}
+.campo_texto_textarea_c{
+  width: 800px;
+  height: 210px;
+  /* background-color: blue; */
+}
+.input_text_c{
+  width: 800px;
+  text-align: left;
+}
+.input_submit_c{
+  width: 100%;
+  height: 45px;
+  border-radius: 0;
+}
+.container_botao_enviar_c{
+  width: 100%;
+  height: 45px;
+  /* background-color: green; */
+}
+
+
+.form_cad_categoria_c{
+  width: 1000px;
+  min-height: 800px;
+  height: auto;
+  background-color: pink;
+
+}
+
+.caixa_c{
+  width: 500px;
+  min-height: 30px;
+  height: auto;
+  background-color: green;
+
+}
+
+.tamanho_input_c{
+  width: 250px;
+  height: 30px;
+
+}
+
+.item_titulo_topicos_c{
+  width: 400px;
+  height: 50px;
+
+}
+
+.ativo_ver_c{
+  width: 200px;
+  height: 50px;
+
+}
+
+.container_input{
+  width: 399px;
+  height: 40px;
+  /*background-color: pink;*/
+
+}
+
+.item_input{
+  width: 399px;
+  height: 40px;
+  /*background-color: blue;*/
+
+}
+
+.item_input_t{
+  width: 395px;
+  height: 30px;
+  /*background-color: blue;*/
+
+}
+
+.container_bt{
+  width: 200px;
+  height: 40px;
+
+}
+
+.item_bt{
+  width: 100px;
+  height: 30px;
+
+}
+
+.container_segura_conteudo{
+  width: 800px;
+  height: 100px;
+  background-color: red;
+
+}
+
+.container_exibe_conteudo{
+  width: 450px;
+  height: 400px;
+  background-color: red;
+
+}
+
+.container_exibindo_categorias{
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+
+}
+
+.item_categoria{
+  width: 150px;
+  height: 40px;
+  background-color: gray;
+
+}
+
+.container_delete{
+  width: 100px;
+  height: 30px;
+  background-color: blue;
+
+}
+
+.item_delete{
+  width: 75px;
+  height: 30px;
+  background-color: gray;
+
+}
+
+.item_delete{
+  width: 150px;
+  height: 40px;
+  background-color: gray;
+
+}

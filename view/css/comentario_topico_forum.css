@@ -1,0 +1,51 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+.container_principal_ctf{
+  width: 500px;
+  height: 500px;
+  background-color: grey;
+
+}
+
+.container_form_ctf{
+  width: 500px;
+  height: 500px;
+  background-color: pink;
+
+}
+
+.container_img_rf{
+  width: 200px;
+  height: 150px;
+
+}
+
+.item_img_rf{
+  width: 200px;
+  height: 150px;
+  background-color: #ffccff;
+
+}
+
+.container_mensagem_rf{
+  width: 400px;
+  height: 100px;
+  background-color: #fff;
+
+}
+
+.item_mensagem_rf{
+  width: 400px;
+  height: 100px;
+  background-color: pink;
+
+}
+
+.input_rf{
+  width: 396px;
+  height: 30px;
+
+}

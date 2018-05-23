@@ -1,10 +1,5 @@
-SELECT * FROM view_imagem_produto_parceiro WHERE id_categoria_produto = 1 AND nome_fantasia LIKE '%un%';
+USE db_auto_center;
 
-SELECT * FROM tbl_categoria_produto;
-SELECT * FROM tbl_produto;
-
-
-
-SELECT * FROM tbl_imagem_produto_parceiro;
-
-'5', '5', '../pictures/galeria/farol.jpg', '1'
+SELECT * FROM tbl_produto
+INNER JOIN tbl_categoria_produto AS ctg_prd ON ctg_prd.id_categoria_produto = tbl_produto.id_categoria_produto
+INNER JOIN tbl_modelo_produto AS mdl_prd ON mdl_prd.id_modelo_produto = tbl_produto.id_modelo_produto;

@@ -6,19 +6,19 @@
     -->
 
     <!-- Contáiner do menu lateral -->
-    <div class="menu_lateral float_left bg_branco borda_cinza_r_2 preenche_t_20 sombra_preta_l_2">
+    <div class="menu_lateral float_left bg_azulado_escuro">
 
       <!-- Item do menu lateral - Galeria -->
       <a href="#">
-        <div class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div  class="item_menu_lateral txt_branco">
           <!-- Título do item do menu -->
-          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+          <div id="btnCmsGaleria" class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Galeria
           </div>
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -30,7 +30,7 @@
 
       <!-- Item do menu lateral - Sobre a Empresa -->
       <a href="#">
-        <div class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div id="btnCmsEmpresa" class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Sobre a Empresa
@@ -38,7 +38,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -50,7 +50,7 @@
 
       <!-- Item do menu lateral - Movies -->
       <a href="#">
-        <div id="btnCmsCadParceiro" class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div id="btnCmsCadParceiro" class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Cadastro de Parceiros
@@ -58,7 +58,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -70,7 +70,7 @@
 
       <!-- Item do menu lateral - Books -->
       <a href="#">
-        <div class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Cadastro de Veículos
@@ -78,7 +78,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -87,30 +87,9 @@
         </div>
       </a>
       <!-- ########################################################################### -->
-
-      <!-- Item do menu lateral - Newspaper -->
-      <a href="#">
-        <div class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
-          <!-- Título do item do menu -->
-          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
-            Newspaper
-          </div>
-
-          <!-- Contáiner do ícone representativo do item elecionado -->
-          <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
-          </div>
-
-          <!-- Barra decorativa -->
-          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
-
-        </div>
-      </a>
-      <!-- ########################################################################### -->
-
       <!-- Item do menu lateral - Cliente/Parceiro -->
       <a href="#">
-        <div id="btnCmsClienteParceiro" class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div id="btnCmsClienteParceiro" class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Cliente/Parceiro
@@ -118,7 +97,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -130,7 +109,7 @@
 
       <!-- Item do menu lateral - Fale Conosco -->
       <a href="#">
-        <div id="btnCmsFaleConosco" class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div id="btnCmsFaleConosco" class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Fale Conosco
@@ -138,7 +117,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -150,7 +129,7 @@
 
       <!-- Item do menu lateral - Produtos -->
       <a href="#">
-        <div id="btnCmsProdutosCadastrados" class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div id="btnCmsProdutosCadastrados" class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Produtos
@@ -158,7 +137,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -170,7 +149,7 @@
 
       <!-- Item do menu lateral - Produtos -->
       <a href="#">
-        <div id="btnCmsCadastrarProdutos" class=" margem_b_30 item_menu_lateral bg_preto txt_branco borda_preta_t_2 borda_preta_b_2">
+        <div id="btnCmsCadastrarProdutos" class="item_menu_lateral txt_branco  ">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
             Cadastrar Produto
@@ -178,7 +157,7 @@
 
           <!-- Contáiner do ícone representativo do item elecionado -->
           <div class="container_item_selecionado float_left preenche_t_20">
-            <i class="material-icons fs_30 txt_preto seletor">keyboard_arrow_right</i>
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
           </div>
 
           <!-- Barra decorativa -->
@@ -187,11 +166,111 @@
         </div>
       </a>
       <!-- ########################################################################### -->
+      <!-- Item do menu lateral - Categoria -->
+      <a href="#">
+        <div id="btnCadCategoria" class="item_menu_lateral txt_branco  ">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Cadastrar Categoria
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
+      <!-- ########################################################################### -->
+      <!-- Item do menu lateral - Ação Usuário -->
+      <a href="#">
+        <div id="btnCadAcao" class="item_menu_lateral txt_branco  ">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Cadastrar Ações
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
+
+      <!-- ########################################################################### -->
+      <!-- Item do menu lateral - Cor -->
+      <a href="#">
+        <div id="btnCadCor" class="item_menu_lateral txt_branco  ">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Cadastrar Cores
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
+
+      <!-- Item do menu lateral - Nível Usuário -->
+      <a href="#">
+        <div id="btnCadNivelUsuario" class="item_menu_lateral txt_branco">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+             Nível Usuário
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
+
+      <!-- Item do menu lateral - Nível Usuário -->
+      <a href="#">
+        <div id="btnCadUsuario" class="item_menu_lateral txt_branco">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Cadastrar Usuário
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
 
       <!-- Faixa decorativa inferior -->
-      <div class="faixa_inferior bg_azulado_escuro"></div>
+      <!-- <div class="faixa_inferior bg_azulado_escuro"></div> -->
 
     </div>
+    <script>
+      $('#btnCmsGaleria').click(function(){
+        modalCmsGaleria();
+      })
+    </script>
     <script>
       $('#btnCmsEmpresa').click(function(){
         modalCmsEmpresa();
@@ -225,5 +304,35 @@
     <script>
       $('#btnCmsCadastrarProdutos').click(function(){
         modalCmsCadastrarProdutos();
+      })
+    </script>
+
+    <script>
+      $('#btnCadCategoria').click(function(){
+        modalCadCategoria();
+      })
+    </script>
+
+    <script>
+      $('#btnCadAcao').click(function(){
+        modalCadAcao();
+      })
+    </script>
+
+    <script>
+      $('#btnCadCor').click(function(){
+        modalCadCor();
+      })
+    </script>
+
+    <script>
+      $('#btnCadNivelUsuario').click(function(){
+        modalCadNivelUsuario();
+      })
+    </script>
+
+    <script>
+      $('#btnCadUsuario').click(function(){
+        modalCadUsuario();
       })
     </script>

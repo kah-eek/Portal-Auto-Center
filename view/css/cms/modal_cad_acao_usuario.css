@@ -1,0 +1,109 @@
+.container_principal_u{
+  width: 1155px;
+  height: 885px;
+  background-color: pink;
+
+}
+
+.container_titulo_u{
+  width: 1155px;
+  height: 100px;
+  background-color: green;
+
+}
+
+.item_titulo_u{
+  width: 1155px;
+  height: 100px;
+  background-color: #954;
+
+}
+
+.frmCadUsuario{
+  width: 1000px;
+  height: 500px;
+  background-color: #009999;
+
+}
+
+.container_subs{
+  width: 1000px;
+  height: 60px;
+  background-color: green;
+}
+
+.item_subs{
+  width: 250px;
+  height: 60px;
+  border: solid 1px;
+  background-color: #fff;
+
+}
+
+.container_inputs{
+  width: 1000px;
+  height: 50px;
+  /*background-color: green;*/
+
+}
+
+.item_input_u{
+  width: 250px;
+  height: 30px;
+
+}
+
+.input_u{
+  width: 300px;
+  height: 56px;
+  border: solid 1px;
+
+}
+
+.submit_u{
+  width: 150px;
+  height: 40px;
+
+}
+
+.container_titulo_visualizar{
+  width: 1000px;
+  height: 80px;
+  background-color: #666699;
+
+}
+
+.item_titulo_visualizar{
+  width: 1000px;
+  height: 80px;
+  background-color: #fff;
+
+}
+
+.container_exibindo_acoes{
+  width: 300px;
+  height: 60px;
+  background-color: #339966;
+
+}
+
+.item_exibindo_acoes{
+  width: 300px;
+  height: 60px;
+  background-color: #996633;
+
+}
+
+.container_escolhas{
+  width: 200px;
+  height: 60px;
+  background-color: red;
+
+}
+
+.item_escolhas{
+  width: 100px;
+  height: 60px;
+  background-color: gray;
+
+}
