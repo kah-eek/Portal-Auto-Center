@@ -2,10 +2,19 @@
 body{
   margin:0px;
 }
+.article{
+  width: 1200px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+  /* #BDBDBD; */
+}
 .container_menu{
   width: 100%;
   height: 60px;
-  background-color: magenta;
+  background-color: #263238;
 }
 .container_segura_menu{
   width: 1440px;
@@ -18,49 +27,55 @@ body{
 .container_logo{
 width: 500px;
 height: 60px;
-background-color: blue;
+color: white;
+/* background-color: blue; */
 }
 .container_agenda{
   width: 400px;
   height: 60px;
-  background-color: green;
+  color: white;
+  /* background-color: green; */
 }
 .container_perfil{
   width: 400px;
   height: 60px;
-  background-color: red;
+  color: white;
+  /* background-color: red; */
+
 }
 .container_sair{
   width: 70px;
   height: 60px;
-  background-color: grey;
+  color: white;
+  /* background-color: grey; */
 }
 /* *************************** */
 /* ARTICLE */
 .container_usuario{
   width: auto;
   height: 100px;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 .container_segura_usuario{
   width: 800px;
   height: 100px;
-  background-color: aqua;
+  /* background-color: aqua; */
   margin-left: auto;
   margin-right: auto;
 }
 .container_foto_usuario{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-left: 20px;
   border-radius: 100px;
   background-color: red;;
 }
 .container_nome_usuario{
   width: 500px;
-  height: 80px;
-  background-color: grey;
+  height: 50px;
+  /* background-color: #BDBDBD; */
   margin-top: 10px;
+  padding-top: 10px;
 }
 .container_foto_postada{
   width: 800px;
@@ -69,17 +84,41 @@ background-color: blue;
   margin-left: auto;
   margin-right: auto;
 }
+.container_foto_postada img{
+  width: inherit;
+  height: inherit;
+}
 .container_curtir_comentar{
   width: 800px;
   height: 50px;
-  background-color: #f44;
+  /* background-color: #f44; */
   margin-left: auto;
   margin-right: auto;
 }
 .container_comentarios{
   width: 800px;
   min-height: 150px;
-  background-color: red;
+  background-color: #FFF;
   margin-left: auto;
   margin-right: auto;
+}
+.foto_usuario_comentario{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 100px;
+  background-color: black;
+}
+.nome_usuario_comentario{
+  width: 300px;
+  height: 30px;
+  padding-top: 15px;
+}
+.comentario{
+  width: 800px;
+  height: inherit;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  /* border-bottom: solid 2px black; */
 }
