@@ -119,7 +119,7 @@
             <div class="icone_item_menu">
               <i class="material-icons">shopping_cart</i>
             </div>
-            <a href="<?php echo isset($_GET['page']) == true ? 'fale_conosco.php?page=fale_conosco' : 'view/fale_conosco.php?page=fale_conosco' ?>">
+            <a href="<?php echo isset($_GET['page']) == true ? 'carrinho_de_compras.php?page=carrinho_de_compras' : 'view/carrinho_de_compras.php?page=carrinho_de_compras' ?>">
               CARRINHO
             </a>
           </div>

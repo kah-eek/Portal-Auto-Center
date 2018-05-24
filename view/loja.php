@@ -5,6 +5,10 @@
   require_once('controller/produto_class.php');
   require_once('controller/MySql_class.php');
   require_once('model/ProdutoDAO.php');
+
+  $conexao=mysql_connect('localhost', 'root', 'bcd127');
+
+mysql_select_db('db_auto_center');
 ?>
 
   <!--
@@ -485,32 +489,32 @@
       <div class="container_produto_fixo centro_lr">
         <?php
 
-        // Obtém os produtos existentes no DB
-        $produtosSimples = Produto::obterDetalhesSimplesProdutos();
+         $sql="SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.id_imagem_produto_parceiro, tbl_produto.preco, tbl_produto.nome as nomeProduto
+         from tbl_imagem_produto_parceiro inner join tbl_produto on tbl_imagem_produto_parceiro.id_produto = tbl_produto.id_produto";
+         $select=mysql_query($sql);
+         while($rsConsulta= mysql_fetch_array($select)){
+           ?>
 
-        for ($i=0; $i < sizeof($produtosSimples); $i++) {
-          ?>
+         <!-- Produto fixo 1 -->
+         <div class="produto_fixo bg_branco">
+           <!-- Contáiner da imagem do produto fixo -->
+           <div class="imagem_produto_fixo bg_verde">
+            <img class="resolucao" src="view/cms/<?php echo($rsConsulta['imagem'])?>">
+           </div>
 
-        <!-- Produto fixo 1 -->
-        <div class="produto_fixo bg_branco">
-          <!-- Contáiner da imagem do produto fixo -->
-          <div class="imagem_produto_fixo bg_verde">
-            <img src="<?=$produtosSimples[$i]->imagem?>" alt="">
-          </div>
+           <!-- Preço do produto fixo -->
+           <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+             <?php echo($rsConsulta['nomeProduto'])?>
+           </div>
 
-          <!-- Preço do produto fixo -->
-          <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
-            <?=$produtosSimples[$i]->preco?>
-          </div>
-
-          <!-- Descrição do produto fixo -->
-          <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
-            <?=$produtosSimples[$i]->nome?>
-          </div>
-        </div>
-        <?php
-        }
-        ?>
+           <!-- Descrição do produto fixo -->
+           <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
+             <?php echo($rsConsulta['preco'])?>
+           </div>
+         </div>
+         <?php
+         }
+         ?>
       </div>
       <!-- Rodape -->
       <?php
