@@ -28,21 +28,56 @@ Conexao_db();
         <div class="texto">
             CARRINHO
         </div>
+        <div class="line">
+        </div>
         <div class="div_secundaria">
           <div class="produtos">
             <div class="img_prod">
+
             </div>
             <div class="detalhe_prod">
             </div>
           </div>
           <div class="comprar_mais">
-            <a href="<?php echo isset($_GET['page']) == true ? '../index.php' : '' ?>">
+            <!-- <a href="loja.php"> -->
               Comprar Mais Produtos
             </a>
           </div>
         </div>
-        <!-- <div class="div_terciaria">
-        </div> -->
+        <div class="div_terciaria">
+            <div class="container_secundaria">
+              <div class="texto2">
+                RESUMO
+              </div>
+              <div class="line2">
+              </div>
+              <div class="container_terciaria">
+                <div class="divisao_container">
+                  <div class="div_cont">
+                    <div class="texto3">
+                      Produto
+                    </div>
+                    <div class="texto3">
+                      Data Agendada
+                    </div>
+                  </div>
+                </div>
+                <div class="divisao_container">
+                  <div class="div_cont">
+                    <div class="inputs">
+                      <input class="format_input" type="txtPedido" name="txtPedido" value="">
+                    </div>
+                    <div class="inputs">
+                      <input class="format_inputs" type="date" name="dataAgendada" value="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="finalizar_compra">
+                <input class="tratamento" type="submit" name="btnFinalizar" value="Finalizar Compra">
+              </div>
+            </div>
+        </div>
       </div>
 
     </div>

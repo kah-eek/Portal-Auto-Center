@@ -63,7 +63,7 @@
 .produto_fixo{
   transition: 2s;
   width: 300px;
-  height: 300px;
+  height: 350px;
   margin-left: 43px;
   margin-top: 20px;
   float: left;
@@ -85,6 +85,21 @@
   width: inherit;
   height: 50px;
 }
+
+.botao_produto_fixo{
+  float: left;
+  margin-left: 120px;
+}
+
+.color{
+    box-shadow: 0px 0px 20px #000;
+}
+
+.resolucao{
+  width: 300px;
+  height: 220px;
+}
+
 .container_campo_pesquisa_loj{
   width: 820px;
   height: 80px;

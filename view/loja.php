@@ -8,7 +8,8 @@
 
   $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
-mysql_select_db('db_auto_center');
+  mysql_select_db('db_auto_center');
+
 ?>
 
   <!--
@@ -510,6 +511,11 @@ mysql_select_db('db_auto_center');
            <!-- Descrição do produto fixo -->
            <div class="descricao_produto_fixo conteudo align_center preenche_15 ellipsis">
              <?php echo($rsConsulta['preco'])?>
+           </div>
+
+           <!-- Botão para a compra do produto -->
+           <div class="botao_produto_fixo align_center">
+             <input class="color" type="submit" name="btnComprar" value="Comprar">
            </div>
          </div>
          <?php
