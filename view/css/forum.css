@@ -1,11 +1,13 @@
 .container_conteudo_central_for{
   width: 1420px;
-  min-height: 900px;
+  min-height: 1200px;
   height: auto;
+  background-color: red;
 }
 .container_topico_forum{
   width: 1420px;
   height: 500px;
+  /*background-color: blue;*/
 }
 .container_foto_like_for{
   width: 290px;

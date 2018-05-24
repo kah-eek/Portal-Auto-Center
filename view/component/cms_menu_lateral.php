@@ -248,7 +248,25 @@
         <div id="btnCadUsuario" class="item_menu_lateral txt_branco">
           <!-- Título do item do menu -->
           <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
-            Cadastrar Usuário
+            Visualizar Usuários
+          </div>
+
+          <!-- Contáiner do ícone representativo do item elecionado -->
+          <div class="container_item_selecionado float_left preenche_t_20">
+            <i class="material-icons fs_30 txt_braco seletor">keyboard_arrow_right</i>
+          </div>
+
+          <!-- Barra decorativa -->
+          <div class="barra_decorativa_item float_left bg_verde_vivo"></div>
+
+        </div>
+      </a>
+      <!-- Item do menu lateral - Nível Usuário -->
+      <a href="#">
+        <div id="btnModeloFabricante" class="item_menu_lateral txt_branco">
+          <!-- Título do item do menu -->
+          <div class="titulo_item conteudo fs_20 preenche_t_25 preenche_l_5 float_left">
+            Modelos/Fabricantes
           </div>
 
           <!-- Contáiner do ícone representativo do item elecionado -->
@@ -334,5 +352,10 @@
     <script>
       $('#btnCadUsuario').click(function(){
         modalCadUsuario();
+      })
+    </script>
+    <script>
+      $('#btnModeloFabricante').click(function(){
+        modalModeloFabricante();
       })
     </script>

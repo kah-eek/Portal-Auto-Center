@@ -298,12 +298,26 @@ function modalCadUsuario(){
     }
   });
 }
+function modalModeloFabricante(){
+  // $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_cms_cadastro_modelo_fabricante.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('#conteudo_central_cms').html(dadosPagina);
+    }
+  });
+}
 function modalCmsGaleria(){
   // $('.container_modal').fadeIn(1500);
 
   $.ajax({
     type: "POST",
-    url: "acms_galeria.php",
+    url: "cms_galeria.php",
     cache:false,
     contentType:false,
     processData:false,

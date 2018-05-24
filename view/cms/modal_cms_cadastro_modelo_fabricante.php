@@ -17,12 +17,12 @@ if(isset($_GET['escolha'])){
         $sql = "DELETE FROM tbl_fabricante WHERE id_fabricante=".$id;
         mysql_query($sql);
         // echo ($sql);
-        header('location:modal_cms_cadastro_modelo_fabricante.php');
+        header('location:index.php');
     }elseif($escolha == 'excluirModelo'){
         $sql = "DELETE FROM tbl_modelo_veiculo WHERE id_modelo_veiculo=".$id;
         mysql_query($sql);
         // echo ($sql);
-        header('location:modal_cms_cadastro_modelo_fabricante.php');
+        header('location:index.php');
     }elseif ($escolha == 'editarFabricante')
      {
        $botao="atualizar";
@@ -69,7 +69,7 @@ if(isset($_POST["btnSalvarFab"]))
     //Executa o script no BD
     mysql_query($sql);
 
-    header('location:modal_cms_cadastro_modelo_fabricante.php');
+    header('location:index.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
     // echo ($sql);
 }elseif(isset($_POST["btnSalvarModelo"])){
@@ -82,7 +82,7 @@ if(isset($_POST["btnSalvarFab"]))
   //Executa o script no BD
   mysql_query($sql);
 
-  header('location:modal_cms_cadastro_modelo_fabricante.php');
+  header('location:index.php');
   //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
  // echo($sql);
 }
