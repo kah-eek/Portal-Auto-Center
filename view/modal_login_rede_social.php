@@ -29,7 +29,9 @@
     </form>
     <div class="container_botao">
       <div class="item_botao_l centro_lr">
-        <input id="redeSocial" class="input_submit_l fs_20" type="submit" name="btn_login" value="Login">
+        <a href="modal_rede_social.php">
+          <input id="redeSocial" class="input_submit_l fs_20" type="submit" name="btn_login" value="Login">
+        </a>
       </div>
     </div>
     <div class="container_link">
@@ -40,12 +42,6 @@
     <script>
       $('#redefinirSenha').click(function(){
         modalRedefinirSenha();
-      })
-    </script>
-
-    <script>
-      $('#redeSocial').click(function(){
-        modalRedeSocial();
       })
     </script>
   </body>

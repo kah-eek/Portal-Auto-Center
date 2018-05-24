@@ -16,10 +16,12 @@ Conexao_db();
     <header>
       <div class="container_menu">
         <div class="container_segura_menu">
-          <div class="container_logo float_left">
-            <img src="pictures/logo/portal_auto_center.png" width="80px" alt="">
-            INICIO
-          </div>
+          <a href="../index.php">
+            <div class="container_logo float_left">
+              <img src="pictures/logo/portal_auto_center.png" width="80px" alt="">
+              INICIO
+            </div>
+          </a>
           <div class="container_agenda float_left">
             <i class = "material-icons fs_60">
               today
@@ -50,10 +52,10 @@ Conexao_db();
         {
 
       ?>
-      <article class="article sombra_preta_30 margem_t_20" >
+      <article class="article sombra_preta_10 margem_t_20" >
       <div class="container_usuario">
         <div class="container_segura_usuario">
-          <div class="container_foto_usuario float_left">
+          <div class="container_foto_usuario float_left margem_t_5">
 
           </div>
           <div class="container_nome_usuario float_left fs_30 titulo">
