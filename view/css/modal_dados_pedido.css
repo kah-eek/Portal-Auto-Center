@@ -1,0 +1,121 @@
+.modal{
+  /*margin: 0px;*/
+  /*padding: 0px;*/
+  width: 850px;
+  height: 750px;
+
+}
+
+.linha1_dv{
+  width: 425px;
+  height: 750px;
+  /*background-color: gray;*/
+
+}
+
+.container_img_detalhes_veiculos{
+  width: 400px;
+  height: 300px;
+  /*background-color: green;*/
+
+}
+
+.item_img_detalhes_veiculos{
+  width: 350px;
+  height: 300px;
+  background-image: url("../pictures/veiculos/carro3.jpg");
+  /*background-color: #3366ff;*/
+
+}
+
+.container_descricao_veiculo{
+  width: 400px;
+  height: 365px;
+  /*background-color: red;*/
+
+}
+
+.item_descricao_veiculo{
+  width: 400px;
+  height: 365px;
+  /*background-color: #009999;*/
+
+}
+
+.desc{
+  width: 400px;
+  height: 40px;
+  /*background-color: gray;*/
+
+}
+
+.titulo_desc{
+  width: 400px;
+  height: 40px;
+  /*background-color: gray;*/
+
+}
+
+.container_descricao{
+  width: 390px;
+  height: 300px;
+  /*background-color: red;*/
+
+}
+
+.texto_desc{
+  width: 390px;
+  height: 300px;
+
+}
+
+.fotos_pequenas{
+  width: 68px;
+  height: 60px;
+  /*background-color: #000;*/
+
+}
+
+.linha2_dv{
+  width: 425px;
+  height: 750px;
+  /*background-color: pink;*/
+
+}
+
+.container_btn_sair_dv{
+  width: 15px;
+  height: 20px;
+
+}
+
+.btn_x_dv{
+  margin-left: 32px;
+}
+
+.preco{
+  width: 400px;
+  height: 50px;
+  /*background-color: green;*/
+
+}
+
+.item_preco{
+  width: 200px;
+  height: 50px;
+  /*background-color: blue;*/
+
+}
+
+.segura_bt_comprar{
+  width: 400px;
+  height: 50px;
+  /*background-color: black;*/
+
+}
+
+.input_submit_dv{
+  width: 100px;
+  height: 40px;
+
+}
