@@ -14,6 +14,8 @@
   $instagram_icon = 'view/pictures/rede_social/instagram';
   $twtter_icon = 'view/pictures/rede_social/twitter';
   $youtube_icon = 'view/pictures/rede_social/youtube';
+  $jcarousellite = 'view/component/carrossel/carrossel/js/jcarousellite.js';
+  $requestAPI = 'view/js/requestAPI/site.js';
 
   // Verifica se existe um outro arquivo fora do padrão a ser carregado
   if (isset($_GET['page'])) {
@@ -30,6 +32,8 @@
     $instagram_icon = 'pictures/rede_social/instagram';
     $twtter_icon = 'pictures/rede_social/twitter';
     $youtube_icon = 'pictures/rede_social/youtube';
+    $jcarousellite = 'js/carrossel/jcarousellite.js';
+    $requestAPI = 'js/requestAPI/site.js';
   }
 
 ?>
@@ -51,10 +55,10 @@
     <!-- <script src="view/js/flip-card.js"></script> -->
     <script src="<?=$jquery?>"></script>
     <script src="<?=$modalCadastroCliente?>"></script>
-    <script src="js/requestAPI/site.js"></script>
+    <script src="<?=$requestAPI?>"></script>
 
-    <script src="js/carrosel/jquery.js"></script>
-    <script src="js/carrosel/jcarousellite.js"></script>
+    <script src="<?=$jquery?>"></script>
+    <script src="<?=$jcarousellite?>"></script>
 
   </head>
   <body class="body">
