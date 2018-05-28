@@ -11,57 +11,57 @@
 
   mysql_select_db('db_auto_center');
 #####################################################################################################################################################################################
-  $id_imagem_veiculo_cliente="";
+  $id_imagem_veiculo_parceiro="";
   $id_modelo_veiculo="";
   $imagem="";
   $btnCadastro="Cadastrar";
 // #####################################################################################################################################################################################
-if(isset($_GET['modo']))//MODO EXCLUIR
-  {
-      $modo=$_GET['modo'];
-
-      if($modo=='excluir')
-      {
-          $id_imagem_veiculo_cliente=$_GET['id_imagem_veiculo_cliente'];
-
-          $sql = "delete from tbl_imagem_veiculo_cliente where id_imagem_veiculo_cliente=".$id_imagem_veiculo_cliente;
-          mysql_query($sql);
-
-
-      header('location:modal_cms_imagem_veiculo_cliente.php');
-#####################################################################################################################################################################################
-}else if($modo=='consulta_editar')//MODO EDITAR
-       {
-           $btnCadastro="Editar";
-           $id_imagem_veiculo_cliente=$_GET['id_imagem_veiculo_cliente'];
-
-           $_SESSION['id']= $id_imagem_veiculo_cliente;
-
-           $sql = "SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_modelo_veiculo.id_veiculo_cliente as nome_modelo FROM tbl_modelo_veiculo INNER JOIN
-           tbl_veiculo_cliente on tbl_imagem_veiculo_cliente.id_veiculo_cliente = tbl_veiculo_cliente.id_veiculo_cliente WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente=".$id_imagem_veiculo_cliente;
-
-           $select = mysql_query($sql);
-
-            if($rsConsulta=mysql_fetch_array($select)){
-
-                $imagem=$rsConsulta['imagem'];
-                $id_modelo_veiculo=$rsConsulta['id_veiculo_cliente'];
-                $nomeModelo=$rsConsulta['nome_modelo'];
-          }
-       }
-   }
+// if(isset($_GET['modo']))//MODO EXCLUIR
+//   {
+//       $modo=$_GET['modo'];
+//
+//       if($modo=='excluir')
+//       {
+//           $id_imagem_veiculo_cliente=$_GET['id_imagem_veiculo_cliente'];
+//
+//           $sql = "delete from tbl_imagem_veiculo_cliente where id_imagem_veiculo_cliente=".$id_imagem_veiculo_cliente;
+//           mysql_query($sql);
+//
+//
+//       header('location:modal_cms_imagem_veiculo_cliente.php');
+// #####################################################################################################################################################################################
+// }else if($modo=='consulta_editar')//MODO EDITAR
+//        {
+//            $btnCadastro="Editar";
+//            $id_imagem_veiculo_cliente=$_GET['id_imagem_veiculo_cliente'];
+//
+//            $_SESSION['id']= $id_imagem_veiculo_cliente;
+//
+//            $sql = "SELECT tbl_imagem_veiculo_parceiro.imagem, tbl_imagem_veiculo_parceiro.id_veiculo_parceiro, tbl_modelo_veiculo.id_veiculo_cliente as nome_modelo FROM tbl_modelo_veiculo INNER JOIN
+//            tbl_veiculo_cliente on tbl_imagem_veiculo_cliente.id_veiculo_cliente = tbl_veiculo_cliente.id_veiculo_cliente WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente=".$id_imagem_veiculo_cliente;
+//
+//            $select = mysql_query($sql);
+//
+//             if($rsConsulta=mysql_fetch_array($select)){
+//
+//                 $imagem=$rsConsulta['imagem'];
+//                 $id_modelo_veiculo=$rsConsulta['id_veiculo_cliente'];
+//                 $nomeModelo=$rsConsulta['nome_modelo'];
+//           }
+//        }
+//    }
 #####################################################################################################################################################################################
   //INSERINDO PRODUTO NO BD.
 if(isset($_POST["btnCadastro"])){
   $id_modelo_veiculo=$_POST["sltVeiculo"];
-  $imagem=$_POST["imagem"];
+  $imagem=Upload($_FILES["imagem"]);
 
   if($_POST["btnCadastro"]=='Cadastrar'){
-    $sql="INSERT INTO tbl_imagem_veiculo_cliente(id_veiculo_cliente,imagem)
+    $sql="INSERT INTO tbl_imagem_veiculo_parceiro(id_veiculo_parceiro,imagem)
     VALUES ('".$id_modelo_veiculo."', '".$imagem."')";
 
   }else if($_POST["btnCadastro"]=='Editar'){
-    $sql="UPDATE tbl_imagem_veiculo_cliente SET imagem='".$imagem."', ativo='".$cbxAtivo."', id_veiculo_cliente='".$id_modelo_veiculo."' WHERE id_imagem_veiculo_cliente=".$_SESSION['id'];
+    $sql="UPDATE tbl_imagem_veiculo_parceiro SET imagem='".$imagem."', id_veiculo_parceiro='".$id_modelo_veiculo."' WHERE id_imagem_veiculo_parceiro=".$_SESSION['id'];
   }
       mysql_query($sql);
 
@@ -80,7 +80,7 @@ if(isset($_POST["btnCadastro"])){
 
   </head>
   <body>
-   <form name="frmcadastroimagemveiculocliente" method="post" action="modal_cms_imagem_veiculo_cliente.php">
+   <form name="frmcadastroimagemveiculocliente" method="post" action="modal_cms_imagem_veiculo_cliente.php" enctype="multipart/form-data">
   <div class="container_principal_ph float_left">
     <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
       <div class="item_titulo_ph align_center preenche_t_20 fs_25 negrito">
@@ -147,37 +147,7 @@ if(isset($_POST["btnCadastro"])){
         Editar
       </div>
 
-    <?php
 
-    $sql="SELECT tbl_imagem_veiculo_cliente.imagem, tbl_imagem_veiculo_cliente.id_veiculo_cliente, tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente, tbl_modelo_veiculo.id_veiculo_cliente as nomeModelo
-    FROM tbl_imagem_veiculo_cliente INNER JOIN tbl_modelo_veiculo on tbl_imagem_veiculo_cliente.id_modelo_veiculo = tbl_veiculo_cliente.id_modelo_veiculo WHERE tbl_imagem_veiculo_cliente.id_imagem_veiculo_cliente
-    ORDER BY id_imagem_veiculo_cliente desc";
-
-    echo($sql);
-
-    $select=mysql_query($sql);
-
-    while($rsConsulta=mysql_fetch_array($select)){
-      ?>
-      <div class="campos_table">
-        <?php echo($rsConsulta['nomeModelo']) ?>
-      </div>
-      <div class="campos_table">
-        <?php echo($rsConsulta['imagem']) ?>
-      </div>
-      <div class="campos_table">
-        <a href="modal_cms_imagem_veiculo_cliente.php?modo=excluir&id_imagem_veiculo_cliente=<?php echo($rsConsulta['$id_imagem_veiculo_cliente'])?>">
-            <img src="../pictures/icones/delete1.png">
-        </a>
-      </div>
-      <div class="campos_table">
-        <a href="modal_cms_imagem_veiculo_cliente.php?modo=consulta_editar&id_imagem_veiculo_cliente=<?php echo($rsConsulta['$id_imagem_veiculo_cliente'])?>">
-            <img src="../pictures/icones/edit.png">
-        </a>
-      </div>
-      <?php
-        }
-      ?>
       </div>
 
     </div>

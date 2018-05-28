@@ -28,7 +28,10 @@
 
           </div>
           <div class="container_botao_login_gp">
-            <input class="bg_preto" type="submit" name="btn_login" value="LOGIN" >
+            <a href="../view/parceiro/cms_adm_parceiro.php">
+              login
+              <!-- <input class="bg_preto" type="submit" name="btn_login" value="LOGIN" > -->
+            </a>
           </div>
           <div class="container_esqueci_senha_gp link">
             <a href="../view/parceiro/cms_redefinir_senha_parceiro.php" class="txt_branco">Esqueci minha senha.</a>
