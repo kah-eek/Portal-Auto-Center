@@ -326,3 +326,18 @@ function modalCmsGaleria(){
     }
   });
 }
+
+function modalDadosPedido(){
+  $('.container_modal').fadeIn(1500);
+
+  $.ajax({
+    type: "POST",
+    url: "modal_dados_pedido.php",
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(dadosPagina){
+      $('.modal').html(dadosPagina);
+    }
+  });
+}

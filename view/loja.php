@@ -515,13 +515,18 @@
 
            <!-- Botão para a compra do produto -->
            <div class="botao_produto_fixo align_center">
-             <input class="color" type="submit" name="btnComprar" value="Comprar">
+             <input id="btnDadosPedido" class="color" type="submit" name="btnComprar" value="Comprar">
            </div>
          </div>
          <?php
          }
          ?>
       </div>
+      <script>
+        $('#btnDadosPedido').click(function(){
+          modalDadosPedido();
+        })
+      </script>
       <!-- Rodape -->
       <?php
         require_once('component/footer.php');
