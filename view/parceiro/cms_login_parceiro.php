@@ -1,3 +1,9 @@
+<?php
+  if (condition) {
+    // code...
+  }
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,7 +35,7 @@
           </div>
           <div class="container_botao_login_gp">
             <a href="../view/parceiro/cms_adm_parceiro.php">
-              login
+              LOGIN
               <!-- <input class="bg_preto" type="submit" name="btn_login" value="LOGIN" > -->
             </a>
           </div>
