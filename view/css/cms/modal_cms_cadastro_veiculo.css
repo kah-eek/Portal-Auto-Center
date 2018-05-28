@@ -5,8 +5,24 @@ body{
   width: 1155px;
   height: 885px;
   margin-left: 500px;
-  background-color: blue;
+  background-color: grey;
 }
+
+.titulo_pagina_cv{
+  width: 1000px;
+  height: 100px;
+  background-color: green;
+}
+.subtitulo_cv{
+  width: 1000px;
+  height: 55px;
+  background-color: pink;
+}
+.titulo_principal{
+  width: 1000px;
+  height: 80px;
+}
+
 .nome_inputs{
   height: auto;
   width: auto;
@@ -14,21 +30,23 @@ body{
 }
 .nome_input{
   width: 150px;
-  height: 80px;
+  height: 40px;
+  padding-top: 20px;
   background-color: green;
   margin-bottom: 5px;
 }
 .item{
   width: 400px;
-  height: 80px;
-  background-color: red;
+  height: 40px;
+  background-color: #009999;
   margin-bottom: 5px;
   float: left;
 }
 .inputs{
   width: 800px;
   height: 700px;
-  background-color: magenta;
+  background-color: #ff9999
+;
 }
 .botaoSalvar{
   width: 550px;

@@ -90,6 +90,13 @@ if(isset($_POST["btnSalvar"]))
         </div>
       </div>
       <div class="cadastro_veiculo">
+        <!-- Título de apresentação da página -->
+        <div class="titulo_pagina_cv centro_lr preenche_t_10">
+          <!-- Subtítulo -->
+          <div class="subtitulo_cv fs_30 align_center centro_lr conteudo">
+            <h2>Cadastre um Veículo</h2>
+          </div>
+        </div>
         <div class="nome_inputs">
           <div class="nome_input">
             Fabricante
