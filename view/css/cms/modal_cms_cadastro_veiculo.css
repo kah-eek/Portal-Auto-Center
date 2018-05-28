@@ -4,6 +4,7 @@ body{
 .cadastro_veiculo{
   width: 1155px;
   height: 885px;
+  margin-left: 500px;
   background-color: blue;
 }
 .nome_inputs{

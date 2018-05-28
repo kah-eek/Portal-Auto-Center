@@ -27,7 +27,7 @@
         <!-- VEICULOS -->
         <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
           <div id="gerenciarVeiculos" class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="cms_veiculos_cadastrados.php">Gerenciar Veículos</a>
+            <a href="modal_cms_cadastro_veiculo.php">Cadastrar veiculo</a>
           </div>
         </div>
         <!-- PLANOS -->
