@@ -122,6 +122,19 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
   </head>
   <body>
+    <div class="container_menu_l_apc float_left borda_preta_1 margem_l_20">
+      <div class="container_img_menu_apc centro_lr borda_preta_1 margem_t_20">
+        <div class="item_img_menu_l_apc ">
+
+        </div>
+      </div>
+      <!-- NOME USUÁRIO -->
+      <div class="container_nome_usuario_apc margem_t_10">
+        <div class="item_nome_usuario_apc centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
+          Nome de Usuário
+        </div>
+      </div>
+    </div>
    <form name="frmcadastroprodutos" method="post" action="modal_cms_produtos_home.php">
   <div class="container_principal_ph float_left">
     <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
