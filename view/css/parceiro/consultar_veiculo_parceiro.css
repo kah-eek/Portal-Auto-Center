@@ -1,18 +1,30 @@
 body{
   margin: 0px;
 }
+.container_conteudo_central_apc{
+  width: 100%;
+  height: 949px;
+
+}
+
+.container_menu_l_apc{
+  width: 400px;
+  height: 900px;
+}
 
 .container_geral{
   width: 1155px;
-  height: 985px;
-  margin-left: 500px;
+  height: 910px;
+  margin-left: 100px;
+  /*margin-left: 500px;*/
+  float: left;
   background-color: #fff;
 }
 .item_dados{
   width: 250px;
   height: 50px;
   margin-right: 5px;
-  background-color: orange;
+  /*background-color: orange;*/
   padding-top: 30px;
   margin-left: 29px;
   float: left;
@@ -90,5 +102,33 @@ body{
   height: 52px;
   /*background-color: green;*/
   margin-top: 5px;
+
+}
+
+.divisor_vc{
+  display: block;
+  width: 80%;
+  height: 1px;
+  border-radius: 100px;
+  background-color:#00C853;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bt_retornar{
+  width: 40px;
+  height: 40px;
+  /*background-color: red;*/
+  float: right;
+  /*margin-right: -100px;*/
+  margin-top: 250px;
+  padding-left: 10px;
+}
+
+.img_retorno{
+  width: 40px;
+  height: 40px;
 
 }

@@ -1,10 +1,73 @@
 body{
   margin: 0px;
 }
+
+.container_segura_tudo{
+  width: 1155px;
+  height: 885px;
+  background-color: #fff;
+  margin-left: 100px;
+
+}
+.container_menu_l_apc{
+  width: 400px;
+  height: 900px;
+  /*background-color: red;*/
+}
+
 .item{
   width: 200px;
   height: 30px;
   background-color: red;
   margin-left: 430px;
   margin-bottom: 5px;
+}
+
+.container_segura_input_ev{
+  width: 1155px;
+  height: 85px;
+  /*background-color: grey;*/
+
+}
+
+.label_campo_ev{
+  width: 1155px;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  /*background-color: #009999;*/
+}
+
+.campo_texto_ev{
+  width: 950px;
+  height: 30px;
+  color: #000;
+  /*background-color: pink;*/
+}
+
+.input_text{
+  width: 950px;
+  height: auto;
+
+}
+
+.botaoSalvar_ev{
+  width: 950px;
+  height: 50px;
+  /*background-color: black;*/
+  float: left;
+}
+.botaoSalvar_ev input{
+  width: 400px;
+  height: 40px;
+  margin-left: 380px;
+  margin-top: 5px;
+}
+
+.img_retorno{
+  width: 40px;
+  height: 40px;
+  float: right;
+
+
 }

@@ -317,7 +317,11 @@ if(isset($_POST["btnSalvar"]))
             </div>
             <div class="botaoSalvar margem_t_30">
               <input type="submit" name="btnSalvar" value="Salvar Veiculo" class="input_submit bg_verde_vivo negrito espacamento_letra_2">
+              <a href="cms_adm_parceiro.php" style="text-decoration:none">
+                <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
+              </a>
             </div>
+
           </div>
         </form>
       </div>

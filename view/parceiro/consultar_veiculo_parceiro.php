@@ -76,7 +76,7 @@ if(isset($_GET['escolha'])){
               <h2>Gerenciamento de Veículos</h2>
             </div>
           </div>
-          <div class="divisor">
+          <div class="divisor_vc">
 
           </div>
           <div class="container_ok margem_t_30">
@@ -98,7 +98,7 @@ if(isset($_GET['escolha'])){
               </div>
             </div>
           </div>
-          <div class="divisor">
+          <div class="divisor_vc">
 
           </div>
           <div class="container_itens">
@@ -143,6 +143,11 @@ if(isset($_GET['escolha'])){
           <?php
            }
            ?>
+          </div>
+          <div class="bt_retornar">
+            <a href="cms_adm_parceiro.php" style="text-decoration:none">
+              <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
+            </a>
           </div>
         </div>
       </form>

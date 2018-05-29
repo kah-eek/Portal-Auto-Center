@@ -59,37 +59,113 @@ Conexao_db();
       </div>
       <form name="frmEV" method="post" action="editar_veiculo_parceiro.php">
         <body>
-          <div class="item">
-            <input type="text" name="txtAno" value="<?php echo($_SESSION['ano_fabricacao']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtFabricante" value="<?php echo($_SESSION['id_modelo_veiculo']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtModelo" value="<?php echo($_SESSION['id_modelo']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtPlaca" value="<?php echo($_SESSION['placa']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtCor" value="<?php echo($_SESSION['cor']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtQuilometragem" value="<?php echo($_SESSION['quilometragem']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtTipo" value="<?php echo($_SESSION['tipoVeiculo']); ?>">
-          </div>
-          <div class="item">
-            <input type="text" name="txtQtdPortas" value="<?php echo($_SESSION['qtdPortas']); ?>">
-          </div>
-          <div class="item">
-            <input type="submit" name="btEditar" value="Editar">
-          </div>
-          <div id="bt_voltar">
-              <a href="consultar_veiculo_parceiro.php" style="text-decoration:none">
-                  Voltar(x)
-              </a>
+          <div class="container_segura_tudo float_left">
+            <div class="container_titulo align_center">
+              <div class="item_titulo fs_30">
+                <h2>Alterando Informações de Veículo</h2>
+              </div>
+            </div>
+            <div class="divisor">
+
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Ano:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" placeholder="Digite o Ano do Veículo" type="text" name="txtAno" value="<?php echo($_SESSION['ano_fabricacao']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Fabricante:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtFabricante" value="<?php echo($_SESSION['id_modelo_veiculo']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Modelo:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtModelo" value="<?php echo($_SESSION['id_modelo']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Placa:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtPlaca" value="<?php echo($_SESSION['placa']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Cor:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtCor" value="<?php echo($_SESSION['cor']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Quilometragem:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtQuilometragem" value="<?php echo($_SESSION['quilometragem']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Tipo de Veículo:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtTipo" value="<?php echo($_SESSION['tipoVeiculo']); ?>">
+              </div>
+            </div>
+
+            <div class="container_segura_input_ev">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo_ev margem_b_10">
+                <label class="conteudo fs_18" for="txtAno">Quantidade de Portas:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto_ev margem_b_30 centro_lr">
+                <input class="input_text txt_preto sem_sombra" type="text" name="txtQtdPortas" value="<?php echo($_SESSION['qtdPortas']); ?>">
+              </div>
+            </div>
+
+              <div class="botaoSalvar_ev">
+                <input class="input_submit bg_verde_vivo negrito espacamento_letra_2" type="submit" name="btEditar" value="Editar">
+              </div>
+              <div id="bt_voltar">
+                <a href="consultar_veiculo_parceiro.php" style="text-decoration:none">
+
+                  <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
+                </a>
+              </div>
           </div>
         </body>
       </form>
