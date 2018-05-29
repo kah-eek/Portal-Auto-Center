@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once("../../database/conect.php");
 Conexao_db();
+$id_usuario = $_SESSION['id_usuario'];
 
 if(isset($_POST["btnSalvar"]))
 {
@@ -22,7 +24,7 @@ if(isset($_POST["btnSalvar"]))
     '".$portas."','".$quilometragem."','".$tipo."','".$fabricante."');";
 
     mysql_query($sql);
-
+    // echo ($sql);
     $sql2 = "SELECT LAST_INSERT_ID();";
       $resultado1 = mysql_query ($sql2);
         if ($rs=mysql_fetch_array($resultado1))
@@ -30,10 +32,24 @@ if(isset($_POST["btnSalvar"]))
           $id_veiculo = $rs['LAST_INSERT_ID()'];
         }
 
-
-    // $sql3 = "insert into tbl_tipo_combustivel (combustivel) values ('".$combustivel."')";
     //
+    // $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
+    // //
     // mysql_query($sql3);
+    // // echo $sql3;
+    // $select8 = mysql_query($sql3);
+    // $rsParceiro = mysql_fetch_array($select8);
+
+    // $id_parceiro = $rsParceiro['id_parceiro'];
+    $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
+      $resultado3 = mysql_query ($sql3);
+        if ($rs=mysql_fetch_array($resultado3))
+        {
+          $id_parceiro = $rs['id_parceiro'];
+        }
+    // $id_parceiro = 15;
+
+
 
     $sql4 = "SELECT * FROM tbl_tipo_combustivel where id_tipo_combustivel =".$combustivel;
       $resultado2 = mysql_query ($sql4);
@@ -45,6 +61,14 @@ if(isset($_POST["btnSalvar"]))
       $sql5 = "insert into tbl_veiculo_tipo_combustivel (id_veiculo, id_tipo_combustivel) values ('".$id_veiculo."','".$id_combustivel."');";
 
         mysql_query($sql5);
+        // echo $sql5;
+
+
+      $sql6 = "insert into tbl_veiculo_parceiro (id_parceiro, id_veiculo) values ('".$id_parceiro."','".$id_veiculo."');";
+
+        mysql_query($sql6);
+        // echo $sql6;
+
 
     header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro

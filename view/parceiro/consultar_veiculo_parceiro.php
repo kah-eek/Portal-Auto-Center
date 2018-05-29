@@ -2,7 +2,7 @@
 session_start();
 require_once("../../database/conect.php");
 Conexao_db();
-$id_parceiro = $_SESSION['id_parceiro'];
+$id_usuario = $_SESSION['id_usuario'];
 // if da escolha , visualizar ou excluir
 if(isset($_GET['escolha'])){
     $escolha = $_GET['escolha'];
@@ -103,8 +103,16 @@ if(isset($_GET['escolha'])){
           </div>
           <div class="container_itens">
           <?php
-          $sql = "select * from tbl_veiculo as v inner join tbl_veiculo_parceiro as vp on vp.id_veiculo = v.id_veiculo where vp.id_parceiro = ".$id_parceiro;
-            $select = mysql_query($sql);
+          $sql = "SELECT * FROM tbl_veiculo AS v
+
+                INNER JOIN tbl_veiculo_parceiro AS vp ON vp.id_veiculo = v.id_veiculo
+
+                INNER JOIN tbl_parceiro AS p ON p.id_parceiro = vp.id_parceiro
+
+                INNER JOIN tbl_usuario AS u ON u.id_usuario = p.id_usuario
+
+                WHERE u.id_usuario =".$id_usuario;
+                $select = mysql_query($sql);
             while ($rsVP = mysql_fetch_array($select))
             {
            ?>

@@ -18,7 +18,8 @@ if(isset($_POST["BtnOk"]))
 
         $rsUsuario = mysql_fetch_array($select);
 
-        $_SESSION['id_parceiro'] = $rsUsuario['id_usuario'];
+
+        $_SESSION['id_usuario'] = $rsUsuario['id_usuario'];
         // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
 
         header('location:../view/parceiro/cms_adm_parceiro.php');
