@@ -1,6 +1,6 @@
 <?php
 session_start();
-  $id_parceiro = $_SESSION['id_parceiro'];
+  $id_usuario = $_SESSION['id_usuario'];
  ?>
 
 <?php
@@ -36,9 +36,12 @@ if(isset($_POST["btnSalvar"]))
         }
 
 
-    // $sql3 = "insert into tbl_tipo_combustivel (combustivel) values ('".$combustivel."')";
+    $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
     //
-    // mysql_query($sql3);
+    mysql_query($sql3);
+    // echo $sql3;
+
+    $id_parceiro = $_SESSION['id_parceiro'];
 
     $sql4 = "SELECT * FROM tbl_tipo_combustivel where id_tipo_combustivel =".$combustivel;
       $resultado2 = mysql_query ($sql4);
@@ -50,6 +53,8 @@ if(isset($_POST["btnSalvar"]))
       $sql5 = "insert into tbl_veiculo_tipo_combustivel (id_veiculo, id_tipo_combustivel) values ('".$id_veiculo."','".$id_combustivel."');";
 
         mysql_query($sql5);
+        // echo $sql5;
+
 
       $sql6 = "insert into tbl_veiculo_parceiro (id_parceiro, id_veiculo) values ('".$id_parceiro."','".$id_veiculo."');";
 
@@ -57,7 +62,7 @@ if(isset($_POST["btnSalvar"]))
         // echo $sql6;
 
 
-    header('location:modal_cms_cadastro_veiculo.php');
+    // header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
     // echo($sql);
     // echo($sql2);
