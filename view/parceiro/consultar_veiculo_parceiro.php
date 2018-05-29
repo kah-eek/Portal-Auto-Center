@@ -2,6 +2,7 @@
 session_start();
 require_once("../../database/conect.php");
 Conexao_db();
+$id_parceiro = $_SESSION['id_parceiro'];
 // if da escolha , visualizar ou excluir
 if(isset($_GET['escolha'])){
     $escolha = $_GET['escolha'];
@@ -90,7 +91,10 @@ if(isset($_GET['escolha'])){
             </div>
           </div>
           <?php
-          $sql = "SELECT * FROM tbl_veiculo";
+          $sql = "SELECT tbl_veiculo.*,
+            tbl_veiculo_parceiro.id_veiculo_parceiro FROM db_auto_center.tbl_veiculo
+            INNER JOIN tbl_veiculo_parceiro
+            ON tbl_veiculo_parceiro.id_veiculo_parceiro = tbl_veiculo.id_veiculo;";
             $select = mysql_query($sql);
             while ($rsVP = mysql_fetch_array($select))
             {

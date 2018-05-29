@@ -1,4 +1,9 @@
 <?php
+session_start();
+  $id_parceiro = $_SESSION['id_parceiro'];
+ ?>
+
+<?php
 require_once("../../database/conect.php");
 Conexao_db();
 
@@ -45,6 +50,12 @@ if(isset($_POST["btnSalvar"]))
       $sql5 = "insert into tbl_veiculo_tipo_combustivel (id_veiculo, id_tipo_combustivel) values ('".$id_veiculo."','".$id_combustivel."');";
 
         mysql_query($sql5);
+
+      $sql6 = "insert into tbl_veiculo_parceiro (id_parceiro, id_veiculo) values ('".$id_parceiro."','".$id_veiculo."');";
+
+        mysql_query($sql6);
+        // echo $sql6;
+
 
     header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro

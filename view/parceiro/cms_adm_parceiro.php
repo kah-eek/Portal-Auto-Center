@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+// echo($_SESSION['id_parceiro']); ?>
+
 <!DOCTYPE html>
 <html>
   <head>

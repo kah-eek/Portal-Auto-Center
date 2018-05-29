@@ -1,8 +1,37 @@
 <?php
-  if (condition) {
-    // code...
-  }
- ?>
+session_start();
+require_once("../database/conect.php");
+Conexao_db();
+
+if(isset($_POST["BtnOk"]))
+  {
+    $usuario = $_POST['txt_login'];
+    $senha = $_POST['txt_senha'];
+
+    addslashes($sql = "SELECT * FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."'");
+
+    $result = mysql_query($sql);
+
+    if(mysql_num_rows($result) >0){
+
+        $select = mysql_query($sql);
+
+        $rsUsuario = mysql_fetch_array($select);
+
+        $_SESSION['id_parceiro'] = $rsUsuario['id_usuario'];
+        // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
+
+        header('location:../view/parceiro/cms_adm_parceiro.php');
+    }else{
+    ?>
+    <script>
+        alert("Usuário ou Senha incorretos!!!");
+    </script>
+    <?php
+        }
+
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -35,8 +64,7 @@
           </div>
           <div class="container_botao_login_gp">
             <a href="../view/parceiro/cms_adm_parceiro.php">
-              LOGIN
-              <!-- <input class="bg_preto" type="submit" name="btn_login" value="LOGIN" > -->
+              <input type="submit" name="BtnOk" value="Entrar" id="bt">
             </a>
           </div>
           <div class="container_esqueci_senha_gp link">
