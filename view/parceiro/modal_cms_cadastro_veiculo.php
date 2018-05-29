@@ -1,11 +1,8 @@
 <?php
 session_start();
-  $id_usuario = $_SESSION['id_usuario'];
- ?>
-
-<?php
 require_once("../../database/conect.php");
 Conexao_db();
+$id_usuario = $_SESSION['id_usuario'];
 
 if(isset($_POST["btnSalvar"]))
 {
@@ -27,7 +24,7 @@ if(isset($_POST["btnSalvar"]))
     '".$portas."','".$quilometragem."','".$tipo."','".$fabricante."');";
 
     mysql_query($sql);
-
+    // echo ($sql);
     $sql2 = "SELECT LAST_INSERT_ID();";
       $resultado1 = mysql_query ($sql2);
         if ($rs=mysql_fetch_array($resultado1))
@@ -35,13 +32,24 @@ if(isset($_POST["btnSalvar"]))
           $id_veiculo = $rs['LAST_INSERT_ID()'];
         }
 
-
-    $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
     //
-    mysql_query($sql3);
-    // echo $sql3;
+    // $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
+    // //
+    // mysql_query($sql3);
+    // // echo $sql3;
+    // $select8 = mysql_query($sql3);
+    // $rsParceiro = mysql_fetch_array($select8);
 
-    $id_parceiro = $_SESSION['id_parceiro'];
+    // $id_parceiro = $rsParceiro['id_parceiro'];
+    $sql3 = "SELECT * FROM tbl_parceiro as p where p.id_usuario =".$id_usuario;
+      $resultado3 = mysql_query ($sql3);
+        if ($rs=mysql_fetch_array($resultado3))
+        {
+          $id_parceiro = $rs['id_parceiro'];
+        }
+    // $id_parceiro = 15;
+
+
 
     $sql4 = "SELECT * FROM tbl_tipo_combustivel where id_tipo_combustivel =".$combustivel;
       $resultado2 = mysql_query ($sql4);
@@ -62,7 +70,7 @@ if(isset($_POST["btnSalvar"]))
         // echo $sql6;
 
 
-    // header('location:modal_cms_cadastro_veiculo.php');
+    header('location:modal_cms_cadastro_veiculo.php');
     //Dar um echo so sql sempre que der erro no insert, para ver qual é o erro
     // echo($sql);
     // echo($sql2);
@@ -113,165 +121,203 @@ if(isset($_POST["btnSalvar"]))
             <h2>Cadastre um Veículo</h2>
           </div>
         </div>
-        <div class="nome_inputs">
-          <div class="nome_input">
-            Fabricante
-          </div>
-          <div class="nome_input">
-            Modelo
-          </div>
-          <div class="nome_input">
-            Ano
-          </div>
-          <div class="nome_input">
-            Placa
-          </div>
-          <div class="nome_input">
-            Cor
-          </div>
-          <div class="nome_input">
-            Quantidade de Portas
-          </div>
-          <div class="nome_input">
-            Quilometragem
-          </div>
-          <div class="nome_input">
-            Tipo de veiculo
-          </div>
-          <div class="nome_input">
-            Tipo de combustivel
-          </div>
+        <div class="divisor">
+
         </div>
         <form name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
-          <div class="inputs">
-            <div class="item">
-              <select name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
+          <div class="nome_inputs">
+            <!-- SELECT DO FABRICANTE -->
+            <div class="container_select">
+              <div class="nome_input fs_18 conteudo">
+                Fabricante:
+              </div>
+              <div class="item">
+                <select name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
+                  <?php
+                  if (isset($_GET['idFab']))
+                  {
+                      $IdFabricant = $_GET['idFab'];
+                      $NomeFabricant = $_GET['nomeFab'];
+                    ?>
+
+                        <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
+
+                    <?php
+                  }else {
+                  ?>
+                      <option value="">Selecione um item</option>
+                  <?php
+                  }
+
+                  ?>
+
+
+                  <?php
+                  $sql = "SELECT * FROM tbl_fabricante";
+                  $select = mysql_query($sql);
+                  while ($rsCV = mysql_fetch_array($select))
+                  {
+
+                    ?>
+                    <option value="modal_cms_cadastro_veiculo.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
+                    <?php
+                  }
+                  ?>
+                </select>
+              </div>
+            </div>
+            <!-- SELECT MODELO -->
+            <div class="container_select margem_t_5">
+              <div class="nome_input fs_18 conteudo">
+                Modelo:
+              </div>
+              <div class="item">
                 <?php
                 if (isset($_GET['idFab']))
-                {
-                    $IdFabricant = $_GET['idFab'];
-                    $NomeFabricant = $_GET['nomeFab'];
-                  ?>
+                  $IdFabricant = $_GET['idFab'];
+                else
+                  $IdFabricant = 0;
 
-                      <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
 
+                ?>
+
+                <select name="slcModelo">
+
+
+                  <option value="">Selecione um Item</option>
                   <?php
-                }else {
-                ?>
-                    <option value="">Selecione um item</option>
-                <?php
-                }
+                  if ($IdFabricant<>0)
+                  {
+                      $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
+                      $select = mysql_query($sql);
+                      while ($rsCV = mysql_fetch_array($select))
+                      {
 
-                ?>
-
-
-                <?php
-                $sql = "SELECT * FROM tbl_fabricante";
-                $select = mysql_query($sql);
-                while ($rsCV = mysql_fetch_array($select))
-                {
-
-                  ?>
-                  <option value="modal_cms_cadastro_veiculo.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
-                  <?php
-                }
-                ?>
-              </select>
+                        ?>
+                        <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                        <?php
+                      }
+                    }
+                    ?>
+                </select>
+              </div>
             </div>
-            <div class="item">
-              <?php
-              if (isset($_GET['idFab']))
-                $IdFabricant = $_GET['idFab'];
-              else
-                $IdFabricant = 0;
 
+            <div class="container_segura_input">
+              <!-- Label do campo - Ano -->
+              <div class="label_campo margem_b_10 ">
+                <label class="conteudo fs_18" for="txtAno">Ano:</label>
+              </div>
+              <!-- Campo - Ano -->
+              <div class="campo_texto margem_b_30">
+                <input placeholder="Digite o Ano do Veículo" type="text" name="txtAno" value="" class="input_text txt_preto sem_sombra">
+              </div>
+            </div>
 
-              ?>
+            <div class="container_segura_input">
+              <!-- Label do campo - Placa -->
+              <div class="label_campo margem_b_10">
+                <label class="conteudo fs_18" for="txtPlaca">Placa:</label>
+              </div>
+              <!-- Campo - Placa -->
+              <div class="campo_texto margem_b_30">
+                <input placeholder="Digite o Ano do Veículo" type="text" name="txtPlaca" value="" class="input_text txt_preto sem_sombra">
+              </div>
+            </div>
 
-              <select name="slcModelo">
-
-
-                <option value="">Selecione um Item</option>
-                <?php
-                if ($IdFabricant<>0)
-                {
-                    $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
+            <!-- SELECT COR -->
+            <div class="container_select">
+              <div class="nome_input fs_18 conteudo">
+                Cor:
+              </div>
+              <div class="item">
+                <select name="slcCor">
+                  <?php
+                  $sql = "SELECT * FROM tbl_cor";
                     $select = mysql_query($sql);
                     while ($rsCV = mysql_fetch_array($select))
                     {
 
-                      ?>
-                      <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
-                      <?php
-                    }
+                  ?>
+                  <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
+                  <?php
                   }
                   ?>
-              </select>
+                </select>
+              </div>
             </div>
-            <div class="item">
-              <input type="text" name="txtAno" value="">
-            </div>
-            <div class="item">
-              <input type="text" name="txtPlaca" value="">
-            </div>
-            <div class="item">
-              <select name="slcCor">
-                <?php
-                $sql = "SELECT * FROM tbl_cor";
-                  $select = mysql_query($sql);
-                  while ($rsCV = mysql_fetch_array($select))
-                  {
 
-                ?>
-                <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
-                <?php
-                }
-                ?>
-              </select>
-            </div>
-            <div class="item">
-              <select name="slcQtdPortas">
-                <option value="2">2</option>
-                <option value="4">4</option>
-              </select>
-            </div>
-            <div class="item">
-              <input type="text" name="txtQuilometragem" value="">
-            </div>
-            <!-- Tipo -->
-            <div class="item">
-              <select name="slcTipoVeiculo">
-                <?php
-                $sql = "SELECT * FROM tbl_tipo_veiculo";
-                  $select = mysql_query($sql);
-                  while ($rsCV = mysql_fetch_array($select))
-                  {
 
-                ?>
-                <option value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
-                <?php
-                  }
-                ?>
-              </select>
+            <!-- SELECT PORTAS -->
+            <div class="container_select">
+              <div class="nome_input fs_18 conteudo">
+                Quantidade de Portas:
+              </div>
+              <div class="item">
+                <select name="slcQtdPortas">
+                  <option value="2">2</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
             </div>
-            <div class="item">
-              <select name="slcCombustivel">
-                <?php
-                $sql = "SELECT * FROM tbl_tipo_combustivel";
-                  $select = mysql_query($sql);
-                  while ($rsCV = mysql_fetch_array($select))
-                  {
 
-                ?>
-                <option value="<?php echo($rsCV['id_tipo_combustivel']) ?>"><?php echo($rsCV['combustivel']) ?></option>
-                <?php
-                  }
-                ?>
-              </select>
+
+            <div class="container_segura_input">
+              <!-- Label do campo - KM -->
+              <div class="label_campo margem_b_10">
+                <label class="conteudo fs_18 conteudo" for="txtAno">Quilometragem:</label>
+              </div>
+              <!-- Campo - KM -->
+              <div class="campo_texto margem_b_30">
+                <input placeholder="Digite a Quilometragem" type="text" name="txtQuilometragem" value="" class="input_text txt_preto sem_sombra">
+              </div>
             </div>
-          </div>
-          <div class="botaoSalvar">
-            <input type="submit" name="btnSalvar" value="Salvar Veiculo">
+
+            <div class="container_select">
+              <div class="nome_input fs_18 conteudo">
+                Tipo de veiculo:
+              </div>
+              <!-- Tipo -->
+              <div class="item">
+                <select name="slcTipoVeiculo">
+                  <?php
+                  $sql = "SELECT * FROM tbl_tipo_veiculo";
+                    $select = mysql_query($sql);
+                    while ($rsCV = mysql_fetch_array($select))
+                    {
+
+                  ?>
+                  <option value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+                  <?php
+                    }
+                  ?>
+                </select>
+              </div>
+            </div>
+
+            <div class="container_select">
+              <div class="nome_input fs_18 conteudo">
+                Tipo de combustivel:
+              </div>
+              <div class="item">
+                <select name="slcCombustivel">
+                  <?php
+                  $sql = "SELECT * FROM tbl_tipo_combustivel";
+                    $select = mysql_query($sql);
+                    while ($rsCV = mysql_fetch_array($select))
+                    {
+
+                  ?>
+                  <option value="<?php echo($rsCV['id_tipo_combustivel']) ?>"><?php echo($rsCV['combustivel']) ?></option>
+                  <?php
+                    }
+                  ?>
+                </select>
+              </div>
+            </div>
+            <div class="botaoSalvar margem_t_30">
+              <input type="submit" name="btnSalvar" value="Salvar Veiculo" class="input_submit bg_verde_vivo negrito espacamento_letra_2">
+            </div>
           </div>
         </form>
       </div>
