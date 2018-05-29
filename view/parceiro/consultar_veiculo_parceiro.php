@@ -91,10 +91,7 @@ if(isset($_GET['escolha'])){
             </div>
           </div>
           <?php
-          $sql = "SELECT tbl_veiculo.*,
-            tbl_veiculo_parceiro.id_veiculo_parceiro FROM db_auto_center.tbl_veiculo
-            INNER JOIN tbl_veiculo_parceiro
-            ON tbl_veiculo_parceiro.id_veiculo_parceiro = tbl_veiculo.id_veiculo;";
+          $sql = "select * from tbl_veiculo as v inner join tbl_veiculo_parceiro as vp on vp.id_veiculo = v.id_veiculo where vp.id_parceiro = ".$id_parceiro;
             $select = mysql_query($sql);
             while ($rsVP = mysql_fetch_array($select))
             {
