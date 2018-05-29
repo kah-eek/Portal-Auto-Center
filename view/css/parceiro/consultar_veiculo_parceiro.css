@@ -6,45 +6,89 @@ body{
   width: 1155px;
   height: 985px;
   margin-left: 500px;
-  background-color: red;
+  background-color: #fff;
 }
 .item_dados{
-  width: 283px;
-  height: 80px;
+  width: 250px;
+  height: 50px;
   margin-right: 5px;
-  background-color: blue;
+  background-color: orange;
+  padding-top: 30px;
+  margin-left: 29px;
   float: left;
 
 }
 .editar{
-  width: 141px;
-  height: 80px;
-  background-color: green;
+  width: 125px;
+  height: 50px;
+  /*background-color: green;*/
   float: left;
 }
 .excluir{
-  width: 141px;
-  height: 80px;
-  background-color: magenta;
+  width: 125px;
+  height: 50px;
+  /*background-color: magenta;*/
   float: left;
 }
 .item_visu{
-  width: 283px;
+  width: 250px;
   height: 50px;
-  margin-right:5px;
-  background-color: grey;
+  /*margin-right:5px;*/
+  margin-left: 32px;
+  /*background-color: grey;*/
   margin-bottom: 2px;
+  border: solid 1px;
   float: left;
 }
 .editar_visu{
-  width: 141px;
+  width: 125px;
   height: 50px;
-  background-color: tomato;
+  /*background-color: tomato;*/
   float: left;
 }
 .excluir_visu{
-  width: 141px;
+  width: 125px;
   height: 50px;
-  background-color: yellow;
+  /*background-color: yellow;*/
   float: left;
+}
+
+.container_titulo{
+  width: 1155px;
+  height: 120px;
+  /*background-color: orange;*/
+
+}
+
+.item_titulo{
+  width: 1155px;
+  height: 120px;
+  /*background-color: green;*/
+  padding-top: 1px;
+  text-align: center;
+
+}
+
+.container_ok{
+  width: 1152px;
+  height: 80px;
+  /*background-color: red;*/
+
+}
+
+.container_itens{
+  width: 1155px;
+  height: 300px;
+  /*background-color: red;*/
+  overflow: auto;
+  margin-top: 20px;
+
+}
+
+.container_sla{
+  width: 1138px;
+  height: 52px;
+  /*background-color: green;*/
+  margin-top: 5px;
+
 }

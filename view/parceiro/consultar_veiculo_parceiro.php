@@ -71,57 +71,71 @@ if(isset($_GET['escolha'])){
         <!-- conteudo -->
       <form name="frmParceiro" method="get" action="consultar_veiculo_parceiro.php">
         <div class="container_geral">
-          <div class="container_ok">
-            <div class="item_dados">
+          <div class="container_titulo">
+            <div class="item_titulo fs_30">
+              <h2>Gerenciamento de Veículos</h2>
+            </div>
+          </div>
+          <div class="divisor">
+
+          </div>
+          <div class="container_ok margem_t_30">
+            <div class="item_dados align_center conteudo fs_18">
               Ano de Frabricação
             </div>
-            <div class="item_dados ">
+            <div class="item_dados align_center conteudo fs_18">
               Placa
             </div>
-            <div class="item_dados">
+            <div class="item_dados align_center conteudo fs_18">
               Quilometragem
             </div>
             <div class="item_dados">
-              <div class="excluir">
+              <div class="excluir align_center ">
                 <i class="material-icons" style="font-size:30px;">delete_forever</i>
               </div>
-              <div class="editar">
+              <div class="editar align_center">
                 <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
               </div>
             </div>
           </div>
+          <div class="divisor">
+
+          </div>
+          <div class="container_itens">
           <?php
           $sql = "select * from tbl_veiculo as v inner join tbl_veiculo_parceiro as vp on vp.id_veiculo = v.id_veiculo where vp.id_parceiro = ".$id_parceiro;
             $select = mysql_query($sql);
             while ($rsVP = mysql_fetch_array($select))
             {
            ?>
-          <div class="container_vizu">
-            <div class="item_visu">
-              <?php echo($rsVP['ano_fabricacao']) ?>
-            </div>
-            <div class="item_visu">
-              <?php echo($rsVP['placa']) ?>
-            </div>
-            <div class="item_visu">
-              <?php echo($rsVP['quilometro_rodado']) ?>
-            </div>
-            <div class="item_visu">
-              <div class="excluir_visu">
-                <a href="consultar_veiculo_parceiro.php?escolha=excluir&id=<?php echo($rsVP['id_veiculo']);?>">
-                  <i class="material-icons" style="font-size:30px;">delete_forever</i>
-                </a>
+            <div class="container_sla">
+              <div class="item_visu align_center preenche_t_15">
+                <?php echo($rsVP['ano_fabricacao']) ?>
               </div>
-              <div class="editar_visu">
-                <a href="consultar_veiculo_parceiro.php?escolha=editar&id=<?php echo($rsVP['id_veiculo']);?>">
-                  <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
-                </a>
+              <div class="item_visu align_center preenche_t_15">
+                <?php echo($rsVP['placa']) ?>
+              </div>
+              <div class="item_visu align_center preenche_t_15">
+                <?php echo($rsVP['quilometro_rodado']) ?>
+              </div>
+              <div class="item_visu">
+                <div class="excluir_visu preenche_t_10 align_center">
+                  <a href="consultar_veiculo_parceiro.php?escolha=excluir&id=<?php echo($rsVP['id_veiculo']);?>">
+                    <i class="material-icons" style="font-size:30px;">delete_forever</i>
+                  </a>
+                </div>
+                <div class="editar_visu preenche_t_10 align_center">
+                  <a href="consultar_veiculo_parceiro.php?escolha=editar&id=<?php echo($rsVP['id_veiculo']);?>">
+                    <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+
           <?php
            }
            ?>
+          </div>
         </div>
       </form>
     </div>
