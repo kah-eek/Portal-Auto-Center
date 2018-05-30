@@ -5,9 +5,10 @@
 
   session_start();
 
-  $conexao=mysql_connect('localhost', 'root', 'bcd127');
+  $id_usuario = $_SESSION['id_usuario'];
 
-  mysql_select_db('db_auto_center');
+  require_once("../../database/conect.php");
+  Conexao_db();
 
   $id_produto="";
   $id_parceiro="";
@@ -50,7 +51,7 @@ if(isset($_GET['modo']))//MODO EXCLUIR
   INNER JOIN tbl_categoria_produto as categoria
   INNER JOIN tbl_parceiro as nome_fantasia
   INNER JOIN tbl_modelo_produto as modelo
-  WHERE prod.id_produto = $id_produto";
+  WHERE prod.id_produto = $id_produto ";
   // -- WHERE prod.id_cor = cor.id_cor
   // -- AND prod.id_categoria_produto = categoria.id_categoria_produto
   // -- AND prod.id_parceiro = nome_fantasia.id_parceiro

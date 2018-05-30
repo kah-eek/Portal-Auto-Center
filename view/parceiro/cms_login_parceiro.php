@@ -8,7 +8,7 @@ if(isset($_POST["BtnOk"]))
     $usuario = $_POST['txt_login'];
     $senha = $_POST['txt_senha'];
 
-    addslashes($sql = "SELECT * FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."'");
+    addslashes($sql = "SELECT * FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."' AND id_nivel_usuario = '1'");
 
     $result = mysql_query($sql);
 
