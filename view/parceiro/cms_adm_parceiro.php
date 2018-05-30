@@ -44,7 +44,7 @@ session_start();
         <!-- SERVIÇOS -->
         <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_produtos_home.php">Gerenciar Serviços</a>
+            <a href="modal_cms_produtos_home.php">Cadastrar Produtos</a>
           </div>
         </div>
         <!-- SEM NADA -->

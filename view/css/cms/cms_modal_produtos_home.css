@@ -1,9 +1,67 @@
 .container_principal_ph{
   width: 1255px;
-  height: 885px;
-  background-image: url('../../pictures/cms_produtos_home/carro.jpg');
+  height: 1300px;
+  /*background-image: url('../../pictures/cms_produtos_home/carro.jpg');*/
   background-repeat: no-repeat;
-  /*background-color: gray;*/
+  background-color: #fff;
+
+}
+
+body{
+  width: 100%;
+  min-height: 1320px;
+  height: auto;
+  background-image: url("../../pictures/adm_parceiro/lago.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.container_menu_l{
+  width: 400px;
+  min-height: 1300px;
+  height: auto;
+  box-shadow: 0px 0px 20px #000;
+  /*background-color: #66ff99;*/
+
+}
+
+.container_img_menu{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+
+}
+
+.divisor_ph{
+  display: block;
+  width: 1000px;
+  height: 1px;
+  border-radius: 100px;
+  background-color: #607D8B;
+  margin-top: 25px;
+  margin-left: 110px;
+  margin-bottom: 25px;
+}
+
+.item_img_menu_l{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+
+}
+
+.container_nome_usuario{
+  width: 400px;
+  height: 50px;
+  /*background-color: #284;*/
+
+}
+
+.item_nome_usuario{
+  width: 400px;
+  height: 50px;
+  /*background-color: green;*/
 
 }
 
@@ -79,14 +137,17 @@
 
 .container_visual{
   width: 960px;
-  height: 150px;
-  margin-top: 100px;
-  margin-left: 510px;
-  background-color: #000000;
+  height: 200px;
+  /*margin-top: 800px;*/
+  /*margin-left: 510px;*/
+  background-color: red;
 
   /*overflow-y: scroll;*/
 }
+.input_submit_ph{
+  width: 200px;
 
+}
 .campos_visual{
   width: 80px;
   height: 50px;

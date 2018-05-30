@@ -122,27 +122,31 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
   </head>
   <body>
-    <div class="container_menu_l_apc float_left borda_preta_1 margem_l_20">
-      <div class="container_img_menu_apc centro_lr borda_preta_1 margem_t_20">
+    <div class="container_menu_l float_left borda_preta_1 margem_l_20">
+      <div class="container_img_menu centro_lr borda_preta_1 margem_t_20">
         <div class="item_img_menu_l_apc ">
 
         </div>
       </div>
       <!-- NOME USUÁRIO -->
-      <div class="container_nome_usuario_apc margem_t_10">
-        <div class="item_nome_usuario_apc centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
+      <div class="container_nome_usuario margem_t_10">
+        <div class="item_nome_usuario centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
           Nome de Usuário
         </div>
       </div>
     </div>
    <form name="frmcadastroprodutos" method="post" action="modal_cms_produtos_home.php">
   <div class="container_principal_ph float_left">
-    <div class="container_titulo_ph margem_t_50 borda_preta_1 bg_verde_vivo sombra_preta_20 centro_lr">
-      <div class="item_titulo_ph align_center preenche_t_20 fs_25 negrito">
-        Cadastrar Produtos
+    <div class="titulo_pagina centro_lr preenche_t_10">
+      <!-- Subtítulo -->
+      <div class="subtitulo fs_30 align_center centro_lr conteudo">
+        <h2>Cadastre um Veículo</h2>
       </div>
     </div>
-    <div class="campos">
+    <div class="divisor">
+
+    </div>
+    <div class="campos margem_l_20">
       <div class="names_campos">
         <div class="name_campo">
           Parceiro
@@ -176,7 +180,7 @@ if(isset($_GET['modo']))//MODO EXCLUIR
         </div>
       </div>
 
-      <div class="inputs_campos">
+      <div class="inputs_campos ">
         <div class="preencher_inputs">
             <!-- <input type="txt_modelo" class="color" name="txt_modelo" value="<?php echo($modelo)?>" id="float"> -->
             <select name="sltParceiro" id="float" class="color">
@@ -321,9 +325,18 @@ if(isset($_GET['modo']))//MODO EXCLUIR
             </select>
         </div>
         <div class="button">
-          <input type="submit"   name="btnSalvar" value="<?php echo($btnSalvar)?>" >
+          <input class=" input_submit_ph margem_t_50" type="submit"   name="btnSalvar" value="<?php echo($btnSalvar)?>" >
         </div>
 
+      </div>
+      <div class="divisor_ph float_left">
+
+      </div>
+      <div class="titulo_pagina centro_lr preenche_t_10">
+        <!-- Subtítulo -->
+        <div class="subtitulo fs_30 align_center centro_lr conteudo">
+          <h2 class="margem_l_100">Gerencie Produtos</h2>
+        </div>
       </div>
       <div class="container_visual">
         <div class="campos_visual">
