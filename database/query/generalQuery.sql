@@ -1,4 +1,4 @@
-USE db_auto_center;
+USE dbautofast;
 
 SELECT * FROM tbl_categoria_produto;
 SELECT * FROM tbl_produto;

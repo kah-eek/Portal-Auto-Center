@@ -2,9 +2,8 @@
   // Importando o cabeçalho
   require_once("component/header.php");
 
-  $conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-  mysql_select_db('db_auto_center');
+  require_once("../database/conect.php");
+  Conexao_db();
 ?>
   <!--
   @autor Caique M Oliveira
@@ -13,7 +12,7 @@
   -->
   <?php
   $sql1 = "SELECT tbl_topico_forum.*,
-  tbl_cliente.nome FROM db_auto_center.tbl_topico_forum
+  tbl_cliente.nome FROM dbautofast.tbl_topico_forum
     INNER JOIN tbl_cliente
     ON tbl_cliente.id_cliente = tbl_topico_forum.id_cliente;";
     $select1 = mysql_query($sql1);
@@ -22,7 +21,7 @@
 
   ?>
   <!-- Contáiner principal que centraliza todo o conteúdo -->
-  <div class="container_conteudo_central_for centro_lr margem_t_20">
+  <div class="container__central_for centro_lr margem_t_20">
     <!-- Contáiner do tópico -->
     <div class="container_topico_forum bg_cinza sombra_preta_20 margem_t_30">
       <!-- Contáiner da foto do usuário mais o botão de like -->
@@ -44,7 +43,7 @@
             </div>
 
             <!-- Número de curtidas -->
-            <div class="numero_curtidas_for float_left align_center ellipsis conteudo preenche_5">
+            <div class="numero_curtidas_for float_left align_center ellipsis  preenche_5">
               60
             </div>
           </div>
@@ -55,7 +54,7 @@
 
       <form action="" method="POST">
         <!-- Conáiner do texto do tópico -->
-        <div class="container_texto_topico_for espacamento_linha_35 float_left preenche_50 conteudo fs_20 justificado">
+        <div class="container_texto_topico_for espacamento_linha_35 float_left preenche_50  fs_20 justificado">
 
           <!-- Título do tópico -->
           <div class="container_titulo_topico_for titulo">
@@ -87,7 +86,7 @@
     <!-- Contáiner de resposta ao tópico -->
     <?php
       $sql = "SELECT tbl_comentario_topico_forum.*,
-      tbl_cliente.nome FROM db_auto_center.tbl_comentario_topico_forum
+      tbl_cliente.nome FROM dbautofast.tbl_comentario_topico_forum
       INNER JOIN tbl_cliente
       ON tbl_cliente.id_cliente = tbl_comentario_topico_forum.id_cliente;";
         $select = mysql_query($sql);
@@ -116,7 +115,7 @@
             </div>
 
             <!-- Número de curtidas -->
-            <div class="numero_curtidas_for float_left align_center ellipsis conteudo preenche_5">
+            <div class="numero_curtidas_for float_left align_center ellipsis  preenche_5">
               12
             </div>
           </div>
@@ -126,7 +125,7 @@
       <!-- ############################################################## -->
       <form action="" method="POST">
         <!-- Conáiner do texto do tópico -->
-        <div class="container_texto_topico_for espacamento_linha_35 float_left preenche_50 conteudo fs_20 justificado">
+        <div class="container_texto_topico_for espacamento_linha_35 float_left preenche_50  fs_20 justificado">
 
           <div class="data_topico_for fs_16">
             <?php echo($rsConsulta['log']) ?>

@@ -9,7 +9,7 @@
 
   $conexao=mysql_connect('localhost', 'root', 'bcd127');
 
-  mysql_select_db('db_auto_center');
+  mysql_select_db('dbautofast');
 #####################################################################################################################################################################################
   $id_imagem_produto_parceiro="";
   $id_produto="";

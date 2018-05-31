@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: db_auto_center
+-- Host: localhost    Database: dbautofast
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 

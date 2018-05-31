@@ -10,7 +10,7 @@ class MySql
   private $HOST = 'localhost';
   private $USERNAME = 'root';
   private $SENHA = 'bcd127';
-  private $DB = 'db_auto_center';
+  private $DB = 'dbautofast';
 
   /**
   * Obtém uma conexão com banco de dados

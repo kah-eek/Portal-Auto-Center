@@ -6,10 +6,8 @@
   require_once('controller/MySql_class.php');
   require_once('model/ProdutoDAO.php');
 
-  $conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-  mysql_select_db('db_auto_center');
-
+  require_once("database/conect.php");
+  Conexao_db();
 ?>
 
   <!--
