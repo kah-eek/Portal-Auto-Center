@@ -8,7 +8,7 @@ if(isset($_POST["BtnOk"]))
     $usuario = $_POST['txt_login'];
     $senha = $_POST['txt_senha'];
 
-    addslashes($sql = "SELECT count(*) as contador, id_usuario, usuario, senha FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."' AND id_nivel_usuario = '2';");
+    addslashes($sql = "SELECT count(*) as contador, id_usuario FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."' AND id_nivel_usuario = 2");
 
 
     $result = mysql_query($sql);
@@ -16,7 +16,7 @@ if(isset($_POST["BtnOk"]))
     $autentica = mysql_fetch_array($result);
 
     // echo ($autentica['contador']);
-
+    // echo ($sql);
     if($autentica['contador'] >0){
         // echo "1";
         $select = mysql_query($sql);
@@ -37,6 +37,7 @@ if(isset($_POST["BtnOk"]))
         $_SESSION['id_parceiro1'] = $rsParceiro['id_parceiro'];
 
         // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
+
 
         header('location:../view/parceiro/cms_adm_parceiro.php');
     }else{
@@ -80,9 +81,7 @@ if(isset($_POST["BtnOk"]))
 
           </div>
           <div class="container_botao_login_gp">
-            <a href="../view/parceiro/cms_adm_parceiro.php">
               <input type="submit" name="BtnOk" value="Entrar" id="bt">
-            </a>
           </div>
           <div class="container_esqueci_senha_gp link">
             <a href="../view/parceiro/cms_redefinir_senha_parceiro.php" class="txt_branco">Esqueci minha senha.</a>

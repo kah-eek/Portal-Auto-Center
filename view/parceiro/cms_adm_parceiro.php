@@ -2,7 +2,7 @@
 <?php
 session_start();
 // echo($_SESSION['id_parceiro']);
-// echo($_SESSION['id_parceiro1']); ?>
+  // echo($_SESSION['id_parceiro1']); ?>
 
 <!DOCTYPE html>
 <html>
@@ -36,27 +36,31 @@ session_start();
             <a href="modal_cms_cadastro_veiculo.php">Cadastrar veiculo</a>
           </div>
         </div>
-        <!-- PLANOS -->
         <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
             <a href="consultar_veiculo_parceiro.php">Gerenciar Veiculos</a>
           </div>
         </div>
-        <!-- SERVIÇOS -->
+        <!-- PRODUTOS -->
         <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
             <a href="modal_cms_produtos_home.php">Cadastrar Produtos</a>
           </div>
         </div>
-        <!-- SEM NADA -->
         <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
             <a href="modal_cms_visualiza_produtos_home.php">Gerenciar Produtos</a>
           </div>
         </div>
+        <!-- SERVIÇOS -->
         <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
           <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="socorro_socorrista_ja.php">Atender Socorros</a>
+            <a href="modal_cms_cad_servicos.php">Cadastrar Serviços</a>
+          </div>
+        </div>
+        <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
+          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
+            <a href="modal_cms_gerenciar_produto.php">Gerenciar produtos</a>
           </div>
         </div>
       </div>

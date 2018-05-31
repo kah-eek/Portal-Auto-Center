@@ -1,0 +1,12 @@
+.campo{
+  width: 300px;
+  height: 70px;
+  margin-bottom: 5px;
+  background-color: green;
+}
+.input{
+  width: 300px;
+  height: 70px;
+  margin-bottom: 5px;
+  background-color: red;
+}
