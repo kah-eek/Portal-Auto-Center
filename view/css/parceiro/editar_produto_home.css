@@ -1,0 +1,25 @@
+.Container_titulo{
+  width: 400px;
+  height: 800px;
+  background-color: red;
+  float: left;
+}
+.titulo{
+  width: 400px;
+  height: 70px;
+  background-color: pink;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+.Container_input{
+  width: 400px;
+  height: 800px;
+  background-color: green;
+  float: left;
+}
+.input{
+  width: 400px;
+  height: 70px;
+  background-color: magenta;
+  margin-bottom: 5px;
+}

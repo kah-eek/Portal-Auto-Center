@@ -8,18 +8,34 @@ if(isset($_POST["BtnOk"]))
     $usuario = $_POST['txt_login'];
     $senha = $_POST['txt_senha'];
 
-    addslashes($sql = "SELECT * FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."' AND id_nivel_usuario = '1'");
+    addslashes($sql = "SELECT count(*) as contador, id_usuario, usuario, senha FROM tbl_usuario WHERE usuario = '".$usuario."' AND senha = '".$senha."' AND id_nivel_usuario = '2';");
+
 
     $result = mysql_query($sql);
 
-    if(mysql_num_rows($result) >0){
+    $autentica = mysql_fetch_array($result);
 
+    // echo ($autentica['contador']);
+
+    if($autentica['contador'] >0){
+        // echo "1";
         $select = mysql_query($sql);
 
         $rsUsuario = mysql_fetch_array($select);
 
-
         $_SESSION['id_usuario'] = $rsUsuario['id_usuario'];
+
+        $id_usuario = $_SESSION['id_usuario'];
+
+        $sql1 = "SELECT id_parceiro FROM tbl_parceiro where id_usuario = ".$_SESSION['id_usuario'];
+
+        $select1 = mysql_query($sql1);
+        // echo ($sql1);
+        $rsParceiro = mysql_fetch_array($select1);
+
+        // $_SESSION['id_parceiro'] = $rsParceiro['id_parceiro'];
+        $_SESSION['id_parceiro1'] = $rsParceiro['id_parceiro'];
+
         // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
 
         header('location:../view/parceiro/cms_adm_parceiro.php');

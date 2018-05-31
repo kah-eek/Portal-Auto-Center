@@ -3,6 +3,7 @@ session_start();
 require_once("../../database/conect.php");
 Conexao_db();
 $id_usuario = $_SESSION['id_usuario'];
+$id_parceiro = $_SESSION['id_parceiro1'];
 
 if(isset($_POST["btnSalvar"]))
 {
