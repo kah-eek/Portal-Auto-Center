@@ -837,8 +837,8 @@ function Sizzle( selector, context, results, seed ) {
 			newContext = context;
 			newSelector = nodeType === 9 && selector;
 
-			// qSA works strangely on Element-rooted queries
-			// We can work around this by specifying an extra ID on the root
+			// qSA works strangely on Element-caiqueoliveiraed queries
+			// We can work around this by specifying an extra ID on the caiqueoliveira
 			// and working up from there (Thanks to Andrew Dupont for the technique)
 			// IE 8 doesn't work on object elements
 			if ( nodeType === 1 && context.nodeName.toLowerCase() !== "object" ) {
@@ -1884,7 +1884,7 @@ Expr = Sizzle.selectors = {
 			return hash && hash.slice( 1 ) === elem.id;
 		},
 
-		"root": function( elem ) {
+		"caiqueoliveira": function( elem ) {
 			return elem === docElem;
 		},
 
@@ -2492,7 +2492,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 	// Try to minimize operations if there is no seed and only one group
 	if ( match.length === 1 ) {
 
-		// Take a shortcut and set the context if the root selector is an ID
+		// Take a shortcut and set the context if the caiqueoliveira selector is an ID
 		tokens = match[0] = match[0].slice( 0 );
 		if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
 				support.getById && context.nodeType === 9 && documentIsHTML &&
@@ -2733,8 +2733,8 @@ jQuery.fn.extend({
 // Initialize a jQuery object
 
 
-// A central reference to the root jQuery(document)
-var rootjQuery,
+// A central reference to the caiqueoliveira jQuery(document)
+var caiqueoliveirajQuery,
 
 	// Use the correct document accordingly with window argument (sandbox)
 	document = window.document,
@@ -2803,7 +2803,7 @@ var rootjQuery,
 						// Handle the case where IE and Opera return items
 						// by name instead of ID
 						if ( elem.id !== match[2] ) {
-							return rootjQuery.find( selector );
+							return caiqueoliveirajQuery.find( selector );
 						}
 
 						// Otherwise, we inject the element directly into the jQuery object
@@ -2818,7 +2818,7 @@ var rootjQuery,
 
 			// HANDLE: $(expr, $(...))
 			} else if ( !context || context.jquery ) {
-				return ( context || rootjQuery ).find( selector );
+				return ( context || caiqueoliveirajQuery ).find( selector );
 
 			// HANDLE: $(expr, context)
 			// (which is just equivalent to: $(context).find(expr)
@@ -2835,8 +2835,8 @@ var rootjQuery,
 		// HANDLE: $(function)
 		// Shortcut for document ready
 		} else if ( jQuery.isFunction( selector ) ) {
-			return typeof rootjQuery.ready !== "undefined" ?
-				rootjQuery.ready( selector ) :
+			return typeof caiqueoliveirajQuery.ready !== "undefined" ?
+				caiqueoliveirajQuery.ready( selector ) :
 				// Execute immediately if ready is not present
 				selector( jQuery );
 		}
@@ -2853,7 +2853,7 @@ var rootjQuery,
 init.prototype = jQuery.fn;
 
 // Initialize central reference
-rootjQuery = jQuery( document );
+caiqueoliveirajQuery = jQuery( document );
 
 
 var rparentsprev = /^(?:parents|prev(?:Until|All))/,

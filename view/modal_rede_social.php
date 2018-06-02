@@ -43,7 +43,7 @@ Conexao_db();
 
       <?php
       $sql1 = "SELECT tbl_post_rede_social.*,
-        tbl_usuario.usuario FROM dbautofast.tbl_post_rede_social
+        tbl_usuario.usuario FROM caiqueoliveira.tbl_post_rede_social
         INNER JOIN tbl_usuario
         ON tbl_usuario.id_usuario = tbl_post_rede_social.id_usuario;
         ";
@@ -82,7 +82,7 @@ Conexao_db();
       </div>
       <?php
       $sql = "SELECT tbl_comentario_post.*,
-      tbl_usuario.usuario FROM dbautofast.tbl_comentario_post
+      tbl_usuario.usuario FROM caiqueoliveira.tbl_comentario_post
       INNER JOIN tbl_usuario
       ON tbl_usuario.id_usuario = tbl_comentario_post.id_usuario;";
         $select = mysql_query($sql);

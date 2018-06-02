@@ -5,9 +5,8 @@
 
   session_start();
 
-  $conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-  mysql_select_db('dbautofast');
+  require_once("../../database/conect.php");
+  Conexao_db();
 #####################################################################################################################################################################################
   $id_socorro_ja="";
   $id_cliente="";

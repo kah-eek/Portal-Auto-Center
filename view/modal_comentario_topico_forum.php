@@ -11,9 +11,8 @@ $id_topico_forum="";
 $id_cliente="";
 $slt_topicos="";
 
-$conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-mysql_select_db('dbautofast');
+require_once("../../database/conect.php");
+Conexao_db();
 ////////////////////////////////////////////////
 
 if(isset($_POST["btnSalvar"]))

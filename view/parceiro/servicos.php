@@ -55,7 +55,7 @@ if(isset($_GET['escolha'])){
           </i>
       </div>
       <?php
-      $sql = "SELECT * FROM dbautofast.view_status_servico where situacao = 'pendente';";
+      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'pendente';";
           $select = mysql_query($sql) or die(mysql_error());
           // echo ($sql);
         while ($rsS = mysql_fetch_array($select))
@@ -106,7 +106,7 @@ if(isset($_GET['escolha'])){
         RECUSADOS
       </div>
       <?php
-      $sql = "SELECT * FROM dbautofast.view_status_servico where situacao = 'recusado' or situacao = 'confirmado';";
+      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'recusado' or situacao = 'confirmado';";
           $select = mysql_query($sql) or die(mysql_error());
           // echo ($sql);
         while ($rsS = mysql_fetch_array($select))

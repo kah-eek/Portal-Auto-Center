@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: dbautofast
+-- Host: caiqueoliveira.mysql.dbaas.com.br    Database: caiqueoliveira
 -- ------------------------------------------------------
 -- Server version	5.7.10-log
 
@@ -2059,7 +2059,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_cliente` AS select `cln`.`id_cliente` AS `id_cliente`,`cln`.`nome` AS `nome`,`cln`.`dtNasc` AS `dtNasc`,`cln`.`cpf` AS `cpf`,`cln`.`email` AS `email`,`cln`.`celular` AS `celular`,`cln`.`id_endereco` AS `id_endereco`,`cln`.`sexo` AS `sexo`,`cln`.`telefone` AS `telefone`,`cln`.`id_usuario` AS `id_usuario`,`cln`.`foto_perfil` AS `foto_perfil`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`log` AS `log`,`usr`.`ativo` AS `ativo`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`nvl`.`nivel` AS `nivel`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado` from ((((`tbl_cliente` `cln` join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `cln`.`id_usuario`))) join `tbl_nivel_usuario` `nvl` on((`nvl`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) join `tbl_endereco` `endrc` on((`endrc`.`id_endereco` = `cln`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2077,7 +2077,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_conta_pac_formatado` AS select `cnt`.`id_conta_pac` AS `id_conta_pac`,`cnt`.`id_categoria_conta_pac` AS `id_categoria_conta_pac`,`cnt`.`valor` AS `valor`,date_format(cast(`cnt`.`vencimento` as date),'%d/%m/%Y') AS `vencimento`,if((`cnt`.`paga` = 1),'Sim','Não') AS `paga`,`ctg_cnt`.`categoria` AS `categoria` from (`tbl_conta_pac` `cnt` join `tbl_categoria_conta_pac` `ctg_cnt` on((`ctg_cnt`.`id_categoria_conta_pac` = `cnt`.`id_categoria_conta_pac`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2095,7 +2095,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_funcionario_detalhado` AS select 1 AS `id_funcionario_pac`,1 AS `nome`,1 AS `cpf`,1 AS `rg`,1 AS `id_endereco`,1 AS `dt_nascimento`,1 AS `id_cargo_funcionario_pac`,1 AS `salario`,1 AS `sexo`,1 AS `celular`,1 AS `email`,1 AS `foto`,1 AS `cnh`,1 AS `pis`,1 AS `certificado_reservista`,1 AS `log_funcionario_pac`,1 AS `id_usuario`,1 AS `cargo`,1 AS `logradouro`,1 AS `numero`,1 AS `cidade`,1 AS `id_estado`,1 AS `cep`,1 AS `bairro`,1 AS `complemento`,1 AS `estado`,1 AS `usuario`,1 AS `senha`,1 AS `id_nivel_usuario`,1 AS `log`,1 AS `usuario_ativo`,1 AS `nivel` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2113,7 +2113,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_funcionario_simples_formatado` AS select 1 AS `id_funcionario_pac`,1 AS `nome`,1 AS `id_cargo_funcionario_pac`,1 AS `data_adimissao`,1 AS `email`,1 AS `celular`,1 AS `cargo` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2131,7 +2131,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_imagem_produto_parceiro` AS select `img_prdt_parc`.`id_imagem_produto_parceiro` AS `id_imagem_produto_parceiro`,`img_prdt_parc`.`id_produto` AS `id_produto`,`img_prdt_parc`.`imagem` AS `imagem`,`img_prdt_parc`.`ativo` AS `ativo`,`ctg_prdt`.`categoria` AS `categoria`,`prdt`.`id_categoria_produto` AS `id_categoria_produto`,`parc`.`razao_social` AS `razao_social`,`parc`.`nome_fantasia` AS `nome_fantasia` from (((`tbl_imagem_produto_parceiro` `img_prdt_parc` join `tbl_produto` `prdt` on((`prdt`.`id_produto` = `img_prdt_parc`.`id_produto`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `prdt`.`id_parceiro`))) join `tbl_categoria_produto` `ctg_prdt` on((`ctg_prdt`.`id_categoria_produto` = `prdt`.`id_categoria_produto`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2149,7 +2149,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_imagem_veiculo_parceiro` AS select `img_vei_parc`.`id_imagem_veiculo_parceiro` AS `id_imagem_veiculo_parceiro`,`img_vei_parc`.`id_veiculo_parceiro` AS `id_veiculo_parceiro`,`img_vei_parc`.`imagem` AS `imagem`,`img_vei_parc`.`ativo` AS `ativo`,`vei_parc`.`id_parceiro` AS `id_parceiro`,`tp_veic`.`tipo` AS `tipo`,`tp_veic`.`id_tipo_veiculo` AS `id_tipo_veiculo`,`parc`.`nome_fantasia` AS `nome_fantasia`,`parc`.`razao_social` AS `razao_social` from ((((`tbl_imagem_veiculo_parceiro` `img_vei_parc` join `tbl_veiculo_parceiro` `vei_parc` on((`vei_parc`.`id_veiculo_parceiro` = `img_vei_parc`.`id_veiculo_parceiro`))) join `tbl_parceiro` `parc` on((`parc`.`id_parceiro` = `vei_parc`.`id_parceiro`))) join `tbl_veiculo` `veic` on((`veic`.`id_veiculo` = `vei_parc`.`id_veiculo`))) join `tbl_tipo_veiculo` `tp_veic` on((`tp_veic`.`id_tipo_veiculo` = `veic`.`id_tipo_veiculo`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2167,7 +2167,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_parceiro` AS select `prc`.`id_parceiro` AS `id_parceiro`,`prc`.`nome_fantasia` AS `nome_fantasia`,`prc`.`cnpj` AS `cnpj`,`prc`.`razao_social` AS `razao_social`,`prc`.`id_endereco` AS `id_endereco`,`prc`.`ativo` AS `parceiro_ativo`,`prc`.`foto_perfil` AS `foto_perfil`,`prc`.`email` AS `email`,`prc`.`socorrista` AS `socorrista`,`prc`.`telefone` AS `telefone`,`prc`.`celular` AS `celular`,`prc`.`log_parceiro` AS `log_parceiro`,`prc`.`id_usuario` AS `id_usuario`,`prc`.`id_plano_contratacao` AS `id_plano_contratacao`,`usr`.`usuario` AS `usuario`,`usr`.`senha` AS `senha`,`usr`.`log` AS `log`,`usr`.`ativo` AS `ativo`,`usr`.`id_nivel_usuario` AS `id_nivel_usuario`,`nvl`.`nivel` AS `nivel`,`endrc`.`logradouro` AS `logradouro`,`endrc`.`numero` AS `numero`,`endrc`.`cidade` AS `cidade`,`endrc`.`id_estado` AS `id_estado`,`endrc`.`cep` AS `cep`,`endrc`.`bairro` AS `bairro`,`endrc`.`complemento` AS `complemento`,`estd`.`estado` AS `estado` from ((((`tbl_parceiro` `prc` join `tbl_usuario` `usr` on((`usr`.`id_usuario` = `prc`.`id_usuario`))) join `tbl_nivel_usuario` `nvl` on((`nvl`.`id_nivel_usuario` = `usr`.`id_nivel_usuario`))) join `tbl_endereco` `endrc` on((`endrc`.`id_endereco` = `prc`.`id_endereco`))) join `tbl_estado` `estd` on((`estd`.`id_estado` = `endrc`.`id_estado`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2185,7 +2185,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_parceiro_detalhado` AS select 1 AS `id_parceiro`,1 AS `nome_fantasia`,1 AS `cnpj`,1 AS `razao_social`,1 AS `id_endereco`,1 AS `parceiro_ativo`,1 AS `foto_perfil`,1 AS `email`,1 AS `socorrista`,1 AS `telefone`,1 AS `celular`,1 AS `log_parceiro`,1 AS `id_usuario`,1 AS `id_plano_contratacao`,1 AS `usuario`,1 AS `senha`,1 AS `log`,1 AS `ativo`,1 AS `id_nivel_usuario`,1 AS `nivel`,1 AS `logradouro`,1 AS `numero`,1 AS `cidade`,1 AS `id_estado`,1 AS `cep`,1 AS `bairro`,1 AS `complemento`,1 AS `estado` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2203,7 +2203,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_parceiro_simples` AS select 1 AS `id_parceiro`,1 AS `nome_fantasia`,1 AS `razao_social`,1 AS `cnpj`,1 AS `id_endereco`,1 AS `ativo`,1 AS `socorrista`,1 AS `email`,1 AS `telefone`,1 AS `foto_perfil`,1 AS `celular`,1 AS `log_parceiro`,1 AS `id_usuario`,1 AS `plano`,1 AS `id_plano_contratacao` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2221,7 +2221,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_parceiro_simples_formatado` AS select 1 AS `id_parceiro`,1 AS `nome_fantasia`,1 AS `razao_social`,1 AS `cnpj`,1 AS `id_endereco`,1 AS `ativo`,1 AS `socorrista`,1 AS `email`,1 AS `telefone`,1 AS `foto_perfil`,1 AS `celular`,1 AS `log_parceiro`,1 AS `id_usuario`,1 AS `plano`,1 AS `id_plano_contratacao` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2239,7 +2239,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_produto` AS select 1 AS `id_produto`,1 AS `nome`,1 AS `conteudo_embalagem`,1 AS `garantia`,1 AS `observacao`,1 AS `preco`,1 AS `descricao`,1 AS `imagem`,1 AS `modelo`,1 AS `id_parceiro`,1 AS `nome_fantasia`,1 AS `id_endereco`,1 AS `telefone`,1 AS `celular`,1 AS `logradouro`,1 AS `numero`,1 AS `cidade`,1 AS `id_estado`,1 AS `cep`,1 AS `bairro`,1 AS `complemento`,1 AS `estado`,1 AS `categoria`,1 AS `id_categoria_produto` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2257,7 +2257,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_produto_detalhado` AS select 1 AS `id_produto`,1 AS `id_modelo_produto`,1 AS `id_parceiro`,1 AS `id_cor`,1 AS `id_categoria_produto`,1 AS `nome`,1 AS `preco`,1 AS `conteudo_embalagem`,1 AS `garantia`,1 AS `descricao`,1 AS `observacao`,1 AS `modelo`,1 AS `id_fabricante_produto`,1 AS `peso`,1 AS `altura`,1 AS `comprimento`,1 AS `fabricante`,1 AS `nome_fantasia`,1 AS `razao_social`,1 AS `cnpj`,1 AS `id_endereco`,1 AS `ativo`,1 AS `socorrista`,1 AS `email`,1 AS `telefone`,1 AS `foto_perfil`,1 AS `celular`,1 AS `log_parceiro`,1 AS `logradouro`,1 AS `numero`,1 AS `cidade`,1 AS `id_estado`,1 AS `cep`,1 AS `bairro`,1 AS `complemento`,1 AS `estado`,1 AS `cor`,1 AS `categoria` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2275,7 +2275,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_receita_plano_contratacao` AS select 1 AS `receita` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2293,7 +2293,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_servicos_prestados_cliente` AS select `p`.`nome` AS `nome`,`p`.`preco` AS `preco`,`pa`.`nome_fantasia` AS `nome_fantasia`,`sp`.`log_situacao_pedido` AS `log_situacao_pedido`,`tsp`.`id_tipo_situacao_pedido` AS `id_tipo_situacao_pedido`,`pe`.`id_cliente` AS `id_cliente` from ((((((`tbl_produto` `p` join `tbl_categoria_produto` `cp` on((`cp`.`id_categoria_produto` = `p`.`id_categoria_produto`))) left join `tbl_modelo_produto` `mp` on((`mp`.`id_modelo_produto` = `p`.`id_modelo_produto`))) join `tbl_parceiro` `pa` on((`pa`.`id_parceiro` = `p`.`id_parceiro`))) join `tbl_pedido` `pe` on((`pe`.`id_produto` = `p`.`id_produto`))) join `tbl_situacao_pedido` `sp` on((`sp`.`id_pedido` = `pe`.`id_pedido`))) join `tbl_tipo_situacao_pedido` `tsp` on((`tsp`.`id_tipo_situacao_pedido` = `sp`.`id_tipo_situacao_pedido`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
@@ -2311,7 +2311,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`caiqueoliveira`@`caiqueoliveira.mysql.dbaas.com.br` SQL SECURITY DEFINER */
 /*!50001 VIEW `view_total_despesas_internas` AS select 1 AS `total_despesa` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;

@@ -1,4 +1,4 @@
-USE dbautofast;
+USE caiqueoliveira;
 
 SELECT * FROM tbl_categoria_produto;
 SELECT * FROM tbl_produto;

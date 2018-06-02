@@ -671,8 +671,8 @@ $.fn.ajaxSubmit = function(options) {
                 }
 
                 //log('response detected');
-                var docRoot = doc.body ? doc.body : doc.documentElement;
-                xhr.responseText = docRoot ? docRoot.innerHTML : null;
+                var doccaiqueoliveira = doc.body ? doc.body : doc.documentElement;
+                xhr.responseText = doccaiqueoliveira ? doccaiqueoliveira.innerHTML : null;
                 xhr.responseXML = doc.XMLDocument ? doc.XMLDocument : doc;
                 if (isXml) {
                     s.dataType = 'xml';
@@ -682,9 +682,9 @@ $.fn.ajaxSubmit = function(options) {
                     return headers[header.toLowerCase()];
                 };
                 // support for XHR 'status' & 'statusText' emulation :
-                if (docRoot) {
-                    xhr.status = Number( docRoot.getAttribute('status') ) || xhr.status;
-                    xhr.statusText = docRoot.getAttribute('statusText') || xhr.statusText;
+                if (doccaiqueoliveira) {
+                    xhr.status = Number( doccaiqueoliveira.getAttribute('status') ) || xhr.status;
+                    xhr.statusText = doccaiqueoliveira.getAttribute('statusText') || xhr.statusText;
                 }
 
                 var dt = (s.dataType || '').toLowerCase();

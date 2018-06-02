@@ -40,7 +40,7 @@ if(isset($_POST["btnSalvar"]))
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
     <body>
-      <div class="container_campo float_left fs_30">
+      <!-- <div class="container_campo float_left fs_30">
         <div class="campo">
           Modelo Produto
         </div>
@@ -68,11 +68,11 @@ if(isset($_POST["btnSalvar"]))
         <div class="campo">
           Observações
         </div>
-      </div>
+      </div> -->
       <form name="frmCadastroProduto" method="POST" action="">
-        <div class="container_input float_left margem_l_5">
+        <div class="container_input align_right float_left margem_l_5">
           <div class="input ">
-            <select name="slcModelo">
+            <select class="input_select" name="slcModelo">
               <?php
               $sql = "SELECT * FROM tbl_modelo_produto";
                 $select = mysql_query($sql);
@@ -80,6 +80,7 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
+              <option value="">SELECIONE UM MODELO</option>
               <option value="<?php echo($rsPH['id_modelo_produto']) ?>"><?php echo($rsPH['modelo']) ?></option>
               <?php
               }
@@ -87,7 +88,7 @@ if(isset($_POST["btnSalvar"]))
             </select>
           </div>
           <div class="input ">
-            <select name="slcCor">
+            <select class="input_select" name="slcCor">
               <?php
               $sql = "SELECT * FROM tbl_cor";
                 $select = mysql_query($sql);
@@ -95,6 +96,7 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
+              <option value="">SELECIONE UMA COR</option>
               <option value="<?php echo($rsPH['id_cor']) ?>"><?php echo($rsPH['cor']) ?></option>
               <?php
               }
@@ -102,7 +104,7 @@ if(isset($_POST["btnSalvar"]))
             </select>
           </div>
           <div class="input ">
-            <select name="slcCategoria">
+            <select class="input_select" name="slcCategoria">
               <?php
               $sql = "SELECT * FROM tbl_categoria_produto";
                 $select = mysql_query($sql);
@@ -110,6 +112,7 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
+              <option value="">SELECIONE UMA CATEGORIA</option>
               <option value="<?php echo($rsPH['id_categoria_produto']) ?>"><?php echo($rsPH['categoria']) ?></option>
               <?php
               }
@@ -117,16 +120,17 @@ if(isset($_POST["btnSalvar"]))
             </select>
           </div>
           <div class="input ">
-            <input type="text" name="txt_nome" placeholder="Nome do Produto">
+            <input class="input_text_111" type="text" name="txt_nome" placeholder="Nome do Produto">
           </div>
           <div class="input ">
-            <input type="text" name="txt_preco" placeholder="Preço do produto">
+            <input class="input_text_111" type="text" name="txt_preco" placeholder="Preço do produto">
           </div>
           <div class="input ">
-            <input type="text" name="txt_conteudo" placeholder="Conteudo Contido na embalagem">
+            <input class="input_text_111" type="text" name="txt_conteudo" placeholder="Conteudo Contido na embalagem">
           </div>
           <div class="input ">
-            <select name="slcGarantia">
+            <select class="input_select" name="slcGarantia">
+              <option value="">SELECIONE UMA GARANTIA</option>
               <option value="1 Mes">1 Meses</option>
               <option value="3 Meses">3 Meses</option>
               <option value="5 Meses">5 Meses</option>
@@ -135,14 +139,16 @@ if(isset($_POST["btnSalvar"]))
             </select>
           </div>
           <div class="input">
-            <input type="text" name="txt_desc" placeholder="Descrição do produto">
+            <input class="input_text_111" type="text" name="txt_desc" placeholder="Descrição do produto">
           </div>
-          <div class="input ">
-            <input type="text" name="txt_obs" placeholder="Observações">
+          <div class="input">
+            <input class="input_text_111" type="text" name="txt_obs" placeholder="Observações">
           </div>
-        </div>
-        <div class="Container_btn">
-            <input type="submit" name="btnSalvar" value="Salvar">
+          <div class="input">
+            <div class="Container_btn">
+                <input class="input_btn titulo" type="submit" name="btnSalvar" value="Salvar">
+            </div>
+          </div>
         </div>
       </form>
     </body>

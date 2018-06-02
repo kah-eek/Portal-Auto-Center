@@ -40,7 +40,7 @@ if(isset($_POST["btnSalvar"]))
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
     <body>
-      <div class="container_campo float_left fs_30">
+      <!-- <div class="container_campo float_left fs_30">
         <div class="campo">
           Nome
         </div>
@@ -53,17 +53,18 @@ if(isset($_POST["btnSalvar"]))
         <div class="campo">
           Descrição
         </div>
-      </div>
+      </div> -->
       <form name="frmCadastroServico" method="POST" action="">
         <div class="container_input float_left margem_l_5">
           <div class="input ">
-            <input type="text" name="txt_nome" placeholder="Nome do Serviço">
+            <input class="input_text_111" type="text" name="txt_nome" placeholder="Nome do Serviço">
           </div>
           <div class="input ">
-            <input type="text" name="txt_preco" placeholder="Preço do Serviço">
+            <input class="input_text_111" type="text" name="txt_preco" placeholder="Preço do Serviço">
           </div>
           <div class="input ">
-            <select name="slcGarantia">
+            <select class="input_select" name="slcGarantia">
+              <option value="">SELECIONE UMA GARANTIA</option>
               <option value="1 Mes">1 Meses</option>
               <option value="3 Meses">3 Meses</option>
               <option value="5 Meses">5 Meses</option>
@@ -72,11 +73,13 @@ if(isset($_POST["btnSalvar"]))
             </select>
           </div>
           <div class="input">
-            <input type="text" name="txt_desc" placeholder="Descrição do Serviço">
+            <input class="input_text_111" type="text" name="txt_desc" placeholder="Descrição do Serviço">
           </div>
         </div>
-        <div class="Container_btn">
-            <input type="submit" name="btnSalvar" value="Salvar">
+        <div class="input">
+          <div class="Container_btn">
+              <input class="input_btn" type="submit" name="btnSalvar" value="Salvar">
+          </div>
         </div>
       </form>
     </body>

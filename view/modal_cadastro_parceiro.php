@@ -7,9 +7,8 @@ require_once("modulo.php");
 
 session_start();
 
-$conexao=mysql_connect('localhost', 'root', 'bcd127');
-
-mysql_select_db('dbautofast');
+require_once("../../database/conect.php");
+Conexao_db();
 
     //CRIANDO AS VARIÁVEIS PADRÕES LOCAIS.
     $nome_fantasia = "";
@@ -64,7 +63,7 @@ if(isset($_POST["btn_salvar"]))
   // $id_nivel_usuario["slcNivel"];
 
   if($_POST["btn_salvar"]=='Salvar'){
-      
+
        $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo) values ('".$usuario."','".$senha."','1','1');";
 
       mysql_query($sql);
@@ -75,43 +74,43 @@ if(isset($_POST["btn_salvar"]))
           {
             $id_usuario = $rs['LAST_INSERT_ID()'];
           }
-      
+
       $sql3="insert into tbl_estado(estado)values('".$id_estado."');";
       mysql_query($sql3);
-      
+
       $sql4="SELECT LAST_INSERT_ID();";
         $resultado2 = mysql_query($sql3);
             if($rs=mysql_fetch_array($resultado2))
             {
                 $id_estado=$rs['LAST_INSERT_ID()'];
             }
-      
+
       $sql5="insert into tbl_endereco(cep, rua, numero, cidade, bairro, complemento, logradouro, id_estado)values('".$cep."', '".$rua."', '".$numero."', '".$cidade."', '".$bairro."', '".$complemento."', '".$logradouro."', '".$id_estado."');";
-      
+
       $sql6="SELECT LAST_INSERT_ID();";
         $resultado3 = mysql_query($sql5);
             if($rs=mysql_fetch_array($resultado3))
             {
                 $id_endereco=$rs['LAST_INSERT_ID()'];
             }
-      
+
       $sql7="insert into tbl_plano_contratacao(plano)values('".$id_plano_contratacao."');";
-      
+
       $sql8="SELECT LAST_INSERT_ID();";
         $resultado4=mysql_query($sql7);
             if($rs=mysql_fetch_array($resultado4))
             {
                 $id_plano_contratacao=$rs['LAST_INSERT_ID()'];
             }
-      
+
       $sql9="insert into tbl_parceiro(nome_fantasia, razao_social, cnpj,  )"
-      
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
+
     // $sql="INSERT INTO tbl_nivel_usuario (nivel)values('".$id_nivel_usuario."');";
     //
     // mysql_query($sql);
@@ -142,7 +141,7 @@ if(isset($_POST["btn_salvar"]))
 //      {
 //        $id_estado=$rs['LAST_INSERT_ID()'];
 //      }
-//      
+//
 //    $sql6="INSERT INTO tbl_plano_contratacao(plano)values('".$id_plano_contratacao."');";
 //    mysql_query($sql6);
 //
@@ -164,7 +163,7 @@ if(isset($_POST["btn_salvar"]))
 //        $id_endereco=$rs['LAST_INSERT_ID()'];
 //      }
 //
-//  
+//
 //
 //    $sql10="INSERT INTO tbl_parceiro(nome_fantasia,razao_social, cnpj, email, celular, telefone, socorrista, foto_perfil, id_endereco, id_plano_contratacao,
 //    id_usuario, log_parceiro)
@@ -190,8 +189,8 @@ if(isset($_POST["btn_salvar"]))
     // VALUES('".$nome_fantasia."', '".$razao_social."', '".$cnpj."', '".$email."', '".$celular."','".$telefone."', '".$socorrista."', '".$id_plano_contratacao."','".$id_endereco."', '".$id_usuario."');";
     //
     // mysql_query($sql4);
-      
-      
+
+
   }
 
   // // EXECUTA O SCRIPT NO BD
@@ -269,7 +268,7 @@ if(isset($_POST["btn_salvar"]))
             <div class="segura_input_p  float_left">
               <input class="input_text_p txt_preto margem_t_5" placeholder="Telefone" type="text" name="txt_telefone" value="<?php echo($telefone); ?>">
             </div>
-              
+
              <!-- INPUT TELEFONE -->
             <div class="segura_input_p  float_left">
               <input class="input_text_p txt_preto margem_t_5" placeholder="Log" type="text" name="txt_log" value="<?php echo($log); ?>">

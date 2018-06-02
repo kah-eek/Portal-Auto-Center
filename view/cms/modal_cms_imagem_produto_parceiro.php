@@ -7,9 +7,9 @@
 
   session_start();
 
-  $conexao=mysql_connect('localhost', 'root', 'bcd127');
+  $conexao=mysql_connect('caiqueoliveira.mysql.dbaas.com.br', 'caiqueoliveira', 'caique@2018');
 
-  mysql_select_db('dbautofast');
+  mysql_select_db('caiqueoliveira');
 #####################################################################################################################################################################################
   $id_imagem_produto_parceiro="";
   $id_produto="";

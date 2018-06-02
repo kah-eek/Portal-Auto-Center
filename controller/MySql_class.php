@@ -7,10 +7,10 @@
 class MySql
 {
   // Atributos
-  private $HOST = 'localhost';
-  private $USERNAME = 'root';
-  private $SENHA = 'bcd127';
-  private $DB = 'dbautofast';
+  private $HOST = 'caiqueoliveira.mysql.dbaas.com.br';
+  private $USERNAME = 'caiqueoliveira';
+  private $SENHA = 'caique@2018';
+  private $DB = 'caiqueoliveira';
 
   /**
   * Obtém uma conexão com banco de dados

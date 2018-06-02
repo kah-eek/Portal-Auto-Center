@@ -24,7 +24,7 @@ var jQuery = (function() {
 // Define a local copy of jQuery
 var jQuery = function( selector, context ) {
 		// The jQuery object is actually just the init constructor 'enhanced'
-		return new jQuery.fn.init( selector, context, rootjQuery );
+		return new jQuery.fn.init( selector, context, caiqueoliveirajQuery );
 	},
 
 	// Map over jQuery in case of overwrite
@@ -33,8 +33,8 @@ var jQuery = function( selector, context ) {
 	// Map over the $ in case of overwrite
 	_$ = window.$,
 
-	// A central reference to the root jQuery(document)
-	rootjQuery,
+	// A central reference to the caiqueoliveira jQuery(document)
+	caiqueoliveirajQuery,
 
 	// A simple way to check for HTML strings or ID strings
 	// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
@@ -96,7 +96,7 @@ var jQuery = function( selector, context ) {
 
 jQuery.fn = jQuery.prototype = {
 	constructor: jQuery,
-	init: function( selector, context, rootjQuery ) {
+	init: function( selector, context, caiqueoliveirajQuery ) {
 		var match, elem, ret, doc;
 
 		// Handle $(""), $(null), or $(undefined)
@@ -169,7 +169,7 @@ jQuery.fn = jQuery.prototype = {
 						// Handle the case where IE and Opera return items
 						// by name instead of ID
 						if ( elem.id !== match[2] ) {
-							return rootjQuery.find( selector );
+							return caiqueoliveirajQuery.find( selector );
 						}
 
 						// Otherwise, we inject the element directly into the jQuery object
@@ -184,7 +184,7 @@ jQuery.fn = jQuery.prototype = {
 
 			// HANDLE: $(expr, $(...))
 			} else if ( !context || context.jquery ) {
-				return ( context || rootjQuery ).find( selector );
+				return ( context || caiqueoliveirajQuery ).find( selector );
 
 			// HANDLE: $(expr, context)
 			// (which is just equivalent to: $(context).find(expr)
@@ -195,7 +195,7 @@ jQuery.fn = jQuery.prototype = {
 		// HANDLE: $(function)
 		// Shortcut for document ready
 		} else if ( jQuery.isFunction( selector ) ) {
-			return rootjQuery.ready( selector );
+			return caiqueoliveirajQuery.ready( selector );
 		}
 
 		if ( selector.selector !== undefined ) {
@@ -907,10 +907,10 @@ jQuery.extend({
 				context = jQuerySub( context );
 			}
 
-			return jQuery.fn.init.call( this, selector, context, rootjQuerySub );
+			return jQuery.fn.init.call( this, selector, context, caiqueoliveirajQuerySub );
 		};
 		jQuerySub.fn.init.prototype = jQuerySub.fn;
-		var rootjQuerySub = jQuerySub(document);
+		var caiqueoliveirajQuerySub = jQuerySub(document);
 		return jQuerySub;
 	},
 
@@ -940,7 +940,7 @@ if ( rnotwhite.test( "\xA0" ) ) {
 }
 
 // All jQuery objects should point back to these
-rootjQuery = jQuery(document);
+caiqueoliveirajQuery = jQuery(document);
 
 // Cleanup functions for the document ready method
 if ( document.addEventListener ) {
@@ -4023,7 +4023,7 @@ var Sizzle = function( selector, context, results, seed ) {
 		}
 
 	} else {
-		// Take a shortcut and set the context if the root selector is an ID
+		// Take a shortcut and set the context if the caiqueoliveira selector is an ID
 		// (but not if it'll be faster if the inner selector is an ID)
 		if ( !seed && parts.length > 1 && context.nodeType === 9 && !contextXML &&
 				Expr.match.ID.test(parts[0]) && !Expr.match.ID.test(parts[parts.length - 1]) ) {
@@ -4996,12 +4996,12 @@ if ( document.documentElement.compareDocumentPosition ) {
 	// We're going to inject a fake input element with a specified name
 	var form = document.createElement("div"),
 		id = "script" + (new Date()).getTime(),
-		root = document.documentElement;
+		caiqueoliveira = document.documentElement;
 
 	form.innerHTML = "<a name='" + id + "'/>";
 
-	// Inject it into the root element, check its status, and remove it quickly
-	root.insertBefore( form, root.firstChild );
+	// Inject it into the caiqueoliveira element, check its status, and remove it quickly
+	caiqueoliveira.insertBefore( form, caiqueoliveira.firstChild );
 
 	// The workaround has to do additional checks after a getElementById
 	// Which slows things down for other browsers (hence the branching)
@@ -5025,10 +5025,10 @@ if ( document.documentElement.compareDocumentPosition ) {
 		};
 	}
 
-	root.removeChild( form );
+	caiqueoliveira.removeChild( form );
 
 	// release memory in IE
-	root = form = null;
+	caiqueoliveira = form = null;
 })();
 
 (function(){
@@ -5138,8 +5138,8 @@ if ( document.querySelectorAll ) {
 						return makeArray( context.querySelectorAll(query), extra );
 					} catch(qsaError) {}
 
-				// qSA works strangely on Element-rooted queries
-				// We can work around this by specifying an extra ID on the root
+				// qSA works strangely on Element-caiqueoliveiraed queries
+				// We can work around this by specifying an extra ID on the caiqueoliveira
 				// and working up from there (Thanks to Andrew Dupont for the technique)
 				// IE 8 doesn't work on object elements
 				} else if ( context.nodeType === 1 && context.nodeName.toLowerCase() !== "object" ) {
@@ -5359,7 +5359,7 @@ var posProcess = function( selector, context, seed ) {
 	var match,
 		tmpSet = [],
 		later = "",
-		root = context.nodeType ? [context] : context;
+		caiqueoliveira = context.nodeType ? [context] : context;
 
 	// Position selectors must be done after the filter
 	// And so must :not(positional) so we move all PSEUDOs to the end
@@ -5370,8 +5370,8 @@ var posProcess = function( selector, context, seed ) {
 
 	selector = Expr.relative[selector] ? selector + "*" : selector;
 
-	for ( var i = 0, l = root.length; i < l; i++ ) {
-		Sizzle( selector, root[i], tmpSet, seed );
+	for ( var i = 0, l = caiqueoliveira.length; i < l; i++ ) {
+		Sizzle( selector, caiqueoliveira[i], tmpSet, seed );
 	}
 
 	return Sizzle.filter( later, tmpSet );
@@ -6048,7 +6048,7 @@ jQuery.fn.extend({
 				for ( var i = 0, l = this.length, lastIndex = l - 1; i < l; i++ ) {
 					callback.call(
 						table ?
-							root(this[i], first) :
+							caiqueoliveira(this[i], first) :
 							this[i],
 						// Make sure that we do not leak memory by inadvertently discarding
 						// the original fragment (which might have attached data) instead of
@@ -6089,7 +6089,7 @@ jQuery.fn.extend({
 	}
 });
 
-function root( elem, cur ) {
+function caiqueoliveira( elem, cur ) {
 	return jQuery.nodeName(elem, "table") ?
 		(elem.getElementsByTagName("tbody")[0] ||
 		elem.appendChild(elem.ownerDocument.createElement("tbody"))) :
@@ -9061,7 +9061,7 @@ function defaultDisplay( nodeName ) {
 
 var getOffset,
 	rtable = /^t(?:able|d|h)$/i,
-	rroot = /^(?:body|html)$/i;
+	rcaiqueoliveira = /^(?:body|html)$/i;
 
 if ( "getBoundingClientRect" in document.documentElement ) {
 	getOffset = function( elem, doc, docElem, box ) {
@@ -9237,7 +9237,7 @@ jQuery.fn.extend({
 
 		// Get correct offsets
 		offset       = this.offset(),
-		parentOffset = rroot.test(offsetParent[0].nodeName) ? { top: 0, left: 0 } : offsetParent.offset();
+		parentOffset = rcaiqueoliveira.test(offsetParent[0].nodeName) ? { top: 0, left: 0 } : offsetParent.offset();
 
 		// Subtract element margins
 		// note: when an element has margin: auto the offsetLeft and marginLeft
@@ -9259,7 +9259,7 @@ jQuery.fn.extend({
 	offsetParent: function() {
 		return this.map(function() {
 			var offsetParent = this.offsetParent || document.body;
-			while ( offsetParent && (!rroot.test(offsetParent.nodeName) && jQuery.css(offsetParent, "position") === "static") ) {
+			while ( offsetParent && (!rcaiqueoliveira.test(offsetParent.nodeName) && jQuery.css(offsetParent, "position") === "static") ) {
 				offsetParent = offsetParent.offsetParent;
 			}
 			return offsetParent;

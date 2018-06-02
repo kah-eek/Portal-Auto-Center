@@ -1,6 +1,6 @@
 var rotas = {
-  'inserirEndereco':'http://localhost/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir',
-  'inserirUsuario':'http://localhost/inf4m/Portal-Auto-Center/api/v1/usuario/?action=inserir',
+  'inserirEndereco':'http://caiqueoliveira.mysql.dbaas.com.br/inf4m/Portal-Auto-Center/api/v1/endereco/?action=inserir',
+  'inserirUsuario':'http://caiqueoliveira.mysql.dbaas.com.br/inf4m/Portal-Auto-Center/api/v1/usuario/?action=inserir',
   'obterEstados':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/estado/',
   'verificarAutenticacao':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/autenticacao/',
   'nivelAutenticacao':'http://127.0.0.1/inf4m/Portal-Auto-Center/api/v1/usuario/?action=nivel'
