@@ -9,66 +9,73 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../css/parceiro/cms_adm_parceiro.css">
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/padroes.css">
+    <link rel="stylesheet" href="../css/parceiro/cms_adm_parceiro.css">
   </head>
-  <body>
-    <div class="container_conteudo_central_ap centro_lr">
-      <!-- MENU LATERAL -->
-      <div class="container_menu_l_ap float_left borda_preta_1 margem_l_20">
-        <div class="container_img_menu_ap centro_lr borda_preta_1 margem_t_20">
-          <div class="item_img_menu_l_ap ">
+  <body class="body">
 
-          </div>
-        </div>
-        <!-- NOME USUÁRIO -->
-        <div class="container_nome_usuario margem_t_10">
-          <div class="item_nome_usuario centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
-            Nome de Usuário
-          </div>
-        </div>
+    <header class="header">
+      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+
+      <h1 class="page-title">Auto Fast</h1>
+
+      <div class="saudacao">
+        <p>Bem-vindo</p>
+        <p>Caique M. Oliveira</p>
       </div>
-      <!-- GERENCIAMENTO -->
-      <div class="container_gerenciamento_ap float_left">
-        <!-- VEICULOS -->
-        <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
-          <div id="gerenciarVeiculos" class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_cadastro_veiculo.php">Cadastrar veiculo</a>
-          </div>
-        </div>
-        <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="consultar_veiculo_parceiro.php">Gerenciar Veiculos</a>
-          </div>
-        </div>
-        <!-- PRODUTOS -->
-        <div class="container_caixa_gerenciamento float_left borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_produtos_home.php">Cadastrar Produtos</a>
-          </div>
-        </div>
-        <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_visualiza_produtos_home.php">Gerenciar Produtos</a>
-          </div>
-        </div>
-        <!-- SERVIÇOS -->
-        <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_cad_servicos.php">Cadastrar Serviços</a>
-          </div>
-        </div>
-        <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="modal_cms_gerenciar_produto.php">Gerenciar Serviços</a>
-          </div>
-        </div>
-        <div class="container_caixa_gerenciamento float_left margem_l_5 borda_preta_1 margem_l_40 margem_t_10">
-          <div class="item_caixa_gerenciamento align_center preenche_t_15 fs_18 negrito margem_t_150 borda_preta_1">
-            <a href="servicos.php">Serviços solicitados</a>
-          </div>
-        </div>
+    </header>
+
+    <div class="blank-space"></div>
+
+    <div class="main">
+      
+      <div class="item-menu">
+        <a class="block-max" href="modal_cms_cadastro_veiculo.php">
+          <p class="all">Cadastrar Veículo</p>
+        </a>
       </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="consultar_veiculo_parceiro.php">
+          <p class="all">Gerenciar Veículos</p>
+        </a>
+      </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="modal_cms_produtos_home.php">
+          <p class="all">Cadastrar Produtos</p>
+        </a>
+      </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="modal_cms_visualiza_produtos_home.php">
+          <p class="all">Gerenciar Produtos</p>
+        </a>
+      </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="modal_cms_cad_servicos.php">
+          <p class="all">Cadastrar Serviços</p>
+        </a>
+      </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="modal_cms_gerenciar_produto.php">
+          <p class="all">Gerenciar Serviços</p>
+        </a>
+      </div>
+
+      <div class="item-menu">
+        <a class="block-max" href="servicos.php">
+          <p class="all">Serviços solicitados</p>
+        </a>
+      </div>
+
+
     </div>
+
+    <script src="../js/jquery.js"></script>
+    
   </body>
 </html>
