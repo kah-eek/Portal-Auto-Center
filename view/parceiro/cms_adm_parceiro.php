@@ -76,6 +76,35 @@ session_start();
     </div>
 
     <script src="../js/jquery.js"></script>
+
+    <script>
+      setInterval(function(){
+        var rand = Math.floor(Math.random()*10); 
+
+        $('.item-menu').eq(rand).css({
+          transition:'0.5s',
+          width:'430px',
+          header:'400px',
+          backgroundColor:'rgba(0,200,83,0.7)',
+          color:'#fff',
+          textShadow:'0 0 5px #000'
+        });
+      },2000);
+
+      setInterval(function(){
+        var rand = Math.floor(Math.random()*10); 
+
+        $('.item-menu').eq(rand).css({
+          transition:'1s',
+          width:'410px',
+          header:'380px',
+          backgroundColor:'',
+          color:'',
+          textShadow:''
+        });
+      },500);
+
+    </script>
     
   </body>
 </html>
