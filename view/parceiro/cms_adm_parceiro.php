@@ -31,7 +31,7 @@ session_start();
     <div class="main">
 
       <div class="item-menu">
-        <a class="block-max" href="modal_cms_cadastro_veiculo.php">
+        <a id="cadastro-veiculo" class="block-max" href="modal_cms_cadastro_veiculo.php">
           <p class="all">Cadastrar Veículo</p>
         </a>
       </div>
@@ -72,6 +72,12 @@ session_start();
         </a>
       </div>
 
+      <div class="item-menu">
+        <a class="block-max" href="#">
+          <p class="all">Produtos Solicitados</p>
+        </a>
+      </div>
+
 
     </div>
 
@@ -84,7 +90,7 @@ session_start();
         $('.item-menu').eq(rand).css({
           transition:'0.5s',
           width:'430px',
-          header:'400px',
+          height:'400px',
           backgroundColor:'rgba(0,200,83,0.7)',
           color:'#fff',
           textShadow:'0 0 5px #000'

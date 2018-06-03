@@ -251,6 +251,19 @@ a{
 }
 /* ****************************************************** */
 
+/*combo box*/
+.select-pac
+{
+  width: 80%;
+  font-family: conteudo;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  outline: none;
+  border-bottom-color: #00C853;
+  /*background-color: red;*/
+}
+
 .input_submit{ /*input do tipo submit */
   background-color: #263238;
   border-radius: 5px;
@@ -265,6 +278,20 @@ a{
   text-align: center;
 }
 /* ****************************************************** */
+
+/*Label*/
+.field-label
+{ 
+  font-weight: 9000;
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+  /*margin-bottom: -5%;*/
+  /*font-size: 0.90rem;*/
+  margin-left: 10.3%;
+  font-family: conteudo;
+  align-self: flex-start;
+}
+/* ****************************************************** */
+
 
 /*input_submit sem background*/
 .input_submit_cp{ /*input do tipo submit */
