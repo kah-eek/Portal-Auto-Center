@@ -36,43 +36,40 @@ if(isset($_POST["btnSalvar"]))
   <head>
     <meta charset="utf-8">
     <title>Cadastro de produtos</title>
-    <link rel="stylesheet" href="../css/parceiro/cms_modal_produtos_home.css">
     <link rel="stylesheet" href="../css/padroes.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/parceiro/cms_modal_produtos_home.css">
   </head>
-    <body>
-      <!-- <div class="container_campo float_left fs_30">
-        <div class="campo">
-          Modelo Produto
+    <body class="body">
+
+      <header class="header">
+        <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+
+        <h1 class="page-title">Auto Fast</h1>
+
+        <div class="saudacao">
+          <p>Bem-vindo</p>
+          <p>Caique M. Oliveira</p>
         </div>
-        <div class="campo">
-          Cor
-        </div>
-        <div class="campo">
-          Categoria
-        </div>
-        <div class="campo">
-          Nome
-        </div>
-        <div class="campo">
-          Preco
-        </div>
-        <div class="campo">
-          Conteudo embalagem
-        </div>
-        <div class="campo">
-          Garantia
-        </div>
-        <div class="campo">
-          Descrição
-        </div>
-        <div class="campo">
-          Observações
-        </div>
-      </div> -->
-      <form name="frmCadastroProduto" method="POST" action="">
-        <div class="container_input align_right float_left margem_l_5">
-          <div class="input ">
-            <select class="input_select" name="slcModelo">
+        <a class="return-button" href="cms_adm_parceiro.php">
+          <i class="material-icons">
+            keyboard_arrow_left
+          </i>
+        </a>
+      </header>
+
+      <div class="blank-space"></div>
+
+      <div class="main">
+        <form name="frmCadastroProduto" method="POST" action="">
+          
+          <div class="cont-princ">
+
+            <label class="label-pr-h">Cadastro de Produtos</label>
+            <div class="divisor"></div>
+
+            <select class="select-pac" name="slcModelo">
+              <option selected disabled value="">SELECIONE UM MODELO</option>
               <?php
               $sql = "SELECT * FROM tbl_modelo_produto";
                 $select = mysql_query($sql);
@@ -80,15 +77,14 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
-              <option value="">SELECIONE UM MODELO</option>
               <option value="<?php echo($rsPH['id_modelo_produto']) ?>"><?php echo($rsPH['modelo']) ?></option>
               <?php
               }
               ?>
             </select>
-          </div>
-          <div class="input ">
-            <select class="input_select" name="slcCor">
+
+            <select class="select-pac" name="slcCor">
+              <option selected disabled value="">SELECIONE UMA COR</option>
               <?php
               $sql = "SELECT * FROM tbl_cor";
                 $select = mysql_query($sql);
@@ -96,15 +92,14 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
-              <option value="">SELECIONE UMA COR</option>
               <option value="<?php echo($rsPH['id_cor']) ?>"><?php echo($rsPH['cor']) ?></option>
               <?php
               }
               ?>
             </select>
-          </div>
-          <div class="input ">
-            <select class="input_select" name="slcCategoria">
+
+            <select class="select-pac" name="slcCategoria">
+              <option selected disabled value="">SELECIONE UMA CATEGORIA</option>
               <?php
               $sql = "SELECT * FROM tbl_categoria_produto";
                 $select = mysql_query($sql);
@@ -112,44 +107,45 @@ if(isset($_POST["btnSalvar"]))
                 {
 
               ?>
-              <option value="">SELECIONE UMA CATEGORIA</option>
               <option value="<?php echo($rsPH['id_categoria_produto']) ?>"><?php echo($rsPH['categoria']) ?></option>
               <?php
               }
               ?>
             </select>
-          </div>
-          <div class="input ">
-            <input class="input_text_111" type="text" name="txt_nome" placeholder="Nome do Produto">
-          </div>
-          <div class="input ">
-            <input class="input_text_111" type="text" name="txt_preco" placeholder="Preço do produto">
-          </div>
-          <div class="input ">
-            <input class="input_text_111" type="text" name="txt_conteudo" placeholder="Conteudo Contido na embalagem">
-          </div>
-          <div class="input ">
-            <select class="input_select" name="slcGarantia">
-              <option value="">SELECIONE UMA GARANTIA</option>
+
+            <label for="txt_nome" class="field-label">Nome do Produto</label>
+            <input id="txt_nome" class="android-input input-text" type="text" name="txt_nome">
+
+            <label for="txt_preco" class="field-label">Preço do Produto</label>
+            <input id="txt_preco" class="android-input input-text" type="text" name="txt_preco">
+
+            <label for="txt_conteudo" class="field-label">Conteúdo contido na embalagem</label>
+            <input id="txt_conteudo" class="android-input input-text" type="text" name="txt_conteudo">
+
+            <select class="select-pac" name="slcGarantia">
+              <option selected disabled value="">SELECIONE UMA GARANTIA</option>
               <option value="1 Mes">1 Meses</option>
               <option value="3 Meses">3 Meses</option>
               <option value="5 Meses">5 Meses</option>
               <option value="6 Meses">6 Meses</option>
               <option value="12 Meses">12 Meses</option>
             </select>
+
+            <label for="txt_desc" class="field-label">Descrição do Produto</label>
+            <input id="txt_desc" class="android-input input-text" type="text" name="txt_desc">
+
+            <label for="txt_obs" class="field-label">Observação do Produto</label>
+            <input id="txt_obs" class="android-input input-text" type="text" name="txt_obs">
+
           </div>
-          <div class="input">
-            <input class="input_text_111" type="text" name="txt_desc" placeholder="Descrição do produto">
-          </div>
-          <div class="input">
-            <input class="input_text_111" type="text" name="txt_obs" placeholder="Observações">
-          </div>
-          <div class="input">
-            <div class="Container_btn">
-                <input class="input_btn titulo" type="submit" name="btnSalvar" value="Salvar">
-            </div>
-          </div>
-        </div>
-      </form>
+
+          <input class="input-submit-cad-veic" type="submit" name="btnSalvar" value="Salvar Produto">
+          
+        </form>
+      </div>
+
+      <script src="../js/jquery.js"></script>
+      <script src="../js/pac_framework.js"></script>
+
     </body>
 </html>
