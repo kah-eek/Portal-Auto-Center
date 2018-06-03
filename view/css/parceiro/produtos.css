@@ -1,8 +1,9 @@
 .pendentes{
-  width: 900px;
+  width: 1100px;
   min-height: 400px;
   background: white;
-  overflow-y: inherit;
+  /* overflow-y: inherit; */
+  background-color: red;
 }
 .nomeCliente{
   width: 200px;
@@ -43,9 +44,9 @@
 }
 
 .confirmadosRecusados{
-  width: 823px;
+  width: 1000px;
   height: 400px;
   overflow:auto;
   margin-top: 10px;
-  background: green;
+  /* background: green; */
 }

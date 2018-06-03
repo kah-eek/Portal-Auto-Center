@@ -7,9 +7,8 @@
 
   session_start();
 
-  $conexao=mysql_connect('caiqueoliveira.mysql.dbaas.com.br', 'caiqueoliveira', 'caique@2018');
-
-  mysql_select_db('caiqueoliveira');
+  require_once("../database/conect.php");
+  Conexao_db();
 #####################################################################################################################################################################################
   $id_imagem_produto_parceiro="";
   $id_produto="";

@@ -54,16 +54,16 @@ Conexao_db();
         <form name="frmPH" method="post" action="editar_servico_parceiro.php">
           <div class="Container_input">
             <div class="input">
-              <input type="text" name="txtNome" value="<?php echo($_SESSION['nome']); ?>">
+              <input class="input_text_111" type="text" name="txtNome" value="<?php echo($_SESSION['nome']); ?>">
             </div>
             <div class="input">
-              <input type="text" name="txtPreco" value="<?php echo($_SESSION['preco']); ?>">
+              <input class="input_text_111" type="text" name="txtPreco" value="<?php echo($_SESSION['preco']); ?>">
             </div>
             <div class="input">
-              <input type="text" name="txtGarantia" value="<?php echo($_SESSION['garantia']); ?>">
+              <input class="input_text_111" type="text" name="txtGarantia" value="<?php echo($_SESSION['garantia']); ?>">
             </div>
             <div class="input">
-              <input type="text" name="txtDescricao" value="<?php echo($_SESSION['descricao']); ?>">
+              <input class="input_text_111" type="text" name="txtDescricao" value="<?php echo($_SESSION['descricao']); ?>">
             </div>
           </div>
           <div class="input input_submit">

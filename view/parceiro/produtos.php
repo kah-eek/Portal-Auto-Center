@@ -8,15 +8,15 @@ if(isset($_GET['escolha'])){
 
     //if da escolha excluir
     if($escolha == 'confirma'){
-        $sql = "UPDATE tbl_situacao_pedido SET id_tipo_situacao_pedido ='1' WHERE id_situacao_pedido=".$id;
+        $sql = "UPDATE tbl_situacao_pedido SET id_tipo_situacao_pedido ='7' WHERE id_situacao_pedido=".$id;
         mysql_query($sql);
         // echo ($sql);
-        header('location:servicos.php');
+        header('location:produtos.php');
       }elseif ($escolha == 'recusa') {
-        $sql = "UPDATE tbl_situacao_pedido SET id_tipo_situacao_pedido ='6' WHERE id_situacao_pedido=".$id;
+        $sql = "UPDATE tbl_situacao_pedido SET id_tipo_situacao_pedido ='9' WHERE id_situacao_pedido=".$id;
         mysql_query($sql);
 
-        header('location:servicos.php');
+        header('location:produtos.php');
       }
     }
  ?>
@@ -25,21 +25,24 @@ if(isset($_GET['escolha'])){
 <html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Serviços</title>
-    <link rel="stylesheet" href="../css/parceiro/servicos.css">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="../css/parceiro/produtos.css">
     <link rel="stylesheet" href="../css/padroes.css">
 
   </head>
   <body>
     <div class="pendentes">
       <div class="nomeCliente borda_preta_1 align_center preenche_t_15">
-        NOME
+        NOME PRODUTO
       </div>
       <div class="dataAgendada borda_preta_1 align_center preenche_t_15">
-        DATA
+        PREÇO
       </div>
       <div class="servico borda_preta_1 align_center preenche_t_15">
-        SERVIÇO
+        MODELO
+      </div>
+      <div class="sttPendente borda_preta_1 align_center preenche_t_15">
+        CATEGORIA
       </div>
       <div class="sttPendente borda_preta_1 align_center preenche_t_15">
         SITUAÇÃO
@@ -55,33 +58,36 @@ if(isset($_GET['escolha'])){
           </i>
       </div>
       <?php
-      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'pendente';";
+      $sql = "SELECT * FROM caiqueoliveira.view_status_produto where situacao = 'Aguardando envio';";
           $select = mysql_query($sql) or die(mysql_error());
           // echo ($sql);
         while ($rsS = mysql_fetch_array($select))
         {
        ?>
       <div class="nomeCliente borda_preta_b_1 align_center preenche_t_15">
-        <?php echo($rsS['nome_cliente']) ?>
+        <?php echo($rsS['nome_produto']) ?>
       </div>
       <div class="dataAgendada borda_preta_b_1 align_center preenche_t_15">
-        <?php echo($rsS['data_agendada']) ?>
+        <?php echo($rsS['preco']) ?>
       </div>
       <div class="servico borda_preta_b_1 align_center preenche_t_15">
-        <?php echo($rsS['nome_servico']) ?>
+        <?php echo($rsS['modelo']) ?>
+      </div>
+      <div class="sttPendente borda_preta_b_1 align_center preenche_t_15">
+        <?php echo($rsS['categoria']) ?>
       </div>
       <div class="sttPendente borda_preta_b_1 align_center preenche_t_15">
         <?php echo($rsS['situacao']) ?>
       </div>
       <div class="confirmar">
-        <a href="servicos.php?escolha=confirma&id=<?php echo($rsS['id_situacao_pedido']);?>">
+        <a href="produtos.php?escolha=confirma&id=<?php echo($rsS['id_situacao_pedido']);?>">
           <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
             thumb_up_alt
           </i>
         </a>
       </div>
       <div class="recusar">
-        <a href="servicos.php?escolha=recusa&id=<?php echo($rsS['id_situacao_pedido']);?>">
+        <a href="produtos.php?escolha=recusa&id=<?php echo($rsS['id_situacao_pedido']);?>">
           <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
             thumb_down_alt
           </i>
@@ -93,33 +99,39 @@ if(isset($_GET['escolha'])){
     </div>
     <div class="confirmadosRecusados">
       <div class="nomeCliente borda_preta_1 align_center preenche_t_15">
-        NOME
+        NOME PRODUTO
       </div>
       <div class="dataAgendada borda_preta_1 align_center preenche_t_15">
-        DATA
+        PREÇO
       </div>
       <div class="servico borda_preta_1 align_center preenche_t_15">
-        SERVIÇO
+        MODELO
+      </div>
+      <div class="servico borda_preta_1 align_center preenche_t_15">
+        CATEGORIA
       </div>
       <div class="sttPendente borda_preta_1 align_center preenche_t_10">
         CONFIRMADOS/
         RECUSADOS
       </div>
       <?php
-      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'recusado' or situacao = 'confirmado';";
+      $sql = "SELECT * FROM caiqueoliveira.view_status_produto where situacao = 'envio recusado' or situacao = 'Enviado';";
           $select = mysql_query($sql) or die(mysql_error());
           // echo ($sql);
         while ($rsS = mysql_fetch_array($select))
         {
        ?>
        <div class="nomeCliente borda_preta_b_1 align_center preenche_t_15">
-         <?php echo($rsS['nome_cliente']) ?>
+         <?php echo($rsS['nome_produto']) ?>
        </div>
        <div class="dataAgendada borda_preta_b_1 align_center preenche_t_15">
-         <?php echo($rsS['data_agendada']) ?>
+         <?php echo($rsS['preco']) ?>
        </div>
        <div class="servico borda_preta_b_1 align_center preenche_t_15">
-         <?php echo($rsS['nome_servico']) ?>
+         <?php echo($rsS['modelo']) ?>
+       </div>
+       <div class="sttPendente borda_preta_b_1 align_center preenche_t_10">
+         <?php echo($rsS['categoria']) ?>
        </div>
        <div class="sttPendente borda_preta_b_1 align_center preenche_t_10">
          <?php echo($rsS['situacao']) ?>
