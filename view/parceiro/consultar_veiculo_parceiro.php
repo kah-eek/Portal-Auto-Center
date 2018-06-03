@@ -109,7 +109,9 @@ if(isset($_GET['escolha'])){
         </div>
         <div class="divisor"></div>
 
-        <?php
+        <div class="itens-da-tbl">
+          
+          <?php
           $sql = "SELECT * FROM tbl_veiculo AS v
 
                 INNER JOIN tbl_veiculo_parceiro AS vp ON vp.id_veiculo = v.id_veiculo
@@ -126,33 +128,39 @@ if(isset($_GET['escolha'])){
            <div class="labels-tab">
               <div class="cont-label">
                 <div class="item-tab">
-                  <p class="p"><?php echo($rsVP['ano_fabricacao']) ?></p>
+                  <p class="p no-weight"><?php echo($rsVP['ano_fabricacao']) ?></p>
                 </div>
 
                 <div class="item-tab">
-                  <p class="p"><?php echo($rsVP['placa']) ?></p>
+                  <p class="p no-weight"><?php echo($rsVP['placa']) ?></p>
                 </div>
                 
                 <div class="item-tab">
-                  <p class="p"><?php echo($rsVP['quilometro_rodado']) ?></p>
+                  <p class="p no-weight"><?php echo($rsVP['quilometro_rodado']) ?></p>
                 </div>
                 
                 <div class="item-tab">
-                  <i class="material-icons">
-                    edit
-                  </i>
+                  <a href="consultar_veiculo_parceiro.php?escolha=editar&id=<?php echo($rsVP['id_veiculo']);?>">
+                    <i class="material-icons">
+                      edit
+                    </i>
+                  </a>
                 </div>
 
                 <div class="item-tab">
-                  <i class="material-icons">
-                    delete_forever
-                  </i>
+                  <a href="consultar_veiculo_parceiro.php?escolha=excluir&id=<?php echo($rsVP['id_veiculo']);?>">
+                    <i class="material-icons">
+                      delete_forever
+                    </i>
+                  </a>
                 </div>
               </div>
             </div>
           <?php
            }
            ?>
+
+        </div>
 
       </div>
     </div>
