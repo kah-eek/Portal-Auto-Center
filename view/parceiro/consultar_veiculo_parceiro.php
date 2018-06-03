@@ -53,56 +53,63 @@ if(isset($_GET['escolha'])){
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>
-    <div class="container_conteudo_central_apc">
-      <!-- MENU LATERAL -->
-      <div class="container_menu_l_apc float_left borda_preta_1 margem_l_20">
-        <div class="container_img_menu_apc centro_lr borda_preta_1 margem_t_20">
-          <div class="item_img_menu_l_apc ">
+    
+    <header class="header">
+      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
 
-          </div>
-        </div>
-        <!-- NOME USUÁRIO -->
-        <div class="container_nome_usuario_apc margem_t_10">
-          <div class="item_nome_usuario_apc centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
-            Nome de Usuário
-          </div>
-        </div>
+      <h1 class="page-title">Auto Fast</h1>
+
+      <div class="saudacao">
+        <p>Bem-vindo</p>
+        <p>Caique M. Oliveira</p>
       </div>
-        <!-- conteudo -->
-      <form name="frmParceiro" method="get" action="consultar_veiculo_parceiro.php">
-        <div class="container_geral">
-          <div class="container_titulo">
-            <div class="item_titulo fs_30">
-              <h2>Gerenciamento de Veículos</h2>
-            </div>
-          </div>
-          <div class="divisor_vc">
+      <a class="return-button" href="cms_adm_parceiro.php">
+        <i class="material-icons">
+          keyboard_arrow_left
+        </i>
+      </a>
+    </header>
 
-          </div>
-          <div class="container_ok margem_t_30">
-            <div class="item_dados align_center conteudo fs_18">
-              Ano de Frabricação
-            </div>
-            <div class="item_dados align_center conteudo fs_18">
-              Placa
-            </div>
-            <div class="item_dados align_center conteudo fs_18">
-              Quilometragem
-            </div>
-            <div class="item_dados">
-              <div class="excluir align_center ">
-                <i class="material-icons" style="font-size:30px;">delete_forever</i>
-              </div>
-              <div class="editar align_center">
-                <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
-              </div>
-            </div>
-          </div>
-          <div class="divisor_vc">
+    <div class="blank-space"></div>
 
+    <div class="main">
+
+      <div class="tabela-view-dados">
+        
+
+        <label class="label-ger-vei">Gerenciamento de Veículos</label>
+        <div class="divisor"></div>
+
+        <div class="labels-tab">
+          <div class="cont-label">
+            <div class="item-tab">
+              <p class="p">Ano de Fabricação</p>
+            </div>
+
+            <div class="item-tab">
+              <p class="p">Placa</p>
+            </div>
+            
+            <div class="item-tab">
+              <p class="p">Quilometragem</p>
+            </div>
+            
+            <div class="item-tab">
+              <i class="material-icons">
+                edit
+              </i>
+            </div>
+
+            <div class="item-tab">
+              <i class="material-icons">
+                delete_forever
+              </i>
+            </div>
           </div>
-          <div class="container_itens">
-          <?php
+        </div>
+        <div class="divisor"></div>
+
+        <?php
           $sql = "SELECT * FROM tbl_veiculo AS v
 
                 INNER JOIN tbl_veiculo_parceiro AS vp ON vp.id_veiculo = v.id_veiculo
@@ -116,41 +123,39 @@ if(isset($_GET['escolha'])){
             while ($rsVP = mysql_fetch_array($select))
             {
            ?>
-            <div class="container_sla">
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['ano_fabricacao']) ?>
-              </div>
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['placa']) ?>
-              </div>
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['quilometro_rodado']) ?>
-              </div>
-              <div class="item_visu">
-                <div class="excluir_visu preenche_t_10 align_center">
-                  <a href="consultar_veiculo_parceiro.php?escolha=excluir&id=<?php echo($rsVP['id_veiculo']);?>">
-                    <i class="material-icons" style="font-size:30px;">delete_forever</i>
-                  </a>
+           <div class="labels-tab">
+              <div class="cont-label">
+                <div class="item-tab">
+                  <p class="p"><?php echo($rsVP['ano_fabricacao']) ?></p>
                 </div>
-                <div class="editar_visu preenche_t_10 align_center">
-                  <a href="consultar_veiculo_parceiro.php?escolha=editar&id=<?php echo($rsVP['id_veiculo']);?>">
-                    <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
-                  </a>
+
+                <div class="item-tab">
+                  <p class="p"><?php echo($rsVP['placa']) ?></p>
+                </div>
+                
+                <div class="item-tab">
+                  <p class="p"><?php echo($rsVP['quilometro_rodado']) ?></p>
+                </div>
+                
+                <div class="item-tab">
+                  <i class="material-icons">
+                    edit
+                  </i>
+                </div>
+
+                <div class="item-tab">
+                  <i class="material-icons">
+                    delete_forever
+                  </i>
                 </div>
               </div>
             </div>
-
           <?php
            }
            ?>
-          </div>
-          <div class="bt_retornar">
-            <a href="cms_adm_parceiro.php" style="text-decoration:none">
-              <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
-            </a>
-          </div>
-        </div>
-      </form>
+
+      </div>
     </div>
+
   </body>
 </html>
