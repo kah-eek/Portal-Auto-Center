@@ -97,7 +97,7 @@
     <div class="container_topico_forum bg_cinza sombra_preta_20">
 
       <!-- Contáiner da foto do usuário mais o botão de like -->
-      <div class="container_foto_like_for preenche_20 float_left margem_t_30">
+      <div class="container_foto_like_for preenche_20 float_left">
         <!-- Foto fo usuário -->
         <div class="foto_usuario_for">
           <img class="bsuavizada_250 sombra_preta_2" src="<?php echo($rsConsulta['foto']) ?>" alt="Foto de perfil">
