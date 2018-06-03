@@ -7,7 +7,7 @@ $(function(){
 
 	  $(`label[for="${id}"]`).css({
 	    marginBottom:'2%',
-	    fontSize:'0.65rem',
+	    fontSize:'0.80rem',
 	    transition:'0.5s'
 	  });
 	  // console.log($(`label[for="${id}"]`));

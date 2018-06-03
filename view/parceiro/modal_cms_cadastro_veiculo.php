@@ -116,80 +116,142 @@ if(isset($_POST["btnSalvar"]))
 
     <div class="main">
 
-      <form class="form-container" name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
-      
-      <label for="slcFabricante" class="titulo-cad-ve">Cadastre um Veículo</label>
+      <form name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
 
-      <div class="divisor"></div>
+        <div class="form-container">
+          <label for="slcFabricante" class="titulo-cad-ve">Cadastre um Veículo</label>
 
-      <select id="slcFabricante" class="select-pac" required name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
-        <?php
-        if (isset($_GET['idFab']))
-        {
-            $IdFabricant = $_GET['idFab'];
-            $NomeFabricant = $_GET['nomeFab'];
-          ?>
+          <div class="divisor"></div>
 
-              <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
+          <select id="slcFabricante" class="select-pac" required name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
+            <?php
+            if (isset($_GET['idFab']))
+            {
+                $IdFabricant = $_GET['idFab'];
+                $NomeFabricant = $_GET['nomeFab'];
+              ?>
 
-          <?php
-        }else {
-        ?>
-            <option selected disabled value="">Fabricante</option>
-        <?php
-        }
+                  <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
 
-        ?>
+              <?php
+            }else {
+            ?>
+                <option selected disabled value="">Fabricante</option>
+            <?php
+            }
 
-
-        <?php
-        $sql = "SELECT * FROM tbl_fabricante";
-        $select = mysql_query($sql);
-        while ($rsCV = mysql_fetch_array($select))
-        {
-
-          ?>
-          <option value="modal_cms_cadastro_veiculo.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
-          <?php
-        }
-        ?>
-      </select>
-
-      <?php
-        if (isset($_GET['idFab']))
-          $IdFabricant = $_GET['idFab'];
-        else
-          $IdFabricant = 0;
+            ?>
 
 
-        ?>
+            <?php
+            $sql = "SELECT * FROM tbl_fabricante";
+            $select = mysql_query($sql);
+            while ($rsCV = mysql_fetch_array($select))
+            {
 
-        <select class="select-pac" required name="slcModelo">
-
-
-          <option selected disabled value="">Modelo</option>
-          <?php
-          if ($IdFabricant<>0)
-          {
-              $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
-              $select = mysql_query($sql);
-              while ($rsCV = mysql_fetch_array($select))
-              {
-
-                ?>
-                <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
-                <?php
-              }
+              ?>
+              <option value="modal_cms_cadastro_veiculo.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
+              <?php
             }
             ?>
-        </select>
+          </select>
 
-        <label for="txtAno" class="field-label">Ano do Veículo</label>
-        <input id="txtAno" class="android-input input-text" type="text" name="txtAno">
+          <?php
+            if (isset($_GET['idFab']))
+              $IdFabricant = $_GET['idFab'];
+            else
+              $IdFabricant = 0;
+
+
+            ?>
+
+            <select class="select-pac" required name="slcModelo">
+
+
+              <option selected disabled value="">Modelo</option>
+              <?php
+              if ($IdFabricant<>0)
+              {
+                  $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
+                  $select = mysql_query($sql);
+                  while ($rsCV = mysql_fetch_array($select))
+                  {
+
+                    ?>
+                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <?php
+                  }
+                }
+                ?>
+            </select>
+
+            <label for="txtAno" class="field-label">Ano do Veículo</label>
+            <input id="txtAno" class="android-input input-text" type="text" name="txtAno">
+
+            <label for="txtPlaca" class="field-label">Placa do Veículo</label>
+            <input id="txtPlaca" class="android-input input-text" type="text" name="txtPlaca">
+
+            <select class="select-pac" required name="slcCor">
+              <?php
+              $sql = "SELECT * FROM tbl_cor";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
+
+              ?>
+              <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
+              <?php
+              }
+              ?>
+            </select>
+
+            <select class="select-pac" required name="slcQtdPortas">
+              <option selected disabled value="">Quantidade de Portas</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+            </select>
+
+            <label for="txtQuilometragem" class="field-label">Quilometragem do Veículo</label>
+            <input id="txtQuilometragem" class="android-input input-text" type="text" name="txtQuilometragem">
+
+            <select class="select-pac" required name="slcTipoVeiculo">
+              <option selected disabled value="">Tipo de Veículo</option>
+              <?php
+              $sql = "SELECT * FROM tbl_tipo_veiculo";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
+
+              ?>
+              <option value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+              <?php
+                }
+              ?>
+            </select>
+
+            <select class="select-pac" required name="slcCombustivel">
+              <option selected disabled value="">Tipo de Combustível</option>
+              <?php
+              $sql = "SELECT * FROM tbl_tipo_combustivel";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
+
+              ?>
+              <option value="<?php echo($rsCV['id_tipo_combustivel']) ?>"><?php echo($rsCV['combustivel']) ?></option>
+              <?php
+                }
+              ?>
+            </select>    
+        </div>
+
+        <input class="input-submit-cad-veic" type="submit" name="btnSalvar" value="Salvar Veiculo">
 
       </form>  
-
     </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/pac_framework.js"></script>
 
   </body>
 </html>
