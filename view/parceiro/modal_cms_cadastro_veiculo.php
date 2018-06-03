@@ -110,6 +110,11 @@ if(isset($_POST["btnSalvar"]))
         <p>Bem-vindo</p>
         <p>Caique M. Oliveira</p>
       </div>
+      <a class="return-button" href="cms_adm_parceiro.php">
+        <i class="material-icons">
+          keyboard_arrow_left
+        </i>
+      </a>
     </header>
 
     <div class="blank-space"></div>
