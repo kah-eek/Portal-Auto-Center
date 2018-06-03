@@ -1,58 +1,128 @@
-/* .campo{
-  width: 300px;
-  height: 70px;
-  margin-bottom: 5px;
-  background-color: green;
-} */
-.input{
-  width: 300px;
-  height: 70px;
-  margin-bottom: 5px;
-  background-color: white;
-}
-.input_select{
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #9e9e9e;
-  outline: none;
-  height: 3rem;
-  line-height: 3rem;
-  width: 100%;
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  padding: 0;
-  display: block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  z-index: 1;
+*{font-size: 1em;}
+
+.body
+{
+  background-color: rgb(32,33,36);
+  background-image: linear-gradient(to right, rgba(42,46,55,0.8) 0%, rgba(32,33,36,0.9) 100%);
 }
 
-.input_text_111{
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #9e9e9e;
-  border-radius: 0;
-  outline: none;
-  height: 3rem;
+.header
+{
+  position: fixed;
+  padding: 0 120px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  padding: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-transition: border .3s, -webkit-box-shadow .3s;
-  transition: border .3s, -webkit-box-shadow .3s;
-  transition: box-shadow .3s, border .3s;
-  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  height: 10vh;
+  box-shadow: -3px 2px 14px 0px rgba(0,0,0,.4);
+  background-color: #fff;
 }
-.input_btn{
-  width: 300px;
-  /* margin-left: -600px; */
-  background-color: green;
+.header img
+{
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.4);
+  margin-top: 80px; 
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+.page-title
+{
+  font-family: titulo;
+  font-size: 2.8rem;
+  margin-left: 5%;
+}
+.main
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 90vh;
+  height: 100%;
+  background-size: 400% 400%;
+  background-color: rgb(32,33,36);
+  /*background-image: linear-gradient(130deg, rgba(244,67,540,.4) 0%, rgba(183,28,28,0.7) 100%);*/
+  background-image: linear-gradient(130deg, rgba(213,0,0,0.8) 0%, rgba(106,27,154,0.6) 100%);
+  animation: gradient 9s ease infinite;
+}
+.blank-space
+{
+  height: 10vh;
+  width: 100%;
+}
+@keyframes gradient
+{
+  0%{background-position: 0% 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0% 50%;}
+}
+.saudacao
+{
+  font-family: conteudo;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 100%;
+  /*background-color: green;*/
+}
+
+/*NAO TOQUE NA PARTE DE CIMA DO CSS !!!*/
+
+.cont-princ
+{
+  display: flex;
+  padding: 2% 5%;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1440px;
+  min-height: 90vh;
+  height: 100%;
+  background-color: #fff;
+}
+.input-submit-cad-veic
+{
+  width: 100%;
+  padding: 10px 0px;
+  background-color: #00C853;
+  border: none;
+  /*position: fixed;*/
+  /*bottom: 0px;*/
+  font-family: titulo;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0px 0px 1px #000;
+}
+.label-pr-h
+{
+  font-size: 2.8rem;
+  font-family: titulo;
+}
+.select-pac
+{
+  margin: 2% 0;
+}
+.field-label
+{
+  margin-top: 1%;
+}
+.input-text
+{
+  background-color: transparent;
+  width: 80%;
+  font-family: conteudo;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  margin-bottom: 2%;
+  border-bottom-color: #00C853;
 }
