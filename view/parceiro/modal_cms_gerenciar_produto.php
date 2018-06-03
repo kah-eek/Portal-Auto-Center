@@ -45,60 +45,70 @@ if(isset($_GET['escolha'])){
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/parceiro/cms_agenda_parceiro.css">
-    <link rel="stylesheet" href="../css/parceiro/modal_cms_gerenciar_produto.css">
     <link rel="stylesheet" href="../css/padroes.css">
+    <link rel="stylesheet" href="../css/parceiro/modal_cms_gerenciar_produto.css">
   </head>
   <body>
-    <div class="container_conteudo_central_apc">
-      <!-- MENU LATERAL -->
-      <div class="container_menu_l_apc float_left borda_preta_1 margem_l_20">
-        <div class="container_img_menu_apc centro_lr borda_preta_1 margem_t_20">
-          <div class="item_img_menu_l_apc ">
 
-          </div>
-        </div>
-        <!-- NOME USUÁRIO -->
-        <div class="container_nome_usuario_apc margem_t_10">
-          <div class="item_nome_usuario_apc centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
-            Nome de Usuário
-          </div>
-        </div>
+    <header class="header">
+      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+
+      <h1 class="page-title">Auto Fast</h1>
+
+      <div class="saudacao">
+        <p>Bem-vindo</p>
+        <p>Caique M. Oliveira</p>
       </div>
-        <!-- conteudo -->
-      <form name="frmParceiro" method="get" action="consultar_veiculo_parceiro.php">
-        <div class="container_geral">
-          <div class="container_titulo">
-            <div class="item_titulo fs_30">
-              <h2>Gerenciamento de Serviços</h2>
-            </div>
-          </div>
-          <div class="divisor_vc">
+      <a class="return-button" href="cms_adm_parceiro.php">
+        <i class="material-icons">
+          keyboard_arrow_left
+        </i>
+      </a>
+    </header>
 
-          </div>
-          <div class="container_ok margem_t_30">
-            <div class="item_dados align_center conteudo fs_18">
-              Nome
-            </div>
-            <div class="item_dados align_center conteudo fs_18">
-              Preço
-            </div>
-            <div class="item_dados align_center conteudo fs_18">
-              Garantia
-            </div>
-            <div class="item_dados">
-              <div class="excluir align_center ">
-                <i class="material-icons" style="font-size:30px;">delete_forever</i>
-              </div>
-              <div class="editar align_center">
-                <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
-              </div>
-            </div>
-          </div>
-          <div class="divisor_vc">
+    <div class="blank-space"></div>
 
+    <div class="main">
+
+      <div class="tabela-view-dados">
+        
+
+        <label class="label-ger-vei">Gerenciamento de Serviços</label>
+        <div class="divisor"></div>
+
+        <div class="labels-tab">
+          <div class="cont-label">
+            <div class="item-tab">
+              <p class="p">Nome do Serviço</p>
+            </div>
+
+            <div class="item-tab">
+              <p class="p">Preço</p>
+            </div>
+            
+            <div class="item-tab">
+              <p class="p">Garantia</p>
+            </div>
+            
+            <div class="item-tab">
+              <i class="material-icons">
+                edit
+              </i>
+            </div>
+
+            <div class="item-tab">
+              <i class="material-icons">
+                delete_forever
+              </i>
+            </div>
           </div>
-          <div class="container_itens">
+        </div>
+        <div class="divisor"></div>
+
+        <div class="itens-da-tbl">
+
           <?php
           $sql = "SELECT * FROM view_servico WHERE id_categoria_produto = 2 and id_usuario =".$id_usuario;
                 $select = mysql_query($sql);
@@ -106,41 +116,43 @@ if(isset($_GET['escolha'])){
             while ($rsVP = mysql_fetch_array($select))
             {
            ?>
-            <div class="container_sla">
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['nome']) ?>
-              </div>
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['preco']) ?>
-              </div>
-              <div class="item_visu align_center preenche_t_15">
-                <?php echo($rsVP['garantia']) ?>
-              </div>
-              <div class="item_visu">
-                <div class="excluir_visu preenche_t_10 align_center">
-                  <a href="modal_cms_gerenciar_produto.php?escolha=excluir&id=<?php echo($rsVP['id_produto']);?>">
-                    <i class="material-icons" style="font-size:30px;">delete_forever</i>
-                  </a>
-                </div>
-                <div class="editar_visu preenche_t_10 align_center">
-                  <a href="modal_cms_gerenciar_produto.php?escolha=editar&id=<?php echo($rsVP['id_produto']);?>">
-                    <i class="material-icons" style="font-size:30px;">remove_red_eye</i>
-                  </a>
-                </div>
-              </div>
-            </div>
+             <div class="labels-tab">
+                <div class="cont-label">
+                  <div class="item-tab">
+                    <p class="p no-weight"><?php echo($rsVP['nome']) ?></p>
+                  </div>
 
+                  <div class="item-tab">
+                    <p class="p no-weight"><?php echo($rsVP['preco']) ?></p>
+                  </div>
+                  
+                  <div class="item-tab">
+                    <p class="p no-weight"><?php echo($rsVP['garantia']) ?></p>
+                  </div>
+                  
+                  <div class="item-tab">
+                    <a href="modal_cms_gerenciar_produto.php?escolha=editar&id=<?php echo($rsVP['id_produto']);?>">
+                      <i class="material-icons">
+                        edit
+                      </i>
+                    </a>
+                  </div>
+
+                  <div class="item-tab">
+                    <a href="modal_cms_gerenciar_produto.php?escolha=excluir&id=<?php echo($rsVP['id_produto']);?>">
+                      <i class="material-icons">
+                        delete_forever
+                      </i>
+                    </a>
+                  </div>
+                </div>
+              </div>
           <?php
            }
            ?>
-          </div>
-          <div class="bt_retornar">
-            <a href="cms_adm_parceiro.php" style="text-decoration:none">
-              <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
-            </a>
-          </div>
         </div>
-      </form>
+
+      </div>
     </div>
   </body>
 </html>

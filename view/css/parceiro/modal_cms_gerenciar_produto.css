@@ -1,134 +1,140 @@
-body{
-  margin: 0px;
+*{font-size: 1em;}
+
+.body
+{
+  background-color: rgb(32,33,36);
+  background-image: linear-gradient(to right, rgba(42,46,55,0.8) 0%, rgba(32,33,36,0.9) 100%);
 }
-.container_conteudo_central_apc{
+
+.header
+{
+  position: fixed;
+  padding: 0 120px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
-  height: 949px;
-
-}
-
-.container_menu_l_apc{
-  width: 400px;
-  height: 900px;
-}
-
-.container_geral{
-  width: 1155px;
-  height: 910px;
-  margin-left: 100px;
-  /*margin-left: 500px;*/
-  float: left;
+  height: 10vh;
+  box-shadow: -3px 2px 14px 0px rgba(0,0,0,.4);
   background-color: #fff;
 }
-.item_dados{
+.header img
+{
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.4);
+  margin-top: 80px; 
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+.page-title
+{
+  font-family: titulo;
+  font-size: 2.8rem;
+  margin-left: 5%;
+}
+.main
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 90vh;
+  height: 100%;
+  background-size: 400% 400%;
+  background-color: rgb(32,33,36);
+  /*background-image: linear-gradient(130deg, rgba(244,67,540,.4) 0%, rgba(183,28,28,0.7) 100%);*/
+  background-image: linear-gradient(130deg, rgba(213,0,0,0.8) 0%, rgba(106,27,154,0.6) 100%);
+  animation: gradient 9s ease infinite;
+}
+.blank-space
+{
+  height: 10vh;
+  width: 100%;
+}
+@keyframes gradient
+{
+  0%{background-position: 0% 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0% 50%;}
+}
+.saudacao
+{
+  font-family: conteudo;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   width: 250px;
-  height: 50px;
-  margin-right: 5px;
-  /*background-color: orange;*/
-  padding-top: 30px;
-  margin-left: 29px;
-  float: left;
-
-}
-.editar{
-  width: 125px;
-  height: 50px;
+  height: 100%;
   /*background-color: green;*/
-  float: left;
-}
-.excluir{
-  width: 125px;
-  height: 50px;
-  /*background-color: magenta;*/
-  float: left;
-}
-.item_visu{
-  width: 250px;
-  height: 50px;
-  /*margin-right:5px;*/
-  margin-left: 32px;
-  /*background-color: grey;*/
-  margin-bottom: 2px;
-  border: solid 1px;
-  float: left;
-}
-.editar_visu{
-  width: 125px;
-  height: 50px;
-  /*background-color: tomato;*/
-  float: left;
-}
-.excluir_visu{
-  width: 125px;
-  height: 50px;
-  /*background-color: yellow;*/
-  float: left;
 }
 
-.container_titulo{
-  width: 1155px;
-  height: 120px;
-  /*background-color: orange;*/
+/*NAO TOQUE NA PARTE DE CIMA DO CSS !!!*/
 
+.tabela-view-dados
+{
+  padding: 2% 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1440px;
+  height: 90vh;
+  background-color: #fff;
 }
-
-.item_titulo{
-  width: 1155px;
-  height: 120px;
-  /*background-color: green;*/
-  padding-top: 1px;
-  text-align: center;
-
-}
-
-.container_ok{
-  width: 1152px;
-  height: 80px;
-  /*background-color: red;*/
-
-}
-
-.container_itens{
-  width: 1155px;
-  height: 300px;
-  /*background-color: red;*/
+.itens-da-tbl
+{
   overflow: auto;
-  margin-top: 20px;
-
+  width: 100%;
+  height: 65%;
+  /*background-color: red;*/
+}
+.label-ger-vei
+{
+  font-family: titulo;
+  font-size: 2.8rem;
 }
 
-.container_sla{
-  width: 1138px;
-  height: 52px;
+.labels-tab
+{
+  width: 100%;
+  height: 80px;
   /*background-color: green;*/
-  margin-top: 5px;
-
 }
-
-.divisor_vc{
-  display: block;
-  width: 80%;
-  height: 1px;
-  border-radius: 100px;
-  background-color:#00C853;
-  margin-top: 25px;
-  margin-bottom: 25px;
+.cont-label
+{
+  display: flex;
+  flex-direction: row;
   margin-left: auto;
   margin-right: auto;
-}
-
-.bt_retornar{
-  width: 40px;
-  height: 40px;
+  width: 80%;
+  height:100%;
   /*background-color: red;*/
-  float: right;
-  /*margin-right: -100px;*/
-  margin-top: 250px;
-  padding-left: 10px;
+
+}
+.item-tab
+{
+  display: flex;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center; 
+  font-family: conteudo;
+  width: 250px;
+  height: 100%;
+  /*background-color: yellow;*/
+}
+.item-tab > .p
+{
+  margin: 0px;
+  padding: 0px;
 }
 
-.img_retorno{
-  width: 40px;
-  height: 40px;
-
+.item-tab > .p.no-weight
+{
+  font-weight: 500;
 }
