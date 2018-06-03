@@ -35,6 +35,8 @@ if(isset($_POST["BtnOk"]))
 
         // $_SESSION['id_parceiro'] = $rsParceiro['id_parceiro'];
         $_SESSION['id_parceiro1'] = $rsParceiro['id_parceiro'];
+        $_SESSION['nomeParceiro'] = $rsParceiro['razao_social'];
+        $_SESSION['fotoParceiro'] = $rsParceiro['foto_perfil'];
 
         // $_SESSION['nomeUsuario'] = $rsUsuario['nome'];
 

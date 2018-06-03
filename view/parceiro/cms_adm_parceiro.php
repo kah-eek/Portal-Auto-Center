@@ -8,7 +8,7 @@ session_start();
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>HOME</title>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/padroes.css">
     <link rel="stylesheet" href="../css/parceiro/cms_adm_parceiro.css">
@@ -29,7 +29,7 @@ session_start();
     <div class="blank-space"></div>
 
     <div class="main">
-      
+
       <div class="item-menu">
         <a class="block-max" href="modal_cms_cadastro_veiculo.php">
           <p class="all">Cadastrar Veículo</p>
@@ -79,7 +79,7 @@ session_start();
 
     <script>
       setInterval(function(){
-        var rand = Math.floor(Math.random()*10); 
+        var rand = Math.floor(Math.random()*10);
 
         $('.item-menu').eq(rand).css({
           transition:'0.5s',
@@ -92,7 +92,7 @@ session_start();
       },2000);
 
       setInterval(function(){
-        var rand = Math.floor(Math.random()*10); 
+        var rand = Math.floor(Math.random()*10);
 
         $('.item-menu').eq(rand).css({
           transition:'1s',
@@ -105,6 +105,6 @@ session_start();
       },500);
 
     </script>
-    
+
   </body>
 </html>
