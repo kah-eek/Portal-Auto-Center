@@ -1,0 +1,65 @@
+<body>
+        <div class="Container_titulo">
+          <div class="titulo">
+            Modelo
+          </div>
+          <div class="titulo">
+            Cor
+          </div>
+          <div class="titulo">
+            Categoria
+          </div>
+          <div class="titulo">
+            Nome
+          </div>
+          <div class="titulo">
+            Preco
+          </div>
+          <div class="titulo">
+            Conteudo embalagem
+          </div>
+          <div class="titulo">
+            Garantia
+          </div>
+          <div class="titulo">
+            Descrição
+          </div>
+          <div class="titulo">
+            Observação
+          </div>
+        </div>
+        <form name="frmPH" method="post" action="editar_produto_home.php">
+          <div class="Container_input">
+            <div class="input">
+              <input type="text" name="txtModelo" value="<?php echo($_SESSION['id_modelo_produto']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtCor" value="<?php echo($_SESSION['id_cor']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtCategoria" value="<?php echo($_SESSION['id_categoria_produto']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtNome" value="<?php echo($_SESSION['nome']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtPreco" value="<?php echo($_SESSION['preco']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtConteudo" value="<?php echo($_SESSION['conteudo_embalagem']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtGarantia" value="<?php echo($_SESSION['garantia']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtDescricao" value="<?php echo($_SESSION['descricao']); ?>">
+            </div>
+            <div class="input">
+              <input type="text" name="txtObs" value="<?php echo($_SESSION['observacao']); ?>">
+            </div>
+          </div>
+          <div class="input input_submit">
+            <input type="submit" name="btEditar" value="Editar">
+          </div>
+        </form>
+      </body>
