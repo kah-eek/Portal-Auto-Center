@@ -45,233 +45,162 @@ Conexao_db();
       }
       //-->
       </script>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/padroes.css">
     <link rel="stylesheet" href="../css/parceiro/editar_veiculo_parceiro.css">
     <link rel="stylesheet" href="../css/parceiro/cms_agenda_parceiro.css">
-    <link rel="stylesheet" href="../css/padroes.css">
   </head>
-  <body>
-    <div class="container_conteudo_central_apc">
-      <!-- MENU LATERAL -->
-      <div class="container_menu_l_apc float_left borda_preta_1 margem_l_20">
-        <div class="container_img_menu_apc centro_lr borda_preta_1 margem_t_20">
-          <div class="item_img_menu_l_apc ">
+  <body class="body">
 
+        <header class="header">
+          <img src="<?php echo($rsVP['foto_perfil']) ?>">
+
+          <h1 class="page-title">Auto Fast</h1>
+
+          <div class="saudacao">
+            <p>Bem-vindo,</p>
+            <p><?php echo($rsVP['razao_social']) ?></p>
           </div>
-        </div>
-        <!-- NOME USUÁRIO -->
-        <div class="container_nome_usuario_apc margem_t_10">
-          <div class="item_nome_usuario_apc centro_lr align_center preenche_t_15 fs_18 negrito txt_branco">
-            Nome de Usuário
-          </div>
-        </div>
-      </div>
+      <a class="return-button" href="cms_adm_parceiro.php">
+        <i class="material-icons">
+          keyboard_arrow_left
+        </i>
+      </a>
+    </header>
+    <?php
+  
+     ?>
+
+    <div class="blank-space"></div>
+
+    <div class="main">
+
       <form name="frmEV" method="post" action="editar_veiculo_parceiro.php">
-        <body>
-          <div class="container_segura_tudo float_left">
-            <div class="container_titulo align_center">
-              <div class="item_titulo fs_30">
-                <h2>Alterando Informações de Veículo</h2>
-              </div>
-            </div>
-            <div class="divisor">
 
-            </div>
+        <div class="form-container">
+          <label for="slcFabricante" class="titulo-cad-ve">Editar Veículo</label>
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Ano:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev margem_b_30 centro_lr">
-                <input class="input_text txt_preto sem_sombra" placeholder="Digite o Ano do Veículo" type="text" name="txtAno" value="<?php echo($_SESSION['ano_fabricacao']); ?>">
-              </div>
-            </div>
+          <div class="divisor"></div>
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Fabricante:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <!-- <div class="campo_texto_ev margem_b_30 centro_lr">
-                <select class="" name="slcModelo">
-                  <option value="<?php echo($_SESSION['id_modelo_veiculo']); ?>"><?php echo($_SESSION['id_modelo_veiculo']); ?></option>
-                </select>
-                <input class="input_text txt_preto sem_sombra" type="text" name="txtFabricante" value="<?php echo($_SESSION['id_modelo_veiculo']); ?>">
-              </div> -->
-              <div class="campo_texto_ev margem_b_30 align_center centro_lr">
-                <select name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
-                  <?php
-                  if (isset($_GET['idFab']))
-                  {
-                      $IdFabricant = $_GET['idFab'];
-                      $NomeFabricant = $_GET['nomeFab'];
-                    ?>
+          <label for="txtAno" class="field-label">Ano do Veículo</label>
+          <input id="txtAno" value="<?php echo($_SESSION['ano_fabricacao']); ?>" class="android-input input-text" type="text" name="txtAno">
 
-                        <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
+          <select class="select-pac" name="slcFabricante" onchange="CarregarSelect('parent',this,0)">
+            <?php
+            if (isset($_GET['idFab']))
+            {
+                $IdFabricant = $_GET['idFab'];
+                $NomeFabricant = $_GET['nomeFab'];
+              ?>
 
-                    <?php
-                  }else {
-                  ?>
-                      <option value="">Selecione um item</option>
-                  <?php
-                  }
+                  <option  selected value="<?php echo($IdFabricant); ?>"><?php echo($NomeFabricant); ?></option>
 
-                  ?>
+              <?php
+            }else {
+            ?>
+                <option selected disabled value="">Fabricante</option>
+            <?php
+            }
+
+            ?>
 
 
-                  <?php
-                  $sql = "SELECT * FROM tbl_fabricante";
+            <?php
+            $sql = "SELECT * FROM tbl_fabricante";
+            $select = mysql_query($sql);
+            while ($rsCV = mysql_fetch_array($select))
+            {
+
+              ?>
+              <option value="editar_veiculo_parceiro.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
+              <?php
+            }
+            ?>
+          </select>
+
+          <?php
+            if (isset($_GET['idFab']))
+              $IdFabricant = $_GET['idFab'];
+            else
+              $IdFabricant = 0;
+
+
+            ?>
+
+            <select class="select-pac" name="slcModelo">
+
+
+              <option selected disabled value="">Modelo</option>
+              <?php
+              if ($IdFabricant<>0)
+              {
+                  $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
                   $select = mysql_query($sql);
                   while ($rsCV = mysql_fetch_array($select))
                   {
 
                     ?>
-                    <option value="editar_veiculo_parceiro.php?idFab=<?php echo($rsCV['id_fabricante']) ?>&nomeFab=<?php echo($rsCV['fabricante']) ?>"><?php echo($rsCV['fabricante']) ?></option>
+                    <option selected value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
                     <?php
                   }
-                  ?>
-                </select>
-              </div>
-            </div>
-
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Modelo:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev align_center margem_b_30 centro_lr">
-                <?php
-                if (isset($_GET['idFab']))
-                  $IdFabricant = $_GET['idFab'];
-                else
-                  $IdFabricant = 0;
-
-
+                }
                 ?>
+            </select>
 
-                <select name="slcModelo">
 
+            <label for="txtPlaca" class="field-label">Placa do Veículo</label>
+            <input id="txtPlaca" value="<?php echo($_SESSION['placa']); ?>" class="android-input input-text" type="text" name="txtPlaca">
 
-                  <option value="">Selecione um Item</option>
-                  <?php
-                  if ($IdFabricant<>0)
-                  {
-                      $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
-                      $select = mysql_query($sql);
-                      while ($rsCV = mysql_fetch_array($select))
-                      {
+            <select class="select-pac" name="slcCor">
+              <option selected disabled value="">Cor</option>
 
-                        ?>
-                        <option selected value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
-                        <?php
-                      }
-                    }
-                    ?>
-                </select>
-              </div>
-            </div>
+              <?php
+              $sql = "SELECT * FROM tbl_cor";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Placa:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev margem_b_30 centro_lr">
-                <input class="input_text txt_preto sem_sombra" type="text" name="txtPlaca" value="<?php echo($_SESSION['placa']); ?>">
-              </div>
-            </div>
+              ?>
+              <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
+              <?php
+              }
+              ?>
+            </select>
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Cor:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev align_center margem_b_30 centro_lr">
-                <select name="slcCor">
-                  <?php
-                  $sql = "SELECT * FROM tbl_cor";
-                    $select = mysql_query($sql);
-                    while ($rsCV = mysql_fetch_array($select))
-                    {
+            <label for="txtQuilometragem" class="field-label">Quilometragem do Veículo</label>
+            <input id="txtQuilometragem" value="<?php echo($_SESSION['quilometragem']); ?>" class="android-input input-text" type="text" name="txtQuilometragem">
 
-                  ?>
-                  <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
-                  <?php
-                  }
-                  ?>
-                </select>
-                <!-- <input class="input_text txt_preto sem_sombra" type="text" name="txtCor" value="<?php echo($_SESSION['cor']); ?>"> -->
-              </div>
-            </div>
+            <select class="select-pac" name="slcTipoVeiculo">
+              <option disabled selected value="">Tipo de Veículo</option>
+              <?php
+              $sql = "SELECT * FROM tbl_tipo_veiculo";
+                $select = mysql_query($sql);
+                while ($rsCV = mysql_fetch_array($select))
+                {
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Quilometragem:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev margem_b_30 centro_lr">
-                <input class="input_text txt_preto sem_sombra" type="text" name="txtQuilometragem" value="<?php echo($_SESSION['quilometragem']); ?>">
-              </div>
-            </div>
+              ?>
+              <option selected value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+              <?php
+                }
+              ?>
+            </select>
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Tipo de Veículo:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev align_center margem_b_30 centro_lr">
-                <select name="slcTipoVeiculo">
-                  <?php
-                  $sql = "SELECT * FROM tbl_tipo_veiculo";
-                    $select = mysql_query($sql);
-                    while ($rsCV = mysql_fetch_array($select))
-                    {
+             <select class="select-pac" name="slcQtdPortas">
+                <option selected disabled value="">Portas</option>
+                <option value="2">2</option>
+                <option value="4">4</option>
+              </select>
 
-                  ?>
-                  <option selected value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
-                  <?php
-                    }
-                  ?>
-                </select>
-                <!-- <input class="input_text txt_preto sem_sombra" type="text" name="txtTipo" value="<?php echo($_SESSION['tipoVeiculo']); ?>"> -->
-              </div>
-            </div>
+        </div>
 
-            <div class="container_segura_input_ev">
-              <!-- Label do campo - Ano -->
-              <div class="label_campo_ev margem_b_10">
-                <label class="conteudo fs_18" for="txtAno">Quantidade de Portas:</label>
-              </div>
-              <!-- Campo - Ano -->
-              <div class="campo_texto_ev align_center margem_b_30 centro_lr">
-                <select name="slcQtdPortas">
-                  <option value="">Portas</option>
-                  <option value="2">2</option>
-                  <option value="4">4</option>
-                </select>
-                <!-- <input class="input_text txt_preto sem_sombra" type="text" name="txtQtdPortas" value="<?php echo($_SESSION['qtdPortas']); ?>"> -->
-              </div>
-            </div>
+        <input class="input-submit-cad-veic" type="submit" name="btEditar" value="Editar Veículo">
 
-              <div class="botaoSalvar_ev">
-                <input class="input_submit bg_verde_vivo negrito espacamento_letra_2" type="submit" name="btEditar" value="Editar">
-              </div>
-              <div id="bt_voltar">
-                <a href="consultar_veiculo_parceiro.php" style="text-decoration:none">
-
-                  <img class="img_retorno" src="../pictures/adm_parceiro/retornar.png" width"20" alt="">
-                </a>
-              </div>
-          </div>
-        </body>
       </form>
+
     </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/pac_framework.js"></script>
+
   </body>
 </html>

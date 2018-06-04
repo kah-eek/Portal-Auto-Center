@@ -1,73 +1,131 @@
-body{
-  margin: 0px;
+*{font-size: 1em;}
+
+.body
+{
+  background-color: rgb(32,33,36);
+  background-image: linear-gradient(to right, rgba(42,46,55,0.8) 0%, rgba(32,33,36,0.9) 100%);
 }
 
-.container_segura_tudo{
-  width: 1155px;
-  height: 885px;
+.header
+{
+  position: fixed;
+  padding: 0 120px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 10vh;
+  box-shadow: -3px 2px 14px 0px rgba(0,0,0,.4);
   background-color: #fff;
-  margin-left: 100px;
-
 }
-.container_menu_l_apc{
-  width: 400px;
-  height: 900px;
-  /*background-color: red;*/
-}
-
-.item{
-  width: 200px;
-  height: 30px;
-  background-color: red;
-  margin-left: 430px;
-  margin-bottom: 5px;
-}
-
-.container_segura_input_ev{
-  width: 1155px;
+.header img
+{
+  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.4);
+  margin-top: 80px; 
+  width: 85px;
   height: 85px;
-  /*background-color: grey;*/
-
+  border-radius: 50%;
+}
+.page-title
+{
+  font-family: titulo;
+  font-size: 2.8rem;
+  margin-left: 5%;
+}
+.main
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 90vh;
+  height: 100%;
+  background-size: 400% 400%;
+  background-color: rgb(32,33,36);
+  /*background-image: linear-gradient(130deg, rgba(244,67,540,.4) 0%, rgba(183,28,28,0.7) 100%);*/
+  background-image: linear-gradient(130deg, rgba(213,0,0,0.8) 0%, rgba(106,27,154,0.6) 100%);
+  animation: gradient 9s ease infinite;
+}
+.blank-space
+{
+  height: 10vh;
+  width: 100%;
+}
+@keyframes gradient
+{
+  0%{background-position: 0% 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0% 50%;}
+}
+.saudacao
+{
+  font-family: conteudo;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 100%;
+  /*background-color: green;*/
 }
 
-.label_campo_ev{
-  width: 1155px;
-  height: 30px;
-  text-align: center;
-  padding-top: 10px;
-  /*background-color: #009999;*/
+/*NAO TOQUE NA PARTE DE CIMA DO CSS !!!*/
+
+
+.form-container
+{
+  display: none;
+  padding: 2% 5%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 1440px;
+  min-height: 90vh;
+  height: 100%;
+  background-color: #fff;
+}
+.titulo-cad-ve
+{
+  font-size: 2.8rem;
+  font-family: titulo;
+}
+.select-pac
+{
+  margin: 2% 0;
+}
+.field-label
+{
+  margin-top: 1%;
+}
+.input-text
+{
+  background-color: transparent;
+  width: 80%;
+  font-family: conteudo;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  margin-bottom: 2%;
+  border-bottom-color: #00C853;
 }
 
-.campo_texto_ev{
-  width: 950px;
-  height: 30px;
-  color: #000;
-  /*background-color: pink;*/
-}
-
-.input_text{
-  width: 950px;
-  height: auto;
-
-}
-
-.botaoSalvar_ev{
-  width: 950px;
-  height: 50px;
-  /*background-color: black;*/
-  float: left;
-}
-.botaoSalvar_ev input{
-  width: 400px;
-  height: 40px;
-  margin-left: 380px;
-  margin-top: 5px;
-}
-
-.img_retorno{
-  width: 40px;
-  height: 40px;
-  float: right;
-
-
+.input-submit-cad-veic
+{
+  width: 100%;
+  padding: 10px 0px;
+  background-color: #00C853;
+  border: none;
+  /*position: fixed;*/
+  /*bottom: 0px;*/
+  font-family: titulo;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0px 0px 1px #000;
 }
