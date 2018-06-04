@@ -1,8 +1,15 @@
 
 <?php
 session_start();
-// echo($_SESSION['id_parceiro']);
-  // echo($_SESSION['id_parceiro1']); ?>
+require_once("../../database/conect.php");
+Conexao_db();
+$id_usuario = $_SESSION['id_usuario'];
+
+$sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+      $select = mysql_query($sql);
+  while ($rsVP = mysql_fetch_array($select))
+  {
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -16,15 +23,18 @@ session_start();
   <body class="body">
 
     <header class="header">
-      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+      <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
       <h1 class="page-title">Auto Fast</h1>
 
       <div class="saudacao">
-        <p>Bem-vindo</p>
-        <p>Caique M. Oliveira</p>
+        <p>Bem-vindo,</p>
+        <p><?php echo($rsVP['razao_social']) ?></p>
       </div>
     </header>
+    <?php
+      }
+    ?>
 
     <div class="blank-space"></div>
 

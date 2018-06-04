@@ -40,7 +40,12 @@ if(isset($_GET['escolha'])){
           }
         }
       }
+      $id_usuario = $_SESSION['id_usuario'];
 
+      $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+            $select = mysql_query($sql);
+        while ($rsVP = mysql_fetch_array($select))
+        {
 
  ?>
 <!DOCTYPE html>
@@ -53,15 +58,15 @@ if(isset($_GET['escolha'])){
     <link rel="stylesheet" href="../css/padroes.css">
   </head>
   <body>
-    
+
     <header class="header">
-      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+      <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
       <h1 class="page-title">Auto Fast</h1>
 
       <div class="saudacao">
-        <p>Bem-vindo</p>
-        <p>Caique M. Oliveira</p>
+        <p>Bem-vindo,</p>
+        <p><?php echo($rsVP['razao_social']) ?></p>
       </div>
       <a class="return-button" href="cms_adm_parceiro.php">
         <i class="material-icons">
@@ -69,13 +74,16 @@ if(isset($_GET['escolha'])){
         </i>
       </a>
     </header>
+    <?php
+      }
+     ?>
 
     <div class="blank-space"></div>
 
     <div class="main">
 
       <div class="tabela-view-dados">
-        
+
 
         <label class="label-ger-vei">Gerenciamento de Veículos</label>
         <div class="divisor"></div>
@@ -89,11 +97,11 @@ if(isset($_GET['escolha'])){
             <div class="item-tab">
               <p class="p">Placa</p>
             </div>
-            
+
             <div class="item-tab">
               <p class="p">Quilometragem</p>
             </div>
-            
+
             <div class="item-tab">
               <i class="material-icons">
                 edit
@@ -110,7 +118,7 @@ if(isset($_GET['escolha'])){
         <div class="divisor"></div>
 
         <div class="itens-da-tbl">
-          
+
           <?php
           $sql = "SELECT * FROM tbl_veiculo AS v
 
@@ -134,11 +142,11 @@ if(isset($_GET['escolha'])){
                 <div class="item-tab">
                   <p class="p no-weight"><?php echo($rsVP['placa']) ?></p>
                 </div>
-                
+
                 <div class="item-tab">
                   <p class="p no-weight"><?php echo($rsVP['quilometro_rodado']) ?></p>
                 </div>
-                
+
                 <div class="item-tab">
                   <a href="consultar_veiculo_parceiro.php?escolha=editar&id=<?php echo($rsVP['id_veiculo']);?>">
                     <i class="material-icons">
