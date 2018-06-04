@@ -21,6 +21,7 @@ if(isset($_GET['escolha'])){
       }
     }
     $id_usuario = $_SESSION['id_usuario'];
+    $id_parceiro = $_SESSION['id_parceiro1'];
 
     $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
           $select = mysql_query($sql);
@@ -104,7 +105,7 @@ if(isset($_GET['escolha'])){
         <div class="itens-da-tbl">
 
           <?php
-          $sql = "SELECT * FROM view_status_servico where situacao = 'pendente';";
+          $sql = "SELECT * FROM view_status_servico_por_parceiro where situacao = 'pendente' and id_parceiro = ".$id_parceiro;
               $select = mysql_query($sql) or die(mysql_error());
               // echo ($sql);
             while ($rsS = mysql_fetch_array($select))
@@ -173,7 +174,7 @@ if(isset($_GET['escolha'])){
         <div class="divisor"></div>
 
         <?php
-        $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'recusado' or situacao = 'confirmado';";
+        $sql = "SELECT * FROM caiqueoliveira.view_status_servico_por_parceiro where situacao = 'recusado' or situacao = 'confirmado' and id_parceiro = ".$id_parceiro;
             $select = mysql_query($sql) or die(mysql_error());
             // echo ($sql);
           while ($rsS = mysql_fetch_array($select))

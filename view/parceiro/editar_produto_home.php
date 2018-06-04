@@ -8,7 +8,7 @@ Conexao_db();
         //Resgatar os dados fornecidos pelo usuario
         //usando o metod POST, conforme escolhido pelo Form
         $modelo=$_POST["slcModelo"];
-        $categoria=$_POST["slcFabricante"];
+        $categoria=$_POST["slcCategoria"];
         $nome=$_POST["txtNome"];
         $preco=$_POST["txtPreco"];
         $cor=$_POST["slcCor"];
@@ -77,11 +77,11 @@ Conexao_db();
       <form name="frmCadastroVeiculo" method="POST" action="editar_produto_home.php">
 
         <div class="form-container">
-          <label for="slcFabricante" class="titulo-cad-ve">Editar Produto</label>
+          <label for="slcCategoria" class="titulo-cad-ve">Editar Produto</label>
 
           <div class="divisor"></div>
 
-            <select class="select-pac" required name="slcFabricante">
+            <select class="select-pac" required name="slcCategoria">
 
 
               <option selected disabled value="">Categoria</option>
@@ -92,7 +92,7 @@ Conexao_db();
                   {
 
                     ?>
-                    <option selected value="<?php echo($_SESSION['id_categoria_produto']); ?>"><?php echo($rsCV['categoria']) ?></option>
+                    <option selected value="<?php echo($rsCV['id_categoria_produto']) ?>"><?php echo($rsCV['categoria']) ?></option>
                     <?php
                   }
                 ?>
@@ -106,7 +106,7 @@ Conexao_db();
                   {
 
                     ?>
-                    <option selected value="<?php echo($_SESSION['id_modelo_produto']); ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <option selected value="<?php echo($rsCV['id_modelo_produto']) ?>"><?php echo($rsCV['modelo']) ?></option>
                     <?php
                   }
                 ?>
@@ -123,7 +123,7 @@ Conexao_db();
                   {
 
                     ?>
-                    <option selected value="<?php echo($_SESSION['id_cor']); ?>"><?php echo($rsCV['cor']) ?></option>
+                    <option selected value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
                     <?php
                   }
 

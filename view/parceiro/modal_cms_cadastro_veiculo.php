@@ -21,8 +21,8 @@ if(isset($_POST["btnSalvar"]))
 
 
     //Monta o Script para enviar para o BD
-    $sql = "insert into tbl_veiculo (ano_fabricacao, placa, id_cor, id_modelo, qtd_porta, quilometro_rodado, id_tipo_veiculo, id_modelo_veiculo) values ('".$ano."','".$placa."','".$cor."','".$modelo."',
-    '".$portas."','".$quilometragem."','".$tipo."','".$fabricante."');";
+    $sql = "insert into tbl_veiculo (ano_fabricacao, placa, id_cor, id_modelo, qtd_porta, quilometro_rodado, id_tipo_veiculo, id_modelo_veiculo) values ('".$ano."','".$placa."','".$cor."','1',
+    '".$portas."','".$quilometragem."','".$tipo."','".$modelo."');";
 
     mysql_query($sql);
     // echo ($sql);
@@ -237,7 +237,7 @@ $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
                 {
 
               ?>
-              <option value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+              <option selected value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
               <?php
                 }
               ?>
