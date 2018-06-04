@@ -9,7 +9,7 @@ Conexao_db();
         //usando o metod POST, conforme escolhido pelo Form
         $nome=$_POST["txtNome"];
         $preco=$_POST["txtPreco"];
-        $garantia=$_POST["txtGarantia"];
+        $garantia=$_POST["slcGarantia"];
         $descricao=$_POST["txtDescricao"];
         $idProduto=$_SESSION["id_produto"];
 
@@ -26,6 +26,12 @@ Conexao_db();
     <?php
         header('location:modal_cms_gerenciar_produto.php');
     }
+    $id_usuario = $_SESSION['id_usuario'];
+
+    $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+          $select = mysql_query($sql);
+      while ($rsVP = mysql_fetch_array($select))
+      {
     ?>
     <!DOCTYPE html>
     <html lang="pt-br" dir="ltr">
@@ -38,27 +44,30 @@ Conexao_db();
       </head>
       <body class="body">
 
-      <header class="header">
-        <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+        <header class="header">
+          <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
-        <h1 class="page-title">Auto Fast</h1>
+          <h1 class="page-title">Auto Fast</h1>
 
-        <div class="saudacao">
-          <p>Bem-vindo</p>
-          <p>Caique M. Oliveira</p>
-        </div>
+          <div class="saudacao">
+            <p>Bem-vindo,</p>
+            <p><?php echo($rsVP['razao_social']) ?></p>
+          </div>
         <a class="return-button" href="cms_adm_parceiro.php">
           <i class="material-icons">
             keyboard_arrow_left
           </i>
         </a>
       </header>
+      <?php
+}
+       ?>
 
       <div class="blank-space"></div>
 
       <div class="main">
         <form name="frmPH" method="post" action="editar_servico_parceiro.php">
-          
+
           <div class="cont-princ">
 
             <label class="label-pr-h">Editar Serviço</label>
@@ -85,7 +94,7 @@ Conexao_db();
           </div>
 
           <input class="input-submit-cad-veic" type="submit" name="btEditar" value="Editar Serviço">
-          
+
         </form>
       </div>
 

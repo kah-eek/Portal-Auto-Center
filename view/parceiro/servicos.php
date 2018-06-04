@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../../database/conect.php");
 Conexao_db();
 
@@ -19,6 +20,12 @@ if(isset($_GET['escolha'])){
         header('location:servicos.php');
       }
     }
+    $id_usuario = $_SESSION['id_usuario'];
+
+    $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+          $select = mysql_query($sql);
+      while ($rsVP = mysql_fetch_array($select))
+      {
  ?>
 
 <!DOCTYPE html>
@@ -32,7 +39,7 @@ if(isset($_GET['escolha'])){
 
   </head>
   <body>
-    
+
     <header class="header">
       <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
@@ -48,13 +55,16 @@ if(isset($_GET['escolha'])){
         </i>
       </a>
     </header>
+    <?php
+  }
+     ?>
 
     <div class="blank-space"></div>
 
     <div class="main">
 
       <div class="conatiner-geral-con">
-          
+
         <label class="label-titutlo-tela">Serviços Solicitados</label>
         <div class="divisor"></div>
 

@@ -19,7 +19,7 @@ Conexao_db();
 
         //Monta o Script para enviar para o BD
         //AQUI ESTA INCOMPLETO *************************************************************
-        addslashes($sql = "update tbl_veiculo set ano_fabricacao ='".$ano."', placa ='".$placa."', id_cor ='".$cor."', id_modelo = '".$modelo."', qtd_porta ='".$qtdPortas."', quilometro_rodado ='".$quilometragem."', id_tipo_veiculo ='".$tipoVeiculo."', id_modelo_veiculo='".$fabricante."' WHERE id_veiculo =".$idVeiculo);
+        addslashes($sql = "update tbl_veiculo set ano_fabricacao ='".$ano."', placa ='".$placa."', id_cor ='".$cor."', id_modelo = '-1', qtd_porta ='".$qtdPortas."', quilometro_rodado ='".$quilometragem."', id_tipo_veiculo ='".$tipoVeiculo."', id_modelo_veiculo='".$modelo."' WHERE id_veiculo =".$idVeiculo);
         // echo ($sql);
         //Executa o script no BD
         mysql_query($sql);
@@ -30,6 +30,12 @@ Conexao_db();
     <?php
             header('location:consultar_veiculo_parceiro.php');
     }
+    $id_usuario = $_SESSION['id_usuario'];
+
+    $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+          $select = mysql_query($sql);
+      while ($rsVP = mysql_fetch_array($select))
+      {
     ?>
 
 <!DOCTYPE html>
@@ -68,7 +74,7 @@ Conexao_db();
       </a>
     </header>
     <?php
-  
+  }
      ?>
 
     <div class="blank-space"></div>
@@ -140,7 +146,7 @@ Conexao_db();
                   {
 
                     ?>
-                    <option selected value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
                     <?php
                   }
                 }
@@ -161,7 +167,7 @@ Conexao_db();
                 {
 
               ?>
-              <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
+              <option selected value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
               <?php
               }
               ?>
@@ -186,7 +192,8 @@ Conexao_db();
             </select>
 
              <select class="select-pac" name="slcQtdPortas">
-                <option selected disabled value="">Portas</option>
+                <option disabled value="">Portas</option>
+                <option selected value="<?php echo($_SESSION['qtdPortas']); ?>"><?php echo($_SESSION['qtdPortas']); ?></option>
                 <option value="2">2</option>
                 <option value="4">4</option>
               </select>

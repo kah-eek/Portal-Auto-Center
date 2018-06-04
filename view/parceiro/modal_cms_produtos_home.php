@@ -30,6 +30,12 @@ if(isset($_POST["btnSalvar"]))
 
     header('location:modal_cms_produtos_home.php');
   }
+  $id_usuario = $_SESSION['id_usuario'];
+
+  $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+        $select = mysql_query($sql);
+    while ($rsVP = mysql_fetch_array($select))
+    {
  ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -43,13 +49,13 @@ if(isset($_POST["btnSalvar"]))
     <body class="body">
 
       <header class="header">
-        <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+        <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
         <h1 class="page-title">Auto Fast</h1>
 
         <div class="saudacao">
-          <p>Bem-vindo</p>
-          <p>Caique M. Oliveira</p>
+          <p>Bem-vindo,</p>
+          <p><?php echo($rsVP['razao_social']) ?></p>
         </div>
         <a class="return-button" href="cms_adm_parceiro.php">
           <i class="material-icons">
@@ -57,12 +63,15 @@ if(isset($_POST["btnSalvar"]))
           </i>
         </a>
       </header>
+      <?php
+}
+       ?>
 
       <div class="blank-space"></div>
 
       <div class="main">
         <form name="frmCadastroProduto" method="POST" action="">
-          
+
           <div class="cont-princ">
 
             <label class="label-pr-h">Cadastro de Produtos</label>
@@ -140,7 +149,7 @@ if(isset($_POST["btnSalvar"]))
           </div>
 
           <input class="input-submit-cad-veic" type="submit" name="btnSalvar" value="Salvar Produto">
-          
+
         </form>
       </div>
 
