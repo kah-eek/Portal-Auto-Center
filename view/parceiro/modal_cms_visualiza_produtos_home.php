@@ -29,7 +29,7 @@ if(isset($_GET['escolha'])){
           $_SESSION['conteudo_embalagem'] = $rsVP['conteudo_embalagem'];
           $_SESSION['garantia'] = $rsVP['garantia'];
           $_SESSION['descricao'] = $rsVP['descricao'];
-          $_SESSION['observacao'] = "observacao";
+          $_SESSION['observacao'] = $rsVP['observacao'];
           $_SESSION['id_produto'] = $rsVP['id_produto'];
           $_SESSION['botao'] = "editar";
 
@@ -48,7 +48,7 @@ if(isset($_GET['escolha'])){
             $select = mysql_query($sql);
         while ($rsVP = mysql_fetch_array($select))
         {
-       
+
 
 
  ?>

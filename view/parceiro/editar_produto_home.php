@@ -7,13 +7,13 @@ Conexao_db();
     {
         //Resgatar os dados fornecidos pelo usuario
         //usando o metod POST, conforme escolhido pelo Form
-        $modelo=$_POST["txtModelo"];
-        $categoria=$_POST["txtCategoria"];
+        $modelo=$_POST["slcModelo"];
+        $categoria=$_POST["slcFabricante"];
         $nome=$_POST["txtNome"];
         $preco=$_POST["txtPreco"];
-        $cor=$_POST["txtCor"];
+        $cor=$_POST["slcCor"];
         $conteudo=$_POST["txtConteudo"];
-        $garantia=$_POST["txtGarantia"];
+        $garantia=$_POST["slcGarantia"];
         $descricao=$_POST["txtDescricao"];
         $Obs=$_POST["txtObs"];
         $idProduto=$_SESSION["id_produto"];
@@ -31,6 +31,13 @@ Conexao_db();
     <?php
             header('location:modal_cms_visualiza_produtos_home.php');
     }
+    $id_usuario = $_SESSION['id_usuario'];
+
+    $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
+          $select = mysql_query($sql);
+      while ($rsVP = mysql_fetch_array($select))
+      {
+
     ?>
     <!DOCTYPE html>
     <html lang="pt-br" dir="ltr">
@@ -44,81 +51,64 @@ Conexao_db();
       </head>
       <body class="body">
 
-    <header class="header">
-      <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3159b23f37c4f3954e97072e00e975ab&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb">
+        <header class="header">
+          <img src="<?php echo($rsVP['foto_perfil']) ?>">
 
-      <h1 class="page-title">Auto Fast</h1>
+          <h1 class="page-title">Auto Fast</h1>
 
-      <div class="saudacao">
-        <p>Bem-vindo</p>
-        <p>Caique M. Oliveira</p>
-      </div>
+          <div class="saudacao">
+            <p>Bem-vindo,</p>
+            <p><?php echo($rsVP['razao_social']) ?></p>
+          </div>
       <a class="return-button" href="cms_adm_parceiro.php">
         <i class="material-icons">
           keyboard_arrow_left
         </i>
       </a>
     </header>
+    <?php
+  }
+     ?>
 
     <div class="blank-space"></div>
 
     <div class="main">
 
-      <form name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
+      <form name="frmCadastroVeiculo" method="POST" action="editar_produto_home.php">
 
         <div class="form-container">
           <label for="slcFabricante" class="titulo-cad-ve">Editar Produto</label>
 
           <div class="divisor"></div>
 
-          <?php
-            if (isset($_GET['idFab']))
-              $IdFabricant = $_GET['idFab'];
-            else
-              $IdFabricant = 0;
-
-
-            ?>
-
             <select class="select-pac" required name="slcFabricante">
 
 
-              <option selected disabled value="">Fabricante</option>
+              <option selected disabled value="">Categoria</option>
               <?php
-              if ($IdFabricant<>0)
-              {
-                  $sql = "SELECT * FROM do frabricanteo where id_fabricante = ".$IdFabricant;
+                  $sql = "SELECT * FROM tbl_categoria_produto";
                   $select = mysql_query($sql);
                   while ($rsCV = mysql_fetch_array($select))
                   {
 
                     ?>
-                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <option selected value="<?php echo($_SESSION['id_categoria_produto']); ?>"><?php echo($rsCV['categoria']) ?></option>
                     <?php
                   }
-                }
                 ?>
             </select>
-
-
-
             <select class="select-pac" required name="slcModelo">
-
-
               <option selected disabled value="">Modelo</option>
               <?php
-              if ($IdFabricant<>0)
-              {
-                  $sql = "SELECT * FROM tbl_modelo_veiculo where id_fabricante = ".$IdFabricant;
+                  $sql = "SELECT * FROM tbl_modelo_produto ";
                   $select = mysql_query($sql);
                   while ($rsCV = mysql_fetch_array($select))
                   {
 
                     ?>
-                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <option selected value="<?php echo($_SESSION['id_modelo_produto']); ?>"><?php echo($rsCV['modelo']) ?></option>
                     <?php
                   }
-                }
                 ?>
             </select>
 
@@ -127,38 +117,16 @@ Conexao_db();
 
               <option selected disabled value="">Cor do produto</option>
               <?php
-              if ($IdFabricant<>0)
-              {
-                  $sql = "SELECT * FROM da cor = ".$IdFabricant;
+                  $sql = "SELECT * FROM tbl_cor ";
                   $select = mysql_query($sql);
                   while ($rsCV = mysql_fetch_array($select))
                   {
 
                     ?>
-                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
+                    <option selected value="<?php echo($_SESSION['id_cor']); ?>"><?php echo($rsCV['cor']) ?></option>
                     <?php
                   }
-                }
-                ?>
-            </select>
 
-            <select class="select-pac" required name="slcCategoria">
-
-
-              <option selected disabled value="">Categoria</option>
-              <?php
-              if ($IdFabricant<>0)
-              {
-                  $sql = "SELECT * FROM da categoria = ".$IdFabricant;
-                  $select = mysql_query($sql);
-                  while ($rsCV = mysql_fetch_array($select))
-                  {
-
-                    ?>
-                    <option value="<?php echo($rsCV['id_modelo_veiculo']) ?>"><?php echo($rsCV['modelo']) ?></option>
-                    <?php
-                  }
-                }
                 ?>
             </select>
 
@@ -173,18 +141,12 @@ Conexao_db();
 
             <select class="select-pac" required name="slcGarantia">
               <option selected disabled value="">Garantia</option>
-              <?php
-              $sql = "SELECT * FROM tbl_cor";
-                $select = mysql_query($sql);
-                while ($rsCV = mysql_fetch_array($select))
-                {
-
-              ?>
-              <option value="<?php echo($rsCV['id_cor']) ?>"><?php echo($rsCV['cor']) ?></option>
-              <?php
-              }
-              ?>
-            </select>   
+              <option selected value="<?php echo($_SESSION['garantia']); ?>"><?php echo($_SESSION['garantia']); ?></option>
+              <option  value="12 meses">12 Meses</option>
+              <option  value="1 mes">1 Meses</option>
+              <option  value="3 meses">3 Meses</option>
+              <option  value="8 meses">8 Meses</option>
+            </select>
 
             <label for="txtDescricao" class="field-label">Descrição</label>
             <input id="txtDescricao" value="<?php echo($_SESSION['descricao']); ?>" class="android-input input-text" type="text" name="txtDescricao">
@@ -196,8 +158,8 @@ Conexao_db();
 
         <input class="input-submit-cad-veic" type="submit" name="btEditar" value="Editar Produto">
 
-      </form>  
-      
+      </form>
+
     </div>
 
     <script src="../js/jquery.js"></script>
