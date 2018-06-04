@@ -83,7 +83,7 @@ $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
       </div>
 
       <div class="item-menu">
-        <a class="block-max" href="#">
+        <a class="block-max" href="produtos.php">
           <p class="all">Produtos Solicitados</p>
         </a>
       </div>

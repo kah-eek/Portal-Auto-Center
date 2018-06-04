@@ -1,0 +1,98 @@
+<div class="pendentes">
+      <div class="nomeCliente borda_preta_1 align_center preenche_t_15">
+        NOME
+      </div>
+      <div class="dataAgendada borda_preta_1 align_center preenche_t_15">
+        DATA
+      </div>
+      <div class="servico borda_preta_1 align_center preenche_t_15">
+        SERVIÇO
+      </div>
+      <div class="sttPendente borda_preta_1 align_center preenche_t_15">
+        SITUAÇÃO
+      </div>
+      <div class="confirmar">
+          <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
+            thumb_up_alt
+          </i>
+      </div>
+      <div class="recusar">
+          <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
+            thumb_down_alt
+          </i>
+      </div>
+      <?php
+      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'pendente';";
+          $select = mysql_query($sql) or die(mysql_error());
+          // echo ($sql);
+        while ($rsS = mysql_fetch_array($select))
+        {
+       ?>
+      <div class="nomeCliente borda_preta_b_1 align_center preenche_t_15">
+        <?php echo($rsS['nome_cliente']) ?>
+      </div>
+      <div class="dataAgendada borda_preta_b_1 align_center preenche_t_15">
+        <?php echo($rsS['data_agendada']) ?>
+      </div>
+      <div class="servico borda_preta_b_1 align_center preenche_t_15">
+        <?php echo($rsS['nome_servico']) ?>
+      </div>
+      <div class="sttPendente borda_preta_b_1 align_center preenche_t_15">
+        <?php echo($rsS['situacao']) ?>
+      </div>
+      <div class="confirmar">
+        <a href="servicos.php?escolha=confirma&id=<?php echo($rsS['id_situacao_pedido']);?>">
+          <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
+            thumb_up_alt
+          </i>
+        </a>
+      </div>
+      <div class="recusar">
+        <a href="servicos.php?escolha=recusa&id=<?php echo($rsS['id_situacao_pedido']);?>">
+          <i class="material-icons fs_40 preenche_t_5 preenche_l_5">
+            thumb_down_alt
+          </i>
+        </a>
+      </div>
+      <?php
+        }
+      ?>
+    </div>
+    <div class="confirmadosRecusados">
+      <div class="nomeCliente borda_preta_1 align_center preenche_t_15">
+        NOME
+      </div>
+      <div class="dataAgendada borda_preta_1 align_center preenche_t_15">
+        DATA
+      </div>
+      <div class="servico borda_preta_1 align_center preenche_t_15">
+        SERVIÇO
+      </div>
+      <div class="sttPendente borda_preta_1 align_center preenche_t_10">
+        CONFIRMADOS/
+        RECUSADOS
+      </div>
+      <?php
+      $sql = "SELECT * FROM caiqueoliveira.view_status_servico where situacao = 'recusado' or situacao = 'confirmado';";
+          $select = mysql_query($sql) or die(mysql_error());
+          // echo ($sql);
+        while ($rsS = mysql_fetch_array($select))
+        {
+       ?>
+       <div class="nomeCliente borda_preta_b_1 align_center preenche_t_15">
+         <?php echo($rsS['nome_cliente']) ?>
+       </div>
+       <div class="dataAgendada borda_preta_b_1 align_center preenche_t_15">
+         <?php echo($rsS['data_agendada']) ?>
+       </div>
+       <div class="servico borda_preta_b_1 align_center preenche_t_15">
+         <?php echo($rsS['nome_servico']) ?>
+       </div>
+       <div class="sttPendente borda_preta_b_1 align_center preenche_t_10">
+         <?php echo($rsS['situacao']) ?>
+       </div>
+      <?php
+        }
+      ?>
+
+    </div>
