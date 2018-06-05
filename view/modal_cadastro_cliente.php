@@ -43,6 +43,7 @@ $botao="Salvar";
     $celular=$_POST["txtCelular"];
     $telefone=$_POST["txtTelefone"];
     $sexo=$_POST["chbSexo"];
+    $imagem=Upload($_FILES["imagem"]);
 
     // ENDEREÇO
     // $id_endereco=$_POST["id_endereco"];
@@ -84,7 +85,7 @@ $botao="Salvar";
             $id_endereco=$rs['LAST_INSERT_ID()'];
           }
 
-      $sql5 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
+      $sql5 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','".$imagem."');";
 
       mysql_query($sql5);
 
@@ -114,6 +115,7 @@ $botao="Salvar";
   </head>
   <body>
     <div class="container_principal_mc_cp bg_branco">
+      <input type="file" name="imagem" value="<?php echo($imagem)?>" class="color">
       <!-- TITULO -->
       <!-- <div class="container_titulo">
         <div class="item_titulo float_left txt_preto titulo align_center">

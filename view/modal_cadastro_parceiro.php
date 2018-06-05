@@ -1,16 +1,18 @@
 <?php
 session_start();
 
+require_once("modulo.php");
 require_once("../database/conect.php");
 Conexao_db();
 
 $botao="Salvar";
+$imagem="";
 
 if(isset($_POST["btnSalvar"]))
 {
 
   // DADOS PARCEIRO
-
+  $imagem=Upload($_FILES["imagem"]);
   $nomeFantasia=$_POST["txtNomeFantasia"];
   $razao=$_POST["txtRazao"];
   $cnpj=$_POST["txtCnpj"];
@@ -69,7 +71,7 @@ if(isset($_POST["btnSalvar"]))
       // **************************************************
 
       $sql5 = "insert into tbl_parceiro (nome_fantasia, razao_social, cnpj, id_endereco, ativo, socorrista, email, telefone, foto_perfil, celular, log_parceiro, id_usuario, id_plano_contratacao) values
-      ('".$nomeFantasia."','".$razao."','".$cnpj."','".$id_endereco."','1','".$socorrista."','".$email."','".$telefone."','1','".$celular."',now(),'".$id_usuario."','".$plano."')";
+      ('".$nomeFantasia."','".$razao."','".$cnpj."','".$id_endereco."','1','".$socorrista."','".$email."','".$telefone."','".$imagem."','".$celular."',now(),'".$id_usuario."','".$plano."')";
 
       mysql_query($sql5);
       // echo ($sql5);
@@ -86,34 +88,37 @@ if(isset($_POST["btnSalvar"]))
     <meta charset="utf-8">
     <title>Cadastro Parceiro</title>
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
+    <link rel="stylesheet" href="css/padroes.css">
   </head>
   <body>
     <form class="form_cadastro_parceiro" action="modal_cadastro_parceiro.php" method="POST">
       <div class="Container_total">
-        <div class="container_foto">
-
+        <label for="btn_imagem_parceiro">
+          <div class="container_foto">
+            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="">
+          </div>
+        </label>
+        <div class="input_text">
+          <input class="input_text1" type="text" name="txtNomeFantasia" value="" placeholder="NOME FANTASIA">
         </div>
         <div class="input_text">
-          <input type="text" name="txtNomeFantasia" value="" placeholder="NOME FANTASIA">
+          <input class="input_text1" type="text" name="txtRazao" value="" placeholder="RAZÃO SOCIAL">
         </div>
         <div class="input_text">
-          <input type="text" name="txtRazao" value="" placeholder="RAZÃO SOCIAL">
-        </div>
-        <div class="input_text">
-          <input type="text" name="txtCnpj" value="" placeholder="CNPJ">
+          <input class="input_text1" type="text" name="txtCnpj" value="" placeholder="CNPJ">
         </div>
         <!-- ENDERECO -->
         <div class="input_text">
-          <input type="text" name="txtLogradouro" value="" placeholder="RUA">
+          <input class="input_text1" type="text" name="txtLogradouro" value="" placeholder="RUA">
         </div>
         <div class="input_text">
-          <input type="text" name="txtNumero" value="" placeholder="NUMERO">
+          <input class="input_text1" type="text" name="txtNumero" value="" placeholder="NUMERO">
         </div>
         <div class="input_text">
-          <input type="text" name="txtCidade" value="" placeholder="CIDADE">
+          <input class="input_text1" type="text" name="txtCidade" value="" placeholder="CIDADE">
         </div>
         <div class="input_text">
-          <select name="slcEstado">
+          <select class="input_combo" name="slcEstado">
             <?php
               $sql="select * from tbl_estado order by id_estado desc";
               $select=mysql_query($sql);
@@ -128,44 +133,44 @@ if(isset($_POST["btnSalvar"]))
           </select>
         </div>
         <div class="input_text">
-          <input type="text" name="txtCep" value="" placeholder="CEP">
+          <input class="input_text1" type="text" name="txtCep" value="" placeholder="CEP">
         </div>
         <div class="input_text">
-          <input type="text" name="txtBairro" value="" placeholder="BAIRRO">
+          <input class="input_text1" type="text" name="txtBairro" value="" placeholder="BAIRRO">
         </div>
         <div class="input_text">
-          <input type="text" name="txtComplemento" value="" placeholder="COMPLEMENTO">
+          <input class="input_text1" type="text" name="txtComplemento" value="" placeholder="COMPLEMENTO">
         </div>
         <!-- ********************************** -->
         <div class="input_text">
-          <input type="checkbox" name="chkSocorrista" value="1" placeholder="SOCORRISTA">
-          <input type="checkbox" name="chkSocorrista" value="2" placeholder="SOCORRISTA">
+          <input class="checkbox" type="checkbox" name="chkSocorrista" value="1" placeholder="SOCORRISTA">
+          <input class="checkbox" type="checkbox" name="chkSocorrista" value="2" placeholder="SOCORRISTA">
         </div>
         <div class="input_text">
-          <input type="text" name="txtEmail" value="" placeholder="EMAIL">
+          <input class="input_text1" type="text" name="txtEmail" value="" placeholder="EMAIL">
         </div>
         <div class="input_text">
-          <input type="text" name="txtTelefone" value="" placeholder="TELEFONE">
+          <input class="input_text1" type="text" name="txtTelefone" value="" placeholder="TELEFONE">
         </div>
         <div class="input_text">
-          <input type="text" name="txtCelular" value="" placeholder="CELULAR">
+          <input class="input_text1" type="text" name="txtCelular" value="" placeholder="CELULAR">
         </div>
         <!-- Usuario -->
         <div class="input_text">
-          <input type="text" name="txtUsuario" value="" placeholder="USUARIO">
+          <input class="input_text1" type="text" name="txtUsuario" value="" placeholder="USUARIO">
         </div>
         <div class="input_text">
-          <input type="password" name="txtSenha" value="" placeholder="SENHA">
+          <input class="input_text1" type="password" name="txtSenha" value="" placeholder="SENHA">
         </div>
         <!-- ***************************************** -->
         <div class="input_text">
-          <select name="slcPlano">
+          <select class="input_combo" name="slcPlano">
             <option value="2">Medium</option>
             <option value="1">Premium</option>
           </select>
         </div>
         <div class="input_text">
-          <input class="input_submit" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+          <input class="input_submit"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
         </div>
       </div>
     </form>

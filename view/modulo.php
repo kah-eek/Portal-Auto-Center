@@ -2,7 +2,7 @@
 
 
 function Upload($objeto){
-    $upload_dir="../pictures/produto/";//CAMIMHO DA PASTA ONDE AS IMAGENS SERÃO ARMAZENADAS.
+    $upload_dir="../pictures/perfil/";//CAMIMHO DA PASTA ONDE AS IMAGENS SERÃO ARMAZENADAS.
         //ARMAZENANDO O NOME DO ARQUIVO E A EXTENSÃO QUE FOI SELECIONADA.
         $nome_arq=basename($objeto['name']);//BASENAME:RETIRA O NOME DO ARQUIVO, NAME:VEM COM O NOME DO ARQUIVO.
 

@@ -3,7 +3,7 @@
   //
   // Conexao_Database();
 
-  require_once("modulo.php");
+  require_once("../modulo.php");
 
   session_start();
 
@@ -26,6 +26,7 @@ if(isset($_GET['modo']))//MODO EXCLUIR
 
           $sql = "delete from tbl_imagem_produto_parceiro where id_imagem_produto_parceiro=".$id_imagem_produto_parceiro;
           mysql_query($sql);
+          // echo ($sql);
 
 
       header('location:modal_cms_imagem_produto_parceiro.php');
@@ -124,7 +125,7 @@ if(isset($_POST["btnCadastro"])){
            while($rsProduto = mysql_fetch_array($select)){
                ?>
 
-            <option value="<?php echo($rsProduto['id_produto']); ?>">
+            <option selected value="<?php echo($rsProduto['id_produto']); ?>">
             <?php echo($rsProduto['nome_produto']); ?> </option>
 
         <?php
@@ -179,12 +180,12 @@ if(isset($_POST["btnCadastro"])){
           <?php echo($rsConsulta['imagem']) ?>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_imagem_produto_parceiro.php?modo=excluir&id_imagem_produto_parceiro=<?php echo($rsConsulta['$id_imagem_produto_parceiro'])?>">
+          <a href="modal_cms_imagem_produto_parceiro.php?modo=excluir&id_imagem_produto_parceiro=<?php echo($rsConsulta['id_imagem_produto_parceiro'])?>">
               <img src="../pictures/icones/delete1.png">
           </a>
         </div>
         <div class="campos_table">
-          <a href="modal_cms_imagem_produto_parceiro.php?modo=consulta_editar&id_imagem_produto_parceiro=<?php echo($rsConsulta['$id_imagem_produto_parceiro'])?>">
+          <a href="modal_cms_imagem_produto_parceiro.php?modo=consulta_editar&id_imagem_produto_parceiro=<?php echo($rsConsulta['id_imagem_produto_parceiro'])?>">
               <img src="../pictures/icones/edit.png">
           </a>
         </div>
