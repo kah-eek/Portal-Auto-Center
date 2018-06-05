@@ -61,7 +61,7 @@ $botao="Salvar";
 
     if($_POST["btnSalvar"]=='Salvar'){
         //MONTA O SCRIPT PARA ENVIAR PARA O BD
-      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo) values ('".$usuario."','".$senha."','1','1');";
+      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo, log) values ('".$usuario."','".$senha."','1','1', now());";
 
       mysql_query($sql);
 
@@ -73,7 +73,7 @@ $botao="Salvar";
           }
 
 
-      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','1','".$cep."','".$bairro."','".$complemento."');";
+      $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','".$id_estado."','".$cep."','".$bairro."','".$complemento."');";
 
       mysql_query($sql3);
 
@@ -84,9 +84,9 @@ $botao="Salvar";
             $id_endereco=$rs['LAST_INSERT_ID()'];
           }
 
-      $sql4 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
+      $sql5 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','1');";
 
-      mysql_query($sql4);
+      mysql_query($sql5);
 
 
       }
