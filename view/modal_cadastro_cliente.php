@@ -2,6 +2,8 @@
 require_once("../database/conect.php");
 Conexao_db();
 
+require_once("moduloPerfil.php");
+
 $id_cliente="";
 $id_endereco=null;
 $id_estado="";
