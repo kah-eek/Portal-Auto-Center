@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("modulo.php");
+require_once("moduloPerfil.php");
 require_once("../database/conect.php");
 Conexao_db();
 

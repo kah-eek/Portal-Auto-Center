@@ -1,4 +1,5 @@
 <?php
+require_once("moduloPerfil.php");
 require_once("../database/conect.php");
 Conexao_db();
 

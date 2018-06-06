@@ -3,7 +3,7 @@
   //
   // Conexao_Database();
 
-  require_once("../modulo.php");
+  require_once("../moduloProduto.php");
 
   session_start();
 
