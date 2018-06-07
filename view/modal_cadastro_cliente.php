@@ -120,12 +120,18 @@ $botao="Salvar";
     <div class="container_principal_mc_cp">
       <!-- FORM -->
       <form class="form_cadastro_cliente" action="modal_cadastro_cliente.php" method="POST">
-        <input type="file" name="imagem" value="<?php echo($imagem)?>" class="color">
+        <label for="btn_imagem_parceiro">
+          <div class="container_foto">
+            <img src="pictures/adm_parceiro/blank-face.jpg" alt="">
+            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
+          </div>
+        </label>
+
         <div class="container_infs">
 
           <!-- INPUT NOME -->
-          <div class="segura_input">
-            <input class="input_text1 txt_preto margem_t_5" placeholder="Nome" type="text" name="txtNome" value="">
+          <div class="input_text">
+            <input class="input_text1 txt_preto titulo margem_t_5" placeholder="Nome" type="text" name="txtNome" value="">
           </div>
 
           <!-- TITULO DATA -->
@@ -136,32 +142,32 @@ $botao="Salvar";
           </div>
 
           <!-- INPUT CALENDÁRIO -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="data_nasc margem_10" type="date" name="dtNasc" value="">
           </div>
 
           <!-- INPUT CPF -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Cpf" type="text" name="txtCpf" value="">
           </div>
 
           <!-- INPUT EMAIL -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Email Address" type="text" name="txtEmail" value="">
           </div>
 
           <!-- INPUT CELULAR -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Celular" type="text" name="txtCelular" value="">
           </div>
 
           <!-- INPUT TELEFONE -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Telefone" type="text" name="txtTelefone" value="">
           </div>
 
           <!-- INPUT RADIO -->
-          <div class="segura_input margem_t_10 float_left">
+          <div class="input_text margem_t_10 float_left">
             <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="M"> Masculino
             <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="F"> Feminino
           </div>
@@ -177,17 +183,17 @@ $botao="Salvar";
           </div>
 
           <!-- INPUT RUA -->
-          <div class="segura_input float_left">
+          <div class="input_text float_left">
             <input class="input_text1 txt_preto margem_t_5" placeholder="Rua" type="text" name="txtRua" value="">
           </div>
 
           <!-- INPUT NUMERO -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Número" type="text" name="txtNumero" value="">
           </div>
 
           <!-- INPUT CIDADE -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtCidade" value="">
           </div>
 
@@ -207,17 +213,17 @@ $botao="Salvar";
           </select>
 
           <!-- INPUT CEP -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Cep" type="text" name="txtCep" value="">
           </div>
 
           <!-- INPUT BAIRRO -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Bairro" type="text" name="txtBairro" value="">
           </div>
 
           <!-- INPUT COMPLEMENTO -->
-          <div class="segura_input float_left margem_t_5">
+          <div class="input_text float_left margem_t_5">
             <input class="input_text1 txt_preto margem_t_10" placeholder="Complemento" type="text" name="txtComplemento" value="">
           </div>
 
@@ -229,31 +235,16 @@ $botao="Salvar";
           </div>
 
           <!-- INPUT USER -->
-          <div class="segura_input float_left margem_t_10">
+          <div class="input_text float_left margem_t_10">
             <input class="input_text1 txt_preto" placeholder="Usuário" type="text" name="txtUsuario" value="">
           </div>
 
           <!-- INPUT SENHA -->
-          <div class="segura_input float_left margem_t_10">
+          <div class="input_text float_left margem_t_10">
             <input class="input_text1 txt_preto" placeholder="Senha" type="password" name="txtSenha" value="">
           </div>
-
-          <select class="select_opt margem_l_30" name="slcNivel">
-            <?php
-              $sql="select * from tbl_nivel_usuario order by id_nivel_usuario desc";
-              $select=mysql_query($sql);
-              while($rsConsulta= mysql_fetch_array($select)){
-            ?>
-
-              <option class="select" name="slcNivel" value=""><?php echo($rsConsulta['nivel']) ?></option>>
-
-             <?php
-                }
-              ?>
-          </select>
-
-          <div class="segura_bt float_left">
-            <input href="" class="input_submit_cc margem_t_25 sombra_preta_b_15" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+          <div class="input_text float_left">
+            <input href="" class="input_submit11 margem_t_5 bg_verde_vivo titulo" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
           </div>
         </div>
       </form>

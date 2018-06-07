@@ -42,7 +42,7 @@ if(isset($_POST["btnSalvar"]))
 
     // SALVA USUARIO
     if($_POST["btnSalvar"]=='Salvar'){
-      $sql= "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo, log) values ('".$usuario."','".$senha."','1','1', now());";
+      $sql= "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo, log) values ('".$usuario."','".$senha."','2','1', now());";
 
       mysql_query($sql);
       // echo ($sql);
@@ -95,11 +95,12 @@ if(isset($_POST["btnSalvar"]))
       <div class="Container_total">
         <label for="btn_imagem_parceiro">
           <div class="container_foto">
-            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="">
+            <img src="pictures/adm_parceiro/blank-face.jpg" alt="">
+            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
           </div>
         </label>
         <div class="input_text">
-          <input class="input_text1" type="text" name="txtNomeFantasia" value="" placeholder="NOME FANTASIA">
+          <input class="input_text1 " type="text" name="txtNomeFantasia" value="" placeholder="NOME FANTASIA">
         </div>
         <div class="input_text">
           <input class="input_text1" type="text" name="txtRazao" value="" placeholder="RAZÃO SOCIAL">
@@ -142,9 +143,10 @@ if(isset($_POST["btnSalvar"]))
           <input class="input_text1" type="text" name="txtComplemento" value="" placeholder="COMPLEMENTO">
         </div>
         <!-- ********************************** -->
-        <div class="input_text">
-          <input class="checkbox" type="checkbox" name="chkSocorrista" value="1" placeholder="SOCORRISTA">
-          <input class="checkbox" type="checkbox" name="chkSocorrista" value="2" placeholder="SOCORRISTA">
+        <div class="input_text titulo align_center margem_t_20 fs_15">
+          Socorrista:<br><br>
+            Sim<input class="radio" type="radio" name="chkSocorrista" value="1" placeholder="SOCORRISTA">
+            Não<input class="radio" type="radio" name="chkSocorrista" value="2" placeholder="SOCORRISTA">
         </div>
         <div class="input_text">
           <input class="input_text1" type="text" name="txtEmail" value="" placeholder="EMAIL">
@@ -171,7 +173,7 @@ if(isset($_POST["btnSalvar"]))
           </select>
         </div>
         <div class="input_text">
-          <input class="input_submit margem_t_5"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+          <input class="input_submit1 bg_verde_vivo titulo margem_t_5"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
         </div>
       </div>
     </form>

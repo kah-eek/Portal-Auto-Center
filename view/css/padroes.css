@@ -230,13 +230,14 @@ a{
 /* ********************************************************* */
 
 /* ***************** Campos de entrada (inputs) ******************* */
-.input_text1{ /*input do tipo text */
+.input_text11{ /*input do tipo text */
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-color: #00C853;
   outline: none;
-  background-color: transparent;
+  color: black;
+  background-color: white;
   /* box-shadow: 0px 1px 25px -2px #000; */
   text-overflow: ellipsis;
 
