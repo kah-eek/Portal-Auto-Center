@@ -3,8 +3,8 @@
   /*margin-top: 0px;*/
   /*padding: 0px;*/
   width: 700px;
-  height: 930px;
-  min-height: 732px;
+  height: 700px;
+  min-height: 700px;
   height: auto;
 }
 
@@ -26,8 +26,8 @@
 
 .container_principal_mc_cp{
   width: 700px;
-  min-height: 930px;
-  height: auto;
+  min-height: 700px;
+  overflow-x: auto;
   /*background-color: red;*/
 }
 
@@ -85,9 +85,11 @@
 /*FORM*/
 
 .form_cadastro_cliente{
-  width: 300px;
-  height: 770px;
-  /*background-color: #737373;*/
+  width: 500px;
+  height: 800px;
+  background-color: #737373;
+  margin-left: 100px;
+  /* margin-right: auto; */
 
 }
 
@@ -100,10 +102,23 @@
 }
 
 .input_text{
-  width: 250px;
+  width: auto;
   height: 20px;
   margin-left: 20px;
   box-shadow: 0px 0px 0px 0px #000;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-color: #00C853;
+  outline: none;
+  background-color: transparent;
+  box-shadow: 0px 1px 25px -2px #000;
+  text-overflow: ellipsis;
+
+  /* Texto */
+  color: #fff;
+  font-family: 'titulo';
+  text-align: center;
 
 }
 .input_text::placeholder{
