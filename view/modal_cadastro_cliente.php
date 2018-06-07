@@ -3,6 +3,8 @@ require_once("moduloPerfil.php");
 require_once("../database/conect.php");
 Conexao_db();
 
+require_once("moduloPerfil.php");
+
 $id_cliente="";
 $id_endereco=null;
 $id_estado="";
@@ -115,43 +117,15 @@ $botao="Salvar";
     <link rel="stylesheet" href="css/modal_cadastro_cliente.css">
   </head>
   <body>
-    <div class="container_principal_mc_cp bg_branco">
-      <input type="file" name="imagem" value="<?php echo($imagem)?>" class="color">
-      <!-- TITULO -->
-      <!-- <div class="container_titulo">
-        <div class="item_titulo float_left txt_preto titulo align_center">
-          Cadastro Clientes
-        </div>
-        <div class="container_btn_sair float_right negrito">
-          <a class="btn_x fs_20 txt_preto" href="cliente_parceiro.php?page=cliente_parceiro">X</a>
-        </div>
-      </div> -->
-      <!-- IMAGENS -->
-      <!-- <div class="container_imagens margem_t_10 centro_lr"> -->
-
-        <!-- LABEL IMAGEM CLIENTE -->
-        <!-- <label for="btn_img_cliente">
-          <div class="item_imagens bg_branco float_left">
-
-          </div>
-        </label>
-        <input type="file" class="display_none" id="btn_img_cliente" name="btn_img_cliente" value=""> -->
-
-        <!-- LABEL IMAGEM VEICULO -->
-        <!-- <label for="btn_img_veiculo">
-          <div class="item_imagens bg_branco float_right">
-
-          </div>
-          <input class="display_none" id="btn_img_veiculo" type="file" name="btn_img_veiculo" value="">
-        </label>
-      </div> -->
+    <div class="container_principal_mc_cp">
       <!-- FORM -->
-      <form class="form_cadastro_cliente margem_t_5 float_left" action="modal_cadastro_cliente.php" method="POST">
+      <form class="form_cadastro_cliente" action="modal_cadastro_cliente.php" method="POST">
+        <input type="file" name="imagem" value="<?php echo($imagem)?>" class="color">
         <div class="container_infs">
 
           <!-- INPUT NOME -->
           <div class="segura_input">
-            <input class="input_text txt_preto margem_t_5" placeholder="Nome" type="text" name="txtNome" value="">
+            <input class="input_text1 txt_preto margem_t_5" placeholder="Nome" type="text" name="txtNome" value="">
           </div>
 
           <!-- TITULO DATA -->
@@ -168,22 +142,22 @@ $botao="Salvar";
 
           <!-- INPUT CPF -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Cpf" type="text" name="txtCpf" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Cpf" type="text" name="txtCpf" value="">
           </div>
 
           <!-- INPUT EMAIL -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Email Address" type="text" name="txtEmail" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Email Address" type="text" name="txtEmail" value="">
           </div>
 
           <!-- INPUT CELULAR -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Celular" type="text" name="txtCelular" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Celular" type="text" name="txtCelular" value="">
           </div>
 
           <!-- INPUT TELEFONE -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Telefone" type="text" name="txtTelefone" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Telefone" type="text" name="txtTelefone" value="">
           </div>
 
           <!-- INPUT RADIO -->
@@ -204,17 +178,17 @@ $botao="Salvar";
 
           <!-- INPUT RUA -->
           <div class="segura_input float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Rua" type="text" name="txtRua" value="">
+            <input class="input_text1 txt_preto margem_t_5" placeholder="Rua" type="text" name="txtRua" value="">
           </div>
 
           <!-- INPUT NUMERO -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Número" type="text" name="txtNumero" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Número" type="text" name="txtNumero" value="">
           </div>
 
           <!-- INPUT CIDADE -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtCidade" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtCidade" value="">
           </div>
 
           <!-- SELECT ESTADO -->
@@ -234,17 +208,17 @@ $botao="Salvar";
 
           <!-- INPUT CEP -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Cep" type="text" name="txtCep" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Cep" type="text" name="txtCep" value="">
           </div>
 
           <!-- INPUT BAIRRO -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Bairro" type="text" name="txtBairro" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Bairro" type="text" name="txtBairro" value="">
           </div>
 
           <!-- INPUT COMPLEMENTO -->
           <div class="segura_input float_left margem_t_5">
-            <input class="input_text txt_preto margem_t_10" placeholder="Complemento" type="text" name="txtComplemento" value="">
+            <input class="input_text1 txt_preto margem_t_10" placeholder="Complemento" type="text" name="txtComplemento" value="">
           </div>
 
           <!-- TITULO LOGIN -->
@@ -256,12 +230,12 @@ $botao="Salvar";
 
           <!-- INPUT USER -->
           <div class="segura_input float_left margem_t_10">
-            <input class="input_text txt_preto" placeholder="Usuário" type="text" name="txtUsuario" value="">
+            <input class="input_text1 txt_preto" placeholder="Usuário" type="text" name="txtUsuario" value="">
           </div>
 
           <!-- INPUT SENHA -->
           <div class="segura_input float_left margem_t_10">
-            <input class="input_text txt_preto" placeholder="Senha" type="password" name="txtSenha" value="">
+            <input class="input_text1 txt_preto" placeholder="Senha" type="password" name="txtSenha" value="">
           </div>
 
           <select class="select_opt margem_l_30" name="slcNivel">
@@ -283,53 +257,6 @@ $botao="Salvar";
           </div>
         </div>
       </form>
-
-      <!-- FORM CADASTRO DE VEICULO -->
-      <!-- <form class="form_cadastro_veiculo float_left" action="modal_cadastro_cliente.php" method="post">
-        <div class="segura_inputs_veic"> -->
-          <!-- TITULO VEICULO -->
-          <!-- <div class="titulo_form_veic margem_t_10 float_left">
-            <div class="titulo_form">
-              <div class="item_titulo_form fs_20 align_center titulo margem_t_10 float_left">
-                Veículo
-              </div>
-            </div>
-          </div> -->
-
-          <!-- INPUT ANO DE FABRICACAO -->
-          <!-- <div class="segura_input margem_t_20 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Ano De Fabricação" type="text" name="txt_ano_fabri" value="">
-          </div> -->
-
-          <!-- INPUT PLACA -->
-          <!-- <div class="segura_input margem_t_10 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Placa" type="text" name="txt_placa" value="">
-          </div> -->
-
-          <!-- INPUT QUANTIDADE DE PORTAS -->
-          <!-- <div class="segura_input margem_t_10 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Qtd de Portas" type="text" name="txt_portas" value="">
-          </div> -->
-
-          <!-- INPUT KILOMETRAGEM -->
-          <!-- <div class="segura_input margem_t_10 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Kilometragem" type="text" name="txt_km" value="">
-          </div> -->
-
-          <!-- INPUT MODELO -->
-          <!-- <div class="segura_input margem_t_10 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Modelo" type="text" name="txt_modelo" value="">
-          </div> -->
-
-          <!-- INPUT FABRICANTE -->
-          <!-- <div class="segura_input margem_t_10 float_left">
-            <input class="input_text txt_preto margem_t_5" placeholder="Fabricante" type="text" name="txt_fabri" value="">
-          </div>
-          <div class="divisor_c margem_t_30 float_left">
-
-          </div>
-        </div>
-      </form> -->
     </div>
   </body>
 </html>

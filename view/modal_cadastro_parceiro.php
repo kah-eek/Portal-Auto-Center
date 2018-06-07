@@ -165,12 +165,13 @@ if(isset($_POST["btnSalvar"]))
         <!-- ***************************************** -->
         <div class="input_text">
           <select class="input_combo" name="slcPlano">
+            <option value="">Selecione seu plano</option>
             <option value="2">Medium</option>
             <option value="1">Premium</option>
           </select>
         </div>
         <div class="input_text">
-          <input class="input_submit"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+          <input class="input_submit margem_t_5"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
         </div>
       </div>
     </form>

@@ -230,20 +230,20 @@ a{
 /* ********************************************************* */
 
 /* ***************** Campos de entrada (inputs) ******************* */
-.input_text{ /*input do tipo text */
+.input_text1{ /*input do tipo text */
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-color: #00C853;
   outline: none;
   background-color: transparent;
-  box-shadow: 0px 1px 25px -2px #000;
+  /* box-shadow: 0px 1px 25px -2px #000; */
   text-overflow: ellipsis;
 
   /* Texto */
   color: #fff;
   font-family: 'titulo';
-  text-align: center;
+  /* text-align: center; */
 }
 .input_text::placeholder{
   color: #fff;
@@ -281,7 +281,7 @@ a{
 
 /*Label*/
 .field-label
-{ 
+{
   font-weight: 9000;
   text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
   /*margin-bottom: -5%;*/
