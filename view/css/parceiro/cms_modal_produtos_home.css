@@ -75,6 +75,20 @@
 
 /*NAO TOQUE NA PARTE DE CIMA DO CSS !!!*/
 
+.add-img
+{
+  position: fixed;
+  /*bottom: 5%;*/
+  /*left: 82%;*/
+  left: 15%;
+  margin-top: -50px;
+  opacity: 0;
+}
+.add-img >label > i 
+{
+  font-size: 3.2rem;
+}
+
 .cont-princ
 {
   display: flex;
