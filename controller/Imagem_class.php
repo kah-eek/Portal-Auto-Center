@@ -43,7 +43,7 @@ class Imagem
     $upload_dir= $imagemObj->diretorio;
 
     //VERIFICA TIPO DE EXTENSÃO PERMITIDA PARA O PLOAD DO ARQUIVO, USAMOS O COMANDO strstr PARA LOCALIZAR SEQUÊNCIA DE CARACTERES.
-    if(strstr($imagemObj->nome, '.jpg') || strstr($imagemObj->nome, '.png') || (strstr($imagemObj->nome, '.gif'))){
+    if(strstr($imagemObj->nome, '.jpg') || strstr($imagemObj->nome, '.png') || strstr($imagemObj->nome, '.jpeg') || (strstr($imagemObj->nome, '.gif'))){
       //CRIPTOGRAFIA DO ARQUIVO
       $extensao = $imagemObj->extensao;
       $prefixo = $imagemObj->prefixo;

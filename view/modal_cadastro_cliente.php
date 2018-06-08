@@ -1,5 +1,6 @@
 <?php
 require_once("moduloPerfil.php");
+require_once("../controller/Imagem_class.php");
 require_once("../database/conect.php");
 Conexao_db();
 
@@ -46,7 +47,7 @@ $botao="Salvar";
     $celular=$_POST["txtCelular"];
     $telefone=$_POST["txtTelefone"];
     $sexo=$_POST["chbSexo"];
-    $imagem=Upload($_FILES["imagem"]);
+    // $imagem=Upload($_FILES["img_refresh_pic"]);
 
     // ENDEREÇO
     // $id_endereco=$_POST["id_endereco"];
@@ -61,7 +62,7 @@ $botao="Salvar";
     // LOGIN
     $usuario=$_POST["txtUsuario"];
     $senha=$_POST["txtSenha"];
-    $id_nivel_usuario=$_POST["slcNivel"];
+    // $id_nivel_usuario=$_POST["slcNivel"];
 
     if($_POST["btnSalvar"]=='Salvar'){
         //MONTA O SCRIPT PARA ENVIAR PARA O BD
@@ -88,9 +89,20 @@ $botao="Salvar";
             $id_endereco=$rs['LAST_INSERT_ID()'];
           }
 
-      $sql5 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','".$imagem."');";
+      // Instância um objeto imagem e o popula com a imagem vinda do form   
+      $imagem = new Imagem($_FILES['img_refresh_pic'], '../view/pictures/perfil/');
+
+      $imagemPic = $imagem->salvarImagem($imagem);
+
+      echo '<script>console.log("'.$imagemPic.'");</script>';
+
+      $sql5 = "insert into tbl_cliente (nome, dtNasc, cpf, email, celular, id_endereco, sexo, telefone, id_usuario, foto_perfil) values ('".$nome."','".$DtNasc."','".$cpf."','".$email."','".$celular."','".$id_endereco."','".$sexo."','".$telefone."','".$id_usuario."','".$imagemPic."');";
+
+      // echo $sql5;
 
       mysql_query($sql5);
+
+
 
 
       }
@@ -119,11 +131,11 @@ $botao="Salvar";
   <body>
     <div class="container_principal_mc_cp">
       <!-- FORM -->
-      <form class="form_cadastro_cliente" action="modal_cadastro_cliente.php" method="POST">
+      <form class="form_cadastro_cliente" id="frmCadCli" action="modal_cadastro_cliente.php" enctype="multipart/form-data" method="POST">
         <label for="btn_imagem_parceiro">
           <div class="container_foto">
             <img src="pictures/adm_parceiro/blank-face.jpg" alt="">
-            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
+            <input type="file" name="img_refresh_pic" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
           </div>
         </label>
 
@@ -249,5 +261,31 @@ $botao="Salvar";
         </div>
       </form>
     </div>
+
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <script>
+      
+      // $(document).on('change','#btn_imagem_parceiro',function(){
+        
+      //   console.log('selected');
+
+      //   $.ajax({
+      //     tye:'POST',
+      //     url:'../assets/refreshPic.php?path=../view/pictures/perfil/',
+      //     data: new FormData($('#frmCadCli')[0]),
+      //     processData:false,
+      //     chache:false,
+      //     success:function(resp){
+      //       console.log(resp)
+      //     }
+      //   });
+
+      // });
+
+
+    </script>
+
   </body>
 </html>
