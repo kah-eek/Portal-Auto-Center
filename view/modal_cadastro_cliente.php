@@ -100,9 +100,14 @@ $botao="Salvar";
 
       // echo $sql5;
 
-      mysql_query($sql5);
-
-
+      if(mysql_query($sql5))
+      {
+        echo '<script>alert("Cliente cadastrado com sucesso!");</script>';
+      }
+      else
+      {
+        echo '<script>alert("Falha a tentar cadastrar o cliente =(");</script>';
+      }
 
 
       }

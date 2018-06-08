@@ -2,6 +2,7 @@
 session_start();
 
 require_once("moduloPerfil.php");
+require_once("../controller/Imagem_class.php");
 require_once("../database/conect.php");
 Conexao_db();
 
@@ -12,7 +13,7 @@ if(isset($_POST["btnSalvar"]))
 {
 
   // DADOS PARCEIRO
-  $imagem=Upload($_FILES["imagem"]);
+  // $imagem=Upload($_FILES["imagem"]);
   $nomeFantasia=$_POST["txtNomeFantasia"];
   $razao=$_POST["txtRazao"];
   $cnpj=$_POST["txtCnpj"];
@@ -70,10 +71,24 @@ if(isset($_POST["btnSalvar"]))
           }
       // **************************************************
 
-      $sql5 = "insert into tbl_parceiro (nome_fantasia, razao_social, cnpj, id_endereco, ativo, socorrista, email, telefone, foto_perfil, celular, log_parceiro, id_usuario, id_plano_contratacao) values
-      ('".$nomeFantasia."','".$razao."','".$cnpj."','".$id_endereco."','1','".$socorrista."','".$email."','".$telefone."','".$imagem."','".$celular."',now(),'".$id_usuario."','".$plano."')";
+      // Instância um objeto imagem e o popula com a imagem vinda do form   
+      $imagem = new Imagem($_FILES['img_refresh_pic'], 'pictures/perfil/');
 
-      mysql_query($sql5);
+      $imagemPic = $imagem->salvarImagem($imagem);
+
+      echo '<script>console.log("'.$imagemPic.'");</script>';
+
+      $sql5 = "insert into tbl_parceiro (nome_fantasia, razao_social, cnpj, id_endereco, ativo, socorrista, email, telefone, foto_perfil, celular, log_parceiro, id_usuario, id_plano_contratacao) values
+      ('".$nomeFantasia."','".$razao."','".$cnpj."','".$id_endereco."','1','".$socorrista."','".$email."','".$telefone."','".$imagemPic."','".$celular."',now(),'".$id_usuario."','".$plano."')";
+
+      if(mysql_query($sql5))
+      {
+        echo '<script>alert("Parceiro cadastrado com sucesso!");</script>';
+      }
+      else
+      {
+        echo '<script>alert("Falha a tentar cadastrar o parceiro =(");</script>';
+      }
       // echo ($sql5);
 
     }
@@ -91,12 +106,12 @@ if(isset($_POST["btnSalvar"]))
     <link rel="stylesheet" href="css/padroes.css">
   </head>
   <body>
-    <form class="form_cadastro_parceiro" action="modal_cadastro_parceiro.php" method="POST">
+    <form class="form_cadastro_parceiro" action="modal_cadastro_parceiro.php" enctype="multipart/form-data" method="POST">
       <div class="Container_total">
         <label for="btn_imagem_parceiro">
           <div class="container_foto">
             <img src="pictures/adm_parceiro/blank-face.jpg" alt="">
-            <input type="file" name="imagem" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
+            <input type="file" name="img_refresh_pic" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
           </div>
         </label>
         <div class="input_text">
