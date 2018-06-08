@@ -20,7 +20,7 @@ if(isset($_GET['escolha'])){
           $select = mysql_query($sql);
           $rsVP = mysql_fetch_array($select);
 
-          $_SESSION['id_modelo_produto'] = $rsVP['id_modelo_produto'];
+          $_SESSION['id_modelo_produto'] =  $rsVP['id_modelo_produto'];
           $_SESSION['id_parceiro'] = $rsVP['id_parceiro'];
           $_SESSION['id_cor'] = $rsVP['id_cor'];
           $_SESSION['id_categoria_produto'] = $rsVP['id_categoria_produto'];

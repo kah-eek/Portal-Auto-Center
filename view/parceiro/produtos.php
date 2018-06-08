@@ -2,6 +2,8 @@
 session_start();
 require_once("../../database/conect.php");
 Conexao_db();
+// header("Content-Type: text/html; charset=ISO-8859-1",true);
+// header("Content-type: text/html; charset=utf-8");
 
 if(isset($_GET['escolha'])){
     $escolha = $_GET['escolha'];
