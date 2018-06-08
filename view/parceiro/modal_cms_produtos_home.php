@@ -35,18 +35,20 @@ if(isset($_POST["btnSalvar"]))
         $id_produto=$rs['LAST_INSERT_ID()'];
       }
 
-    // Instância um objeto imagem e o popula com a imagem vinda do form   
+    // Instância um objeto imagem e o popula com a imagem vinda do form
     $imagem = new Imagem($_FILES['img_refresh_pic'], '../pictures/produto/');
 
     $imagemPic = $imagem->salvarImagem($imagem);
 
     // echo ($imagemPic);
 
-    $sqlInser = "INSERT INTO tbl_imagem_produto_parceiro (id_produto, imagem) VALUS(".$id_produto.",".$imagemPic.")";
+    $sqlInser = "INSERT INTO tbl_imagem_produto_parceiro (id_produto, imagem) VALUES('".$id_produto."','".$imagemPic."')";
 
     mysql_query($sqlInser);
 
-    // header('location:modal_cms_produtos_home.php');
+    // echo ($sqlInser);
+
+    header('location:modal_cms_produtos_home.php');
   }
   $id_usuario = $_SESSION['id_usuario'];
 
@@ -185,19 +187,19 @@ if(isset($_POST["btnSalvar"]))
       <script src="../js/pac_framework.js"></script>
 
       <script>
-        
+
         setTimeout(function(){
 
           $('.add-img').css({
             opacity:'1',
             marginTop:'20px',
-            transition:'2s'            
+            transition:'2s'
           });
 
           setTimeout(function(){
             $('.add-img').css({
             transform:'rotate(360deg)',
-            transition:'1.5s'            
+            transition:'1.5s'
           });
           },800);
 
@@ -209,7 +211,7 @@ if(isset($_POST["btnSalvar"]))
             borderRadius:'50%',
             backgroundColor:'#fff',
             boxShadow:'0 -2px 6px rgba(0,0,0,0.12), 0 5px 10px rgba(0,0,0,0.23)',
-            transition:'2s'            
+            transition:'2s'
           });
           },3000);
 

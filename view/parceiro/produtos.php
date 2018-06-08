@@ -110,7 +110,7 @@ if(isset($_GET['escolha'])){
         <div class="itens-da-tbl">
 
           <?php
-          $sql = "SELECT * FROM caiqueoliveira.view_status_produto_por_parceiro where situacao = 'Aguardando envio' and id_parceiro = ".$id_parceiro;
+          $sql = "SELECT * FROM view_status_produto_por_parceiro where situacao = 'Aguardando envio' and id_parceiro = ".$id_parceiro;
               $select = mysql_query($sql) or die(mysql_error());
               // echo ($sql);
             while ($rsS = mysql_fetch_array($select))

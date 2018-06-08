@@ -12,7 +12,7 @@
   -->
   <?php
   $sql1 = "SELECT tbl_topico_forum.*,
-  tbl_cliente.nome FROM caiqueoliveira.tbl_topico_forum
+  tbl_cliente.nome FROM tbl_topico_forum
     INNER JOIN tbl_cliente
     ON tbl_cliente.id_cliente = tbl_topico_forum.id_cliente;";
     $select1 = mysql_query($sql1);
@@ -86,7 +86,7 @@
     <!-- Contáiner de resposta ao tópico -->
     <?php
       $sql = "SELECT tbl_comentario_topico_forum.*,
-      tbl_cliente.nome FROM caiqueoliveira.tbl_comentario_topico_forum
+      tbl_cliente.nome FROM tbl_comentario_topico_forum
       INNER JOIN tbl_cliente
       ON tbl_cliente.id_cliente = tbl_comentario_topico_forum.id_cliente;";
         $select = mysql_query($sql);
