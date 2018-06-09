@@ -82,11 +82,11 @@ $botao="Salvar";
 
       mysql_query($sql3);
 
-      $sql4 = "SELECT LAST_INSERT_ID();";
+      $sql4 = "select id_endereco from tbl_endereco order by id_endereco desc limit 1;";
         $resultado2 = mysql_query ($sql4);
           if ($rs=mysql_fetch_array($resultado2))
           {
-            $id_endereco=$rs['LAST_INSERT_ID()'];
+            $id_endereco=$rs['id_endereco'];
           }
 
       // Instância um objeto imagem e o popula com a imagem vinda do form
