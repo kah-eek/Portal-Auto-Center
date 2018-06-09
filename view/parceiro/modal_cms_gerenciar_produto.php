@@ -29,7 +29,7 @@ if(isset($_GET['escolha'])){
           $_SESSION['botao'] = "editar";
 
 
-          if($_SESSION['id_modelo_produto'] !=null){
+          if($_SESSION['id_modelo_produto'] != null){
               header('location:editar_servico_parceiro.php');
               //echo($_SESSION['idNivelUsuario']);
           }else{

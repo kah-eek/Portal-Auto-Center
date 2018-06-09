@@ -72,7 +72,7 @@ if(isset($_GET['escolha'])){
         <div class="labels-tab">
           <div class="cont-label">
             <div class="item-tab">
-              <p class="p">Nome do Serviço</p>
+              <p class="p">Nome do Cliente</p>
             </div>
 
             <div class="item-tab">
@@ -114,7 +114,7 @@ if(isset($_GET['escolha'])){
               <div class="labels-tab">
                 <div class="cont-label">
                   <div class="item-tab_res">
-                    <p class="p no-weight"><?php echo($rsS['nome_servico']) ?></p>
+                    <p class="p no-weight"><?php echo($rsS['nome_cliente']) ?></p>
                   </div>
 
                   <div class="item-tab_res">
@@ -154,7 +154,7 @@ if(isset($_GET['escolha'])){
         <div class="labels-tab-stat top-longe">
           <div class="cont-label-stat">
             <div class="item-tab-stat">
-              <p class="p">Nome do Serviço</p>
+              <p class="p">Nome do Cliente</p>
             </div>
 
             <div class="item-tab-stat">
