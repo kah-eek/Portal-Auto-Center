@@ -90,7 +90,7 @@ if(isset($_POST["btnSalvar"]))
       <div class="blank-space"></div>
 
       <div class="main">
-        <form name="frmCadastroServico" method="POST" enctype="multipart/form-data" action="">
+        <form name="frmCadastroServico" method="POST" enctype="multipart/form-data" action="modal_cms_cad_servicos.php">
           <input type="file" id="img_refresh_pic" required name="img_refresh_pic" hidden>
 
           <div class="add-img">
