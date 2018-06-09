@@ -81,6 +81,7 @@ $botao="Salvar";
       $sql3 = "insert into tbl_endereco (logradouro, numero, cidade, id_estado, cep, bairro, complemento) values ('".$rua."','".$numero."','".$cidade."','".$id_estado."','".$cep."','".$bairro."','".$complemento."');";
 
       mysql_query($sql3);
+      // echo ($sql3);
 
       $sql4 = "select id_endereco from tbl_endereco order by id_endereco desc limit 1;";
         $resultado2 = mysql_query ($sql4);
@@ -222,7 +223,7 @@ $botao="Salvar";
               while($rsConsulta= mysql_fetch_array($select)){
             ?>
 
-              <option class="select" value="slcEstado"><?php echo($rsConsulta['estado']) ?></option>>
+              <option class="select" value="<?php echo($rsConsulta['id_estado']) ?>"><?php echo($rsConsulta['estado']) ?></option>>
 
              <?php
                 }
