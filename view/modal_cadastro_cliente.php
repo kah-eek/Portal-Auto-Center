@@ -66,7 +66,7 @@ $botao="Salvar";
 
     if($_POST["btnSalvar"]=='Salvar'){
         //MONTA O SCRIPT PARA ENVIAR PARA O BD
-      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo, log) values ('".$usuario."','".$senha."','1','1', now());";
+      $sql = "insert into tbl_usuario (usuario, senha, id_nivel_usuario, ativo, log) values ('".$usuario."','".$senha."','3','1', now());";
 
       mysql_query($sql);
 
@@ -89,7 +89,7 @@ $botao="Salvar";
             $id_endereco=$rs['LAST_INSERT_ID()'];
           }
 
-      // Instância um objeto imagem e o popula com a imagem vinda do form   
+      // Instância um objeto imagem e o popula com a imagem vinda do form
       $imagem = new Imagem($_FILES['img_refresh_pic'], '../view/pictures/perfil/');
 
       $imagemPic = $imagem->salvarImagem($imagem);
@@ -271,9 +271,9 @@ $botao="Salvar";
     <script src="js/jquery.js"></script>
 
     <script>
-      
+
       // $(document).on('change','#btn_imagem_parceiro',function(){
-        
+
       //   console.log('selected');
 
       //   $.ajax({

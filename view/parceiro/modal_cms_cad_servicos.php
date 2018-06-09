@@ -2,6 +2,7 @@
 session_start();
 
 require_once("../../database/conect.php");
+require_once("../../controller/Imagem_class.php");
 Conexao_db();
 $id_usuario = $_SESSION['id_usuario'];
 $id_parceiro = $_SESSION['id_parceiro1'];
@@ -27,6 +28,25 @@ if(isset($_POST["btnSalvar"]))
 
     mysql_query($sql);
     // echo ($sql);
+    $sql2 = "SELECT LAST_INSERT_ID();";
+    $resultado2 = mysql_query ($sql2);
+      if ($rs=mysql_fetch_array($resultado2))
+      {
+        $id_servico=$rs['LAST_INSERT_ID()'];
+      }
+
+    // Instância um objeto imagem e o popula com a imagem vinda do form
+    $imagem = new Imagem($_FILES['img_refresh_pic'], '../pictures/produto/');
+
+    $imagemPic = $imagem->salvarImagem($imagem);
+
+    // echo ($imagemPic);
+
+    $sqlInser = "INSERT INTO tbl_imagem_produto_parceiro (id_produto, imagem) VALUES('".$id_servico."','".$imagemPic."')";
+
+    mysql_query($sqlInser);
+
+    // echo ($sqlInser);
 
     header('location:modal_cms_cad_servicos.php');
   }
@@ -70,7 +90,16 @@ if(isset($_POST["btnSalvar"]))
       <div class="blank-space"></div>
 
       <div class="main">
-        <form name="frmCadastroServico" method="POST" action="">
+        <form name="frmCadastroServico" method="POST" enctype="multipart/form-data" action="">
+          <input type="file" id="img_refresh_pic" required name="img_refresh_pic" hidden>
+
+          <div class="add-img">
+            <label for="img_refresh_pic">
+              <i class="material-icons">
+                add_a_photo
+              </i>
+            </label>
+          </div>
 
           <div class="cont-princ">
 
@@ -104,6 +133,39 @@ if(isset($_POST["btnSalvar"]))
 
       <script src="../js/jquery.js"></script>
       <script src="../js/pac_framework.js"></script>
+
+      <script>
+
+        setTimeout(function(){
+
+          $('.add-img').css({
+            opacity:'1',
+            marginTop:'20px',
+            transition:'2s'
+          });
+
+          setTimeout(function(){
+            $('.add-img').css({
+            transform:'rotate(360deg)',
+            transition:'1.5s'
+          });
+          },800);
+
+          setTimeout(function(){
+            $('.add-img').css({
+            marginTop:'-28px',
+            width:'56px',
+            height:'56px',
+            borderRadius:'50%',
+            backgroundColor:'#fff',
+            boxShadow:'0 -2px 6px rgba(0,0,0,0.12), 0 5px 10px rgba(0,0,0,0.23)',
+            transition:'2s'
+          });
+          },3000);
+
+        },2000);
+
+      </script>
 
     </body>
 </html>
