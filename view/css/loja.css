@@ -7,6 +7,19 @@
   background-attachment: fixed;
 }
 
+.input_text
+{
+  width: 85%;
+  outline: none;
+  color: #fff;
+  font-family: conteudo;
+  background-color: transparent;
+  border-bottom: solid 2px #00C853;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
 .container_menu_pesquisa{
   width: 1420px;
   height:80px;
