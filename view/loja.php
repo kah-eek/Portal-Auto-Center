@@ -480,6 +480,14 @@
             <img src="view/pictures/loja/caoa.jpg" alt="">
           </div>
         </div>
+        <div class="container_conteudo_rotante margem_l_20 bg_azulado_escuro float_left">
+          <div class="anuncio_parceiro_premium bg_branco float_left foto_frente">
+            <img src="view/pictures/loja/audi.jpg" alt="">
+          </div>
+          <div class="anuncio_parceiro_premium bg_branco float_right foto_fundo">
+            <img src="view/pictures/loja/caoa.jpg" alt="">
+          </div>
+        </div>
       </div>
 
       <!-- Divisor de conteúdo -->
