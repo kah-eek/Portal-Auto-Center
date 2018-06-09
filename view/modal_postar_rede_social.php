@@ -2,7 +2,7 @@
 require_once("../database/conect.php");
 Conexao_db();
 
-require_once("modulo.php");
+require_once("moduloPerfil.php");
 
 $botao="Salvar";
 

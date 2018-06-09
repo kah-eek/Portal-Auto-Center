@@ -27,60 +27,13 @@
 
   <!-- itens veículos -->
   <div class="container_segura_item_veic centro_lr transparente">
-    <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
-        </div>
-        <div class="descricao_nome align_center conteudo">
-          Tígua
-        </div>
-        <div class="descricao_marca align_center preenche_5 txt_preto conteudo">
-          VOLKSWAGEN
-        </div>
-        <div class="descricao_data align_center txt_preto conteudo">
-          2012/2013
-        </div>
-      <div class="input_submit centro_lr transparente preenche_t_10">
-        <input class="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
-      </div>
-    </div>
+    <?php
 
-    <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
-        </div>
-        <div class="descricao_nome align_center conteudo">
-          Tígua
-        </div>
-        <div class="descricao_marca align_center preenche_5 txt_preto conteudo">
-          VOLKSWAGEN
-        </div>
-        <div class="descricao_data align_center txt_preto conteudo">
-          2012/2013
-        </div>
-      <div class="input_submit centro_lr transparente preenche_t_10">
-        <input class="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
-      </div>
-    </div>
-
-    <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
-        <div class="imagem_item_veiculo">
-          <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
-        </div>
-        <div class="descricao_nome align_center conteudo">
-          Tígua
-        </div>
-        <div class="descricao_marca align_center preenche_5 txt_preto conteudo">
-          VOLKSWAGEN
-        </div>
-        <div class="descricao_data align_center txt_preto conteudo">
-          2012/2013
-        </div>
-      <div class="input_submit centro_lr transparente preenche_t_10">
-        <input class="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
-      </div>
-    </div>
-
+     $sql="SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.id_imagem_produto_parceiro, tbl_produto.preco, tbl_produto.nome as nomeProduto
+     from tbl_imagem_produto_parceiro inner join tbl_produto on tbl_imagem_produto_parceiro.id_produto = tbl_produto.id_produto";
+     $select=mysql_query($sql);
+     while($rsConsulta= mysql_fetch_array($select)){
+       ?>
     <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
         <div class="imagem_item_veiculo">
           <img src="pictures/veiculos/carro.jpg" title="Item Veículos" alt="Imagem de Carro"/>
