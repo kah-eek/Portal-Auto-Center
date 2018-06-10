@@ -8,6 +8,16 @@
   $padroes_css = 'view/css/padroes';
   $carrosel_css = 'view/css/carrosel/style';
   $jquery = 'view/js/jquery.js';
+  $paymentDAO = 'view/js/dao/paymentDAO.js';
+  $maskJs = 'view/js/jquery.mask.min.js';
+  $api = 'view/js/api.js';
+  $orderDAO = 'view/js/dao/OrderDAO.js';
+  $billing = 'view/js/model/Billing.js';
+  $orderPayment = 'view/js/model/OrderPayment.js';
+  $order = 'view/js/model/Order.js';
+  $customer = 'view/js/model/Customer.js';
+  $client = 'view/js/model/Client.js';
+  $payment = 'view/js/model/Payment.js';
   $modalCadastroCliente = 'view/js/modal.js';
   $logo_pac = 'view/pictures/logo/portal_auto_center';
   $facebook_icon = 'view/pictures/rede_social/facebook';
@@ -26,7 +36,16 @@
     $padroes_css = 'css/padroes';
     $carrosel_css = 'css/carrosel/style';
     $jquery = 'js/jquery.js';
+    $api = 'js/api.js';
+    $orderDAO = 'js/dao/OrderDAO.js';
+    $billing = 'js/model/Billing.js';
+    $order = 'js/model/Order.js';
+    $client = 'js/model/Client.js';
+    $payment = 'js/model/Payment.js';
+    $customer = 'js/model/Customer.js';
+    $maskJs = 'js/jquery.mask.min.js';
     $modalCadastroCliente = 'js/modal.js';
+    $paymentDAO = 'js/dao/paymentDAO.js';
     $logo_pac = 'pictures/logo/portal_auto_center';
     $facebook_icon = 'pictures/rede_social/facebook';
     $instagram_icon = 'pictures/rede_social/instagram';
@@ -56,6 +75,17 @@
     <script src="<?=$jquery?>"></script>
     <script src="<?=$modalCadastroCliente?>"></script>
     <script src="<?=$requestAPI?>"></script>
+
+    <script src="<?=$payment?>"></script>
+    <script src="<?=$client?>"></script>
+    <script src="<?=$billing?>"></script>
+    <script src="<?=$customer?>"></script>
+    <script src="<?=$orderPayment?>"></script>
+    <script src="<?=$paymentDAO?>"></script>
+    <script src="<?=$api?>"></script>
+    <script src="<?=$order?>"></script>
+    <script src="<?=$orderDAO?>"></script>
+    <script src="<?=$maskJs?>"></script>
 
     <script src="<?=$jquery?>"></script>
     <script src="<?=$jcarousellite?>"></script>

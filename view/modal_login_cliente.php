@@ -29,17 +29,21 @@
 	<script src="view/js/pac_framework.js"></script>
 
 	<script>
+
+		console.log();
+
 		$('form[name="frmDadosLoginPag"]').submit(function(e){
 			e.preventDefault();
 
+			// Animação
 			$('.modal').css({
 				transition:'0.5s',
 				height:'525px'
 			});
-
 			$('.caixa-entrada-frm-log').fadeOut(500);
+			// ****************************************><
 
-
+			// Descarregamento da tela de pagamento
 			setTimeout(function(){
 
 				$('.container-form-lg').css({
@@ -47,19 +51,16 @@
 				});
 
 				$.ajax({
+				  type:'POST',
 		          url:'view/modal_dados_pagamento.php',
 		          success:function(resp)
 		          { 
-
-		            console.log(resp);
+		            // console.log(resp);
 		            $('.container-form-lg').html(resp);
 		          }
 		        });
-				
 			},500);
-
-
-
+			// ****************************************><
 		});
 	</script>
 </body>

@@ -496,7 +496,7 @@
       <div class="container_produto_fixo centro_lr">
         <?php
 
-         $sql="SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.id_imagem_produto_parceiro, tbl_produto.preco, tbl_produto.nome as nomeProduto
+         $sql="SELECT tbl_imagem_produto_parceiro.imagem, tbl_imagem_produto_parceiro.id_imagem_produto_parceiro, tbl_produto.preco, tbl_produto.id_produto, tbl_produto.nome as nomeProduto
          from tbl_imagem_produto_parceiro inner join tbl_produto on tbl_imagem_produto_parceiro.id_produto = tbl_produto.id_produto";
          $select=mysql_query($sql);
          while($rsConsulta= mysql_fetch_array($select)){
@@ -521,7 +521,7 @@
 
            <!-- Botão para a compra do produto -->
            <div class="botao_produto_fixo align_center">
-             <input id="btnDadosPedido" class="color btnComprar" type="submit" name="btnComprar" value="Comprar">
+             <input data-preco="<?=$rsConsulta['preco']?>" data-produto="<?=$rsConsulta['nomeProduto']?>" data-id="<?=$rsConsulta['id_produto']?>" id="btnDadosPedido" class="color btnComprar" type="submit" name="btnComprar" value="Comprar">
            </div>
          </div>
          <?php

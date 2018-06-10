@@ -76,7 +76,25 @@
     <script>
       $(document).on('click','.btnComprar',function(){
 
-        console.log('clicked');
+        var preco = new Payment().parsePrice(String($(this).data('preco')));
+
+        var orderPayment = new OrderPayment(
+            $(this).data('id'),
+            $(this).data('produto'),
+            preco,
+            1,
+            true
+        );
+
+        localStorage.setItem('orderPayment',JSON.stringify(orderPayment));
+
+         var order = new Order
+        (
+          $(this).data('id'), // product's id
+          preco, // product's price
+          4, // client's id
+          3 // order situation (waiting payment)
+        );
 
         $.ajax({
           type:'POST',

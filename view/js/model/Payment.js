@@ -28,8 +28,15 @@ class Payment
 	*/
 	parsePrice(fullPrice)
 	{
-		300.00
-		return fullPrice.substring(0,fullPrice.indexOf('.'))+fullPrice.substring(fullPrice.indexOf('.')+1);
+		if (fullPrice.indexOf('.') == -1) 
+		{
+			return fullPrice+'00';
+		}
+		else
+		{
+			return fullPrice.substring(0,fullPrice.indexOf('.'))+fullPrice.substring(fullPrice.indexOf('.')+1);
+		}
+		// 300.00
 	}
 
 	/**
