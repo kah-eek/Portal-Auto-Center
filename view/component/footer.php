@@ -72,5 +72,26 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      $(document).on('click','.btnComprar',function(){
+
+        console.log('clicked');
+
+        $.ajax({
+          type:'POST',
+          url:'view/modal_login_cliente.php',
+          success:function(resp)
+          { 
+            $('.container_modal').fadeIn(500);
+            $('.modal').html(resp);
+          }
+        });
+
+      });
+
+
+    </script>
+
   </body>
 </html>
