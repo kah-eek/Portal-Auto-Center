@@ -79,10 +79,10 @@
 
       <div class="container_parceiro_premium centro_lr margem_b_80">
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_left">
-          <img src="view/pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
+          <img src="view/pictures/loja/camaro.jpg" alt="Veja nossos parceiro premius">
         </div>
         <div class="anuncio_parceiro_premium preenche_5 bg_branco float_right">
-          <img src="view/pictures/loja/camaro.jpg" alt="">
+          <img src="view/pictures/loja/caoa1.jpg" alt="Veja nossos parceiro premius">
         </div>
       </div>
 
@@ -482,10 +482,10 @@
         </div>
         <div class="container_conteudo_rotante margem_l_20 bg_azulado_escuro float_left">
           <div class="anuncio_parceiro_premium bg_branco float_left foto_frente">
-            <img src="view/pictures/loja/audi.jpg" alt="">
+            <img src="view/pictures/loja/caoa.jpg" alt="">
           </div>
           <div class="anuncio_parceiro_premium bg_branco float_right foto_fundo">
-            <img src="view/pictures/loja/caoa.jpg" alt="">
+            <img src="view/pictures/loja/audi.jpg" alt="">
           </div>
         </div>
       </div>
@@ -521,7 +521,7 @@
 
            <!-- Botão para a compra do produto -->
            <div class="botao_produto_fixo align_center">
-             <input id="btnDadosPedido" class="color" type="submit" name="btnComprar" value="Comprar">
+             <input id="btnDadosPedido" class="color btnComprar" type="submit" name="btnComprar" value="Comprar">
            </div>
          </div>
          <?php

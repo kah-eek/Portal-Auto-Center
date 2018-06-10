@@ -1,0 +1,77 @@
+/*CSS*/
+.container_modal
+{
+	background-color: rgba(0,0,0,.7);
+}
+.modal
+{
+	width: 516px;
+	height: 400px;
+}
+.container-form-lg
+{
+	padding-top: 65px;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;	
+}
+.input-submit-frm-log
+{
+  width: 100%;
+  text-transform: uppercase;
+  padding: 10px 0px;
+  background-color: #00C853;
+  border: none;
+  font-family: titulo;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0px 0px 1px #000;
+}
+.caixa-entrada-frm-log
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/*justify-content: space-between;*/
+	width: 100%;
+	height: 180px;
+	/*background-color: red;*/
+}
+.titulo-lg
+{
+	/*border-right: solid 1px #00C853;*/
+	/*border-left: solid 1px #00C853;*/
+	/*border-top: solid 1px #00C853;*/
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
+	justify-content: space-around;
+	width: 100%;
+	height: 80px;
+	color: #fff;
+	font-family: titulo;	
+	text-shadow: 0 0 1px #000;
+	background-color: #2A2E37;
+}
+.field-label
+{
+	font-size: 1.2rem;
+ 	/*background-color: red;*/
+}
+.input-text
+{
+  background-color: transparent;
+  width: 80%;
+  font-family: conteudo;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  margin-bottom: 65px;
+  border-bottom-color: #00C853;
+}
