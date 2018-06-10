@@ -132,6 +132,8 @@ $botao="Salvar";
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/padroes.css">
     <link rel="stylesheet" href="css/modal_cadastro_cliente.css">
   </head>
   <body>
@@ -145,85 +147,70 @@ $botao="Salvar";
           </div>
         </label>
 
-        <div class="container_infs">
+        <div class="container-infs-cli">
 
-          <!-- INPUT NOME -->
-          <div class="input_text">
-            <input class="input_text1 txt_preto titulo margem_t_5" placeholder="Nome" type="text" name="txtNome" value="">
-          </div>
+          <label for="txtNome" class="field-label">Nome</label>
+          <input id="txtNome" required maxlength="19" class="android-input input-text" type="text" name="txtNome">
 
           <!-- TITULO DATA -->
-          <div class="titulo_form">
-            <div class="item_titulo_form titulo margem_t_10">
-              Data de Nascimento
-            </div>
-          </div>
-
-          <!-- INPUT CALENDÁRIO -->
-          <div class="input_text float_left margem_t_5">
-            <input class="data_nasc margem_10" type="date" name="dtNasc" value="">
-          </div>
+          <label for="dtNasc" class="field-label">Data de Nascimento</label>
+          <input id="dtNasc" required class="android-input input-text" type="date" name="dtNasc">
 
           <!-- INPUT CPF -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Cpf" type="text" name="txtCpf" value="">
-          </div>
+          <label for="txtCpf" class="field-label">CPF</label>
+          <input id="txtCpf" required class="android-input input-text" type="text" name="txtCpf">
 
           <!-- INPUT EMAIL -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Email Address" type="text" name="txtEmail" value="">
-          </div>
+          <label for="txtEmail" class="field-label">E-mail</label>
+          <input id="txtEmail" required class="android-input input-text" type="email" name="txtEmail">
 
           <!-- INPUT CELULAR -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Celular" type="text" name="txtCelular" value="">
-          </div>
+          <label for="txtCelular" class="field-label">Celular</label>
+          <input id="txtCelular" required class="android-input input-text" type="text" name="txtCelular">
 
           <!-- INPUT TELEFONE -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Telefone" type="text" name="txtTelefone" value="">
-          </div>
+          <label for="txtTelefone" class="field-label">Telefone</label>
+          <input id="txtTelefone" required class="android-input input-text" type="text" name="txtTelefone">
 
           <!-- INPUT RADIO -->
-          <div class="input_text margem_t_10 float_left">
-            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="M"> Masculino
-            <input class="margem_l_20 margem_t_10 txt_preto" type="radio" name="chbSexo" value="F"> Feminino
+          <div class="sex-cli">
+            <input class="margem_l_20" type="radio" name="chbSexo" value="M"> Masculino
+            <input class="margem_l_20" type="radio" name="chbSexo" value="F"> Feminino
           </div>
-          <div class="divisor_c margem_t_5 float_left">
+          <!-- <div class="divisor_c margem_t_5 float_left">
 
-          </div>
+          </div> -->
 
+          <div class="divisor"></div>
           <!-- TITULO ENDEREÇO -->
-          <div class="titulo_form">
+          <!-- <div class="titulo_form">
             <div class="item_titulo_form titulo float_left margem_t_10">
               Endereço
             </div>
-          </div>
+          </div> -->
 
           <!-- INPUT RUA -->
-          <div class="input_text float_left">
-            <input class="input_text1 txt_preto margem_t_5" placeholder="Rua" type="text" name="txtRua" value="">
-          </div>
+          <label for="txtRua" class="field-label">Rua</label>
+          <input id="txtRua" required class="android-input input-text" type="text" name="txtRua">
 
           <!-- INPUT NUMERO -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Número" type="text" name="txtNumero" value="">
-          </div>
+          <label for="txtNumero" class="field-label">Número</label>
+          <input id="txtNumero" required class="android-input input-text" type="text" name="txtNumero">
 
           <!-- INPUT CIDADE -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Cidade" type="text" name="txtCidade" value="">
-          </div>
+          <label for="txtCidade" class="field-label">Cidade</label>
+          <input id="txtCidade" required class="android-input input-text" type="text" name="txtCidade">
 
           <!-- SELECT ESTADO -->
-          <select class="select_opt margem_t_10 margem_l_30" name="slcEstado">
+          <select class="select-pac" name="slcEstado">
+            <option value="" selected disabled> Estado</option>
             <?php
               $sql="select * from tbl_estado order by id_estado desc";
               $select=mysql_query($sql);
               while($rsConsulta= mysql_fetch_array($select)){
             ?>
 
-              <option class="select" value="<?php echo($rsConsulta['id_estado']) ?>"><?php echo($rsConsulta['estado']) ?></option>>
+              <option value="<?php echo($rsConsulta['id_estado']) ?>"><?php echo($rsConsulta['estado']) ?></option>>
 
              <?php
                 }
@@ -231,36 +218,32 @@ $botao="Salvar";
           </select>
 
           <!-- INPUT CEP -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Cep" type="text" name="txtCep" value="">
-          </div>
+          <label for="txtCep" class="field-label">CEP</label>
+          <input id="txtCep" required class="android-input input-text" type="text" name="txtCep">
 
           <!-- INPUT BAIRRO -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Bairro" type="text" name="txtBairro" value="">
-          </div>
+          <label for="txtBairro" class="field-label">Bairro</label>
+          <input id="txtBairro" required class="android-input input-text" type="text" name="txtBairro">
 
           <!-- INPUT COMPLEMENTO -->
-          <div class="input_text float_left margem_t_5">
-            <input class="input_text1 txt_preto margem_t_10" placeholder="Complemento" type="text" name="txtComplemento" value="">
-          </div>
+          <label for="txtComplemento" class="field-label">Complemento</label>
+          <input id="txtComplemento" required class="android-input input-text" type="text" name="txtComplemento">
 
           <!-- TITULO LOGIN -->
-          <div class="titulo_form">
+          <!-- <div class="titulo_form">
             <div class="item_titulo_form titulo margem_t_20 float_left">
               Login
             </div>
-          </div>
+          </div> -->
 
           <!-- INPUT USER -->
-          <div class="input_text float_left margem_t_10">
-            <input class="input_text1 txt_preto" placeholder="Usuário" type="text" name="txtUsuario" value="">
-          </div>
+          <label for="txtUsuario" class="field-label">Usuário</label>
+          <input id="txtUsuario" required class="android-input input-text" type="text" name="txtUsuario">
 
           <!-- INPUT SENHA -->
-          <div class="input_text float_left margem_t_10">
-            <input class="input_text1 txt_preto" placeholder="Senha" type="password" name="txtSenha" value="">
-          </div>
+          <label for="txtSenha" class="field-label">Senha</label>
+          <input id="txtSenha" required class="android-input input-text" type="password" name="txtSenha">
+
           <div class="input_text float_left">
             <input href="" class="input_submit11 margem_t_5 bg_verde_vivo titulo" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
           </div>
@@ -269,9 +252,23 @@ $botao="Salvar";
     </div>
 
     <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/pac_framework.js"></script>
 
     <script>
+
+       // Mask - expiretion
+      $('#dtNasc').keydown(function(e){
+
+        var txt = $(this).val();
+        var key = e.keyCode;
+
+        if(txt.length == 2 || txt.length == 5 && key != 8)
+        {
+          $('#dtNasc').val($('#dtNasc').val()+'/');
+        }
+      });
 
       // $(document).on('change','#btn_imagem_parceiro',function(){
 
