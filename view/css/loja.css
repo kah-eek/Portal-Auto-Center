@@ -80,7 +80,7 @@
   margin-left: 43px;
   margin-top: 20px;
   float: left;
-  box-shadow: 0px 0px 10px #000;
+  box-shadow: 0 6px 12px rgba(0,0,0,.10), 0 8px 25px rgba(0,0,0,.15);
 }
 .produto_fixo:hover{
   transition: 1s;
@@ -93,6 +93,26 @@
 .valor_produto_fixo{
   width: inherit;
   height: 30px;
+  font-family: conteudo;
+  font-size: 1.2rem;
+  letter-spacing:1px;
+  border-top: solid 1px rgba(0,0,0,.3);
+  /*background-color: red;*/
+}
+.btnComprar
+{
+  background-color: #00C853;
+  box-shadow: none;
+  outline: none;
+  width: 300px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0,0,0,.6);   
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-family: titulo;
+  height: 30px;
+  border: none;
 }
 .descricao_produto_fixo{
   width: inherit;
@@ -101,7 +121,7 @@
 
 .botao_produto_fixo{
   float: left;
-  margin-left: 120px;
+  /*margin-left: 120px;*/
 }
 
 .color{

@@ -510,7 +510,7 @@
            </div>
 
            <!-- Preço do produto fixo -->
-           <div class="valor_produto_fixo conteudo align_center preenche_t_10 txt_sombra_1x1x1_verde_vivo txt_preto negrito">
+           <div class="valor_produto_fixo conteudo align_center preenche_t_10">
              <?php echo($rsConsulta['nomeProduto'])?>
            </div>
 
@@ -521,7 +521,7 @@
 
            <!-- Botão para a compra do produto -->
            <div class="botao_produto_fixo align_center">
-             <input data-preco="<?=$rsConsulta['preco']?>" data-produto="<?=$rsConsulta['nomeProduto']?>" data-id="<?=$rsConsulta['id_produto']?>" id="btnDadosPedido" class="color btnComprar" type="submit" name="btnComprar" value="Comprar">
+             <input data-preco="<?=$rsConsulta['preco']?>" data-produto="<?=$rsConsulta['nomeProduto']?>" data-id="<?=$rsConsulta['id_produto']?>" id="btnDadosPedido" class="btnComprar" type="submit" name="btnComprar" value="Comprar">
            </div>
          </div>
          <?php

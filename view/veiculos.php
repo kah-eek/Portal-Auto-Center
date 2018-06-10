@@ -38,9 +38,9 @@
      $select=mysql_query($sql);
      while($rsConsulta= mysql_fetch_array($select)){
        ?>
-    <div class="container_item_veiculo borda_verde_vivo_2 bsuavizada_5 bg_cinza  margem_t_20 float_left">
+    <div class="container_item_veiculo margem_t_20 float_left">
         <div class="imagem_item_veiculo">
-          <img src="view/<?php  echo($rsConsulta['imagem']) ?>" title="Item Veículos" alt="Imagem de Carro"/>
+          <img src="view/<?php  echo($rsConsulta['imagem']) ?>" title="<?php echo($rsConsulta['modelo']) ?>" alt="Imagem de Carro"/>
         </div>
         <div class="descricao_nome align_center conteudo">
           <?php echo($rsConsulta['modelo']) ?>
@@ -51,8 +51,8 @@
         <div class="descricao_data align_center txt_preto conteudo">
           <?php echo($rsConsulta['ano_fabricacao']) ?>
         </div>
-      <div class="input_submit centro_lr transparente preenche_t_10">
-        <input class="detalhesVeiculos" type="submit" name="btn_datalhes" value="Detalhes">
+      <div class="input-v-submit">
+        <input class="detalhes-v" type="submit" name="btn_datalhes" value="Detalhes">
       </div>
     </div>
     <?php
