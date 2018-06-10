@@ -71,7 +71,7 @@ if(isset($_POST["btnSalvar"]))
           }
       // **************************************************
 
-      // Instância um objeto imagem e o popula com a imagem vinda do form   
+      // Instância um objeto imagem e o popula com a imagem vinda do form
       $imagem = new Imagem($_FILES['img_refresh_pic'], 'pictures/perfil/');
 
       $imagemPic = $imagem->salvarImagem($imagem);
@@ -102,6 +102,7 @@ if(isset($_POST["btnSalvar"]))
   <head>
     <meta charset="utf-8">
     <title>Cadastro Parceiro</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/modal_cadastro_parceiro.css">
     <link rel="stylesheet" href="css/padroes.css">
   </head>
@@ -114,27 +115,30 @@ if(isset($_POST["btnSalvar"]))
             <input type="file" name="img_refresh_pic" id="btn_imagem_parceiro" value="<?php echo($imagem)?>" class="display_none">
           </div>
         </label>
-        <div class="input_text">
-          <input class="input_text1 " type="text" name="txtNomeFantasia" value="" placeholder="NOME FANTASIA">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtRazao" value="" placeholder="RAZÃO SOCIAL">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtCnpj" value="" placeholder="CNPJ">
-        </div>
-        <!-- ENDERECO -->
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtLogradouro" value="" placeholder="RUA">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtNumero" value="" placeholder="NUMERO">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtCidade" value="" placeholder="CIDADE">
-        </div>
-        <div class="input_text">
-          <select class="input_combo" name="slcEstado">
+
+        <div class="container-infs-cli">
+
+          <label for="txtNomeFantasia" class="field-label">Nome Fantasia</label>
+          <input id="txtNomeFantasia" required maxlength="19" class="android-input input-text" type="text" name="txtNomeFantasia">
+
+          <label for="txtRazao" class="field-label">Razão social</label>
+          <input id="txtRazao" required maxlength="19" class="android-input input-text" type="text" name="txtRazao">
+
+          <label for="txtCnpj" class="field-label">CNPJ</label>
+          <input id="txtCnpj" required maxlength="14" class="android-input input-text" type="text" name="txtCnpj">
+
+          <!-- ENDEREÇO -->
+          <label for="txtLogradouro" class="field-label">Rua</label>
+          <input id="txtLogradouro" required maxlength="25" class="android-input input-text" type="text" name="txtLogradouro">
+
+          <label for="txtNumero" class="field-label">Numero</label>
+          <input id="txtNumero" required maxlength="5" class="android-input input-text" type="text" name="txtNumero">
+
+          <label for="txtCidade" class="field-label">Cidade</label>
+          <input id="txtCidade" required maxlength="20" class="android-input input-text" type="text" name="txtCidade">
+
+          <select class="select-pac" name="slcEstado">
+            <option value="" selected disabled> Estado</option>
             <?php
               $sql="select * from tbl_estado order by id_estado desc";
               $select=mysql_query($sql);
@@ -147,48 +151,50 @@ if(isset($_POST["btnSalvar"]))
                 }
               ?>
           </select>
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtCep" value="" placeholder="CEP">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtBairro" value="" placeholder="BAIRRO">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtComplemento" value="" placeholder="COMPLEMENTO">
-        </div>
-        <!-- ********************************** -->
-        <div class="input_text titulo align_center margem_t_20 fs_15">
-          Socorrista:<br><br>
-            Sim<input class="radio" type="radio" name="chkSocorrista" value="1" placeholder="SOCORRISTA">
-            Não<input class="radio" type="radio" name="chkSocorrista" value="2" placeholder="SOCORRISTA">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtEmail" value="" placeholder="EMAIL">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtTelefone" value="" placeholder="TELEFONE">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtCelular" value="" placeholder="CELULAR">
-        </div>
-        <!-- Usuario -->
-        <div class="input_text">
-          <input class="input_text1" type="text" name="txtUsuario" value="" placeholder="USUARIO">
-        </div>
-        <div class="input_text">
-          <input class="input_text1" type="password" name="txtSenha" value="" placeholder="SENHA">
-        </div>
-        <!-- ***************************************** -->
-        <div class="input_text">
-          <select class="input_combo" name="slcPlano">
-            <option value="">Selecione seu plano</option>
-            <option value="2">Medium</option>
-            <option value="1">Premium</option>
+
+          <label for="txtCep" class="field-label">Cep</label>
+          <input id="txtCep" required maxlength="9" class="android-input input-text" type="text" name="txtCep">
+
+          <label for="txtBairro" class="field-label">Bairro</label>
+          <input id="txtBairro" required maxlength="9" class="android-input input-text" type="text" name="txtBairro">
+
+          <label for="txtComplemento" class="field-label">Complemento</label>
+          <input id="txtComplemento" required maxlength="10" class="android-input input-text" type="text" name="txtComplemento">
+          <!-- ********************************** -->
+
+          <div class="sex-cli">
+                SOCORRISTA:
+            <input class="margem_l_20" type="radio" name="chkSocorrista" value="1"> SIM
+            <input class="margem_l_20" type="radio" name="chkSocorrista" value="2"> NÃO
+          </div>
+
+          <label for="txtEmail" class="field-label">Email</label>
+          <input id="txtEmail" required maxlength="30" class="android-input input-text" type="text" name="txtEmail">
+
+          <label for="txtTelefone" class="field-label">Telefone</label>
+          <input id="txtTelefone" required maxlength="10" class="android-input input-text" type="text" name="txtTelefone">
+
+          <label for="txtCelular" class="field-label">Celular</label>
+          <input id="txtCelular" required maxlength="11" class="android-input input-text" type="text" name="txtCelular">
+
+          <!-- Login -->
+          <label for="txtUsuario" class="field-label">Usuário</label>
+          <input id="txtUsuario" required maxlength="10" class="android-input input-text" type="text" name="txtUsuario">
+
+          <label for="txtSenha" class="field-label">Senha</label>
+          <input id="txtSenha" required maxlength="20" class="android-input input-text" type="text" name="txtSenha">
+          <!-- ***************************************** -->
+
+          <select class="select-pac" name="slcPlano">
+              <option value="" selected disabled>Selecione seu plano</option>
+              <option value="2">Medium</option>
+              <option value="1">Premium</option>
           </select>
-        </div>
-        <div class="input_text">
-          <input class="input_submit1 bg_verde_vivo titulo margem_t_5"  type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+
+          <div class="input_text float_left">
+            <input href="" class="input_submit11 margem_t_5 bg_verde_vivo titulo" type="submit" name="btnSalvar" value="<?php echo $botao;?>">
+          </div>
+
         </div>
       </div>
     </form>
