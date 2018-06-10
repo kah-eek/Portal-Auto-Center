@@ -5,7 +5,19 @@
   background-color: rgb(32,33,36);
   background-image: linear-gradient(to right, rgba(42,46,55,0.8) 0%, rgba(32,33,36,0.9) 100%);
 }
-
+.add-img
+{
+  position: fixed;
+  /*bottom: 5%;*/
+  /*left: 82%;*/
+  left: 15%;
+  margin-top: -50px;
+  opacity: 0;
+}
+.add-img >label > i
+{
+  font-size: 3.2rem;
+}
 .header
 {
   position: fixed;
@@ -23,7 +35,7 @@
 .header img
 {
   box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.4);
-  margin-top: 80px; 
+  margin-top: 80px;
   width: 85px;
   height: 85px;
   border-radius: 50%;

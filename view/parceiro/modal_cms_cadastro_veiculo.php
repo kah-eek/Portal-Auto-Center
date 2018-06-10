@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("../../database/conect.php");
+require_once("../../controller/Imagem_class.php");
 Conexao_db();
 $id_usuario = $_SESSION['id_usuario'];
 $id_parceiro = $_SESSION['id_parceiro1'];
@@ -21,7 +22,7 @@ if(isset($_POST["btnSalvar"]))
 
 
     //Monta o Script para enviar para o BD
-    $sql = "insert into tbl_veiculo (ano_fabricacao, placa, id_cor, id_modelo, qtd_porta, quilometro_rodado, id_tipo_veiculo, id_modelo_veiculo) values ('".$ano."','".$placa."','".$cor."','1',
+    $sql = "insert into tbl_veiculo (ano_fabricacao, placa, id_cor, id_modelo, qtd_porta, quilometro_rodado, id_tipo_veiculo, id_modelo_veiculo) values ('".$ano."','".$placa."','".$cor."','-1',
     '".$portas."','".$quilometragem."','".$tipo."','".$modelo."');";
 
     mysql_query($sql);
@@ -48,9 +49,6 @@ if(isset($_POST["btnSalvar"]))
         {
           $id_parceiro = $rs['id_parceiro'];
         }
-    // $id_parceiro = 15;
-
-
 
     $sql4 = "SELECT * FROM tbl_tipo_combustivel where id_tipo_combustivel =".$combustivel;
       $resultado2 = mysql_query ($sql4);
@@ -69,6 +67,26 @@ if(isset($_POST["btnSalvar"]))
 
         mysql_query($sql6);
         // echo $sql6;
+
+        $sql8 = "SELECT LAST_INSERT_ID();";
+          $resultado3 = mysql_query ($sql8);
+            if ($rs=mysql_fetch_array($resultado3))
+            {
+              $id_veiculo_parceiro = $rs['LAST_INSERT_ID()'];
+            }
+
+        // Instância um objeto imagem e o popula com a imagem vinda do form
+        $imagem = new Imagem($_FILES['img_refresh_pic'], '../pictures/veiculos/');
+
+        $imagemPic = $imagem->salvarImagem($imagem);
+
+        // echo ($imagemPic);
+
+        $sqlInser = "INSERT INTO tbl_imagem_veiculo_parceiro (id_veiculo_parceiro, imagem, ativo) VALUES('".$id_veiculo_parceiro."','".$imagemPic."', '1')";
+
+        mysql_query($sqlInser);
+
+        // echo ($sqlInser);
 
 
     header('location:modal_cms_cadastro_veiculo.php');
@@ -130,8 +148,16 @@ $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
 
     <div class="main">
 
-      <form name="frmCadastroVeiculo" method="POST" action="modal_cms_cadastro_veiculo.php">
+      <form name="frmCadastroVeiculo" method="POST" enctype="multipart/form-data" action="modal_cms_cadastro_veiculo.php">
+        <input type="file" id="img_refresh_pic" required name="img_refresh_pic" hidden>
 
+        <div class="add-img">
+          <label for="img_refresh_pic">
+            <i class="material-icons">
+              add_a_photo
+            </i>
+          </label>
+        </div>
         <div class="form-container">
           <label for="slcFabricante" class="titulo-cad-ve">Cadastre um Veículo</label>
 
@@ -266,6 +292,39 @@ $sql = "SELECT * from tbl_parceiro where id_usuario = ".$id_usuario;
 
     <script src="../js/jquery.js"></script>
     <script src="../js/pac_framework.js"></script>
+
+    <script>
+
+      setTimeout(function(){
+
+        $('.add-img').css({
+          opacity:'1',
+          marginTop:'20px',
+          transition:'2s'
+        });
+
+        setTimeout(function(){
+          $('.add-img').css({
+          transform:'rotate(360deg)',
+          transition:'1.5s'
+        });
+        },800);
+
+        setTimeout(function(){
+          $('.add-img').css({
+          marginTop:'-28px',
+          width:'56px',
+          height:'56px',
+          borderRadius:'50%',
+          backgroundColor:'#fff',
+          boxShadow:'0 -2px 6px rgba(0,0,0,0.12), 0 5px 10px rgba(0,0,0,0.23)',
+          transition:'2s'
+        });
+        },3000);
+
+      },2000);
+
+    </script>
 
   </body>
 </html>

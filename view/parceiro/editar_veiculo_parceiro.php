@@ -185,7 +185,9 @@ Conexao_db();
                 {
 
               ?>
-              <option selected value="<?php echo($rsCV['id_tipo_veiculo']) ?>"><?php echo($rsCV['tipo']) ?></option>
+              <option  value="<?php echo($rsCV['id_tipo_veiculo']) ?>">
+                <?php echo($rsCV['tipo']) ?>
+              </option>
               <?php
                 }
               ?>
