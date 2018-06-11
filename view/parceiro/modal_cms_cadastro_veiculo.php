@@ -68,11 +68,11 @@ if(isset($_POST["btnSalvar"]))
         mysql_query($sql6);
         // echo $sql6;
 
-        $sql8 = "SELECT LAST_INSERT_ID();";
+        $sql8 = "SELECT MAX(id_veiculo_parceiro) from tbl_veiculo_parceiro;";
           $resultado3 = mysql_query ($sql8);
             if ($rs=mysql_fetch_array($resultado3))
             {
-              $id_veiculo_parceiro = $rs['LAST_INSERT_ID()'];
+              $id_veiculo_parceiro = $rs['MAX(id_veiculo_parceiro)'];
             }
 
         // Instância um objeto imagem e o popula com a imagem vinda do form
